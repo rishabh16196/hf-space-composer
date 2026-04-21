@@ -1,0 +1,134 @@
+{
+  "space_id": "Politrees/audio-separator_UVR",
+  "title": "Audio-Separator (UVR)",
+  "emoji": "\u26a1",
+  "description": "Audio-Separator by Politrees",
+  "input_schema": {
+    "visible": {
+      "type": "bool",
+      "description": "Override Segment Size",
+      "required": true,
+      "component": "Checkbox"
+    }
+  },
+  "output_schema": {
+    "Segment Size": {
+      "type": "float",
+      "description": "Segment Size",
+      "component": "Slider"
+    }
+  },
+  "license": "mit",
+  "hardware": "5.47.2",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 63,
+  "last_modified": "2025-09-28 14:35:05+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/show_hide_parameter",
+      "parameters": [
+        {
+          "name": "visible",
+          "label": "Override Segment Size",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Segment Size",
+          "type": "float",
+          "component": "Slider"
+        }
+      ]
+    },
+    {
+      "name": "/show_hide_parameter_1",
+      "parameters": [
+        {
+          "name": "visible",
+          "label": "Override Segment Size",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Segment Size",
+          "type": "float",
+          "component": "Slider"
+        }
+      ]
+    },
+    {
+      "name": "/show_hide_parameter_2",
+      "parameters": [
+        {
+          "name": "visible",
+          "label": "Post-Process",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Post-Process Threshold",
+          "type": "float",
+          "component": "Slider"
+        }
+      ]
+    },
+    {
+      "name": "/display_leaderboard",
+      "parameters": [
+        {
+          "name": "list_filter",
+          "label": "Filter",
+          "type": "Literal['vocals', 'male', 'female', 'aspiration', 'crowd', 'instrumental', 'drums', 'kick', 'snare', 'toms', 'hh', 'ride', 'crash', 'bass', 'drum-bass', 'guitar', 'piano', 'woodwinds', 'echo', 'reverb",
+          "component": "Dropdown"
+        },
+        {
+          "name": "list_limit",
+          "label": "Limit",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Leaderboard",
+          "type": "str",
+          "component": "Html"
+        }
+      ]
+    },
+    {
+      "name": "/clear_model_files",
+      "parameters": [
+        {
+          "name": "model_dir",
+          "label": "Model Directory",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": []
+    }
+  ],
+  "endpoint": "/show_hide_parameter",
+  "_api_verified": true,
+  "estimated_latency_s": 3.73,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 3.73,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:49:48.056195+00:00"
+}

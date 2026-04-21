@@ -1,0 +1,89 @@
+{
+  "space_id": "nakas/demucs_playground",
+  "title": "Demucs_V4",
+  "emoji": "\u26a1",
+  "description": "Demucs_V4",
+  "input_schema": {
+    "Input": {
+      "type": "str | Dict(name: str (name of file), data: str (base64 representation of file), size: int (size of i",
+      "description": "Input",
+      "required": true,
+      "component": "Audio"
+    }
+  },
+  "output_schema": {
+    "Vocals": {
+      "type": "str | Dict(name: str (name of file), data: str (base64 representation of file), size: int (size of i",
+      "description": "Vocals",
+      "component": "Audio"
+    },
+    "Bass": {
+      "type": "str | Dict(name: str (name of file), data: str (base64 representation of file), size: int (size of i",
+      "description": "Bass",
+      "component": "Audio"
+    },
+    "Drums": {
+      "type": "str | Dict(name: str (name of file), data: str (base64 representation of file), size: int (size of i",
+      "description": "Drums",
+      "component": "Audio"
+    },
+    "Other": {
+      "type": "str | Dict(name: str (name of file), data: str (base64 representation of file), size: int (size of i",
+      "description": "Other",
+      "component": "Audio"
+    }
+  },
+  "license": "unknown",
+  "hardware": "",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 62,
+  "last_modified": "2023-06-29 23:42:06+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/predict",
+      "parameters": [
+        {
+          "name": "Input",
+          "label": "Input",
+          "type": "str | Dict(name: str (name of file), data: str (base64 representation of file), size: int (size of image in bytes), is_file: bool (true if the file has been uploaded to the server), orig_name: str (or",
+          "component": "Audio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Vocals",
+          "type": "str | Dict(name: str (name of file), data: str (base64 representation of file), size: int (size of image in bytes), is_file: bool (true if the file has been uploaded to the server), orig_name: str (or",
+          "component": "Audio"
+        },
+        {
+          "label": "Bass",
+          "type": "str | Dict(name: str (name of file), data: str (base64 representation of file), size: int (size of image in bytes), is_file: bool (true if the file has been uploaded to the server), orig_name: str (or",
+          "component": "Audio"
+        },
+        {
+          "label": "Drums",
+          "type": "str | Dict(name: str (name of file), data: str (base64 representation of file), size: int (size of image in bytes), is_file: bool (true if the file has been uploaded to the server), orig_name: str (or",
+          "component": "Audio"
+        },
+        {
+          "label": "Other",
+          "type": "str | Dict(name: str (name of file), data: str (base64 representation of file), size: int (size of image in bytes), is_file: bool (true if the file has been uploaded to the server), orig_name: str (or",
+          "component": "Audio"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/predict",
+  "_api_verified": true
+}

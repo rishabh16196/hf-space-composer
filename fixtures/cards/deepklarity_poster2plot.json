@@ -1,0 +1,80 @@
+{
+  "space_id": "deepklarity/poster2plot",
+  "title": "Poster2plot",
+  "emoji": "\ud83c\udfac",
+  "description": "Poster2plot",
+  "input_schema": {
+    "image": {
+      "type": "filepath",
+      "description": "Input Image",
+      "required": true,
+      "component": "Image"
+    }
+  },
+  "output_schema": {
+    "Plot": {
+      "type": "str",
+      "description": "Plot",
+      "component": "Textbox"
+    }
+  },
+  "license": "unknown",
+  "hardware": "4.44.1",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 50,
+  "last_modified": "2025-11-21 15:50:59+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/predict",
+      "parameters": [
+        {
+          "name": "image",
+          "label": "Input Image",
+          "type": "filepath",
+          "component": "Image"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Plot",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/set_example_image",
+      "parameters": [
+        {
+          "name": "example",
+          "label": "parameter_14",
+          "type": "int",
+          "component": "Dataset"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Input Image",
+          "type": "filepath",
+          "component": "Image"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/predict",
+  "_api_verified": true,
+  "estimated_latency_s": 3.07,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 3.07,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:50:29.169573+00:00"
+}

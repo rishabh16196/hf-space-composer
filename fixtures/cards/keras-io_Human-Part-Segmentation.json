@@ -1,0 +1,74 @@
+{
+  "space_id": "keras-io/Human-Part-Segmentation",
+  "title": "Human Part Segmentation",
+  "emoji": "\ud83d\udc64",
+  "description": "Human Part Segmentation",
+  "input_schema": {
+    "input_image": {
+      "type": "str",
+      "description": "input_image",
+      "required": true,
+      "component": "Image"
+    }
+  },
+  "output_schema": {
+    "output 0": {
+      "type": "str",
+      "description": "output 0",
+      "component": "Image"
+    },
+    "output 1": {
+      "type": "str",
+      "description": "output 1",
+      "component": "Image"
+    }
+  },
+  "license": "cc0-1.0",
+  "hardware": "",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "computer-vision",
+    "image-segmentation",
+    "region:us"
+  ],
+  "likes": 37,
+  "last_modified": "2023-05-02 04:05:13+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/predict",
+      "parameters": [
+        {
+          "name": "input_image",
+          "label": "input_image",
+          "type": "str",
+          "component": "Image"
+        }
+      ],
+      "returns": [
+        {
+          "label": "output 0",
+          "type": "str",
+          "component": "Image"
+        },
+        {
+          "label": "output 1",
+          "type": "str",
+          "component": "Image"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/predict",
+  "_api_verified": true,
+  "estimated_latency_s": 3.71,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 3.71,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:51:03.006264+00:00"
+}

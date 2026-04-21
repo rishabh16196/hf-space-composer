@@ -1,0 +1,127 @@
+{
+  "space_id": "allenai/asta-bench-leaderboard",
+  "title": "AstaBench Leaderboard",
+  "emoji": "\ud83e\udd47",
+  "description": "AstaBench Leaderboard",
+  "input_schema": {},
+  "output_schema": {},
+  "license": "apache-2.0",
+  "hardware": "",
+  "sdk": "docker",
+  "tags": [
+    "docker",
+    "leaderboard",
+    "region:us",
+    "benchmark"
+  ],
+  "likes": 26,
+  "last_modified": "2025-08-29 18:50:11+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/show_disclaimer",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/accept_and_load",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/add_new_eval",
+      "parameters": [
+        {
+          "name": "val_or_test",
+          "label": "The Test Set is used for final leaderboard rankings. The Validation Set is for development and iteration. Choose based on your evaluation goal.",
+          "type": "Literal['test', 'validation']",
+          "component": "Radio"
+        },
+        {
+          "name": "agent_name",
+          "label": "This is how your agent will appear on the leaderboard. Use a clear, descriptive name (e.g., Asta Scholar QA, Perplexity Deep Research). Omit model names (e.g. GPT-4, Mistral) as they\u2019ll be shown automatically based on your logs.",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "agent_description",
+          "label": "Briefly describe your agent\u2019s approach, core strategies, or what makes it distinct. This description may appear on the leaderboard.",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "agent_url",
+          "label": "Link to more information about your agent (e.g. GitHub repo, blog post, or website). This optional link may be shown on the leaderboard to let others explore your agent in more depth.",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "openness",
+          "label": "This affects how your submission is categorized on the leaderboard. Choose based on the availability of your code, model weights, or APIs.",
+          "type": "Literal['Open source & closed weights', 'Open source & open weights', 'Closed source & API available', 'Closed source & UI only']",
+          "component": "Radio"
+        },
+        {
+          "name": "degree_of_control",
+          "label": "Choose based on the tools and the execution environment your agent used during evaluation.",
+          "type": "Literal['Standard', 'Custom interface', 'Fully custom']",
+          "component": "Radio"
+        },
+        {
+          "name": "path_to_file",
+          "label": "parameter_447",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "name": "username",
+          "label": "This will show on the leaderboard. By default, we\u2019ll use your Hugging Face username; but you can enter your organization name instead (e.g., university, company, or lab).",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "role",
+          "label": "Please select the role that most closely matches your current position. Helps us improve AstaBench for different user types. Not displayed on the leaderboard.",
+          "type": "Literal['Undergraduate Student', 'Masters Student', 'PhD Student', 'Postdoctoral Researcher', 'Academic Faculty (e.g., Professor, Lecturer)', 'Industry Researcher (e.g., Research Scientist, Applied Sc",
+          "component": "Dropdown"
+        },
+        {
+          "name": "email",
+          "label": "We'll only use your email to communicate about your submission.",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "email_opt_in",
+          "label": "I\u2019m open to being contacted by email for user research studies or feedback opportunities.",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_461",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/_check_login_status",
+      "parameters": [],
+      "returns": []
+    }
+  ],
+  "endpoint": "/show_disclaimer",
+  "_api_verified": true,
+  "estimated_latency_s": 5.53,
+  "speed_tier": "medium",
+  "_latency_source": "measured",
+  "_tags_enriched": true,
+  "measured_latency_s": 5.53,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:50:15.241162+00:00"
+}

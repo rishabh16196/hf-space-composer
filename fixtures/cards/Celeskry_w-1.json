@@ -1,0 +1,118 @@
+{
+  "space_id": "Celeskry/w-1",
+  "title": "Undressapi",
+  "emoji": "\ud83d\udc09",
+  "description": "Undressapi",
+  "input_schema": {
+    "image": {
+      "type": "filepath",
+      "description": "\u1ea2nh g\u1ed1c",
+      "required": true,
+      "component": "Image"
+    },
+    "prompt": {
+      "type": "str",
+      "description": "Prompt (h\u01b0\u1edbng d\u1eabn ch\u1ec9nh s\u1eeda - c\u00f3 th\u1ec3 d\u00e0i)",
+      "required": true,
+      "component": "Textbox"
+    },
+    "negative_prompt": {
+      "type": "str",
+      "description": "Negative prompt (tr\u00e1nh nh\u1eefng th\u1ee9 n\u00e0y)",
+      "required": true,
+      "component": "Textbox"
+    },
+    "steps": {
+      "type": "float",
+      "description": "S\u1ed1 b\u01b0\u1edbc inference",
+      "required": true,
+      "component": "Slider"
+    },
+    "guidance_scale": {
+      "type": "float",
+      "description": "Guidance scale",
+      "required": true,
+      "component": "Slider"
+    }
+  },
+  "output_schema": {
+    "\u1ea2nh sau ch\u1ec9nh s\u1eeda": {
+      "type": "filepath",
+      "description": "\u1ea2nh sau ch\u1ec9nh s\u1eeda",
+      "component": "Image"
+    },
+    "Tr\u1ea1ng th\u00e1i": {
+      "type": "str",
+      "description": "Tr\u1ea1ng th\u00e1i",
+      "component": "Textbox"
+    }
+  },
+  "license": "unknown",
+  "hardware": "4.44.1",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "tool",
+    "region:us"
+  ],
+  "likes": 6,
+  "last_modified": "2026-02-11 15:49:28+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/edit_image",
+      "parameters": [
+        {
+          "name": "image",
+          "label": "\u1ea2nh g\u1ed1c",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "name": "prompt",
+          "label": "Prompt (h\u01b0\u1edbng d\u1eabn ch\u1ec9nh s\u1eeda - c\u00f3 th\u1ec3 d\u00e0i)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "negative_prompt",
+          "label": "Negative prompt (tr\u00e1nh nh\u1eefng th\u1ee9 n\u00e0y)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "steps",
+          "label": "S\u1ed1 b\u01b0\u1edbc inference",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "guidance_scale",
+          "label": "Guidance scale",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "\u1ea2nh sau ch\u1ec9nh s\u1eeda",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "Tr\u1ea1ng th\u00e1i",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/edit_image",
+  "_api_verified": true
+}

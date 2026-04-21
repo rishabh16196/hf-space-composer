@@ -1,0 +1,1533 @@
+[
+  {
+    "task_id": "real_demo_audio_to_speech",
+    "domain": "audio_processing",
+    "difficulty": "easy",
+    "description": "REAL DEMO: Take a famous speech audio clip, transcribe it via Whisper, translate to French via NLLB, then re-synthesize as French audio via Edge-TTS. All Spaces are LIVE on HuggingFace.",
+    "input": {
+      "audio_url": "https://huggingface.co/datasets/Narsil/asr_dummy/resolve/main/mlk.flac",
+      "expected_language": "en"
+    },
+    "expected_output_schema": {
+      "transcript_en": "string",
+      "translation_fr": "string",
+      "audio_url_fr": "string"
+    },
+    "max_actions": 15,
+    "max_space_calls": 5,
+    "expert_persona": "accuracy_first",
+    "expert_rubric": {
+      "transcript_en": {
+        "weight": 0.3,
+        "method": "min_length",
+        "min_length": 30
+      },
+      "translation_fr": {
+        "weight": 0.3,
+        "method": "min_length",
+        "min_length": 30
+      },
+      "audio_url_fr": {
+        "weight": 0.4,
+        "method": "non_empty"
+      }
+    },
+    "gold_pipeline": [
+      {
+        "space_id": "hf-audio/whisper-large-v3",
+        "inputs": {
+          "inputs": "<input.audio_url>",
+          "task": "transcribe"
+        }
+      },
+      {
+        "space_id": "UNESCO/nllb",
+        "inputs": {
+          "text": "<step1.transcript>",
+          "src_lang": "English",
+          "tgt_lang": "French"
+        }
+      },
+      {
+        "space_id": "innoai/Edge-TTS-Text-to-Speech",
+        "inputs": {
+          "text": "<step2.text>",
+          "voice": "fr-FR-DeniseNeural - fr-FR (Female)",
+          "rate": 0,
+          "pitch": 0
+        }
+      }
+    ]
+  },
+  {
+    "task_id": "audio_summarize_hindi_001",
+    "domain": "audio_processing",
+    "difficulty": "easy",
+    "description": "Transcribe a Hindi audio clip and produce a concise English summary (max 100 words).",
+    "input": {
+      "audio_url": "https://example.com/hindi_news.wav",
+      "expected_language": "hi"
+    },
+    "expected_output_schema": {
+      "transcript": "string",
+      "summary": "string"
+    },
+    "max_actions": 15,
+    "max_space_calls": 5,
+    "expert_persona": "accuracy_first",
+    "expert_rubric": {
+      "transcript": {
+        "weight": 0.4,
+        "method": "min_length",
+        "min_length": 50
+      },
+      "summary": {
+        "weight": 0.6,
+        "method": "keywords",
+        "keywords": [
+          "news",
+          "report",
+          "summary"
+        ]
+      }
+    },
+    "gold_pipeline": [
+      {
+        "space_id": "hf-audio/whisper-large-v3",
+        "inputs": {
+          "inputs": "<input.audio_url>",
+          "task": "transcribe"
+        }
+      },
+      {
+        "space_id": "UNESCO/nllb",
+        "inputs": {
+          "text": "<step1.transcript>",
+          "src_lang": "Hindi",
+          "tgt_lang": "English"
+        }
+      },
+      {
+        "space_id": "pszemraj/summarize-long-text",
+        "inputs": {
+          "text": "<step2.text>",
+          "max_length": 100
+        }
+      }
+    ]
+  },
+  {
+    "task_id": "audio_translate_french_002",
+    "domain": "audio_processing",
+    "difficulty": "easy",
+    "description": "Transcribe French audio and translate the transcript to English.",
+    "input": {
+      "audio_url": "https://example.com/french_clip.wav",
+      "expected_language": "fr"
+    },
+    "expected_output_schema": {
+      "transcript_fr": "string",
+      "translation_en": "string"
+    },
+    "max_actions": 12,
+    "max_space_calls": 4,
+    "expert_persona": "speed_first",
+    "expert_rubric": {
+      "transcript_fr": {
+        "weight": 0.5,
+        "method": "min_length",
+        "min_length": 30
+      },
+      "translation_en": {
+        "weight": 0.5,
+        "method": "min_length",
+        "min_length": 30
+      }
+    },
+    "gold_pipeline": [
+      {
+        "space_id": "hf-audio/whisper-large-v3",
+        "inputs": {
+          "inputs": "<input.audio_url>",
+          "task": "transcribe"
+        }
+      },
+      {
+        "space_id": "UNESCO/nllb",
+        "inputs": {
+          "text": "<step1.transcript>",
+          "src_lang": "French",
+          "tgt_lang": "English"
+        }
+      }
+    ]
+  },
+  {
+    "task_id": "audio_speakers_diar_003",
+    "domain": "audio_processing",
+    "difficulty": "medium",
+    "description": "Transcribe English meeting audio and produce sentiment per speaker.",
+    "input": {
+      "audio_url": "https://example.com/meeting.wav"
+    },
+    "expected_output_schema": {
+      "transcript": "string",
+      "sentiment_speaker_1": "string",
+      "sentiment_speaker_2": "string"
+    },
+    "max_actions": 20,
+    "max_space_calls": 7,
+    "expert_persona": "accuracy_first",
+    "expert_rubric": {
+      "transcript": {
+        "weight": 0.5,
+        "method": "min_length",
+        "min_length": 100
+      },
+      "sentiment_speaker_1": {
+        "weight": 0.25,
+        "method": "non_empty"
+      },
+      "sentiment_speaker_2": {
+        "weight": 0.25,
+        "method": "non_empty"
+      }
+    },
+    "gold_pipeline": [
+      {
+        "space_id": "wenet-e2e/wespeaker_demo",
+        "inputs": {
+          "Speaker#1": "<input.audio_url>"
+        }
+      },
+      {
+        "space_id": "hf-audio/whisper-large-v3",
+        "inputs": {
+          "inputs": "<input.audio_url>",
+          "task": "transcribe"
+        }
+      },
+      {
+        "space_id": "Gradio-Blocks/Multilingual-Aspect-Based-Sentiment-Analysis",
+        "inputs": {
+          "text": "<step1.segments[0].text>"
+        }
+      },
+      {
+        "space_id": "Gradio-Blocks/Multilingual-Aspect-Based-Sentiment-Analysis",
+        "inputs": {
+          "text": "<step1.segments[1].text>"
+        }
+      }
+    ],
+    "drift_events": [
+      {
+        "trigger_step": 6,
+        "type": "field_rename",
+        "space_id": "openai/whisper-large-v3",
+        "change": {
+          "audio_url": "audio_input"
+        }
+      }
+    ]
+  },
+  {
+    "task_id": "audio_to_speech_004",
+    "domain": "audio_processing",
+    "difficulty": "hard",
+    "description": "Transcribe French audio, translate to English, then re-synthesize as English speech.",
+    "input": {
+      "audio_url": "https://example.com/french_long.wav"
+    },
+    "expected_output_schema": {
+      "transcript_fr": "string",
+      "translation_en": "string",
+      "tts_url": "string"
+    },
+    "max_actions": 20,
+    "max_space_calls": 6,
+    "expert_persona": "speed_first",
+    "expert_rubric": {
+      "transcript_fr": {
+        "weight": 0.3,
+        "method": "min_length",
+        "min_length": 30
+      },
+      "translation_en": {
+        "weight": 0.3,
+        "method": "min_length",
+        "min_length": 30
+      },
+      "tts_url": {
+        "weight": 0.4,
+        "method": "non_empty"
+      }
+    },
+    "gold_pipeline": [
+      {
+        "space_id": "hf-audio/whisper-large-v3",
+        "inputs": {
+          "inputs": "<input.audio_url>",
+          "task": "transcribe"
+        }
+      },
+      {
+        "space_id": "UNESCO/nllb",
+        "inputs": {
+          "text": "<step1.transcript>",
+          "src_lang": "French",
+          "tgt_lang": "English"
+        }
+      },
+      {
+        "space_id": "innoai/Edge-TTS-Text-to-Speech",
+        "inputs": {
+          "text": "<step2.text>",
+          "voice": "en"
+        }
+      }
+    ],
+    "drift_events": [
+      {
+        "trigger_step": 5,
+        "type": "deprecation",
+        "space_id": "facebook/nllb-200",
+        "change": {
+          "successor": "facebook/nllb-200-v2"
+        }
+      }
+    ]
+  },
+  {
+    "task_id": "audio_sentiment_005",
+    "domain": "audio_processing",
+    "difficulty": "easy",
+    "description": "Transcribe a customer service call and classify the customer's sentiment.",
+    "input": {
+      "audio_url": "https://example.com/customer_call.wav"
+    },
+    "expected_output_schema": {
+      "transcript": "string",
+      "sentiment": "string"
+    },
+    "max_actions": 12,
+    "max_space_calls": 4,
+    "expert_persona": "speed_first",
+    "expert_rubric": {
+      "transcript": {
+        "weight": 0.5,
+        "method": "min_length",
+        "min_length": 50
+      },
+      "sentiment": {
+        "weight": 0.5,
+        "method": "non_empty"
+      }
+    },
+    "gold_pipeline": [
+      {
+        "space_id": "hf-audio/whisper-large-v3",
+        "inputs": {
+          "inputs": "<input.audio_url>",
+          "task": "transcribe"
+        }
+      },
+      {
+        "space_id": "Gradio-Blocks/Multilingual-Aspect-Based-Sentiment-Analysis",
+        "inputs": {
+          "text": "<step1.transcript>"
+        }
+      }
+    ]
+  },
+  {
+    "task_id": "image_caption_translate_006",
+    "domain": "vision",
+    "difficulty": "easy",
+    "description": "Caption an image and translate the caption to French.",
+    "input": {
+      "image_url": "https://example.com/sample_image.jpg"
+    },
+    "expected_output_schema": {
+      "caption_en": "string",
+      "caption_fr": "string"
+    },
+    "max_actions": 12,
+    "max_space_calls": 4,
+    "expert_persona": "speed_first",
+    "expert_rubric": {
+      "caption_en": {
+        "weight": 0.5,
+        "method": "min_length",
+        "min_length": 10
+      },
+      "caption_fr": {
+        "weight": 0.5,
+        "method": "min_length",
+        "min_length": 10
+      }
+    },
+    "gold_pipeline": [
+      {
+        "space_id": "fancyfeast/joy-caption-pre-alpha",
+        "inputs": {
+          "input_image": "<input.image_url>"
+        }
+      },
+      {
+        "space_id": "UNESCO/nllb",
+        "inputs": {
+          "text": "<step1.caption>",
+          "src_lang": "English",
+          "tgt_lang": "French"
+        }
+      }
+    ]
+  },
+  {
+    "task_id": "image_ocr_translate_007",
+    "domain": "vision",
+    "difficulty": "medium",
+    "description": "Extract text from an image (OCR), then translate to Spanish.",
+    "input": {
+      "image_url": "https://example.com/menu.jpg"
+    },
+    "expected_output_schema": {
+      "extracted_text": "string",
+      "translated_es": "string"
+    },
+    "max_actions": 15,
+    "max_space_calls": 5,
+    "expert_persona": "cost_first",
+    "expert_rubric": {
+      "extracted_text": {
+        "weight": 0.4,
+        "method": "non_empty"
+      },
+      "translated_es": {
+        "weight": 0.6,
+        "method": "non_empty"
+      }
+    },
+    "gold_pipeline": [
+      {
+        "space_id": "merterbak/DeepSeek-OCR-Demo",
+        "inputs": {
+          "image": "<input.image_url>"
+        }
+      },
+      {
+        "space_id": "UNESCO/nllb",
+        "inputs": {
+          "text": "<step1.extracted_text>",
+          "src_lang": "English",
+          "tgt_lang": "Spanish"
+        }
+      }
+    ],
+    "drift_events": [
+      {
+        "trigger_step": 4,
+        "type": "new_required",
+        "space_id": "facebook/nllb-200",
+        "change": {
+          "src_lang": "Source language code"
+        }
+      }
+    ]
+  },
+  {
+    "task_id": "image_caption_sentiment_008",
+    "domain": "vision",
+    "difficulty": "medium",
+    "description": "Caption an image, then classify the emotional tone of the caption.",
+    "input": {
+      "image_url": "https://example.com/scene.jpg"
+    },
+    "expected_output_schema": {
+      "caption": "string",
+      "tone": "string"
+    },
+    "max_actions": 12,
+    "max_space_calls": 4,
+    "expert_persona": "accuracy_first",
+    "expert_rubric": {
+      "caption": {
+        "weight": 0.5,
+        "method": "min_length",
+        "min_length": 10
+      },
+      "tone": {
+        "weight": 0.5,
+        "method": "non_empty"
+      }
+    },
+    "gold_pipeline": [
+      {
+        "space_id": "fancyfeast/joy-caption-pre-alpha",
+        "inputs": {
+          "input_image": "<input.image_url>"
+        }
+      },
+      {
+        "space_id": "Gradio-Blocks/Multilingual-Aspect-Based-Sentiment-Analysis",
+        "inputs": {
+          "text": "<step1.caption>"
+        }
+      }
+    ]
+  },
+  {
+    "task_id": "image_ocr_summarize_009",
+    "domain": "vision",
+    "difficulty": "medium",
+    "description": "OCR a screenshot of an article, then summarize the extracted text.",
+    "input": {
+      "image_url": "https://example.com/article_screenshot.png"
+    },
+    "expected_output_schema": {
+      "text": "string",
+      "summary": "string"
+    },
+    "max_actions": 15,
+    "max_space_calls": 5,
+    "expert_persona": "accuracy_first",
+    "expert_rubric": {
+      "text": {
+        "weight": 0.4,
+        "method": "min_length",
+        "min_length": 100
+      },
+      "summary": {
+        "weight": 0.6,
+        "method": "min_length",
+        "min_length": 30
+      }
+    },
+    "gold_pipeline": [
+      {
+        "space_id": "merterbak/DeepSeek-OCR-Demo",
+        "inputs": {
+          "image": "<input.image_url>"
+        }
+      },
+      {
+        "space_id": "pszemraj/summarize-long-text",
+        "inputs": {
+          "input": "<step1.extracted_text>"
+        }
+      }
+    ]
+  },
+  {
+    "task_id": "image_caption_describe_010",
+    "domain": "vision",
+    "difficulty": "easy",
+    "description": "Caption an image with detailed descriptions of objects present.",
+    "input": {
+      "image_url": "https://example.com/photo.jpg"
+    },
+    "expected_output_schema": {
+      "caption": "string"
+    },
+    "max_actions": 8,
+    "max_space_calls": 2,
+    "expert_persona": "cost_first",
+    "expert_rubric": {
+      "caption": {
+        "weight": 1.0,
+        "method": "min_length",
+        "min_length": 30
+      }
+    },
+    "gold_pipeline": [
+      {
+        "space_id": "fancyfeast/joy-caption-pre-alpha",
+        "inputs": {
+          "input_image": "<input.image_url>"
+        }
+      }
+    ]
+  },
+  {
+    "task_id": "doc_extract_summarize_011",
+    "domain": "document",
+    "difficulty": "easy",
+    "description": "Extract main text from a PDF and produce a 3-sentence summary.",
+    "input": {
+      "pdf_url": "https://example.com/report.pdf"
+    },
+    "expected_output_schema": {
+      "extracted_text": "string",
+      "summary": "string"
+    },
+    "max_actions": 12,
+    "max_space_calls": 4,
+    "expert_persona": "accuracy_first",
+    "expert_rubric": {
+      "extracted_text": {
+        "weight": 0.4,
+        "method": "min_length",
+        "min_length": 200
+      },
+      "summary": {
+        "weight": 0.6,
+        "method": "min_length",
+        "min_length": 50
+      }
+    },
+    "gold_pipeline": [
+      {
+        "space_id": "xiaoyao9184/marker",
+        "inputs": {
+          "filename": "<input.pdf_url>"
+        }
+      },
+      {
+        "space_id": "pszemraj/summarize-long-text",
+        "inputs": {
+          "text": "<step1.extracted_text>",
+          "max_length": 100
+        }
+      }
+    ]
+  },
+  {
+    "task_id": "doc_entities_012",
+    "domain": "document",
+    "difficulty": "medium",
+    "description": "Extract named entities (people, orgs, locations) from a news article.",
+    "input": {
+      "article_text": "Acme Corp CEO Jane Doe announced new operations in Tokyo and Berlin..."
+    },
+    "expected_output_schema": {
+      "persons": "string",
+      "organizations": "string",
+      "locations": "string"
+    },
+    "max_actions": 15,
+    "max_space_calls": 4,
+    "expert_persona": "accuracy_first",
+    "expert_rubric": {
+      "persons": {
+        "weight": 0.33,
+        "method": "keywords",
+        "keywords": [
+          "Jane Doe"
+        ]
+      },
+      "organizations": {
+        "weight": 0.33,
+        "method": "keywords",
+        "keywords": [
+          "Acme"
+        ]
+      },
+      "locations": {
+        "weight": 0.34,
+        "method": "keywords",
+        "keywords": [
+          "Tokyo",
+          "Berlin"
+        ]
+      }
+    },
+    "gold_pipeline": [
+      {
+        "space_id": "fastino/gliner2-official-demo",
+        "inputs": {
+          "text": "<input.article_text>"
+        }
+      }
+    ]
+  },
+  {
+    "task_id": "doc_translate_summarize_013",
+    "domain": "document",
+    "difficulty": "medium",
+    "description": "Extract a French PDF, translate to English, then summarize.",
+    "input": {
+      "pdf_url": "https://example.com/french_doc.pdf"
+    },
+    "expected_output_schema": {
+      "text_fr": "string",
+      "text_en": "string",
+      "summary": "string"
+    },
+    "max_actions": 18,
+    "max_space_calls": 6,
+    "expert_persona": "accuracy_first",
+    "expert_rubric": {
+      "text_fr": {
+        "weight": 0.3,
+        "method": "min_length",
+        "min_length": 100
+      },
+      "text_en": {
+        "weight": 0.3,
+        "method": "min_length",
+        "min_length": 100
+      },
+      "summary": {
+        "weight": 0.4,
+        "method": "min_length",
+        "min_length": 50
+      }
+    },
+    "gold_pipeline": [
+      {
+        "space_id": "xiaoyao9184/marker",
+        "inputs": {
+          "filename": "<input.pdf_url>"
+        }
+      },
+      {
+        "space_id": "UNESCO/nllb",
+        "inputs": {
+          "text": "<step1.extracted_text>",
+          "src_lang": "French",
+          "tgt_lang": "English"
+        }
+      },
+      {
+        "space_id": "pszemraj/summarize-long-text",
+        "inputs": {
+          "input": "<step2.text>"
+        }
+      }
+    ]
+  },
+  {
+    "task_id": "doc_entities_translate_014",
+    "domain": "document",
+    "difficulty": "hard",
+    "description": "Extract entities from text, then translate the entity names to French.",
+    "input": {
+      "article_text": "Acme Corp CEO Jane Doe is expanding to Tokyo."
+    },
+    "expected_output_schema": {
+      "persons": "string",
+      "locations_fr": "string"
+    },
+    "max_actions": 15,
+    "max_space_calls": 5,
+    "expert_persona": "cost_first",
+    "expert_rubric": {
+      "persons": {
+        "weight": 0.5,
+        "method": "keywords",
+        "keywords": [
+          "Jane"
+        ]
+      },
+      "locations_fr": {
+        "weight": 0.5,
+        "method": "non_empty"
+      }
+    },
+    "gold_pipeline": [
+      {
+        "space_id": "fastino/gliner2-official-demo",
+        "inputs": {
+          "text": "<input.article_text>"
+        }
+      },
+      {
+        "space_id": "UNESCO/nllb",
+        "inputs": {
+          "text": "Tokyo",
+          "src_lang": "English",
+          "tgt_lang": "French"
+        }
+      }
+    ]
+  },
+  {
+    "task_id": "doc_quick_summary_015",
+    "domain": "document",
+    "difficulty": "easy",
+    "description": "Quick summary of a short article (no PDF parsing needed).",
+    "input": {
+      "article_text": "A long article passage about technology trends..."
+    },
+    "expected_output_schema": {
+      "summary": "string"
+    },
+    "max_actions": 8,
+    "max_space_calls": 2,
+    "expert_persona": "speed_first",
+    "expert_rubric": {
+      "summary": {
+        "weight": 1.0,
+        "method": "min_length",
+        "min_length": 30
+      }
+    },
+    "gold_pipeline": [
+      {
+        "space_id": "pszemraj/summarize-long-text",
+        "inputs": {
+          "text": "<input.article_text>",
+          "max_length": 60
+        }
+      }
+    ]
+  },
+  {
+    "task_id": "code_explain_translate_016",
+    "domain": "code",
+    "difficulty": "medium",
+    "description": "Explain a Python snippet, then translate the explanation to Hindi.",
+    "input": {
+      "code_snippet": "def fib(n):\n    return n if n < 2 else fib(n-1) + fib(n-2)"
+    },
+    "expected_output_schema": {
+      "explanation_en": "string",
+      "explanation_hi": "string"
+    },
+    "max_actions": 15,
+    "max_space_calls": 5,
+    "expert_persona": "accuracy_first",
+    "expert_rubric": {
+      "explanation_en": {
+        "weight": 0.5,
+        "method": "keywords",
+        "keywords": [
+          "fibonacci",
+          "recursive"
+        ]
+      },
+      "explanation_hi": {
+        "weight": 0.5,
+        "method": "min_length",
+        "min_length": 30
+      }
+    },
+    "gold_pipeline": [
+      {
+        "space_id": "Qwen/Qwen2.5-Coder-Artifacts",
+        "inputs": {
+          "query": "<input.code_snippet>"
+        }
+      },
+      {
+        "space_id": "UNESCO/nllb",
+        "inputs": {
+          "text": "<step1.explanation>",
+          "src_lang": "English",
+          "tgt_lang": "Hindi"
+        }
+      }
+    ]
+  },
+  {
+    "task_id": "code_summarize_017",
+    "domain": "code",
+    "difficulty": "easy",
+    "description": "Explain a code snippet in 2 sentences.",
+    "input": {
+      "code_snippet": "for i in range(10): print(i*2)"
+    },
+    "expected_output_schema": {
+      "explanation": "string"
+    },
+    "max_actions": 8,
+    "max_space_calls": 2,
+    "expert_persona": "speed_first",
+    "expert_rubric": {
+      "explanation": {
+        "weight": 1.0,
+        "method": "min_length",
+        "min_length": 20
+      }
+    },
+    "gold_pipeline": [
+      {
+        "space_id": "Qwen/Qwen2.5-Coder-Artifacts",
+        "inputs": {
+          "query": "<input.code_snippet>"
+        }
+      }
+    ]
+  },
+  {
+    "task_id": "code_explain_summarize_018",
+    "domain": "code",
+    "difficulty": "medium",
+    "description": "Explain a long code snippet, then summarize the explanation.",
+    "input": {
+      "code_snippet": "class TreeNode:\n  def __init__(self, val): self.val=val; self.left=None; self.right=None\n\ndef inorder(root):\n  if root: inorder(root.left); print(root.val); inorder(root.right)"
+    },
+    "expected_output_schema": {
+      "explanation": "string",
+      "summary": "string"
+    },
+    "max_actions": 12,
+    "max_space_calls": 4,
+    "expert_persona": "accuracy_first",
+    "expert_rubric": {
+      "explanation": {
+        "weight": 0.5,
+        "method": "min_length",
+        "min_length": 50
+      },
+      "summary": {
+        "weight": 0.5,
+        "method": "min_length",
+        "min_length": 20
+      }
+    },
+    "gold_pipeline": [
+      {
+        "space_id": "Qwen/Qwen2.5-Coder-Artifacts",
+        "inputs": {
+          "query": "<input.code_snippet>"
+        }
+      },
+      {
+        "space_id": "pszemraj/summarize-long-text",
+        "inputs": {
+          "input": "<step1.explanation>"
+        }
+      }
+    ]
+  },
+  {
+    "task_id": "code_explain_french_019",
+    "domain": "code",
+    "difficulty": "medium",
+    "description": "Explain a code snippet in French.",
+    "input": {
+      "code_snippet": "lambda x: x**2"
+    },
+    "expected_output_schema": {
+      "explanation_fr": "string"
+    },
+    "max_actions": 10,
+    "max_space_calls": 3,
+    "expert_persona": "cost_first",
+    "expert_rubric": {
+      "explanation_fr": {
+        "weight": 1.0,
+        "method": "min_length",
+        "min_length": 20
+      }
+    },
+    "gold_pipeline": [
+      {
+        "space_id": "Qwen/Qwen2.5-Coder-Artifacts",
+        "inputs": {
+          "query": "<input.code_snippet>"
+        }
+      },
+      {
+        "space_id": "UNESCO/nllb",
+        "inputs": {
+          "text": "<step1.explanation>",
+          "src_lang": "English",
+          "tgt_lang": "French"
+        }
+      }
+    ]
+  },
+  {
+    "task_id": "code_to_speech_020",
+    "domain": "code",
+    "difficulty": "hard",
+    "description": "Explain a code snippet, then synthesize the explanation as audio.",
+    "input": {
+      "code_snippet": "import math\nprint(math.sqrt(64))"
+    },
+    "expected_output_schema": {
+      "explanation": "string",
+      "audio_url": "string"
+    },
+    "max_actions": 12,
+    "max_space_calls": 3,
+    "expert_persona": "accuracy_first",
+    "expert_rubric": {
+      "explanation": {
+        "weight": 0.5,
+        "method": "min_length",
+        "min_length": 30
+      },
+      "audio_url": {
+        "weight": 0.5,
+        "method": "non_empty"
+      }
+    },
+    "gold_pipeline": [
+      {
+        "space_id": "Qwen/Qwen2.5-Coder-Artifacts",
+        "inputs": {
+          "query": "<input.code_snippet>"
+        }
+      },
+      {
+        "space_id": "innoai/Edge-TTS-Text-to-Speech",
+        "inputs": {
+          "text": "<step1.explanation>",
+          "voice": "en"
+        }
+      }
+    ]
+  },
+  {
+    "task_id": "multimodal_news_021",
+    "domain": "multimodal",
+    "difficulty": "hard",
+    "description": "Given a news image and audio commentary, produce a unified summary.",
+    "input": {
+      "image_url": "https://example.com/news_card.jpg",
+      "audio_url": "https://example.com/commentary.wav"
+    },
+    "expected_output_schema": {
+      "image_caption": "string",
+      "audio_transcript": "string",
+      "unified_summary": "string"
+    },
+    "max_actions": 25,
+    "max_space_calls": 8,
+    "expert_persona": "accuracy_first",
+    "expert_rubric": {
+      "image_caption": {
+        "weight": 0.25,
+        "method": "non_empty"
+      },
+      "audio_transcript": {
+        "weight": 0.35,
+        "method": "min_length",
+        "min_length": 50
+      },
+      "unified_summary": {
+        "weight": 0.4,
+        "method": "min_length",
+        "min_length": 80
+      }
+    },
+    "gold_pipeline": [
+      {
+        "space_id": "fancyfeast/joy-caption-pre-alpha",
+        "inputs": {
+          "input_image": "<input.image_url>"
+        }
+      },
+      {
+        "space_id": "hf-audio/whisper-large-v3",
+        "inputs": {
+          "inputs": "<input.audio_url>",
+          "task": "transcribe"
+        }
+      },
+      {
+        "space_id": "pszemraj/summarize-long-text",
+        "inputs": {
+          "input": "<combined>"
+        }
+      }
+    ],
+    "drift_events": [
+      {
+        "trigger_step": 8,
+        "type": "type_change",
+        "space_id": "Salesforce/blip-image-captioning",
+        "change": {
+          "image_url": "list"
+        }
+      }
+    ]
+  },
+  {
+    "task_id": "multimodal_recipe_022",
+    "domain": "multimodal",
+    "difficulty": "hard",
+    "description": "Given a food image and description, produce a recipe summary in Spanish.",
+    "input": {
+      "image_url": "https://example.com/food.jpg",
+      "description": "A traditional dish from Italy with pasta and tomato sauce."
+    },
+    "expected_output_schema": {
+      "caption": "string",
+      "summary_es": "string"
+    },
+    "max_actions": 18,
+    "max_space_calls": 5,
+    "expert_persona": "speed_first",
+    "expert_rubric": {
+      "caption": {
+        "weight": 0.4,
+        "method": "min_length",
+        "min_length": 15
+      },
+      "summary_es": {
+        "weight": 0.6,
+        "method": "min_length",
+        "min_length": 30
+      }
+    },
+    "gold_pipeline": [
+      {
+        "space_id": "fancyfeast/joy-caption-pre-alpha",
+        "inputs": {
+          "input_image": "<input.image_url>"
+        }
+      },
+      {
+        "space_id": "pszemraj/summarize-long-text",
+        "inputs": {
+          "input": "<step1.caption>"
+        }
+      },
+      {
+        "space_id": "UNESCO/nllb",
+        "inputs": {
+          "text": "<step2.summary>",
+          "src_lang": "English",
+          "tgt_lang": "Spanish"
+        }
+      }
+    ]
+  },
+  {
+    "task_id": "multimodal_meeting_notes_023",
+    "domain": "multimodal",
+    "difficulty": "hard",
+    "description": "From a meeting recording (audio) and a whiteboard photo (image), produce structured notes.",
+    "input": {
+      "audio_url": "https://example.com/meeting2.wav",
+      "image_url": "https://example.com/whiteboard.jpg"
+    },
+    "expected_output_schema": {
+      "transcript": "string",
+      "whiteboard_text": "string",
+      "notes": "string"
+    },
+    "max_actions": 20,
+    "max_space_calls": 6,
+    "expert_persona": "accuracy_first",
+    "expert_rubric": {
+      "transcript": {
+        "weight": 0.4,
+        "method": "min_length",
+        "min_length": 80
+      },
+      "whiteboard_text": {
+        "weight": 0.3,
+        "method": "non_empty"
+      },
+      "notes": {
+        "weight": 0.3,
+        "method": "min_length",
+        "min_length": 50
+      }
+    },
+    "gold_pipeline": [
+      {
+        "space_id": "hf-audio/whisper-large-v3",
+        "inputs": {
+          "inputs": "<input.audio_url>",
+          "task": "transcribe"
+        }
+      },
+      {
+        "space_id": "merterbak/DeepSeek-OCR-Demo",
+        "inputs": {
+          "image": "<input.image_url>"
+        }
+      },
+      {
+        "space_id": "pszemraj/summarize-long-text",
+        "inputs": {
+          "input": "<combined>"
+        }
+      }
+    ]
+  },
+  {
+    "task_id": "multimodal_caption_speak_024",
+    "domain": "multimodal",
+    "difficulty": "medium",
+    "description": "Caption an image, then speak the caption aloud as French audio.",
+    "input": {
+      "image_url": "https://example.com/scene2.jpg"
+    },
+    "expected_output_schema": {
+      "caption_en": "string",
+      "caption_fr": "string",
+      "audio_url": "string"
+    },
+    "max_actions": 15,
+    "max_space_calls": 5,
+    "expert_persona": "accuracy_first",
+    "expert_rubric": {
+      "caption_en": {
+        "weight": 0.3,
+        "method": "min_length",
+        "min_length": 10
+      },
+      "caption_fr": {
+        "weight": 0.3,
+        "method": "min_length",
+        "min_length": 10
+      },
+      "audio_url": {
+        "weight": 0.4,
+        "method": "non_empty"
+      }
+    },
+    "gold_pipeline": [
+      {
+        "space_id": "fancyfeast/joy-caption-pre-alpha",
+        "inputs": {
+          "input_image": "<input.image_url>"
+        }
+      },
+      {
+        "space_id": "UNESCO/nllb",
+        "inputs": {
+          "text": "<step1.caption>",
+          "src_lang": "English",
+          "tgt_lang": "French"
+        }
+      },
+      {
+        "space_id": "innoai/Edge-TTS-Text-to-Speech",
+        "inputs": {
+          "text": "<step2.text>",
+          "voice": "fr"
+        }
+      }
+    ]
+  },
+  {
+    "task_id": "multimodal_full_pipeline_025",
+    "domain": "multimodal",
+    "difficulty": "hard",
+    "description": "From a Spanish audio clip, produce: English transcript, sentiment analysis, and a French summary.",
+    "input": {
+      "audio_url": "https://example.com/spanish_clip.wav"
+    },
+    "expected_output_schema": {
+      "transcript_es": "string",
+      "translation_en": "string",
+      "sentiment": "string",
+      "summary_fr": "string"
+    },
+    "max_actions": 25,
+    "max_space_calls": 8,
+    "expert_persona": "accuracy_first",
+    "expert_rubric": {
+      "transcript_es": {
+        "weight": 0.2,
+        "method": "min_length",
+        "min_length": 30
+      },
+      "translation_en": {
+        "weight": 0.25,
+        "method": "min_length",
+        "min_length": 30
+      },
+      "sentiment": {
+        "weight": 0.25,
+        "method": "non_empty"
+      },
+      "summary_fr": {
+        "weight": 0.3,
+        "method": "min_length",
+        "min_length": 30
+      }
+    },
+    "gold_pipeline": [
+      {
+        "space_id": "hf-audio/whisper-large-v3",
+        "inputs": {
+          "inputs": "<input.audio_url>",
+          "task": "transcribe"
+        }
+      },
+      {
+        "space_id": "UNESCO/nllb",
+        "inputs": {
+          "text": "<step1.transcript>",
+          "src_lang": "Spanish",
+          "tgt_lang": "English"
+        }
+      },
+      {
+        "space_id": "Gradio-Blocks/Multilingual-Aspect-Based-Sentiment-Analysis",
+        "inputs": {
+          "text": "<step2.text>"
+        }
+      },
+      {
+        "space_id": "pszemraj/summarize-long-text",
+        "inputs": {
+          "input": "<step2.text>"
+        }
+      },
+      {
+        "space_id": "UNESCO/nllb",
+        "inputs": {
+          "text": "<step4.summary>",
+          "src_lang": "English",
+          "tgt_lang": "French"
+        }
+      }
+    ],
+    "drift_events": [
+      {
+        "trigger_step": 12,
+        "type": "field_rename",
+        "space_id": "facebook/nllb-200",
+        "change": {
+          "text": "input_text"
+        }
+      }
+    ]
+  },
+  {
+    "task_id": "real_text_to_image_026",
+    "domain": "vision",
+    "difficulty": "medium",
+    "description": "Given a rough image idea in plain text, refine it into a detailed diffusion prompt and generate the image using FLUX.1-schnell. Output the image URL and the refined prompt.",
+    "input": {
+      "rough_idea": "a peaceful garden at sunset with a small wooden bench"
+    },
+    "expected_output_schema": {
+      "refined_prompt": "string",
+      "image_url": "string"
+    },
+    "max_actions": 12,
+    "max_space_calls": 4,
+    "time_budget_s": 60.0,
+    "expert_persona": "accuracy_first",
+    "expert_rubric": {
+      "refined_prompt": {
+        "weight": 0.4,
+        "method": "min_length",
+        "min_length": 30
+      },
+      "image_url": {
+        "weight": 0.6,
+        "method": "non_empty"
+      }
+    },
+    "gold_pipeline": [
+      {
+        "space_id": "gokaygokay/FLUX-Prompt-Generator",
+        "inputs": {
+          "input_concept": "<input.rough_idea>"
+        }
+      },
+      {
+        "space_id": "black-forest-labs/FLUX.1-schnell",
+        "inputs": {
+          "prompt": "<step1.refined_prompt>",
+          "seed": 42,
+          "randomize_seed": true
+        }
+      }
+    ]
+  },
+  {
+    "task_id": "real_fast_or_slow_image_027",
+    "domain": "vision",
+    "difficulty": "hard",
+    "description": "Generate an image from prompt. There are two versions of FLUX available: FLUX.1-schnell (fast, ~7s) and FLUX.1-dev (slower, ~45s, higher quality). With a tight time budget, you must pick the right one. Speed-first persona expects you to use schnell.",
+    "input": {
+      "prompt": "a modern office with natural lighting"
+    },
+    "expected_output_schema": {
+      "image_url": "string"
+    },
+    "max_actions": 8,
+    "max_space_calls": 3,
+    "time_budget_s": 30.0,
+    "expert_persona": "speed_first",
+    "expert_rubric": {
+      "image_url": {
+        "weight": 1.0,
+        "method": "non_empty"
+      }
+    },
+    "gold_pipeline": [
+      {
+        "space_id": "black-forest-labs/FLUX.1-schnell",
+        "inputs": {
+          "prompt": "<input.prompt>",
+          "seed": 42,
+          "randomize_seed": true
+        }
+      }
+    ]
+  },
+  {
+    "task_id": "real_multilingual_podcast_028",
+    "domain": "audio_processing",
+    "difficulty": "hard",
+    "description": "Given an English audio file, produce a podcast pipeline: transcribe, then translate to French AND Spanish, then re-synthesize both translations as audio via Edge-TTS. Output transcript plus both translated audio URLs.",
+    "input": {
+      "audio_url": "https://huggingface.co/datasets/Narsil/asr_dummy/resolve/main/mlk.flac"
+    },
+    "expected_output_schema": {
+      "transcript_en": "string",
+      "translation_fr": "string",
+      "translation_es": "string",
+      "audio_url_fr": "string",
+      "audio_url_es": "string"
+    },
+    "max_actions": 20,
+    "max_space_calls": 6,
+    "time_budget_s": 90.0,
+    "expert_persona": "accuracy_first",
+    "expert_rubric": {
+      "transcript_en": {
+        "weight": 0.2,
+        "method": "min_length",
+        "min_length": 20
+      },
+      "translation_fr": {
+        "weight": 0.2,
+        "method": "min_length",
+        "min_length": 20
+      },
+      "translation_es": {
+        "weight": 0.2,
+        "method": "min_length",
+        "min_length": 20
+      },
+      "audio_url_fr": {
+        "weight": 0.2,
+        "method": "non_empty"
+      },
+      "audio_url_es": {
+        "weight": 0.2,
+        "method": "non_empty"
+      }
+    },
+    "gold_pipeline": [
+      {
+        "space_id": "hf-audio/whisper-large-v3",
+        "inputs": {
+          "inputs": "<input.audio_url>",
+          "task": "transcribe"
+        }
+      },
+      {
+        "space_id": "UNESCO/nllb",
+        "inputs": {
+          "text": "<step1.transcript>",
+          "src_lang": "English",
+          "tgt_lang": "French"
+        }
+      },
+      {
+        "space_id": "UNESCO/nllb",
+        "inputs": {
+          "text": "<step1.transcript>",
+          "src_lang": "English",
+          "tgt_lang": "Spanish"
+        }
+      },
+      {
+        "space_id": "innoai/Edge-TTS-Text-to-Speech",
+        "inputs": {
+          "text": "<step2.text>",
+          "voice": "fr-FR-DeniseNeural - fr-FR (Female)",
+          "rate": 0,
+          "pitch": 0
+        }
+      },
+      {
+        "space_id": "innoai/Edge-TTS-Text-to-Speech",
+        "inputs": {
+          "text": "<step3.text>",
+          "voice": "es-ES-ElviraNeural - es-ES (Female)",
+          "rate": 0,
+          "pitch": 0
+        }
+      }
+    ]
+  },
+  {
+    "task_id": "real_qr_art_029",
+    "domain": "vision",
+    "difficulty": "easy",
+    "description": "Generate an AI-art QR code that encodes the given URL, styled to match the theme description.",
+    "input": {
+      "url": "https://huggingface.co",
+      "style": "futuristic cyberpunk city"
+    },
+    "expected_output_schema": {
+      "qr_image_url": "string"
+    },
+    "max_actions": 8,
+    "max_space_calls": 2,
+    "time_budget_s": 45.0,
+    "expert_persona": "cost_first",
+    "expert_rubric": {
+      "qr_image_url": {
+        "weight": 1.0,
+        "method": "non_empty"
+      }
+    },
+    "gold_pipeline": [
+      {
+        "space_id": "huggingface-projects/QR-code-AI-art-generator",
+        "inputs": {
+          "qr_code_content": "<input.url>",
+          "prompt": "<input.style>"
+        }
+      }
+    ]
+  },
+  {
+    "task_id": "real_image_enhance_ocr_030",
+    "domain": "vision",
+    "difficulty": "hard",
+    "description": "Given a low-resolution image containing text, enhance it first (for better OCR), then extract the text, then translate it to Hindi.",
+    "input": {
+      "image_url": "https://huggingface.co/datasets/huggingface/documentation-images/resolve/main/transformers/tasks/document_ocr.png"
+    },
+    "expected_output_schema": {
+      "extracted_text": "string",
+      "text_hi": "string"
+    },
+    "max_actions": 15,
+    "max_space_calls": 5,
+    "time_budget_s": 60.0,
+    "expert_persona": "accuracy_first",
+    "expert_rubric": {
+      "extracted_text": {
+        "weight": 0.5,
+        "method": "non_empty"
+      },
+      "text_hi": {
+        "weight": 0.5,
+        "method": "non_empty"
+      }
+    },
+    "gold_pipeline": [
+      {
+        "space_id": "finegrain/finegrain-image-enhancer",
+        "inputs": {
+          "input_image": "<input.image_url>"
+        }
+      },
+      {
+        "space_id": "merterbak/DeepSeek-OCR-Demo",
+        "inputs": {
+          "image": "<step1.output>"
+        }
+      },
+      {
+        "space_id": "UNESCO/nllb",
+        "inputs": {
+          "text": "<step2.extracted_text>",
+          "src_lang": "English",
+          "tgt_lang": "Hindi"
+        }
+      }
+    ]
+  }
+]

@@ -1,0 +1,59 @@
+{
+  "space_id": "segadeds/Medical_Diagnosis",
+  "title": "Medical Diagnosis",
+  "emoji": "\ud83d\udcc9",
+  "description": "Medical Diagnosis",
+  "input_schema": {
+    "txt": {
+      "type": "str",
+      "description": "Describe how you feel in great detail",
+      "required": true,
+      "component": "Textbox"
+    }
+  },
+  "output_schema": {
+    "output": {
+      "type": "Dict(label: str | int | float | None, confidences: List[Dict(label: str | int | float | None, confid",
+      "description": "output",
+      "component": "Label"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "4.36.1",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 67,
+  "last_modified": "2024-10-12 13:48:07+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/predict",
+      "parameters": [
+        {
+          "name": "txt",
+          "label": "Describe how you feel in great detail",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "output",
+          "type": "Dict(label: str | int | float | None, confidences: List[Dict(label: str | int | float | None, confidence: float | None)] | None)",
+          "component": "Label"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/predict",
+  "_api_verified": true
+}

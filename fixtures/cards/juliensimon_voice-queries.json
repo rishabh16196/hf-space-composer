@@ -1,0 +1,146 @@
+{
+  "space_id": "juliensimon/voice-queries",
+  "title": "Voice Queries on Financial Documents",
+  "emoji": "\ud83c\udf99",
+  "description": "Voice Queries on Financial Documents",
+  "input_schema": {
+    "input_selection": {
+      "type": "Literal['text', 'speech']",
+      "description": "Input selection",
+      "required": true,
+      "component": "Radio"
+    },
+    "query": {
+      "type": "str",
+      "description": "Text input",
+      "required": true,
+      "component": "Textbox"
+    },
+    "filepath": {
+      "type": "filepath",
+      "description": "Speech input",
+      "required": true,
+      "component": "Audio"
+    },
+    "hits": {
+      "type": "float",
+      "description": "Number of hits",
+      "required": true,
+      "component": "Slider"
+    }
+  },
+  "output_schema": {
+    "Query string": {
+      "type": "str",
+      "description": "Query string",
+      "component": "Textbox"
+    },
+    "Query results": {
+      "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+      "description": "Query results",
+      "component": "Dataframe"
+    }
+  },
+  "license": "unknown",
+  "hardware": "",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 7,
+  "last_modified": "2026-03-22 22:15:12+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/process",
+      "parameters": [
+        {
+          "name": "input_selection",
+          "label": "Input selection",
+          "type": "Literal['text', 'speech']",
+          "component": "Radio"
+        },
+        {
+          "name": "query",
+          "label": "Text input",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "filepath",
+          "label": "Speech input",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "name": "hits",
+          "label": "Number of hits",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Query string",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Query results",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/process_1",
+      "parameters": [
+        {
+          "name": "input_selection",
+          "label": "Input selection",
+          "type": "Literal['text', 'speech']",
+          "component": "Radio"
+        },
+        {
+          "name": "query",
+          "label": "Text input",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "filepath",
+          "label": "Speech input",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "name": "hits",
+          "label": "Number of hits",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Query string",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Query results",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/process",
+  "_api_verified": true
+}

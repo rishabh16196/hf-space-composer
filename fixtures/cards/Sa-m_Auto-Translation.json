@@ -1,0 +1,62 @@
+{
+  "space_id": "Sa-m/Auto-Translation",
+  "title": "Auto Translation",
+  "emoji": "\ud83d\udcbb",
+  "description": "Auto Translation",
+  "input_schema": {
+    "text": {
+      "type": "str",
+      "description": "Input Text",
+      "required": true,
+      "component": "Textbox"
+    }
+  },
+  "output_schema": {
+    "Output": {
+      "type": "str",
+      "description": "Output",
+      "component": "Textbox"
+    }
+  },
+  "license": "mit",
+  "hardware": "5.41.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 12,
+  "last_modified": "2025-08-06 20:51:22+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/translation",
+      "parameters": [
+        {
+          "name": "text",
+          "label": "Input Text",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/translation",
+  "_api_verified": true,
+  "estimated_latency_s": 3.35,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 3.35,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:49:54.282212+00:00"
+}

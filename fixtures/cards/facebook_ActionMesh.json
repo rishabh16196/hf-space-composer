@@ -1,0 +1,137 @@
+{
+  "space_id": "facebook/ActionMesh",
+  "title": "ActionMesh",
+  "emoji": "\ud83c\udfac",
+  "description": "Generate animated 3D meshes from video",
+  "input_schema": {
+    "choice": {
+      "type": "Literal['4D Mesh Viewer', 'Input Video']",
+      "description": "Display Mode",
+      "required": true,
+      "component": "Radio"
+    }
+  },
+  "output_schema": {
+    "4D Mesh Viewer": {
+      "type": "filepath",
+      "description": "4D Mesh Viewer",
+      "component": "Model3d"
+    },
+    "Input Video": {
+      "type": "filepath",
+      "description": "Input Video",
+      "component": "Video"
+    }
+  },
+  "license": "other",
+  "hardware": "6.3.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "video-to-4D",
+    "region:us"
+  ],
+  "likes": 99,
+  "last_modified": "2026-02-16 12:09:47+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/toggle_display",
+      "parameters": [
+        {
+          "name": "choice",
+          "label": "Display Mode",
+          "type": "Literal['4D Mesh Viewer', 'Input Video']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "4D Mesh Viewer",
+          "type": "filepath",
+          "component": "Model3d"
+        },
+        {
+          "label": "Input Video",
+          "type": "filepath",
+          "component": "Video"
+        }
+      ]
+    },
+    {
+      "name": "/run_actionmesh",
+      "parameters": [
+        {
+          "name": "video_input",
+          "label": "Upload Video",
+          "type": "filepath",
+          "component": "Video"
+        },
+        {
+          "name": "image_files",
+          "label": "Upload Images (multiple frames)",
+          "type": "list[filepath]",
+          "component": "File"
+        },
+        {
+          "name": "seed",
+          "label": "Random Seed",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "reference_frame",
+          "label": "Reference Frame",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "quality_mode",
+          "label": "Generation Mode",
+          "type": "Literal['\u26a1 Fast', '\u2728 High Quality']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "4D Mesh Viewer",
+          "type": "filepath",
+          "component": "Model3d"
+        },
+        {
+          "label": "Download Animated GLB",
+          "type": "filepath",
+          "component": "Downloadbutton"
+        },
+        {
+          "label": "Status",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/load_example_images",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Upload Images (multiple frames)",
+          "type": "list[filepath]",
+          "component": "File"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/toggle_display",
+  "_api_verified": true,
+  "estimated_latency_s": 3.79,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "_tags_enriched": true,
+  "measured_latency_s": 3.79,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:50:32.847899+00:00"
+}

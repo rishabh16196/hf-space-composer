@@ -1,0 +1,162 @@
+{
+  "space_id": "eiru-labs/segmentador-guarani",
+  "title": "Segmentador Guarani",
+  "emoji": "\ud83d\ude3b",
+  "description": "Segmentador oraciones en guaran\u00ed (con motivos educativos)",
+  "input_schema": {
+    "oracion": {
+      "type": "str",
+      "description": "Oraci\u00f3n en Guaran\u00ed",
+      "required": true,
+      "component": "Textbox"
+    },
+    "top_k": {
+      "type": "float",
+      "description": "Alternativas por palabra",
+      "required": true,
+      "component": "Slider"
+    },
+    "mostrar_alternativas": {
+      "type": "bool",
+      "description": "Mostrar alternativas",
+      "required": true,
+      "component": "Checkbox"
+    }
+  },
+  "output_schema": {
+    "Resultado del An\u00e1lisis": {
+      "type": "str",
+      "description": "Resultado del An\u00e1lisis",
+      "component": "Textbox"
+    }
+  },
+  "license": "unknown",
+  "hardware": "6.1.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "mcp-server",
+    "region:us"
+  ],
+  "likes": 2,
+  "last_modified": "2026-04-12 15:45:42+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/segmentar_oracion",
+      "parameters": [
+        {
+          "name": "oracion",
+          "label": "Oraci\u00f3n en Guaran\u00ed",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "top_k",
+          "label": "Alternativas por palabra",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "mostrar_alternativas",
+          "label": "Mostrar alternativas",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Resultado del An\u00e1lisis",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/segmentar_oracion_simple",
+      "parameters": [
+        {
+          "name": "oracion",
+          "label": "Oraci\u00f3n en Guaran\u00ed",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Segmentaci\u00f3n Simple",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/buscar_morfologia_rag",
+      "parameters": [
+        {
+          "name": "consulta",
+          "label": "Consulta en Lenguaje Natural",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "top_k",
+          "label": "Cantidad de resultados",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Resultados de B\u00fasqueda",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/info_particula",
+      "parameters": [
+        {
+          "name": "particula",
+          "label": "Buscar Part\u00edcula",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Informaci\u00f3n",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/listar_particulas",
+      "parameters": [
+        {
+          "name": "tipo",
+          "label": "Tipo de part\u00edculas",
+          "type": "Literal['todos', 'prefijos', 'sufijos', 'circunfijos']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Lista de Part\u00edculas",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/segmentar_oracion",
+  "_api_verified": true
+}

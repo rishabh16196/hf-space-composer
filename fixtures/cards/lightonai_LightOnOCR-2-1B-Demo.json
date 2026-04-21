@@ -1,0 +1,208 @@
+{
+  "space_id": "lightonai/LightOnOCR-2-1B-Demo",
+  "title": "LightOnOCR 2 1B Demo",
+  "emoji": "\ud83d\udc28",
+  "description": "LightOnOCR 2 1B Demo",
+  "input_schema": {},
+  "output_schema": {
+    "Upload Image or PDF": {
+      "type": "filepath",
+      "description": "Upload Image or PDF",
+      "component": "File"
+    }
+  },
+  "license": "unknown",
+  "hardware": "6.3.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 112,
+  "last_modified": "2026-02-17 13:07:21+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/load_example_image",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Upload Image or PDF",
+          "type": "filepath",
+          "component": "File"
+        }
+      ]
+    },
+    {
+      "name": "/process_input",
+      "parameters": [
+        {
+          "name": "file_input",
+          "label": "Upload Image or PDF",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "name": "model_name",
+          "label": "Model",
+          "type": "Literal['LightOnOCR-2-1B (Best OCR)', 'LightOnOCR-2-1B-bbox (Best Bbox)', 'LightOnOCR-2-1B-base', 'LightOnOCR-2-1B-bbox-base', 'LightOnOCR-2-1B-ocr-soup', 'LightOnOCR-2-1B-bbox-soup']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "temperature",
+          "label": "Temperature",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "page_num",
+          "label": "PDF: Page Number",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "enable_streaming",
+          "label": "Enable Streaming",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "max_output_tokens",
+          "label": "Max Output Tokens",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "\ud83d\udcc4 Extracted Text (Rendered)",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "Raw Markdown Output",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Processing Info",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Preview",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "PDF: Page Number",
+          "type": "float",
+          "component": "Slider"
+        }
+      ]
+    },
+    {
+      "name": "/update_slider_and_preview",
+      "parameters": [
+        {
+          "name": "file_input",
+          "label": "Upload Image or PDF",
+          "type": "filepath",
+          "component": "File"
+        }
+      ],
+      "returns": [
+        {
+          "label": "PDF: Page Number",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Preview",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/get_model_info_text",
+      "parameters": [
+        {
+          "name": "model_name",
+          "label": "Model",
+          "type": "Literal['LightOnOCR-2-1B (Best OCR)', 'LightOnOCR-2-1B-bbox (Best Bbox)', 'LightOnOCR-2-1B-base', 'LightOnOCR-2-1B-bbox-base', 'LightOnOCR-2-1B-ocr-soup', 'LightOnOCR-2-1B-bbox-soup']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Model Info",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/lambda",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Upload Image or PDF",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "label": "Model",
+          "type": "Literal['LightOnOCR-2-1B (Best OCR)', 'LightOnOCR-2-1B-bbox (Best Bbox)', 'LightOnOCR-2-1B-base', 'LightOnOCR-2-1B-bbox-base', 'LightOnOCR-2-1B-ocr-soup', 'LightOnOCR-2-1B-bbox-soup']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Model Info",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "\ud83d\udcc4 Extracted Text (Rendered)",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "Raw Markdown Output",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Processing Info",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Preview",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "PDF: Page Number",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Max Output Tokens",
+          "type": "float",
+          "component": "Slider"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/load_example_image",
+  "_api_verified": true,
+  "estimated_latency_s": 3.17,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 3.17,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:51:06.163247+00:00"
+}

@@ -1,0 +1,62 @@
+{
+  "space_id": "pytorch/ResNet",
+  "title": "ResNet",
+  "emoji": "\ud83d\udcca",
+  "description": "ResNet",
+  "input_schema": {
+    "input_image": {
+      "type": "str",
+      "description": "input_image",
+      "required": true,
+      "component": "Image"
+    }
+  },
+  "output_schema": {
+    "output": {
+      "type": "Dict[Any, Any]",
+      "description": "output",
+      "component": "Label"
+    }
+  },
+  "license": "unknown",
+  "hardware": "",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 11,
+  "last_modified": "2022-02-27 06:20:04+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/predict",
+      "parameters": [
+        {
+          "name": "input_image",
+          "label": "input_image",
+          "type": "str",
+          "component": "Image"
+        }
+      ],
+      "returns": [
+        {
+          "label": "output",
+          "type": "Dict[Any, Any]",
+          "component": "Label"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/predict",
+  "_api_verified": true,
+  "estimated_latency_s": 4.78,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 4.78,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:51:40.556400+00:00"
+}

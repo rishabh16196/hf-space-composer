@@ -1,0 +1,238 @@
+{
+  "space_id": "OpenMOSS-Team/MOSS-TTS-Nano",
+  "title": "MOSS TTS Nano",
+  "emoji": "\ud83d\udcc8",
+  "description": "ZeroGPU Nano-TTS voice clone demo",
+  "input_schema": {
+    "demo_case_id": {
+      "type": "Literal['demo-1', 'demo-2', 'demo-3', 'demo-4', 'demo-5', 'demo-6', 'demo-7', 'demo-8', 'demo-9', 'd",
+      "description": "Default Case",
+      "required": true,
+      "component": "Dropdown"
+    },
+    "prompt_audio_path": {
+      "type": "filepath",
+      "description": "Reference Audio Upload (optional; overrides Default Case)",
+      "required": true,
+      "component": "Audio"
+    }
+  },
+  "output_schema": {
+    "Target Text": {
+      "type": "str",
+      "description": "Target Text",
+      "component": "Textbox"
+    },
+    "Effective Prompt Preview": {
+      "type": "filepath",
+      "description": "Effective Prompt Preview",
+      "component": "Audio"
+    },
+    "Prompt Source": {
+      "type": "str",
+      "description": "Prompt Source",
+      "component": "Textbox"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "6.5.1",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us",
+    "audio",
+    "speech-synthesis",
+    "tts"
+  ],
+  "likes": 40,
+  "last_modified": "2026-04-14 07:36:02+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/apply_demo_case_selection",
+      "parameters": [
+        {
+          "name": "demo_case_id",
+          "label": "Default Case",
+          "type": "Literal['demo-1', 'demo-2', 'demo-3', 'demo-4', 'demo-5', 'demo-6', 'demo-7', 'demo-8', 'demo-9', 'demo-10', 'demo-11', 'demo-12', 'demo-13', 'demo-14', 'demo-15', 'demo-16', 'demo-17', 'demo-18', 'de",
+          "component": "Dropdown"
+        },
+        {
+          "name": "prompt_audio_path",
+          "label": "Reference Audio Upload (optional; overrides Default Case)",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Target Text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Effective Prompt Preview",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Prompt Source",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/refresh_prompt_preview",
+      "parameters": [
+        {
+          "name": "prompt_audio_path",
+          "label": "Reference Audio Upload (optional; overrides Default Case)",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Effective Prompt Preview",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Prompt Source",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/run_inference",
+      "parameters": [
+        {
+          "name": "text",
+          "label": "Target Text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "prompt_audio_path",
+          "label": "Reference Audio Upload (optional; overrides Default Case)",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "name": "enable_wetext_processing",
+          "label": "Enable WeTextProcessing",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "enable_normalize_tts_text",
+          "label": "Enable normalize_tts_text",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "max_new_frames",
+          "label": "max_new_frames",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "voice_clone_max_text_tokens",
+          "label": "voice_clone_max_text_tokens",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "do_sample",
+          "label": "Enable Sampling",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "text_temperature",
+          "label": "text_temperature",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "text_top_p",
+          "label": "text_top_p",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "text_top_k",
+          "label": "text_top_k",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "audio_temperature",
+          "label": "audio_temperature",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "audio_top_p",
+          "label": "audio_top_p",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "audio_top_k",
+          "label": "audio_top_k",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "audio_repetition_penalty",
+          "label": "audio_repetition_penalty",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "seed",
+          "label": "Seed (0 = random)",
+          "type": "int",
+          "component": "Number"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Status",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Normalized Text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Prompt Source",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/apply_demo_case_selection",
+  "_api_verified": true,
+  "estimated_latency_s": 3.14,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "_tags_enriched": true,
+  "measured_latency_s": 3.14,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:49:44.070268+00:00"
+}

@@ -1,0 +1,66 @@
+{
+  "space_id": "bharat-raghunathan/song-lyrics-classifier",
+  "title": "Song Genre Predictor",
+  "emoji": "\ud83c\udfb5",
+  "description": "Song Genre Predictor",
+  "input_schema": {
+    "input_text": {
+      "type": "str",
+      "description": "Song Lyrics",
+      "required": true,
+      "component": "Textbox"
+    }
+  },
+  "output_schema": {
+    "Genres/Categories": {
+      "type": "Dict(label: str | int | float | None, confidences: List[Dict(label: str | int | float | None, confid",
+      "description": "Genres/Categories",
+      "component": "Label"
+    }
+  },
+  "license": "unknown",
+  "hardware": "",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us",
+    "audio",
+    "music",
+    "song-generation"
+  ],
+  "likes": 10,
+  "last_modified": "2024-09-27 01:47:04+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/predict",
+      "parameters": [
+        {
+          "name": "input_text",
+          "label": "Song Lyrics",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Genres/Categories",
+          "type": "Dict(label: str | int | float | None, confidences: List[Dict(label: str | int | float | None, confidence: float | None)] | None)",
+          "component": "Label"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/predict",
+  "_api_verified": true,
+  "estimated_latency_s": 3.28,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "_tags_enriched": true,
+  "measured_latency_s": 3.28,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:50:22.530899+00:00"
+}

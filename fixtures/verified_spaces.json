@@ -1,0 +1,94 @@
+[
+  {
+    "space_id": "hf-audio/whisper-large-v3",
+    "init_seconds": 3.9,
+    "endpoints": [
+      "/transcribe",
+      "/transcribe_1",
+      "/yt_transcribe"
+    ],
+    "first_endpoint": "/transcribe",
+    "input_signature": [
+      {
+        "label": "parameter_1",
+        "type": "filepath"
+      },
+      {
+        "label": "Task",
+        "type": "Literal['transcribe', 'transla"
+      }
+    ],
+    "status": "ok"
+  },
+  {
+    "space_id": "UNESCO/nllb",
+    "init_seconds": 3.6,
+    "endpoints": [
+      "/translate"
+    ],
+    "first_endpoint": "/translate",
+    "input_signature": [
+      {
+        "label": "Input Text",
+        "type": "str"
+      },
+      {
+        "label": "Source Language",
+        "type": "Literal['Acehnese (Arabic scri"
+      },
+      {
+        "label": "Target Language",
+        "type": "Literal['Acehnese (Arabic scri"
+      }
+    ],
+    "status": "ok"
+  },
+  {
+    "space_id": "Alifarsi/news_summarizer",
+    "status": "error",
+    "error": "The current space is in the invalid state: RUNTIME_ERROR. Please contact the owner to fix this."
+  },
+  {
+    "space_id": "ybelkada/blip-image-captioning-space-large",
+    "status": "error",
+    "error": "The current space is in the invalid state: RUNTIME_ERROR. Please contact the owner to fix this."
+  },
+  {
+    "space_id": "tomofi/EasyOCR",
+    "status": "error",
+    "error": "The current space is in the invalid state: RUNTIME_ERROR. Please contact the owner to fix this."
+  },
+  {
+    "space_id": "hexgrad/Kokoro-TTS",
+    "init_seconds": 3.3,
+    "endpoints": [],
+    "status": "ok"
+  },
+  {
+    "space_id": "innoai/Edge-TTS-Text-to-Speech",
+    "init_seconds": 4.0,
+    "endpoints": [
+      "/tts_interface"
+    ],
+    "first_endpoint": "/tts_interface",
+    "input_signature": [
+      {
+        "label": "Input Text",
+        "type": "str"
+      },
+      {
+        "label": "Select Voice",
+        "type": "Literal['', 'af-ZA-AdriNeural "
+      },
+      {
+        "label": "Speech Rate Adjustment (%)",
+        "type": "float"
+      },
+      {
+        "label": "Pitch Adjustment (Hz)",
+        "type": "float"
+      }
+    ],
+    "status": "ok"
+  }
+]

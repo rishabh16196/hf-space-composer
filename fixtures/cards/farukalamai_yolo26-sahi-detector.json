@@ -1,0 +1,203 @@
+{
+  "space_id": "farukalamai/yolo26-sahi-detector",
+  "title": "Small Object Detection with YOLO26",
+  "emoji": "\ud83d\udc40",
+  "description": "Small object detection & segmentation using YOLO26 + SAHI",
+  "input_schema": {
+    "image": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "Input Image",
+      "required": true,
+      "component": "Image"
+    },
+    "yolo_model_name": {
+      "type": "Literal['yolo26n.pt', 'yolo26s.pt', 'yolo26m.pt', 'yolo26l.pt', 'yolo26x.pt', 'yolo26n-seg.pt', 'yol",
+      "description": "Model",
+      "required": true,
+      "component": "Dropdown"
+    },
+    "confidence_threshold": {
+      "type": "float",
+      "description": "Confidence Threshold",
+      "required": true,
+      "component": "Slider"
+    },
+    "max_detections": {
+      "type": "float",
+      "description": "Max Detections",
+      "required": true,
+      "component": "Slider"
+    },
+    "slice_height": {
+      "type": "float",
+      "description": "Slice Height",
+      "required": true,
+      "component": "Number"
+    },
+    "slice_width": {
+      "type": "float",
+      "description": "Slice Width",
+      "required": true,
+      "component": "Number"
+    },
+    "overlap_height_ratio": {
+      "type": "float",
+      "description": "Overlap Height Ratio",
+      "required": true,
+      "component": "Slider"
+    },
+    "overlap_width_ratio": {
+      "type": "float",
+      "description": "Overlap Width Ratio",
+      "required": true,
+      "component": "Slider"
+    },
+    "postprocess_type": {
+      "type": "Literal['NMS', 'GREEDYNMM']",
+      "description": "Type",
+      "required": true,
+      "component": "Dropdown"
+    },
+    "postprocess_match_metric": {
+      "type": "Literal['IOU', 'IOS']",
+      "description": "Match Metric",
+      "required": true,
+      "component": "Dropdown"
+    },
+    "postprocess_match_threshold": {
+      "type": "float",
+      "description": "Match Threshold",
+      "required": true,
+      "component": "Slider"
+    },
+    "postprocess_class_agnostic": {
+      "type": "bool",
+      "description": "Class Agnostic",
+      "required": true,
+      "component": "Checkbox"
+    }
+  },
+  "output_schema": {
+    "Standard Inference": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "Standard Inference",
+      "component": "Image"
+    },
+    "SAHI Sliced Inference": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "SAHI Sliced Inference",
+      "component": "Image"
+    }
+  },
+  "license": "mit",
+  "hardware": "6.3.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "mcp-server",
+    "region:us"
+  ],
+  "likes": 17,
+  "last_modified": "2026-01-25 16:58:02+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_tags_enriched": true,
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/sahi_yolo_inference",
+      "parameters": [
+        {
+          "name": "image",
+          "label": "Input Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "yolo_model_name",
+          "label": "Model",
+          "type": "Literal['yolo26n.pt', 'yolo26s.pt', 'yolo26m.pt', 'yolo26l.pt', 'yolo26x.pt', 'yolo26n-seg.pt', 'yolo26s-seg.pt', 'yolo26m-seg.pt', 'yolo26l-seg.pt', 'yolo26x-seg.pt']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "confidence_threshold",
+          "label": "Confidence Threshold",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "max_detections",
+          "label": "Max Detections",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "slice_height",
+          "label": "Slice Height",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "slice_width",
+          "label": "Slice Width",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "overlap_height_ratio",
+          "label": "Overlap Height Ratio",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "overlap_width_ratio",
+          "label": "Overlap Width Ratio",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "postprocess_type",
+          "label": "Type",
+          "type": "Literal['NMS', 'GREEDYNMM']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "postprocess_match_metric",
+          "label": "Match Metric",
+          "type": "Literal['IOU', 'IOS']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "postprocess_match_threshold",
+          "label": "Match Threshold",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "postprocess_class_agnostic",
+          "label": "Class Agnostic",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Standard Inference",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "SAHI Sliced Inference",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/sahi_yolo_inference",
+  "_api_verified": true
+}

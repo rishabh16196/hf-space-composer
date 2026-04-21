@@ -1,0 +1,113 @@
+{
+  "space_id": "k2-fsa/text-to-speech",
+  "title": "tts Text To Speech",
+  "emoji": "\ud83c\udf0d",
+  "description": "Text-to-speech (TTS) with Next-gen Kaldi",
+  "input_schema": {
+    "language": {
+      "type": "Literal['English', 'Chinese (Mandarin, \u666e\u901a\u8bdd)', 'Chinese+English', 'Persian+English', 'Cantonese (\u7ca4\u8bed)'",
+      "description": "Language",
+      "required": true,
+      "component": "Radio"
+    }
+  },
+  "output_schema": {
+    "Select a model": {
+      "type": "Literal['csukuangfj/kokoro-en-v0_19|11 speakers', 'csukuangfj/kitten-kitten-en-v0_1-fp16|8 speakers'",
+      "description": "Select a model",
+      "component": "Dropdown"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "5.25.2",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us",
+    "audio"
+  ],
+  "likes": 479,
+  "last_modified": "2025-12-04 07:08:53+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/update_model_dropdown",
+      "parameters": [
+        {
+          "name": "language",
+          "label": "Language",
+          "type": "Literal['English', 'Chinese (Mandarin, \u666e\u901a\u8bdd)', 'Chinese+English', 'Persian+English', 'Cantonese (\u7ca4\u8bed)', 'Min-nan (\u95fd\u5357\u8bdd)', 'Arabic', 'Afrikaans', 'Bengali', 'Bulgarian', 'Catalan', 'Croatian', 'Czech', 'D",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Select a model",
+          "type": "Literal['csukuangfj/kokoro-en-v0_19|11 speakers', 'csukuangfj/kitten-kitten-en-v0_1-fp16|8 speakers', 'csukuangfj/kitten-nano-en-v0_2-fp16|8 speakers', 'csukuangfj/kitten-nano-en-v0_1-fp16|8 speakers'",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/process",
+      "parameters": [
+        {
+          "name": "language",
+          "label": "Language",
+          "type": "Literal['English', 'Chinese (Mandarin, \u666e\u901a\u8bdd)', 'Chinese+English', 'Persian+English', 'Cantonese (\u7ca4\u8bed)', 'Min-nan (\u95fd\u5357\u8bdd)', 'Arabic', 'Afrikaans', 'Bengali', 'Bulgarian', 'Catalan', 'Croatian', 'Czech', 'D",
+          "component": "Radio"
+        },
+        {
+          "name": "repo_id",
+          "label": "Select a model",
+          "type": "Literal['csukuangfj/kokoro-en-v0_19|11 speakers', 'csukuangfj/kitten-kitten-en-v0_1-fp16|8 speakers', 'csukuangfj/kitten-nano-en-v0_2-fp16|8 speakers', 'csukuangfj/kitten-nano-en-v0_1-fp16|8 speakers'",
+          "component": "Dropdown"
+        },
+        {
+          "name": "text",
+          "label": "Input text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "sid",
+          "label": "Speaker ID",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "speed",
+          "label": "Speed (larger->faster; smaller->slower)",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Info",
+          "type": "str",
+          "component": "Html"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/update_model_dropdown",
+  "_api_verified": true,
+  "estimated_latency_s": 3.91,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "_tags_enriched": true,
+  "measured_latency_s": 3.91,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:51:02.024152+00:00",
+  "_inference_attempt_status": "predict_failed",
+  "_inference_attempt_error": "Value: '' (type: <class 'str'>) is not in the list of choices: ['English', 'Chinese (Mandarin, \u666e\u901a\u8bdd)', 'Chinese+English', 'Persian+English', 'Cantonese (\u7ca4\u8bed)', 'Min-nan (\u95fd\u5357\u8bdd)', 'Arabic', 'Afrikaans', 'B"
+}

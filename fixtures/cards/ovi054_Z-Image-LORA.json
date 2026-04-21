@@ -1,0 +1,174 @@
+{
+  "space_id": "ovi054/Z-Image-LORA",
+  "title": "Z-Image Turbo + LORA",
+  "emoji": "\ud83d\udcbb",
+  "description": "Z-image Text to Image with LORA support",
+  "input_schema": {
+    "prompt": {
+      "type": "str",
+      "description": "Prompt",
+      "required": true,
+      "component": "Textbox"
+    },
+    "seed": {
+      "type": "float",
+      "description": "Seed",
+      "required": true,
+      "component": "Slider"
+    },
+    "randomize_seed": {
+      "type": "bool",
+      "description": "Randomize seed",
+      "required": true,
+      "component": "Checkbox"
+    },
+    "width": {
+      "type": "float",
+      "description": "Width",
+      "required": true,
+      "component": "Slider"
+    },
+    "height": {
+      "type": "float",
+      "description": "Height",
+      "required": true,
+      "component": "Slider"
+    },
+    "guidance_scale": {
+      "type": "float",
+      "description": "Guidance Scale",
+      "required": true,
+      "component": "Slider"
+    },
+    "num_inference_steps": {
+      "type": "float",
+      "description": "Inference steps steps",
+      "required": true,
+      "component": "Slider"
+    },
+    "lora_id": {
+      "type": "str",
+      "description": "Custom LoRA (optional)",
+      "required": true,
+      "component": "Textbox"
+    },
+    "lora_scale": {
+      "type": "float",
+      "description": "LoRA Scale",
+      "required": true,
+      "component": "Slider"
+    }
+  },
+  "output_schema": {
+    "Image Output": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "Image Output",
+      "component": "Image"
+    },
+    "Seed": {
+      "type": "float",
+      "description": "Seed",
+      "component": "Slider"
+    }
+  },
+  "license": "unknown",
+  "hardware": "5.41.1",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "mcp-server",
+    "region:us",
+    "diffusion",
+    "image-generation",
+    "text-to-image",
+    "vision"
+  ],
+  "likes": 78,
+  "last_modified": "2025-12-23 07:40:57+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/infer",
+      "parameters": [
+        {
+          "name": "prompt",
+          "label": "Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "seed",
+          "label": "Seed",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "randomize_seed",
+          "label": "Randomize seed",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "width",
+          "label": "Width",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "height",
+          "label": "Height",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "guidance_scale",
+          "label": "Guidance Scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "num_inference_steps",
+          "label": "Inference steps steps",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "lora_id",
+          "label": "Custom LoRA (optional)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "lora_scale",
+          "label": "LoRA Scale",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Image Output",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "Seed",
+          "type": "float",
+          "component": "Slider"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/infer",
+  "_api_verified": true,
+  "estimated_latency_s": 3.91,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "_tags_enriched": true,
+  "measured_latency_s": 3.91,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:51:31.572839+00:00"
+}

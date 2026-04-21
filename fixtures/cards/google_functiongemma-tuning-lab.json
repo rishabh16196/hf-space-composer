@@ -1,0 +1,367 @@
+{
+  "space_id": "google/functiongemma-tuning-lab",
+  "title": "FunctionGemma Tuning Lab",
+  "emoji": "\ud83d\udcca",
+  "description": "How to fine-tune FunctionGemma for tool calling",
+  "input_schema": {},
+  "output_schema": {},
+  "license": "apache-2.0",
+  "hardware": "6.3.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 71,
+  "last_modified": "2026-01-20 02:36:56+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/lock_ui",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/init_session",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Tool Definitions (JSON Schema)",
+          "type": "str",
+          "component": "Code"
+        },
+        {
+          "label": "Base Model",
+          "type": "Literal['google/functiongemma-270m-it']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Logs",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Target Repository Name",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/update_repo_preview",
+      "parameters": [
+        {
+          "name": "repo_name",
+          "label": "Target Repository Name",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_64",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/unlock_ui",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/update_tools",
+      "parameters": [
+        {
+          "name": "json_val",
+          "label": "Tool Definitions (JSON Schema)",
+          "type": "str",
+          "component": "Code"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_22",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/import_file",
+      "parameters": [
+        {
+          "name": "file_obj",
+          "label": "Upload Dataset (.csv)",
+          "type": "filepath",
+          "component": "File"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_27",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/lambda",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/run_training",
+      "parameters": [
+        {
+          "name": "epochs",
+          "label": "Epochs",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "lr",
+          "label": "Learning Rate",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "test_size",
+          "label": "Test Split",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "shuffle",
+          "label": "Shuffle Data",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "model_name",
+          "label": "Base Model",
+          "type": "Literal['google/functiongemma-270m-it']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Logs",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Training Metrics",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_1",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/update_hub_interactive",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Target Repository Name",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_2",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/run_evaluation",
+      "parameters": [
+        {
+          "name": "test_size",
+          "label": "Test Split",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "shuffle",
+          "label": "Shuffle Data",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "model_name",
+          "label": "Base Model",
+          "type": "Literal['google/functiongemma-270m-it']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Logs",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_3",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/stop_process",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/lock_ui_1",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/handle_reset",
+      "parameters": [
+        {
+          "name": "model_name",
+          "label": "Base Model",
+          "type": "Literal['google/functiongemma-270m-it']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Logs",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/unlock_ui_1",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/update_hub_interactive_1",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Target Repository Name",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/lock_ui_2",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/zip_model",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Download Archive",
+          "type": "filepath",
+          "component": "File"
+        }
+      ]
+    },
+    {
+      "name": "/unlock_ui_2",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/update_hub_interactive_2",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Target Repository Name",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/update_repo_preview_1",
+      "parameters": [
+        {
+          "name": "repo_name",
+          "label": "Target Repository Name",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_64",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/lock_ui_3",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/upload_model",
+      "parameters": [
+        {
+          "name": "repo_name",
+          "label": "Target Repository Name",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_65",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/unlock_ui_3",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/update_hub_interactive_3",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Target Repository Name",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/_check_login_status",
+      "parameters": [],
+      "returns": []
+    }
+  ],
+  "endpoint": "/lock_ui",
+  "_api_verified": true,
+  "estimated_latency_s": 3.98,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 3.98,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:50:42.311065+00:00"
+}

@@ -1,0 +1,963 @@
+{
+  "space_id": "hysts/ControlNet-v1-1",
+  "title": "ControlNet V1.1",
+  "emoji": "\ud83d\udcc9",
+  "description": "ControlNet V1.1",
+  "input_schema": {
+    "image": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "parameter_8",
+      "required": true,
+      "component": "Image"
+    },
+    "prompt": {
+      "type": "str",
+      "description": "Prompt",
+      "required": true,
+      "component": "Textbox"
+    },
+    "additional_prompt": {
+      "type": "str",
+      "description": "Additional prompt",
+      "required": true,
+      "component": "Textbox"
+    },
+    "negative_prompt": {
+      "type": "str",
+      "description": "Negative prompt",
+      "required": true,
+      "component": "Textbox"
+    },
+    "num_images": {
+      "type": "float",
+      "description": "Number of images",
+      "required": true,
+      "component": "Slider"
+    },
+    "image_resolution": {
+      "type": "float",
+      "description": "Image resolution",
+      "required": true,
+      "component": "Slider"
+    },
+    "num_steps": {
+      "type": "float",
+      "description": "Number of steps",
+      "required": true,
+      "component": "Slider"
+    },
+    "guidance_scale": {
+      "type": "float",
+      "description": "Guidance scale",
+      "required": true,
+      "component": "Slider"
+    },
+    "seed": {
+      "type": "float",
+      "description": "Seed",
+      "required": true,
+      "component": "Slider"
+    },
+    "low_threshold": {
+      "type": "float",
+      "description": "Canny low threshold",
+      "required": true,
+      "component": "Slider"
+    },
+    "high_threshold": {
+      "type": "float",
+      "description": "Canny high threshold",
+      "required": true,
+      "component": "Slider"
+    }
+  },
+  "output_schema": {
+    "Output": {
+      "type": "list[dict(image: dict(path: str | None (Path to a local file), url: str | None (Publicly available u",
+      "description": "Output",
+      "component": "Gallery"
+    }
+  },
+  "license": "mit",
+  "hardware": "5.12.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 1187,
+  "last_modified": "2025-01-11 07:09:17+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/canny",
+      "parameters": [
+        {
+          "name": "image",
+          "label": "parameter_8",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "prompt",
+          "label": "Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "additional_prompt",
+          "label": "Additional prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "negative_prompt",
+          "label": "Negative prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "num_images",
+          "label": "Number of images",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "image_resolution",
+          "label": "Image resolution",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "num_steps",
+          "label": "Number of steps",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "guidance_scale",
+          "label": "Guidance scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "seed",
+          "label": "Seed",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "low_threshold",
+          "label": "Canny low threshold",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "high_threshold",
+          "label": "Canny high threshold",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output",
+          "type": "list[dict(image: dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Origi",
+          "component": "Gallery"
+        }
+      ]
+    },
+    {
+      "name": "/mlsd",
+      "parameters": [
+        {
+          "name": "image",
+          "label": "parameter_29",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "prompt",
+          "label": "Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "additional_prompt",
+          "label": "Additional prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "negative_prompt",
+          "label": "Negative prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "num_images",
+          "label": "Number of images",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "image_resolution",
+          "label": "Image resolution",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "preprocess_resolution",
+          "label": "Preprocess resolution",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "num_steps",
+          "label": "Number of steps",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "guidance_scale",
+          "label": "Guidance scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "seed",
+          "label": "Seed",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "value_threshold",
+          "label": "Hough value threshold (MLSD)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "distance_threshold",
+          "label": "Hough distance threshold (MLSD)",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output",
+          "type": "list[dict(image: dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Origi",
+          "component": "Gallery"
+        }
+      ]
+    },
+    {
+      "name": "/scribble",
+      "parameters": [
+        {
+          "name": "image",
+          "label": "parameter_51",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "prompt",
+          "label": "Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "additional_prompt",
+          "label": "Additional prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "negative_prompt",
+          "label": "Negative prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "num_images",
+          "label": "Number of images",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "image_resolution",
+          "label": "Image resolution",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "preprocess_resolution",
+          "label": "Preprocess resolution",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "num_steps",
+          "label": "Number of steps",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "guidance_scale",
+          "label": "Guidance scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "seed",
+          "label": "Seed",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "preprocessor_name",
+          "label": "Preprocessor",
+          "type": "Literal['HED', 'PidiNet', 'None']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output",
+          "type": "list[dict(image: dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Origi",
+          "component": "Gallery"
+        }
+      ]
+    },
+    {
+      "name": "/softedge",
+      "parameters": [
+        {
+          "name": "image",
+          "label": "parameter_95",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "prompt",
+          "label": "Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "additional_prompt",
+          "label": "Additional prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "negative_prompt",
+          "label": "Negative prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "num_images",
+          "label": "Number of images",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "image_resolution",
+          "label": "Image resolution",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "preprocess_resolution",
+          "label": "Preprocess resolution",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "num_steps",
+          "label": "Number of steps",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "guidance_scale",
+          "label": "Guidance scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "seed",
+          "label": "Seed",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "preprocessor_name",
+          "label": "Preprocessor",
+          "type": "Literal['HED', 'PidiNet', 'HED safe', 'PidiNet safe', 'None']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output",
+          "type": "list[dict(image: dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Origi",
+          "component": "Gallery"
+        }
+      ]
+    },
+    {
+      "name": "/openpose",
+      "parameters": [
+        {
+          "name": "image",
+          "label": "parameter_116",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "prompt",
+          "label": "Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "additional_prompt",
+          "label": "Additional prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "negative_prompt",
+          "label": "Negative prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "num_images",
+          "label": "Number of images",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "image_resolution",
+          "label": "Image resolution",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "preprocess_resolution",
+          "label": "Preprocess resolution",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "num_steps",
+          "label": "Number of steps",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "guidance_scale",
+          "label": "Guidance scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "seed",
+          "label": "Seed",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "preprocessor_name",
+          "label": "Preprocessor",
+          "type": "Literal['Openpose', 'None']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output",
+          "type": "list[dict(image: dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Origi",
+          "component": "Gallery"
+        }
+      ]
+    },
+    {
+      "name": "/segmentation",
+      "parameters": [
+        {
+          "name": "image",
+          "label": "parameter_137",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "prompt",
+          "label": "Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "additional_prompt",
+          "label": "Additional prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "negative_prompt",
+          "label": "Negative prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "num_images",
+          "label": "Number of images",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "image_resolution",
+          "label": "Image resolution",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "preprocess_resolution",
+          "label": "Preprocess resolution",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "num_steps",
+          "label": "Number of steps",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "guidance_scale",
+          "label": "Guidance scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "seed",
+          "label": "Seed",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "preprocessor_name",
+          "label": "Preprocessor",
+          "type": "Literal['UPerNet', 'None']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output",
+          "type": "list[dict(image: dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Origi",
+          "component": "Gallery"
+        }
+      ]
+    },
+    {
+      "name": "/depth",
+      "parameters": [
+        {
+          "name": "image",
+          "label": "parameter_158",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "prompt",
+          "label": "Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "additional_prompt",
+          "label": "Additional prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "negative_prompt",
+          "label": "Negative prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "num_images",
+          "label": "Number of images",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "image_resolution",
+          "label": "Image resolution",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "preprocess_resolution",
+          "label": "Preprocess resolution",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "num_steps",
+          "label": "Number of steps",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "guidance_scale",
+          "label": "Guidance scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "seed",
+          "label": "Seed",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "preprocessor_name",
+          "label": "Preprocessor",
+          "type": "Literal['Midas', 'DPT', 'None']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output",
+          "type": "list[dict(image: dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Origi",
+          "component": "Gallery"
+        }
+      ]
+    },
+    {
+      "name": "/normal",
+      "parameters": [
+        {
+          "name": "image",
+          "label": "parameter_179",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "prompt",
+          "label": "Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "additional_prompt",
+          "label": "Additional prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "negative_prompt",
+          "label": "Negative prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "num_images",
+          "label": "Images",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "image_resolution",
+          "label": "Image resolution",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "preprocess_resolution",
+          "label": "Preprocess resolution",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "num_steps",
+          "label": "Number of steps",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "guidance_scale",
+          "label": "Guidance scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "seed",
+          "label": "Seed",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "preprocessor_name",
+          "label": "Preprocessor",
+          "type": "Literal['NormalBae', 'None']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output",
+          "type": "list[dict(image: dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Origi",
+          "component": "Gallery"
+        }
+      ]
+    },
+    {
+      "name": "/lineart",
+      "parameters": [
+        {
+          "name": "image",
+          "label": "parameter_200",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "prompt",
+          "label": "Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "additional_prompt",
+          "label": "Additional prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "negative_prompt",
+          "label": "Negative prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "num_images",
+          "label": "Number of images",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "image_resolution",
+          "label": "Image resolution",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "preprocess_resolution",
+          "label": "Preprocess resolution",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "num_steps",
+          "label": "Number of steps",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "guidance_scale",
+          "label": "Guidance scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "seed",
+          "label": "Seed",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "preprocessor_name",
+          "label": "Preprocessor",
+          "type": "Literal['Lineart', 'Lineart coarse', 'None', 'Lineart (anime)', 'None (anime)']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output",
+          "type": "list[dict(image: dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Origi",
+          "component": "Gallery"
+        }
+      ]
+    },
+    {
+      "name": "/content-shuffle",
+      "parameters": [
+        {
+          "name": "image",
+          "label": "parameter_221",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "prompt",
+          "label": "Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "additional_prompt",
+          "label": "Additional prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "negative_prompt",
+          "label": "Negative prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "num_images",
+          "label": "Number of images",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "image_resolution",
+          "label": "Image resolution",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "num_steps",
+          "label": "Number of steps",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "guidance_scale",
+          "label": "Guidance scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "seed",
+          "label": "Seed",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "preprocessor_name",
+          "label": "Preprocessor",
+          "type": "Literal['ContentShuffle', 'None']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output",
+          "type": "list[dict(image: dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Origi",
+          "component": "Gallery"
+        }
+      ]
+    },
+    {
+      "name": "/ip2p",
+      "parameters": [
+        {
+          "name": "image",
+          "label": "parameter_241",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "prompt",
+          "label": "Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "additional_prompt",
+          "label": "Additional prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "negative_prompt",
+          "label": "Negative prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "num_images",
+          "label": "Number of images",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "image_resolution",
+          "label": "Image resolution",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "num_steps",
+          "label": "Number of steps",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "guidance_scale",
+          "label": "Guidance scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "seed",
+          "label": "Seed",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output",
+          "type": "list[dict(image: dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Origi",
+          "component": "Gallery"
+        }
+      ]
+    },
+    {
+      "name": "/check_base_model",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Current base model",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/canny",
+  "_api_verified": true,
+  "estimated_latency_s": 5.28,
+  "speed_tier": "medium",
+  "_latency_source": "measured",
+  "measured_latency_s": 5.28,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:50:50.242822+00:00",
+  "_inference_attempt_status": "predict_failed",
+  "_inference_attempt_error": "The upstream Gradio app has raised an exception but has not enabled verbose error reporting. To enable, set show_error=True in launch()."
+}

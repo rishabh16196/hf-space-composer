@@ -1,0 +1,131 @@
+{
+  "space_id": "teticio/inBERTolate",
+  "title": "InBERTolate",
+  "emoji": "\ud83d\ude80",
+  "description": "InBERTolate",
+  "input_schema": {
+    "Text": {
+      "type": "str",
+      "description": "Text",
+      "required": true,
+      "component": "Textbox"
+    },
+    "Maximum length to insert between sentences": {
+      "type": "int | float",
+      "description": "Maximum length to insert between sentences",
+      "required": true,
+      "component": "Slider"
+    },
+    "Top k": {
+      "type": "int | float",
+      "description": "Top k",
+      "required": true,
+      "component": "Slider"
+    },
+    "Temperature": {
+      "type": "int | float",
+      "description": "Temperature",
+      "required": true,
+      "component": "Slider"
+    },
+    "Typical p": {
+      "type": "int | float",
+      "description": "Typical p",
+      "required": true,
+      "component": "Slider"
+    },
+    "Maximum iterations": {
+      "type": "int | float",
+      "description": "Maximum iterations",
+      "required": true,
+      "component": "Slider"
+    },
+    "Burn-in": {
+      "type": "int | float",
+      "description": "Burn-in",
+      "required": true,
+      "component": "Slider"
+    }
+  },
+  "output_schema": {
+    "Expanded text": {
+      "type": "str",
+      "description": "Expanded text",
+      "component": "Textbox"
+    }
+  },
+  "license": "gpl-3.0",
+  "hardware": "3.1.4",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 2,
+  "last_modified": "2023-07-04 10:08:31+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/predict",
+      "parameters": [
+        {
+          "name": "Text",
+          "label": "Text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "Maximum length to insert between sentences",
+          "label": "Maximum length to insert between sentences",
+          "type": "int | float",
+          "component": "Slider"
+        },
+        {
+          "name": "Top k",
+          "label": "Top k",
+          "type": "int | float",
+          "component": "Slider"
+        },
+        {
+          "name": "Temperature",
+          "label": "Temperature",
+          "type": "int | float",
+          "component": "Slider"
+        },
+        {
+          "name": "Typical p",
+          "label": "Typical p",
+          "type": "int | float",
+          "component": "Slider"
+        },
+        {
+          "name": "Maximum iterations",
+          "label": "Maximum iterations",
+          "type": "int | float",
+          "component": "Slider"
+        },
+        {
+          "name": "Burn-in",
+          "label": "Burn-in",
+          "type": "int | float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Expanded text",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/predict",
+  "_api_verified": true
+}

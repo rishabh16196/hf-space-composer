@@ -1,0 +1,161 @@
+{
+  "space_id": "competitions/create",
+  "title": "Create",
+  "emoji": "\ud83d\udc28",
+  "description": "Create",
+  "input_schema": {
+    "user_token": {
+      "type": "str",
+      "description": "Your Hugging Face write token",
+      "required": true,
+      "component": "Textbox"
+    }
+  },
+  "output_schema": {
+    "Organization name": {
+      "type": "Literal['']",
+      "description": "Organization name",
+      "component": "Dropdown"
+    }
+  },
+  "license": "unknown",
+  "hardware": "",
+  "sdk": "docker",
+  "tags": [
+    "docker",
+    "region:us"
+  ],
+  "likes": 15,
+  "last_modified": "2023-01-31 20:52:53+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/check_if_user_can_create_competition",
+      "parameters": [
+        {
+          "name": "user_token",
+          "label": "Your Hugging Face write token",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Organization name",
+          "type": "Literal['']",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/_create",
+      "parameters": [
+        {
+          "name": "user_token",
+          "label": "Your Hugging Face write token",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "organization",
+          "label": "Organization name",
+          "type": "Literal['']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "competition_name",
+          "label": "Competition name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "competition_logo",
+          "label": "Competition logo",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "hardware",
+          "label": "Hardware to use",
+          "type": "Literal['cpu-basic', 'cpu-upgrade', 't4-small', 't4-medium', 'a10g-small', 'a10g-large', 'a10g-largex2', 'a10g-largex4', 'a100-large']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "competition_type",
+          "label": "Competition type",
+          "type": "Literal['generic', 'script']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "time_limit",
+          "label": "Time limit (s). Only used for script competitions",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "metric",
+          "label": "Metric to use",
+          "type": "Literal['accuracy_score', 'f1_score', 'hamming_loss', 'jaccard_score', 'log_loss', 'roc_auc_score', 'mean_squared_error', 'mean_absolute_error', 'r2_score', 'custom']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "metric_higher_is_better",
+          "label": "Is higher metric better?",
+          "type": "Literal['True', 'False']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "submission_limit",
+          "label": "Submission limit per day",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "selection_limit",
+          "label": "Final selection limit",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "end_date",
+          "label": "End date (YYYY-MM-DD)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "submission_id_column",
+          "label": "Submission id column",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "submission_columns",
+          "label": "Submission columns",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "submission_rows",
+          "label": "Submission total rows (exclusing header)",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_28",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/check_if_user_can_create_competition",
+  "_api_verified": true
+}

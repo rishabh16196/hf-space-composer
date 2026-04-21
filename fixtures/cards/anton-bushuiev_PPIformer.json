@@ -1,0 +1,145 @@
+{
+  "space_id": "anton-bushuiev/PPIformer",
+  "title": "PPIformer",
+  "emoji": "\ud83d\udd2c",
+  "description": "PPIformer",
+  "input_schema": {
+    "param_0": {
+      "type": "str",
+      "description": "PDB code",
+      "required": true,
+      "component": "Textbox"
+    },
+    "param_1": {
+      "type": "filepath",
+      "description": "Or .pdb file instead of PDB code (your structure will only be used for this prediction and not stored anywhere)",
+      "required": true,
+      "component": "File"
+    },
+    "param_2": {
+      "type": "str",
+      "description": "Partners",
+      "required": true,
+      "component": "Textbox"
+    },
+    "param_3": {
+      "type": "str",
+      "description": "List of (multi-point) mutations",
+      "required": true,
+      "component": "Textbox"
+    },
+    "param_4": {
+      "type": "filepath",
+      "description": "Or file with mutations",
+      "required": true,
+      "component": "File"
+    }
+  },
+  "output_schema": {
+    "value_21": {
+      "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+      "description": "value_21",
+      "component": "Dataframe"
+    },
+    "Download predictions as .csv": {
+      "type": "filepath",
+      "description": "Download predictions as .csv",
+      "component": "File"
+    },
+    "value_22": {
+      "type": "Literal[]",
+      "description": "value_22",
+      "component": "Dropdown"
+    }
+  },
+  "license": "unknown",
+  "hardware": "",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 6,
+  "last_modified": "2025-12-11 13:49:24+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/partial",
+      "parameters": [
+        {
+          "name": "param_0",
+          "label": "PDB code",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_1",
+          "label": "Or .pdb file instead of PDB code (your structure will only be used for this prediction and not stored anywhere)",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "name": "param_2",
+          "label": "Partners",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_3",
+          "label": "List of (multi-point) mutations",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_4",
+          "label": "Or file with mutations",
+          "type": "filepath",
+          "component": "File"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_21",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "Download predictions as .csv",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "label": "value_22",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/update_plot",
+      "parameters": [
+        {
+          "name": "dropdown",
+          "label": "parameter_22",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_24",
+          "type": "str",
+          "component": "Html"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/partial",
+  "_api_verified": true
+}

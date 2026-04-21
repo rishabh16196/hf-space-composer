@@ -1,0 +1,138 @@
+{
+  "space_id": "agents-course/Unit_3_Agentic_RAG",
+  "title": "AgenticRAG",
+  "emoji": "\ud83c\udf16",
+  "description": "AgenticRAG",
+  "input_schema": {
+    "text_input": {
+      "type": "str",
+      "description": "Chat Message",
+      "required": true,
+      "component": "Textbox"
+    }
+  },
+  "output_schema": {
+    "Chat Message": {
+      "type": "str",
+      "description": "Chat Message",
+      "component": "Textbox"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "5.29.1",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 78,
+  "last_modified": "2025-09-10 18:13:42+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/log_user_message",
+      "parameters": [
+        {
+          "name": "text_input",
+          "label": "Chat Message",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Chat Message",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/interact_with_agent",
+      "parameters": [
+        {
+          "name": "messages",
+          "label": "Agent",
+          "type": "list[dict(role: str, metadata: dict(title: str, id: int | str, parent_id: int | str, log: str, duration: float, status: Literal['pending', 'done']) | None, content: str | dict(file: filepath, alt_text",
+          "component": "Chatbot"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Agent",
+          "type": "list[dict(role: str, metadata: dict(title: str, id: int | str, parent_id: int | str, log: str, duration: float, status: Literal['pending', 'done']) | None, content: str | dict(file: filepath, alt_text",
+          "component": "Chatbot"
+        }
+      ]
+    },
+    {
+      "name": "/lambda",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Chat Message",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/log_user_message_1",
+      "parameters": [
+        {
+          "name": "text_input",
+          "label": "Chat Message",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Chat Message",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/interact_with_agent_1",
+      "parameters": [
+        {
+          "name": "messages",
+          "label": "Agent",
+          "type": "list[dict(role: str, metadata: dict(title: str, id: int | str, parent_id: int | str, log: str, duration: float, status: Literal['pending', 'done']) | None, content: str | dict(file: filepath, alt_text",
+          "component": "Chatbot"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Agent",
+          "type": "list[dict(role: str, metadata: dict(title: str, id: int | str, parent_id: int | str, log: str, duration: float, status: Literal['pending', 'done']) | None, content: str | dict(file: filepath, alt_text",
+          "component": "Chatbot"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_1",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Chat Message",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/log_user_message",
+  "_api_verified": true,
+  "estimated_latency_s": 3.32,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 3.32,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:50:08.254816+00:00"
+}

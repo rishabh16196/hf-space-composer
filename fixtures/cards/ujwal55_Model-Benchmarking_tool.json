@@ -1,0 +1,207 @@
+{
+  "space_id": "ujwal55/Model-Benchmarking_tool",
+  "title": "Model-Benchmarking Tool",
+  "emoji": "\ud83d\udc20",
+  "description": "Model-Benchmarking Tool",
+  "input_schema": {
+    "model_type": {
+      "type": "Literal['transformers', 'gguf']",
+      "description": "Model Type",
+      "required": true,
+      "component": "Dropdown"
+    },
+    "repo_id": {
+      "type": "str",
+      "description": "Repo ID (e.g., TheBloke/Mistral-7B-Instruct-v0.1-GGUF)",
+      "required": true,
+      "component": "Textbox"
+    },
+    "file_name": {
+      "type": "str",
+      "description": "Model File Name (only for GGUF)",
+      "required": true,
+      "component": "Textbox"
+    },
+    "test_prompt": {
+      "type": "str",
+      "description": "Test Prompt",
+      "required": true,
+      "component": "Textbox"
+    },
+    "max_new_tokens": {
+      "type": "float",
+      "description": "Max New Tokens",
+      "required": true,
+      "component": "Slider"
+    },
+    "n_ctx": {
+      "type": "float",
+      "description": "n_ctx (GGUF only)",
+      "required": true,
+      "component": "Slider"
+    },
+    "max_tokens": {
+      "type": "float",
+      "description": "Max Tokens (GGUF only)",
+      "required": true,
+      "component": "Slider"
+    },
+    "temperature": {
+      "type": "float",
+      "description": "Temperature",
+      "required": true,
+      "component": "Slider"
+    },
+    "top_p": {
+      "type": "float",
+      "description": "Top-p",
+      "required": true,
+      "component": "Slider"
+    },
+    "top_k": {
+      "type": "float",
+      "description": "Top-k",
+      "required": true,
+      "component": "Slider"
+    }
+  },
+  "output_schema": {
+    "Model Output": {
+      "type": "str",
+      "description": "Model Output",
+      "component": "Textbox"
+    },
+    "Inference Time": {
+      "type": "str",
+      "description": "Inference Time",
+      "component": "Textbox"
+    },
+    "CPU Usage": {
+      "type": "str",
+      "description": "CPU Usage",
+      "component": "Textbox"
+    },
+    "RAM Usage": {
+      "type": "str",
+      "description": "RAM Usage",
+      "component": "Textbox"
+    },
+    "Disk Usage (downloaded size)": {
+      "type": "str",
+      "description": "Disk Usage (downloaded size)",
+      "component": "Textbox"
+    }
+  },
+  "license": "unknown",
+  "hardware": "5.39.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 2,
+  "last_modified": "2025-07-31 17:52:45+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/predict",
+      "parameters": [
+        {
+          "name": "model_type",
+          "label": "Model Type",
+          "type": "Literal['transformers', 'gguf']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "repo_id",
+          "label": "Repo ID (e.g., TheBloke/Mistral-7B-Instruct-v0.1-GGUF)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "file_name",
+          "label": "Model File Name (only for GGUF)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "test_prompt",
+          "label": "Test Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "max_new_tokens",
+          "label": "Max New Tokens",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "n_ctx",
+          "label": "n_ctx (GGUF only)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "max_tokens",
+          "label": "Max Tokens (GGUF only)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "temperature",
+          "label": "Temperature",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "top_p",
+          "label": "Top-p",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "top_k",
+          "label": "Top-k",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Model Output",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Inference Time",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "CPU Usage",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "RAM Usage",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Disk Usage (downloaded size)",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/predict",
+  "_api_verified": true
+}

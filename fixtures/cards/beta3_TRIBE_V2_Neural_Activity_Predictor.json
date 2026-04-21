@@ -1,0 +1,122 @@
+{
+  "space_id": "beta3/TRIBE_V2_Neural_Activity_Predictor",
+  "title": "TRIBE V2 Neural Activity Predictor",
+  "emoji": "\ud83d\udd25",
+  "description": "Neural activity prediction from multimodal input",
+  "input_schema": {
+    "choice": {
+      "type": "Literal['Video', 'Audio', 'Text']",
+      "description": "Modality",
+      "required": true,
+      "component": "Radio"
+    }
+  },
+  "output_schema": {},
+  "license": "unknown",
+  "hardware": "6.10.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 8,
+  "last_modified": "2026-03-30 01:39:35+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/toggle_inputs",
+      "parameters": [
+        {
+          "name": "choice",
+          "label": "Modality",
+          "type": "Literal['Video', 'Audio', 'Text']",
+          "component": "Radio"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/download_sample_video",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Video file \u2014 mp4, mkv, avi",
+          "type": "filepath",
+          "component": "Video"
+        }
+      ]
+    },
+    {
+      "name": "/run_prediction",
+      "parameters": [
+        {
+          "name": "input_type",
+          "label": "Modality",
+          "type": "Literal['Video', 'Audio', 'Text']",
+          "component": "Radio"
+        },
+        {
+          "name": "video_file",
+          "label": "Video file \u2014 mp4, mkv, avi",
+          "type": "filepath",
+          "component": "Video"
+        },
+        {
+          "name": "audio_file",
+          "label": "Audio file \u2014 wav, mp3, flac",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "name": "text_input",
+          "label": "Text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "n_timesteps",
+          "label": "Timesteps to visualize  (1 TR = 1 s)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "vmin_val",
+          "label": "Activation threshold (vmin)  \u2014  lower = more brain covered",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "show_stimuli",
+          "label": "Overlay stimulus frames (video only)",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_28",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "value_32",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "value_24",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/toggle_inputs",
+  "_api_verified": true
+}

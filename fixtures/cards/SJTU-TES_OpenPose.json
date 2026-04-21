@@ -1,0 +1,86 @@
+{
+  "space_id": "SJTU-TES/OpenPose",
+  "title": "OpenPose",
+  "emoji": "\ud83d\udcc9",
+  "description": "OpenPose",
+  "input_schema": {
+    "test_image": {
+      "type": "filepath",
+      "description": "Upload Image",
+      "required": true,
+      "component": "File"
+    }
+  },
+  "output_schema": {
+    "Estimation Result": {
+      "type": "filepath",
+      "description": "Estimation Result",
+      "component": "Image"
+    },
+    "Download Pose Data as JSON": {
+      "type": "filepath",
+      "description": "Download Pose Data as JSON",
+      "component": "File"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "4.24.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 29,
+  "last_modified": "2024-04-15 07:07:07+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_tags_enriched": true,
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/pose_estimation",
+      "parameters": [
+        {
+          "name": "test_image",
+          "label": "Upload Image",
+          "type": "filepath",
+          "component": "File"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Estimation Result",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "Download Pose Data as JSON",
+          "type": "filepath",
+          "component": "File"
+        }
+      ]
+    },
+    {
+      "name": "/clear_outputs",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Estimation Result",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "Download Pose Data as JSON",
+          "type": "filepath",
+          "component": "File"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/pose_estimation",
+  "_api_verified": true
+}

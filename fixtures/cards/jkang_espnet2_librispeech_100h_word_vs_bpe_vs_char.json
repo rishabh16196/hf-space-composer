@@ -1,0 +1,36 @@
+{
+  "space_id": "jkang/espnet2_librispeech_100h_word_vs_bpe_vs_char",
+  "title": "ESPNet2 ASR Librispeech word vs bpe tokens",
+  "emoji": "\ud83d\udca9",
+  "description": "ESPNet2 ASR Librispeech word vs bpe tokens",
+  "input_schema": {
+    "input": {
+      "type": "string",
+      "description": "Input",
+      "required": true
+    }
+  },
+  "output_schema": {
+    "output": {
+      "type": "string"
+    }
+  },
+  "license": "mit",
+  "hardware": "",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 3,
+  "last_modified": "2022-03-04 06:15:52+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_tags_enriched": true,
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "error",
+  "_api_error": "(Request ID: Root=1-69e77bd9-4eaf3df5436c81636f35e366;05b79e09-c929-4fe4-a3f2-093137dea26b)\n\n429 Too Many Requests: you have reached your 'api' rate limit.\nRetry after 5 seconds (0/2500 requests remai"
+}

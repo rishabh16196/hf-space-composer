@@ -1,0 +1,80 @@
+{
+  "space_id": "kingabzpro/Rick_and_Morty_Bot",
+  "title": "Rick & Morty Bot",
+  "emoji": "\ud83e\udd39\u200d\u2642\ufe0f",
+  "description": "Rick & Morty Bot",
+  "input_schema": {
+    "user_msg": {
+      "type": "str",
+      "description": "parameter_6",
+      "required": true,
+      "component": "Textbox"
+    }
+  },
+  "output_schema": {
+    "value_3": {
+      "type": "tuple[str | dict(file: filepath, alt_text: str | None) | dict(component: str, value: Any, constructo",
+      "description": "value_3",
+      "component": "Chatbot"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "5.34.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 9,
+  "last_modified": "2025-06-17 13:28:36+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/chat",
+      "parameters": [
+        {
+          "name": "user_msg",
+          "label": "parameter_6",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_3",
+          "type": "tuple[str | dict(file: filepath, alt_text: str | None) | dict(component: str, value: Any, constructor_args: dict(str, Any), props: dict(str, Any)) | None, str | dict(file: filepath, alt_text: str | No",
+          "component": "Chatbot"
+        }
+      ]
+    },
+    {
+      "name": "/chat_1",
+      "parameters": [
+        {
+          "name": "user_msg",
+          "label": "parameter_6",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_3",
+          "type": "tuple[str | dict(file: filepath, alt_text: str | None) | dict(component: str, value: Any, constructor_args: dict(str, Any), props: dict(str, Any)) | None, str | dict(file: filepath, alt_text: str | No",
+          "component": "Chatbot"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/chat",
+  "_api_verified": true,
+  "estimated_latency_s": 3.77,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 3.77,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:51:03.404216+00:00"
+}

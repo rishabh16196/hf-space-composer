@@ -1,0 +1,174 @@
+{
+  "space_id": "Heartsync/wan2_2-I2V-14B-FAST",
+  "title": "Wan2.2 14B Fast",
+  "emoji": "\ud83c\udfa5",
+  "description": "Wan_VO- generate a video from an image with a text prompt",
+  "input_schema": {
+    "input_image": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "\uc785\ub825 \uc774\ubbf8\uc9c0",
+      "required": true,
+      "component": "Image"
+    },
+    "prompt": {
+      "type": "str",
+      "description": "\ud504\ub86c\ud504\ud2b8",
+      "required": true,
+      "component": "Textbox"
+    },
+    "steps": {
+      "type": "float",
+      "description": "\uc0dd\uc131 \ub2e8\uacc4",
+      "required": true,
+      "component": "Slider"
+    },
+    "negative_prompt": {
+      "type": "str",
+      "description": "\ub124\uac70\ud2f0\ube0c \ud504\ub86c\ud504\ud2b8",
+      "required": true,
+      "component": "Textbox"
+    },
+    "duration_seconds": {
+      "type": "float",
+      "description": "\uc601\uc0c1 \uae38\uc774 (\ucd08)",
+      "required": true,
+      "component": "Slider"
+    },
+    "guidance_scale": {
+      "type": "float",
+      "description": "\uac00\uc774\ub358\uc2a4 \uc2a4\ucf00\uc77c 1",
+      "required": true,
+      "component": "Slider"
+    },
+    "guidance_scale_2": {
+      "type": "float",
+      "description": "\uac00\uc774\ub358\uc2a4 \uc2a4\ucf00\uc77c 2",
+      "required": true,
+      "component": "Slider"
+    },
+    "seed": {
+      "type": "float",
+      "description": "\uc2dc\ub4dc",
+      "required": true,
+      "component": "Slider"
+    },
+    "randomize_seed": {
+      "type": "bool",
+      "description": "\ub79c\ub364 \uc2dc\ub4dc \uc0ac\uc6a9",
+      "required": true,
+      "component": "Checkbox"
+    }
+  },
+  "output_schema": {
+    "\uc0dd\uc131\ub41c \uc601\uc0c1": {
+      "type": "dict(video: filepath, subtitles: filepath | None)",
+      "description": "\uc0dd\uc131\ub41c \uc601\uc0c1",
+      "component": "Video"
+    },
+    "\uc2dc\ub4dc": {
+      "type": "float",
+      "description": "\uc2dc\ub4dc",
+      "component": "Slider"
+    }
+  },
+  "license": "unknown",
+  "hardware": "5.49.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "mcp-server",
+    "region:us",
+    "text",
+    "video",
+    "video-generation",
+    "vision"
+  ],
+  "likes": 49,
+  "last_modified": "2026-03-07 14:42:28+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/generate_video",
+      "parameters": [
+        {
+          "name": "input_image",
+          "label": "\uc785\ub825 \uc774\ubbf8\uc9c0",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "prompt",
+          "label": "\ud504\ub86c\ud504\ud2b8",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "steps",
+          "label": "\uc0dd\uc131 \ub2e8\uacc4",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "negative_prompt",
+          "label": "\ub124\uac70\ud2f0\ube0c \ud504\ub86c\ud504\ud2b8",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "duration_seconds",
+          "label": "\uc601\uc0c1 \uae38\uc774 (\ucd08)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "guidance_scale",
+          "label": "\uac00\uc774\ub358\uc2a4 \uc2a4\ucf00\uc77c 1",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "guidance_scale_2",
+          "label": "\uac00\uc774\ub358\uc2a4 \uc2a4\ucf00\uc77c 2",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "seed",
+          "label": "\uc2dc\ub4dc",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "randomize_seed",
+          "label": "\ub79c\ub364 \uc2dc\ub4dc \uc0ac\uc6a9",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "\uc0dd\uc131\ub41c \uc601\uc0c1",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        },
+        {
+          "label": "\uc2dc\ub4dc",
+          "type": "float",
+          "component": "Slider"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/generate_video",
+  "_api_verified": true,
+  "estimated_latency_s": 2.79,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "_tags_enriched": true,
+  "measured_latency_s": 2.79,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:49:24.570459+00:00"
+}

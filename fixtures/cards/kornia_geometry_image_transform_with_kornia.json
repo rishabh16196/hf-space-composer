@@ -1,0 +1,95 @@
+{
+  "space_id": "kornia/geometry_image_transform_with_kornia",
+  "title": "Geometry Image Transform With Kornia",
+  "emoji": "\ud83e\ude84",
+  "description": "Geometry Image Transform With Kornia",
+  "input_schema": {
+    "images": {
+      "type": "List[filepath]",
+      "description": "parameter_3",
+      "required": true,
+      "component": "File"
+    },
+    "translation": {
+      "type": "float",
+      "description": "Translation",
+      "required": true,
+      "component": "Number"
+    },
+    "scale": {
+      "type": "float",
+      "description": "Scale",
+      "required": true,
+      "component": "Number"
+    },
+    "angle": {
+      "type": "float",
+      "description": "Angle",
+      "required": true,
+      "component": "Number"
+    }
+  },
+  "output_schema": {
+    "value_10": {
+      "type": "filepath",
+      "description": "value_10",
+      "component": "Image"
+    }
+  },
+  "license": "mit",
+  "hardware": "4.37.2",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 3,
+  "last_modified": "2024-07-09 11:56:18+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/geometry_transform",
+      "parameters": [
+        {
+          "name": "images",
+          "label": "parameter_3",
+          "type": "List[filepath]",
+          "component": "File"
+        },
+        {
+          "name": "translation",
+          "label": "Translation",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "scale",
+          "label": "Scale",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "angle",
+          "label": "Angle",
+          "type": "float",
+          "component": "Number"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_10",
+          "type": "filepath",
+          "component": "Image"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/geometry_transform",
+  "_api_verified": true
+}

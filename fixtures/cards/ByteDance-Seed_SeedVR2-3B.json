@@ -1,0 +1,106 @@
+{
+  "space_id": "ByteDance-Seed/SeedVR2-3B",
+  "title": "SeedVR2-3B",
+  "emoji": "\ud83c\udfa5",
+  "description": "SeedVR2-3B Image & Video API Demo",
+  "input_schema": {
+    "video_path": {
+      "type": "filepath",
+      "description": "Upload image or video",
+      "required": true,
+      "component": "File"
+    },
+    "seed": {
+      "type": "float",
+      "description": "Seeds",
+      "required": true,
+      "component": "Number"
+    },
+    "fps_out": {
+      "type": "float",
+      "description": "fps",
+      "required": true,
+      "component": "Number"
+    }
+  },
+  "output_schema": {
+    "Output_Image": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "Output_Image",
+      "component": "Image"
+    },
+    "Output_Video": {
+      "type": "dict(video: filepath, subtitles: filepath | None)",
+      "description": "Output_Video",
+      "component": "Video"
+    },
+    "Download the output": {
+      "type": "filepath",
+      "description": "Download the output",
+      "component": "File"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "5.29.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 158,
+  "last_modified": "2025-08-27 09:24:43+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/generation_loop",
+      "parameters": [
+        {
+          "name": "video_path",
+          "label": "Upload image or video",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "name": "seed",
+          "label": "Seeds",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "fps_out",
+          "label": "fps",
+          "type": "float",
+          "component": "Number"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output_Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "Output_Video",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        },
+        {
+          "label": "Download the output",
+          "type": "filepath",
+          "component": "File"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/generation_loop",
+  "_api_verified": true,
+  "estimated_latency_s": 2.85,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 2.85,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:49:11.995395+00:00"
+}

@@ -1,0 +1,130 @@
+{
+  "space_id": "yoinked/da_nsfw_checker",
+  "title": "is it nsfw or not",
+  "emoji": "\ud83d\udc40",
+  "description": "is it nsfw or not",
+  "input_schema": {
+    "image": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "Chen Chen",
+      "required": true,
+      "component": "Image"
+    },
+    "model_name": {
+      "type": "Literal['chen-vitv3', 'chen-swinv3', 'chen-vit-largev3', 'chen-evangelion', 'chenkaku-evangelion', '",
+      "description": "Chen",
+      "required": true,
+      "component": "Radio"
+    },
+    "threshold": {
+      "type": "float",
+      "description": "Chen Chen Chen Chen Chen (0.3 Chen Chen Chen `chen-pixai` Chen)",
+      "required": true,
+      "component": "Slider"
+    },
+    "use_spaces": {
+      "type": "bool",
+      "description": "Use DashSpace",
+      "required": true,
+      "component": "Checkbox"
+    },
+    "use_escape": {
+      "type": "bool",
+      "description": "Chen Text Escape",
+      "required": true,
+      "component": "Checkbox"
+    }
+  },
+  "output_schema": {
+    "\u6a59 \u6a59": {
+      "type": "dict(label: str | int | float | None, confidences: list[dict(label: str | int | float | None, confid",
+      "description": "\u6a59 \u6a59",
+      "component": "Label"
+    },
+    "Chen Text": {
+      "type": "str",
+      "description": "Chen Text",
+      "component": "Textbox"
+    },
+    "Chens": {
+      "type": "dict(label: str | int | float | None, confidences: list[dict(label: str | int | float | None, confid",
+      "description": "Chens",
+      "component": "Label"
+    }
+  },
+  "license": "mit",
+  "hardware": "6.0.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 44,
+  "last_modified": "2025-11-22 09:01:20+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/classify",
+      "parameters": [
+        {
+          "name": "image",
+          "label": "Chen Chen",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "model_name",
+          "label": "Chen",
+          "type": "Literal['chen-vitv3', 'chen-swinv3', 'chen-vit-largev3', 'chen-evangelion', 'chenkaku-evangelion', 'chenkaku-swinv2', 'chen-pixai']",
+          "component": "Radio"
+        },
+        {
+          "name": "threshold",
+          "label": "Chen Chen Chen Chen Chen (0.3 Chen Chen Chen `chen-pixai` Chen)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "use_spaces",
+          "label": "Use DashSpace",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "use_escape",
+          "label": "Chen Text Escape",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "\u6a59 \u6a59",
+          "type": "dict(label: str | int | float | None, confidences: list[dict(label: str | int | float | None, confidence: float | None)] | None)",
+          "component": "Label"
+        },
+        {
+          "label": "Chen Text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Chens",
+          "type": "dict(label: str | int | float | None, confidences: list[dict(label: str | int | float | None, confidence: float | None)] | None)",
+          "component": "Label"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/classify",
+  "_api_verified": true,
+  "estimated_latency_s": 4.47,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 4.47,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:52:06.252515+00:00"
+}

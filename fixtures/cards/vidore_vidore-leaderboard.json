@@ -1,0 +1,652 @@
+{
+  "space_id": "vidore/vidore-leaderboard",
+  "title": "Vidore Leaderboard",
+  "emoji": "\ud83e\udd47",
+  "description": "Vidore Leaderboard",
+  "input_schema": {
+    "metric": {
+      "type": "Literal['ndcg_at_1', 'ndcg_at_5', 'ndcg_at_10', 'ndcg_at_100', 'recall_at_1', 'recall_at_5', 'recall",
+      "description": "Select Metric",
+      "required": true,
+      "component": "Dropdown"
+    }
+  },
+  "output_schema": {
+    "value_20": {
+      "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+      "description": "value_20",
+      "component": "Dataframe"
+    }
+  },
+  "license": "mit",
+  "hardware": "6.3.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us",
+    "benchmark",
+    "leaderboard"
+  ],
+  "likes": 205,
+  "last_modified": "2026-02-27 17:39:49+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/lambda",
+      "parameters": [
+        {
+          "name": "metric",
+          "label": "Select Metric",
+          "type": "Literal['ndcg_at_1', 'ndcg_at_5', 'ndcg_at_10', 'ndcg_at_100', 'recall_at_1', 'recall_at_5', 'recall_at_10', 'recall_at_100']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_20",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/create_pipeline_plot",
+      "parameters": [
+        {
+          "name": "df",
+          "label": "parameter_20",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "name": "latency_col",
+          "label": "Select Latency Metric for X-Axis",
+          "type": "Literal['Search latency (s/query)', 'Indexing latency (s/doc)']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_25",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        }
+      ]
+    },
+    {
+      "name": "/refresh_pipeline_data",
+      "parameters": [
+        {
+          "name": "metric",
+          "label": "Select Metric",
+          "type": "Literal['ndcg_at_1', 'ndcg_at_5', 'ndcg_at_10', 'ndcg_at_100', 'recall_at_1', 'recall_at_5', 'recall_at_10', 'recall_at_100']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_20",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/create_pipeline_plot_1",
+      "parameters": [
+        {
+          "name": "df",
+          "label": "parameter_20",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "name": "latency_col",
+          "label": "Select Latency Metric for X-Axis",
+          "type": "Literal['Search latency (s/query)', 'Indexing latency (s/doc)']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_25",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_1",
+      "parameters": [
+        {
+          "name": "metric",
+          "label": "Select Metric",
+          "type": "Literal['ndcg_at_1', 'ndcg_at_5', 'ndcg_at_10', 'ndcg_at_100', 'recall_at_1', 'recall_at_5', 'recall_at_10', 'recall_at_100']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "search_term",
+          "label": "Filter Pipelines by Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "selected_columns",
+          "label": "Select Datasets to Display",
+          "type": "list[Literal['Computer Science', 'Energy', 'Finance En', 'Finance Fr', 'Hr', 'Industrial', 'Pharmaceuticals', 'Physics']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_20",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/create_pipeline_plot_2",
+      "parameters": [
+        {
+          "name": "df",
+          "label": "parameter_20",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "name": "latency_col",
+          "label": "Select Latency Metric for X-Axis",
+          "type": "Literal['Search latency (s/query)', 'Indexing latency (s/doc)']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_25",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_2",
+      "parameters": [
+        {
+          "name": "metric",
+          "label": "Select Metric",
+          "type": "Literal['ndcg_at_1', 'ndcg_at_5', 'ndcg_at_10', 'ndcg_at_100', 'recall_at_1', 'recall_at_5', 'recall_at_10', 'recall_at_100']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "search_term",
+          "label": "Filter Pipelines by Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "selected_columns",
+          "label": "Select Datasets to Display",
+          "type": "list[Literal['Computer Science', 'Energy', 'Finance En', 'Finance Fr', 'Hr', 'Industrial', 'Pharmaceuticals', 'Physics']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_20",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/create_pipeline_plot_3",
+      "parameters": [
+        {
+          "name": "df",
+          "label": "parameter_20",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "name": "latency_col",
+          "label": "Select Latency Metric for X-Axis",
+          "type": "Literal['Search latency (s/query)', 'Indexing latency (s/doc)']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_25",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        }
+      ]
+    },
+    {
+      "name": "/create_pipeline_plot_4",
+      "parameters": [
+        {
+          "name": "df",
+          "label": "parameter_20",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "name": "latency_col",
+          "label": "Select Latency Metric for X-Axis",
+          "type": "Literal['Search latency (s/query)', 'Indexing latency (s/doc)']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_25",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        }
+      ]
+    },
+    {
+      "name": "/_refresh",
+      "parameters": [
+        {
+          "name": "metric",
+          "label": "Select Metric",
+          "type": "Literal['ndcg_at_1', 'ndcg_at_5', 'ndcg_at_10', 'ndcg_at_100', 'recall_at_1', 'recall_at_5', 'recall_at_10', 'recall_at_100']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_41",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/_refresh_1",
+      "parameters": [
+        {
+          "name": "metric",
+          "label": "Select Metric",
+          "type": "Literal['ndcg_at_1', 'ndcg_at_5', 'ndcg_at_10', 'ndcg_at_100', 'recall_at_1', 'recall_at_5', 'recall_at_10', 'recall_at_100']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_41",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_3",
+      "parameters": [
+        {
+          "name": "metric",
+          "label": "Select Metric",
+          "type": "Literal['ndcg_at_1', 'ndcg_at_5', 'ndcg_at_10', 'ndcg_at_100', 'recall_at_1', 'recall_at_5', 'recall_at_10', 'recall_at_100']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "search_term",
+          "label": "Filter Models by Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "selected_columns",
+          "label": "Select Columns to Display",
+          "type": "list[Literal[]]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_41",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_4",
+      "parameters": [
+        {
+          "name": "metric",
+          "label": "Select Metric",
+          "type": "Literal['ndcg_at_1', 'ndcg_at_5', 'ndcg_at_10', 'ndcg_at_100', 'recall_at_1', 'recall_at_5', 'recall_at_10', 'recall_at_100']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "search_term",
+          "label": "Filter Models by Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "selected_columns",
+          "label": "Select Columns to Display",
+          "type": "list[Literal[]]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_41",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/_refresh_2",
+      "parameters": [
+        {
+          "name": "metric",
+          "label": "Select Metric",
+          "type": "Literal['ndcg_at_1', 'ndcg_at_5', 'ndcg_at_10', 'ndcg_at_100', 'recall_at_1', 'recall_at_5', 'recall_at_10', 'recall_at_100']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_57",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/_refresh_3",
+      "parameters": [
+        {
+          "name": "metric",
+          "label": "Select Metric",
+          "type": "Literal['ndcg_at_1', 'ndcg_at_5', 'ndcg_at_10', 'ndcg_at_100', 'recall_at_1', 'recall_at_5', 'recall_at_10', 'recall_at_100']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_57",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_5",
+      "parameters": [
+        {
+          "name": "metric",
+          "label": "Select Metric",
+          "type": "Literal['ndcg_at_1', 'ndcg_at_5', 'ndcg_at_10', 'ndcg_at_100', 'recall_at_1', 'recall_at_5', 'recall_at_10', 'recall_at_100']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "search_term",
+          "label": "Filter Models by Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "selected_columns",
+          "label": "Select Columns to Display",
+          "type": "list[Literal[]]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_57",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_6",
+      "parameters": [
+        {
+          "name": "metric",
+          "label": "Select Metric",
+          "type": "Literal['ndcg_at_1', 'ndcg_at_5', 'ndcg_at_10', 'ndcg_at_100', 'recall_at_1', 'recall_at_5', 'recall_at_10', 'recall_at_100']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "search_term",
+          "label": "Filter Models by Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "selected_columns",
+          "label": "Select Columns to Display",
+          "type": "list[Literal[]]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_57",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/_refresh_4",
+      "parameters": [
+        {
+          "name": "metric",
+          "label": "Select Metric",
+          "type": "Literal['ndcg_at_1', 'ndcg_at_5', 'ndcg_at_10', 'ndcg_at_100', 'recall_at_1', 'recall_at_5', 'recall_at_10', 'recall_at_100']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_76",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/_refresh_5",
+      "parameters": [
+        {
+          "name": "metric",
+          "label": "Select Metric",
+          "type": "Literal['ndcg_at_1', 'ndcg_at_5', 'ndcg_at_10', 'ndcg_at_100', 'recall_at_1', 'recall_at_5', 'recall_at_10', 'recall_at_100']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_76",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_7",
+      "parameters": [
+        {
+          "name": "metric",
+          "label": "Select Metric",
+          "type": "Literal['ndcg_at_1', 'ndcg_at_5', 'ndcg_at_10', 'ndcg_at_100', 'recall_at_1', 'recall_at_5', 'recall_at_10', 'recall_at_100']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "search_term",
+          "label": "Filter Models by Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "selected_columns",
+          "label": "Select Columns to Display",
+          "type": "list[Literal['ArxivQA', 'DocVQA', 'InfoVQA', 'TabFQuad', 'TAT-DQA', 'Shift Project', 'Artificial Intelligence', 'Energy', 'Government Reports', 'Healthcare Industry']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_76",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_8",
+      "parameters": [
+        {
+          "name": "metric",
+          "label": "Select Metric",
+          "type": "Literal['ndcg_at_1', 'ndcg_at_5', 'ndcg_at_10', 'ndcg_at_100', 'recall_at_1', 'recall_at_5', 'recall_at_10', 'recall_at_100']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "search_term",
+          "label": "Filter Models by Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "selected_columns",
+          "label": "Select Columns to Display",
+          "type": "list[Literal['ArxivQA', 'DocVQA', 'InfoVQA', 'TabFQuad', 'TAT-DQA', 'Shift Project', 'Artificial Intelligence', 'Energy', 'Government Reports', 'Healthcare Industry']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_76",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/_refresh_6",
+      "parameters": [
+        {
+          "name": "metric",
+          "label": "Select Metric",
+          "type": "Literal['ndcg_at_1', 'ndcg_at_5', 'ndcg_at_10', 'ndcg_at_100', 'recall_at_1', 'recall_at_5', 'recall_at_10', 'recall_at_100']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_92",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/_refresh_7",
+      "parameters": [
+        {
+          "name": "metric",
+          "label": "Select Metric",
+          "type": "Literal['ndcg_at_1', 'ndcg_at_5', 'ndcg_at_10', 'ndcg_at_100', 'recall_at_1', 'recall_at_5', 'recall_at_10', 'recall_at_100']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_92",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_9",
+      "parameters": [
+        {
+          "name": "metric",
+          "label": "Select Metric",
+          "type": "Literal['ndcg_at_1', 'ndcg_at_5', 'ndcg_at_10', 'ndcg_at_100', 'recall_at_1', 'recall_at_5', 'recall_at_10', 'recall_at_100']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "search_term",
+          "label": "Filter Models by Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "selected_columns",
+          "label": "Select Columns to Display",
+          "type": "list[Literal['MIT Biomedical', 'Economics Macro', 'ESG Restaurant Synthetic', 'ESG Restaurant Synthetic Multilingual', 'MIT Biomedical Multilingual', 'Economics Macro Multilingual', 'ESG Restaurant Hu",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_92",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_10",
+      "parameters": [
+        {
+          "name": "metric",
+          "label": "Select Metric",
+          "type": "Literal['ndcg_at_1', 'ndcg_at_5', 'ndcg_at_10', 'ndcg_at_100', 'recall_at_1', 'recall_at_5', 'recall_at_10', 'recall_at_100']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "search_term",
+          "label": "Filter Models by Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "selected_columns",
+          "label": "Select Columns to Display",
+          "type": "list[Literal['MIT Biomedical', 'Economics Macro', 'ESG Restaurant Synthetic', 'ESG Restaurant Synthetic Multilingual', 'MIT Biomedical Multilingual', 'Economics Macro Multilingual', 'ESG Restaurant Hu",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_92",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/select_tab_from_url",
+      "parameters": [],
+      "returns": []
+    }
+  ],
+  "endpoint": "/lambda",
+  "_api_verified": true,
+  "estimated_latency_s": 5.16,
+  "speed_tier": "medium",
+  "_latency_source": "measured",
+  "_tags_enriched": true,
+  "measured_latency_s": 5.16,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:52:02.941659+00:00"
+}

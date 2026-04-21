@@ -1,0 +1,168 @@
+{
+  "space_id": "linoyts/Qwen-Image-Edit-Inpaint",
+  "title": "Qwen Image Edit Inpaint",
+  "emoji": "\u2712\ufe0f",
+  "description": "inapint with Qwen Image Edit for super precise edits",
+  "input_schema": {
+    "edit_images": {
+      "type": "dict(background: filepath | None, layers: list[filepath], composite: filepath | None, id: str | None",
+      "description": "Upload and draw mask for inpainting",
+      "required": true,
+      "component": "Imageeditor"
+    },
+    "prompt": {
+      "type": "str",
+      "description": "Prompt",
+      "required": true,
+      "component": "Textbox"
+    },
+    "negative_prompt": {
+      "type": "str",
+      "description": "Negative Prompt",
+      "required": true,
+      "component": "Textbox"
+    },
+    "seed": {
+      "type": "float",
+      "description": "Seed",
+      "required": true,
+      "component": "Slider"
+    },
+    "randomize_seed": {
+      "type": "bool",
+      "description": "Randomize seed",
+      "required": true,
+      "component": "Checkbox"
+    },
+    "strength": {
+      "type": "float",
+      "description": "Strength",
+      "required": true,
+      "component": "Slider"
+    },
+    "num_inference_steps": {
+      "type": "float",
+      "description": "Number of inference steps",
+      "required": true,
+      "component": "Slider"
+    },
+    "true_cfg_scale": {
+      "type": "float",
+      "description": "True CFG Scale",
+      "required": true,
+      "component": "Slider"
+    },
+    "rewrite_prompt": {
+      "type": "bool",
+      "description": "Enhance prompt (using HF Inference)",
+      "required": true,
+      "component": "Checkbox"
+    }
+  },
+  "output_schema": {
+    "Result": {
+      "type": "tuple[dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base6",
+      "description": "Result",
+      "component": "Imageslider"
+    },
+    "Seed": {
+      "type": "float",
+      "description": "Seed",
+      "component": "Slider"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "5.44.1",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us",
+    "image-generation",
+    "vision"
+  ],
+  "likes": 108,
+  "last_modified": "2025-09-23 19:29:09+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_tags_enriched": true,
+  "estimated_latency_s": 30.0,
+  "speed_tier": "slow",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/infer",
+      "parameters": [
+        {
+          "name": "edit_images",
+          "label": "Upload and draw mask for inpainting",
+          "type": "dict(background: filepath | None, layers: list[filepath], composite: filepath | None, id: str | None)",
+          "component": "Imageeditor"
+        },
+        {
+          "name": "prompt",
+          "label": "Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "negative_prompt",
+          "label": "Negative Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "seed",
+          "label": "Seed",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "randomize_seed",
+          "label": "Randomize seed",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "strength",
+          "label": "Strength",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "num_inference_steps",
+          "label": "Number of inference steps",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "true_cfg_scale",
+          "label": "True CFG Scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "rewrite_prompt",
+          "label": "Enhance prompt (using HF Inference)",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Result",
+          "type": "tuple[dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filenam",
+          "component": "Imageslider"
+        },
+        {
+          "label": "Seed",
+          "type": "float",
+          "component": "Slider"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/infer",
+  "_api_verified": true
+}

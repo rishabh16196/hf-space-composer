@@ -1,0 +1,84 @@
+{
+  "space_id": "Nephele/Audio_Denoiser",
+  "title": "Audio Denoiser",
+  "emoji": "\ud83c\udf16",
+  "description": "Audio Denoiser",
+  "input_schema": {
+    "Upload Audio": {
+      "type": "filepath",
+      "description": "Upload Audio",
+      "required": true,
+      "component": "Audio"
+    },
+    "Auto Scale": {
+      "type": "bool",
+      "description": "Auto Scale",
+      "required": true,
+      "component": "Checkbox"
+    }
+  },
+  "output_schema": {
+    "Denoised Audio": {
+      "type": "filepath",
+      "description": "Denoised Audio",
+      "component": "Audio"
+    },
+    "info": {
+      "type": "str",
+      "description": "info",
+      "component": "Textbox"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "4.19.1",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 21,
+  "last_modified": "2024-02-20 04:41:12+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/denoiser",
+      "parameters": [
+        {
+          "name": "Upload Audio",
+          "label": "Upload Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "name": "Auto Scale",
+          "label": "Auto Scale",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Denoised Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "info",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/denoiser",
+  "_api_verified": true,
+  "estimated_latency_s": 2.86,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 2.86,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:49:40.038604+00:00"
+}

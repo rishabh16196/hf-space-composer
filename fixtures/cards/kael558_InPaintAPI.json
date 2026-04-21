@@ -1,0 +1,36 @@
+{
+  "space_id": "kael558/InPaintAPI",
+  "title": "InPaintAPI",
+  "emoji": "\ud83d\udc28",
+  "description": "InPaintAPI",
+  "input_schema": {
+    "input": {
+      "type": "string",
+      "description": "Input",
+      "required": true
+    }
+  },
+  "output_schema": {
+    "output": {
+      "type": "string"
+    }
+  },
+  "license": "openrail",
+  "hardware": "3.15.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 4,
+  "last_modified": "2023-11-10 20:07:06+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_tags_enriched": true,
+  "estimated_latency_s": 30.0,
+  "speed_tier": "slow",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "error",
+  "_api_error": "(Request ID: Root=1-69e77bd5-6a515a0a507cbac15b294968;f1c28b2e-9289-42c3-95d6-83da44e03d2e)\n\n429 Too Many Requests: you have reached your 'api' rate limit.\nRetry after 9 seconds (0/2500 requests remai"
+}

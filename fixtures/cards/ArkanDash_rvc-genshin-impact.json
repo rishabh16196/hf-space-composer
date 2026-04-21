@@ -1,0 +1,6444 @@
+{
+  "space_id": "ArkanDash/rvc-genshin-impact",
+  "title": "RVC Genshin Impact",
+  "emoji": "\ud83c\udfa4",
+  "description": "RVC Genshin Impact",
+  "input_schema": {
+    "Input voice": {
+      "type": "Literal['Upload audio', 'TTS Audio']",
+      "description": "Input voice",
+      "required": true,
+      "component": "Dropdown"
+    },
+    "Input audio path": {
+      "type": "str",
+      "description": "Input audio path",
+      "required": true,
+      "component": "Textbox"
+    },
+    "Upload audio file": {
+      "type": "filepath",
+      "description": "Upload audio file",
+      "required": true,
+      "component": "Audio"
+    },
+    "TTS text": {
+      "type": "str",
+      "description": "TTS text",
+      "required": true,
+      "component": "Textbox"
+    },
+    "Edge-tts speaker": {
+      "type": "Literal['af-ZA-AdriNeural-Female', 'af-ZA-WillemNeural-Male', 'sq-AL-AnilaNeural-Female', 'sq-AL-Ili",
+      "description": "Edge-tts speaker",
+      "required": true,
+      "component": "Dropdown"
+    },
+    "Transpose": {
+      "type": "float",
+      "description": "Transpose",
+      "required": true,
+      "component": "Number"
+    },
+    "Pitch extraction algorithm": {
+      "type": "Literal['pm', 'harvest']",
+      "description": "Pitch extraction algorithm",
+      "required": true,
+      "component": "Radio"
+    },
+    "Retrieval feature ratio": {
+      "type": "float",
+      "description": "Retrieval feature ratio",
+      "required": true,
+      "component": "Slider"
+    },
+    "Apply Median Filtering": {
+      "type": "float",
+      "description": "Apply Median Filtering",
+      "required": true,
+      "component": "Slider"
+    },
+    "Resample the output audio": {
+      "type": "float",
+      "description": "Resample the output audio",
+      "required": true,
+      "component": "Slider"
+    },
+    "Volume Envelope": {
+      "type": "float",
+      "description": "Volume Envelope",
+      "required": true,
+      "component": "Slider"
+    },
+    "Voice Protection": {
+      "type": "float",
+      "description": "Voice Protection",
+      "required": true,
+      "component": "Slider"
+    }
+  },
+  "output_schema": {
+    "Output Information": {
+      "type": "str",
+      "description": "Output Information",
+      "component": "Textbox"
+    },
+    "Output Audio": {
+      "type": "filepath",
+      "description": "Output Audio",
+      "component": "Audio"
+    }
+  },
+  "license": "mit",
+  "hardware": "4.19.2",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 436,
+  "last_modified": "2024-03-03 03:32:15+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/vc_fn",
+      "parameters": [
+        {
+          "name": "Input voice",
+          "label": "Input voice",
+          "type": "Literal['Upload audio', 'TTS Audio']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "Input audio path",
+          "label": "Input audio path",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "Upload audio file",
+          "label": "Upload audio file",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "name": "TTS text",
+          "label": "TTS text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "Edge-tts speaker",
+          "label": "Edge-tts speaker",
+          "type": "Literal['af-ZA-AdriNeural-Female', 'af-ZA-WillemNeural-Male', 'sq-AL-AnilaNeural-Female', 'sq-AL-IlirNeural-Male', 'am-ET-AmehaNeural-Male', 'am-ET-MekdesNeural-Female', 'ar-DZ-AminaNeural-Female', 'a",
+          "component": "Dropdown"
+        },
+        {
+          "name": "Transpose",
+          "label": "Transpose",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "Pitch extraction algorithm",
+          "label": "Pitch extraction algorithm",
+          "type": "Literal['pm', 'harvest']",
+          "component": "Radio"
+        },
+        {
+          "name": "Retrieval feature ratio",
+          "label": "Retrieval feature ratio",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "Apply Median Filtering",
+          "label": "Apply Median Filtering",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "Resample the output audio",
+          "label": "Resample the output audio",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "Volume Envelope",
+          "label": "Volume Envelope",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "Voice Protection",
+          "label": "Voice Protection",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output Information",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Output Audio",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ]
+    },
+    {
+      "name": "/download_audio",
+      "parameters": [
+        {
+          "name": "Youtube URL",
+          "label": "Youtube URL",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "Provider",
+          "label": "Provider",
+          "type": "Literal['Youtube']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Audio Preview",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Output Information",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/cut_vocal_and_inst",
+      "parameters": [
+        {
+          "name": "Splitter Model",
+          "label": "Splitter Model",
+          "type": "Literal['hdemucs_mmi', 'htdemucs', 'htdemucs_ft', 'mdx', 'mdx_q', 'mdx_extra_q']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output Information",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Vocal Preview",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Instrumental Preview",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Input audio path",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/combine_vocal_and_inst",
+      "parameters": [
+        {
+          "name": "Output Audio",
+          "label": "Output Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "name": "Vocal volume",
+          "label": "Vocal volume",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "Instrument volume",
+          "label": "Instrument volume",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "Splitter Model",
+          "label": "Splitter Model",
+          "type": "Literal['hdemucs_mmi', 'htdemucs', 'htdemucs_ft', 'mdx', 'mdx_q', 'mdx_extra_q']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output Combined Audio",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ]
+    },
+    {
+      "name": "/change_audio_mode",
+      "parameters": [
+        {
+          "name": "Input voice",
+          "label": "Input voice",
+          "type": "Literal['Upload audio', 'TTS Audio']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Input audio path",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Upload audio file",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Provider",
+          "type": "Literal['Youtube']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Youtube URL",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Output Information",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Splitter Model",
+          "type": "Literal['hdemucs_mmi', 'htdemucs', 'htdemucs_ft', 'mdx', 'mdx_q', 'mdx_extra_q']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Output Information",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Audio Preview",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Vocal Preview",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Instrumental Preview",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Vocal volume",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Instrument volume",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Output Combined Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "TTS text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Edge-tts speaker",
+          "type": "Literal['af-ZA-AdriNeural-Female', 'af-ZA-WillemNeural-Male', 'sq-AL-AnilaNeural-Female', 'sq-AL-IlirNeural-Male', 'am-ET-AmehaNeural-Male', 'am-ET-MekdesNeural-Female', 'ar-DZ-AminaNeural-Female', 'a",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/vc_fn_1",
+      "parameters": [
+        {
+          "name": "Input voice",
+          "label": "Input voice",
+          "type": "Literal['Upload audio', 'TTS Audio']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "Input audio path",
+          "label": "Input audio path",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "Upload audio file",
+          "label": "Upload audio file",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "name": "TTS text",
+          "label": "TTS text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "Edge-tts speaker",
+          "label": "Edge-tts speaker",
+          "type": "Literal['af-ZA-AdriNeural-Female', 'af-ZA-WillemNeural-Male', 'sq-AL-AnilaNeural-Female', 'sq-AL-IlirNeural-Male', 'am-ET-AmehaNeural-Male', 'am-ET-MekdesNeural-Female', 'ar-DZ-AminaNeural-Female', 'a",
+          "component": "Dropdown"
+        },
+        {
+          "name": "Transpose",
+          "label": "Transpose",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "Pitch extraction algorithm",
+          "label": "Pitch extraction algorithm",
+          "type": "Literal['pm', 'harvest']",
+          "component": "Radio"
+        },
+        {
+          "name": "Retrieval feature ratio",
+          "label": "Retrieval feature ratio",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "Apply Median Filtering",
+          "label": "Apply Median Filtering",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "Resample the output audio",
+          "label": "Resample the output audio",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "Volume Envelope",
+          "label": "Volume Envelope",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "Voice Protection",
+          "label": "Voice Protection",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output Information",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Output Audio",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ]
+    },
+    {
+      "name": "/download_audio_1",
+      "parameters": [
+        {
+          "name": "Youtube URL",
+          "label": "Youtube URL",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "Provider",
+          "label": "Provider",
+          "type": "Literal['Youtube']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Audio Preview",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Output Information",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/cut_vocal_and_inst_1",
+      "parameters": [
+        {
+          "name": "Splitter Model",
+          "label": "Splitter Model",
+          "type": "Literal['hdemucs_mmi', 'htdemucs', 'htdemucs_ft', 'mdx', 'mdx_q', 'mdx_extra_q']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output Information",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Vocal Preview",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Instrumental Preview",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Input audio path",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/combine_vocal_and_inst_1",
+      "parameters": [
+        {
+          "name": "Output Audio",
+          "label": "Output Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "name": "Vocal volume",
+          "label": "Vocal volume",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "Instrument volume",
+          "label": "Instrument volume",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "Splitter Model",
+          "label": "Splitter Model",
+          "type": "Literal['hdemucs_mmi', 'htdemucs', 'htdemucs_ft', 'mdx', 'mdx_q', 'mdx_extra_q']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output Combined Audio",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ]
+    },
+    {
+      "name": "/change_audio_mode_1",
+      "parameters": [
+        {
+          "name": "Input voice",
+          "label": "Input voice",
+          "type": "Literal['Upload audio', 'TTS Audio']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Input audio path",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Upload audio file",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Provider",
+          "type": "Literal['Youtube']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Youtube URL",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Output Information",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Splitter Model",
+          "type": "Literal['hdemucs_mmi', 'htdemucs', 'htdemucs_ft', 'mdx', 'mdx_q', 'mdx_extra_q']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Output Information",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Audio Preview",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Vocal Preview",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Instrumental Preview",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Vocal volume",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Instrument volume",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Output Combined Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "TTS text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Edge-tts speaker",
+          "type": "Literal['af-ZA-AdriNeural-Female', 'af-ZA-WillemNeural-Male', 'sq-AL-AnilaNeural-Female', 'sq-AL-IlirNeural-Male', 'am-ET-AmehaNeural-Male', 'am-ET-MekdesNeural-Female', 'ar-DZ-AminaNeural-Female', 'a",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/vc_fn_2",
+      "parameters": [
+        {
+          "name": "Input voice",
+          "label": "Input voice",
+          "type": "Literal['Upload audio', 'TTS Audio']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "Input audio path",
+          "label": "Input audio path",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "Upload audio file",
+          "label": "Upload audio file",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "name": "TTS text",
+          "label": "TTS text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "Edge-tts speaker",
+          "label": "Edge-tts speaker",
+          "type": "Literal['af-ZA-AdriNeural-Female', 'af-ZA-WillemNeural-Male', 'sq-AL-AnilaNeural-Female', 'sq-AL-IlirNeural-Male', 'am-ET-AmehaNeural-Male', 'am-ET-MekdesNeural-Female', 'ar-DZ-AminaNeural-Female', 'a",
+          "component": "Dropdown"
+        },
+        {
+          "name": "Transpose",
+          "label": "Transpose",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "Pitch extraction algorithm",
+          "label": "Pitch extraction algorithm",
+          "type": "Literal['pm', 'harvest']",
+          "component": "Radio"
+        },
+        {
+          "name": "Retrieval feature ratio",
+          "label": "Retrieval feature ratio",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "Apply Median Filtering",
+          "label": "Apply Median Filtering",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "Resample the output audio",
+          "label": "Resample the output audio",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "Volume Envelope",
+          "label": "Volume Envelope",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "Voice Protection",
+          "label": "Voice Protection",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output Information",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Output Audio",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ]
+    },
+    {
+      "name": "/download_audio_2",
+      "parameters": [
+        {
+          "name": "Youtube URL",
+          "label": "Youtube URL",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "Provider",
+          "label": "Provider",
+          "type": "Literal['Youtube']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Audio Preview",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Output Information",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/cut_vocal_and_inst_2",
+      "parameters": [
+        {
+          "name": "Splitter Model",
+          "label": "Splitter Model",
+          "type": "Literal['hdemucs_mmi', 'htdemucs', 'htdemucs_ft', 'mdx', 'mdx_q', 'mdx_extra_q']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output Information",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Vocal Preview",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Instrumental Preview",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Input audio path",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/combine_vocal_and_inst_2",
+      "parameters": [
+        {
+          "name": "Output Audio",
+          "label": "Output Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "name": "Vocal volume",
+          "label": "Vocal volume",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "Instrument volume",
+          "label": "Instrument volume",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "Splitter Model",
+          "label": "Splitter Model",
+          "type": "Literal['hdemucs_mmi', 'htdemucs', 'htdemucs_ft', 'mdx', 'mdx_q', 'mdx_extra_q']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output Combined Audio",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ]
+    },
+    {
+      "name": "/change_audio_mode_2",
+      "parameters": [
+        {
+          "name": "Input voice",
+          "label": "Input voice",
+          "type": "Literal['Upload audio', 'TTS Audio']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Input audio path",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Upload audio file",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Provider",
+          "type": "Literal['Youtube']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Youtube URL",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Output Information",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Splitter Model",
+          "type": "Literal['hdemucs_mmi', 'htdemucs', 'htdemucs_ft', 'mdx', 'mdx_q', 'mdx_extra_q']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Output Information",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Audio Preview",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Vocal Preview",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Instrumental Preview",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Vocal volume",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Instrument volume",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Output Combined Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "TTS text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Edge-tts speaker",
+          "type": "Literal['af-ZA-AdriNeural-Female', 'af-ZA-WillemNeural-Male', 'sq-AL-AnilaNeural-Female', 'sq-AL-IlirNeural-Male', 'am-ET-AmehaNeural-Male', 'am-ET-MekdesNeural-Female', 'ar-DZ-AminaNeural-Female', 'a",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/vc_fn_3",
+      "parameters": [
+        {
+          "name": "Input voice",
+          "label": "Input voice",
+          "type": "Literal['Upload audio', 'TTS Audio']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "Input audio path",
+          "label": "Input audio path",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "Upload audio file",
+          "label": "Upload audio file",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "name": "TTS text",
+          "label": "TTS text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "Edge-tts speaker",
+          "label": "Edge-tts speaker",
+          "type": "Literal['af-ZA-AdriNeural-Female', 'af-ZA-WillemNeural-Male', 'sq-AL-AnilaNeural-Female', 'sq-AL-IlirNeural-Male', 'am-ET-AmehaNeural-Male', 'am-ET-MekdesNeural-Female', 'ar-DZ-AminaNeural-Female', 'a",
+          "component": "Dropdown"
+        },
+        {
+          "name": "Transpose",
+          "label": "Transpose",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "Pitch extraction algorithm",
+          "label": "Pitch extraction algorithm",
+          "type": "Literal['pm', 'harvest']",
+          "component": "Radio"
+        },
+        {
+          "name": "Retrieval feature ratio",
+          "label": "Retrieval feature ratio",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "Apply Median Filtering",
+          "label": "Apply Median Filtering",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "Resample the output audio",
+          "label": "Resample the output audio",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "Volume Envelope",
+          "label": "Volume Envelope",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "Voice Protection",
+          "label": "Voice Protection",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output Information",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Output Audio",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ]
+    },
+    {
+      "name": "/download_audio_3",
+      "parameters": [
+        {
+          "name": "Youtube URL",
+          "label": "Youtube URL",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "Provider",
+          "label": "Provider",
+          "type": "Literal['Youtube']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Audio Preview",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Output Information",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/cut_vocal_and_inst_3",
+      "parameters": [
+        {
+          "name": "Splitter Model",
+          "label": "Splitter Model",
+          "type": "Literal['hdemucs_mmi', 'htdemucs', 'htdemucs_ft', 'mdx', 'mdx_q', 'mdx_extra_q']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output Information",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Vocal Preview",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Instrumental Preview",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Input audio path",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/combine_vocal_and_inst_3",
+      "parameters": [
+        {
+          "name": "Output Audio",
+          "label": "Output Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "name": "Vocal volume",
+          "label": "Vocal volume",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "Instrument volume",
+          "label": "Instrument volume",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "Splitter Model",
+          "label": "Splitter Model",
+          "type": "Literal['hdemucs_mmi', 'htdemucs', 'htdemucs_ft', 'mdx', 'mdx_q', 'mdx_extra_q']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output Combined Audio",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ]
+    },
+    {
+      "name": "/change_audio_mode_3",
+      "parameters": [
+        {
+          "name": "Input voice",
+          "label": "Input voice",
+          "type": "Literal['Upload audio', 'TTS Audio']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Input audio path",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Upload audio file",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Provider",
+          "type": "Literal['Youtube']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Youtube URL",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Output Information",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Splitter Model",
+          "type": "Literal['hdemucs_mmi', 'htdemucs', 'htdemucs_ft', 'mdx', 'mdx_q', 'mdx_extra_q']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Output Information",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Audio Preview",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Vocal Preview",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Instrumental Preview",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Vocal volume",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Instrument volume",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Output Combined Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "TTS text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Edge-tts speaker",
+          "type": "Literal['af-ZA-AdriNeural-Female', 'af-ZA-WillemNeural-Male', 'sq-AL-AnilaNeural-Female', 'sq-AL-IlirNeural-Male', 'am-ET-AmehaNeural-Male', 'am-ET-MekdesNeural-Female', 'ar-DZ-AminaNeural-Female', 'a",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/vc_fn_4",
+      "parameters": [
+        {
+          "name": "Input voice",
+          "label": "Input voice",
+          "type": "Literal['Upload audio', 'TTS Audio']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "Input audio path",
+          "label": "Input audio path",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "Upload audio file",
+          "label": "Upload audio file",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "name": "TTS text",
+          "label": "TTS text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "Edge-tts speaker",
+          "label": "Edge-tts speaker",
+          "type": "Literal['af-ZA-AdriNeural-Female', 'af-ZA-WillemNeural-Male', 'sq-AL-AnilaNeural-Female', 'sq-AL-IlirNeural-Male', 'am-ET-AmehaNeural-Male', 'am-ET-MekdesNeural-Female', 'ar-DZ-AminaNeural-Female', 'a",
+          "component": "Dropdown"
+        },
+        {
+          "name": "Transpose",
+          "label": "Transpose",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "Pitch extraction algorithm",
+          "label": "Pitch extraction algorithm",
+          "type": "Literal['pm', 'harvest']",
+          "component": "Radio"
+        },
+        {
+          "name": "Retrieval feature ratio",
+          "label": "Retrieval feature ratio",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "Apply Median Filtering",
+          "label": "Apply Median Filtering",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "Resample the output audio",
+          "label": "Resample the output audio",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "Volume Envelope",
+          "label": "Volume Envelope",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "Voice Protection",
+          "label": "Voice Protection",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output Information",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Output Audio",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ]
+    },
+    {
+      "name": "/download_audio_4",
+      "parameters": [
+        {
+          "name": "Youtube URL",
+          "label": "Youtube URL",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "Provider",
+          "label": "Provider",
+          "type": "Literal['Youtube']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Audio Preview",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Output Information",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/cut_vocal_and_inst_4",
+      "parameters": [
+        {
+          "name": "Splitter Model",
+          "label": "Splitter Model",
+          "type": "Literal['hdemucs_mmi', 'htdemucs', 'htdemucs_ft', 'mdx', 'mdx_q', 'mdx_extra_q']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output Information",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Vocal Preview",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Instrumental Preview",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Input audio path",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/combine_vocal_and_inst_4",
+      "parameters": [
+        {
+          "name": "Output Audio",
+          "label": "Output Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "name": "Vocal volume",
+          "label": "Vocal volume",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "Instrument volume",
+          "label": "Instrument volume",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "Splitter Model",
+          "label": "Splitter Model",
+          "type": "Literal['hdemucs_mmi', 'htdemucs', 'htdemucs_ft', 'mdx', 'mdx_q', 'mdx_extra_q']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output Combined Audio",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ]
+    },
+    {
+      "name": "/change_audio_mode_4",
+      "parameters": [
+        {
+          "name": "Input voice",
+          "label": "Input voice",
+          "type": "Literal['Upload audio', 'TTS Audio']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Input audio path",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Upload audio file",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Provider",
+          "type": "Literal['Youtube']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Youtube URL",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Output Information",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Splitter Model",
+          "type": "Literal['hdemucs_mmi', 'htdemucs', 'htdemucs_ft', 'mdx', 'mdx_q', 'mdx_extra_q']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Output Information",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Audio Preview",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Vocal Preview",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Instrumental Preview",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Vocal volume",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Instrument volume",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Output Combined Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "TTS text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Edge-tts speaker",
+          "type": "Literal['af-ZA-AdriNeural-Female', 'af-ZA-WillemNeural-Male', 'sq-AL-AnilaNeural-Female', 'sq-AL-IlirNeural-Male', 'am-ET-AmehaNeural-Male', 'am-ET-MekdesNeural-Female', 'ar-DZ-AminaNeural-Female', 'a",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/vc_fn_5",
+      "parameters": [
+        {
+          "name": "Input voice",
+          "label": "Input voice",
+          "type": "Literal['Upload audio', 'TTS Audio']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "Input audio path",
+          "label": "Input audio path",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "Upload audio file",
+          "label": "Upload audio file",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "name": "TTS text",
+          "label": "TTS text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "Edge-tts speaker",
+          "label": "Edge-tts speaker",
+          "type": "Literal['af-ZA-AdriNeural-Female', 'af-ZA-WillemNeural-Male', 'sq-AL-AnilaNeural-Female', 'sq-AL-IlirNeural-Male', 'am-ET-AmehaNeural-Male', 'am-ET-MekdesNeural-Female', 'ar-DZ-AminaNeural-Female', 'a",
+          "component": "Dropdown"
+        },
+        {
+          "name": "Transpose",
+          "label": "Transpose",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "Pitch extraction algorithm",
+          "label": "Pitch extraction algorithm",
+          "type": "Literal['pm', 'harvest']",
+          "component": "Radio"
+        },
+        {
+          "name": "Retrieval feature ratio",
+          "label": "Retrieval feature ratio",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "Apply Median Filtering",
+          "label": "Apply Median Filtering",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "Resample the output audio",
+          "label": "Resample the output audio",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "Volume Envelope",
+          "label": "Volume Envelope",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "Voice Protection",
+          "label": "Voice Protection",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output Information",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Output Audio",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ]
+    },
+    {
+      "name": "/download_audio_5",
+      "parameters": [
+        {
+          "name": "Youtube URL",
+          "label": "Youtube URL",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "Provider",
+          "label": "Provider",
+          "type": "Literal['Youtube']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Audio Preview",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Output Information",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/cut_vocal_and_inst_5",
+      "parameters": [
+        {
+          "name": "Splitter Model",
+          "label": "Splitter Model",
+          "type": "Literal['hdemucs_mmi', 'htdemucs', 'htdemucs_ft', 'mdx', 'mdx_q', 'mdx_extra_q']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output Information",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Vocal Preview",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Instrumental Preview",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Input audio path",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/combine_vocal_and_inst_5",
+      "parameters": [
+        {
+          "name": "Output Audio",
+          "label": "Output Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "name": "Vocal volume",
+          "label": "Vocal volume",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "Instrument volume",
+          "label": "Instrument volume",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "Splitter Model",
+          "label": "Splitter Model",
+          "type": "Literal['hdemucs_mmi', 'htdemucs', 'htdemucs_ft', 'mdx', 'mdx_q', 'mdx_extra_q']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output Combined Audio",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ]
+    },
+    {
+      "name": "/change_audio_mode_5",
+      "parameters": [
+        {
+          "name": "Input voice",
+          "label": "Input voice",
+          "type": "Literal['Upload audio', 'TTS Audio']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Input audio path",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Upload audio file",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Provider",
+          "type": "Literal['Youtube']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Youtube URL",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Output Information",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Splitter Model",
+          "type": "Literal['hdemucs_mmi', 'htdemucs', 'htdemucs_ft', 'mdx', 'mdx_q', 'mdx_extra_q']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Output Information",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Audio Preview",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Vocal Preview",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Instrumental Preview",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Vocal volume",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Instrument volume",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Output Combined Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "TTS text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Edge-tts speaker",
+          "type": "Literal['af-ZA-AdriNeural-Female', 'af-ZA-WillemNeural-Male', 'sq-AL-AnilaNeural-Female', 'sq-AL-IlirNeural-Male', 'am-ET-AmehaNeural-Male', 'am-ET-MekdesNeural-Female', 'ar-DZ-AminaNeural-Female', 'a",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/vc_fn_6",
+      "parameters": [
+        {
+          "name": "Input voice",
+          "label": "Input voice",
+          "type": "Literal['Upload audio', 'TTS Audio']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "Input audio path",
+          "label": "Input audio path",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "Upload audio file",
+          "label": "Upload audio file",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "name": "TTS text",
+          "label": "TTS text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "Edge-tts speaker",
+          "label": "Edge-tts speaker",
+          "type": "Literal['af-ZA-AdriNeural-Female', 'af-ZA-WillemNeural-Male', 'sq-AL-AnilaNeural-Female', 'sq-AL-IlirNeural-Male', 'am-ET-AmehaNeural-Male', 'am-ET-MekdesNeural-Female', 'ar-DZ-AminaNeural-Female', 'a",
+          "component": "Dropdown"
+        },
+        {
+          "name": "Transpose",
+          "label": "Transpose",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "Pitch extraction algorithm",
+          "label": "Pitch extraction algorithm",
+          "type": "Literal['pm', 'harvest']",
+          "component": "Radio"
+        },
+        {
+          "name": "Retrieval feature ratio",
+          "label": "Retrieval feature ratio",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "Apply Median Filtering",
+          "label": "Apply Median Filtering",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "Resample the output audio",
+          "label": "Resample the output audio",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "Volume Envelope",
+          "label": "Volume Envelope",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "Voice Protection",
+          "label": "Voice Protection",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output Information",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Output Audio",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ]
+    },
+    {
+      "name": "/download_audio_6",
+      "parameters": [
+        {
+          "name": "Youtube URL",
+          "label": "Youtube URL",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "Provider",
+          "label": "Provider",
+          "type": "Literal['Youtube']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Audio Preview",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Output Information",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/cut_vocal_and_inst_6",
+      "parameters": [
+        {
+          "name": "Splitter Model",
+          "label": "Splitter Model",
+          "type": "Literal['hdemucs_mmi', 'htdemucs', 'htdemucs_ft', 'mdx', 'mdx_q', 'mdx_extra_q']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output Information",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Vocal Preview",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Instrumental Preview",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Input audio path",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/combine_vocal_and_inst_6",
+      "parameters": [
+        {
+          "name": "Output Audio",
+          "label": "Output Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "name": "Vocal volume",
+          "label": "Vocal volume",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "Instrument volume",
+          "label": "Instrument volume",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "Splitter Model",
+          "label": "Splitter Model",
+          "type": "Literal['hdemucs_mmi', 'htdemucs', 'htdemucs_ft', 'mdx', 'mdx_q', 'mdx_extra_q']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output Combined Audio",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ]
+    },
+    {
+      "name": "/change_audio_mode_6",
+      "parameters": [
+        {
+          "name": "Input voice",
+          "label": "Input voice",
+          "type": "Literal['Upload audio', 'TTS Audio']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Input audio path",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Upload audio file",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Provider",
+          "type": "Literal['Youtube']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Youtube URL",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Output Information",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Splitter Model",
+          "type": "Literal['hdemucs_mmi', 'htdemucs', 'htdemucs_ft', 'mdx', 'mdx_q', 'mdx_extra_q']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Output Information",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Audio Preview",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Vocal Preview",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Instrumental Preview",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Vocal volume",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Instrument volume",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Output Combined Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "TTS text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Edge-tts speaker",
+          "type": "Literal['af-ZA-AdriNeural-Female', 'af-ZA-WillemNeural-Male', 'sq-AL-AnilaNeural-Female', 'sq-AL-IlirNeural-Male', 'am-ET-AmehaNeural-Male', 'am-ET-MekdesNeural-Female', 'ar-DZ-AminaNeural-Female', 'a",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/vc_fn_7",
+      "parameters": [
+        {
+          "name": "Input voice",
+          "label": "Input voice",
+          "type": "Literal['Upload audio', 'TTS Audio']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "Input audio path",
+          "label": "Input audio path",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "Upload audio file",
+          "label": "Upload audio file",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "name": "TTS text",
+          "label": "TTS text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "Edge-tts speaker",
+          "label": "Edge-tts speaker",
+          "type": "Literal['af-ZA-AdriNeural-Female', 'af-ZA-WillemNeural-Male', 'sq-AL-AnilaNeural-Female', 'sq-AL-IlirNeural-Male', 'am-ET-AmehaNeural-Male', 'am-ET-MekdesNeural-Female', 'ar-DZ-AminaNeural-Female', 'a",
+          "component": "Dropdown"
+        },
+        {
+          "name": "Transpose",
+          "label": "Transpose",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "Pitch extraction algorithm",
+          "label": "Pitch extraction algorithm",
+          "type": "Literal['pm', 'harvest']",
+          "component": "Radio"
+        },
+        {
+          "name": "Retrieval feature ratio",
+          "label": "Retrieval feature ratio",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "Apply Median Filtering",
+          "label": "Apply Median Filtering",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "Resample the output audio",
+          "label": "Resample the output audio",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "Volume Envelope",
+          "label": "Volume Envelope",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "Voice Protection",
+          "label": "Voice Protection",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output Information",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Output Audio",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ]
+    },
+    {
+      "name": "/download_audio_7",
+      "parameters": [
+        {
+          "name": "Youtube URL",
+          "label": "Youtube URL",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "Provider",
+          "label": "Provider",
+          "type": "Literal['Youtube']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Audio Preview",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Output Information",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/cut_vocal_and_inst_7",
+      "parameters": [
+        {
+          "name": "Splitter Model",
+          "label": "Splitter Model",
+          "type": "Literal['hdemucs_mmi', 'htdemucs', 'htdemucs_ft', 'mdx', 'mdx_q', 'mdx_extra_q']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output Information",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Vocal Preview",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Instrumental Preview",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Input audio path",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/combine_vocal_and_inst_7",
+      "parameters": [
+        {
+          "name": "Output Audio",
+          "label": "Output Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "name": "Vocal volume",
+          "label": "Vocal volume",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "Instrument volume",
+          "label": "Instrument volume",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "Splitter Model",
+          "label": "Splitter Model",
+          "type": "Literal['hdemucs_mmi', 'htdemucs', 'htdemucs_ft', 'mdx', 'mdx_q', 'mdx_extra_q']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output Combined Audio",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ]
+    },
+    {
+      "name": "/change_audio_mode_7",
+      "parameters": [
+        {
+          "name": "Input voice",
+          "label": "Input voice",
+          "type": "Literal['Upload audio', 'TTS Audio']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Input audio path",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Upload audio file",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Provider",
+          "type": "Literal['Youtube']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Youtube URL",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Output Information",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Splitter Model",
+          "type": "Literal['hdemucs_mmi', 'htdemucs', 'htdemucs_ft', 'mdx', 'mdx_q', 'mdx_extra_q']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Output Information",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Audio Preview",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Vocal Preview",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Instrumental Preview",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Vocal volume",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Instrument volume",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Output Combined Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "TTS text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Edge-tts speaker",
+          "type": "Literal['af-ZA-AdriNeural-Female', 'af-ZA-WillemNeural-Male', 'sq-AL-AnilaNeural-Female', 'sq-AL-IlirNeural-Male', 'am-ET-AmehaNeural-Male', 'am-ET-MekdesNeural-Female', 'ar-DZ-AminaNeural-Female', 'a",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/vc_fn_8",
+      "parameters": [
+        {
+          "name": "Input voice",
+          "label": "Input voice",
+          "type": "Literal['Upload audio', 'TTS Audio']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "Input audio path",
+          "label": "Input audio path",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "Upload audio file",
+          "label": "Upload audio file",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "name": "TTS text",
+          "label": "TTS text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "Edge-tts speaker",
+          "label": "Edge-tts speaker",
+          "type": "Literal['af-ZA-AdriNeural-Female', 'af-ZA-WillemNeural-Male', 'sq-AL-AnilaNeural-Female', 'sq-AL-IlirNeural-Male', 'am-ET-AmehaNeural-Male', 'am-ET-MekdesNeural-Female', 'ar-DZ-AminaNeural-Female', 'a",
+          "component": "Dropdown"
+        },
+        {
+          "name": "Transpose",
+          "label": "Transpose",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "Pitch extraction algorithm",
+          "label": "Pitch extraction algorithm",
+          "type": "Literal['pm', 'harvest']",
+          "component": "Radio"
+        },
+        {
+          "name": "Retrieval feature ratio",
+          "label": "Retrieval feature ratio",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "Apply Median Filtering",
+          "label": "Apply Median Filtering",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "Resample the output audio",
+          "label": "Resample the output audio",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "Volume Envelope",
+          "label": "Volume Envelope",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "Voice Protection",
+          "label": "Voice Protection",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output Information",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Output Audio",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ]
+    },
+    {
+      "name": "/download_audio_8",
+      "parameters": [
+        {
+          "name": "Youtube URL",
+          "label": "Youtube URL",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "Provider",
+          "label": "Provider",
+          "type": "Literal['Youtube']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Audio Preview",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Output Information",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/cut_vocal_and_inst_8",
+      "parameters": [
+        {
+          "name": "Splitter Model",
+          "label": "Splitter Model",
+          "type": "Literal['hdemucs_mmi', 'htdemucs', 'htdemucs_ft', 'mdx', 'mdx_q', 'mdx_extra_q']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output Information",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Vocal Preview",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Instrumental Preview",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Input audio path",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/combine_vocal_and_inst_8",
+      "parameters": [
+        {
+          "name": "Output Audio",
+          "label": "Output Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "name": "Vocal volume",
+          "label": "Vocal volume",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "Instrument volume",
+          "label": "Instrument volume",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "Splitter Model",
+          "label": "Splitter Model",
+          "type": "Literal['hdemucs_mmi', 'htdemucs', 'htdemucs_ft', 'mdx', 'mdx_q', 'mdx_extra_q']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output Combined Audio",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ]
+    },
+    {
+      "name": "/change_audio_mode_8",
+      "parameters": [
+        {
+          "name": "Input voice",
+          "label": "Input voice",
+          "type": "Literal['Upload audio', 'TTS Audio']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Input audio path",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Upload audio file",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Provider",
+          "type": "Literal['Youtube']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Youtube URL",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Output Information",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Splitter Model",
+          "type": "Literal['hdemucs_mmi', 'htdemucs', 'htdemucs_ft', 'mdx', 'mdx_q', 'mdx_extra_q']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Output Information",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Audio Preview",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Vocal Preview",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Instrumental Preview",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Vocal volume",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Instrument volume",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Output Combined Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "TTS text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Edge-tts speaker",
+          "type": "Literal['af-ZA-AdriNeural-Female', 'af-ZA-WillemNeural-Male', 'sq-AL-AnilaNeural-Female', 'sq-AL-IlirNeural-Male', 'am-ET-AmehaNeural-Male', 'am-ET-MekdesNeural-Female', 'ar-DZ-AminaNeural-Female', 'a",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/vc_fn_9",
+      "parameters": [
+        {
+          "name": "Input voice",
+          "label": "Input voice",
+          "type": "Literal['Upload audio', 'TTS Audio']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "Input audio path",
+          "label": "Input audio path",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "Upload audio file",
+          "label": "Upload audio file",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "name": "TTS text",
+          "label": "TTS text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "Edge-tts speaker",
+          "label": "Edge-tts speaker",
+          "type": "Literal['af-ZA-AdriNeural-Female', 'af-ZA-WillemNeural-Male', 'sq-AL-AnilaNeural-Female', 'sq-AL-IlirNeural-Male', 'am-ET-AmehaNeural-Male', 'am-ET-MekdesNeural-Female', 'ar-DZ-AminaNeural-Female', 'a",
+          "component": "Dropdown"
+        },
+        {
+          "name": "Transpose",
+          "label": "Transpose",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "Pitch extraction algorithm",
+          "label": "Pitch extraction algorithm",
+          "type": "Literal['pm', 'harvest']",
+          "component": "Radio"
+        },
+        {
+          "name": "Retrieval feature ratio",
+          "label": "Retrieval feature ratio",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "Apply Median Filtering",
+          "label": "Apply Median Filtering",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "Resample the output audio",
+          "label": "Resample the output audio",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "Volume Envelope",
+          "label": "Volume Envelope",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "Voice Protection",
+          "label": "Voice Protection",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output Information",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Output Audio",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ]
+    },
+    {
+      "name": "/download_audio_9",
+      "parameters": [
+        {
+          "name": "Youtube URL",
+          "label": "Youtube URL",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "Provider",
+          "label": "Provider",
+          "type": "Literal['Youtube']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Audio Preview",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Output Information",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/cut_vocal_and_inst_9",
+      "parameters": [
+        {
+          "name": "Splitter Model",
+          "label": "Splitter Model",
+          "type": "Literal['hdemucs_mmi', 'htdemucs', 'htdemucs_ft', 'mdx', 'mdx_q', 'mdx_extra_q']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output Information",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Vocal Preview",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Instrumental Preview",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Input audio path",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/combine_vocal_and_inst_9",
+      "parameters": [
+        {
+          "name": "Output Audio",
+          "label": "Output Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "name": "Vocal volume",
+          "label": "Vocal volume",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "Instrument volume",
+          "label": "Instrument volume",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "Splitter Model",
+          "label": "Splitter Model",
+          "type": "Literal['hdemucs_mmi', 'htdemucs', 'htdemucs_ft', 'mdx', 'mdx_q', 'mdx_extra_q']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output Combined Audio",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ]
+    },
+    {
+      "name": "/change_audio_mode_9",
+      "parameters": [
+        {
+          "name": "Input voice",
+          "label": "Input voice",
+          "type": "Literal['Upload audio', 'TTS Audio']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Input audio path",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Upload audio file",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Provider",
+          "type": "Literal['Youtube']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Youtube URL",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Output Information",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Splitter Model",
+          "type": "Literal['hdemucs_mmi', 'htdemucs', 'htdemucs_ft', 'mdx', 'mdx_q', 'mdx_extra_q']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Output Information",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Audio Preview",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Vocal Preview",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Instrumental Preview",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Vocal volume",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Instrument volume",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Output Combined Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "TTS text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Edge-tts speaker",
+          "type": "Literal['af-ZA-AdriNeural-Female', 'af-ZA-WillemNeural-Male', 'sq-AL-AnilaNeural-Female', 'sq-AL-IlirNeural-Male', 'am-ET-AmehaNeural-Male', 'am-ET-MekdesNeural-Female', 'ar-DZ-AminaNeural-Female', 'a",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/vc_fn_10",
+      "parameters": [
+        {
+          "name": "Input voice",
+          "label": "Input voice",
+          "type": "Literal['Upload audio', 'TTS Audio']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "Input audio path",
+          "label": "Input audio path",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "Upload audio file",
+          "label": "Upload audio file",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "name": "TTS text",
+          "label": "TTS text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "Edge-tts speaker",
+          "label": "Edge-tts speaker",
+          "type": "Literal['af-ZA-AdriNeural-Female', 'af-ZA-WillemNeural-Male', 'sq-AL-AnilaNeural-Female', 'sq-AL-IlirNeural-Male', 'am-ET-AmehaNeural-Male', 'am-ET-MekdesNeural-Female', 'ar-DZ-AminaNeural-Female', 'a",
+          "component": "Dropdown"
+        },
+        {
+          "name": "Transpose",
+          "label": "Transpose",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "Pitch extraction algorithm",
+          "label": "Pitch extraction algorithm",
+          "type": "Literal['pm', 'harvest']",
+          "component": "Radio"
+        },
+        {
+          "name": "Retrieval feature ratio",
+          "label": "Retrieval feature ratio",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "Apply Median Filtering",
+          "label": "Apply Median Filtering",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "Resample the output audio",
+          "label": "Resample the output audio",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "Volume Envelope",
+          "label": "Volume Envelope",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "Voice Protection",
+          "label": "Voice Protection",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output Information",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Output Audio",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ]
+    },
+    {
+      "name": "/download_audio_10",
+      "parameters": [
+        {
+          "name": "Youtube URL",
+          "label": "Youtube URL",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "Provider",
+          "label": "Provider",
+          "type": "Literal['Youtube']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Audio Preview",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Output Information",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/cut_vocal_and_inst_10",
+      "parameters": [
+        {
+          "name": "Splitter Model",
+          "label": "Splitter Model",
+          "type": "Literal['hdemucs_mmi', 'htdemucs', 'htdemucs_ft', 'mdx', 'mdx_q', 'mdx_extra_q']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output Information",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Vocal Preview",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Instrumental Preview",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Input audio path",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/combine_vocal_and_inst_10",
+      "parameters": [
+        {
+          "name": "Output Audio",
+          "label": "Output Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "name": "Vocal volume",
+          "label": "Vocal volume",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "Instrument volume",
+          "label": "Instrument volume",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "Splitter Model",
+          "label": "Splitter Model",
+          "type": "Literal['hdemucs_mmi', 'htdemucs', 'htdemucs_ft', 'mdx', 'mdx_q', 'mdx_extra_q']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output Combined Audio",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ]
+    },
+    {
+      "name": "/change_audio_mode_10",
+      "parameters": [
+        {
+          "name": "Input voice",
+          "label": "Input voice",
+          "type": "Literal['Upload audio', 'TTS Audio']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Input audio path",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Upload audio file",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Provider",
+          "type": "Literal['Youtube']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Youtube URL",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Output Information",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Splitter Model",
+          "type": "Literal['hdemucs_mmi', 'htdemucs', 'htdemucs_ft', 'mdx', 'mdx_q', 'mdx_extra_q']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Output Information",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Audio Preview",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Vocal Preview",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Instrumental Preview",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Vocal volume",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Instrument volume",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Output Combined Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "TTS text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Edge-tts speaker",
+          "type": "Literal['af-ZA-AdriNeural-Female', 'af-ZA-WillemNeural-Male', 'sq-AL-AnilaNeural-Female', 'sq-AL-IlirNeural-Male', 'am-ET-AmehaNeural-Male', 'am-ET-MekdesNeural-Female', 'ar-DZ-AminaNeural-Female', 'a",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/vc_fn_11",
+      "parameters": [
+        {
+          "name": "Input voice",
+          "label": "Input voice",
+          "type": "Literal['Upload audio', 'TTS Audio']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "Input audio path",
+          "label": "Input audio path",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "Upload audio file",
+          "label": "Upload audio file",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "name": "TTS text",
+          "label": "TTS text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "Edge-tts speaker",
+          "label": "Edge-tts speaker",
+          "type": "Literal['af-ZA-AdriNeural-Female', 'af-ZA-WillemNeural-Male', 'sq-AL-AnilaNeural-Female', 'sq-AL-IlirNeural-Male', 'am-ET-AmehaNeural-Male', 'am-ET-MekdesNeural-Female', 'ar-DZ-AminaNeural-Female', 'a",
+          "component": "Dropdown"
+        },
+        {
+          "name": "Transpose",
+          "label": "Transpose",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "Pitch extraction algorithm",
+          "label": "Pitch extraction algorithm",
+          "type": "Literal['pm', 'harvest']",
+          "component": "Radio"
+        },
+        {
+          "name": "Retrieval feature ratio",
+          "label": "Retrieval feature ratio",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "Apply Median Filtering",
+          "label": "Apply Median Filtering",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "Resample the output audio",
+          "label": "Resample the output audio",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "Volume Envelope",
+          "label": "Volume Envelope",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "Voice Protection",
+          "label": "Voice Protection",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output Information",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Output Audio",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ]
+    },
+    {
+      "name": "/download_audio_11",
+      "parameters": [
+        {
+          "name": "Youtube URL",
+          "label": "Youtube URL",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "Provider",
+          "label": "Provider",
+          "type": "Literal['Youtube']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Audio Preview",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Output Information",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/cut_vocal_and_inst_11",
+      "parameters": [
+        {
+          "name": "Splitter Model",
+          "label": "Splitter Model",
+          "type": "Literal['hdemucs_mmi', 'htdemucs', 'htdemucs_ft', 'mdx', 'mdx_q', 'mdx_extra_q']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output Information",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Vocal Preview",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Instrumental Preview",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Input audio path",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/combine_vocal_and_inst_11",
+      "parameters": [
+        {
+          "name": "Output Audio",
+          "label": "Output Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "name": "Vocal volume",
+          "label": "Vocal volume",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "Instrument volume",
+          "label": "Instrument volume",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "Splitter Model",
+          "label": "Splitter Model",
+          "type": "Literal['hdemucs_mmi', 'htdemucs', 'htdemucs_ft', 'mdx', 'mdx_q', 'mdx_extra_q']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output Combined Audio",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ]
+    },
+    {
+      "name": "/change_audio_mode_11",
+      "parameters": [
+        {
+          "name": "Input voice",
+          "label": "Input voice",
+          "type": "Literal['Upload audio', 'TTS Audio']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Input audio path",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Upload audio file",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Provider",
+          "type": "Literal['Youtube']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Youtube URL",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Output Information",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Splitter Model",
+          "type": "Literal['hdemucs_mmi', 'htdemucs', 'htdemucs_ft', 'mdx', 'mdx_q', 'mdx_extra_q']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Output Information",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Audio Preview",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Vocal Preview",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Instrumental Preview",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Vocal volume",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Instrument volume",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Output Combined Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "TTS text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Edge-tts speaker",
+          "type": "Literal['af-ZA-AdriNeural-Female', 'af-ZA-WillemNeural-Male', 'sq-AL-AnilaNeural-Female', 'sq-AL-IlirNeural-Male', 'am-ET-AmehaNeural-Male', 'am-ET-MekdesNeural-Female', 'ar-DZ-AminaNeural-Female', 'a",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/vc_fn_12",
+      "parameters": [
+        {
+          "name": "Input voice",
+          "label": "Input voice",
+          "type": "Literal['Upload audio', 'TTS Audio']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "Input audio path",
+          "label": "Input audio path",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "Upload audio file",
+          "label": "Upload audio file",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "name": "TTS text",
+          "label": "TTS text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "Edge-tts speaker",
+          "label": "Edge-tts speaker",
+          "type": "Literal['af-ZA-AdriNeural-Female', 'af-ZA-WillemNeural-Male', 'sq-AL-AnilaNeural-Female', 'sq-AL-IlirNeural-Male', 'am-ET-AmehaNeural-Male', 'am-ET-MekdesNeural-Female', 'ar-DZ-AminaNeural-Female', 'a",
+          "component": "Dropdown"
+        },
+        {
+          "name": "Transpose",
+          "label": "Transpose",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "Pitch extraction algorithm",
+          "label": "Pitch extraction algorithm",
+          "type": "Literal['pm', 'harvest']",
+          "component": "Radio"
+        },
+        {
+          "name": "Retrieval feature ratio",
+          "label": "Retrieval feature ratio",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "Apply Median Filtering",
+          "label": "Apply Median Filtering",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "Resample the output audio",
+          "label": "Resample the output audio",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "Volume Envelope",
+          "label": "Volume Envelope",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "Voice Protection",
+          "label": "Voice Protection",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output Information",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Output Audio",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ]
+    },
+    {
+      "name": "/download_audio_12",
+      "parameters": [
+        {
+          "name": "Youtube URL",
+          "label": "Youtube URL",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "Provider",
+          "label": "Provider",
+          "type": "Literal['Youtube']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Audio Preview",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Output Information",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/cut_vocal_and_inst_12",
+      "parameters": [
+        {
+          "name": "Splitter Model",
+          "label": "Splitter Model",
+          "type": "Literal['hdemucs_mmi', 'htdemucs', 'htdemucs_ft', 'mdx', 'mdx_q', 'mdx_extra_q']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output Information",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Vocal Preview",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Instrumental Preview",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Input audio path",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/combine_vocal_and_inst_12",
+      "parameters": [
+        {
+          "name": "Output Audio",
+          "label": "Output Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "name": "Vocal volume",
+          "label": "Vocal volume",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "Instrument volume",
+          "label": "Instrument volume",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "Splitter Model",
+          "label": "Splitter Model",
+          "type": "Literal['hdemucs_mmi', 'htdemucs', 'htdemucs_ft', 'mdx', 'mdx_q', 'mdx_extra_q']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output Combined Audio",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ]
+    },
+    {
+      "name": "/change_audio_mode_12",
+      "parameters": [
+        {
+          "name": "Input voice",
+          "label": "Input voice",
+          "type": "Literal['Upload audio', 'TTS Audio']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Input audio path",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Upload audio file",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Provider",
+          "type": "Literal['Youtube']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Youtube URL",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Output Information",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Splitter Model",
+          "type": "Literal['hdemucs_mmi', 'htdemucs', 'htdemucs_ft', 'mdx', 'mdx_q', 'mdx_extra_q']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Output Information",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Audio Preview",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Vocal Preview",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Instrumental Preview",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Vocal volume",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Instrument volume",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Output Combined Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "TTS text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Edge-tts speaker",
+          "type": "Literal['af-ZA-AdriNeural-Female', 'af-ZA-WillemNeural-Male', 'sq-AL-AnilaNeural-Female', 'sq-AL-IlirNeural-Male', 'am-ET-AmehaNeural-Male', 'am-ET-MekdesNeural-Female', 'ar-DZ-AminaNeural-Female', 'a",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/vc_fn_13",
+      "parameters": [
+        {
+          "name": "Input voice",
+          "label": "Input voice",
+          "type": "Literal['Upload audio', 'TTS Audio']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "Input audio path",
+          "label": "Input audio path",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "Upload audio file",
+          "label": "Upload audio file",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "name": "TTS text",
+          "label": "TTS text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "Edge-tts speaker",
+          "label": "Edge-tts speaker",
+          "type": "Literal['af-ZA-AdriNeural-Female', 'af-ZA-WillemNeural-Male', 'sq-AL-AnilaNeural-Female', 'sq-AL-IlirNeural-Male', 'am-ET-AmehaNeural-Male', 'am-ET-MekdesNeural-Female', 'ar-DZ-AminaNeural-Female', 'a",
+          "component": "Dropdown"
+        },
+        {
+          "name": "Transpose",
+          "label": "Transpose",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "Pitch extraction algorithm",
+          "label": "Pitch extraction algorithm",
+          "type": "Literal['pm', 'harvest']",
+          "component": "Radio"
+        },
+        {
+          "name": "Retrieval feature ratio",
+          "label": "Retrieval feature ratio",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "Apply Median Filtering",
+          "label": "Apply Median Filtering",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "Resample the output audio",
+          "label": "Resample the output audio",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "Volume Envelope",
+          "label": "Volume Envelope",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "Voice Protection",
+          "label": "Voice Protection",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output Information",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Output Audio",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ]
+    },
+    {
+      "name": "/download_audio_13",
+      "parameters": [
+        {
+          "name": "Youtube URL",
+          "label": "Youtube URL",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "Provider",
+          "label": "Provider",
+          "type": "Literal['Youtube']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Audio Preview",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Output Information",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/cut_vocal_and_inst_13",
+      "parameters": [
+        {
+          "name": "Splitter Model",
+          "label": "Splitter Model",
+          "type": "Literal['hdemucs_mmi', 'htdemucs', 'htdemucs_ft', 'mdx', 'mdx_q', 'mdx_extra_q']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output Information",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Vocal Preview",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Instrumental Preview",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Input audio path",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/combine_vocal_and_inst_13",
+      "parameters": [
+        {
+          "name": "Output Audio",
+          "label": "Output Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "name": "Vocal volume",
+          "label": "Vocal volume",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "Instrument volume",
+          "label": "Instrument volume",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "Splitter Model",
+          "label": "Splitter Model",
+          "type": "Literal['hdemucs_mmi', 'htdemucs', 'htdemucs_ft', 'mdx', 'mdx_q', 'mdx_extra_q']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output Combined Audio",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ]
+    },
+    {
+      "name": "/change_audio_mode_13",
+      "parameters": [
+        {
+          "name": "Input voice",
+          "label": "Input voice",
+          "type": "Literal['Upload audio', 'TTS Audio']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Input audio path",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Upload audio file",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Provider",
+          "type": "Literal['Youtube']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Youtube URL",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Output Information",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Splitter Model",
+          "type": "Literal['hdemucs_mmi', 'htdemucs', 'htdemucs_ft', 'mdx', 'mdx_q', 'mdx_extra_q']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Output Information",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Audio Preview",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Vocal Preview",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Instrumental Preview",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Vocal volume",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Instrument volume",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Output Combined Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "TTS text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Edge-tts speaker",
+          "type": "Literal['af-ZA-AdriNeural-Female', 'af-ZA-WillemNeural-Male', 'sq-AL-AnilaNeural-Female', 'sq-AL-IlirNeural-Male', 'am-ET-AmehaNeural-Male', 'am-ET-MekdesNeural-Female', 'ar-DZ-AminaNeural-Female', 'a",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/vc_fn_14",
+      "parameters": [
+        {
+          "name": "Input voice",
+          "label": "Input voice",
+          "type": "Literal['Upload audio', 'TTS Audio']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "Input audio path",
+          "label": "Input audio path",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "Upload audio file",
+          "label": "Upload audio file",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "name": "TTS text",
+          "label": "TTS text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "Edge-tts speaker",
+          "label": "Edge-tts speaker",
+          "type": "Literal['af-ZA-AdriNeural-Female', 'af-ZA-WillemNeural-Male', 'sq-AL-AnilaNeural-Female', 'sq-AL-IlirNeural-Male', 'am-ET-AmehaNeural-Male', 'am-ET-MekdesNeural-Female', 'ar-DZ-AminaNeural-Female', 'a",
+          "component": "Dropdown"
+        },
+        {
+          "name": "Transpose",
+          "label": "Transpose",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "Pitch extraction algorithm",
+          "label": "Pitch extraction algorithm",
+          "type": "Literal['pm', 'harvest']",
+          "component": "Radio"
+        },
+        {
+          "name": "Retrieval feature ratio",
+          "label": "Retrieval feature ratio",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "Apply Median Filtering",
+          "label": "Apply Median Filtering",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "Resample the output audio",
+          "label": "Resample the output audio",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "Volume Envelope",
+          "label": "Volume Envelope",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "Voice Protection",
+          "label": "Voice Protection",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output Information",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Output Audio",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ]
+    },
+    {
+      "name": "/download_audio_14",
+      "parameters": [
+        {
+          "name": "Youtube URL",
+          "label": "Youtube URL",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "Provider",
+          "label": "Provider",
+          "type": "Literal['Youtube']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Audio Preview",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Output Information",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/cut_vocal_and_inst_14",
+      "parameters": [
+        {
+          "name": "Splitter Model",
+          "label": "Splitter Model",
+          "type": "Literal['hdemucs_mmi', 'htdemucs', 'htdemucs_ft', 'mdx', 'mdx_q', 'mdx_extra_q']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output Information",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Vocal Preview",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Instrumental Preview",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Input audio path",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/combine_vocal_and_inst_14",
+      "parameters": [
+        {
+          "name": "Output Audio",
+          "label": "Output Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "name": "Vocal volume",
+          "label": "Vocal volume",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "Instrument volume",
+          "label": "Instrument volume",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "Splitter Model",
+          "label": "Splitter Model",
+          "type": "Literal['hdemucs_mmi', 'htdemucs', 'htdemucs_ft', 'mdx', 'mdx_q', 'mdx_extra_q']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output Combined Audio",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ]
+    },
+    {
+      "name": "/change_audio_mode_14",
+      "parameters": [
+        {
+          "name": "Input voice",
+          "label": "Input voice",
+          "type": "Literal['Upload audio', 'TTS Audio']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Input audio path",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Upload audio file",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Provider",
+          "type": "Literal['Youtube']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Youtube URL",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Output Information",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Splitter Model",
+          "type": "Literal['hdemucs_mmi', 'htdemucs', 'htdemucs_ft', 'mdx', 'mdx_q', 'mdx_extra_q']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Output Information",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Audio Preview",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Vocal Preview",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Instrumental Preview",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Vocal volume",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Instrument volume",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Output Combined Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "TTS text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Edge-tts speaker",
+          "type": "Literal['af-ZA-AdriNeural-Female', 'af-ZA-WillemNeural-Male', 'sq-AL-AnilaNeural-Female', 'sq-AL-IlirNeural-Male', 'am-ET-AmehaNeural-Male', 'am-ET-MekdesNeural-Female', 'ar-DZ-AminaNeural-Female', 'a",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/vc_fn_15",
+      "parameters": [
+        {
+          "name": "Input voice",
+          "label": "Input voice",
+          "type": "Literal['Upload audio', 'TTS Audio']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "Input audio path",
+          "label": "Input audio path",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "Upload audio file",
+          "label": "Upload audio file",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "name": "TTS text",
+          "label": "TTS text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "Edge-tts speaker",
+          "label": "Edge-tts speaker",
+          "type": "Literal['af-ZA-AdriNeural-Female', 'af-ZA-WillemNeural-Male', 'sq-AL-AnilaNeural-Female', 'sq-AL-IlirNeural-Male', 'am-ET-AmehaNeural-Male', 'am-ET-MekdesNeural-Female', 'ar-DZ-AminaNeural-Female', 'a",
+          "component": "Dropdown"
+        },
+        {
+          "name": "Transpose",
+          "label": "Transpose",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "Pitch extraction algorithm",
+          "label": "Pitch extraction algorithm",
+          "type": "Literal['pm', 'harvest']",
+          "component": "Radio"
+        },
+        {
+          "name": "Retrieval feature ratio",
+          "label": "Retrieval feature ratio",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "Apply Median Filtering",
+          "label": "Apply Median Filtering",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "Resample the output audio",
+          "label": "Resample the output audio",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "Volume Envelope",
+          "label": "Volume Envelope",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "Voice Protection",
+          "label": "Voice Protection",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output Information",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Output Audio",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ]
+    },
+    {
+      "name": "/download_audio_15",
+      "parameters": [
+        {
+          "name": "Youtube URL",
+          "label": "Youtube URL",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "Provider",
+          "label": "Provider",
+          "type": "Literal['Youtube']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Audio Preview",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Output Information",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/cut_vocal_and_inst_15",
+      "parameters": [
+        {
+          "name": "Splitter Model",
+          "label": "Splitter Model",
+          "type": "Literal['hdemucs_mmi', 'htdemucs', 'htdemucs_ft', 'mdx', 'mdx_q', 'mdx_extra_q']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output Information",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Vocal Preview",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Instrumental Preview",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Input audio path",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/combine_vocal_and_inst_15",
+      "parameters": [
+        {
+          "name": "Output Audio",
+          "label": "Output Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "name": "Vocal volume",
+          "label": "Vocal volume",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "Instrument volume",
+          "label": "Instrument volume",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "Splitter Model",
+          "label": "Splitter Model",
+          "type": "Literal['hdemucs_mmi', 'htdemucs', 'htdemucs_ft', 'mdx', 'mdx_q', 'mdx_extra_q']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output Combined Audio",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ]
+    },
+    {
+      "name": "/change_audio_mode_15",
+      "parameters": [
+        {
+          "name": "Input voice",
+          "label": "Input voice",
+          "type": "Literal['Upload audio', 'TTS Audio']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Input audio path",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Upload audio file",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Provider",
+          "type": "Literal['Youtube']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Youtube URL",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Output Information",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Splitter Model",
+          "type": "Literal['hdemucs_mmi', 'htdemucs', 'htdemucs_ft', 'mdx', 'mdx_q', 'mdx_extra_q']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Output Information",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Audio Preview",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Vocal Preview",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Instrumental Preview",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Vocal volume",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Instrument volume",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Output Combined Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "TTS text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Edge-tts speaker",
+          "type": "Literal['af-ZA-AdriNeural-Female', 'af-ZA-WillemNeural-Male', 'sq-AL-AnilaNeural-Female', 'sq-AL-IlirNeural-Male', 'am-ET-AmehaNeural-Male', 'am-ET-MekdesNeural-Female', 'ar-DZ-AminaNeural-Female', 'a",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/vc_fn_16",
+      "parameters": [
+        {
+          "name": "Input voice",
+          "label": "Input voice",
+          "type": "Literal['Upload audio', 'TTS Audio']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "Input audio path",
+          "label": "Input audio path",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "Upload audio file",
+          "label": "Upload audio file",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "name": "TTS text",
+          "label": "TTS text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "Edge-tts speaker",
+          "label": "Edge-tts speaker",
+          "type": "Literal['af-ZA-AdriNeural-Female', 'af-ZA-WillemNeural-Male', 'sq-AL-AnilaNeural-Female', 'sq-AL-IlirNeural-Male', 'am-ET-AmehaNeural-Male', 'am-ET-MekdesNeural-Female', 'ar-DZ-AminaNeural-Female', 'a",
+          "component": "Dropdown"
+        },
+        {
+          "name": "Transpose",
+          "label": "Transpose",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "Pitch extraction algorithm",
+          "label": "Pitch extraction algorithm",
+          "type": "Literal['pm', 'harvest']",
+          "component": "Radio"
+        },
+        {
+          "name": "Retrieval feature ratio",
+          "label": "Retrieval feature ratio",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "Apply Median Filtering",
+          "label": "Apply Median Filtering",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "Resample the output audio",
+          "label": "Resample the output audio",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "Volume Envelope",
+          "label": "Volume Envelope",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "Voice Protection",
+          "label": "Voice Protection",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output Information",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Output Audio",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ]
+    },
+    {
+      "name": "/download_audio_16",
+      "parameters": [
+        {
+          "name": "Youtube URL",
+          "label": "Youtube URL",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "Provider",
+          "label": "Provider",
+          "type": "Literal['Youtube']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Audio Preview",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Output Information",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/cut_vocal_and_inst_16",
+      "parameters": [
+        {
+          "name": "Splitter Model",
+          "label": "Splitter Model",
+          "type": "Literal['hdemucs_mmi', 'htdemucs', 'htdemucs_ft', 'mdx', 'mdx_q', 'mdx_extra_q']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output Information",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Vocal Preview",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Instrumental Preview",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Input audio path",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/combine_vocal_and_inst_16",
+      "parameters": [
+        {
+          "name": "Output Audio",
+          "label": "Output Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "name": "Vocal volume",
+          "label": "Vocal volume",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "Instrument volume",
+          "label": "Instrument volume",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "Splitter Model",
+          "label": "Splitter Model",
+          "type": "Literal['hdemucs_mmi', 'htdemucs', 'htdemucs_ft', 'mdx', 'mdx_q', 'mdx_extra_q']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output Combined Audio",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ]
+    },
+    {
+      "name": "/change_audio_mode_16",
+      "parameters": [
+        {
+          "name": "Input voice",
+          "label": "Input voice",
+          "type": "Literal['Upload audio', 'TTS Audio']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Input audio path",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Upload audio file",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Provider",
+          "type": "Literal['Youtube']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Youtube URL",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Output Information",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Splitter Model",
+          "type": "Literal['hdemucs_mmi', 'htdemucs', 'htdemucs_ft', 'mdx', 'mdx_q', 'mdx_extra_q']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Output Information",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Audio Preview",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Vocal Preview",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Instrumental Preview",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Vocal volume",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Instrument volume",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Output Combined Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "TTS text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Edge-tts speaker",
+          "type": "Literal['af-ZA-AdriNeural-Female', 'af-ZA-WillemNeural-Male', 'sq-AL-AnilaNeural-Female', 'sq-AL-IlirNeural-Male', 'am-ET-AmehaNeural-Male', 'am-ET-MekdesNeural-Female', 'ar-DZ-AminaNeural-Female', 'a",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/vc_fn_17",
+      "parameters": [
+        {
+          "name": "Input voice",
+          "label": "Input voice",
+          "type": "Literal['Upload audio', 'TTS Audio']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "Input audio path",
+          "label": "Input audio path",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "Upload audio file",
+          "label": "Upload audio file",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "name": "TTS text",
+          "label": "TTS text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "Edge-tts speaker",
+          "label": "Edge-tts speaker",
+          "type": "Literal['af-ZA-AdriNeural-Female', 'af-ZA-WillemNeural-Male', 'sq-AL-AnilaNeural-Female', 'sq-AL-IlirNeural-Male', 'am-ET-AmehaNeural-Male', 'am-ET-MekdesNeural-Female', 'ar-DZ-AminaNeural-Female', 'a",
+          "component": "Dropdown"
+        },
+        {
+          "name": "Transpose",
+          "label": "Transpose",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "Pitch extraction algorithm",
+          "label": "Pitch extraction algorithm",
+          "type": "Literal['pm', 'harvest']",
+          "component": "Radio"
+        },
+        {
+          "name": "Retrieval feature ratio",
+          "label": "Retrieval feature ratio",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "Apply Median Filtering",
+          "label": "Apply Median Filtering",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "Resample the output audio",
+          "label": "Resample the output audio",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "Volume Envelope",
+          "label": "Volume Envelope",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "Voice Protection",
+          "label": "Voice Protection",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output Information",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Output Audio",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ]
+    },
+    {
+      "name": "/download_audio_17",
+      "parameters": [
+        {
+          "name": "Youtube URL",
+          "label": "Youtube URL",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "Provider",
+          "label": "Provider",
+          "type": "Literal['Youtube']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Audio Preview",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Output Information",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/cut_vocal_and_inst_17",
+      "parameters": [
+        {
+          "name": "Splitter Model",
+          "label": "Splitter Model",
+          "type": "Literal['hdemucs_mmi', 'htdemucs', 'htdemucs_ft', 'mdx', 'mdx_q', 'mdx_extra_q']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output Information",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Vocal Preview",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Instrumental Preview",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Input audio path",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/combine_vocal_and_inst_17",
+      "parameters": [
+        {
+          "name": "Output Audio",
+          "label": "Output Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "name": "Vocal volume",
+          "label": "Vocal volume",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "Instrument volume",
+          "label": "Instrument volume",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "Splitter Model",
+          "label": "Splitter Model",
+          "type": "Literal['hdemucs_mmi', 'htdemucs', 'htdemucs_ft', 'mdx', 'mdx_q', 'mdx_extra_q']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output Combined Audio",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ]
+    },
+    {
+      "name": "/change_audio_mode_17",
+      "parameters": [
+        {
+          "name": "Input voice",
+          "label": "Input voice",
+          "type": "Literal['Upload audio', 'TTS Audio']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Input audio path",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Upload audio file",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Provider",
+          "type": "Literal['Youtube']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Youtube URL",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Output Information",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Splitter Model",
+          "type": "Literal['hdemucs_mmi', 'htdemucs', 'htdemucs_ft', 'mdx', 'mdx_q', 'mdx_extra_q']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Output Information",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Audio Preview",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Vocal Preview",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Instrumental Preview",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Vocal volume",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Instrument volume",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Output Combined Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "TTS text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Edge-tts speaker",
+          "type": "Literal['af-ZA-AdriNeural-Female', 'af-ZA-WillemNeural-Male', 'sq-AL-AnilaNeural-Female', 'sq-AL-IlirNeural-Male', 'am-ET-AmehaNeural-Male', 'am-ET-MekdesNeural-Female', 'ar-DZ-AminaNeural-Female', 'a",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/vc_fn_18",
+      "parameters": [
+        {
+          "name": "Input voice",
+          "label": "Input voice",
+          "type": "Literal['Upload audio', 'TTS Audio']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "Input audio path",
+          "label": "Input audio path",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "Upload audio file",
+          "label": "Upload audio file",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "name": "TTS text",
+          "label": "TTS text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "Edge-tts speaker",
+          "label": "Edge-tts speaker",
+          "type": "Literal['af-ZA-AdriNeural-Female', 'af-ZA-WillemNeural-Male', 'sq-AL-AnilaNeural-Female', 'sq-AL-IlirNeural-Male', 'am-ET-AmehaNeural-Male', 'am-ET-MekdesNeural-Female', 'ar-DZ-AminaNeural-Female', 'a",
+          "component": "Dropdown"
+        },
+        {
+          "name": "Transpose",
+          "label": "Transpose",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "Pitch extraction algorithm",
+          "label": "Pitch extraction algorithm",
+          "type": "Literal['pm', 'harvest']",
+          "component": "Radio"
+        },
+        {
+          "name": "Retrieval feature ratio",
+          "label": "Retrieval feature ratio",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "Apply Median Filtering",
+          "label": "Apply Median Filtering",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "Resample the output audio",
+          "label": "Resample the output audio",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "Volume Envelope",
+          "label": "Volume Envelope",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "Voice Protection",
+          "label": "Voice Protection",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output Information",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Output Audio",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ]
+    },
+    {
+      "name": "/download_audio_18",
+      "parameters": [
+        {
+          "name": "Youtube URL",
+          "label": "Youtube URL",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "Provider",
+          "label": "Provider",
+          "type": "Literal['Youtube']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Audio Preview",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Output Information",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/cut_vocal_and_inst_18",
+      "parameters": [
+        {
+          "name": "Splitter Model",
+          "label": "Splitter Model",
+          "type": "Literal['hdemucs_mmi', 'htdemucs', 'htdemucs_ft', 'mdx', 'mdx_q', 'mdx_extra_q']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output Information",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Vocal Preview",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Instrumental Preview",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Input audio path",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/combine_vocal_and_inst_18",
+      "parameters": [
+        {
+          "name": "Output Audio",
+          "label": "Output Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "name": "Vocal volume",
+          "label": "Vocal volume",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "Instrument volume",
+          "label": "Instrument volume",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "Splitter Model",
+          "label": "Splitter Model",
+          "type": "Literal['hdemucs_mmi', 'htdemucs', 'htdemucs_ft', 'mdx', 'mdx_q', 'mdx_extra_q']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output Combined Audio",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ]
+    },
+    {
+      "name": "/change_audio_mode_18",
+      "parameters": [
+        {
+          "name": "Input voice",
+          "label": "Input voice",
+          "type": "Literal['Upload audio', 'TTS Audio']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Input audio path",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Upload audio file",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Provider",
+          "type": "Literal['Youtube']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Youtube URL",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Output Information",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Splitter Model",
+          "type": "Literal['hdemucs_mmi', 'htdemucs', 'htdemucs_ft', 'mdx', 'mdx_q', 'mdx_extra_q']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Output Information",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Audio Preview",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Vocal Preview",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Instrumental Preview",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Vocal volume",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Instrument volume",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Output Combined Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "TTS text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Edge-tts speaker",
+          "type": "Literal['af-ZA-AdriNeural-Female', 'af-ZA-WillemNeural-Male', 'sq-AL-AnilaNeural-Female', 'sq-AL-IlirNeural-Male', 'am-ET-AmehaNeural-Male', 'am-ET-MekdesNeural-Female', 'ar-DZ-AminaNeural-Female', 'a",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/vc_fn_19",
+      "parameters": [
+        {
+          "name": "Input voice",
+          "label": "Input voice",
+          "type": "Literal['Upload audio', 'TTS Audio']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "Input audio path",
+          "label": "Input audio path",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "Upload audio file",
+          "label": "Upload audio file",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "name": "TTS text",
+          "label": "TTS text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "Edge-tts speaker",
+          "label": "Edge-tts speaker",
+          "type": "Literal['af-ZA-AdriNeural-Female', 'af-ZA-WillemNeural-Male', 'sq-AL-AnilaNeural-Female', 'sq-AL-IlirNeural-Male', 'am-ET-AmehaNeural-Male', 'am-ET-MekdesNeural-Female', 'ar-DZ-AminaNeural-Female', 'a",
+          "component": "Dropdown"
+        },
+        {
+          "name": "Transpose",
+          "label": "Transpose",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "Pitch extraction algorithm",
+          "label": "Pitch extraction algorithm",
+          "type": "Literal['pm', 'harvest']",
+          "component": "Radio"
+        },
+        {
+          "name": "Retrieval feature ratio",
+          "label": "Retrieval feature ratio",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "Apply Median Filtering",
+          "label": "Apply Median Filtering",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "Resample the output audio",
+          "label": "Resample the output audio",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "Volume Envelope",
+          "label": "Volume Envelope",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "Voice Protection",
+          "label": "Voice Protection",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output Information",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Output Audio",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ]
+    },
+    {
+      "name": "/download_audio_19",
+      "parameters": [
+        {
+          "name": "Youtube URL",
+          "label": "Youtube URL",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "Provider",
+          "label": "Provider",
+          "type": "Literal['Youtube']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Audio Preview",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Output Information",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/cut_vocal_and_inst_19",
+      "parameters": [
+        {
+          "name": "Splitter Model",
+          "label": "Splitter Model",
+          "type": "Literal['hdemucs_mmi', 'htdemucs', 'htdemucs_ft', 'mdx', 'mdx_q', 'mdx_extra_q']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output Information",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Vocal Preview",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Instrumental Preview",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Input audio path",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/combine_vocal_and_inst_19",
+      "parameters": [
+        {
+          "name": "Output Audio",
+          "label": "Output Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "name": "Vocal volume",
+          "label": "Vocal volume",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "Instrument volume",
+          "label": "Instrument volume",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "Splitter Model",
+          "label": "Splitter Model",
+          "type": "Literal['hdemucs_mmi', 'htdemucs', 'htdemucs_ft', 'mdx', 'mdx_q', 'mdx_extra_q']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output Combined Audio",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ]
+    },
+    {
+      "name": "/change_audio_mode_19",
+      "parameters": [
+        {
+          "name": "Input voice",
+          "label": "Input voice",
+          "type": "Literal['Upload audio', 'TTS Audio']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Input audio path",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Upload audio file",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Provider",
+          "type": "Literal['Youtube']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Youtube URL",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Output Information",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Splitter Model",
+          "type": "Literal['hdemucs_mmi', 'htdemucs', 'htdemucs_ft', 'mdx', 'mdx_q', 'mdx_extra_q']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Output Information",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Audio Preview",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Vocal Preview",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Instrumental Preview",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Vocal volume",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Instrument volume",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Output Combined Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "TTS text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Edge-tts speaker",
+          "type": "Literal['af-ZA-AdriNeural-Female', 'af-ZA-WillemNeural-Male', 'sq-AL-AnilaNeural-Female', 'sq-AL-IlirNeural-Male', 'am-ET-AmehaNeural-Male', 'am-ET-MekdesNeural-Female', 'ar-DZ-AminaNeural-Female', 'a",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/vc_fn_20",
+      "parameters": [
+        {
+          "name": "Input voice",
+          "label": "Input voice",
+          "type": "Literal['Upload audio', 'TTS Audio']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "Input audio path",
+          "label": "Input audio path",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "Upload audio file",
+          "label": "Upload audio file",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "name": "TTS text",
+          "label": "TTS text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "Edge-tts speaker",
+          "label": "Edge-tts speaker",
+          "type": "Literal['af-ZA-AdriNeural-Female', 'af-ZA-WillemNeural-Male', 'sq-AL-AnilaNeural-Female', 'sq-AL-IlirNeural-Male', 'am-ET-AmehaNeural-Male', 'am-ET-MekdesNeural-Female', 'ar-DZ-AminaNeural-Female', 'a",
+          "component": "Dropdown"
+        },
+        {
+          "name": "Transpose",
+          "label": "Transpose",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "Pitch extraction algorithm",
+          "label": "Pitch extraction algorithm",
+          "type": "Literal['pm', 'harvest']",
+          "component": "Radio"
+        },
+        {
+          "name": "Retrieval feature ratio",
+          "label": "Retrieval feature ratio",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "Apply Median Filtering",
+          "label": "Apply Median Filtering",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "Resample the output audio",
+          "label": "Resample the output audio",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "Volume Envelope",
+          "label": "Volume Envelope",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "Voice Protection",
+          "label": "Voice Protection",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output Information",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Output Audio",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ]
+    },
+    {
+      "name": "/download_audio_20",
+      "parameters": [
+        {
+          "name": "Youtube URL",
+          "label": "Youtube URL",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "Provider",
+          "label": "Provider",
+          "type": "Literal['Youtube']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Audio Preview",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Output Information",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/cut_vocal_and_inst_20",
+      "parameters": [
+        {
+          "name": "Splitter Model",
+          "label": "Splitter Model",
+          "type": "Literal['hdemucs_mmi', 'htdemucs', 'htdemucs_ft', 'mdx', 'mdx_q', 'mdx_extra_q']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output Information",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Vocal Preview",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Instrumental Preview",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Input audio path",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/combine_vocal_and_inst_20",
+      "parameters": [
+        {
+          "name": "Output Audio",
+          "label": "Output Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "name": "Vocal volume",
+          "label": "Vocal volume",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "Instrument volume",
+          "label": "Instrument volume",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "Splitter Model",
+          "label": "Splitter Model",
+          "type": "Literal['hdemucs_mmi', 'htdemucs', 'htdemucs_ft', 'mdx', 'mdx_q', 'mdx_extra_q']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output Combined Audio",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ]
+    },
+    {
+      "name": "/change_audio_mode_20",
+      "parameters": [
+        {
+          "name": "Input voice",
+          "label": "Input voice",
+          "type": "Literal['Upload audio', 'TTS Audio']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Input audio path",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Upload audio file",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Provider",
+          "type": "Literal['Youtube']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Youtube URL",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Output Information",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Splitter Model",
+          "type": "Literal['hdemucs_mmi', 'htdemucs', 'htdemucs_ft', 'mdx', 'mdx_q', 'mdx_extra_q']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Output Information",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Audio Preview",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Vocal Preview",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Instrumental Preview",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Vocal volume",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Instrument volume",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Output Combined Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "TTS text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Edge-tts speaker",
+          "type": "Literal['af-ZA-AdriNeural-Female', 'af-ZA-WillemNeural-Male', 'sq-AL-AnilaNeural-Female', 'sq-AL-IlirNeural-Male', 'am-ET-AmehaNeural-Male', 'am-ET-MekdesNeural-Female', 'ar-DZ-AminaNeural-Female', 'a",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/vc_fn_21",
+      "parameters": [
+        {
+          "name": "Input voice",
+          "label": "Input voice",
+          "type": "Literal['Upload audio', 'TTS Audio']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "Input audio path",
+          "label": "Input audio path",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "Upload audio file",
+          "label": "Upload audio file",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "name": "TTS text",
+          "label": "TTS text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "Edge-tts speaker",
+          "label": "Edge-tts speaker",
+          "type": "Literal['af-ZA-AdriNeural-Female', 'af-ZA-WillemNeural-Male', 'sq-AL-AnilaNeural-Female', 'sq-AL-IlirNeural-Male', 'am-ET-AmehaNeural-Male', 'am-ET-MekdesNeural-Female', 'ar-DZ-AminaNeural-Female', 'a",
+          "component": "Dropdown"
+        },
+        {
+          "name": "Transpose",
+          "label": "Transpose",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "Pitch extraction algorithm",
+          "label": "Pitch extraction algorithm",
+          "type": "Literal['pm', 'harvest']",
+          "component": "Radio"
+        },
+        {
+          "name": "Retrieval feature ratio",
+          "label": "Retrieval feature ratio",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "Apply Median Filtering",
+          "label": "Apply Median Filtering",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "Resample the output audio",
+          "label": "Resample the output audio",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "Volume Envelope",
+          "label": "Volume Envelope",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "Voice Protection",
+          "label": "Voice Protection",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output Information",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Output Audio",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ]
+    },
+    {
+      "name": "/download_audio_21",
+      "parameters": [
+        {
+          "name": "Youtube URL",
+          "label": "Youtube URL",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "Provider",
+          "label": "Provider",
+          "type": "Literal['Youtube']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Audio Preview",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Output Information",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/cut_vocal_and_inst_21",
+      "parameters": [
+        {
+          "name": "Splitter Model",
+          "label": "Splitter Model",
+          "type": "Literal['hdemucs_mmi', 'htdemucs', 'htdemucs_ft', 'mdx', 'mdx_q', 'mdx_extra_q']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output Information",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Vocal Preview",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Instrumental Preview",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Input audio path",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/combine_vocal_and_inst_21",
+      "parameters": [
+        {
+          "name": "Output Audio",
+          "label": "Output Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "name": "Vocal volume",
+          "label": "Vocal volume",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "Instrument volume",
+          "label": "Instrument volume",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "Splitter Model",
+          "label": "Splitter Model",
+          "type": "Literal['hdemucs_mmi', 'htdemucs', 'htdemucs_ft', 'mdx', 'mdx_q', 'mdx_extra_q']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output Combined Audio",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ]
+    },
+    {
+      "name": "/change_audio_mode_21",
+      "parameters": [
+        {
+          "name": "Input voice",
+          "label": "Input voice",
+          "type": "Literal['Upload audio', 'TTS Audio']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Input audio path",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Upload audio file",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Provider",
+          "type": "Literal['Youtube']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Youtube URL",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Output Information",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Splitter Model",
+          "type": "Literal['hdemucs_mmi', 'htdemucs', 'htdemucs_ft', 'mdx', 'mdx_q', 'mdx_extra_q']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Output Information",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Audio Preview",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Vocal Preview",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Instrumental Preview",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Vocal volume",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Instrument volume",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Output Combined Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "TTS text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Edge-tts speaker",
+          "type": "Literal['af-ZA-AdriNeural-Female', 'af-ZA-WillemNeural-Male', 'sq-AL-AnilaNeural-Female', 'sq-AL-IlirNeural-Male', 'am-ET-AmehaNeural-Male', 'am-ET-MekdesNeural-Female', 'ar-DZ-AminaNeural-Female', 'a",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/vc_fn_22",
+      "parameters": [
+        {
+          "name": "Input voice",
+          "label": "Input voice",
+          "type": "Literal['Upload audio', 'TTS Audio']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "Input audio path",
+          "label": "Input audio path",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "Upload audio file",
+          "label": "Upload audio file",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "name": "TTS text",
+          "label": "TTS text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "Edge-tts speaker",
+          "label": "Edge-tts speaker",
+          "type": "Literal['af-ZA-AdriNeural-Female', 'af-ZA-WillemNeural-Male', 'sq-AL-AnilaNeural-Female', 'sq-AL-IlirNeural-Male', 'am-ET-AmehaNeural-Male', 'am-ET-MekdesNeural-Female', 'ar-DZ-AminaNeural-Female', 'a",
+          "component": "Dropdown"
+        },
+        {
+          "name": "Transpose",
+          "label": "Transpose",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "Pitch extraction algorithm",
+          "label": "Pitch extraction algorithm",
+          "type": "Literal['pm', 'harvest']",
+          "component": "Radio"
+        },
+        {
+          "name": "Retrieval feature ratio",
+          "label": "Retrieval feature ratio",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "Apply Median Filtering",
+          "label": "Apply Median Filtering",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "Resample the output audio",
+          "label": "Resample the output audio",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "Volume Envelope",
+          "label": "Volume Envelope",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "Voice Protection",
+          "label": "Voice Protection",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output Information",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Output Audio",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ]
+    },
+    {
+      "name": "/download_audio_22",
+      "parameters": [
+        {
+          "name": "Youtube URL",
+          "label": "Youtube URL",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "Provider",
+          "label": "Provider",
+          "type": "Literal['Youtube']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Audio Preview",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Output Information",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/cut_vocal_and_inst_22",
+      "parameters": [
+        {
+          "name": "Splitter Model",
+          "label": "Splitter Model",
+          "type": "Literal['hdemucs_mmi', 'htdemucs', 'htdemucs_ft', 'mdx', 'mdx_q', 'mdx_extra_q']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output Information",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Vocal Preview",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Instrumental Preview",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Input audio path",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/combine_vocal_and_inst_22",
+      "parameters": [
+        {
+          "name": "Output Audio",
+          "label": "Output Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "name": "Vocal volume",
+          "label": "Vocal volume",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "Instrument volume",
+          "label": "Instrument volume",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "Splitter Model",
+          "label": "Splitter Model",
+          "type": "Literal['hdemucs_mmi', 'htdemucs', 'htdemucs_ft', 'mdx', 'mdx_q', 'mdx_extra_q']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output Combined Audio",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ]
+    },
+    {
+      "name": "/change_audio_mode_22",
+      "parameters": [
+        {
+          "name": "Input voice",
+          "label": "Input voice",
+          "type": "Literal['Upload audio', 'TTS Audio']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Input audio path",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Upload audio file",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Provider",
+          "type": "Literal['Youtube']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Youtube URL",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Output Information",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Splitter Model",
+          "type": "Literal['hdemucs_mmi', 'htdemucs', 'htdemucs_ft', 'mdx', 'mdx_q', 'mdx_extra_q']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Output Information",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Audio Preview",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Vocal Preview",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Instrumental Preview",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Vocal volume",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Instrument volume",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Output Combined Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "TTS text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Edge-tts speaker",
+          "type": "Literal['af-ZA-AdriNeural-Female', 'af-ZA-WillemNeural-Male', 'sq-AL-AnilaNeural-Female', 'sq-AL-IlirNeural-Male', 'am-ET-AmehaNeural-Male', 'am-ET-MekdesNeural-Female', 'ar-DZ-AminaNeural-Female', 'a",
+          "component": "Dropdown"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/vc_fn",
+  "_api_verified": true,
+  "estimated_latency_s": 1.95,
+  "speed_tier": "fast",
+  "_latency_source": "measured_inference",
+  "measured_latency_s": 1.95,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:49:15.722813+00:00",
+  "measured_inference_s": 1.95,
+  "measured_inference_timestamp": "2026-04-20T07:59:37.294681+00:00",
+  "measured_inference_method": "auto_predict",
+  "measured_inference_api": "/vc_fn"
+}

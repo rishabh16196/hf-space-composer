@@ -1,0 +1,1829 @@
+{
+  "space_id": "Gregniuki/f5-tts_Polish_English_German",
+  "title": "F5-TTS",
+  "emoji": "\ud83d\udde3\ufe0f",
+  "description": "F5-TTS & E2-TTS: Zero-Shot Voice Cloning (Unofficial Demo)",
+  "input_schema": {
+    "new_speed": {
+      "type": "float",
+      "description": "Speed",
+      "required": true,
+      "component": "Slider"
+    }
+  },
+  "output_schema": {},
+  "license": "unknown",
+  "hardware": "",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us",
+    "audio",
+    "speech-synthesis",
+    "tts"
+  ],
+  "likes": 23,
+  "last_modified": "2025-05-19 14:13:30+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/update_speed",
+      "parameters": [
+        {
+          "name": "new_speed",
+          "label": "Speed",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/update_language",
+      "parameters": [
+        {
+          "name": "new_language",
+          "label": "Choose Language",
+          "type": "Literal['af', 'nl', 'en-us', 'en-gb', 'en-029', 'en-gb-x-gbclan', 'en-gb-x-rp', 'en-gb-scotland', 'en-gb-x-gbcwmd', 'de', 'lb', 'my', 'yue', 'hak', 'cmn', 'an', 'ca', 'fr-be', 'fr-fr', 'fr-ch', 'ht', ",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Current Language",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/update_language1",
+      "parameters": [
+        {
+          "name": "new_ref_language",
+          "label": "Choose Language",
+          "type": "Literal['af', 'nl', 'en-us', 'en-gb', 'en-029', 'en-gb-x-gbclan', 'en-gb-x-rp', 'en-gb-scotland', 'en-gb-x-gbcwmd', 'de', 'lb', 'my', 'yue', 'hak', 'cmn', 'an', 'ca', 'fr-be', 'fr-fr', 'fr-ch', 'ht', ",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Reference Language",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/infer",
+      "parameters": [
+        {
+          "name": "ref_audio_orig",
+          "label": "Reference Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "name": "ref_text",
+          "label": "Reference Text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "gen_text",
+          "label": "Text to Generate",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "exp_name",
+          "label": "Choose TTS Model",
+          "type": "Literal['Multi']",
+          "component": "Radio"
+        },
+        {
+          "name": "remove_silence",
+          "label": "Remove Silences",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "cross_fade_duration",
+          "label": "Cross-Fade Duration (s)",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Synthesized Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Spectrogram",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/add_speech_type_fn",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Speech Type Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Speech Type Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Speech Type Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Speech Type Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Speech Type Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Speech Type Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Speech Type Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Speech Type Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Speech Type Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Reference Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Reference Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Reference Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Reference Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Reference Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Reference Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Reference Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Reference Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Reference Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Reference Text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Reference Text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Reference Text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Reference Text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Reference Text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Reference Text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Reference Text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Reference Text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Reference Text",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/delete_speech_type_fn",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Speech Type Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Speech Type Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Speech Type Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Speech Type Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Speech Type Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Speech Type Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Speech Type Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Speech Type Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Speech Type Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Reference Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Reference Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Reference Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Reference Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Reference Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Reference Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Reference Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Reference Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Reference Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Reference Text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Reference Text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Reference Text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Reference Text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Reference Text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Reference Text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Reference Text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Reference Text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Reference Text",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/delete_speech_type_fn_1",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Speech Type Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Speech Type Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Speech Type Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Speech Type Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Speech Type Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Speech Type Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Speech Type Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Speech Type Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Speech Type Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Reference Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Reference Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Reference Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Reference Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Reference Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Reference Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Reference Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Reference Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Reference Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Reference Text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Reference Text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Reference Text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Reference Text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Reference Text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Reference Text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Reference Text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Reference Text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Reference Text",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/delete_speech_type_fn_2",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Speech Type Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Speech Type Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Speech Type Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Speech Type Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Speech Type Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Speech Type Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Speech Type Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Speech Type Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Speech Type Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Reference Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Reference Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Reference Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Reference Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Reference Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Reference Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Reference Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Reference Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Reference Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Reference Text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Reference Text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Reference Text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Reference Text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Reference Text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Reference Text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Reference Text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Reference Text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Reference Text",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/delete_speech_type_fn_3",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Speech Type Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Speech Type Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Speech Type Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Speech Type Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Speech Type Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Speech Type Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Speech Type Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Speech Type Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Speech Type Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Reference Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Reference Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Reference Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Reference Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Reference Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Reference Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Reference Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Reference Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Reference Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Reference Text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Reference Text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Reference Text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Reference Text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Reference Text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Reference Text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Reference Text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Reference Text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Reference Text",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/delete_speech_type_fn_4",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Speech Type Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Speech Type Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Speech Type Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Speech Type Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Speech Type Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Speech Type Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Speech Type Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Speech Type Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Speech Type Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Reference Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Reference Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Reference Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Reference Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Reference Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Reference Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Reference Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Reference Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Reference Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Reference Text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Reference Text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Reference Text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Reference Text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Reference Text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Reference Text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Reference Text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Reference Text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Reference Text",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/delete_speech_type_fn_5",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Speech Type Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Speech Type Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Speech Type Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Speech Type Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Speech Type Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Speech Type Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Speech Type Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Speech Type Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Speech Type Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Reference Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Reference Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Reference Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Reference Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Reference Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Reference Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Reference Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Reference Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Reference Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Reference Text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Reference Text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Reference Text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Reference Text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Reference Text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Reference Text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Reference Text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Reference Text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Reference Text",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/delete_speech_type_fn_6",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Speech Type Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Speech Type Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Speech Type Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Speech Type Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Speech Type Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Speech Type Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Speech Type Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Speech Type Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Speech Type Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Reference Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Reference Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Reference Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Reference Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Reference Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Reference Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Reference Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Reference Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Reference Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Reference Text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Reference Text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Reference Text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Reference Text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Reference Text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Reference Text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Reference Text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Reference Text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Reference Text",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/delete_speech_type_fn_7",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Speech Type Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Speech Type Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Speech Type Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Speech Type Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Speech Type Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Speech Type Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Speech Type Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Speech Type Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Speech Type Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Reference Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Reference Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Reference Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Reference Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Reference Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Reference Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Reference Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Reference Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Reference Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Reference Text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Reference Text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Reference Text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Reference Text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Reference Text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Reference Text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Reference Text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Reference Text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Reference Text",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/delete_speech_type_fn_8",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Speech Type Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Speech Type Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Speech Type Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Speech Type Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Speech Type Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Speech Type Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Speech Type Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Speech Type Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Speech Type Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Reference Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Reference Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Reference Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Reference Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Reference Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Reference Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Reference Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Reference Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Reference Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Reference Text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Reference Text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Reference Text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Reference Text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Reference Text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Reference Text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Reference Text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Reference Text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Reference Text",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/generate_emotional_speech",
+      "parameters": [
+        {
+          "name": "regular_audio",
+          "label": "Regular Reference Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "name": "regular_ref_text",
+          "label": "Reference Text (Regular)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "gen_text",
+          "label": "Text to Generate",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_3",
+          "label": "Speech Type Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_4",
+          "label": "Speech Type Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_5",
+          "label": "Speech Type Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_6",
+          "label": "Speech Type Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_7",
+          "label": "Speech Type Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_8",
+          "label": "Speech Type Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_9",
+          "label": "Speech Type Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_10",
+          "label": "Speech Type Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_11",
+          "label": "Speech Type Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_12",
+          "label": "Reference Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "name": "param_13",
+          "label": "Reference Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "name": "param_14",
+          "label": "Reference Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "name": "param_15",
+          "label": "Reference Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "name": "param_16",
+          "label": "Reference Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "name": "param_17",
+          "label": "Reference Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "name": "param_18",
+          "label": "Reference Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "name": "param_19",
+          "label": "Reference Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "name": "param_20",
+          "label": "Reference Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "name": "param_21",
+          "label": "Reference Text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_22",
+          "label": "Reference Text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_23",
+          "label": "Reference Text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_24",
+          "label": "Reference Text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_25",
+          "label": "Reference Text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_26",
+          "label": "Reference Text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_27",
+          "label": "Reference Text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_28",
+          "label": "Reference Text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_29",
+          "label": "Reference Text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_30",
+          "label": "Choose TTS Model",
+          "type": "Literal['Multi']",
+          "component": "Radio"
+        },
+        {
+          "name": "param_31",
+          "label": "Remove Silences",
+          "type": "Literal['True', 'False']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Synthesized Audio",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ]
+    },
+    {
+      "name": "/validate_speech_types",
+      "parameters": [
+        {
+          "name": "gen_text",
+          "label": "Text to Generate",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "regular_name",
+          "label": "Speech Type Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_2",
+          "label": "Speech Type Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_3",
+          "label": "Speech Type Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_4",
+          "label": "Speech Type Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_5",
+          "label": "Speech Type Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_6",
+          "label": "Speech Type Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_7",
+          "label": "Speech Type Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_8",
+          "label": "Speech Type Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_9",
+          "label": "Speech Type Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_10",
+          "label": "Speech Type Name",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": []
+    }
+  ],
+  "endpoint": "/update_speed",
+  "_api_verified": true,
+  "estimated_latency_s": 4.43,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "_tags_enriched": true,
+  "measured_latency_s": 4.43,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:49:22.759062+00:00"
+}

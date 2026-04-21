@@ -1,0 +1,35 @@
+{
+  "space_id": "pytorch/MiDaS",
+  "title": "MiDaS",
+  "emoji": "\ud83d\ude3b",
+  "description": "MiDaS",
+  "input_schema": {
+    "input": {
+      "type": "string",
+      "description": "Input",
+      "required": true
+    }
+  },
+  "output_schema": {
+    "output": {
+      "type": "string"
+    }
+  },
+  "license": "unknown",
+  "hardware": "2.8.1",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 215,
+  "last_modified": "2023-07-13 15:43:30+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "error",
+  "_api_error": "Could not fetch api info for https://pytorch-midas.hf.space: {\"detail\":\"'dependencies'\"}",
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred"
+}

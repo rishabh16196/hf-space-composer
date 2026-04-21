@@ -1,0 +1,74 @@
+{
+  "space_id": "keras-io/neural-style-transfer",
+  "title": "Keras Neural Style Transfer",
+  "emoji": "\ud83d\udc20",
+  "description": "Keras Neural Style Transfer",
+  "input_schema": {
+    "base_image_path": {
+      "type": "str",
+      "description": "base_image_path",
+      "required": true,
+      "component": "Image"
+    },
+    "style_reference_image_path": {
+      "type": "str",
+      "description": "style_reference_image_path",
+      "required": true,
+      "component": "Image"
+    }
+  },
+  "output_schema": {
+    "output": {
+      "type": "str",
+      "description": "output",
+      "component": "Image"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "3.9",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 22,
+  "last_modified": "2022-12-16 09:10:35+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/predict",
+      "parameters": [
+        {
+          "name": "base_image_path",
+          "label": "base_image_path",
+          "type": "str",
+          "component": "Image"
+        },
+        {
+          "name": "style_reference_image_path",
+          "label": "style_reference_image_path",
+          "type": "str",
+          "component": "Image"
+        }
+      ],
+      "returns": [
+        {
+          "label": "output",
+          "type": "str",
+          "component": "Image"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/predict",
+  "_api_verified": true,
+  "estimated_latency_s": 3.03,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 3.03,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:51:02.442139+00:00"
+}

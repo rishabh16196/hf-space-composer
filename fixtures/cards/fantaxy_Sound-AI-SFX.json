@@ -1,0 +1,99 @@
+{
+  "space_id": "fantaxy/Sound-AI-SFX",
+  "title": "Sound AI SFX",
+  "emoji": "\ud83d\udc20",
+  "description": "SText to Audio(Sound SFX) Generator",
+  "input_schema": {
+    "prompt": {
+      "type": "str",
+      "description": "Prompt",
+      "required": true,
+      "component": "Textbox"
+    },
+    "steps": {
+      "type": "float",
+      "description": "Steps",
+      "required": true,
+      "component": "Slider"
+    },
+    "guidance": {
+      "type": "float",
+      "description": "Guidance Scale",
+      "required": true,
+      "component": "Slider"
+    },
+    "duration": {
+      "type": "float",
+      "description": "Duration",
+      "required": true,
+      "component": "Slider"
+    }
+  },
+  "output_schema": {
+    "Generated Audio": {
+      "type": "filepath",
+      "description": "Generated Audio",
+      "component": "Audio"
+    }
+  },
+  "license": "unknown",
+  "hardware": "5.35.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 328,
+  "last_modified": "2025-07-04 11:36:09+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/gradio_generate",
+      "parameters": [
+        {
+          "name": "prompt",
+          "label": "Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "steps",
+          "label": "Steps",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "guidance",
+          "label": "Guidance Scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "duration",
+          "label": "Duration",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Generated Audio",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/gradio_generate",
+  "_api_verified": true,
+  "estimated_latency_s": 3.48,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "_tags_enriched": true,
+  "measured_latency_s": 3.48,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:50:34.612572+00:00"
+}

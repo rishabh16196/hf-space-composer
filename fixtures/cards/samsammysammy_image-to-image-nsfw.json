@@ -1,0 +1,179 @@
+{
+  "space_id": "samsammysammy/image-to-image-nsfw",
+  "title": "Image To Image Nsfw",
+  "emoji": "\ud83c\udfc6",
+  "description": "Image To Image Nsfw",
+  "input_schema": {
+    "val": {
+      "type": "Literal['FLUX.1-dev FP8 (recommended - ~11-13GB)', 'FLUX.1-dev NF4 (smallest & fastest load)', 'FLUX",
+      "description": "Base Model",
+      "required": true,
+      "component": "Dropdown"
+    }
+  },
+  "output_schema": {
+    "Custom Model Repo/ID": {
+      "type": "str",
+      "description": "Custom Model Repo/ID",
+      "component": "Textbox"
+    }
+  },
+  "license": "unknown",
+  "hardware": "6.5.1",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "not-for-all-audiences",
+    "region:us"
+  ],
+  "likes": 2,
+  "last_modified": "2026-02-07 22:04:08+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/show_custom",
+      "parameters": [
+        {
+          "name": "val",
+          "label": "Base Model",
+          "type": "Literal['FLUX.1-dev FP8 (recommended - ~11-13GB)', 'FLUX.1-dev NF4 (smallest & fastest load)', 'FLUX.1-schnell FP8 (faster, lower quality)', 'Custom model ID']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Custom Model Repo/ID",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/show_custom_1",
+      "parameters": [
+        {
+          "name": "val",
+          "label": "LoRA (optional, keep light)",
+          "type": "Literal['None (no LoRA)', 'XLabs Realism LoRA (very popular)', 'Flux Super Realism LoRA', 'NSFW / detailed skin enhancer', 'Cinematic realism', 'Custom LoRA']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Custom LoRA Repo/ID",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/load_model",
+      "parameters": [
+        {
+          "name": "selected_model_name",
+          "label": "Base Model",
+          "type": "Literal['FLUX.1-dev FP8 (recommended - ~11-13GB)', 'FLUX.1-dev NF4 (smallest & fastest load)', 'FLUX.1-schnell FP8 (faster, lower quality)', 'Custom model ID']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "custom_model_id",
+          "label": "Custom Model Repo/ID",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "selected_lora_name",
+          "label": "LoRA (optional, keep light)",
+          "type": "Literal['None (no LoRA)', 'XLabs Realism LoRA (very popular)', 'Flux Super Realism LoRA', 'NSFW / detailed skin enhancer', 'Cinematic realism', 'Custom LoRA']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "custom_lora_id",
+          "label": "Custom LoRA Repo/ID",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "lora_weight",
+          "label": "LoRA strength",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Load Status",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/generate",
+      "parameters": [
+        {
+          "name": "init_image",
+          "label": "Input Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "prompt",
+          "label": "Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "negative_prompt",
+          "label": "Negative prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "strength",
+          "label": "Strength (higher = more change)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "guidance_scale",
+          "label": "Guidance scale (Flux likes low)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "steps",
+          "label": "Steps (lower = faster)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "seed",
+          "label": "Seed (-1 = random)",
+          "type": "float",
+          "component": "Number"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "Generation Status",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/show_custom",
+  "_api_verified": true
+}

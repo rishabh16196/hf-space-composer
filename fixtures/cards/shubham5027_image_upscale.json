@@ -1,0 +1,86 @@
+{
+  "space_id": "shubham5027/image_upscale",
+  "title": "Image Upscale",
+  "emoji": "\ud83c\udfe2",
+  "description": "Image Upscale",
+  "input_schema": {
+    "img": {
+      "type": "filepath",
+      "description": "Input",
+      "required": true,
+      "component": "Image"
+    },
+    "version": {
+      "type": "Literal['GFPGANv1.2', 'GFPGANv1.3', 'GFPGANv1.4', 'RestoreFormer']",
+      "description": "version",
+      "required": true,
+      "component": "Radio"
+    },
+    "scale": {
+      "type": "float",
+      "description": "Rescaling factor",
+      "required": true,
+      "component": "Number"
+    }
+  },
+  "output_schema": {
+    "Output": {
+      "type": "filepath",
+      "description": "Output",
+      "component": "Image"
+    }
+  },
+  "license": "mit",
+  "hardware": "4.36.1",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 10,
+  "last_modified": "2025-06-15 17:34:28+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/predict",
+      "parameters": [
+        {
+          "name": "img",
+          "label": "Input",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "name": "version",
+          "label": "version",
+          "type": "Literal['GFPGANv1.2', 'GFPGANv1.3', 'GFPGANv1.4', 'RestoreFormer']",
+          "component": "Radio"
+        },
+        {
+          "name": "scale",
+          "label": "Rescaling factor",
+          "type": "float",
+          "component": "Number"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output",
+          "type": "filepath",
+          "component": "Image"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/predict",
+  "_api_verified": true,
+  "estimated_latency_s": 3.94,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 3.94,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:51:50.976144+00:00"
+}

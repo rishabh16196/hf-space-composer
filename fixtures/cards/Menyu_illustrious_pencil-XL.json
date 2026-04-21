@@ -1,0 +1,133 @@
+{
+  "space_id": "Menyu/illustrious_pencil-XL",
+  "title": "\u68a6\u7fbd\u7684\u5728\u7ebf\u753b\u56feillustrious_pencil-XL",
+  "emoji": "\ud83d\uddbc",
+  "description": "\u68a6\u7fbd\u7684\u5728\u7ebf\u753b\u56feillustrious_pencil-XL",
+  "input_schema": {
+    "x": {
+      "type": "bool",
+      "description": "\u4f7f\u7528\u53cd\u5411\u8bcd\u6761",
+      "required": true,
+      "component": "Checkbox"
+    }
+  },
+  "output_schema": {
+    "\u53cd\u5411\u8bcd\u6761": {
+      "type": "str",
+      "description": "\u53cd\u5411\u8bcd\u6761",
+      "component": "Textbox"
+    }
+  },
+  "license": "unknown",
+  "hardware": "5.29.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 97,
+  "last_modified": "2025-05-11 09:52:11+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/lambda",
+      "parameters": [
+        {
+          "name": "x",
+          "label": "\u4f7f\u7528\u53cd\u5411\u8bcd\u6761",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "\u53cd\u5411\u8bcd\u6761",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/infer",
+      "parameters": [
+        {
+          "name": "prompt",
+          "label": "\u5173\u952e\u8bcd",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "negative_prompt",
+          "label": "\u53cd\u5411\u8bcd\u6761",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "use_negative_prompt",
+          "label": "\u4f7f\u7528\u53cd\u5411\u8bcd\u6761",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "seed",
+          "label": "\u79cd\u5b50",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "width",
+          "label": "\u5bbd\u5ea6",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "height",
+          "label": "\u9ad8\u5ea6",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "guidance_scale",
+          "label": "Guidance Scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "num_inference_steps",
+          "label": "\u751f\u6210\u6b65\u6570",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "randomize_seed",
+          "label": "\u968f\u673a\u79cd\u5b50",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Result",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "\u79cd\u5b50",
+          "type": "float",
+          "component": "Slider"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/lambda",
+  "_api_verified": true,
+  "estimated_latency_s": 2.89,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 2.89,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:49:36.514825+00:00"
+}

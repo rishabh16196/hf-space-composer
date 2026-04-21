@@ -1,0 +1,62 @@
+{
+  "space_id": "jane-street/puzzle",
+  "title": "puzzle",
+  "emoji": "\ud83d\udc41",
+  "description": "puzzle",
+  "input_schema": {
+    "x": {
+      "type": "str",
+      "description": "Model Input",
+      "required": true,
+      "component": "Textbox"
+    }
+  },
+  "output_schema": {
+    "Model Output": {
+      "type": "float",
+      "description": "Model Output",
+      "component": "Number"
+    }
+  },
+  "license": "mit",
+  "hardware": "5.20.1",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 101,
+  "last_modified": "2026-03-02 21:19:23+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/lambda",
+      "parameters": [
+        {
+          "name": "x",
+          "label": "Model Input",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Model Output",
+          "type": "float",
+          "component": "Number"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/lambda",
+  "_api_verified": true,
+  "estimated_latency_s": 3.51,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 3.51,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:50:59.299493+00:00"
+}

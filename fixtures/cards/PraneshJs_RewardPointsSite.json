@@ -1,0 +1,172 @@
+{
+  "space_id": "PraneshJs/RewardPointsSite",
+  "title": "RewardPointsSite",
+  "emoji": "\ud83d\udcbb",
+  "description": "RewardPointsSite",
+  "input_schema": {
+    "key": {
+      "type": "str",
+      "description": "Enter Admin Key",
+      "required": true,
+      "component": "Textbox"
+    }
+  },
+  "output_schema": {
+    "value_43": {
+      "type": "str",
+      "description": "value_43",
+      "component": "Markdown"
+    }
+  },
+  "license": "unknown",
+  "hardware": "5.47.2",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 22,
+  "last_modified": "2026-04-02 05:46:45+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/verify_admin_key",
+      "parameters": [
+        {
+          "name": "key",
+          "label": "Enter Admin Key",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_43",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/admin_reload",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_43",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/search_student",
+      "parameters": [
+        {
+          "name": "roll_no",
+          "label": "Enter Roll Number",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Student Details",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/search_student_1",
+      "parameters": [
+        {
+          "name": "roll_no",
+          "label": "Enter Roll Number",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Student Details",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/extract_subjects_and_marks_for_gradio",
+      "parameters": [
+        {
+          "name": "roll_no",
+          "label": "Enter Roll Number for Innovative Practice (IP) Details",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Innovative Practice (IP) Details",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/extract_subjects_and_marks_for_gradio_1",
+      "parameters": [
+        {
+          "name": "roll_no",
+          "label": "Enter Roll Number for Innovative Practice (IP) Details",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Innovative Practice (IP) Details",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/get_system_info",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "System Information",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/setup_admin_mode",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/initialize_system_info",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "System Information",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/verify_admin_key",
+  "_api_verified": true,
+  "estimated_latency_s": 2.84,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 2.84,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:49:47.339599+00:00"
+}

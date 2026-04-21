@@ -1,0 +1,228 @@
+{
+  "space_id": "Heartsync/NSFWI2I",
+  "title": "NSFW Uncensored - Text & Imagery",
+  "emoji": "\u26a1",
+  "description": "NSFW Uncensored Text & Imagery for AI Limits",
+  "input_schema": {
+    "keyword": {
+      "type": "str",
+      "description": "\ud83c\udfaf Keyword Input",
+      "required": true,
+      "component": "Textbox"
+    }
+  },
+  "output_schema": {
+    "\u270f\ufe0f Prompt": {
+      "type": "str",
+      "description": "\u270f\ufe0f Prompt",
+      "component": "Textbox"
+    }
+  },
+  "license": "unknown",
+  "hardware": "5.42.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "not-for-all-audiences",
+    "region:us"
+  ],
+  "likes": 13,
+  "last_modified": "2026-02-27 06:22:49+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/boost_prompt",
+      "parameters": [
+        {
+          "name": "keyword",
+          "label": "\ud83c\udfaf Keyword Input",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "\u270f\ufe0f Prompt",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/get_random_prompt",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "\u270f\ufe0f Prompt",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/infer",
+      "parameters": [
+        {
+          "name": "prompt",
+          "label": "\u270f\ufe0f Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "negative_prompt",
+          "label": "\ud83d\udeab Negative prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "seed",
+          "label": "\ud83c\udf31 Seed",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "randomize_seed",
+          "label": "\ud83d\udd00 Randomize seed",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "width",
+          "label": "\u2194\ufe0f Width",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "height",
+          "label": "\u2195\ufe0f Height",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "guidance_scale",
+          "label": "\ud83c\udf9a\ufe0f Guidance scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "num_inference_steps",
+          "label": "\ud83d\udd04 Inference steps",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "\ud83d\uddbc\ufe0f Generated Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/update_image_state",
+      "parameters": [
+        {
+          "name": "img",
+          "label": "\ud83d\uddbc\ufe0f Generated Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/img2img_infer",
+      "parameters": [
+        {
+          "name": "init_image",
+          "label": "\ud83d\udce4 Input Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "prompt",
+          "label": "\u270f\ufe0f Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "negative_prompt",
+          "label": "\ud83d\udeab Negative prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "strength",
+          "label": "\ud83d\udcaa Transformation Strength",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "seed",
+          "label": "\ud83c\udf31 Seed",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "randomize_seed",
+          "label": "\ud83d\udd00 Randomize seed",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "width",
+          "label": "\u2194\ufe0f Width",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "height",
+          "label": "\u2195\ufe0f Height",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "guidance_scale",
+          "label": "\ud83c\udf9a\ufe0f Guidance scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "num_inference_steps",
+          "label": "\ud83d\udd04 Inference steps",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "\ud83d\uddbc\ufe0f Transformed Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "\ud83c\udf31 Seed",
+          "type": "float",
+          "component": "Slider"
+        }
+      ]
+    },
+    {
+      "name": "/_check_login_status",
+      "parameters": [],
+      "returns": []
+    }
+  ],
+  "endpoint": "/boost_prompt",
+  "_api_verified": true,
+  "estimated_latency_s": 3.35,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 3.35,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:49:23.683693+00:00"
+}

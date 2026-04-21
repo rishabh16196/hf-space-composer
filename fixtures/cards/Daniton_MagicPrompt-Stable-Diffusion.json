@@ -1,0 +1,40 @@
+{
+  "space_id": "Daniton/MagicPrompt-Stable-Diffusion",
+  "title": "MagicPrompt Stable Diffusion",
+  "emoji": "\ud83c\udf44",
+  "description": "MagicPrompt Stable Diffusion",
+  "input_schema": {
+    "input": {
+      "type": "string",
+      "description": "Input",
+      "required": true
+    }
+  },
+  "output_schema": {
+    "output": {
+      "type": "string"
+    }
+  },
+  "license": "mit",
+  "hardware": "3.3.1",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us",
+    "diffusion",
+    "image-generation",
+    "text-to-image",
+    "vision"
+  ],
+  "likes": 5,
+  "last_modified": "2023-02-01 10:19:05+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_tags_enriched": true,
+  "estimated_latency_s": 40.0,
+  "speed_tier": "slow",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "error",
+  "_api_error": "(Request ID: Root=1-69e77ba8-2b04e44e5c4f25a313f399f2;0ee8a1f3-1a4a-4255-90c3-28f4dcdb1b19)\n\n429 Too Many Requests: you have reached your 'api' rate limit.\nRetry after 54 seconds (0/2500 requests rema"
+}

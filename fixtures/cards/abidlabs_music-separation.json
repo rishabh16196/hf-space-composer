@@ -1,0 +1,75 @@
+{
+  "space_id": "abidlabs/music-separation",
+  "title": "Demucs Music Source Separation (v4)",
+  "emoji": "\u26a1",
+  "description": "Demucs Music Source Separation (v4)",
+  "input_schema": {
+    "audio": {
+      "type": "filepath",
+      "description": "Input",
+      "required": true,
+      "component": "Audio"
+    }
+  },
+  "output_schema": {
+    "Vocals": {
+      "type": "filepath",
+      "description": "Vocals",
+      "component": "Audio"
+    },
+    "No Vocals / Instrumental": {
+      "type": "filepath",
+      "description": "No Vocals / Instrumental",
+      "component": "Audio"
+    }
+  },
+  "license": "unknown",
+  "hardware": "5.20.1",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us",
+    "audio",
+    "music"
+  ],
+  "likes": 292,
+  "last_modified": "2025-03-12 21:51:46+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/predict",
+      "parameters": [
+        {
+          "name": "audio",
+          "label": "Input",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Vocals",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "No Vocals / Instrumental",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/predict",
+  "_api_verified": true,
+  "estimated_latency_s": 3.43,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "_tags_enriched": true,
+  "measured_latency_s": 3.43,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:50:07.809140+00:00"
+}

@@ -1,0 +1,76 @@
+{
+  "space_id": "finegrain/finegrain-light-switcher",
+  "title": "Finegrain Light Switcher (Lite Version)",
+  "emoji": "\ud83d\udca1",
+  "description": "Instantly turn lamps on in your images",
+  "input_schema": {
+    "input_image": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "Input Image",
+      "required": true,
+      "component": "Image"
+    },
+    "seed": {
+      "type": "float",
+      "description": "Seed",
+      "required": true,
+      "component": "Slider"
+    }
+  },
+  "output_schema": {
+    "Before / After": {
+      "type": "tuple[dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base6",
+      "description": "Before / After",
+      "component": "Imageslider"
+    }
+  },
+  "license": "other",
+  "hardware": "5.27.1",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "refiners",
+    "image-to-image",
+    "region:us"
+  ],
+  "likes": 51,
+  "last_modified": "2026-01-19 12:57:30+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/process",
+      "parameters": [
+        {
+          "name": "input_image",
+          "label": "Input Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "seed",
+          "label": "Seed",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Before / After",
+          "type": "tuple[dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filenam",
+          "component": "Imageslider"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/process",
+  "_api_verified": true,
+  "estimated_latency_s": 3.35,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 3.35,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:50:38.325399+00:00"
+}

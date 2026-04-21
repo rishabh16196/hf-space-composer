@@ -1,0 +1,96 @@
+{
+  "space_id": "amaai-lab/text2midi",
+  "title": "Text2midi",
+  "emoji": "\ud83d\udcc9",
+  "description": "Text2midi",
+  "input_schema": {
+    "prompt": {
+      "type": "str",
+      "description": "Prompt",
+      "required": true,
+      "component": "Textbox"
+    },
+    "temperature": {
+      "type": "float",
+      "description": "Temperature",
+      "required": true,
+      "component": "Slider"
+    },
+    "max_length": {
+      "type": "float",
+      "description": "Max Length",
+      "required": true,
+      "component": "Number"
+    }
+  },
+  "output_schema": {
+    "Generated Music": {
+      "type": "filepath",
+      "description": "Generated Music",
+      "component": "Audio"
+    },
+    "Download MIDI File": {
+      "type": "filepath",
+      "description": "Download MIDI File",
+      "component": "File"
+    }
+  },
+  "license": "mit",
+  "hardware": "4.41.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 29,
+  "last_modified": "2025-01-16 06:39:33+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/predict",
+      "parameters": [
+        {
+          "name": "prompt",
+          "label": "Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "temperature",
+          "label": "Temperature",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "max_length",
+          "label": "Max Length",
+          "type": "float",
+          "component": "Number"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Generated Music",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Download MIDI File",
+          "type": "filepath",
+          "component": "File"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/predict",
+  "_api_verified": true,
+  "estimated_latency_s": 3.2,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 3.2,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:50:15.080851+00:00"
+}

@@ -1,0 +1,1034 @@
+{
+  "space_id": "huggingface-projects/Deep-Reinforcement-Learning-Leaderboard",
+  "title": "Deep Reinforcement Learning Leaderboard",
+  "emoji": "\ud83d\ude80",
+  "description": "Deep Reinforcement Learning Leaderboard",
+  "input_schema": {
+    "user_id": {
+      "type": "str",
+      "description": "Your user id",
+      "required": true,
+      "component": "Textbox"
+    }
+  },
+  "output_schema": {
+    "value_15": {
+      "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+      "description": "value_15",
+      "component": "Dataframe"
+    }
+  },
+  "license": "unknown",
+  "hardware": "5.12.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us",
+    "benchmark",
+    "leaderboard"
+  ],
+  "likes": 394,
+  "last_modified": "2025-08-05 16:31:21+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/filter_data",
+      "parameters": [
+        {
+          "name": "user_id",
+          "label": "Your user id",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_15",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/filter_data_1",
+      "parameters": [
+        {
+          "name": "user_id",
+          "label": "Your user id",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_15",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/get_data",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_15",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/filter_data_2",
+      "parameters": [
+        {
+          "name": "user_id",
+          "label": "Your user id",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_31",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/filter_data_3",
+      "parameters": [
+        {
+          "name": "user_id",
+          "label": "Your user id",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_31",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/get_data_1",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_31",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/filter_data_4",
+      "parameters": [
+        {
+          "name": "user_id",
+          "label": "Your user id",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_47",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/filter_data_5",
+      "parameters": [
+        {
+          "name": "user_id",
+          "label": "Your user id",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_47",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/get_data_2",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_47",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/filter_data_6",
+      "parameters": [
+        {
+          "name": "user_id",
+          "label": "Your user id",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_63",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/filter_data_7",
+      "parameters": [
+        {
+          "name": "user_id",
+          "label": "Your user id",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_63",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/get_data_3",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_63",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/filter_data_8",
+      "parameters": [
+        {
+          "name": "user_id",
+          "label": "Your user id",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_79",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/filter_data_9",
+      "parameters": [
+        {
+          "name": "user_id",
+          "label": "Your user id",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_79",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/get_data_4",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_79",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/filter_data_10",
+      "parameters": [
+        {
+          "name": "user_id",
+          "label": "Your user id",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_95",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/filter_data_11",
+      "parameters": [
+        {
+          "name": "user_id",
+          "label": "Your user id",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_95",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/get_data_5",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_95",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/filter_data_12",
+      "parameters": [
+        {
+          "name": "user_id",
+          "label": "Your user id",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_111",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/filter_data_13",
+      "parameters": [
+        {
+          "name": "user_id",
+          "label": "Your user id",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_111",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/get_data_6",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_111",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/filter_data_14",
+      "parameters": [
+        {
+          "name": "user_id",
+          "label": "Your user id",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_127",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/filter_data_15",
+      "parameters": [
+        {
+          "name": "user_id",
+          "label": "Your user id",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_127",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/get_data_7",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_127",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/filter_data_16",
+      "parameters": [
+        {
+          "name": "user_id",
+          "label": "Your user id",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_143",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/filter_data_17",
+      "parameters": [
+        {
+          "name": "user_id",
+          "label": "Your user id",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_143",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/get_data_8",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_143",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/filter_data_18",
+      "parameters": [
+        {
+          "name": "user_id",
+          "label": "Your user id",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_159",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/filter_data_19",
+      "parameters": [
+        {
+          "name": "user_id",
+          "label": "Your user id",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_159",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/get_data_9",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_159",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/filter_data_20",
+      "parameters": [
+        {
+          "name": "user_id",
+          "label": "Your user id",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_175",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/filter_data_21",
+      "parameters": [
+        {
+          "name": "user_id",
+          "label": "Your user id",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_175",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/get_data_10",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_175",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/filter_data_22",
+      "parameters": [
+        {
+          "name": "user_id",
+          "label": "Your user id",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_191",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/filter_data_23",
+      "parameters": [
+        {
+          "name": "user_id",
+          "label": "Your user id",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_191",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/get_data_11",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_191",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/filter_data_24",
+      "parameters": [
+        {
+          "name": "user_id",
+          "label": "Your user id",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_207",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/filter_data_25",
+      "parameters": [
+        {
+          "name": "user_id",
+          "label": "Your user id",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_207",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/get_data_12",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_207",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/filter_data_26",
+      "parameters": [
+        {
+          "name": "user_id",
+          "label": "Your user id",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_223",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/filter_data_27",
+      "parameters": [
+        {
+          "name": "user_id",
+          "label": "Your user id",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_223",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/get_data_13",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_223",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/filter_data_28",
+      "parameters": [
+        {
+          "name": "user_id",
+          "label": "Your user id",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_239",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/filter_data_29",
+      "parameters": [
+        {
+          "name": "user_id",
+          "label": "Your user id",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_239",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/get_data_14",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_239",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/filter_data_30",
+      "parameters": [
+        {
+          "name": "user_id",
+          "label": "Your user id",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_255",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/filter_data_31",
+      "parameters": [
+        {
+          "name": "user_id",
+          "label": "Your user id",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_255",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/get_data_15",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_255",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/filter_data_32",
+      "parameters": [
+        {
+          "name": "user_id",
+          "label": "Your user id",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_271",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/filter_data_33",
+      "parameters": [
+        {
+          "name": "user_id",
+          "label": "Your user id",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_271",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/get_data_16",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_271",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/filter_data_34",
+      "parameters": [
+        {
+          "name": "user_id",
+          "label": "Your user id",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_287",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/filter_data_35",
+      "parameters": [
+        {
+          "name": "user_id",
+          "label": "Your user id",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_287",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/get_data_17",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_287",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/filter_data_36",
+      "parameters": [
+        {
+          "name": "user_id",
+          "label": "Your user id",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_303",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/filter_data_37",
+      "parameters": [
+        {
+          "name": "user_id",
+          "label": "Your user id",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_303",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/get_data_18",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_303",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/filter_data_38",
+      "parameters": [
+        {
+          "name": "user_id",
+          "label": "Your user id",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_319",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/filter_data_39",
+      "parameters": [
+        {
+          "name": "user_id",
+          "label": "Your user id",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_319",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/get_data_19",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_319",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/filter_data_40",
+      "parameters": [
+        {
+          "name": "user_id",
+          "label": "Your user id",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_335",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/filter_data_41",
+      "parameters": [
+        {
+          "name": "user_id",
+          "label": "Your user id",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_335",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/get_data_20",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_335",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/filter_data",
+  "_api_verified": true,
+  "estimated_latency_s": 6.62,
+  "speed_tier": "medium",
+  "_latency_source": "measured",
+  "_tags_enriched": true,
+  "measured_latency_s": 6.62,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:50:48.935361+00:00"
+}

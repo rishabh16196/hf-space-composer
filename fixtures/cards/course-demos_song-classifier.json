@@ -1,0 +1,39 @@
+{
+  "space_id": "course-demos/song-classifier",
+  "title": "Song Classifier",
+  "emoji": "\ud83d\udd25",
+  "description": "Song Classifier",
+  "input_schema": {
+    "input": {
+      "type": "string",
+      "description": "Input",
+      "required": true
+    }
+  },
+  "output_schema": {
+    "output": {
+      "type": "string"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "3.9",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us",
+    "audio",
+    "music",
+    "song-generation"
+  ],
+  "likes": 5,
+  "last_modified": "2022-11-06 21:43:06+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_tags_enriched": true,
+  "estimated_latency_s": 60.0,
+  "speed_tier": "very_slow",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "error",
+  "_api_error": "(Request ID: Root=1-69e77b94-546a43356759b0c25c5514d5;7ea6a2d8-1dd7-434b-ae87-c60d8750f8f6)\n\n429 Too Many Requests: you have reached your 'api' rate limit.\nRetry after 74 seconds (0/2500 requests rema"
+}

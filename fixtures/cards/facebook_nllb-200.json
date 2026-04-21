@@ -1,0 +1,42 @@
+{
+  "space_id": "facebook/nllb-200",
+  "description": "NLLB-200 \u2014 translation across 200 languages. Especially strong for low-resource pairs.",
+  "input_schema": {
+    "text": {
+      "type": "string",
+      "description": "Text to translate",
+      "required": true
+    },
+    "src": {
+      "type": "string",
+      "description": "Source language code",
+      "required": true
+    },
+    "tgt": {
+      "type": "string",
+      "description": "Target language code",
+      "required": true
+    }
+  },
+  "output_schema": {
+    "text": {
+      "type": "string",
+      "description": "Translated text"
+    }
+  },
+  "license": "cc-by-nc-4.0",
+  "sdk": "gradio",
+  "tags": [
+    "multilingual",
+    "translation",
+    "nlp",
+    "text"
+  ],
+  "_api_scraped": true,
+  "_api_status": "not_found",
+  "_api_error": "404",
+  "estimated_latency_s": 3.0,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "_tags_enriched": true
+}

@@ -1,0 +1,69 @@
+{
+  "space_id": "tggtg/AI_Video_Enhancer_4K",
+  "title": "AI Video Enhancer 4K",
+  "emoji": "\ud83d\udc41",
+  "description": "AI Video Enhancer 4K",
+  "input_schema": {
+    "file_obj": {
+      "type": "filepath",
+      "description": "Upload video (mp4/avi/mov)",
+      "required": true,
+      "component": "File"
+    }
+  },
+  "output_schema": {
+    "Status": {
+      "type": "str",
+      "description": "Status",
+      "component": "Textbox"
+    },
+    "Enhanced video": {
+      "type": "dict(video: filepath, subtitles: filepath | None)",
+      "description": "Enhanced video",
+      "component": "Video"
+    }
+  },
+  "license": "unknown",
+  "hardware": "5.49.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 73,
+  "last_modified": "2025-10-04 06:00:36+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/on_click_process",
+      "parameters": [
+        {
+          "name": "file_obj",
+          "label": "Upload video (mp4/avi/mov)",
+          "type": "filepath",
+          "component": "File"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Status",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Enhanced video",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/on_click_process",
+  "_api_verified": true
+}

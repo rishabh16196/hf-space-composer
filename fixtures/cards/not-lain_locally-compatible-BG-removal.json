@@ -1,0 +1,72 @@
+{
+  "space_id": "not-lain/locally-compatible-BG-removal",
+  "title": "Locally Compatible BG Removal",
+  "emoji": "\ud83c\udf18w\ud83c\udf16",
+  "description": "Locally Compatible BG Removal",
+  "input_schema": {
+    "image": {
+      "type": "filepath",
+      "description": "Upload an image",
+      "required": true,
+      "component": "Image"
+    }
+  },
+  "output_schema": {
+    "output 0": {
+      "type": "filepath",
+      "description": "output 0",
+      "component": "Image"
+    },
+    "output 1": {
+      "type": "filepath",
+      "description": "output 1",
+      "component": "File"
+    }
+  },
+  "license": "unknown",
+  "hardware": "4.42.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 46,
+  "last_modified": "2025-02-07 13:03:50+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/image",
+      "parameters": [
+        {
+          "name": "image",
+          "label": "Upload an image",
+          "type": "filepath",
+          "component": "Image"
+        }
+      ],
+      "returns": [
+        {
+          "label": "output 0",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "output 1",
+          "type": "filepath",
+          "component": "File"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/image",
+  "_api_verified": true,
+  "estimated_latency_s": 3.65,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 3.65,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:51:24.740895+00:00"
+}

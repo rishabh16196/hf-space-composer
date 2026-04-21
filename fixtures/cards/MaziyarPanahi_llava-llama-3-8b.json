@@ -1,0 +1,62 @@
+{
+  "space_id": "MaziyarPanahi/llava-llama-3-8b",
+  "title": "Llava Llama-3 8B",
+  "emoji": "\ud83d\udd25",
+  "description": "Meta Llama3 8b with Llava Multimodal capabilities",
+  "input_schema": {
+    "message": {
+      "type": "Dict(text: str, files: List[filepath])",
+      "description": "parameter_1",
+      "required": true,
+      "component": "Multimodaltextbox"
+    }
+  },
+  "output_schema": {
+    "Response": {
+      "type": "str",
+      "description": "Response",
+      "component": "Textbox"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "4.42.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 90,
+  "last_modified": "2024-08-28 10:23:42+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/chat",
+      "parameters": [
+        {
+          "name": "message",
+          "label": "parameter_1",
+          "type": "Dict(text: str, files: List[filepath])",
+          "component": "Multimodaltextbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Response",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/chat",
+  "_api_verified": true,
+  "estimated_latency_s": 3.05,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 3.05,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:49:36.250674+00:00"
+}

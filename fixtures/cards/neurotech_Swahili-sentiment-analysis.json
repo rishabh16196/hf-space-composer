@@ -1,0 +1,38 @@
+{
+  "space_id": "neurotech/Swahili-sentiment-analysis",
+  "title": "Swahili Sentiment Analysis",
+  "emoji": "\ud83d\udc28",
+  "description": "Swahili Sentiment Analysis",
+  "input_schema": {
+    "input": {
+      "type": "string",
+      "description": "Input",
+      "required": true
+    }
+  },
+  "output_schema": {
+    "output": {
+      "type": "string"
+    }
+  },
+  "license": "mit",
+  "hardware": "3.0.13",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us",
+    "sentiment",
+    "text"
+  ],
+  "likes": 4,
+  "last_modified": "2022-12-16 12:02:14+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_tags_enriched": true,
+  "estimated_latency_s": 2.5,
+  "speed_tier": "fast",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "error",
+  "_api_error": "(Request ID: Root=1-69e77bd1-04be72c76a9e0b6c1d919d74;f560f585-0192-405a-87db-be074f2c85b0)\n\n429 Too Many Requests: you have reached your 'api' rate limit.\nRetry after 13 seconds (0/2500 requests rema"
+}

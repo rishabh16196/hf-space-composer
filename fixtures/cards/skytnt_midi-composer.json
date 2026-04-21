@@ -1,0 +1,323 @@
+{
+  "space_id": "skytnt/midi-composer",
+  "title": "Midi Music Generator",
+  "emoji": "\ud83c\udfbc\ud83c\udfb6",
+  "description": "Midi Music Generator",
+  "input_schema": {},
+  "output_schema": {},
+  "license": "apache-2.0",
+  "hardware": "5.9.1",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us",
+    "audio",
+    "music"
+  ],
+  "likes": 576,
+  "last_modified": "2025-07-21 14:05:02+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/lambda",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/lambda_1",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/lambda_2",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/run",
+      "parameters": [
+        {
+          "name": "model_name",
+          "label": "select model",
+          "type": "Literal['generic pretrain model (tv2o-medium) by skytnt', 'generic pretrain model (tv2o-medium) by skytnt with jpop lora', 'generic pretrain model (tv2o-medium) by skytnt with touhou lora', 'generic p",
+          "component": "Dropdown"
+        },
+        {
+          "name": "continuation_select",
+          "label": "select output to continue generating",
+          "type": "Literal['all', 'output1', 'output2', 'output3', 'output4', 'output5', 'output6', 'output7', 'output8']",
+          "component": "Radio"
+        },
+        {
+          "name": "instruments",
+          "label": "\ud83e\ude97instruments (auto if empty)",
+          "type": "list[Literal['Acoustic Grand', 'Bright Acoustic', 'Electric Grand', 'Honky-Tonk', 'Electric Piano 1', 'Electric Piano 2', 'Harpsichord', 'Clav', 'Celesta', 'Glockenspiel', 'Music Box', 'Vibraphone', '",
+          "component": "Dropdown"
+        },
+        {
+          "name": "drum_kit",
+          "label": "\ud83e\udd41drum kit",
+          "type": "Literal['None', 'Standard', 'Room', 'Power', 'Electric', 'TR-808', 'Jazz', 'Blush', 'Orchestra']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "bpm",
+          "label": "BPM (beats per minute, auto if 0)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "time_sig",
+          "label": "time signature (only for tv2 models)",
+          "type": "Literal['auto', '4/4', '2/4', '3/4', '6/4', '7/4', '2/2', '3/2', '4/2', '3/8', '5/8', '6/8', '7/8', '9/8', '12/8']",
+          "component": "Radio"
+        },
+        {
+          "name": "key_sig",
+          "label": "key signature (only for tv2 models)",
+          "type": "Literal['auto', 'C\u266d', 'A\u266dm', 'G\u266d', 'E\u266dm', 'D\u266d', 'B\u266dm', 'A\u266d', 'Fm', 'E\u266d', 'Cm', 'B\u266d', 'Gm', 'F', 'Dm', 'C', 'Am', 'G', 'Em', 'D', 'Bm', 'A', 'F\u266fm', 'E', 'C\u266fm', 'B', 'G\u266fm', 'F\u266f', 'D\u266fm', 'C\u266f', 'A\u266fm']",
+          "component": "Radio"
+        },
+        {
+          "name": "mid",
+          "label": "input midi",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "name": "midi_events",
+          "label": "use first n midi events as prompt",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "reduce_cc_st",
+          "label": "reduce control_change and set_tempo events",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "remap_track_channel",
+          "label": "remap tracks and channels so each track has only one channel and in order",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "add_default_instr",
+          "label": "add a default instrument to channels that don't have an instrument",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "remove_empty_channels",
+          "label": "remove channels without notes",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "seed",
+          "label": "seed",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "seed_rand",
+          "label": "random seed",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "gen_events",
+          "label": "generate max n midi events",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "temp",
+          "label": "temperature",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "top_p",
+          "label": "top p",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "top_k",
+          "label": "top k",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "allow_cc",
+          "label": "allow midi cc event",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "seed",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "value_3",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/finish_run",
+      "parameters": [
+        {
+          "name": "model_name",
+          "label": "select model",
+          "type": "Literal['generic pretrain model (tv2o-medium) by skytnt', 'generic pretrain model (tv2o-medium) by skytnt with jpop lora', 'generic pretrain model (tv2o-medium) by skytnt with touhou lora', 'generic p",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "output midi",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "label": "output midi",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "label": "output midi",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "label": "output midi",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "label": "output midi",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "label": "output midi",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "label": "output midi",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "label": "output midi",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "label": "value_3",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/render_audio",
+      "parameters": [
+        {
+          "name": "model_name",
+          "label": "select model",
+          "type": "Literal['generic pretrain model (tv2o-medium) by skytnt', 'generic pretrain model (tv2o-medium) by skytnt with jpop lora', 'generic pretrain model (tv2o-medium) by skytnt with touhou lora', 'generic p",
+          "component": "Dropdown"
+        },
+        {
+          "name": "should_render_audio",
+          "label": "render audio after generation",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "output audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "output audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "output audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "output audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "output audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "output audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "output audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "output audio",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ]
+    },
+    {
+      "name": "/undo_continuation",
+      "parameters": [
+        {
+          "name": "model_name",
+          "label": "select model",
+          "type": "Literal['generic pretrain model (tv2o-medium) by skytnt', 'generic pretrain model (tv2o-medium) by skytnt with jpop lora', 'generic pretrain model (tv2o-medium) by skytnt with touhou lora', 'generic p",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_3",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/lambda",
+  "_api_verified": true,
+  "estimated_latency_s": 4.55,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "_tags_enriched": true,
+  "measured_latency_s": 4.55,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:51:53.679417+00:00",
+  "_inference_attempt_status": "predict_failed",
+  "_inference_attempt_error": "Value:  is not in the list of choices: ['generic pretrain model (tv2o-medium) by skytnt', 'generic pretrain model (tv2o-medium) by skytnt with jpop lora', 'generic pretrain model (tv2o-medium) by skyt"
+}

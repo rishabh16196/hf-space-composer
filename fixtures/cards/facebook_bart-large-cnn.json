@@ -1,0 +1,45 @@
+{
+  "space_id": "facebook/bart-large-cnn",
+  "description": "BART Large fine-tuned on CNN/DailyMail. Best for English news-style summarization. For other domains, performance varies.",
+  "input_schema": {
+    "text": {
+      "type": "string",
+      "description": "Text to summarize (English, max 1024 tokens)",
+      "required": true
+    },
+    "max_length": {
+      "type": "integer",
+      "description": "Max summary length in tokens",
+      "required": false
+    }
+  },
+  "output_schema": {
+    "summary": {
+      "type": "string",
+      "description": "Generated summary"
+    }
+  },
+  "example_inputs": [
+    {
+      "text": "Long news article text here...",
+      "max_length": 100
+    }
+  ],
+  "license": "mit",
+  "hardware": "t4-medium",
+  "sdk": "gradio",
+  "tags": [
+    "summarization",
+    "nlp",
+    "english",
+    "text"
+  ],
+  "last_modified": "2025-07-11",
+  "_api_scraped": true,
+  "_api_status": "not_found",
+  "_api_error": "404",
+  "estimated_latency_s": 4.0,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "_tags_enriched": true
+}

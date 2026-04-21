@@ -1,0 +1,156 @@
+{
+  "space_id": "allenai/MolmoPoint-8B-Demo",
+  "title": "Molmo-Point Demo",
+  "emoji": "\ud83c\udfaf",
+  "description": "MolmoPoint - Image & Video Pointing & Tracking",
+  "input_schema": {},
+  "output_schema": {
+    "max_fps": {
+      "type": "float",
+      "description": "max_fps",
+      "component": "Number"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "6.3.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "mcp-server",
+    "region:us"
+  ],
+  "likes": 29,
+  "last_modified": "2026-03-18 20:10:10+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/_select_video_tracking_tab",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "max_fps",
+          "type": "float",
+          "component": "Number"
+        }
+      ]
+    },
+    {
+      "name": "/_select_video_pointing_tab",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "max_fps",
+          "type": "float",
+          "component": "Number"
+        }
+      ]
+    },
+    {
+      "name": "/_select_image_tab",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "max_fps",
+          "type": "float",
+          "component": "Number"
+        }
+      ]
+    },
+    {
+      "name": "/dispatch_submit",
+      "parameters": [
+        {
+          "name": "user_text",
+          "label": "Input text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "video_tracking_path",
+          "label": "Input Video",
+          "type": "filepath",
+          "component": "Video"
+        },
+        {
+          "name": "video_pointing_path",
+          "label": "Input Video",
+          "type": "filepath",
+          "component": "Video"
+        },
+        {
+          "name": "input_images",
+          "label": "Input Images",
+          "type": "list[dict(image: dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Origi",
+          "component": "Gallery"
+        },
+        {
+          "name": "fsm",
+          "label": "frame_sample_mode",
+          "type": "Literal['uniform_last_frame', 'fps']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "mf",
+          "label": "max_frames",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "mfps",
+          "label": "max_fps",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "max_tok",
+          "label": "max_tokens",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Extracted Points ([[id, time/index, x, y]])",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "value_32",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "Annotated Video",
+          "type": "filepath",
+          "component": "Video"
+        },
+        {
+          "label": "Annotated Frames (Video)",
+          "type": "list[dict(image: dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Origi",
+          "component": "Gallery"
+        },
+        {
+          "label": "Annotated Images",
+          "type": "list[dict(image: dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Origi",
+          "component": "Gallery"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/_select_video_tracking_tab",
+  "_api_verified": true,
+  "estimated_latency_s": 4.05,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 4.05,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:50:13.513032+00:00"
+}

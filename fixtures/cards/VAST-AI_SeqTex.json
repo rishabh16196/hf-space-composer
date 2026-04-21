@@ -1,0 +1,271 @@
+{
+  "space_id": "VAST-AI/SeqTex",
+  "title": "SeqTex",
+  "emoji": "\ud83d\uddfa\ufe0f",
+  "description": "SeqTex generates texture based on textual conditions",
+  "input_schema": {
+    "mesh_file": {
+      "type": "filepath",
+      "description": "\ud83d\udcc1 Upload 3D Mesh",
+      "required": true,
+      "component": "File"
+    },
+    "y2z": {
+      "type": "bool",
+      "description": "Y \u2192 Z Transform",
+      "required": true,
+      "component": "Checkbox"
+    },
+    "y2x": {
+      "type": "bool",
+      "description": "Y \u2192 X Transform",
+      "required": true,
+      "component": "Checkbox"
+    },
+    "z2x": {
+      "type": "bool",
+      "description": "Z \u2192 X Transform",
+      "required": true,
+      "component": "Checkbox"
+    },
+    "upside_down": {
+      "type": "bool",
+      "description": "\ud83d\udd03 Flip Vertically",
+      "required": true,
+      "component": "Checkbox"
+    }
+  },
+  "output_schema": {
+    "\ud83d\udcca Processing Status": {
+      "type": "str",
+      "description": "\ud83d\udcca Processing Status",
+      "component": "Textbox"
+    }
+  },
+  "license": "mit",
+  "hardware": "5.23.1",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 19,
+  "last_modified": "2026-02-14 07:06:40+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/process",
+      "parameters": [
+        {
+          "name": "mesh_file",
+          "label": "\ud83d\udcc1 Upload 3D Mesh",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "name": "y2z",
+          "label": "Y \u2192 Z Transform",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "y2x",
+          "label": "Y \u2192 X Transform",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "z2x",
+          "label": "Z \u2192 X Transform",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "upside_down",
+          "label": "\ud83d\udd03 Flip Vertically",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "\ud83d\udcca Processing Status",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/tensor_to_pil",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "\ud83d\udcf7 Generated Views",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/tensor_to_pil_1",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "\ud83d\uddfa\ufe0f Position Map",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/tensor_to_pil_2",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "\ud83e\udded Normal Map",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/export",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "\ud83d\udcd0 Processed 3D Model",
+          "type": "filepath",
+          "component": "Model3d"
+        }
+      ]
+    },
+    {
+      "name": "/generate_image_condition",
+      "parameters": [
+        {
+          "name": "text_prompt",
+          "label": "\ud83d\udcac Texture Description",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "selected_view",
+          "label": "\ud83d\udcd0 Camera View",
+          "type": "Literal['First View', 'Second View', 'Third View', 'Fourth View']",
+          "component": "Radio"
+        },
+        {
+          "name": "seed",
+          "label": "\ud83c\udfb2 Random Seed",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "model",
+          "label": "\ud83e\udd16 AI Model",
+          "type": "Literal['SDXL']",
+          "component": "Radio"
+        },
+        {
+          "name": "edge_refinement",
+          "label": "\u2728 Edge Refinement",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "\ud83d\uddbc\ufe0f Generated Image Condition",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "\ud83d\udcca Generation Status",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/generate_texture",
+      "parameters": [
+        {
+          "name": "condition_image",
+          "label": "\ud83d\uddbc\ufe0f Generated Image Condition",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "text_prompt",
+          "label": "\ud83d\udcac Texture Description",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "selected_view",
+          "label": "\ud83d\udcd0 Camera View",
+          "type": "Literal['First View', 'Second View', 'Third View', 'Fourth View']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "\ud83c\udfc6 Generated Texture Map",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "\ud83d\uddbc\ufe0f SeqTex Direct Output",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "\ud83d\udcca Texture Generation Status",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/render_views",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "\ud83d\uddbc\ufe0f Final Rendered Views",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/export_1",
+      "parameters": [
+        {
+          "name": "texture_map",
+          "label": "\ud83c\udfc6 Generated Texture Map",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ],
+      "returns": [
+        {
+          "label": "\ud83c\udfc6 Final Textured Model",
+          "type": "filepath",
+          "component": "Model3d"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/process",
+  "_api_verified": true,
+  "estimated_latency_s": 4.05,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "_tags_enriched": true,
+  "measured_latency_s": 4.05,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:50:02.049633+00:00"
+}

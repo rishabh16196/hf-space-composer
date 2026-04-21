@@ -1,0 +1,39 @@
+{
+  "space_id": "somosnlp-hackathon-2022/Spanish-Medical-NER",
+  "title": "Medical NER (Named Entity Recognition)",
+  "emoji": "\ud83d\udc69\u200d\u2695",
+  "description": "Medical NER (Named Entity Recognition)",
+  "input_schema": {
+    "input": {
+      "type": "string",
+      "description": "Input",
+      "required": true
+    }
+  },
+  "output_schema": {
+    "output": {
+      "type": "string"
+    }
+  },
+  "license": "cc-by-nc-4.0",
+  "hardware": "2.9.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us",
+    "entity-extraction",
+    "ner",
+    "text"
+  ],
+  "likes": 7,
+  "last_modified": "2022-03-30 10:06:43+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_tags_enriched": true,
+  "estimated_latency_s": 3.0,
+  "speed_tier": "fast",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "sleeping",
+  "_api_error": "Space is in RUNTIME_ERROR state"
+}

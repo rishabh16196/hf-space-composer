@@ -1,0 +1,80 @@
+{
+  "space_id": "FireRedTeam/FireRedASR",
+  "title": "FireRedASR",
+  "emoji": "\ud83d\ude80",
+  "description": "FireRedASR Demo",
+  "input_schema": {
+    "audio_file": {
+      "type": "filepath",
+      "description": "Upload wav file",
+      "required": true,
+      "component": "Audio"
+    }
+  },
+  "output_schema": {
+    "Model Result (FireRedASR-AED-L)": {
+      "type": "str",
+      "description": "Model Result (FireRedASR-AED-L)",
+      "component": "Textbox"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "5.45.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 13,
+  "last_modified": "2025-09-22 07:40:57+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/asr_inference",
+      "parameters": [
+        {
+          "name": "audio_file",
+          "label": "Upload wav file",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Model Result (FireRedASR-AED-L)",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/asr_inference_llm",
+      "parameters": [
+        {
+          "name": "audio_file",
+          "label": "Upload wav file",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Model Result (FireRedASR-LLM-L)",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/asr_inference",
+  "_api_verified": true,
+  "estimated_latency_s": 2.64,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 2.64,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:49:18.328533+00:00"
+}

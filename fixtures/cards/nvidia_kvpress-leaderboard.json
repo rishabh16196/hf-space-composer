@@ -1,0 +1,106 @@
+{
+  "space_id": "nvidia/kvpress-leaderboard",
+  "title": "KVPress Leaderboard",
+  "emoji": "\ud83e\udd47",
+  "description": "KVPress leaderboard: benchmark KV Cache compression methods",
+  "input_schema": {
+    "method_name": {
+      "type": "Literal['AdaKVCompactor', 'AdaSnapKV (query-aware)', 'CUR', 'ChunkKV (query-aware)', 'DuoAttention',",
+      "description": "",
+      "required": true,
+      "component": "Radio"
+    },
+    "model_list": {
+      "type": "list[Literal['Qwen/Qwen3-8B', 'meta-llama/Llama-3.1-8B-Instruct']]",
+      "description": "Select Models",
+      "required": true,
+      "component": "Checkboxgroup"
+    }
+  },
+  "output_schema": {
+    "value_19": {
+      "type": "str",
+      "description": "value_19",
+      "component": "Html"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "5.19.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us",
+    "benchmark",
+    "leaderboard"
+  ],
+  "likes": 66,
+  "last_modified": "2026-02-18 10:45:19+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/update_detail_panel",
+      "parameters": [
+        {
+          "name": "method_name",
+          "label": "",
+          "type": "Literal['AdaKVCompactor', 'AdaSnapKV (query-aware)', 'CUR', 'ChunkKV (query-aware)', 'DuoAttention', 'DuoAttentionOnTheFly', 'ExpectedAttention', 'FastKVzip', 'Finch (query-aware)', 'KVzap (MLP)', 'KV",
+          "component": "Radio"
+        },
+        {
+          "name": "model_list",
+          "label": "Select Models",
+          "type": "list[Literal['Qwen/Qwen3-8B', 'meta-llama/Llama-3.1-8B-Instruct']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_19",
+          "type": "str",
+          "component": "Html"
+        }
+      ]
+    },
+    {
+      "name": "/update_leaderboard",
+      "parameters": [
+        {
+          "name": "models",
+          "label": "Select Models",
+          "type": "list[Literal['Qwen/Qwen3-8B', 'meta-llama/Llama-3.1-8B-Instruct']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "method_name",
+          "label": "",
+          "type": "Literal['AdaKVCompactor', 'AdaSnapKV (query-aware)', 'CUR', 'ChunkKV (query-aware)', 'DuoAttention', 'DuoAttentionOnTheFly', 'ExpectedAttention', 'FastKVzip', 'Finch (query-aware)', 'KVzap (MLP)', 'KV",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_10",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "value_19",
+          "type": "str",
+          "component": "Html"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/update_detail_panel",
+  "_api_verified": true,
+  "estimated_latency_s": 4.51,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "_tags_enriched": true,
+  "measured_latency_s": 4.51,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:51:27.173184+00:00"
+}

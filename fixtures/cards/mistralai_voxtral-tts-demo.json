@@ -1,0 +1,107 @@
+{
+  "space_id": "mistralai/voxtral-tts-demo",
+  "title": "Voxtral TTS Demo",
+  "emoji": "\u26a1",
+  "description": "Voxtral TTS Demo",
+  "input_schema": {
+    "input_text": {
+      "type": "str",
+      "description": "Enter text to synthesize",
+      "required": true,
+      "component": "Textbox"
+    },
+    "audio_choice": {
+      "type": "Literal['EN - Jane, Sarcasm', 'EN - Jane, Confused', 'EN - Jane, Shameful', 'EN - Jane, Sad', 'EN - ",
+      "description": "Select a predefined voice",
+      "required": true,
+      "component": "Dropdown"
+    }
+  },
+  "output_schema": {
+    "Generated audio": {
+      "type": "filepath",
+      "description": "Generated audio",
+      "component": "Audio"
+    }
+  },
+  "license": "unknown",
+  "hardware": "6.9.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us",
+    "audio",
+    "speech-synthesis",
+    "tts"
+  ],
+  "likes": 199,
+  "last_modified": "2026-04-15 12:08:58+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/gradio_tts",
+      "parameters": [
+        {
+          "name": "input_text",
+          "label": "Enter text to synthesize",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "audio_choice",
+          "label": "Select a predefined voice",
+          "type": "Literal['EN - Jane, Sarcasm', 'EN - Jane, Confused', 'EN - Jane, Shameful', 'EN - Jane, Sad', 'EN - Jane, Neutral', 'EN - Jane, Jealousy', 'EN - Jane, Frustrated', 'EN - Jane, Curious', 'EN - Jane, Co",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Generated audio",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ]
+    },
+    {
+      "name": "/gradio_tts_1",
+      "parameters": [
+        {
+          "name": "input_text",
+          "label": "Enter text to synthesize",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "audio_choice",
+          "label": "Upload your reference audio (5s-30s)",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Generated audio",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ]
+    },
+    {
+      "name": "/_check_login_status",
+      "parameters": [],
+      "returns": []
+    }
+  ],
+  "endpoint": "/gradio_tts",
+  "_api_verified": true,
+  "estimated_latency_s": 4.15,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "_tags_enriched": true,
+  "measured_latency_s": 4.15,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:51:15.535772+00:00"
+}

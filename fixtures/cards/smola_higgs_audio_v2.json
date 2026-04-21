@@ -1,0 +1,191 @@
+{
+  "space_id": "smola/higgs_audio_v2",
+  "title": "Higgs Audio Demo",
+  "emoji": "\ud83c\udfa4",
+  "description": "Higgs Audio Demo",
+  "input_schema": {},
+  "output_schema": {
+    "Voice Sample": {
+      "type": "filepath",
+      "description": "Voice Sample",
+      "component": "Audio"
+    }
+  },
+  "license": "unknown",
+  "hardware": "5.36.2",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "mcp-server",
+    "region:us"
+  ],
+  "likes": 399,
+  "last_modified": "2025-07-31 04:14:46+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/play_voice_sample",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Voice Sample",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ]
+    },
+    {
+      "name": "/apply_template",
+      "parameters": [
+        {
+          "name": "template_name",
+          "label": "TTS Template",
+          "type": "Literal['voice-clone', 'smart-voice', 'multispeaker-voice-description', 'single-speaker-voice-description', 'single-speaker-zh', 'single-speaker-bgm']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "System Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Input Text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "value_5",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "Voice Preset",
+          "type": "Literal['belinda', 'broom_salesman', 'chadwick', 'en_man', 'en_woman', 'mabel', 'vex', 'zh_man_sichuan', 'EMPTY']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "RAS Window Length",
+          "type": "float",
+          "component": "Slider"
+        }
+      ]
+    },
+    {
+      "name": "/generate_speech",
+      "parameters": [
+        {
+          "name": "text",
+          "label": "Input Text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "voice_preset",
+          "label": "Voice Preset",
+          "type": "Literal['belinda', 'broom_salesman', 'chadwick', 'en_man', 'en_woman', 'mabel', 'vex', 'zh_man_sichuan', 'EMPTY']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "reference_audio",
+          "label": "Reference Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "name": "reference_text",
+          "label": "Reference Text (transcript of the reference audio)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "max_completion_tokens",
+          "label": "Max Completion Tokens",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "temperature",
+          "label": "Temperature",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "top_p",
+          "label": "Top P",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "top_k",
+          "label": "Top K",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "system_prompt",
+          "label": "System Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "stop_strings",
+          "label": "Stop Strings",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "name": "ras_win_len",
+          "label": "RAS Window Length",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "ras_win_max_num_repeat",
+          "label": "RAS Max Num Repeat",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Model Response",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Generated Audio",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ]
+    },
+    {
+      "name": "/lambda",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Generated Audio",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/play_voice_sample",
+  "_api_verified": true,
+  "estimated_latency_s": 2.03,
+  "speed_tier": "fast",
+  "_latency_source": "measured_inference",
+  "measured_latency_s": 2.03,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:51:53.185221+00:00",
+  "measured_inference_s": 2.03,
+  "measured_inference_timestamp": "2026-04-20T07:59:43.668640+00:00",
+  "measured_inference_method": "auto_predict",
+  "measured_inference_api": "/apply_template"
+}

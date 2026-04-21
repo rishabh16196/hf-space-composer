@@ -1,0 +1,118 @@
+{
+  "space_id": "huggingface-projects/repo_duplicator",
+  "title": "Repo duplicator",
+  "emoji": "\ud83d\ude3b",
+  "description": "Repo duplicator",
+  "input_schema": {
+    "source_repo": {
+      "type": "str",
+      "description": "source_repo",
+      "required": true,
+      "component": "Huggingfacehubsearch"
+    },
+    "dst_repo": {
+      "type": "str",
+      "description": "dst_repo",
+      "required": true,
+      "component": "Textbox"
+    },
+    "repo_type": {
+      "type": "Literal['model', 'dataset', 'space']",
+      "description": "repo_type",
+      "required": true,
+      "component": "Dropdown"
+    },
+    "private": {
+      "type": "bool",
+      "description": "Make new repo private?",
+      "required": true,
+      "component": "Checkbox"
+    }
+  },
+  "output_schema": {
+    "output": {
+      "type": "str",
+      "description": "output",
+      "component": "Markdown"
+    },
+    "output 1": {
+      "type": "filepath",
+      "description": "output 1",
+      "component": "Image"
+    }
+  },
+  "license": "mit",
+  "hardware": "4.42.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 329,
+  "last_modified": "2024-09-13 08:52:39+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/predict",
+      "parameters": [
+        {
+          "name": "source_repo",
+          "label": "source_repo",
+          "type": "str",
+          "component": "Huggingfacehubsearch"
+        },
+        {
+          "name": "dst_repo",
+          "label": "dst_repo",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "repo_type",
+          "label": "repo_type",
+          "type": "Literal['model', 'dataset', 'space']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "private",
+          "label": "Make new repo private?",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "output",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "output 1",
+          "type": "filepath",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/swap_visibilty",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/_check_login_status",
+      "parameters": [],
+      "returns": []
+    }
+  ],
+  "endpoint": "/predict",
+  "_api_verified": true,
+  "estimated_latency_s": 3.38,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 3.38,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:50:47.422368+00:00"
+}

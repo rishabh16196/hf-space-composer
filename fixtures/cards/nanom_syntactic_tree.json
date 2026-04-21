@@ -1,0 +1,83 @@
+{
+  "space_id": "nanom/syntactic_tree",
+  "title": "Syntactic Tree Generator",
+  "emoji": "\ud83c\udf33\ud83c\udf33\ud83c\udf33",
+  "description": "Syntactic Tree Generator",
+  "input_schema": {
+    "sentence": {
+      "type": "str",
+      "description": "Input",
+      "required": true,
+      "component": "Textbox"
+    }
+  },
+  "output_schema": {
+    "value_9": {
+      "type": "str",
+      "description": "value_9",
+      "component": "Html"
+    },
+    "value_12": {
+      "type": "str",
+      "description": "value_12",
+      "component": "Html"
+    },
+    "Flat tree": {
+      "type": "str",
+      "description": "Flat tree",
+      "component": "Textbox"
+    }
+  },
+  "license": "mit",
+  "hardware": "4.37.2",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 21,
+  "last_modified": "2024-06-30 23:52:27+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/gen_tree",
+      "parameters": [
+        {
+          "name": "sentence",
+          "label": "Input",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_9",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "value_12",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "Flat tree",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/gen_tree",
+  "_api_verified": true,
+  "estimated_latency_s": 3.86,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "_tags_enriched": true,
+  "measured_latency_s": 3.86,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:51:22.667387+00:00"
+}

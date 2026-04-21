@@ -1,0 +1,69 @@
+{
+  "space_id": "aifeifei798/Image-To-Flux-Prompt",
+  "title": "Image To Flux Prompt",
+  "emoji": "\ud83d\udcc9",
+  "description": "Image To Flux Prompt",
+  "input_schema": {
+    "image": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "Input Picture",
+      "required": true,
+      "component": "Image"
+    }
+  },
+  "output_schema": {
+    "Flux Prompt": {
+      "type": "str",
+      "description": "Flux Prompt",
+      "component": "Textbox"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "5.35.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "mcp-server",
+    "region:us",
+    "diffusion",
+    "image-generation",
+    "text",
+    "text-to-image",
+    "vision"
+  ],
+  "likes": 161,
+  "last_modified": "2026-04-09 11:22:02+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/feifeichat",
+      "parameters": [
+        {
+          "name": "image",
+          "label": "Input Picture",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Flux Prompt",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/feifeichat",
+  "_api_verified": true,
+  "estimated_latency_s": 3.49,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "_tags_enriched": true,
+  "measured_latency_s": 3.49,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:50:09.175922+00:00"
+}

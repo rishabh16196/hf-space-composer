@@ -1,0 +1,78 @@
+{
+  "space_id": "backtracking/tiny-tts-demo",
+  "title": "Tiny Tts Demo",
+  "emoji": "\ud83d\udcda",
+  "description": "Tiny Tts Demo",
+  "input_schema": {
+    "text": {
+      "type": "str",
+      "description": "Input Text",
+      "required": true,
+      "component": "Textbox"
+    },
+    "speed": {
+      "type": "float",
+      "description": "Speed (1.0 = normal, >1 = faster, <1 = slower)",
+      "required": true,
+      "component": "Slider"
+    }
+  },
+  "output_schema": {
+    "Output Audio": {
+      "type": "filepath",
+      "description": "Output Audio",
+      "component": "Audio"
+    }
+  },
+  "license": "unknown",
+  "hardware": "6.6.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us",
+    "audio",
+    "speech-synthesis",
+    "tts"
+  ],
+  "likes": 13,
+  "last_modified": "2026-03-03 07:59:22+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/synthesize_audio",
+      "parameters": [
+        {
+          "name": "text",
+          "label": "Input Text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "speed",
+          "label": "Speed (1.0 = normal, >1 = faster, <1 = slower)",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output Audio",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/synthesize_audio",
+  "_api_verified": true,
+  "estimated_latency_s": 2.95,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "_tags_enriched": true,
+  "measured_latency_s": 2.95,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:50:20.879828+00:00"
+}

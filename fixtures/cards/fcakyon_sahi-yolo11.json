@@ -1,0 +1,206 @@
+{
+  "space_id": "fcakyon/sahi-yolo11",
+  "title": "Small Object Detection with YOLO11",
+  "emoji": "\ud83d\udd2d",
+  "description": "Small Object Detection with YOLO11",
+  "input_schema": {
+    "image": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "Original Image",
+      "required": true,
+      "component": "Image"
+    },
+    "yolo_model_name": {
+      "type": "Literal['yolo11n.pt', 'yolo11s.pt', 'yolo11m.pt', 'yolo11l.pt', 'yolo11x.pt']",
+      "description": "YOLOv11 Model",
+      "required": true,
+      "component": "Dropdown"
+    },
+    "confidence_threshold": {
+      "type": "float",
+      "description": "Confidence Threshold",
+      "required": true,
+      "component": "Slider"
+    },
+    "max_detections": {
+      "type": "float",
+      "description": "Max Detections",
+      "required": true,
+      "component": "Slider"
+    },
+    "slice_height": {
+      "type": "float",
+      "description": "Slice Height",
+      "required": true,
+      "component": "Number"
+    },
+    "slice_width": {
+      "type": "float",
+      "description": "Slice Width",
+      "required": true,
+      "component": "Number"
+    },
+    "overlap_height_ratio": {
+      "type": "float",
+      "description": "Overlap Height Ratio",
+      "required": true,
+      "component": "Slider"
+    },
+    "overlap_width_ratio": {
+      "type": "float",
+      "description": "Overlap Width Ratio",
+      "required": true,
+      "component": "Slider"
+    },
+    "postprocess_type": {
+      "type": "Literal['NMS', 'GREEDYNMM']",
+      "description": "Postprocess Type",
+      "required": true,
+      "component": "Dropdown"
+    },
+    "postprocess_match_metric": {
+      "type": "Literal['IOU', 'IOS']",
+      "description": "Postprocess Match Metric",
+      "required": true,
+      "component": "Dropdown"
+    },
+    "postprocess_match_threshold": {
+      "type": "float",
+      "description": "Postprocess Match Threshold",
+      "required": true,
+      "component": "Slider"
+    },
+    "postprocess_class_agnostic": {
+      "type": "bool",
+      "description": "Postprocess Class Agnostic",
+      "required": true,
+      "component": "Checkbox"
+    }
+  },
+  "output_schema": {
+    "YOLOv11 Standard": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "YOLOv11 Standard",
+      "component": "Image"
+    },
+    "YOLOv11 + SAHI Sliced": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "YOLOv11 + SAHI Sliced",
+      "component": "Image"
+    }
+  },
+  "license": "unknown",
+  "hardware": "",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "mcp-server",
+    "region:us"
+  ],
+  "likes": 37,
+  "last_modified": "2025-07-27 20:00:46+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/sahi_yolo_inference",
+      "parameters": [
+        {
+          "name": "image",
+          "label": "Original Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "yolo_model_name",
+          "label": "YOLOv11 Model",
+          "type": "Literal['yolo11n.pt', 'yolo11s.pt', 'yolo11m.pt', 'yolo11l.pt', 'yolo11x.pt']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "confidence_threshold",
+          "label": "Confidence Threshold",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "max_detections",
+          "label": "Max Detections",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "slice_height",
+          "label": "Slice Height",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "slice_width",
+          "label": "Slice Width",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "overlap_height_ratio",
+          "label": "Overlap Height Ratio",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "overlap_width_ratio",
+          "label": "Overlap Width Ratio",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "postprocess_type",
+          "label": "Postprocess Type",
+          "type": "Literal['NMS', 'GREEDYNMM']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "postprocess_match_metric",
+          "label": "Postprocess Match Metric",
+          "type": "Literal['IOU', 'IOS']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "postprocess_match_threshold",
+          "label": "Postprocess Match Threshold",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "postprocess_class_agnostic",
+          "label": "Postprocess Class Agnostic",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "YOLOv11 Standard",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "YOLOv11 + SAHI Sliced",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/sahi_yolo_inference",
+  "_api_verified": true,
+  "estimated_latency_s": 4.01,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "_tags_enriched": true,
+  "measured_latency_s": 4.01,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:50:36.130103+00:00"
+}

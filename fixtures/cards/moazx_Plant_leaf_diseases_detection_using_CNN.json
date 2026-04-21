@@ -1,0 +1,59 @@
+{
+  "space_id": "moazx/Plant_leaf_diseases_detection_using_CNN",
+  "title": "Plant Leaf Diseases Detection Using CNN",
+  "emoji": "\ud83d\udcc9",
+  "description": "Plant Leaf Diseases Detection Using CNN",
+  "input_schema": {
+    "img": {
+      "type": "str",
+      "description": "img",
+      "required": true,
+      "component": "Image"
+    }
+  },
+  "output_schema": {
+    "output": {
+      "type": "Dict[Any, Any]",
+      "description": "output",
+      "component": "Label"
+    }
+  },
+  "license": "mit",
+  "hardware": "3.40.1",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 6,
+  "last_modified": "2024-11-17 18:25:13+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/predict",
+      "parameters": [
+        {
+          "name": "img",
+          "label": "img",
+          "type": "str",
+          "component": "Image"
+        }
+      ],
+      "returns": [
+        {
+          "label": "output",
+          "type": "Dict[Any, Any]",
+          "component": "Label"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/predict",
+  "_api_verified": true
+}

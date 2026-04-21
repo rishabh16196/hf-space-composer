@@ -1,0 +1,37 @@
+{
+  "space_id": "om-app/magic-diffusion",
+  "title": "Magic Prompt",
+  "emoji": "\ud83c\udf86",
+  "description": "Magic Prompt",
+  "input_schema": {
+    "input": {
+      "type": "string",
+      "description": "Input",
+      "required": true
+    }
+  },
+  "output_schema": {
+    "output": {
+      "type": "string"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "3.12.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us",
+    "text"
+  ],
+  "likes": 5,
+  "last_modified": "2023-01-19 16:36:39+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_tags_enriched": true,
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "error",
+  "_api_error": "(Request ID: Root=1-69e77b97-1a3a1d8e3659d89c20787925;0d7b0205-2844-4ac9-9603-000907ef19e0)\n\n429 Too Many Requests: you have reached your 'api' rate limit.\nRetry after 71 seconds (0/2500 requests rema"
+}

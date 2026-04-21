@@ -1,0 +1,71 @@
+{
+  "space_id": "datasciencedojo/Zero-Shot-Text-Classification",
+  "title": "Zero Shot Text Classification",
+  "emoji": "\ud83d\udc40",
+  "description": "Zero Shot Text Classification",
+  "input_schema": {
+    "Input": {
+      "type": "str",
+      "description": "Input",
+      "required": true,
+      "component": "Textbox"
+    },
+    "Candidate Labels": {
+      "type": "str",
+      "description": "Candidate Labels",
+      "required": true,
+      "component": "Textbox"
+    }
+  },
+  "output_schema": {
+    "Classification": {
+      "type": "Dict[Any, Any]",
+      "description": "Classification",
+      "component": "Label"
+    }
+  },
+  "license": "unknown",
+  "hardware": "3.4.1",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 38,
+  "last_modified": "2024-01-10 16:01:33+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/predict",
+      "parameters": [
+        {
+          "name": "Input",
+          "label": "Input",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "Candidate Labels",
+          "label": "Candidate Labels",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Classification",
+          "type": "Dict[Any, Any]",
+          "component": "Label"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/predict",
+  "_api_verified": true
+}

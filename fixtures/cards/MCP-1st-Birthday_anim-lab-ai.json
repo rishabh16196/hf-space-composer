@@ -1,0 +1,239 @@
+{
+  "space_id": "MCP-1st-Birthday/anim-lab-ai",
+  "title": "Anim Lab AI",
+  "emoji": "\ud83d\udd25",
+  "description": "Turn boring math into engaging animation videos",
+  "input_schema": {
+    "prompt": {
+      "type": "str",
+      "description": "Describe your animation",
+      "required": true,
+      "component": "Textbox"
+    },
+    "quality": {
+      "type": "Literal['low', 'medium', 'high']",
+      "description": "Quality",
+      "required": true,
+      "component": "Dropdown"
+    },
+    "format_type": {
+      "type": "Literal['gif', 'mp4']",
+      "description": "Format",
+      "required": true,
+      "component": "Dropdown"
+    }
+  },
+  "output_schema": {
+    "Generated Animation": {
+      "type": "dict(video: filepath, subtitles: filepath | None)",
+      "description": "Generated Animation",
+      "component": "Video"
+    },
+    "Status": {
+      "type": "str",
+      "description": "Status",
+      "component": "Textbox"
+    },
+    "Manim Code": {
+      "type": "str",
+      "description": "Manim Code",
+      "component": "Code"
+    },
+    "Manim Logs": {
+      "type": "str",
+      "description": "Manim Logs",
+      "component": "Textbox"
+    }
+  },
+  "license": "unknown",
+  "hardware": "5.50.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "building-mcp-track-creative",
+    "building-mcp-track-consumer",
+    "mcp",
+    "claude",
+    "education",
+    "mathematics",
+    "algorithm",
+    "ai",
+    "visualization",
+    "mcp-server",
+    "region:us"
+  ],
+  "likes": 130,
+  "last_modified": "2025-11-30 18:02:25+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/generate_full_process",
+      "parameters": [
+        {
+          "name": "prompt",
+          "label": "Describe your animation",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "quality",
+          "label": "Quality",
+          "type": "Literal['low', 'medium', 'high']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "format_type",
+          "label": "Format",
+          "type": "Literal['gif', 'mp4']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Generated Animation",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        },
+        {
+          "label": "Status",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Manim Code",
+          "type": "str",
+          "component": "Code"
+        },
+        {
+          "label": "Manim Logs",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/generate_animation",
+      "parameters": [
+        {
+          "name": "code",
+          "label": "Manim Code",
+          "type": "str",
+          "component": "Code"
+        },
+        {
+          "name": "quality",
+          "label": "Quality",
+          "type": "Literal['low', 'medium', 'high']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "format_type",
+          "label": "Format",
+          "type": "Literal['gif', 'mp4']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Generated Animation",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        },
+        {
+          "label": "Status",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Manim Logs",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/edit_and_render",
+      "parameters": [
+        {
+          "name": "existing_code",
+          "label": "Manim Code",
+          "type": "str",
+          "component": "Code"
+        },
+        {
+          "name": "instruction",
+          "label": "Describe what you want to fix or change",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "quality",
+          "label": "Quality",
+          "type": "Literal['low', 'medium', 'high']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "format_type",
+          "label": "Format",
+          "type": "Literal['gif', 'mp4']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Generated Animation",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        },
+        {
+          "label": "Status",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Manim Code",
+          "type": "str",
+          "component": "Code"
+        },
+        {
+          "label": "Manim Logs",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/lambda",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Manim Logs",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_1",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Manim Logs",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/generate_full_process",
+  "_api_verified": true,
+  "estimated_latency_s": 3.23,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 3.23,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:49:35.054794+00:00"
+}

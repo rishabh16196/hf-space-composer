@@ -1,0 +1,156 @@
+{
+  "space_id": "prithivMLmods/FireRed-Image-Edit-1.0-Fast",
+  "title": "FireRed Image Edit 1.0 Fast",
+  "emoji": "\ud83c\udf16",
+  "description": "FireRed-Image-Edit \u00d7 Qwen-Image-Edit-Rapid (Transformers)",
+  "input_schema": {
+    "images_b64_json": {
+      "type": "str",
+      "description": "parameter_1",
+      "required": true,
+      "component": "Textbox"
+    },
+    "prompt": {
+      "type": "str",
+      "description": "parameter_2",
+      "required": true,
+      "component": "Textbox"
+    },
+    "seed": {
+      "type": "float",
+      "description": "parameter_3",
+      "required": true,
+      "component": "Slider"
+    },
+    "randomize_seed": {
+      "type": "bool",
+      "description": "parameter_4",
+      "required": true,
+      "component": "Checkbox"
+    },
+    "guidance_scale": {
+      "type": "float",
+      "description": "parameter_5",
+      "required": true,
+      "component": "Slider"
+    },
+    "steps": {
+      "type": "float",
+      "description": "parameter_6",
+      "required": true,
+      "component": "Slider"
+    }
+  },
+  "output_schema": {
+    "value_7": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "value_7",
+      "component": "Image"
+    },
+    "value_3": {
+      "type": "float",
+      "description": "value_3",
+      "component": "Slider"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "6.9.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "mcp-server",
+    "region:us",
+    "image-generation",
+    "vision"
+  ],
+  "likes": 924,
+  "last_modified": "2026-03-23 09:13:07+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/infer",
+      "parameters": [
+        {
+          "name": "images_b64_json",
+          "label": "parameter_1",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "prompt",
+          "label": "parameter_2",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "seed",
+          "label": "parameter_3",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "randomize_seed",
+          "label": "parameter_4",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "guidance_scale",
+          "label": "parameter_5",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "steps",
+          "label": "parameter_6",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_7",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "value_3",
+          "type": "float",
+          "component": "Slider"
+        }
+      ]
+    },
+    {
+      "name": "/load_example_data",
+      "parameters": [
+        {
+          "name": "idx_str",
+          "label": "parameter_8",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_9",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/infer",
+  "_api_verified": true,
+  "estimated_latency_s": 4.53,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "_tags_enriched": true,
+  "measured_latency_s": 4.53,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:51:35.986926+00:00",
+  "_inference_attempt_status": "predict_failed",
+  "_inference_attempt_error": "Please upload at least one image to edit."
+}

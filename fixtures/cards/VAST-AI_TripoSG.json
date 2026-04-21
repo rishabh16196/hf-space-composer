@@ -1,0 +1,176 @@
+{
+  "space_id": "VAST-AI/TripoSG",
+  "title": "TripoSG",
+  "emoji": "\ud83d\udd2e",
+  "description": "TripoSG",
+  "input_schema": {
+    "image": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "Input Image",
+      "required": true,
+      "component": "Image"
+    }
+  },
+  "output_schema": {
+    "Segmentation Result": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "Segmentation Result",
+      "component": "Image"
+    }
+  },
+  "license": "unknown",
+  "hardware": "5.23.1",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 874,
+  "last_modified": "2025-05-15 17:12:12+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/run_segmentation",
+      "parameters": [
+        {
+          "name": "image",
+          "label": "Input Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Segmentation Result",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/get_random_seed",
+      "parameters": [
+        {
+          "name": "randomize_seed",
+          "label": "Randomize seed",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "seed",
+          "label": "Seed",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Seed",
+          "type": "float",
+          "component": "Slider"
+        }
+      ]
+    },
+    {
+      "name": "/image_to_3d",
+      "parameters": [
+        {
+          "name": "image",
+          "label": "Segmentation Result",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "seed",
+          "label": "Seed",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "num_inference_steps",
+          "label": "Number of inference steps",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "guidance_scale",
+          "label": "CFG scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "simplify",
+          "label": "Simplify Mesh",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "target_face_num",
+          "label": "Target Face Number",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Generated GLB",
+          "type": "filepath",
+          "component": "Model3d"
+        }
+      ]
+    },
+    {
+      "name": "/lambda",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/run_texture",
+      "parameters": [
+        {
+          "name": "image",
+          "label": "Input Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "mesh_path",
+          "label": "Generated GLB",
+          "type": "filepath",
+          "component": "Model3d"
+        },
+        {
+          "name": "seed",
+          "label": "Seed",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Textured GLB",
+          "type": "filepath",
+          "component": "Model3d"
+        }
+      ]
+    },
+    {
+      "name": "/start_session",
+      "parameters": [],
+      "returns": []
+    }
+  ],
+  "endpoint": "/run_segmentation",
+  "_api_verified": true,
+  "estimated_latency_s": 3.4,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 3.4,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:50:01.805010+00:00",
+  "_inference_attempt_status": "predict_failed",
+  "_inference_attempt_error": "The upstream Gradio app has raised an exception but has not enabled verbose error reporting. To enable, set show_error=True in launch()."
+}

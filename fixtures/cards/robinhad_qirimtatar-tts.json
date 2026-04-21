@@ -1,0 +1,85 @@
+{
+  "space_id": "robinhad/qirimtatar-tts",
+  "title": "Qirimtatar Tts",
+  "emoji": "\ud83e\udd80",
+  "description": "Qirimtatar Tts",
+  "input_schema": {
+    "Input": {
+      "type": "str",
+      "description": "Input",
+      "required": true,
+      "component": "Textbox"
+    },
+    "\u0413\u043e\u043b\u043e\u0441": {
+      "type": "str",
+      "description": "\u0413\u043e\u043b\u043e\u0441",
+      "required": true,
+      "component": "Radio"
+    }
+  },
+  "output_schema": {
+    "Output": {
+      "type": "str | Dict(name: str (name of file), data: str (base64 representation of file), size: int (size of i",
+      "description": "Output",
+      "component": "Audio"
+    },
+    "\u041e\u0431\u0440\u043e\u0431\u043b\u0435\u043d\u0438\u0439 \u0442\u0435\u043a\u0441\u0442": {
+      "type": "str",
+      "description": "\u041e\u0431\u0440\u043e\u0431\u043b\u0435\u043d\u0438\u0439 \u0442\u0435\u043a\u0441\u0442",
+      "component": "Textbox"
+    }
+  },
+  "license": "unknown",
+  "hardware": "3.40.1",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us",
+    "audio",
+    "speech-synthesis",
+    "tts"
+  ],
+  "likes": 9,
+  "last_modified": "2023-10-17 19:44:43+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_tags_enriched": true,
+  "estimated_latency_s": 4.0,
+  "speed_tier": "fast",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/predict",
+      "parameters": [
+        {
+          "name": "Input",
+          "label": "Input",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "\u0413\u043e\u043b\u043e\u0441",
+          "label": "\u0413\u043e\u043b\u043e\u0441",
+          "type": "str",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output",
+          "type": "str | Dict(name: str (name of file), data: str (base64 representation of file), size: int (size of image in bytes), is_file: bool (true if the file has been uploaded to the server), orig_name: str (or",
+          "component": "Audio"
+        },
+        {
+          "label": "\u041e\u0431\u0440\u043e\u0431\u043b\u0435\u043d\u0438\u0439 \u0442\u0435\u043a\u0441\u0442",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/predict",
+  "_api_verified": true
+}

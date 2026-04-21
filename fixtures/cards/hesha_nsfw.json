@@ -1,0 +1,59 @@
+{
+  "space_id": "hesha/nsfw",
+  "title": "Nsfw Image Classifier",
+  "emoji": "\ud83d\udcda",
+  "description": "Nsfw Image Classifier",
+  "input_schema": {
+    "img": {
+      "type": "str",
+      "description": "img",
+      "required": true,
+      "component": "Image"
+    }
+  },
+  "output_schema": {
+    "output": {
+      "type": "Dict[Any, Any]",
+      "description": "output",
+      "component": "Label"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "3.35.2",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 12,
+  "last_modified": "2023-06-30 14:27:03+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/predict",
+      "parameters": [
+        {
+          "name": "img",
+          "label": "img",
+          "type": "str",
+          "component": "Image"
+        }
+      ],
+      "returns": [
+        {
+          "label": "output",
+          "type": "Dict[Any, Any]",
+          "component": "Label"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/predict",
+  "_api_verified": true
+}

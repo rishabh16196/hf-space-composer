@@ -1,0 +1,161 @@
+{
+  "space_id": "istupakov/onnx-asr",
+  "title": "onnx-asr demo",
+  "emoji": "\ud83d\udc22",
+  "description": "ASR demo using onnx-asr",
+  "input_schema": {
+    "audio": {
+      "type": "filepath",
+      "description": "parameter_2",
+      "required": true,
+      "component": "Audio"
+    }
+  },
+  "output_schema": {
+    "Audio info": {
+      "type": "str",
+      "description": "Audio info",
+      "component": "Textbox"
+    }
+  },
+  "license": "mit",
+  "hardware": "6.6.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "automatic-speech-recognition",
+    "onnx",
+    "onnx-asr",
+    "region:us"
+  ],
+  "likes": 22,
+  "last_modified": "2026-03-23 02:35:15+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/get_audio_info",
+      "parameters": [
+        {
+          "name": "audio",
+          "label": "parameter_2",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Audio info",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/recognize_ru",
+      "parameters": [
+        {
+          "name": "audio",
+          "label": "parameter_2",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_7",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/recognize_en",
+      "parameters": [
+        {
+          "name": "audio",
+          "label": "parameter_2",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_7",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/get_audio_info_1",
+      "parameters": [
+        {
+          "name": "audio",
+          "label": "parameter_13",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Audio info",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/recognize_with_vad",
+      "parameters": [
+        {
+          "name": "audio",
+          "label": "parameter_13",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "name": "name",
+          "label": "Model",
+          "type": "Literal['alphacep/vosk-model-ru', 'alphacep/vosk-model-small-ru', 'gigaam-v3-ctc', 'gigaam-v3-e2e-ctc', 'gigaam-v3-e2e-rnnt', 'gigaam-v3-rnnt', 'nemo-canary-1b-v2', 'nemo-fastconformer-ru-ctc', 'nemo-",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "result",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/on_model_change",
+      "parameters": [
+        {
+          "name": "name",
+          "label": "Model",
+          "type": "Literal['alphacep/vosk-model-ru', 'alphacep/vosk-model-small-ru', 'gigaam-v3-ctc', 'gigaam-v3-e2e-ctc', 'gigaam-v3-e2e-rnnt', 'gigaam-v3-rnnt', 'nemo-canary-1b-v2', 'nemo-fastconformer-ru-ctc', 'nemo-",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_13",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/get_audio_info",
+  "_api_verified": true,
+  "estimated_latency_s": 4.24,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 4.24,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:50:59.896801+00:00"
+}

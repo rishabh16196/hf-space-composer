@@ -1,0 +1,149 @@
+{
+  "space_id": "black-forest-labs/FLUX.1-Redux-dev",
+  "title": "FLUX.1 Redux Dev",
+  "emoji": "\ud83d\uddbc\ufe0f",
+  "description": "Generate image variations",
+  "input_schema": {
+    "control_image": {
+      "type": "filepath",
+      "description": "Image to create variations",
+      "required": true,
+      "component": "Image"
+    },
+    "seed": {
+      "type": "float",
+      "description": "Seed",
+      "required": true,
+      "component": "Slider"
+    },
+    "randomize_seed": {
+      "type": "bool",
+      "description": "Randomize seed",
+      "required": true,
+      "component": "Checkbox"
+    },
+    "width": {
+      "type": "float",
+      "description": "Width",
+      "required": true,
+      "component": "Slider"
+    },
+    "height": {
+      "type": "float",
+      "description": "Height",
+      "required": true,
+      "component": "Slider"
+    },
+    "guidance_scale": {
+      "type": "float",
+      "description": "Guidance Scale",
+      "required": true,
+      "component": "Slider"
+    },
+    "num_inference_steps": {
+      "type": "float",
+      "description": "Number of inference steps",
+      "required": true,
+      "component": "Slider"
+    }
+  },
+  "output_schema": {
+    "Result": {
+      "type": "filepath",
+      "description": "Result",
+      "component": "Image"
+    },
+    "Seed": {
+      "type": "float",
+      "description": "Seed",
+      "component": "Slider"
+    }
+  },
+  "license": "mit",
+  "hardware": "6.10.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us",
+    "diffusion",
+    "image-generation",
+    "text-to-image",
+    "vision"
+  ],
+  "likes": 181,
+  "last_modified": "2026-03-26 14:45:06+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/infer",
+      "parameters": [
+        {
+          "name": "control_image",
+          "label": "Image to create variations",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "name": "seed",
+          "label": "Seed",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "randomize_seed",
+          "label": "Randomize seed",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "width",
+          "label": "Width",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "height",
+          "label": "Height",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "guidance_scale",
+          "label": "Guidance Scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "num_inference_steps",
+          "label": "Number of inference steps",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Result",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "Seed",
+          "type": "float",
+          "component": "Slider"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/infer",
+  "_api_verified": true,
+  "estimated_latency_s": 2.95,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "_tags_enriched": true,
+  "measured_latency_s": 2.95,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:50:23.548265+00:00"
+}

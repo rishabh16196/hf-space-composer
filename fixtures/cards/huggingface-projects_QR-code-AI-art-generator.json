@@ -1,0 +1,201 @@
+{
+  "space_id": "huggingface-projects/QR-code-AI-art-generator",
+  "title": "QR Code AI Art Generator",
+  "emoji": "\ud83d\udcf1\ud83d\udd32",
+  "description": "QR Code AI Art Generator Blend QR codes with AI Art",
+  "input_schema": {
+    "qr_code_content": {
+      "type": "str",
+      "description": "QR Code Content",
+      "required": true,
+      "component": "Textbox"
+    },
+    "prompt": {
+      "type": "str",
+      "description": "Prompt",
+      "required": true,
+      "component": "Textbox"
+    },
+    "negative_prompt": {
+      "type": "str",
+      "description": "Negative Prompt",
+      "required": true,
+      "component": "Textbox"
+    },
+    "guidance_scale": {
+      "type": "float",
+      "description": "Guidance Scale",
+      "required": true,
+      "component": "Slider"
+    },
+    "controlnet_conditioning_scale": {
+      "type": "float",
+      "description": "Controlnet Conditioning Scale",
+      "required": true,
+      "component": "Slider"
+    },
+    "strength": {
+      "type": "float",
+      "description": "Strength",
+      "required": true,
+      "component": "Slider"
+    },
+    "seed": {
+      "type": "float",
+      "description": "Seed",
+      "required": true,
+      "component": "Slider"
+    },
+    "init_image": {
+      "type": "filepath",
+      "description": "Init Image (Optional). Leave blank to generate image with SD 2.1",
+      "required": true,
+      "component": "Image"
+    },
+    "qrcode_image": {
+      "type": "filepath",
+      "description": "QR Code Image (Optional). Leave blank to automatically generate QR code",
+      "required": true,
+      "component": "Image"
+    },
+    "use_qr_code_as_init_image": {
+      "type": "bool",
+      "description": "Use QR code as init image",
+      "required": true,
+      "component": "Checkbox"
+    },
+    "sampler": {
+      "type": "Literal['DPM++ Karras SDE', 'DPM++ Karras', 'Heun', 'Euler', 'DDIM', 'DEIS']",
+      "description": "Sampler",
+      "required": true,
+      "component": "Dropdown"
+    }
+  },
+  "output_schema": {
+    "Result Image": {
+      "type": "filepath",
+      "description": "Result Image",
+      "component": "Image"
+    }
+  },
+  "license": "unknown",
+  "hardware": "4.24.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us",
+    "code",
+    "code-generation",
+    "image-generation",
+    "text-to-image",
+    "vision"
+  ],
+  "likes": 1980,
+  "last_modified": "2024-04-09 02:54:18+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/inference",
+      "parameters": [
+        {
+          "name": "qr_code_content",
+          "label": "QR Code Content",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "prompt",
+          "label": "Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "negative_prompt",
+          "label": "Negative Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "guidance_scale",
+          "label": "Guidance Scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "controlnet_conditioning_scale",
+          "label": "Controlnet Conditioning Scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "strength",
+          "label": "Strength",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "seed",
+          "label": "Seed",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "init_image",
+          "label": "Init Image (Optional). Leave blank to generate image with SD 2.1",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "name": "qrcode_image",
+          "label": "QR Code Image (Optional). Leave blank to automatically generate QR code",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "name": "use_qr_code_as_init_image",
+          "label": "Use QR code as init image",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "sampler",
+          "label": "Sampler",
+          "type": "Literal['DPM++ Karras SDE', 'DPM++ Karras', 'Heun', 'Euler', 'DDIM', 'DEIS']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Result Image",
+          "type": "filepath",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/get_random_value",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Seed",
+          "type": "float",
+          "component": "Slider"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/inference",
+  "_api_verified": true,
+  "estimated_latency_s": 3.1,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "_tags_enriched": true,
+  "measured_latency_s": 3.1,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:50:45.655809+00:00",
+  "_inference_attempt_status": "predict_failed",
+  "_inference_attempt_error": "The upstream Gradio app has raised an exception but has not enabled verbose error reporting. To enable, set show_error=True in launch()."
+}

@@ -1,0 +1,4726 @@
+{
+  "space_id": "ACE-Step/Ace-Step-v1.5",
+  "title": "ACE-Step v1.5",
+  "emoji": "\ud83c\udfb5",
+  "description": "Music Generation Foundation Model v1.5",
+  "input_schema": {
+    "dataset_type": {
+      "type": "Literal['train', 'test']",
+      "description": "Dataset",
+      "required": true,
+      "component": "Dropdown"
+    }
+  },
+  "output_schema": {
+    "\ud83d\udcca Data Status": {
+      "type": "str",
+      "description": "\ud83d\udcca Data Status",
+      "component": "Textbox"
+    }
+  },
+  "license": "mit",
+  "hardware": "6.2.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us",
+    "audio",
+    "music"
+  ],
+  "likes": 516,
+  "last_modified": "2026-04-02 09:26:29+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/import_dataset",
+      "parameters": [
+        {
+          "name": "dataset_type",
+          "label": "Dataset",
+          "type": "Literal['train', 'test']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "\ud83d\udcca Data Status",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/lambda",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Checkpoint File",
+          "type": "Literal['/home/user/app/data/checkpoints']",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/update_model_type_settings",
+      "parameters": [
+        {
+          "name": "config_path",
+          "label": "Main Model Path",
+          "type": "Literal['acestep-v15-turbo', 'acestep-v15-xl-turbo']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "DiT Inference Steps",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "value_156",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "value_157",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Shift",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "value_158",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "value_159",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "value_152",
+          "type": "Literal['text2music', 'repaint', 'cover']",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_1",
+      "parameters": [
+        {
+          "name": "param_0",
+          "label": "Checkpoint File",
+          "type": "Literal['/home/user/app/data/checkpoints']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_1",
+          "label": "Main Model Path",
+          "type": "Literal['acestep-v15-turbo', 'acestep-v15-xl-turbo']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_2",
+          "label": "Device",
+          "type": "Literal['auto', 'cuda', 'cpu']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_3",
+          "label": "Initialize 5Hz LM",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_4",
+          "label": "5Hz LM Model Path",
+          "type": "Literal['acestep-5Hz-lm-1.7B']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_5",
+          "label": "5Hz LM Backend",
+          "type": "Literal['vllm', 'pt']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_6",
+          "label": "Use Flash Attention",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_7",
+          "label": "Offload to CPU",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_8",
+          "label": "Offload DiT to CPU",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Status",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "DiT Inference Steps",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "value_156",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "value_157",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Shift",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "value_158",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "value_159",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "value_152",
+          "type": "Literal['text2music', 'repaint', 'cover']",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/load_lora",
+      "parameters": [
+        {
+          "name": "lora_path",
+          "label": "LoRA Path",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "LoRA Status",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_2",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Use LoRA",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ]
+    },
+    {
+      "name": "/unload_lora",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "LoRA Status",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_3",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Use LoRA",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ]
+    },
+    {
+      "name": "/set_use_lora",
+      "parameters": [
+        {
+          "name": "use_lora",
+          "label": "Use LoRA",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "LoRA Status",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/update_negative_prompt_visibility",
+      "parameters": [
+        {
+          "name": "init_llm_checked",
+          "label": "Initialize 5Hz LM",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "LM Negative Prompt",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/update_audio_cover_strength_visibility",
+      "parameters": [
+        {
+          "name": "task_type_value",
+          "label": "parameter_152",
+          "type": "Literal['text2music', 'repaint', 'cover']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "init_llm_checked",
+          "label": "Initialize 5Hz LM",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_138",
+          "type": "float",
+          "component": "Slider"
+        }
+      ]
+    },
+    {
+      "name": "/update_audio_cover_strength_visibility_1",
+      "parameters": [
+        {
+          "name": "task_type_value",
+          "label": "parameter_152",
+          "type": "Literal['text2music', 'repaint', 'cover']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "init_llm_checked",
+          "label": "Initialize 5Hz LM",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_138",
+          "type": "float",
+          "component": "Slider"
+        }
+      ]
+    },
+    {
+      "name": "/update_audio_components_visibility",
+      "parameters": [
+        {
+          "name": "batch_size",
+          "label": "batch size",
+          "type": "float",
+          "component": "Number"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/lambda_4",
+      "parameters": [
+        {
+          "name": "src",
+          "label": "Source Audio",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Audio Codes",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_5",
+      "parameters": [
+        {
+          "name": "param_0",
+          "label": "parameter_152",
+          "type": "Literal['text2music', 'repaint', 'cover']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_1",
+          "label": "parameter_154",
+          "type": "Literal['woodwinds', 'brass', 'fx', 'synth', 'strings', 'percussion', 'keyboard', 'guitar', 'bass', 'drums', 'backing_vocals', 'vocals']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_2",
+          "label": "parameter_155",
+          "type": "list[Literal['woodwinds', 'brass', 'fx', 'synth', 'strings', 'percussion', 'keyboard', 'guitar', 'bass', 'drums', 'backing_vocals', 'vocals']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "param_3",
+          "label": "Audio Codes",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_4",
+          "label": "Initialize 5Hz LM",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_153",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "value_154",
+          "type": "Literal['woodwinds', 'brass', 'fx', 'synth', 'strings', 'percussion', 'keyboard', 'guitar', 'bass', 'drums', 'backing_vocals', 'vocals']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "value_155",
+          "type": "list[Literal['woodwinds', 'brass', 'fx', 'synth', 'strings', 'percussion', 'keyboard', 'guitar', 'bass', 'drums', 'backing_vocals', 'vocals']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "label": "value_138",
+          "type": "float",
+          "component": "Slider"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_6",
+      "parameters": [
+        {
+          "name": "param_0",
+          "label": "parameter_152",
+          "type": "Literal['text2music', 'repaint', 'cover']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_1",
+          "label": "parameter_154",
+          "type": "Literal['woodwinds', 'brass', 'fx', 'synth', 'strings', 'percussion', 'keyboard', 'guitar', 'bass', 'drums', 'backing_vocals', 'vocals']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_2",
+          "label": "parameter_155",
+          "type": "list[Literal['woodwinds', 'brass', 'fx', 'synth', 'strings', 'percussion', 'keyboard', 'guitar', 'bass', 'drums', 'backing_vocals', 'vocals']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "param_3",
+          "label": "Audio Codes",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_4",
+          "label": "Initialize 5Hz LM",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_153",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "value_154",
+          "type": "Literal['woodwinds', 'brass', 'fx', 'synth', 'strings', 'percussion', 'keyboard', 'guitar', 'bass', 'drums', 'backing_vocals', 'vocals']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "value_155",
+          "type": "list[Literal['woodwinds', 'brass', 'fx', 'synth', 'strings', 'percussion', 'keyboard', 'guitar', 'bass', 'drums', 'backing_vocals', 'vocals']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "label": "value_138",
+          "type": "float",
+          "component": "Slider"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_7",
+      "parameters": [
+        {
+          "name": "param_0",
+          "label": "parameter_152",
+          "type": "Literal['text2music', 'repaint', 'cover']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_1",
+          "label": "parameter_154",
+          "type": "Literal['woodwinds', 'brass', 'fx', 'synth', 'strings', 'percussion', 'keyboard', 'guitar', 'bass', 'drums', 'backing_vocals', 'vocals']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_2",
+          "label": "parameter_155",
+          "type": "list[Literal['woodwinds', 'brass', 'fx', 'synth', 'strings', 'percussion', 'keyboard', 'guitar', 'bass', 'drums', 'backing_vocals', 'vocals']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "param_3",
+          "label": "Audio Codes",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_4",
+          "label": "Initialize 5Hz LM",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_153",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "value_154",
+          "type": "Literal['woodwinds', 'brass', 'fx', 'synth', 'strings', 'percussion', 'keyboard', 'guitar', 'bass', 'drums', 'backing_vocals', 'vocals']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "value_155",
+          "type": "list[Literal['woodwinds', 'brass', 'fx', 'synth', 'strings', 'percussion', 'keyboard', 'guitar', 'bass', 'drums', 'backing_vocals', 'vocals']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "label": "value_138",
+          "type": "float",
+          "component": "Slider"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_8",
+      "parameters": [
+        {
+          "name": "task",
+          "label": "parameter_152",
+          "type": "Literal['text2music', 'repaint', 'cover']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Lyrics",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Thinking",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "BPM (optional)",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "label": "Audio Duration (seconds)",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "label": "Key Signature (optional)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Vocal Language",
+          "type": "Literal['ar', 'az', 'bg', 'bn', 'ca', 'cs', 'da', 'de', 'el', 'en', 'es', 'fa', 'fi', 'fr', 'he', 'hi', 'hr', 'ht', 'hu', 'id', 'is', 'it', 'ja', 'ko', 'la', 'lt', 'ms', 'ne', 'nl', 'no', 'pa', 'pl', ",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Time Signature (optional)",
+          "type": "Literal['', '2', '3', '4']",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/update_transcribe_button_text",
+      "parameters": [
+        {
+          "name": "audio_code_string",
+          "label": "Audio Codes",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/lambda_9",
+      "parameters": [
+        {
+          "name": "codes",
+          "label": "Audio Codes",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "debug",
+          "label": "parameter_163",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Generation Status",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Lyrics",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "BPM (optional)",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "label": "Audio Duration (seconds)",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "label": "Key Signature (optional)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Vocal Language",
+          "type": "Literal['ar', 'az', 'bg', 'bn', 'ca', 'cs', 'da', 'de', 'el', 'en', 'es', 'fa', 'fi', 'fr', 'he', 'hi', 'hr', 'ht', 'hu', 'id', 'is', 'it', 'ja', 'ko', 'la', 'lt', 'ms', 'ne', 'nl', 'no', 'pa', 'pl', ",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Time Signature (optional)",
+          "type": "Literal['', '2', '3', '4']",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/reset_format_caption_flag",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/reset_format_caption_flag_1",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/reset_format_caption_flag_2",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/reset_format_caption_flag_3",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/reset_format_caption_flag_4",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/reset_format_caption_flag_5",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/reset_format_caption_flag_6",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/update_audio_uploads_accordion",
+      "parameters": [
+        {
+          "name": "reference_audio",
+          "label": "Reference Audio (optional)",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "name": "src_audio",
+          "label": "Source Audio",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/update_audio_uploads_accordion_1",
+      "parameters": [
+        {
+          "name": "reference_audio",
+          "label": "Reference Audio (optional)",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "name": "src_audio",
+          "label": "Source Audio",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/handle_instrumental_checkbox",
+      "parameters": [
+        {
+          "name": "instrumental_checked",
+          "label": "Instrumental",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "current_lyrics",
+          "label": "Lyrics",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Lyrics",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/handle_format_sample_wrapper",
+      "parameters": [
+        {
+          "name": "caption",
+          "label": "Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "lyrics",
+          "label": "Lyrics",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "bpm",
+          "label": "BPM (optional)",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "duration",
+          "label": "Audio Duration (seconds)",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "key_scale",
+          "label": "Key Signature (optional)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "time_sig",
+          "label": "Time Signature (optional)",
+          "type": "Literal['', '2', '3', '4']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "temp",
+          "label": "LM Temperature",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "top_k",
+          "label": "LM Top-K",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "top_p",
+          "label": "LM Top-P",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "debug",
+          "label": "parameter_163",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Lyrics",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "BPM (optional)",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "label": "Audio Duration (seconds)",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "label": "Key Signature (optional)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Vocal Language",
+          "type": "Literal['ar', 'az', 'bg', 'bn', 'ca', 'cs', 'da', 'de', 'el', 'en', 'es', 'fa', 'fi', 'fr', 'he', 'hi', 'hr', 'ht', 'hu', 'id', 'is', 'it', 'ja', 'ko', 'la', 'lt', 'ms', 'ne', 'nl', 'no', 'pa', 'pl', ",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Time Signature (optional)",
+          "type": "Literal['', '2', '3', '4']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Generation Status",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/handle_generation_mode_change",
+      "parameters": [
+        {
+          "name": "mode",
+          "label": "",
+          "type": "Literal['simple', 'custom', 'cover', 'repaint']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_152",
+          "type": "Literal['text2music', 'repaint', 'cover']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "value_138",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Thinking",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ]
+    },
+    {
+      "name": "/process_source_audio_wrapper",
+      "parameters": [
+        {
+          "name": "src",
+          "label": "Source Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "name": "debug",
+          "label": "parameter_163",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Audio Codes",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Generation Status",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Lyrics",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "BPM (optional)",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "label": "Audio Duration (seconds)",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "label": "Key Signature (optional)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Vocal Language",
+          "type": "Literal['ar', 'az', 'bg', 'bn', 'ca', 'cs', 'da', 'de', 'el', 'en', 'es', 'fa', 'fi', 'fr', 'he', 'hi', 'hr', 'ht', 'hu', 'id', 'is', 'it', 'ja', 'ko', 'la', 'lt', 'ms', 'ne', 'nl', 'no', 'pa', 'pl', ",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Time Signature (optional)",
+          "type": "Literal['', '2', '3', '4']",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/handle_simple_instrumental_change",
+      "parameters": [
+        {
+          "name": "is_instrumental",
+          "label": "Instrumental",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Vocal Language (optional)",
+          "type": "Literal['ar', 'az', 'bg', 'bn', 'ca', 'cs', 'da', 'de', 'el', 'en', 'es', 'fa', 'fi', 'fr', 'he', 'hi', 'hr', 'ht', 'hu', 'id', 'is', 'it', 'ja', 'ko', 'la', 'lt', 'ms', 'ne', 'nl', 'no', 'pa', 'pl', ",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/load_random_simple_description",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Song Description",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Instrumental",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Vocal Language (optional)",
+          "type": "Literal['ar', 'az', 'bg', 'bn', 'ca', 'cs', 'da', 'de', 'el', 'en', 'es', 'fa', 'fi', 'fr', 'he', 'hi', 'hr', 'ht', 'hu', 'id', 'is', 'it', 'ja', 'ko', 'la', 'lt', 'ms', 'ne', 'nl', 'no', 'pa', 'pl', ",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/handle_create_sample_wrapper",
+      "parameters": [
+        {
+          "name": "query",
+          "label": "Song Description",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "instrumental",
+          "label": "Instrumental",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "vocal_lang",
+          "label": "Vocal Language (optional)",
+          "type": "Literal['ar', 'az', 'bg', 'bn', 'ca', 'cs', 'da', 'de', 'el', 'en', 'es', 'fa', 'fi', 'fr', 'he', 'hi', 'hr', 'ht', 'hu', 'id', 'is', 'it', 'ja', 'ko', 'la', 'lt', 'ms', 'ne', 'nl', 'no', 'pa', 'pl', ",
+          "component": "Dropdown"
+        },
+        {
+          "name": "temp",
+          "label": "LM Temperature",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "top_k",
+          "label": "LM Top-K",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "top_p",
+          "label": "LM Top-P",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "debug",
+          "label": "parameter_163",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Lyrics",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "BPM (optional)",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "label": "Audio Duration (seconds)",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "label": "Key Signature (optional)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Vocal Language",
+          "type": "Literal['ar', 'az', 'bg', 'bn', 'ca', 'cs', 'da', 'de', 'el', 'en', 'es', 'fa', 'fi', 'fr', 'he', 'hi', 'hr', 'ht', 'hu', 'id', 'is', 'it', 'ja', 'ko', 'la', 'lt', 'ms', 'ne', 'nl', 'no', 'pa', 'pl', ",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Vocal Language (optional)",
+          "type": "Literal['ar', 'az', 'bg', 'bn', 'ca', 'cs', 'da', 'de', 'el', 'en', 'es', 'fa', 'fi', 'fr', 'he', 'hi', 'hr', 'ht', 'hu', 'id', 'is', 'it', 'ja', 'ko', 'la', 'lt', 'ms', 'ne', 'nl', 'no', 'pa', 'pl', ",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Time Signature (optional)",
+          "type": "Literal['', '2', '3', '4']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Instrumental",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Thinking",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Generation Status",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/load_metadata",
+      "parameters": [
+        {
+          "name": "file_obj",
+          "label": "Load",
+          "type": "filepath",
+          "component": "Uploadbutton"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_152",
+          "type": "Literal['text2music', 'repaint', 'cover']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Lyrics",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Vocal Language",
+          "type": "Literal['ar', 'az', 'bg', 'bn', 'ca', 'cs', 'da', 'de', 'el', 'en', 'es', 'fa', 'fi', 'fr', 'he', 'hi', 'hr', 'ht', 'hu', 'id', 'is', 'it', 'ja', 'ko', 'la', 'lt', 'ms', 'ne', 'nl', 'no', 'pa', 'pl', ",
+          "component": "Dropdown"
+        },
+        {
+          "label": "BPM (optional)",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "label": "Key Signature (optional)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Time Signature (optional)",
+          "type": "Literal['', '2', '3', '4']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Audio Duration (seconds)",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "label": "batch size",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "label": "DiT Inference Steps",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "value_156",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Seed",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Random Seed",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "value_157",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "value_158",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "value_159",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Shift",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Inference Method",
+          "type": "Literal['ode', 'sde']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Custom Timesteps",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Audio Format",
+          "type": "Literal['mp3', 'flac']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "LM Temperature",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "LM CFG Scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "LM Top-K",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "LM Top-P",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "LM Negative Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "value_160",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "value_161",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "value_162",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "value_138",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Thinking",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Audio Codes",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Start (seconds)",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "label": "End (seconds, -1 for end)",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "label": "value_154",
+          "type": "Literal['woodwinds', 'brass', 'fx', 'synth', 'strings', 'percussion', 'keyboard', 'guitar', 'bass', 'drums', 'backing_vocals', 'vocals']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "value_155",
+          "type": "list[Literal['woodwinds', 'brass', 'fx', 'synth', 'strings', 'percussion', 'keyboard', 'guitar', 'bass', 'drums', 'backing_vocals', 'vocals']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "label": "Instrumental",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ]
+    },
+    {
+      "name": "/send_to_cover_handler",
+      "parameters": [
+        {
+          "name": "audio_file",
+          "label": "\ud83c\udfb5 Generated Music (Sample 1)",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Source Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "BPM (optional)",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "label": "Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Lyrics",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Audio Duration (seconds)",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "label": "Key Signature (optional)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Vocal Language",
+          "type": "Literal['ar', 'az', 'bg', 'bn', 'ca', 'cs', 'da', 'de', 'el', 'en', 'es', 'fa', 'fi', 'fr', 'he', 'hi', 'hr', 'ht', 'hu', 'id', 'is', 'it', 'ja', 'ko', 'la', 'lt', 'ms', 'ne', 'nl', 'no', 'pa', 'pl', ",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Time Signature (optional)",
+          "type": "Literal['', '2', '3', '4']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "",
+          "type": "Literal['simple', 'custom', 'cover', 'repaint']",
+          "component": "Radio"
+        },
+        {
+          "label": "value_152",
+          "type": "Literal['text2music', 'repaint', 'cover']",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/send_to_cover_handler_1",
+      "parameters": [
+        {
+          "name": "audio_file",
+          "label": "\ud83c\udfb5 Generated Music (Sample 2)",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Source Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "BPM (optional)",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "label": "Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Lyrics",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Audio Duration (seconds)",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "label": "Key Signature (optional)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Vocal Language",
+          "type": "Literal['ar', 'az', 'bg', 'bn', 'ca', 'cs', 'da', 'de', 'el', 'en', 'es', 'fa', 'fi', 'fr', 'he', 'hi', 'hr', 'ht', 'hu', 'id', 'is', 'it', 'ja', 'ko', 'la', 'lt', 'ms', 'ne', 'nl', 'no', 'pa', 'pl', ",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Time Signature (optional)",
+          "type": "Literal['', '2', '3', '4']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "",
+          "type": "Literal['simple', 'custom', 'cover', 'repaint']",
+          "component": "Radio"
+        },
+        {
+          "label": "value_152",
+          "type": "Literal['text2music', 'repaint', 'cover']",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/send_to_cover_handler_2",
+      "parameters": [
+        {
+          "name": "audio_file",
+          "label": "\ud83c\udfb5 Generated Music (Sample 3)",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Source Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "BPM (optional)",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "label": "Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Lyrics",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Audio Duration (seconds)",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "label": "Key Signature (optional)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Vocal Language",
+          "type": "Literal['ar', 'az', 'bg', 'bn', 'ca', 'cs', 'da', 'de', 'el', 'en', 'es', 'fa', 'fi', 'fr', 'he', 'hi', 'hr', 'ht', 'hu', 'id', 'is', 'it', 'ja', 'ko', 'la', 'lt', 'ms', 'ne', 'nl', 'no', 'pa', 'pl', ",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Time Signature (optional)",
+          "type": "Literal['', '2', '3', '4']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "",
+          "type": "Literal['simple', 'custom', 'cover', 'repaint']",
+          "component": "Radio"
+        },
+        {
+          "label": "value_152",
+          "type": "Literal['text2music', 'repaint', 'cover']",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/send_to_cover_handler_3",
+      "parameters": [
+        {
+          "name": "audio_file",
+          "label": "\ud83c\udfb5 Generated Music (Sample 4)",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Source Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "BPM (optional)",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "label": "Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Lyrics",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Audio Duration (seconds)",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "label": "Key Signature (optional)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Vocal Language",
+          "type": "Literal['ar', 'az', 'bg', 'bn', 'ca', 'cs', 'da', 'de', 'el', 'en', 'es', 'fa', 'fi', 'fr', 'he', 'hi', 'hr', 'ht', 'hu', 'id', 'is', 'it', 'ja', 'ko', 'la', 'lt', 'ms', 'ne', 'nl', 'no', 'pa', 'pl', ",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Time Signature (optional)",
+          "type": "Literal['', '2', '3', '4']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "",
+          "type": "Literal['simple', 'custom', 'cover', 'repaint']",
+          "component": "Radio"
+        },
+        {
+          "label": "value_152",
+          "type": "Literal['text2music', 'repaint', 'cover']",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/send_to_cover_handler_4",
+      "parameters": [
+        {
+          "name": "audio_file",
+          "label": "\ud83c\udfb5 Generated Music (Sample 5)",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Source Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "BPM (optional)",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "label": "Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Lyrics",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Audio Duration (seconds)",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "label": "Key Signature (optional)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Vocal Language",
+          "type": "Literal['ar', 'az', 'bg', 'bn', 'ca', 'cs', 'da', 'de', 'el', 'en', 'es', 'fa', 'fi', 'fr', 'he', 'hi', 'hr', 'ht', 'hu', 'id', 'is', 'it', 'ja', 'ko', 'la', 'lt', 'ms', 'ne', 'nl', 'no', 'pa', 'pl', ",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Time Signature (optional)",
+          "type": "Literal['', '2', '3', '4']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "",
+          "type": "Literal['simple', 'custom', 'cover', 'repaint']",
+          "component": "Radio"
+        },
+        {
+          "label": "value_152",
+          "type": "Literal['text2music', 'repaint', 'cover']",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/send_to_cover_handler_5",
+      "parameters": [
+        {
+          "name": "audio_file",
+          "label": "\ud83c\udfb5 Generated Music (Sample 6)",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Source Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "BPM (optional)",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "label": "Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Lyrics",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Audio Duration (seconds)",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "label": "Key Signature (optional)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Vocal Language",
+          "type": "Literal['ar', 'az', 'bg', 'bn', 'ca', 'cs', 'da', 'de', 'el', 'en', 'es', 'fa', 'fi', 'fr', 'he', 'hi', 'hr', 'ht', 'hu', 'id', 'is', 'it', 'ja', 'ko', 'la', 'lt', 'ms', 'ne', 'nl', 'no', 'pa', 'pl', ",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Time Signature (optional)",
+          "type": "Literal['', '2', '3', '4']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "",
+          "type": "Literal['simple', 'custom', 'cover', 'repaint']",
+          "component": "Radio"
+        },
+        {
+          "label": "value_152",
+          "type": "Literal['text2music', 'repaint', 'cover']",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/send_to_cover_handler_6",
+      "parameters": [
+        {
+          "name": "audio_file",
+          "label": "\ud83c\udfb5 Generated Music (Sample 7)",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Source Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "BPM (optional)",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "label": "Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Lyrics",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Audio Duration (seconds)",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "label": "Key Signature (optional)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Vocal Language",
+          "type": "Literal['ar', 'az', 'bg', 'bn', 'ca', 'cs', 'da', 'de', 'el', 'en', 'es', 'fa', 'fi', 'fr', 'he', 'hi', 'hr', 'ht', 'hu', 'id', 'is', 'it', 'ja', 'ko', 'la', 'lt', 'ms', 'ne', 'nl', 'no', 'pa', 'pl', ",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Time Signature (optional)",
+          "type": "Literal['', '2', '3', '4']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "",
+          "type": "Literal['simple', 'custom', 'cover', 'repaint']",
+          "component": "Radio"
+        },
+        {
+          "label": "value_152",
+          "type": "Literal['text2music', 'repaint', 'cover']",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/send_to_cover_handler_7",
+      "parameters": [
+        {
+          "name": "audio_file",
+          "label": "\ud83c\udfb5 Generated Music (Sample 8)",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Source Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "BPM (optional)",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "label": "Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Lyrics",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Audio Duration (seconds)",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "label": "Key Signature (optional)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Vocal Language",
+          "type": "Literal['ar', 'az', 'bg', 'bn', 'ca', 'cs', 'da', 'de', 'el', 'en', 'es', 'fa', 'fi', 'fr', 'he', 'hi', 'hr', 'ht', 'hu', 'id', 'is', 'it', 'ja', 'ko', 'la', 'lt', 'ms', 'ne', 'nl', 'no', 'pa', 'pl', ",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Time Signature (optional)",
+          "type": "Literal['', '2', '3', '4']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "",
+          "type": "Literal['simple', 'custom', 'cover', 'repaint']",
+          "component": "Radio"
+        },
+        {
+          "label": "value_152",
+          "type": "Literal['text2music', 'repaint', 'cover']",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/send_to_repaint_handler",
+      "parameters": [
+        {
+          "name": "audio_file",
+          "label": "\ud83c\udfb5 Generated Music (Sample 1)",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Source Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "BPM (optional)",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "label": "Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Lyrics",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Audio Duration (seconds)",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "label": "Key Signature (optional)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Vocal Language",
+          "type": "Literal['ar', 'az', 'bg', 'bn', 'ca', 'cs', 'da', 'de', 'el', 'en', 'es', 'fa', 'fi', 'fr', 'he', 'hi', 'hr', 'ht', 'hu', 'id', 'is', 'it', 'ja', 'ko', 'la', 'lt', 'ms', 'ne', 'nl', 'no', 'pa', 'pl', ",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Time Signature (optional)",
+          "type": "Literal['', '2', '3', '4']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "",
+          "type": "Literal['simple', 'custom', 'cover', 'repaint']",
+          "component": "Radio"
+        },
+        {
+          "label": "value_152",
+          "type": "Literal['text2music', 'repaint', 'cover']",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/send_to_repaint_handler_1",
+      "parameters": [
+        {
+          "name": "audio_file",
+          "label": "\ud83c\udfb5 Generated Music (Sample 2)",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Source Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "BPM (optional)",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "label": "Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Lyrics",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Audio Duration (seconds)",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "label": "Key Signature (optional)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Vocal Language",
+          "type": "Literal['ar', 'az', 'bg', 'bn', 'ca', 'cs', 'da', 'de', 'el', 'en', 'es', 'fa', 'fi', 'fr', 'he', 'hi', 'hr', 'ht', 'hu', 'id', 'is', 'it', 'ja', 'ko', 'la', 'lt', 'ms', 'ne', 'nl', 'no', 'pa', 'pl', ",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Time Signature (optional)",
+          "type": "Literal['', '2', '3', '4']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "",
+          "type": "Literal['simple', 'custom', 'cover', 'repaint']",
+          "component": "Radio"
+        },
+        {
+          "label": "value_152",
+          "type": "Literal['text2music', 'repaint', 'cover']",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/send_to_repaint_handler_2",
+      "parameters": [
+        {
+          "name": "audio_file",
+          "label": "\ud83c\udfb5 Generated Music (Sample 3)",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Source Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "BPM (optional)",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "label": "Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Lyrics",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Audio Duration (seconds)",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "label": "Key Signature (optional)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Vocal Language",
+          "type": "Literal['ar', 'az', 'bg', 'bn', 'ca', 'cs', 'da', 'de', 'el', 'en', 'es', 'fa', 'fi', 'fr', 'he', 'hi', 'hr', 'ht', 'hu', 'id', 'is', 'it', 'ja', 'ko', 'la', 'lt', 'ms', 'ne', 'nl', 'no', 'pa', 'pl', ",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Time Signature (optional)",
+          "type": "Literal['', '2', '3', '4']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "",
+          "type": "Literal['simple', 'custom', 'cover', 'repaint']",
+          "component": "Radio"
+        },
+        {
+          "label": "value_152",
+          "type": "Literal['text2music', 'repaint', 'cover']",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/send_to_repaint_handler_3",
+      "parameters": [
+        {
+          "name": "audio_file",
+          "label": "\ud83c\udfb5 Generated Music (Sample 4)",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Source Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "BPM (optional)",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "label": "Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Lyrics",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Audio Duration (seconds)",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "label": "Key Signature (optional)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Vocal Language",
+          "type": "Literal['ar', 'az', 'bg', 'bn', 'ca', 'cs', 'da', 'de', 'el', 'en', 'es', 'fa', 'fi', 'fr', 'he', 'hi', 'hr', 'ht', 'hu', 'id', 'is', 'it', 'ja', 'ko', 'la', 'lt', 'ms', 'ne', 'nl', 'no', 'pa', 'pl', ",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Time Signature (optional)",
+          "type": "Literal['', '2', '3', '4']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "",
+          "type": "Literal['simple', 'custom', 'cover', 'repaint']",
+          "component": "Radio"
+        },
+        {
+          "label": "value_152",
+          "type": "Literal['text2music', 'repaint', 'cover']",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/send_to_repaint_handler_4",
+      "parameters": [
+        {
+          "name": "audio_file",
+          "label": "\ud83c\udfb5 Generated Music (Sample 5)",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Source Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "BPM (optional)",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "label": "Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Lyrics",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Audio Duration (seconds)",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "label": "Key Signature (optional)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Vocal Language",
+          "type": "Literal['ar', 'az', 'bg', 'bn', 'ca', 'cs', 'da', 'de', 'el', 'en', 'es', 'fa', 'fi', 'fr', 'he', 'hi', 'hr', 'ht', 'hu', 'id', 'is', 'it', 'ja', 'ko', 'la', 'lt', 'ms', 'ne', 'nl', 'no', 'pa', 'pl', ",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Time Signature (optional)",
+          "type": "Literal['', '2', '3', '4']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "",
+          "type": "Literal['simple', 'custom', 'cover', 'repaint']",
+          "component": "Radio"
+        },
+        {
+          "label": "value_152",
+          "type": "Literal['text2music', 'repaint', 'cover']",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/send_to_repaint_handler_5",
+      "parameters": [
+        {
+          "name": "audio_file",
+          "label": "\ud83c\udfb5 Generated Music (Sample 6)",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Source Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "BPM (optional)",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "label": "Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Lyrics",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Audio Duration (seconds)",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "label": "Key Signature (optional)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Vocal Language",
+          "type": "Literal['ar', 'az', 'bg', 'bn', 'ca', 'cs', 'da', 'de', 'el', 'en', 'es', 'fa', 'fi', 'fr', 'he', 'hi', 'hr', 'ht', 'hu', 'id', 'is', 'it', 'ja', 'ko', 'la', 'lt', 'ms', 'ne', 'nl', 'no', 'pa', 'pl', ",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Time Signature (optional)",
+          "type": "Literal['', '2', '3', '4']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "",
+          "type": "Literal['simple', 'custom', 'cover', 'repaint']",
+          "component": "Radio"
+        },
+        {
+          "label": "value_152",
+          "type": "Literal['text2music', 'repaint', 'cover']",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/send_to_repaint_handler_6",
+      "parameters": [
+        {
+          "name": "audio_file",
+          "label": "\ud83c\udfb5 Generated Music (Sample 7)",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Source Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "BPM (optional)",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "label": "Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Lyrics",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Audio Duration (seconds)",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "label": "Key Signature (optional)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Vocal Language",
+          "type": "Literal['ar', 'az', 'bg', 'bn', 'ca', 'cs', 'da', 'de', 'el', 'en', 'es', 'fa', 'fi', 'fr', 'he', 'hi', 'hr', 'ht', 'hu', 'id', 'is', 'it', 'ja', 'ko', 'la', 'lt', 'ms', 'ne', 'nl', 'no', 'pa', 'pl', ",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Time Signature (optional)",
+          "type": "Literal['', '2', '3', '4']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "",
+          "type": "Literal['simple', 'custom', 'cover', 'repaint']",
+          "component": "Radio"
+        },
+        {
+          "label": "value_152",
+          "type": "Literal['text2music', 'repaint', 'cover']",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/send_to_repaint_handler_7",
+      "parameters": [
+        {
+          "name": "audio_file",
+          "label": "\ud83c\udfb5 Generated Music (Sample 8)",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Source Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "BPM (optional)",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "label": "Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Lyrics",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Audio Duration (seconds)",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "label": "Key Signature (optional)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Vocal Language",
+          "type": "Literal['ar', 'az', 'bg', 'bn', 'ca', 'cs', 'da', 'de', 'el', 'en', 'es', 'fa', 'fi', 'fr', 'he', 'hi', 'hr', 'ht', 'hu', 'id', 'is', 'it', 'ja', 'ko', 'la', 'lt', 'ms', 'ne', 'nl', 'no', 'pa', 'pl', ",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Time Signature (optional)",
+          "type": "Literal['', '2', '3', '4']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "",
+          "type": "Literal['simple', 'custom', 'cover', 'repaint']",
+          "component": "Radio"
+        },
+        {
+          "label": "value_152",
+          "type": "Literal['text2music', 'repaint', 'cover']",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/score_handler",
+      "parameters": [
+        {
+          "name": "scale",
+          "label": "parameter_166",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Quality Score (Sample 1)",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/score_handler_1",
+      "parameters": [
+        {
+          "name": "scale",
+          "label": "parameter_166",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Quality Score (Sample 2)",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/score_handler_2",
+      "parameters": [
+        {
+          "name": "scale",
+          "label": "parameter_166",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Quality Score (Sample 3)",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/score_handler_3",
+      "parameters": [
+        {
+          "name": "scale",
+          "label": "parameter_166",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Quality Score (Sample 4)",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/score_handler_4",
+      "parameters": [
+        {
+          "name": "scale",
+          "label": "parameter_166",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Quality Score (Sample 5)",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/score_handler_5",
+      "parameters": [
+        {
+          "name": "scale",
+          "label": "parameter_166",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Quality Score (Sample 6)",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/score_handler_6",
+      "parameters": [
+        {
+          "name": "scale",
+          "label": "parameter_166",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Quality Score (Sample 7)",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/score_handler_7",
+      "parameters": [
+        {
+          "name": "scale",
+          "label": "parameter_166",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Quality Score (Sample 8)",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/lrc_handler",
+      "parameters": [
+        {
+          "name": "vocal_lang",
+          "label": "Vocal Language",
+          "type": "Literal['ar', 'az', 'bg', 'bn', 'ca', 'cs', 'da', 'de', 'el', 'en', 'es', 'fa', 'fi', 'fr', 'he', 'hi', 'hr', 'ht', 'hu', 'id', 'is', 'it', 'ja', 'ko', 'la', 'lt', 'ms', 'ne', 'nl', 'no', 'pa', 'pl', ",
+          "component": "Dropdown"
+        },
+        {
+          "name": "infer_steps",
+          "label": "DiT Inference Steps",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Lyrics Timestamps (Sample 1)",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/lrc_handler_1",
+      "parameters": [
+        {
+          "name": "vocal_lang",
+          "label": "Vocal Language",
+          "type": "Literal['ar', 'az', 'bg', 'bn', 'ca', 'cs', 'da', 'de', 'el', 'en', 'es', 'fa', 'fi', 'fr', 'he', 'hi', 'hr', 'ht', 'hu', 'id', 'is', 'it', 'ja', 'ko', 'la', 'lt', 'ms', 'ne', 'nl', 'no', 'pa', 'pl', ",
+          "component": "Dropdown"
+        },
+        {
+          "name": "infer_steps",
+          "label": "DiT Inference Steps",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Lyrics Timestamps (Sample 2)",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/lrc_handler_2",
+      "parameters": [
+        {
+          "name": "vocal_lang",
+          "label": "Vocal Language",
+          "type": "Literal['ar', 'az', 'bg', 'bn', 'ca', 'cs', 'da', 'de', 'el', 'en', 'es', 'fa', 'fi', 'fr', 'he', 'hi', 'hr', 'ht', 'hu', 'id', 'is', 'it', 'ja', 'ko', 'la', 'lt', 'ms', 'ne', 'nl', 'no', 'pa', 'pl', ",
+          "component": "Dropdown"
+        },
+        {
+          "name": "infer_steps",
+          "label": "DiT Inference Steps",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Lyrics Timestamps (Sample 3)",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/lrc_handler_3",
+      "parameters": [
+        {
+          "name": "vocal_lang",
+          "label": "Vocal Language",
+          "type": "Literal['ar', 'az', 'bg', 'bn', 'ca', 'cs', 'da', 'de', 'el', 'en', 'es', 'fa', 'fi', 'fr', 'he', 'hi', 'hr', 'ht', 'hu', 'id', 'is', 'it', 'ja', 'ko', 'la', 'lt', 'ms', 'ne', 'nl', 'no', 'pa', 'pl', ",
+          "component": "Dropdown"
+        },
+        {
+          "name": "infer_steps",
+          "label": "DiT Inference Steps",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Lyrics Timestamps (Sample 4)",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/lrc_handler_4",
+      "parameters": [
+        {
+          "name": "vocal_lang",
+          "label": "Vocal Language",
+          "type": "Literal['ar', 'az', 'bg', 'bn', 'ca', 'cs', 'da', 'de', 'el', 'en', 'es', 'fa', 'fi', 'fr', 'he', 'hi', 'hr', 'ht', 'hu', 'id', 'is', 'it', 'ja', 'ko', 'la', 'lt', 'ms', 'ne', 'nl', 'no', 'pa', 'pl', ",
+          "component": "Dropdown"
+        },
+        {
+          "name": "infer_steps",
+          "label": "DiT Inference Steps",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Lyrics Timestamps (Sample 5)",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/lrc_handler_5",
+      "parameters": [
+        {
+          "name": "vocal_lang",
+          "label": "Vocal Language",
+          "type": "Literal['ar', 'az', 'bg', 'bn', 'ca', 'cs', 'da', 'de', 'el', 'en', 'es', 'fa', 'fi', 'fr', 'he', 'hi', 'hr', 'ht', 'hu', 'id', 'is', 'it', 'ja', 'ko', 'la', 'lt', 'ms', 'ne', 'nl', 'no', 'pa', 'pl', ",
+          "component": "Dropdown"
+        },
+        {
+          "name": "infer_steps",
+          "label": "DiT Inference Steps",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Lyrics Timestamps (Sample 6)",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/lrc_handler_6",
+      "parameters": [
+        {
+          "name": "vocal_lang",
+          "label": "Vocal Language",
+          "type": "Literal['ar', 'az', 'bg', 'bn', 'ca', 'cs', 'da', 'de', 'el', 'en', 'es', 'fa', 'fi', 'fr', 'he', 'hi', 'hr', 'ht', 'hu', 'id', 'is', 'it', 'ja', 'ko', 'la', 'lt', 'ms', 'ne', 'nl', 'no', 'pa', 'pl', ",
+          "component": "Dropdown"
+        },
+        {
+          "name": "infer_steps",
+          "label": "DiT Inference Steps",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Lyrics Timestamps (Sample 7)",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/lrc_handler_7",
+      "parameters": [
+        {
+          "name": "vocal_lang",
+          "label": "Vocal Language",
+          "type": "Literal['ar', 'az', 'bg', 'bn', 'ca', 'cs', 'da', 'de', 'el', 'en', 'es', 'fa', 'fi', 'fr', 'he', 'hi', 'hr', 'ht', 'hu', 'id', 'is', 'it', 'ja', 'ko', 'la', 'lt', 'ms', 'ne', 'nl', 'no', 'pa', 'pl', ",
+          "component": "Dropdown"
+        },
+        {
+          "name": "infer_steps",
+          "label": "DiT Inference Steps",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Lyrics Timestamps (Sample 8)",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/generation_wrapper",
+      "parameters": [
+        {
+          "name": "selected_model",
+          "label": "models",
+          "type": "Literal['acestep-v15-xl-turbo', 'acestep-v15-turbo']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "generation_mode",
+          "label": "",
+          "type": "Literal['simple', 'custom', 'cover', 'repaint']",
+          "component": "Radio"
+        },
+        {
+          "name": "simple_query_input",
+          "label": "Song Description",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "simple_vocal_language",
+          "label": "Vocal Language (optional)",
+          "type": "Literal['ar', 'az', 'bg', 'bn', 'ca', 'cs', 'da', 'de', 'el', 'en', 'es', 'fa', 'fi', 'fr', 'he', 'hi', 'hr', 'ht', 'hu', 'id', 'is', 'it', 'ja', 'ko', 'la', 'lt', 'ms', 'ne', 'nl', 'no', 'pa', 'pl', ",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_4",
+          "label": "Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_5",
+          "label": "Lyrics",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_6",
+          "label": "BPM (optional)",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "param_7",
+          "label": "Key Signature (optional)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_8",
+          "label": "Time Signature (optional)",
+          "type": "Literal['', '2', '3', '4']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_9",
+          "label": "Vocal Language",
+          "type": "Literal['ar', 'az', 'bg', 'bn', 'ca', 'cs', 'da', 'de', 'el', 'en', 'es', 'fa', 'fi', 'fr', 'he', 'hi', 'hr', 'ht', 'hu', 'id', 'is', 'it', 'ja', 'ko', 'la', 'lt', 'ms', 'ne', 'nl', 'no', 'pa', 'pl', ",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_10",
+          "label": "DiT Inference Steps",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_11",
+          "label": "parameter_156",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_12",
+          "label": "Random Seed",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_13",
+          "label": "Seed",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_14",
+          "label": "Reference Audio (optional)",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "name": "param_15",
+          "label": "Audio Duration (seconds)",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "param_16",
+          "label": "batch size",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "param_17",
+          "label": "Source Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "name": "param_18",
+          "label": "Audio Codes",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_19",
+          "label": "Start (seconds)",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "param_20",
+          "label": "End (seconds, -1 for end)",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "param_21",
+          "label": "parameter_153",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_22",
+          "label": "parameter_138",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_23",
+          "label": "parameter_152",
+          "type": "Literal['text2music', 'repaint', 'cover']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_24",
+          "label": "parameter_157",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_25",
+          "label": "parameter_158",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_26",
+          "label": "parameter_159",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_27",
+          "label": "Shift",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_28",
+          "label": "Inference Method",
+          "type": "Literal['ode', 'sde']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_29",
+          "label": "Custom Timesteps",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_30",
+          "label": "Audio Format",
+          "type": "Literal['mp3', 'flac']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_31",
+          "label": "LM Temperature",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_32",
+          "label": "Thinking",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_33",
+          "label": "LM CFG Scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_34",
+          "label": "LM Top-K",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_35",
+          "label": "LM Top-P",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_36",
+          "label": "LM Negative Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_37",
+          "label": "parameter_160",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_38",
+          "label": "parameter_161",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_39",
+          "label": "parameter_162",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_41",
+          "label": "parameter_163",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_42",
+          "label": "parameter_164",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_43",
+          "label": "Get Scores",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_44",
+          "label": "Get LRC",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_45",
+          "label": "parameter_166",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_46",
+          "label": "parameter_165",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "param_47",
+          "label": "parameter_154",
+          "type": "Literal['woodwinds', 'brass', 'fx', 'synth', 'strings', 'percussion', 'keyboard', 'guitar', 'bass', 'drums', 'backing_vocals', 'vocals']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_48",
+          "label": "parameter_155",
+          "type": "list[Literal['woodwinds', 'brass', 'fx', 'synth', 'strings', 'percussion', 'keyboard', 'guitar', 'bass', 'drums', 'backing_vocals', 'vocals']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "param_49",
+          "label": "parameter_167",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "\ud83c\udfb5 Generated Music (Sample 1)",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "\ud83c\udfb5 Generated Music (Sample 2)",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "\ud83c\udfb5 Generated Music (Sample 3)",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "\ud83c\udfb5 Generated Music (Sample 4)",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "\ud83c\udfb5 Generated Music (Sample 5)",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "\ud83c\udfb5 Generated Music (Sample 6)",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "\ud83c\udfb5 Generated Music (Sample 7)",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "\ud83c\udfb5 Generated Music (Sample 8)",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "\ud83d\udcc1 All Generated Files (Download)",
+          "type": "list[filepath]",
+          "component": "File"
+        },
+        {
+          "label": "Generation Details",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "Generation Status",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Seed",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Quality Score (Sample 1)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Quality Score (Sample 2)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Quality Score (Sample 3)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Quality Score (Sample 4)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Quality Score (Sample 5)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Quality Score (Sample 6)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Quality Score (Sample 7)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Quality Score (Sample 8)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "LM Codes (Sample 1)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "LM Codes (Sample 2)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "LM Codes (Sample 3)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "LM Codes (Sample 4)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "LM Codes (Sample 5)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "LM Codes (Sample 6)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "LM Codes (Sample 7)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "LM Codes (Sample 8)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Lyrics Timestamps (Sample 1)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Lyrics Timestamps (Sample 2)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Lyrics Timestamps (Sample 3)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Lyrics Timestamps (Sample 4)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Lyrics Timestamps (Sample 5)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Lyrics Timestamps (Sample 6)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Lyrics Timestamps (Sample 7)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Lyrics Timestamps (Sample 8)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Current Batch",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Next Batch Status",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_10",
+      "parameters": [
+        {
+          "name": "selected_model",
+          "label": "models",
+          "type": "Literal['acestep-v15-xl-turbo', 'acestep-v15-turbo']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_1",
+          "label": "parameter_167",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Next Batch Status",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/navigate_to_previous_batch",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "\ud83c\udfb5 Generated Music (Sample 1)",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "\ud83c\udfb5 Generated Music (Sample 2)",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "\ud83c\udfb5 Generated Music (Sample 3)",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "\ud83c\udfb5 Generated Music (Sample 4)",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "\ud83c\udfb5 Generated Music (Sample 5)",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "\ud83c\udfb5 Generated Music (Sample 6)",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "\ud83c\udfb5 Generated Music (Sample 7)",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "\ud83c\udfb5 Generated Music (Sample 8)",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "\ud83d\udcc1 All Generated Files (Download)",
+          "type": "list[filepath]",
+          "component": "File"
+        },
+        {
+          "label": "Generation Details",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "Current Batch",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Generation Status",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Quality Score (Sample 1)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Quality Score (Sample 2)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Quality Score (Sample 3)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Quality Score (Sample 4)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Quality Score (Sample 5)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Quality Score (Sample 6)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Quality Score (Sample 7)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Quality Score (Sample 8)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "LM Codes (Sample 1)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "LM Codes (Sample 2)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "LM Codes (Sample 3)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "LM Codes (Sample 4)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "LM Codes (Sample 5)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "LM Codes (Sample 6)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "LM Codes (Sample 7)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "LM Codes (Sample 8)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Lyrics Timestamps (Sample 1)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Lyrics Timestamps (Sample 2)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Lyrics Timestamps (Sample 3)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Lyrics Timestamps (Sample 4)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Lyrics Timestamps (Sample 5)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Lyrics Timestamps (Sample 6)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Lyrics Timestamps (Sample 7)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Lyrics Timestamps (Sample 8)",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/capture_current_params",
+      "parameters": [
+        {
+          "name": "captions",
+          "label": "Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "lyrics",
+          "label": "Lyrics",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "bpm",
+          "label": "BPM (optional)",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "key_scale",
+          "label": "Key Signature (optional)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "time_signature",
+          "label": "Time Signature (optional)",
+          "type": "Literal['', '2', '3', '4']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "vocal_language",
+          "label": "Vocal Language",
+          "type": "Literal['ar', 'az', 'bg', 'bn', 'ca', 'cs', 'da', 'de', 'el', 'en', 'es', 'fa', 'fi', 'fr', 'he', 'hi', 'hr', 'ht', 'hu', 'id', 'is', 'it', 'ja', 'ko', 'la', 'lt', 'ms', 'ne', 'nl', 'no', 'pa', 'pl', ",
+          "component": "Dropdown"
+        },
+        {
+          "name": "inference_steps",
+          "label": "DiT Inference Steps",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "guidance_scale",
+          "label": "parameter_156",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "random_seed_checkbox",
+          "label": "Random Seed",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "seed",
+          "label": "Seed",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "reference_audio",
+          "label": "Reference Audio (optional)",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "name": "audio_duration",
+          "label": "Audio Duration (seconds)",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "batch_size_input",
+          "label": "batch size",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "src_audio",
+          "label": "Source Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "name": "text2music_audio_code_string",
+          "label": "Audio Codes",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "repainting_start",
+          "label": "Start (seconds)",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "repainting_end",
+          "label": "End (seconds, -1 for end)",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "instruction_display_gen",
+          "label": "parameter_153",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "audio_cover_strength",
+          "label": "parameter_138",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "task_type",
+          "label": "parameter_152",
+          "type": "Literal['text2music', 'repaint', 'cover']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "use_adg",
+          "label": "parameter_157",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "cfg_interval_start",
+          "label": "parameter_158",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "cfg_interval_end",
+          "label": "parameter_159",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "shift",
+          "label": "Shift",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "infer_method",
+          "label": "Inference Method",
+          "type": "Literal['ode', 'sde']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "custom_timesteps",
+          "label": "Custom Timesteps",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "audio_format",
+          "label": "Audio Format",
+          "type": "Literal['mp3', 'flac']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "lm_temperature",
+          "label": "LM Temperature",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "think_checkbox",
+          "label": "Thinking",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "lm_cfg_scale",
+          "label": "LM CFG Scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "lm_top_k",
+          "label": "LM Top-K",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "lm_top_p",
+          "label": "LM Top-P",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "lm_negative_prompt",
+          "label": "LM Negative Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "use_cot_metas",
+          "label": "parameter_160",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "use_cot_caption",
+          "label": "parameter_161",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "use_cot_language",
+          "label": "parameter_162",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "constrained_decoding_debug",
+          "label": "parameter_163",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "allow_lm_batch",
+          "label": "parameter_164",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "auto_score",
+          "label": "Get Scores",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "auto_lrc",
+          "label": "Get LRC",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "score_scale",
+          "label": "parameter_166",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "lm_batch_chunk_size",
+          "label": "parameter_165",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "track_name",
+          "label": "parameter_154",
+          "type": "Literal['woodwinds', 'brass', 'fx', 'synth', 'strings', 'percussion', 'keyboard', 'guitar', 'bass', 'drums', 'backing_vocals', 'vocals']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "complete_track_classes",
+          "label": "parameter_155",
+          "type": "list[Literal['woodwinds', 'brass', 'fx', 'synth', 'strings', 'percussion', 'keyboard', 'guitar', 'bass', 'drums', 'backing_vocals', 'vocals']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/navigate_to_next_batch",
+      "parameters": [
+        {
+          "name": "autogen_enabled",
+          "label": "parameter_167",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "\ud83c\udfb5 Generated Music (Sample 1)",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "\ud83c\udfb5 Generated Music (Sample 2)",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "\ud83c\udfb5 Generated Music (Sample 3)",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "\ud83c\udfb5 Generated Music (Sample 4)",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "\ud83c\udfb5 Generated Music (Sample 5)",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "\ud83c\udfb5 Generated Music (Sample 6)",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "\ud83c\udfb5 Generated Music (Sample 7)",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "\ud83c\udfb5 Generated Music (Sample 8)",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "\ud83d\udcc1 All Generated Files (Download)",
+          "type": "list[filepath]",
+          "component": "File"
+        },
+        {
+          "label": "Generation Details",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "Current Batch",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Generation Status",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Next Batch Status",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Quality Score (Sample 1)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Quality Score (Sample 2)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Quality Score (Sample 3)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Quality Score (Sample 4)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Quality Score (Sample 5)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Quality Score (Sample 6)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Quality Score (Sample 7)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Quality Score (Sample 8)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "LM Codes (Sample 1)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "LM Codes (Sample 2)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "LM Codes (Sample 3)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "LM Codes (Sample 4)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "LM Codes (Sample 5)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "LM Codes (Sample 6)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "LM Codes (Sample 7)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "LM Codes (Sample 8)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Lyrics Timestamps (Sample 1)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Lyrics Timestamps (Sample 2)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Lyrics Timestamps (Sample 3)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Lyrics Timestamps (Sample 4)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Lyrics Timestamps (Sample 5)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Lyrics Timestamps (Sample 6)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Lyrics Timestamps (Sample 7)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Lyrics Timestamps (Sample 8)",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_11",
+      "parameters": [
+        {
+          "name": "selected_model",
+          "label": "models",
+          "type": "Literal['acestep-v15-xl-turbo', 'acestep-v15-turbo']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_1",
+          "label": "parameter_167",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Next Batch Status",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/restore_batch_parameters",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Audio Codes",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Lyrics",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "BPM (optional)",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "label": "Key Signature (optional)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Time Signature (optional)",
+          "type": "Literal['', '2', '3', '4']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Vocal Language",
+          "type": "Literal['ar', 'az', 'bg', 'bn', 'ca', 'cs', 'da', 'de', 'el', 'en', 'es', 'fa', 'fi', 'fr', 'he', 'hi', 'hr', 'ht', 'hu', 'id', 'is', 'it', 'ja', 'ko', 'la', 'lt', 'ms', 'ne', 'nl', 'no', 'pa', 'pl', ",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Audio Duration (seconds)",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "label": "batch size",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "label": "DiT Inference Steps",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "LM Temperature",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "LM CFG Scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "LM Top-K",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "LM Top-P",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Thinking",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "value_161",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "value_162",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "value_164",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "value_154",
+          "type": "Literal['woodwinds', 'brass', 'fx', 'synth', 'strings', 'percussion', 'keyboard', 'guitar', 'bass', 'drums', 'backing_vocals', 'vocals']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "value_155",
+          "type": "list[Literal['woodwinds', 'brass', 'fx', 'synth', 'strings', 'percussion', 'keyboard', 'guitar', 'bass', 'drums', 'backing_vocals', 'vocals']]",
+          "component": "Checkboxgroup"
+        }
+      ]
+    },
+    {
+      "name": "/update_audio_subtitles_from_lrc",
+      "parameters": [
+        {
+          "name": "lrc_text",
+          "label": "Lyrics Timestamps (Sample 1)",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "\ud83c\udfb5 Generated Music (Sample 1)",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ]
+    },
+    {
+      "name": "/update_audio_subtitles_from_lrc_1",
+      "parameters": [
+        {
+          "name": "lrc_text",
+          "label": "Lyrics Timestamps (Sample 2)",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "\ud83c\udfb5 Generated Music (Sample 2)",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ]
+    },
+    {
+      "name": "/update_audio_subtitles_from_lrc_2",
+      "parameters": [
+        {
+          "name": "lrc_text",
+          "label": "Lyrics Timestamps (Sample 3)",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "\ud83c\udfb5 Generated Music (Sample 3)",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ]
+    },
+    {
+      "name": "/update_audio_subtitles_from_lrc_3",
+      "parameters": [
+        {
+          "name": "lrc_text",
+          "label": "Lyrics Timestamps (Sample 4)",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "\ud83c\udfb5 Generated Music (Sample 4)",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ]
+    },
+    {
+      "name": "/update_audio_subtitles_from_lrc_4",
+      "parameters": [
+        {
+          "name": "lrc_text",
+          "label": "Lyrics Timestamps (Sample 5)",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "\ud83c\udfb5 Generated Music (Sample 5)",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ]
+    },
+    {
+      "name": "/update_audio_subtitles_from_lrc_5",
+      "parameters": [
+        {
+          "name": "lrc_text",
+          "label": "Lyrics Timestamps (Sample 6)",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "\ud83c\udfb5 Generated Music (Sample 6)",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ]
+    },
+    {
+      "name": "/update_audio_subtitles_from_lrc_6",
+      "parameters": [
+        {
+          "name": "lrc_text",
+          "label": "Lyrics Timestamps (Sample 7)",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "\ud83c\udfb5 Generated Music (Sample 7)",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ]
+    },
+    {
+      "name": "/update_audio_subtitles_from_lrc_7",
+      "parameters": [
+        {
+          "name": "lrc_text",
+          "label": "Lyrics Timestamps (Sample 8)",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "\ud83c\udfb5 Generated Music (Sample 8)",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ]
+    },
+    {
+      "name": "/load_existing_dataset_for_preprocess",
+      "parameters": [
+        {
+          "name": "dataset_path",
+          "label": "Dataset JSON Path",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Load Status",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Found Audio Files",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "Select Sample #",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Audio Preview",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Filename",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Caption",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Lyrics",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "BPM",
+          "type": "int",
+          "component": "Number"
+        },
+        {
+          "label": "Key",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Time Signature",
+          "type": "Literal['', '2', '3', '4', '6']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Duration (s)",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "label": "Language",
+          "type": "Literal['instrumental', 'en', 'zh', 'ja', 'ko', 'es', 'fr', 'de', 'pt', 'ru', 'unknown']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Instrumental",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_12",
+      "parameters": [
+        {
+          "name": "dir",
+          "label": "Audio Directory Path",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "name",
+          "label": "Dataset Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "tag",
+          "label": "Custom Activation Tag",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "pos",
+          "label": "Tag Position",
+          "type": "Literal['prepend', 'append', 'replace']",
+          "component": "Radio"
+        },
+        {
+          "name": "instr",
+          "label": "All Instrumental",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Found Audio Files",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "Scan Status",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Select Sample #",
+          "type": "float",
+          "component": "Slider"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_13",
+      "parameters": [
+        {
+          "name": "skip",
+          "label": "Skip Metas (No LLM)",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Found Audio Files",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "Labeling Progress",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/get_sample_preview",
+      "parameters": [
+        {
+          "name": "sample_idx",
+          "label": "Select Sample #",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Audio Preview",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Filename",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Caption",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Lyrics",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "BPM",
+          "type": "int",
+          "component": "Number"
+        },
+        {
+          "label": "Key",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Time Signature",
+          "type": "Literal['', '2', '3', '4', '6']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Duration (s)",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "label": "Language",
+          "type": "Literal['instrumental', 'en', 'zh', 'ja', 'ko', 'es', 'fr', 'de', 'pt', 'ru', 'unknown']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Instrumental",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ]
+    },
+    {
+      "name": "/save_sample_edit",
+      "parameters": [
+        {
+          "name": "sample_idx",
+          "label": "Select Sample #",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "caption",
+          "label": "Caption",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "lyrics",
+          "label": "Lyrics",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "bpm",
+          "label": "BPM",
+          "type": "int",
+          "component": "Number"
+        },
+        {
+          "name": "keyscale",
+          "label": "Key",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "timesig",
+          "label": "Time Signature",
+          "type": "Literal['', '2', '3', '4', '6']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "language",
+          "label": "Language",
+          "type": "Literal['instrumental', 'en', 'zh', 'ja', 'ko', 'es', 'fr', 'de', 'pt', 'ru', 'unknown']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "is_instrumental",
+          "label": "Instrumental",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Found Audio Files",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "Edit Status",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/update_settings",
+      "parameters": [
+        {
+          "name": "custom_tag",
+          "label": "Custom Activation Tag",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "tag_position",
+          "label": "Tag Position",
+          "type": "Literal['prepend', 'append', 'replace']",
+          "component": "Radio"
+        },
+        {
+          "name": "all_instrumental",
+          "label": "All Instrumental",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/update_settings_1",
+      "parameters": [
+        {
+          "name": "custom_tag",
+          "label": "Custom Activation Tag",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "tag_position",
+          "label": "Tag Position",
+          "type": "Literal['prepend', 'append', 'replace']",
+          "component": "Radio"
+        },
+        {
+          "name": "all_instrumental",
+          "label": "All Instrumental",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/update_settings_2",
+      "parameters": [
+        {
+          "name": "custom_tag",
+          "label": "Custom Activation Tag",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "tag_position",
+          "label": "Tag Position",
+          "type": "Literal['prepend', 'append', 'replace']",
+          "component": "Radio"
+        },
+        {
+          "name": "all_instrumental",
+          "label": "All Instrumental",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/save_dataset",
+      "parameters": [
+        {
+          "name": "save_path",
+          "label": "Save Path",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "dataset_name",
+          "label": "Dataset Name",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Save Status",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/load_existing_dataset_for_preprocess_1",
+      "parameters": [
+        {
+          "name": "dataset_path",
+          "label": "Load Existing Dataset (Optional)",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Load Status",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Found Audio Files",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "Select Sample #",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Audio Preview",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Filename",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Caption",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Lyrics",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "BPM",
+          "type": "int",
+          "component": "Number"
+        },
+        {
+          "label": "Key",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Time Signature",
+          "type": "Literal['', '2', '3', '4', '6']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Duration (s)",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "label": "Language",
+          "type": "Literal['instrumental', 'en', 'zh', 'ja', 'ko', 'es', 'fr', 'de', 'pt', 'ru', 'unknown']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Instrumental",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_14",
+      "parameters": [
+        {
+          "name": "output_dir",
+          "label": "Tensor Output Directory",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Preprocessing Progress",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/load_training_dataset",
+      "parameters": [
+        {
+          "name": "tensor_dir",
+          "label": "Preprocessed Tensors Directory",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Dataset Info",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/training_wrapper",
+      "parameters": [
+        {
+          "name": "tensor_dir",
+          "label": "Preprocessed Tensors Directory",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "r",
+          "label": "LoRA Rank (r)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "a",
+          "label": "LoRA Alpha",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "d",
+          "label": "LoRA Dropout",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "lr",
+          "label": "Learning Rate",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "ep",
+          "label": "Max Epochs",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "bs",
+          "label": "Batch Size",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "ga",
+          "label": "Gradient Accumulation",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "se",
+          "label": "Save Every N Epochs",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "sh",
+          "label": "Shift",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "sd",
+          "label": "Seed",
+          "type": "int",
+          "component": "Number"
+        },
+        {
+          "name": "od",
+          "label": "Output Directory",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Training Progress",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Training Log",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "value_441",
+          "type": "str | float | bool | list | dict",
+          "component": "Lineplot"
+        }
+      ]
+    },
+    {
+      "name": "/stop_training",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Training Progress",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/export_lora",
+      "parameters": [
+        {
+          "name": "export_path",
+          "label": "Export Path",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "lora_output_dir",
+          "label": "Output Directory",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Export Status",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/import_dataset",
+  "_api_verified": true,
+  "estimated_latency_s": 1.96,
+  "speed_tier": "fast",
+  "_latency_source": "measured_inference",
+  "_tags_enriched": true,
+  "measured_latency_s": 1.96,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:49:03.949733+00:00",
+  "measured_inference_s": 1.96,
+  "measured_inference_timestamp": "2026-04-20T07:59:24.652818+00:00",
+  "measured_inference_method": "auto_predict",
+  "measured_inference_api": "/import_dataset"
+}

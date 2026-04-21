@@ -1,0 +1,81 @@
+{
+  "space_id": "7RiKuSama/Video_Dub",
+  "title": "Video Dub",
+  "emoji": "\ud83c\udfac",
+  "description": "Video Dub",
+  "input_schema": {
+    "Upload Video": {
+      "type": "Dict(video: filepath, subtitles: filepath | None)",
+      "description": "Upload Video",
+      "required": true,
+      "component": "Video"
+    },
+    "Target Dub Language": {
+      "type": "Literal['Arabic', 'French', 'Spanish', 'German', 'Italian', 'Portuguese', 'Russian', 'Chinese', 'Jap",
+      "description": "Target Dub Language",
+      "required": true,
+      "component": "Dropdown"
+    }
+  },
+  "output_schema": {
+    "value_9": {
+      "type": "str",
+      "description": "value_9",
+      "component": "Markdown"
+    },
+    "Dubbed Video": {
+      "type": "Dict(video: filepath, subtitles: filepath | None)",
+      "description": "Dubbed Video",
+      "component": "Video"
+    }
+  },
+  "license": "unknown",
+  "hardware": "",
+  "sdk": "docker",
+  "tags": [
+    "docker",
+    "region:us"
+  ],
+  "likes": 2,
+  "last_modified": "2026-04-15 00:44:48+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/run_pipeline",
+      "parameters": [
+        {
+          "name": "Upload Video",
+          "label": "Upload Video",
+          "type": "Dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        },
+        {
+          "name": "Target Dub Language",
+          "label": "Target Dub Language",
+          "type": "Literal['Arabic', 'French', 'Spanish', 'German', 'Italian', 'Portuguese', 'Russian', 'Chinese', 'Japanese', 'Korean', 'English', 'Hindi', 'Turkish', 'Polish', 'Dutch']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_9",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "Dubbed Video",
+          "type": "Dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/run_pipeline",
+  "_api_verified": true
+}

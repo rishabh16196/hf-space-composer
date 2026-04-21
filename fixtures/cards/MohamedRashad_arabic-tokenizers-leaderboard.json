@@ -1,0 +1,136 @@
+{
+  "space_id": "MohamedRashad/arabic-tokenizers-leaderboard",
+  "title": "Arabic Tokenizers Leaderboard",
+  "emoji": "\u26a1",
+  "description": "Arabic Tokenizers Leaderboard",
+  "input_schema": {
+    "model_name": {
+      "type": "str",
+      "description": "Model Name from Hugging Face (e.g. Xenova/gpt-4o)",
+      "required": true,
+      "component": "Textbox"
+    }
+  },
+  "output_schema": {
+    "value_5": {
+      "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+      "description": "value_5",
+      "component": "Dataframe"
+    },
+    "Models Fertility Score (Lower is better)": {
+      "type": "str | float | bool | list | dict",
+      "description": "Models Fertility Score (Lower is better)",
+      "component": "Barplot"
+    },
+    "Select a model": {
+      "type": "Literal['riotu-lab/Aranizer-SP-86k', 'riotu-lab/Aranizer-SP-64k', 'asafaya/bert-base-arabic', 'ALLaM",
+      "description": "Select a model",
+      "component": "Dropdown"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "5.17.1",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us",
+    "benchmark",
+    "leaderboard"
+  ],
+  "likes": 42,
+  "last_modified": "2025-02-22 08:13:58+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/submit",
+      "parameters": [
+        {
+          "name": "model_name",
+          "label": "Model Name from Hugging Face (e.g. Xenova/gpt-4o)",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_5",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "Models Fertility Score (Lower is better)",
+          "type": "str | float | bool | list | dict",
+          "component": "Barplot"
+        },
+        {
+          "label": "Select a model",
+          "type": "Literal['riotu-lab/Aranizer-SP-86k', 'riotu-lab/Aranizer-SP-64k', 'asafaya/bert-base-arabic', 'ALLaM-AI/ALLaM-7B-Instruct-preview', 'core42/jais-30b-chat-v3', 'core42/jais-13b', 'riotu-lab/Aranizer-SP",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/refresh",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_5",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "Models Fertility Score (Lower is better)",
+          "type": "str | float | bool | list | dict",
+          "component": "Barplot"
+        },
+        {
+          "label": "Select a model",
+          "type": "Literal['riotu-lab/Aranizer-SP-86k', 'riotu-lab/Aranizer-SP-64k', 'asafaya/bert-base-arabic', 'ALLaM-AI/ALLaM-7B-Instruct-preview', 'core42/jais-30b-chat-v3', 'core42/jais-13b', 'riotu-lab/Aranizer-SP",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/tokenize_text",
+      "parameters": [
+        {
+          "name": "text",
+          "label": "Enter a text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "chosen_model",
+          "label": "Select a model",
+          "type": "Literal['riotu-lab/Aranizer-SP-86k', 'riotu-lab/Aranizer-SP-64k', 'asafaya/bert-base-arabic', 'ALLaM-AI/ALLaM-7B-Instruct-preview', 'core42/jais-30b-chat-v3', 'core42/jais-13b', 'riotu-lab/Aranizer-SP",
+          "component": "Dropdown"
+        },
+        {
+          "name": "better_tokenization",
+          "label": "Better tokenization for Arabic Text",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Tokenized text",
+          "type": "list[dict(token: str, class_or_confidence: str | float | None)]",
+          "component": "Highlightedtext"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/submit",
+  "_api_verified": true,
+  "estimated_latency_s": 3.3,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "_tags_enriched": true,
+  "measured_latency_s": 3.3,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:49:38.576199+00:00"
+}

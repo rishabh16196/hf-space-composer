@@ -1,0 +1,372 @@
+{
+  "space_id": "OpenMOSS-Team/MOSS-TTS",
+  "title": "MOSS TTS",
+  "emoji": "\ud83c\udfc6",
+  "description": "A simple gradio platform for demonstrating MOSS-TTS capabili",
+  "input_schema": {
+    "reference_audio": {
+      "type": "filepath",
+      "description": "Reference Audio (Optional)",
+      "required": true,
+      "component": "Audio"
+    },
+    "mode_with_reference": {
+      "type": "Literal['Clone', 'Continuation', 'Continuation + Clone']",
+      "description": "Mode with Reference Audio",
+      "required": true,
+      "component": "Radio"
+    }
+  },
+  "output_schema": {
+    "value_7": {
+      "type": "str",
+      "description": "value_7",
+      "component": "Markdown"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "6.5.1",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us",
+    "audio",
+    "speech-synthesis",
+    "tts"
+  ],
+  "likes": 35,
+  "last_modified": "2026-02-13 14:53:38+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/render_mode_hint",
+      "parameters": [
+        {
+          "name": "reference_audio",
+          "label": "Reference Audio (Optional)",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "name": "mode_with_reference",
+          "label": "Mode with Reference Audio",
+          "type": "Literal['Clone', 'Continuation', 'Continuation + Clone']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_7",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/render_mode_hint_1",
+      "parameters": [
+        {
+          "name": "reference_audio",
+          "label": "Reference Audio (Optional)",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "name": "mode_with_reference",
+          "label": "Mode with Reference Audio",
+          "type": "Literal['Clone', 'Continuation', 'Continuation + Clone']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_7",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/update_duration_controls",
+      "parameters": [
+        {
+          "name": "enabled",
+          "label": "Enable Duration Control (Expected Audio Tokens)",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "text",
+          "label": "Text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "current_tokens",
+          "label": "expected_tokens",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "mode_with_reference",
+          "label": "Mode with Reference Audio",
+          "type": "Literal['Clone', 'Continuation', 'Continuation + Clone']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "expected_tokens",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "value_10",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "Enable Duration Control (Expected Audio Tokens)",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ]
+    },
+    {
+      "name": "/update_duration_controls_1",
+      "parameters": [
+        {
+          "name": "enabled",
+          "label": "Enable Duration Control (Expected Audio Tokens)",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "text",
+          "label": "Text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "current_tokens",
+          "label": "expected_tokens",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "mode_with_reference",
+          "label": "Mode with Reference Audio",
+          "type": "Literal['Clone', 'Continuation', 'Continuation + Clone']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "expected_tokens",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "value_10",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "Enable Duration Control (Expected Audio Tokens)",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ]
+    },
+    {
+      "name": "/update_duration_controls_2",
+      "parameters": [
+        {
+          "name": "enabled",
+          "label": "Enable Duration Control (Expected Audio Tokens)",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "text",
+          "label": "Text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "current_tokens",
+          "label": "expected_tokens",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "mode_with_reference",
+          "label": "Mode with Reference Audio",
+          "type": "Literal['Clone', 'Continuation', 'Continuation + Clone']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "expected_tokens",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "value_10",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "Enable Duration Control (Expected Audio Tokens)",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ]
+    },
+    {
+      "name": "/apply_example_selection",
+      "parameters": [
+        {
+          "name": "mode_with_reference",
+          "label": "Mode with Reference Audio",
+          "type": "Literal['Clone', 'Continuation', 'Continuation + Clone']",
+          "component": "Radio"
+        },
+        {
+          "name": "duration_control_enabled",
+          "label": "Enable Duration Control (Expected Audio Tokens)",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "duration_tokens",
+          "label": "expected_tokens",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Reference Audio (Optional)",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "value_7",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "expected_tokens",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "value_10",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "Enable Duration Control (Expected Audio Tokens)",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ]
+    },
+    {
+      "name": "/run_inference",
+      "parameters": [
+        {
+          "name": "text",
+          "label": "Text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "reference_audio",
+          "label": "Reference Audio (Optional)",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "name": "mode_with_reference",
+          "label": "Mode with Reference Audio",
+          "type": "Literal['Clone', 'Continuation', 'Continuation + Clone']",
+          "component": "Radio"
+        },
+        {
+          "name": "duration_control_enabled",
+          "label": "Enable Duration Control (Expected Audio Tokens)",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "duration_tokens",
+          "label": "expected_tokens",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "temperature",
+          "label": "temperature",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "top_p",
+          "label": "top_p",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "top_k",
+          "label": "top_k",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "repetition_penalty",
+          "label": "repetition_penalty",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "max_new_tokens",
+          "label": "max_new_tokens",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Status",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/render_mode_hint",
+  "_api_verified": true,
+  "estimated_latency_s": 3.26,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "_tags_enriched": true,
+  "measured_latency_s": 3.26,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:49:44.322070+00:00"
+}

@@ -1,0 +1,124 @@
+{
+  "space_id": "artificialguybr/fish-s2-pro-zero",
+  "title": "Fish Audio S2 Pro",
+  "emoji": "\ud83d\udc1f",
+  "description": "Zero GPU Text-to-Speech using Fish Audio S2 Pro",
+  "input_schema": {
+    "audio_path": {
+      "type": "filepath",
+      "description": "Reference Audio",
+      "required": true,
+      "component": "Audio"
+    }
+  },
+  "output_schema": {
+    "Reference Audio Transcription": {
+      "type": "str",
+      "description": "Reference Audio Transcription",
+      "component": "Textbox"
+    }
+  },
+  "license": "other",
+  "hardware": "6.9.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us",
+    "audio"
+  ],
+  "likes": 145,
+  "last_modified": "2026-03-11 16:41:20+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/transcribe_audio",
+      "parameters": [
+        {
+          "name": "audio_path",
+          "label": "Reference Audio",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Reference Audio Transcription",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/tts_inference",
+      "parameters": [
+        {
+          "name": "text",
+          "label": "parameter_5",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "ref_audio",
+          "label": "Reference Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "name": "ref_text",
+          "label": "Reference Audio Transcription",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "max_new_tokens",
+          "label": "Max New Tokens (0 = auto)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "chunk_length",
+          "label": "Chunk Length",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "top_p",
+          "label": "Top-P",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "repetition_penalty",
+          "label": "Repetition Penalty",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "temperature",
+          "label": "Temperature",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Generated Audio",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/transcribe_audio",
+  "_api_verified": true,
+  "estimated_latency_s": 3.79,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "_tags_enriched": true,
+  "measured_latency_s": 3.79,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:50:17.060744+00:00"
+}

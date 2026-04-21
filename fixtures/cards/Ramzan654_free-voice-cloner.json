@@ -1,0 +1,271 @@
+{
+  "space_id": "Ramzan654/free-voice-cloner",
+  "title": "free-voice-cloner",
+  "emoji": "\ud83c\udfa4",
+  "description": "AI voice cloning app for long and short scripts",
+  "input_schema": {
+    "text": {
+      "type": "str",
+      "description": "Text to synthesize",
+      "required": true,
+      "component": "Textbox"
+    },
+    "speaker_audio": {
+      "type": "filepath",
+      "description": "Voice sample (6\u201330 sec)",
+      "required": true,
+      "component": "Audio"
+    },
+    "language": {
+      "type": "Literal['English', 'Spanish', 'French', 'German', 'Italian', 'Portuguese', 'Polish', 'Turkish', 'Rus",
+      "description": "Language",
+      "required": true,
+      "component": "Dropdown"
+    },
+    "speed": {
+      "type": "float",
+      "description": "Speed",
+      "required": true,
+      "component": "Slider"
+    },
+    "temperature": {
+      "type": "float",
+      "description": "Temperature",
+      "required": true,
+      "component": "Slider"
+    },
+    "repetition_penalty": {
+      "type": "float",
+      "description": "Repetition penalty",
+      "required": true,
+      "component": "Slider"
+    },
+    "consent": {
+      "type": "bool",
+      "description": "I own this voice or have explicit permission to use it.",
+      "required": true,
+      "component": "Checkbox"
+    }
+  },
+  "output_schema": {
+    "Generated voice": {
+      "type": "filepath",
+      "description": "Generated voice",
+      "component": "Audio"
+    },
+    "Status": {
+      "type": "str",
+      "description": "Status",
+      "component": "Textbox"
+    }
+  },
+  "license": "unknown",
+  "hardware": "6.10.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 2,
+  "last_modified": "2026-04-01 23:37:22+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_tags_enriched": true,
+  "estimated_latency_s": 3.0,
+  "speed_tier": "fast",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/clone_voice",
+      "parameters": [
+        {
+          "name": "text",
+          "label": "Text to synthesize",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "speaker_audio",
+          "label": "Voice sample (6\u201330 sec)",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "name": "language",
+          "label": "Language",
+          "type": "Literal['English', 'Spanish', 'French', 'German', 'Italian', 'Portuguese', 'Polish', 'Turkish', 'Russian', 'Dutch', 'Czech', 'Arabic', 'Chinese', 'Japanese', 'Korean', 'Hindi']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "speed",
+          "label": "Speed",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "temperature",
+          "label": "Temperature",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "repetition_penalty",
+          "label": "Repetition penalty",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "consent",
+          "label": "I own this voice or have explicit permission to use it.",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Generated voice",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Status",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/batch_clone",
+      "parameters": [
+        {
+          "name": "batch_text",
+          "label": "One sentence per line",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "speaker_audio",
+          "label": "Voice sample",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "name": "language",
+          "label": "Language",
+          "type": "Literal['English', 'Spanish', 'French', 'German', 'Italian', 'Portuguese', 'Polish', 'Turkish', 'Russian', 'Dutch', 'Czech', 'Arabic', 'Chinese', 'Japanese', 'Korean', 'Hindi']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "speed",
+          "label": "Speed",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "consent",
+          "label": "I own this voice or have explicit permission to use it.",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Merged audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Status",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/long_script_clone_stream",
+      "parameters": [
+        {
+          "name": "full_text",
+          "label": "Full script",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "speaker_audio",
+          "label": "Voice sample",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "name": "language",
+          "label": "Language",
+          "type": "Literal['English', 'Spanish', 'French', 'German', 'Italian', 'Portuguese', 'Polish', 'Turkish', 'Russian', 'Dutch', 'Czech', 'Arabic', 'Chinese', 'Japanese', 'Korean', 'Hindi']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "speed",
+          "label": "Speed",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "temperature",
+          "label": "Temperature",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "repetition_penalty",
+          "label": "Repetition penalty",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "min_chars",
+          "label": "Min chars per chunk",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "max_chars",
+          "label": "Max chars per chunk",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "make_merged",
+          "label": "Also create merged.wav",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "consent",
+          "label": "I own this voice or have explicit permission to use it.",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "ZIP output",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "label": "Merged output",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "label": "Status",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/clone_voice",
+  "_api_verified": true
+}

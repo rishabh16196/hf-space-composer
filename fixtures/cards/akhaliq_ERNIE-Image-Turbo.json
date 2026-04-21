@@ -1,0 +1,110 @@
+{
+  "space_id": "akhaliq/ERNIE-Image-Turbo",
+  "title": "ERNIE Image Turbo",
+  "emoji": "\ud83c\udfc6",
+  "description": "ERNIE Image Turbo",
+  "input_schema": {
+    "prompt": {
+      "type": "str",
+      "description": "1st",
+      "required": true,
+      "component": "Api"
+    },
+    "width": {
+      "type": "int",
+      "description": "2nd",
+      "required": true,
+      "component": "Api"
+    },
+    "height": {
+      "type": "int",
+      "description": "3rd",
+      "required": true,
+      "component": "Api"
+    },
+    "guidance_scale": {
+      "type": "float",
+      "description": "4th",
+      "required": true,
+      "component": "Api"
+    },
+    "num_inference_steps": {
+      "type": "int",
+      "description": "5th",
+      "required": true,
+      "component": "Api"
+    }
+  },
+  "output_schema": {
+    "1st": {
+      "type": "filepath",
+      "description": "1st",
+      "component": "Api"
+    }
+  },
+  "license": "unknown",
+  "hardware": "6.12.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 22,
+  "last_modified": "2026-04-14 17:12:32+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/generate_image",
+      "parameters": [
+        {
+          "name": "prompt",
+          "label": "1st",
+          "type": "str",
+          "component": "Api"
+        },
+        {
+          "name": "width",
+          "label": "2nd",
+          "type": "int",
+          "component": "Api"
+        },
+        {
+          "name": "height",
+          "label": "3rd",
+          "type": "int",
+          "component": "Api"
+        },
+        {
+          "name": "guidance_scale",
+          "label": "4th",
+          "type": "float",
+          "component": "Api"
+        },
+        {
+          "name": "num_inference_steps",
+          "label": "5th",
+          "type": "int",
+          "component": "Api"
+        }
+      ],
+      "returns": [
+        {
+          "label": "1st",
+          "type": "filepath",
+          "component": "Api"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/generate_image",
+  "_api_verified": true,
+  "estimated_latency_s": 3.07,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 3.07,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:50:09.461450+00:00"
+}

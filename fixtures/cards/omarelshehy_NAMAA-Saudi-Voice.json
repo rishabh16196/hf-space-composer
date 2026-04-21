@@ -1,0 +1,109 @@
+{
+  "space_id": "omarelshehy/NAMAA-Saudi-Voice",
+  "title": "Saudi Arabic TTS",
+  "emoji": "\ud83c\udf0e",
+  "description": "Chatterbox Saudi Arabic TTS Demo",
+  "input_schema": {},
+  "output_schema": {
+    "\u0627\u0644\u0646\u0635 (\u0644\u0647\u062c\u0629 \u0633\u0639\u0648\u062f\u064a\u0629)": {
+      "type": "str",
+      "description": "\u0627\u0644\u0646\u0635 (\u0644\u0647\u062c\u0629 \u0633\u0639\u0648\u062f\u064a\u0629)",
+      "component": "Textbox"
+    }
+  },
+  "license": "mit",
+  "hardware": "5.29.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "mcp-server",
+    "region:us",
+    "audio",
+    "speech-synthesis",
+    "tts"
+  ],
+  "likes": 26,
+  "last_modified": "2026-01-29 09:54:46+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_tags_enriched": true,
+  "estimated_latency_s": 4.0,
+  "speed_tier": "fast",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/pick_random_saudi_example",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "\u0627\u0644\u0646\u0635 (\u0644\u0647\u062c\u0629 \u0633\u0639\u0648\u062f\u064a\u0629)",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/lambda",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "\u0627\u0644\u0646\u0635 (\u0644\u0647\u062c\u0629 \u0633\u0639\u0648\u062f\u064a\u0629)",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/generate_tts_audio",
+      "parameters": [
+        {
+          "name": "text_input",
+          "label": "\u0627\u0644\u0646\u0635 (\u0644\u0647\u062c\u0629 \u0633\u0639\u0648\u062f\u064a\u0629)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "audio_prompt_path_input",
+          "label": "\u0635\u0648\u062a \u0645\u0631\u062c\u0639\u064a (\u0627\u062e\u062a\u064a\u0627\u0631\u064a)",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "name": "exaggeration_input",
+          "label": "Exaggeration",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "temperature_input",
+          "label": "Temperature",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "seed_num_input",
+          "label": "Seed",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "cfgw_input",
+          "label": "CFG / Pace",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "\u0627\u0644\u0635\u0648\u062a \u0627\u0644\u0646\u0627\u062a\u062c",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/pick_random_saudi_example",
+  "_api_verified": true
+}

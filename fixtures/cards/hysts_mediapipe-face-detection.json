@@ -1,0 +1,86 @@
+{
+  "space_id": "hysts/mediapipe-face-detection",
+  "title": "Mediapipe Face Detection",
+  "emoji": "\ud83d\udcda",
+  "description": "Mediapipe Face Detection",
+  "input_schema": {
+    "image": {
+      "type": "filepath",
+      "description": "Input",
+      "required": true,
+      "component": "Image"
+    },
+    "model_selection": {
+      "type": "Literal['Short-range model (best for faces within 2 meters)', 'Full-range model (best for faces with",
+      "description": "Model",
+      "required": true,
+      "component": "Radio"
+    },
+    "min_detection_confidence": {
+      "type": "float",
+      "description": "Minimum Detection Confidence",
+      "required": true,
+      "component": "Slider"
+    }
+  },
+  "output_schema": {
+    "Output": {
+      "type": "filepath",
+      "description": "Output",
+      "component": "Image"
+    }
+  },
+  "license": "unknown",
+  "hardware": "4.36.1",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 25,
+  "last_modified": "2024-06-10 05:57:59+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/predict",
+      "parameters": [
+        {
+          "name": "image",
+          "label": "Input",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "name": "model_selection",
+          "label": "Model",
+          "type": "Literal['Short-range model (best for faces within 2 meters)', 'Full-range model (best for faces within 5 meters)']",
+          "component": "Radio"
+        },
+        {
+          "name": "min_detection_confidence",
+          "label": "Minimum Detection Confidence",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output",
+          "type": "filepath",
+          "component": "Image"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/predict",
+  "_api_verified": true,
+  "estimated_latency_s": 3.7,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 3.7,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:50:55.584461+00:00"
+}

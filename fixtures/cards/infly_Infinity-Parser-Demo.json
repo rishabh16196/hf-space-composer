@@ -1,0 +1,289 @@
+{
+  "space_id": "infly/Infinity-Parser-Demo",
+  "title": "Infinity-Parser-Demo",
+  "emoji": "\ud83d\udcc8",
+  "description": "Infinity-Parser-Demo",
+  "input_schema": {},
+  "output_schema": {
+    "Please upload a PDF or image": {
+      "type": "filepath",
+      "description": "Please upload a PDF or image",
+      "component": "File"
+    }
+  },
+  "license": "unknown",
+  "hardware": "5.35.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 16,
+  "last_modified": "2026-02-12 09:40:00+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/to_file",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Please upload a PDF or image",
+          "type": "filepath",
+          "component": "File"
+        }
+      ]
+    },
+    {
+      "name": "/to_file_1",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Please upload a PDF or image",
+          "type": "filepath",
+          "component": "File"
+        }
+      ]
+    },
+    {
+      "name": "/to_file_2",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Please upload a PDF or image",
+          "type": "filepath",
+          "component": "File"
+        }
+      ]
+    },
+    {
+      "name": "/to_file_3",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Please upload a PDF or image",
+          "type": "filepath",
+          "component": "File"
+        }
+      ]
+    },
+    {
+      "name": "/upload_handler",
+      "parameters": [
+        {
+          "name": "files",
+          "label": "Please upload a PDF or image",
+          "type": "filepath",
+          "component": "File"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_12",
+          "type": "str",
+          "component": "Html"
+        }
+      ]
+    },
+    {
+      "name": "/lambda",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Image Scale",
+          "type": "float",
+          "component": "Slider"
+        }
+      ]
+    },
+    {
+      "name": "/show_prev",
+      "parameters": [
+        {
+          "name": "scale",
+          "label": "Image Scale",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_12",
+          "type": "str",
+          "component": "Html"
+        }
+      ]
+    },
+    {
+      "name": "/show_next",
+      "parameters": [
+        {
+          "name": "scale",
+          "label": "Image Scale",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_12",
+          "type": "str",
+          "component": "Html"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_1",
+      "parameters": [
+        {
+          "name": "scale",
+          "label": "Image Scale",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_12",
+          "type": "str",
+          "component": "Html"
+        }
+      ]
+    },
+    {
+      "name": "/check_prompt",
+      "parameters": [
+        {
+          "name": "prompt",
+          "label": "Prompt",
+          "type": "Literal['Please convert the document into Markdown format.', 'Generate a clean and structured Markdown version of the document.', 'Transform this content into Markdown with proper headings and bullet ",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Prompt",
+          "type": "Literal['Please convert the document into Markdown format.', 'Generate a clean and structured Markdown version of the document.', 'Transform this content into Markdown with proper headings and bullet ",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_2",
+      "parameters": [
+        {
+          "name": "f",
+          "label": "Parse result",
+          "type": "filepath",
+          "component": "File"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Parse result",
+          "type": "filepath",
+          "component": "File"
+        }
+      ]
+    },
+    {
+      "name": "/check_file",
+      "parameters": [
+        {
+          "name": "f",
+          "label": "Please upload a PDF or image",
+          "type": "filepath",
+          "component": "File"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Please upload a PDF or image",
+          "type": "filepath",
+          "component": "File"
+        }
+      ]
+    },
+    {
+      "name": "/doc_parser",
+      "parameters": [
+        {
+          "name": "doc_path",
+          "label": "Please upload a PDF or image",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "name": "prompt",
+          "label": "Prompt",
+          "type": "Literal['Please convert the document into Markdown format.', 'Generate a clean and structured Markdown version of the document.', 'Transform this content into Markdown with proper headings and bullet ",
+          "component": "Dropdown"
+        },
+        {
+          "name": "model_id",
+          "label": "Model Selection",
+          "type": "Literal['Infinity-Parser-7B', 'Infinity-Parser2-30B-A3B-Preview']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Markdown rendering",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_46",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/download_markdown_file",
+      "parameters": [
+        {
+          "name": "md_text",
+          "label": "parameter_46",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Parse result",
+          "type": "filepath",
+          "component": "File"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_3",
+      "parameters": [
+        {
+          "name": "f",
+          "label": "Parse result",
+          "type": "filepath",
+          "component": "File"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Parse result",
+          "type": "filepath",
+          "component": "File"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/to_file",
+  "_api_verified": true,
+  "estimated_latency_s": 4.34,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 4.34,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:50:57.772390+00:00"
+}

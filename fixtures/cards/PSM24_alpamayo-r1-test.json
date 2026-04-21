@@ -1,0 +1,90 @@
+{
+  "space_id": "PSM24/alpamayo-r1-test",
+  "title": "Alpamayo-R1-10B Inference Demo",
+  "emoji": "\ud83d\ude97",
+  "description": "Alpamayo-R1-10B Inference Demo",
+  "input_schema": {},
+  "output_schema": {
+    "System Status": {
+      "type": "str",
+      "description": "System Status",
+      "component": "Textbox"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "5.27.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 2,
+  "last_modified": "2026-01-15 18:54:51+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/load_model_impl",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "System Status",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/prep_wrapper",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "System Status",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/run_inference_impl",
+      "parameters": [
+        {
+          "name": "user_command",
+          "label": "Command",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "demo_mode",
+          "label": "Force Demo Mode (Synthetic)",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Raw Reasoning Output",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Reasoning & Trajectory Visualization",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        },
+        {
+          "label": "System Status",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/load_model_impl",
+  "_api_verified": true
+}

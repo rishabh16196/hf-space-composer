@@ -1,0 +1,98 @@
+{
+  "space_id": "Weyaxi/merge-lora",
+  "title": "Merge Lora",
+  "emoji": "\ud83d\udee0\ufe0f",
+  "description": "Merge Lora",
+  "input_schema": {
+    "Huggingface Write Access Token": {
+      "type": "str",
+      "description": "Huggingface Write Access Token",
+      "required": true,
+      "component": "Textbox"
+    },
+    "Base Model": {
+      "type": "str",
+      "description": "Base Model",
+      "required": true,
+      "component": "Textbox"
+    },
+    "Adapter Model": {
+      "type": "str",
+      "description": "Adapter Model",
+      "required": true,
+      "component": "Textbox"
+    },
+    "Output Model Name": {
+      "type": "str",
+      "description": "Output Model Name",
+      "required": true,
+      "component": "Textbox"
+    }
+  },
+  "output_schema": {
+    "Output Model Name": {
+      "type": "str",
+      "description": "Output Model Name",
+      "component": "Textbox"
+    }
+  },
+  "license": "unknown",
+  "hardware": "4.7.1",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 24,
+  "last_modified": "2023-12-09 01:01:38+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/upload",
+      "parameters": [
+        {
+          "name": "Huggingface Write Access Token",
+          "label": "Huggingface Write Access Token",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "Base Model",
+          "label": "Base Model",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "Adapter Model",
+          "label": "Adapter Model",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "Output Model Name",
+          "label": "Output Model Name",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output Model Name",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/upload",
+  "_api_verified": true,
+  "estimated_latency_s": 2.58,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 2.58,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:50:04.381460+00:00"
+}

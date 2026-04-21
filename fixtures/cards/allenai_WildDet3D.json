@@ -1,0 +1,293 @@
+{
+  "space_id": "allenai/WildDet3D",
+  "title": "AI2 - WildDet3D",
+  "emoji": "",
+  "description": "Scaling Promptable 3D Detection in the Wild",
+  "input_schema": {
+    "mode": {
+      "type": "Literal['Text', 'Box-to-Multi-Object', 'Box-to-Single-Object', 'Point']",
+      "description": "Prompt Mode",
+      "required": true,
+      "component": "Radio"
+    }
+  },
+  "output_schema": {
+    "Text Prompt (separate categories with '.')": {
+      "type": "str",
+      "description": "Text Prompt (separate categories with '.')",
+      "component": "Textbox"
+    },
+    "value_15": {
+      "type": "str",
+      "description": "value_15",
+      "component": "Markdown"
+    },
+    "value_16": {
+      "type": "str",
+      "description": "value_16",
+      "component": "Markdown"
+    },
+    "Point Label": {
+      "type": "Literal['Positive (include)', 'Negative (exclude)']",
+      "description": "Point Label",
+      "component": "Radio"
+    },
+    "Input Image (click for Box/Point mode)": {
+      "type": "filepath",
+      "description": "Input Image (click for Box/Point mode)",
+      "component": "Image"
+    }
+  },
+  "license": "unknown",
+  "hardware": "",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "3d-detection",
+    "monocular",
+    "open-vocabulary",
+    "3d-object-detection",
+    "computer-vision",
+    "grounding",
+    "segmentation",
+    "point-cloud",
+    "3d-bounding-box",
+    "zero-shot",
+    "promptable",
+    "region:us"
+  ],
+  "likes": 17,
+  "last_modified": "2026-04-13 04:50:36+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/on_mode_change",
+      "parameters": [
+        {
+          "name": "mode",
+          "label": "Prompt Mode",
+          "type": "Literal['Text', 'Box-to-Multi-Object', 'Box-to-Single-Object', 'Point']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Text Prompt (separate categories with '.')",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "value_15",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_16",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "Point Label",
+          "type": "Literal['Positive (include)', 'Negative (exclude)']",
+          "component": "Radio"
+        },
+        {
+          "label": "Input Image (click for Box/Point mode)",
+          "type": "filepath",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/on_intrinsics_toggle",
+      "parameters": [
+        {
+          "name": "use_actual",
+          "label": "Use Actual Intrinsics (uncheck to use default)",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/on_image_select",
+      "parameters": [
+        {
+          "name": "image",
+          "label": "Input Image (click for Box/Point mode)",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "name": "prompt_mode",
+          "label": "Prompt Mode",
+          "type": "Literal['Text', 'Box-to-Multi-Object', 'Box-to-Single-Object', 'Point']",
+          "component": "Radio"
+        },
+        {
+          "name": "point_label",
+          "label": "Point Label",
+          "type": "Literal['Positive (include)', 'Negative (exclude)']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_20",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Input Image (click for Box/Point mode)",
+          "type": "filepath",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/clear_clicks",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_20",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Input Image (click for Box/Point mode)",
+          "type": "filepath",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/on_image_upload",
+      "parameters": [
+        {
+          "name": "image",
+          "label": "Input Image (click for Box/Point mode)",
+          "type": "filepath",
+          "component": "Image"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_20",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/run_wilddet3d",
+      "parameters": [
+        {
+          "name": "image",
+          "label": "Input Image (click for Box/Point mode)",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "name": "prompt_mode",
+          "label": "Prompt Mode",
+          "type": "Literal['Text', 'Box-to-Multi-Object', 'Box-to-Single-Object', 'Point']",
+          "component": "Radio"
+        },
+        {
+          "name": "text_prompt",
+          "label": "Text Prompt (separate categories with '.')",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "use_label",
+          "label": "parameter_18",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "label_text",
+          "label": "parameter_19",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "score_thres",
+          "label": "Score Threshold",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "use_actual_K",
+          "label": "Use Actual Intrinsics (uncheck to use default)",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "fx",
+          "label": "fx",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "fy",
+          "label": "fy",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "cx",
+          "label": "cx",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "cy",
+          "label": "cy",
+          "type": "float",
+          "component": "Number"
+        }
+      ],
+      "returns": [
+        {
+          "label": "3D Detection Results",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "Intrinsics Info",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Model Predicted Depth Map",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "value_38",
+          "type": "str",
+          "component": "Html"
+        }
+      ]
+    },
+    {
+      "name": "/on_agree",
+      "parameters": [],
+      "returns": []
+    }
+  ],
+  "endpoint": "/on_mode_change",
+  "_api_verified": true,
+  "estimated_latency_s": 3.68,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "_tags_enriched": true,
+  "measured_latency_s": 3.68,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:50:13.266533+00:00"
+}

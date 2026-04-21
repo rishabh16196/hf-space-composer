@@ -1,0 +1,84 @@
+{
+  "space_id": "awacke1/Image-to-Multilingual-OCR",
+  "title": "\ud83d\uddbc\ufe0fMultilingualOCR",
+  "emoji": "\ud83d\udc41\ufe0f",
+  "description": "\ud83d\uddbc\ufe0fMultilingualOCR",
+  "input_schema": {
+    "img_path": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "\ud83d\udce5 Input Image",
+      "required": true,
+      "component": "Image"
+    },
+    "lang": {
+      "type": "list[Literal['ch_sim', 'ch_tra', 'de', 'en', 'es', 'ja', 'hi', 'ru']]",
+      "description": "\ud83d\udde3\ufe0f Language(s)",
+      "required": true,
+      "component": "Checkboxgroup"
+    }
+  },
+  "output_schema": {
+    "\ud83d\udce4 Output Image": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "\ud83d\udce4 Output Image",
+      "component": "Image"
+    },
+    "value_10": {
+      "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+      "description": "value_10",
+      "component": "Dataframe"
+    }
+  },
+  "license": "mit",
+  "hardware": "5.41.1",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 54,
+  "last_modified": "2025-08-07 10:17:00+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/inference",
+      "parameters": [
+        {
+          "name": "img_path",
+          "label": "\ud83d\udce5 Input Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "lang",
+          "label": "\ud83d\udde3\ufe0f Language(s)",
+          "type": "list[Literal['ch_sim', 'ch_tra', 'de', 'en', 'es', 'ja', 'hi', 'ru']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "\ud83d\udce4 Output Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "value_10",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/inference",
+  "_api_verified": true,
+  "estimated_latency_s": 3.8,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 3.8,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:50:21.043695+00:00"
+}

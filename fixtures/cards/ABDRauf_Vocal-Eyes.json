@@ -1,0 +1,59 @@
+{
+  "space_id": "ABDRauf/Vocal-Eyes",
+  "title": "Vocal_Eyes",
+  "emoji": "\ud83d\ude0e\ud83d\udd76\ud83d\udc68\u200d\ud83e\uddaf",
+  "description": "Vocal_Eyes",
+  "input_schema": {
+    "image": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "image",
+      "required": true,
+      "component": "Image"
+    }
+  },
+  "output_schema": {
+    "Description": {
+      "type": "str",
+      "description": "Description",
+      "component": "Textbox"
+    }
+  },
+  "license": "mit",
+  "hardware": "6.5.1",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 2,
+  "last_modified": "2026-04-16 06:04:24+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/Scene_to_text",
+      "parameters": [
+        {
+          "name": "image",
+          "label": "image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Description",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/Scene_to_text",
+  "_api_verified": true
+}

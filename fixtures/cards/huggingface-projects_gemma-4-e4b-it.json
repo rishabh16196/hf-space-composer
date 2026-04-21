@@ -1,0 +1,110 @@
+{
+  "space_id": "huggingface-projects/gemma-4-e4b-it",
+  "title": "Gemma 4 E4B It",
+  "emoji": "\ud83d\ude80",
+  "description": "Gemma 4 E4B It",
+  "input_schema": {
+    "message": {
+      "type": "dict(text: str, files: list[filepath])",
+      "description": "parameter_1",
+      "required": true,
+      "component": "Multimodaltextbox"
+    },
+    "thinking": {
+      "type": "bool",
+      "description": "Thinking",
+      "required": true,
+      "component": "Checkbox"
+    },
+    "max_new_tokens": {
+      "type": "float",
+      "description": "Max New Tokens",
+      "required": true,
+      "component": "Slider"
+    },
+    "max_soft_tokens": {
+      "type": "Literal['70', '140', '280', '560', '1120']",
+      "description": "Image Token Budget",
+      "required": true,
+      "component": "Dropdown"
+    },
+    "system_prompt": {
+      "type": "str",
+      "description": "System Prompt",
+      "required": true,
+      "component": "Textbox"
+    }
+  },
+  "output_schema": {
+    "Response": {
+      "type": "str | float | bool | list | dict",
+      "description": "Response",
+      "component": "Json"
+    }
+  },
+  "license": "unknown",
+  "hardware": "6.12.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 18,
+  "last_modified": "2026-04-17 08:27:06+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/generate",
+      "parameters": [
+        {
+          "name": "message",
+          "label": "parameter_1",
+          "type": "dict(text: str, files: list[filepath])",
+          "component": "Multimodaltextbox"
+        },
+        {
+          "name": "thinking",
+          "label": "Thinking",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "max_new_tokens",
+          "label": "Max New Tokens",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "max_soft_tokens",
+          "label": "Image Token Budget",
+          "type": "Literal['70', '140', '280', '560', '1120']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "system_prompt",
+          "label": "System Prompt",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Response",
+          "type": "str | float | bool | list | dict",
+          "component": "Json"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/generate",
+  "_api_verified": true,
+  "estimated_latency_s": 3.94,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 3.94,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:50:47.136195+00:00"
+}

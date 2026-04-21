@@ -1,0 +1,596 @@
+{
+  "space_id": "Brian9999/game-editing",
+  "title": "StyleRenderer",
+  "emoji": "\ud83c\udfa8",
+  "description": "StyleRenderer",
+  "input_schema": {
+    "param_0": {
+      "type": "dict(video: filepath, subtitles: filepath | None)",
+      "description": "Albedo video",
+      "required": true,
+      "component": "Video"
+    },
+    "param_1": {
+      "type": "dict(video: filepath, subtitles: filepath | None)",
+      "description": "Depth video",
+      "required": true,
+      "component": "Video"
+    },
+    "param_2": {
+      "type": "dict(video: filepath, subtitles: filepath | None)",
+      "description": "Metallic video",
+      "required": true,
+      "component": "Video"
+    },
+    "param_3": {
+      "type": "dict(video: filepath, subtitles: filepath | None)",
+      "description": "Normal video",
+      "required": true,
+      "component": "Video"
+    },
+    "param_4": {
+      "type": "dict(video: filepath, subtitles: filepath | None)",
+      "description": "Roughness video",
+      "required": true,
+      "component": "Video"
+    }
+  },
+  "output_schema": {
+    "value_4": {
+      "type": "str",
+      "description": "value_4",
+      "component": "Markdown"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "5.23.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 11,
+  "last_modified": "2026-04-04 03:30:44+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/update_status",
+      "parameters": [
+        {
+          "name": "param_0",
+          "label": "Albedo video",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        },
+        {
+          "name": "param_1",
+          "label": "Depth video",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        },
+        {
+          "name": "param_2",
+          "label": "Metallic video",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        },
+        {
+          "name": "param_3",
+          "label": "Normal video",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        },
+        {
+          "name": "param_4",
+          "label": "Roughness video",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_4",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/update_status_1",
+      "parameters": [
+        {
+          "name": "param_0",
+          "label": "Albedo video",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        },
+        {
+          "name": "param_1",
+          "label": "Depth video",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        },
+        {
+          "name": "param_2",
+          "label": "Metallic video",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        },
+        {
+          "name": "param_3",
+          "label": "Normal video",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        },
+        {
+          "name": "param_4",
+          "label": "Roughness video",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_4",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/update_status_2",
+      "parameters": [
+        {
+          "name": "param_0",
+          "label": "Albedo video",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        },
+        {
+          "name": "param_1",
+          "label": "Depth video",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        },
+        {
+          "name": "param_2",
+          "label": "Metallic video",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        },
+        {
+          "name": "param_3",
+          "label": "Normal video",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        },
+        {
+          "name": "param_4",
+          "label": "Roughness video",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_4",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/update_status_3",
+      "parameters": [
+        {
+          "name": "param_0",
+          "label": "Albedo video",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        },
+        {
+          "name": "param_1",
+          "label": "Depth video",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        },
+        {
+          "name": "param_2",
+          "label": "Metallic video",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        },
+        {
+          "name": "param_3",
+          "label": "Normal video",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        },
+        {
+          "name": "param_4",
+          "label": "Roughness video",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_4",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/update_status_4",
+      "parameters": [
+        {
+          "name": "param_0",
+          "label": "Albedo video",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        },
+        {
+          "name": "param_1",
+          "label": "Depth video",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        },
+        {
+          "name": "param_2",
+          "label": "Metallic video",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        },
+        {
+          "name": "param_3",
+          "label": "Normal video",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        },
+        {
+          "name": "param_4",
+          "label": "Roughness video",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_4",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/update_status_5",
+      "parameters": [
+        {
+          "name": "param_0",
+          "label": "Albedo video",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        },
+        {
+          "name": "param_1",
+          "label": "Depth video",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        },
+        {
+          "name": "param_2",
+          "label": "Metallic video",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        },
+        {
+          "name": "param_3",
+          "label": "Normal video",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        },
+        {
+          "name": "param_4",
+          "label": "Roughness video",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_4",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/update_status_6",
+      "parameters": [
+        {
+          "name": "param_0",
+          "label": "Albedo video",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        },
+        {
+          "name": "param_1",
+          "label": "Depth video",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        },
+        {
+          "name": "param_2",
+          "label": "Metallic video",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        },
+        {
+          "name": "param_3",
+          "label": "Normal video",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        },
+        {
+          "name": "param_4",
+          "label": "Roughness video",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_4",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/update_status_7",
+      "parameters": [
+        {
+          "name": "param_0",
+          "label": "Albedo video",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        },
+        {
+          "name": "param_1",
+          "label": "Depth video",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        },
+        {
+          "name": "param_2",
+          "label": "Metallic video",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        },
+        {
+          "name": "param_3",
+          "label": "Normal video",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        },
+        {
+          "name": "param_4",
+          "label": "Roughness video",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_4",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/update_status_8",
+      "parameters": [
+        {
+          "name": "param_0",
+          "label": "Albedo video",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        },
+        {
+          "name": "param_1",
+          "label": "Depth video",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        },
+        {
+          "name": "param_2",
+          "label": "Metallic video",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        },
+        {
+          "name": "param_3",
+          "label": "Normal video",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        },
+        {
+          "name": "param_4",
+          "label": "Roughness video",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_4",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/update_status_9",
+      "parameters": [
+        {
+          "name": "param_0",
+          "label": "Albedo video",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        },
+        {
+          "name": "param_1",
+          "label": "Depth video",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        },
+        {
+          "name": "param_2",
+          "label": "Metallic video",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        },
+        {
+          "name": "param_3",
+          "label": "Normal video",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        },
+        {
+          "name": "param_4",
+          "label": "Roughness video",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_4",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/on_style_change",
+      "parameters": [
+        {
+          "name": "style",
+          "label": "Style Preset",
+          "type": "Literal['(custom)', 'bright_sunny', 'snowy_winter', 'sunset_dramatic', 'cyberpunk_neon', 'underwater', 'autumn_warm', 'moonlit_night']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Prompt",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/generate",
+      "parameters": [
+        {
+          "name": "albedo_video",
+          "label": "Albedo video",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        },
+        {
+          "name": "depth_video",
+          "label": "Depth video",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        },
+        {
+          "name": "metallic_video",
+          "label": "Metallic video",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        },
+        {
+          "name": "normal_video",
+          "label": "Normal video",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        },
+        {
+          "name": "roughness_video",
+          "label": "Roughness video",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        },
+        {
+          "name": "prompt",
+          "label": "Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "style_preset",
+          "label": "Style Preset",
+          "type": "Literal['(custom)', 'bright_sunny', 'snowy_winter', 'sunset_dramatic', 'cyberpunk_neon', 'underwater', 'autumn_warm', 'moonlit_night']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "num_frames",
+          "label": "Frames",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "height",
+          "label": "Height",
+          "type": "Literal['480', '720']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "width",
+          "label": "Width",
+          "type": "Literal['832', '1280']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "seed",
+          "label": "Seed",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "cfg_scale",
+          "label": "CFG Scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "num_inference_steps",
+          "label": "Inference Steps",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Generated Video",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/update_status",
+  "_api_verified": true,
+  "estimated_latency_s": 3.69,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 3.69,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:49:12.564805+00:00"
+}

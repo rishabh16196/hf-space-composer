@@ -1,0 +1,62 @@
+{
+  "space_id": "shibing624/pycorrector",
+  "title": "Pycorrector",
+  "emoji": "\ud83d\udcc8",
+  "description": "Pycorrector",
+  "input_schema": {
+    "text": {
+      "type": "str",
+      "description": "text",
+      "required": true,
+      "component": "Textbox"
+    }
+  },
+  "output_schema": {
+    "output": {
+      "type": "str",
+      "description": "output",
+      "component": "Textbox"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 46,
+  "last_modified": "2024-10-28 12:48:20+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/predict",
+      "parameters": [
+        {
+          "name": "text",
+          "label": "text",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "output",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/predict",
+  "_api_verified": true,
+  "estimated_latency_s": 4.27,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 4.27,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:51:50.246394+00:00"
+}

@@ -1,0 +1,87 @@
+{
+  "space_id": "mrbeliever/Face-Swapper",
+  "title": "Face Swapper A",
+  "emoji": "\ud83d\udc66\ud83c\udffb>\ud83d\udc67\ud83c\udffc",
+  "description": "Face Swapper A",
+  "input_schema": {
+    "source_file": {
+      "type": "filepath",
+      "description": "Source File",
+      "required": true,
+      "component": "Image"
+    },
+    "target_file": {
+      "type": "filepath",
+      "description": "Target File",
+      "required": true,
+      "component": "Image"
+    },
+    "doFaceEnhancer": {
+      "type": "bool",
+      "description": "Face Enhancer",
+      "required": true,
+      "component": "Checkbox"
+    }
+  },
+  "output_schema": {
+    "Output": {
+      "type": "filepath",
+      "description": "Output",
+      "component": "Image"
+    }
+  },
+  "license": "creativeml-openrail-m",
+  "hardware": "4.29.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 29,
+  "last_modified": "2024-05-24 15:14:12+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/swap_face",
+      "parameters": [
+        {
+          "name": "source_file",
+          "label": "Source File",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "name": "target_file",
+          "label": "Target File",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "name": "doFaceEnhancer",
+          "label": "Face Enhancer",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output",
+          "type": "filepath",
+          "component": "Image"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/swap_face",
+  "_api_verified": true,
+  "estimated_latency_s": 3.8,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "_tags_enriched": true,
+  "measured_latency_s": 3.8,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:51:17.264704+00:00"
+}

@@ -1,0 +1,85 @@
+{
+  "space_id": "speechbox/whisper-restore-punctuation",
+  "title": "Whisper Restore Punctuation",
+  "emoji": "\ud83d\udc40",
+  "description": "Whisper Restore Punctuation",
+  "input_schema": {
+    "audio": {
+      "type": "str | Dict(name: str (name of file), data: str (base64 representation of file), size: int (size of i",
+      "description": "audio",
+      "required": true,
+      "component": "Audio"
+    },
+    "normalized text": {
+      "type": "str",
+      "description": "normalized text",
+      "required": true,
+      "component": "Textbox"
+    }
+  },
+  "output_schema": {
+    "Restored text": {
+      "type": "str",
+      "description": "Restored text",
+      "component": "Textbox"
+    },
+    "Log probability": {
+      "type": "int | float",
+      "description": "Log probability",
+      "component": "Number"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "3.15.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us",
+    "asr",
+    "audio",
+    "transcription"
+  ],
+  "likes": 17,
+  "last_modified": "2023-03-27 13:58:19+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_tags_enriched": true,
+  "estimated_latency_s": 5.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/predict",
+      "parameters": [
+        {
+          "name": "audio",
+          "label": "audio",
+          "type": "str | Dict(name: str (name of file), data: str (base64 representation of file), size: int (size of image in bytes), is_file: bool (true if the file has been uploaded to the server), orig_name: str (or",
+          "component": "Audio"
+        },
+        {
+          "name": "normalized text",
+          "label": "normalized text",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Restored text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Log probability",
+          "type": "int | float",
+          "component": "Number"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/predict",
+  "_api_verified": true
+}

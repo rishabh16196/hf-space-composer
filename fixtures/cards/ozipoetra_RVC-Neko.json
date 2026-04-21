@@ -1,0 +1,338 @@
+{
+  "space_id": "ozipoetra/RVC-Neko",
+  "title": "RVC Voice Conversion",
+  "emoji": "\ud83c\udf99\ufe0f",
+  "description": "RVC Voice Conversion",
+  "input_schema": {
+    "enabled": {
+      "type": "bool",
+      "description": "Autotune",
+      "required": true,
+      "component": "Checkbox"
+    }
+  },
+  "output_schema": {
+    "Autotune Strength": {
+      "type": "float",
+      "description": "Autotune Strength",
+      "component": "Slider"
+    }
+  },
+  "license": "mit",
+  "hardware": "6.9.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 6,
+  "last_modified": "2026-03-30 11:50:51+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/toggle_autotune",
+      "parameters": [
+        {
+          "name": "enabled",
+          "label": "Autotune",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Autotune Strength",
+          "type": "float",
+          "component": "Slider"
+        }
+      ]
+    },
+    {
+      "name": "/lambda",
+      "parameters": [
+        {
+          "name": "v",
+          "label": "Enable Reverb",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/upload_model",
+      "parameters": [
+        {
+          "name": "zip_file",
+          "label": "Model ZIP",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "name": "model_name",
+          "label": "Model Name",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Status",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Active Voice Model",
+          "type": "Literal['Ayunda Risu', 'Gawr Gura', 'Vestia Zeta v1', 'Vestia Zeta v2']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/refresh_models",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "Active Voice Model",
+          "type": "Literal['Ayunda Risu', 'Gawr Gura', 'Vestia Zeta v1', 'Vestia Zeta v2']",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/_refresh_jobs",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_73",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_75",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/_submit_and_extract_id",
+      "parameters": [
+        {
+          "name": "param_0",
+          "label": "Record",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "name": "param_1",
+          "label": "Upload audio (wav / mp3 / flac / ogg \u2026)",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "name": "param_2",
+          "label": "Active Voice Model",
+          "type": "Literal['Ayunda Risu', 'Gawr Gura', 'Vestia Zeta v1', 'Vestia Zeta v2']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_3",
+          "label": "Pitch Shift (semitones)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_4",
+          "label": "Pitch Extraction Method",
+          "type": "Literal['rmvpe', 'fcpe', 'crepe', 'crepe-tiny']",
+          "component": "Radio"
+        },
+        {
+          "name": "param_5",
+          "label": "Index Rate",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_6",
+          "label": "Protect Consonants",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_7",
+          "label": "Volume Envelope Mix",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_8",
+          "label": "Noise Reduction",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_9",
+          "label": "Reduction Strength",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_10",
+          "label": "Split Long Audio",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_11",
+          "label": "Autotune",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_12",
+          "label": "Autotune Strength",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_13",
+          "label": "Respiration Filter Radius",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_14",
+          "label": "Output Format",
+          "type": "Literal['WAV', 'MP3', 'FLAC', 'OPUS']",
+          "component": "Radio"
+        },
+        {
+          "name": "param_15",
+          "label": "Enable Reverb",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_16",
+          "label": "Room Size",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_17",
+          "label": "Damping",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_18",
+          "label": "Wet Level",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_46",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "Result (if still on page)",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Job ID",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "value_73",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_75",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/_poll_and_refresh",
+      "parameters": [
+        {
+          "name": "job_id",
+          "label": "Job ID",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_53",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "Result",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "value_73",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_75",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/get_queue_info",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_73",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/get_jobs_table",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_75",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/toggle_autotune",
+  "_api_verified": true
+}

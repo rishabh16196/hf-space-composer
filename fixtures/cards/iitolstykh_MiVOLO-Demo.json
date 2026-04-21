@@ -1,0 +1,196 @@
+{
+  "space_id": "iitolstykh/MiVOLO-Demo",
+  "title": "MiVOLO-Demo",
+  "emoji": "\ud83c\udf16",
+  "description": "MiVOLO-Demo",
+  "input_schema": {
+    "image": {
+      "type": "filepath",
+      "description": "Input",
+      "required": true,
+      "component": "Image"
+    },
+    "score_threshold": {
+      "type": "float",
+      "description": "Detector Score Threshold",
+      "required": true,
+      "component": "Slider"
+    },
+    "iou_threshold": {
+      "type": "float",
+      "description": "NMS Iou Threshold",
+      "required": true,
+      "component": "Slider"
+    },
+    "mode": {
+      "type": "Literal['Use persons and faces', 'Use persons only', 'Use faces only']",
+      "description": "Inference mode",
+      "required": true,
+      "component": "Radio"
+    }
+  },
+  "output_schema": {
+    "Output": {
+      "type": "filepath",
+      "description": "Output",
+      "component": "Image"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "4.38.1",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 53,
+  "last_modified": "2025-11-28 14:45:43+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/predict",
+      "parameters": [
+        {
+          "name": "image",
+          "label": "Input",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "name": "score_threshold",
+          "label": "Detector Score Threshold",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "iou_threshold",
+          "label": "NMS Iou Threshold",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "mode",
+          "label": "Inference mode",
+          "type": "Literal['Use persons and faces', 'Use persons only', 'Use faces only']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output",
+          "type": "filepath",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/clear",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Input",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "Detector Score Threshold",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "NMS Iou Threshold",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Inference mode",
+          "type": "Literal['Use persons and faces', 'Use persons only', 'Use faces only']",
+          "component": "Radio"
+        },
+        {
+          "label": "Output",
+          "type": "filepath",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/predict_1",
+      "parameters": [
+        {
+          "name": "image",
+          "label": "Input",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "name": "score_threshold",
+          "label": "Detector Score Threshold",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "iou_threshold",
+          "label": "NMS Iou Threshold",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "mode",
+          "label": "Inference mode",
+          "type": "Literal['Use persons and faces', 'Use persons only', 'Use faces only']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output",
+          "type": "filepath",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/clear_1",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Input",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "Detector Score Threshold",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "NMS Iou Threshold",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Inference mode",
+          "type": "Literal['Use persons and faces', 'Use persons only', 'Use faces only']",
+          "component": "Radio"
+        },
+        {
+          "label": "Output",
+          "type": "filepath",
+          "component": "Image"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/predict",
+  "_api_verified": true,
+  "estimated_latency_s": 3.45,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 3.45,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:50:56.885617+00:00"
+}

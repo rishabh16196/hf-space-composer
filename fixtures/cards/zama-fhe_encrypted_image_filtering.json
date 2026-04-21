@@ -1,0 +1,217 @@
+{
+  "space_id": "zama-fhe/encrypted_image_filtering",
+  "title": "Image Filtering On Encrypted Data Using Fully Homomorphic Encryption",
+  "emoji": "\ud83d\udcf8 \ud83c\udf04",
+  "description": "Image Filtering On Encrypted Data Using Fully Homomorphic Encryption",
+  "input_schema": {
+    "filter_name": {
+      "type": "Literal['identity', 'inverted', 'rotate', 'black and white', 'blur', 'sharpen', 'ridge detection']",
+      "description": "Choose your filter",
+      "required": true,
+      "component": "Dropdown"
+    }
+  },
+  "output_schema": {
+    "output_0": {
+      "type": "str",
+      "description": "",
+      "component": "Textbox"
+    },
+    "Private key generated:": {
+      "type": "bool",
+      "description": "Private key generated:",
+      "component": "Checkbox"
+    }
+  },
+  "license": "unknown",
+  "hardware": "4.44.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "FHE",
+    "PPML",
+    "privacy",
+    "privacy preserving machine learning",
+    "image processing",
+    "homomorphic encryption",
+    "security",
+    "region:us"
+  ],
+  "likes": 94,
+  "last_modified": "2024-09-23 11:37:08+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/keygen",
+      "parameters": [
+        {
+          "name": "filter_name",
+          "label": "Choose your filter",
+          "type": "Literal['identity', 'inverted', 'rotate', 'black and white', 'blur', 'sharpen', 'ridge detection']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Private key generated:",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ]
+    },
+    {
+      "name": "/encrypt",
+      "parameters": [
+        {
+          "name": "user_id",
+          "label": "",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "input_image",
+          "label": "Upload an image here.",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "name": "filter_name",
+          "label": "Choose your filter",
+          "type": "Literal['identity', 'inverted', 'rotate', 'black and white', 'blur', 'sharpen', 'ridge detection']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Input image (100x100):",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "Encrypted input representation:",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/send_input",
+      "parameters": [
+        {
+          "name": "user_id",
+          "label": "",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "filter_name",
+          "label": "Choose your filter",
+          "type": "Literal['identity', 'inverted', 'rotate', 'black and white', 'blur', 'sharpen', 'ridge detection']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Encrypted image sent.",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ]
+    },
+    {
+      "name": "/run_fhe",
+      "parameters": [
+        {
+          "name": "user_id",
+          "label": "",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "filter_name",
+          "label": "Choose your filter",
+          "type": "Literal['identity', 'inverted', 'rotate', 'black and white', 'blur', 'sharpen', 'ridge detection']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Total FHE execution time (in seconds):",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/get_output",
+      "parameters": [
+        {
+          "name": "user_id",
+          "label": "",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "filter_name",
+          "label": "Choose your filter",
+          "type": "Literal['identity', 'inverted', 'rotate', 'black and white', 'blur', 'sharpen', 'ridge detection']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Encrypted output representation (100x100):",
+          "type": "filepath",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/decrypt_output",
+      "parameters": [
+        {
+          "name": "user_id",
+          "label": "",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "filter_name",
+          "label": "Choose your filter",
+          "type": "Literal['identity', 'inverted', 'rotate', 'black and white', 'blur', 'sharpen', 'ridge detection']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output image (100x100):",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "Private key generated:",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Encrypted image sent.",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/keygen",
+  "_api_verified": true
+}

@@ -1,0 +1,74 @@
+{
+  "space_id": "carolineec/informativedrawings",
+  "title": "Informativedrawings",
+  "emoji": "\ud83d\udcc9",
+  "description": "Informativedrawings",
+  "input_schema": {
+    "input_img": {
+      "type": "str",
+      "description": "input_img",
+      "required": true,
+      "component": "Image"
+    },
+    "version": {
+      "type": "str",
+      "description": "version",
+      "required": true,
+      "component": "Radio"
+    }
+  },
+  "output_schema": {
+    "output": {
+      "type": "str",
+      "description": "output",
+      "component": "Image"
+    }
+  },
+  "license": "mit",
+  "hardware": "",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 197,
+  "last_modified": "2023-08-30 16:10:49+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/predict",
+      "parameters": [
+        {
+          "name": "input_img",
+          "label": "input_img",
+          "type": "str",
+          "component": "Image"
+        },
+        {
+          "name": "version",
+          "label": "version",
+          "type": "str",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "output",
+          "type": "str",
+          "component": "Image"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/predict",
+  "_api_verified": true,
+  "estimated_latency_s": 2.92,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 2.92,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:50:26.095923+00:00"
+}

@@ -1,0 +1,125 @@
+{
+  "space_id": "V0pr0S/ComfyUI-Reactor-Fast-Face-Swap-CPU",
+  "title": "ComfyUI Reactor Fast Face Swap HYPERSWAP (CPU)",
+  "emoji": "\u2620",
+  "description": "CPU = UNLIMIT (DUPLICATE this Space)!",
+  "input_schema": {
+    "source_image": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "Source (Face)",
+      "required": true,
+      "component": "Image"
+    },
+    "target_image": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "Target (Body)",
+      "required": true,
+      "component": "Image"
+    },
+    "target_index": {
+      "type": "Literal['0', '1', '2', '3', '4']",
+      "description": "Target Face Index",
+      "required": true,
+      "component": "Dropdown"
+    },
+    "swap_model": {
+      "type": "Literal['inswapper_128.onnx', 'hyperswap_1a_256.onnx', 'hyperswap_1b_256.onnx', 'hyperswap_1c_256.on",
+      "description": "Swap Model",
+      "required": true,
+      "component": "Dropdown"
+    },
+    "face_restore_model": {
+      "type": "Literal['none', 'GPEN-BFR-512.onnx']",
+      "description": "Face Restore Model",
+      "required": true,
+      "component": "Dropdown"
+    },
+    "restore_strength": {
+      "type": "float",
+      "description": "Face Restore Strength",
+      "required": true,
+      "component": "Slider"
+    }
+  },
+  "output_schema": {
+    "Generated Image": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "Generated Image",
+      "component": "Image"
+    }
+  },
+  "license": "mit",
+  "hardware": "5.50.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us",
+    "video",
+    "vision"
+  ],
+  "likes": 112,
+  "last_modified": "2026-01-26 17:37:22+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/generate_image",
+      "parameters": [
+        {
+          "name": "source_image",
+          "label": "Source (Face)",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "target_image",
+          "label": "Target (Body)",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "target_index",
+          "label": "Target Face Index",
+          "type": "Literal['0', '1', '2', '3', '4']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "swap_model",
+          "label": "Swap Model",
+          "type": "Literal['inswapper_128.onnx', 'hyperswap_1a_256.onnx', 'hyperswap_1b_256.onnx', 'hyperswap_1c_256.onnx']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "face_restore_model",
+          "label": "Face Restore Model",
+          "type": "Literal['none', 'GPEN-BFR-512.onnx']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "restore_strength",
+          "label": "Face Restore Strength",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Generated Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/generate_image",
+  "_api_verified": true,
+  "estimated_latency_s": 5.67,
+  "speed_tier": "medium",
+  "_latency_source": "measured",
+  "_tags_enriched": true,
+  "measured_latency_s": 5.67,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:50:02.900204+00:00"
+}

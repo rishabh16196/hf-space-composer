@@ -1,0 +1,384 @@
+{
+  "space_id": "peft-internal-testing/PEFT-method-comparison",
+  "title": "PEFT Method Comparison",
+  "emoji": "\u2696\ufe0f",
+  "description": "PEFT Method Comparison",
+  "input_schema": {
+    "task_name": {
+      "type": "Literal['MetaMathQA']",
+      "description": "Select Task",
+      "required": true,
+      "component": "Dropdown"
+    }
+  },
+  "output_schema": {
+    "Select Model ID": {
+      "type": "Literal['meta-llama/Llama-3.2-3B']",
+      "description": "Select Model ID",
+      "component": "Dropdown"
+    },
+    "Results": {
+      "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+      "description": "Results",
+      "component": "Dataframe"
+    }
+  },
+  "license": "unknown",
+  "hardware": "",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 6,
+  "last_modified": "2026-04-15 17:28:08+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/update_on_task",
+      "parameters": [
+        {
+          "name": "task_name",
+          "label": "Select Task",
+          "type": "Literal['MetaMathQA']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Select Model ID",
+          "type": "Literal['meta-llama/Llama-3.2-3B']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Results",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/update_on_model",
+      "parameters": [
+        {
+          "name": "task_name",
+          "label": "Select Task",
+          "type": "Literal['MetaMathQA']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "model_id",
+          "label": "Select Model ID",
+          "type": "Literal['meta-llama/Llama-3.2-3B']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Results",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/update_pareto_plot_and_summary",
+      "parameters": [
+        {
+          "name": "task_name",
+          "label": "Select Task",
+          "type": "Literal['MetaMathQA']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "model_id",
+          "label": "Select Model ID",
+          "type": "Literal['meta-llama/Llama-3.2-3B']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "metric_x",
+          "label": "1st metric for Pareto plot",
+          "type": "Literal['accelerator_memory_reserved_avg', 'accelerator_memory_max', 'accelerator_memory_reserved_99th', 'total_time', 'train_time', 'file_size', 'test_accuracy', 'train_loss', 'num_trainable_params',",
+          "component": "Dropdown"
+        },
+        {
+          "name": "metric_y",
+          "label": "2nd metric for Pareto plot",
+          "type": "Literal['accelerator_memory_reserved_avg', 'accelerator_memory_max', 'accelerator_memory_reserved_99th', 'total_time', 'train_time', 'file_size', 'test_accuracy', 'train_loss', 'num_trainable_params',",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Pareto Frontier Plot",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "Summary Statistics",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/update_pareto_plot_and_summary_1",
+      "parameters": [
+        {
+          "name": "task_name",
+          "label": "Select Task",
+          "type": "Literal['MetaMathQA']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "model_id",
+          "label": "Select Model ID",
+          "type": "Literal['meta-llama/Llama-3.2-3B']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "metric_x",
+          "label": "1st metric for Pareto plot",
+          "type": "Literal['accelerator_memory_reserved_avg', 'accelerator_memory_max', 'accelerator_memory_reserved_99th', 'total_time', 'train_time', 'file_size', 'test_accuracy', 'train_loss', 'num_trainable_params',",
+          "component": "Dropdown"
+        },
+        {
+          "name": "metric_y",
+          "label": "2nd metric for Pareto plot",
+          "type": "Literal['accelerator_memory_reserved_avg', 'accelerator_memory_max', 'accelerator_memory_reserved_99th', 'total_time', 'train_time', 'file_size', 'test_accuracy', 'train_loss', 'num_trainable_params',",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Pareto Frontier Plot",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "Summary Statistics",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/update_pareto_plot_and_summary_2",
+      "parameters": [
+        {
+          "name": "task_name",
+          "label": "Select Task",
+          "type": "Literal['MetaMathQA']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "model_id",
+          "label": "Select Model ID",
+          "type": "Literal['meta-llama/Llama-3.2-3B']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "metric_x",
+          "label": "1st metric for Pareto plot",
+          "type": "Literal['accelerator_memory_reserved_avg', 'accelerator_memory_max', 'accelerator_memory_reserved_99th', 'total_time', 'train_time', 'file_size', 'test_accuracy', 'train_loss', 'num_trainable_params',",
+          "component": "Dropdown"
+        },
+        {
+          "name": "metric_y",
+          "label": "2nd metric for Pareto plot",
+          "type": "Literal['accelerator_memory_reserved_avg', 'accelerator_memory_max', 'accelerator_memory_reserved_99th', 'total_time', 'train_time', 'file_size', 'test_accuracy', 'train_loss', 'num_trainable_params',",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Pareto Frontier Plot",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "Summary Statistics",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/apply_filter",
+      "parameters": [
+        {
+          "name": "filter_query",
+          "label": "Filter DataFrame",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "task_name",
+          "label": "Select Task",
+          "type": "Literal['MetaMathQA']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "model_id",
+          "label": "Select Model ID",
+          "type": "Literal['meta-llama/Llama-3.2-3B']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "metric_x",
+          "label": "1st metric for Pareto plot",
+          "type": "Literal['accelerator_memory_reserved_avg', 'accelerator_memory_max', 'accelerator_memory_reserved_99th', 'total_time', 'train_time', 'file_size', 'test_accuracy', 'train_loss', 'num_trainable_params',",
+          "component": "Dropdown"
+        },
+        {
+          "name": "metric_y",
+          "label": "2nd metric for Pareto plot",
+          "type": "Literal['accelerator_memory_reserved_avg', 'accelerator_memory_max', 'accelerator_memory_reserved_99th', 'total_time', 'train_time', 'file_size', 'test_accuracy', 'train_loss', 'num_trainable_params',",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Results",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "Pareto Frontier Plot",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "Summary Statistics",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/reset_filter",
+      "parameters": [
+        {
+          "name": "task_name",
+          "label": "Select Task",
+          "type": "Literal['MetaMathQA']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "model_id",
+          "label": "Select Model ID",
+          "type": "Literal['meta-llama/Llama-3.2-3B']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "metric_x",
+          "label": "1st metric for Pareto plot",
+          "type": "Literal['accelerator_memory_reserved_avg', 'accelerator_memory_max', 'accelerator_memory_reserved_99th', 'total_time', 'train_time', 'file_size', 'test_accuracy', 'train_loss', 'num_trainable_params',",
+          "component": "Dropdown"
+        },
+        {
+          "name": "metric_y",
+          "label": "2nd metric for Pareto plot",
+          "type": "Literal['accelerator_memory_reserved_avg', 'accelerator_memory_max', 'accelerator_memory_reserved_99th', 'total_time', 'train_time', 'file_size', 'test_accuracy', 'train_loss', 'num_trainable_params',",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Filter DataFrame",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Results",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "Pareto Frontier Plot",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "Summary Statistics",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/lambda",
+      "parameters": [
+        {
+          "name": "task",
+          "label": "Select Task",
+          "type": "Literal['MetaMathQA']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "model",
+          "label": "Select Model ID",
+          "type": "Literal['meta-llama/Llama-3.2-3B']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Export Filtered Data as CSV",
+          "type": "filepath",
+          "component": "File"
+        }
+      ]
+    },
+    {
+      "name": "/update_pareto_plot_and_summary_3",
+      "parameters": [
+        {
+          "name": "task_name",
+          "label": "Select Task",
+          "type": "Literal['MetaMathQA']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "model_id",
+          "label": "Select Model ID",
+          "type": "Literal['meta-llama/Llama-3.2-3B']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "metric_x",
+          "label": "1st metric for Pareto plot",
+          "type": "Literal['accelerator_memory_reserved_avg', 'accelerator_memory_max', 'accelerator_memory_reserved_99th', 'total_time', 'train_time', 'file_size', 'test_accuracy', 'train_loss', 'num_trainable_params',",
+          "component": "Dropdown"
+        },
+        {
+          "name": "metric_y",
+          "label": "2nd metric for Pareto plot",
+          "type": "Literal['accelerator_memory_reserved_avg', 'accelerator_memory_max', 'accelerator_memory_reserved_99th', 'total_time', 'train_time', 'file_size', 'test_accuracy', 'train_loss', 'num_trainable_params',",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Pareto Frontier Plot",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "Summary Statistics",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/update_on_task",
+  "_api_verified": true
+}

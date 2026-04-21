@@ -1,0 +1,122 @@
+{
+  "space_id": "hysts/mediapipe-face-mesh",
+  "title": "Mediapipe Face Mesh",
+  "emoji": "\ud83d\ude3b",
+  "description": "Mediapipe Face Mesh",
+  "input_schema": {
+    "image": {
+      "type": "filepath",
+      "description": "Input",
+      "required": true,
+      "component": "Image"
+    },
+    "max_num_faces": {
+      "type": "float",
+      "description": "Max Number of Faces",
+      "required": true,
+      "component": "Slider"
+    },
+    "min_detection_confidence": {
+      "type": "float",
+      "description": "Minimum Detection Confidence",
+      "required": true,
+      "component": "Slider"
+    },
+    "show_tesselation": {
+      "type": "bool",
+      "description": "Show Tesselation",
+      "required": true,
+      "component": "Checkbox"
+    },
+    "show_contours": {
+      "type": "bool",
+      "description": "Show Contours",
+      "required": true,
+      "component": "Checkbox"
+    },
+    "show_irises": {
+      "type": "bool",
+      "description": "Show Irises",
+      "required": true,
+      "component": "Checkbox"
+    }
+  },
+  "output_schema": {
+    "Output": {
+      "type": "filepath",
+      "description": "Output",
+      "component": "Image"
+    }
+  },
+  "license": "unknown",
+  "hardware": "4.36.1",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 26,
+  "last_modified": "2024-06-10 05:57:23+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/predict",
+      "parameters": [
+        {
+          "name": "image",
+          "label": "Input",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "name": "max_num_faces",
+          "label": "Max Number of Faces",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "min_detection_confidence",
+          "label": "Minimum Detection Confidence",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "show_tesselation",
+          "label": "Show Tesselation",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "show_contours",
+          "label": "Show Contours",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "show_irises",
+          "label": "Show Irises",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output",
+          "type": "filepath",
+          "component": "Image"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/predict",
+  "_api_verified": true,
+  "estimated_latency_s": 3.47,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 3.47,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:50:55.392694+00:00"
+}

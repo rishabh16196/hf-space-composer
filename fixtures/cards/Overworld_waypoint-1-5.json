@@ -1,0 +1,96 @@
+{
+  "space_id": "Overworld/waypoint-1-5",
+  "title": "Waypoint 1.5 Small",
+  "emoji": "\ud83c\udfae",
+  "description": "Waypoint 1.5 Small",
+  "input_schema": {
+    "seed_url": {
+      "type": "str",
+      "description": "1st",
+      "required": true,
+      "component": "Api"
+    },
+    "prompt": {
+      "type": "str",
+      "description": "2nd",
+      "required": true,
+      "component": "Api"
+    }
+  },
+  "output_schema": {
+    "1st": {
+      "type": "str",
+      "description": "1st",
+      "component": "Api"
+    }
+  },
+  "license": "unknown",
+  "hardware": "6.12.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 15,
+  "last_modified": "2026-04-14 08:43:23+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/start_game",
+      "parameters": [
+        {
+          "name": "seed_url",
+          "label": "1st",
+          "type": "str",
+          "component": "Api"
+        },
+        {
+          "name": "prompt",
+          "label": "2nd",
+          "type": "str",
+          "component": "Api"
+        }
+      ],
+      "returns": [
+        {
+          "label": "1st",
+          "type": "str",
+          "component": "Api"
+        }
+      ]
+    },
+    {
+      "name": "/stop_game",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "1st",
+          "type": "str",
+          "component": "Api"
+        }
+      ]
+    },
+    {
+      "name": "/get_worlds",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "1st",
+          "type": "list[Any]",
+          "component": "Api"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/start_game",
+  "_api_verified": true,
+  "estimated_latency_s": 2.74,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 2.74,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:49:44.255604+00:00"
+}

@@ -1,0 +1,89 @@
+{
+  "space_id": "hysts/ibug-emotion_recognition",
+  "title": "iBUG Emotion Recognition",
+  "emoji": "\ud83d\udd25",
+  "description": "emotion recognition",
+  "input_schema": {
+    "image": {
+      "type": "filepath",
+      "description": "Input",
+      "required": true,
+      "component": "Image"
+    },
+    "model_name": {
+      "type": "Literal['emonet248', 'emonet245', 'emonet248_alt', 'emonet245_alt']",
+      "description": "Model",
+      "required": true,
+      "component": "Radio"
+    },
+    "max_num_faces": {
+      "type": "float",
+      "description": "Max Number of Faces",
+      "required": true,
+      "component": "Slider"
+    }
+  },
+  "output_schema": {
+    "Output": {
+      "type": "filepath",
+      "description": "Output",
+      "component": "Image"
+    }
+  },
+  "license": "unknown",
+  "hardware": "4.36.1",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us",
+    "sentiment",
+    "text"
+  ],
+  "likes": 25,
+  "last_modified": "2024-06-10 04:42:00+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/predict",
+      "parameters": [
+        {
+          "name": "image",
+          "label": "Input",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "name": "model_name",
+          "label": "Model",
+          "type": "Literal['emonet248', 'emonet245', 'emonet248_alt', 'emonet245_alt']",
+          "component": "Radio"
+        },
+        {
+          "name": "max_num_faces",
+          "label": "Max Number of Faces",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output",
+          "type": "filepath",
+          "component": "Image"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/predict",
+  "_api_verified": true,
+  "estimated_latency_s": 3.19,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "_tags_enriched": true,
+  "measured_latency_s": 3.19,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:50:54.674327+00:00"
+}

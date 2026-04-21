@@ -1,0 +1,62 @@
+{
+  "space_id": "ThomasSimonini/Check-my-progress-Deep-RL-Course",
+  "title": "Check My Progress Deep RL Course",
+  "emoji": "\ud83d\udc40",
+  "description": "Check My Progress Deep RL Course",
+  "input_schema": {
+    "hf_username": {
+      "type": "str",
+      "description": "Your Hugging Face Username",
+      "required": true,
+      "component": "Textbox"
+    }
+  },
+  "output_schema": {
+    "value_4": {
+      "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+      "description": "value_4",
+      "component": "Dataframe"
+    }
+  },
+  "license": "unknown",
+  "hardware": "4.38.1",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 238,
+  "last_modified": "2024-07-22 19:56:31+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/certification",
+      "parameters": [
+        {
+          "name": "hf_username",
+          "label": "Your Hugging Face Username",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_4",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/certification",
+  "_api_verified": true,
+  "estimated_latency_s": 2.84,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 2.84,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:49:57.879769+00:00"
+}

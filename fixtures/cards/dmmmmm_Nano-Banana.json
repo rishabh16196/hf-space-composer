@@ -1,0 +1,180 @@
+{
+  "space_id": "dmmmmm/Nano-Banana",
+  "title": "Nano Banana AI API Free Online",
+  "emoji": "\ud83c\udf4c",
+  "description": "AI-powered image style transfer with Nano Banana model",
+  "input_schema": {},
+  "output_schema": {
+    "value_11": {
+      "type": "str",
+      "description": "value_11",
+      "component": "Html"
+    },
+    "value_14": {
+      "type": "str",
+      "description": "value_14",
+      "component": "Markdown"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "5.44.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "image-editing",
+    "style-transfer",
+    "ai-art",
+    "computer-vision",
+    "region:us"
+  ],
+  "likes": 6,
+  "last_modified": "2025-09-01 10:50:34+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/delete_image_at_index",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_11",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "value_14",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/delete_image_at_index_1",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_11",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "value_14",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/delete_image_at_index_2",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_11",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "value_14",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/delete_image_at_index_3",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_11",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "value_14",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/delete_image_at_index_4",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_11",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "value_14",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/on_file_upload_with_buttons",
+      "parameters": [
+        {
+          "name": "new_files",
+          "label": "parameter_12",
+          "type": "list[filepath]",
+          "component": "File"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_12",
+          "type": "list[filepath]",
+          "component": "File"
+        },
+        {
+          "label": "value_11",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "value_14",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/prepare_and_generate",
+      "parameters": [
+        {
+          "name": "prompt",
+          "label": "Editing Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "api_key",
+          "label": "API Key",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_24",
+          "type": "list[dict(image: dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Origi",
+          "component": "Gallery"
+        },
+        {
+          "label": "Processing Status",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/delete_image_at_index",
+  "_api_verified": true
+}

@@ -1,0 +1,332 @@
+{
+  "space_id": "hysts/BLIP2",
+  "title": "BLIP2",
+  "emoji": "\ud83c\udf16",
+  "description": "image captioning, VQA",
+  "input_schema": {
+    "image": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "parameter_3",
+      "required": true,
+      "component": "Image"
+    },
+    "decoding_method": {
+      "type": "Literal['Beam search', 'Nucleus sampling']",
+      "description": "Text Decoding Method",
+      "required": true,
+      "component": "Radio"
+    },
+    "temperature": {
+      "type": "float",
+      "description": "Temperature",
+      "required": true,
+      "component": "Slider"
+    },
+    "length_penalty": {
+      "type": "float",
+      "description": "Length Penalty",
+      "required": true,
+      "component": "Slider"
+    },
+    "repetition_penalty": {
+      "type": "float",
+      "description": "Repetition Penalty",
+      "required": true,
+      "component": "Slider"
+    },
+    "max_length": {
+      "type": "float",
+      "description": "Max Length",
+      "required": true,
+      "component": "Slider"
+    },
+    "min_length": {
+      "type": "float",
+      "description": "Minimum Length",
+      "required": true,
+      "component": "Slider"
+    },
+    "num_beams": {
+      "type": "float",
+      "description": "Number of Beams",
+      "required": true,
+      "component": "Slider"
+    },
+    "top_p": {
+      "type": "float",
+      "description": "Top P",
+      "required": true,
+      "component": "Slider"
+    }
+  },
+  "output_schema": {
+    "Caption Output": {
+      "type": "str",
+      "description": "Caption Output",
+      "component": "Textbox"
+    }
+  },
+  "license": "bsd-3-clause",
+  "hardware": "5.12.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 161,
+  "last_modified": "2025-01-11 07:01:00+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_tags_enriched": true,
+  "estimated_latency_s": 4.0,
+  "speed_tier": "fast",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/caption",
+      "parameters": [
+        {
+          "name": "image",
+          "label": "parameter_3",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "decoding_method",
+          "label": "Text Decoding Method",
+          "type": "Literal['Beam search', 'Nucleus sampling']",
+          "component": "Radio"
+        },
+        {
+          "name": "temperature",
+          "label": "Temperature",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "length_penalty",
+          "label": "Length Penalty",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "repetition_penalty",
+          "label": "Repetition Penalty",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "max_length",
+          "label": "Max Length",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "min_length",
+          "label": "Minimum Length",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "num_beams",
+          "label": "Number of Beams",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "top_p",
+          "label": "Top P",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Caption Output",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/chat",
+      "parameters": [
+        {
+          "name": "image",
+          "label": "parameter_3",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "text",
+          "label": "Chat Input",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "decoding_method",
+          "label": "Text Decoding Method",
+          "type": "Literal['Beam search', 'Nucleus sampling']",
+          "component": "Radio"
+        },
+        {
+          "name": "temperature",
+          "label": "Temperature",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "length_penalty",
+          "label": "Length Penalty",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "repetition_penalty",
+          "label": "Repetition Penalty",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "max_length",
+          "label": "Max Length",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "min_length",
+          "label": "Minimum Length",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "num_beams",
+          "label": "Number of Beams",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "top_p",
+          "label": "Top P",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "VQA Chat",
+          "type": "tuple[str | dict(file: filepath, alt_text: str | None) | dict(component: str, value: Any, constructor_args: dict(), props: dict()) | None, str | dict(file: filepath, alt_text: str | None) | dict(compo",
+          "component": "Chatbot"
+        }
+      ]
+    },
+    {
+      "name": "/chat_1",
+      "parameters": [
+        {
+          "name": "image",
+          "label": "parameter_3",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "text",
+          "label": "Chat Input",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "decoding_method",
+          "label": "Text Decoding Method",
+          "type": "Literal['Beam search', 'Nucleus sampling']",
+          "component": "Radio"
+        },
+        {
+          "name": "temperature",
+          "label": "Temperature",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "length_penalty",
+          "label": "Length Penalty",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "repetition_penalty",
+          "label": "Repetition Penalty",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "max_length",
+          "label": "Max Length",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "min_length",
+          "label": "Minimum Length",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "num_beams",
+          "label": "Number of Beams",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "top_p",
+          "label": "Top P",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "VQA Chat",
+          "type": "tuple[str | dict(file: filepath, alt_text: str | None) | dict(component: str, value: Any, constructor_args: dict(), props: dict()) | None, str | dict(file: filepath, alt_text: str | None) | dict(compo",
+          "component": "Chatbot"
+        }
+      ]
+    },
+    {
+      "name": "/clear",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Chat Input",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "VQA Chat",
+          "type": "tuple[str | dict(file: filepath, alt_text: str | None) | dict(component: str, value: Any, constructor_args: dict(), props: dict()) | None, str | dict(file: filepath, alt_text: str | None) | dict(compo",
+          "component": "Chatbot"
+        }
+      ]
+    },
+    {
+      "name": "/lambda",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Caption Output",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "VQA Chat",
+          "type": "tuple[str | dict(file: filepath, alt_text: str | None) | dict(component: str, value: Any, constructor_args: dict(), props: dict()) | None, str | dict(file: filepath, alt_text: str | None) | dict(compo",
+          "component": "Chatbot"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/caption",
+  "_api_verified": true
+}

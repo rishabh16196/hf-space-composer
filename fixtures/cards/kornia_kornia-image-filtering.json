@@ -1,0 +1,167 @@
+{
+  "space_id": "kornia/kornia-image-filtering",
+  "title": "Kornia Image Filtering",
+  "emoji": "\ud83d\udcc8",
+  "description": "Kornia Image Filtering",
+  "input_schema": {
+    "file": {
+      "type": "filepath",
+      "description": "file",
+      "required": true,
+      "component": "Image"
+    },
+    "box_blur": {
+      "type": "float",
+      "description": "Box Blur",
+      "required": true,
+      "component": "Slider"
+    }
+  },
+  "output_schema": {
+    "output": {
+      "type": "filepath",
+      "description": "output",
+      "component": "Image"
+    }
+  },
+  "license": "unknown",
+  "hardware": "4.37.2",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 9,
+  "last_modified": "2024-07-10 12:50:42+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/predict",
+      "parameters": [
+        {
+          "name": "file",
+          "label": "file",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "name": "box_blur",
+          "label": "Box Blur",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "output",
+          "type": "filepath",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/predict_1",
+      "parameters": [
+        {
+          "name": "file",
+          "label": "file",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "name": "blur_pool2d",
+          "label": "Blur Pool",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "output",
+          "type": "filepath",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/predict_2",
+      "parameters": [
+        {
+          "name": "file",
+          "label": "file",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "name": "gaussian_blur2d",
+          "label": "Gaussian Blur",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "output",
+          "type": "filepath",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/predict_3",
+      "parameters": [
+        {
+          "name": "file",
+          "label": "file",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "name": "max_blur_pool2d",
+          "label": "Max Pool",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "output",
+          "type": "filepath",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/predict_4",
+      "parameters": [
+        {
+          "name": "file",
+          "label": "file",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "name": "median_blur",
+          "label": "Median Blur",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "output",
+          "type": "filepath",
+          "component": "Image"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/predict",
+  "_api_verified": true
+}

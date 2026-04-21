@@ -1,0 +1,176 @@
+{
+  "space_id": "adyen/DABstep",
+  "title": "DABstep Leaderboard",
+  "emoji": "\ud83d\udd7a",
+  "description": "DABstep Reasoning Benchmark Leaderboard",
+  "input_schema": {},
+  "output_schema": {
+    "value_4": {
+      "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+      "description": "value_4",
+      "component": "Dataframe"
+    },
+    "value_7": {
+      "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+      "description": "value_7",
+      "component": "Dataframe"
+    }
+  },
+  "license": "cc-by-4.0",
+  "hardware": "6.0.1",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "leaderboard",
+    "region:us",
+    "benchmark"
+  ],
+  "likes": 92,
+  "last_modified": "2026-03-31 15:07:04+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_tags_enriched": true,
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/generate_leaderboard_df",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_4",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_7",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/download_leaderboard",
+      "parameters": [
+        {
+          "name": "type",
+          "label": "parameter_9",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Download Leaderboard",
+          "type": "filepath",
+          "component": "Downloadbutton"
+        }
+      ]
+    },
+    {
+      "name": "/download_leaderboard_1",
+      "parameters": [
+        {
+          "name": "type",
+          "label": "parameter_10",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Download Leaderboard",
+          "type": "filepath",
+          "component": "Downloadbutton"
+        }
+      ]
+    },
+    {
+      "name": "/refresh",
+      "parameters": [
+        {
+          "name": "only_leaderboard",
+          "label": "parameter_12",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_4",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_7",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/process_submission",
+      "parameters": [
+        {
+          "name": "split",
+          "label": "Split",
+          "type": "Literal['all']",
+          "component": "Radio"
+        },
+        {
+          "name": "agent_name",
+          "label": "Agent name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "model_family",
+          "label": "Model family",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "repo_url",
+          "label": "Repo URL with agent code",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "path_to_file",
+          "label": "parameter_32",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "name": "organisation",
+          "label": "Organisation",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "mail",
+          "label": "Contact email (will be stored privately, & used if there is an issue with your submission)",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_37",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/_check_login_status",
+      "parameters": [],
+      "returns": []
+    }
+  ],
+  "endpoint": "/generate_leaderboard_df",
+  "_api_verified": true
+}

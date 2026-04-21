@@ -1,0 +1,206 @@
+{
+  "space_id": "FireRedTeam/FireRed-Image-Edit-1.1",
+  "title": "FireRed Image Edit 1.0",
+  "emoji": "\ud83c\udf0d",
+  "description": "FireRed-Image-Edit-1.0",
+  "input_schema": {
+    "lora_name": {
+      "type": "Literal['None', 'Covercraft', 'Lightning', 'Makeup']",
+      "description": "Choose Lora",
+      "required": true,
+      "component": "Dropdown"
+    }
+  },
+  "output_schema": {
+    "Inference Steps": {
+      "type": "float",
+      "description": "Inference Steps",
+      "component": "Slider"
+    },
+    "Guidance Scale": {
+      "type": "float",
+      "description": "Guidance Scale",
+      "component": "Slider"
+    },
+    "Seed": {
+      "type": "float",
+      "description": "Seed",
+      "component": "Slider"
+    },
+    "Randomize Seed": {
+      "type": "bool",
+      "description": "Randomize Seed",
+      "component": "Checkbox"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "6.5.1",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us",
+    "image-generation",
+    "vision"
+  ],
+  "likes": 211,
+  "last_modified": "2026-03-09 04:05:19+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/on_lora_change",
+      "parameters": [
+        {
+          "name": "lora_name",
+          "label": "Choose Lora",
+          "type": "Literal['None', 'Covercraft', 'Lightning', 'Makeup']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Inference Steps",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Guidance Scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Seed",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Randomize Seed",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ]
+    },
+    {
+      "name": "/on_image_upload",
+      "parameters": [
+        {
+          "name": "images",
+          "label": "Upload Images",
+          "type": "list[dict(image: dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Origi",
+          "component": "Gallery"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Upload Images",
+          "type": "list[dict(image: dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Origi",
+          "component": "Gallery"
+        },
+        {
+          "label": "Height (0=auto)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Width (0=auto)",
+          "type": "float",
+          "component": "Slider"
+        }
+      ]
+    },
+    {
+      "name": "/infer",
+      "parameters": [
+        {
+          "name": "input_images",
+          "label": "Upload Images",
+          "type": "list[dict(image: dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Origi",
+          "component": "Gallery"
+        },
+        {
+          "name": "prompt",
+          "label": "Edit Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "lora_choice",
+          "label": "Choose Lora",
+          "type": "Literal['None', 'Covercraft', 'Lightning', 'Makeup']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "seed",
+          "label": "Seed",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "randomize_seed",
+          "label": "Randomize Seed",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "true_guidance_scale",
+          "label": "Guidance Scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "num_inference_steps",
+          "label": "Inference Steps",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "height",
+          "label": "Height (0=auto)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "width",
+          "label": "Width (0=auto)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "rewrite_prompt",
+          "label": "Rewrite Prompt",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "num_images_per_prompt",
+          "label": "Num Images",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output Images",
+          "type": "list[dict(image: dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Origi",
+          "component": "Gallery"
+        },
+        {
+          "label": "Seed",
+          "type": "float",
+          "component": "Slider"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/on_lora_change",
+  "_api_verified": true,
+  "estimated_latency_s": 4.34,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "_tags_enriched": true,
+  "measured_latency_s": 4.34,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:49:19.872082+00:00"
+}

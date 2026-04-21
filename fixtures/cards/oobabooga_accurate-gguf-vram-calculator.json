@@ -1,0 +1,222 @@
+{
+  "space_id": "oobabooga/accurate-gguf-vram-calculator",
+  "title": "Accurate GGUF Memory Calculator",
+  "emoji": "\ud83d\udcca",
+  "description": "Calculate memory for GGUF models using GPU layers + context",
+  "input_schema": {
+    "model_url": {
+      "type": "str",
+      "description": "GGUF Model URL",
+      "required": true,
+      "component": "Textbox"
+    }
+  },
+  "output_schema": {
+    "GPU Layers": {
+      "type": "float",
+      "description": "GPU Layers",
+      "component": "Slider"
+    },
+    "Status": {
+      "type": "str",
+      "description": "Status",
+      "component": "Textbox"
+    }
+  },
+  "license": "mit",
+  "hardware": "5.29.1",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 66,
+  "last_modified": "2026-03-24 14:29:46+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/load_metadata",
+      "parameters": [
+        {
+          "name": "model_url",
+          "label": "GGUF Model URL",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "GPU Layers",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Status",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/estimate_memory_wrapper",
+      "parameters": [
+        {
+          "name": "gpu_layers",
+          "label": "GPU Layers",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "ctx_size",
+          "label": "Context Length",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "cache_type",
+          "label": "Cache Type",
+          "type": "Literal['fp16', 'q8_0', 'q4_0']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_10",
+          "type": "str",
+          "component": "Html"
+        }
+      ]
+    },
+    {
+      "name": "/estimate_memory_wrapper_1",
+      "parameters": [
+        {
+          "name": "gpu_layers",
+          "label": "GPU Layers",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "ctx_size",
+          "label": "Context Length",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "cache_type",
+          "label": "Cache Type",
+          "type": "Literal['fp16', 'q8_0', 'q4_0']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_10",
+          "type": "str",
+          "component": "Html"
+        }
+      ]
+    },
+    {
+      "name": "/estimate_memory_wrapper_2",
+      "parameters": [
+        {
+          "name": "gpu_layers",
+          "label": "GPU Layers",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "ctx_size",
+          "label": "Context Length",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "cache_type",
+          "label": "Cache Type",
+          "type": "Literal['fp16', 'q8_0', 'q4_0']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_10",
+          "type": "str",
+          "component": "Html"
+        }
+      ]
+    },
+    {
+      "name": "/estimate_memory_wrapper_3",
+      "parameters": [
+        {
+          "name": "gpu_layers",
+          "label": "GPU Layers",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "ctx_size",
+          "label": "Context Length",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "cache_type",
+          "label": "Cache Type",
+          "type": "Literal['fp16', 'q8_0', 'q4_0']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_10",
+          "type": "str",
+          "component": "Html"
+        }
+      ]
+    },
+    {
+      "name": "/estimate_memory_wrapper_4",
+      "parameters": [
+        {
+          "name": "gpu_layers",
+          "label": "GPU Layers",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "ctx_size",
+          "label": "Context Length",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "cache_type",
+          "label": "Cache Type",
+          "type": "Literal['fp16', 'q8_0', 'q4_0']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_10",
+          "type": "str",
+          "component": "Html"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/load_metadata",
+  "_api_verified": true,
+  "estimated_latency_s": 4.06,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 4.06,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:51:29.276977+00:00"
+}

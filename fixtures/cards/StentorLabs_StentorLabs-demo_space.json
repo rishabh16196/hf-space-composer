@@ -1,0 +1,40 @@
+{
+  "space_id": "StentorLabs/StentorLabs-demo_space",
+  "title": "StentorLabs Model Showcase",
+  "emoji": "\u26a1",
+  "description": "Streaming demo for Stentor base + instruct models",
+  "input_schema": {
+    "input": {
+      "type": "string",
+      "description": "Input",
+      "required": true
+    }
+  },
+  "output_schema": {
+    "output": {
+      "type": "string"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "6.12.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "text-generation",
+    "llama",
+    "small-language-model",
+    "cpu-inference",
+    "edge-deployment",
+    "region:us"
+  ],
+  "likes": 3,
+  "last_modified": "2026-04-20 05:37:48+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "error",
+  "_api_error": "(Request ID: Root=1-69e77bd7-395e739d1b582afd764a46ff;1d9a5a38-01d0-47c4-9894-c151316c59fa)\n\n429 Too Many Requests: you have reached your 'api' rate limit.\nRetry after 7 seconds (0/2500 requests remai"
+}

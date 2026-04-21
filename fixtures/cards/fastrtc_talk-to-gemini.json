@@ -1,0 +1,39 @@
+{
+  "space_id": "fastrtc/talk-to-gemini",
+  "title": "Talk to Gemini",
+  "emoji": "\u264a\ufe0f",
+  "description": "Talk to Gemini using Google's multimodal API",
+  "input_schema": {
+    "input": {
+      "type": "string",
+      "description": "Input",
+      "required": true
+    }
+  },
+  "output_schema": {
+    "output": {
+      "type": "string"
+    }
+  },
+  "license": "mit",
+  "hardware": "5.16.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "webrtc",
+    "websocket",
+    "secret|HF_TOKEN",
+    "secret|GEMINI_API_KEY",
+    "region:us"
+  ],
+  "likes": 26,
+  "last_modified": "2025-04-08 14:15:07+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "error",
+  "_api_error": "Could not get Gradio config from: https://fastrtc-talk-to-gemini.hf.space",
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred"
+}

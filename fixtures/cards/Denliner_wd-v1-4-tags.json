@@ -1,0 +1,160 @@
+{
+  "space_id": "Denliner/wd-v1-4-tags",
+  "title": "WaifuDiffusion v1.4 Tags",
+  "emoji": "\ud83d\udcac",
+  "description": "WaifuDiffusion v1.4 Tags",
+  "input_schema": {
+    "image": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "Input",
+      "required": true,
+      "component": "Image"
+    },
+    "model_repo": {
+      "type": "Literal['SmilingWolf/wd-swinv2-tagger-v3', 'SmilingWolf/wd-convnext-tagger-v3', 'SmilingWolf/wd-vit-",
+      "description": "Model",
+      "required": true,
+      "component": "Dropdown"
+    },
+    "general_thresh": {
+      "type": "float",
+      "description": "General Tags Threshold",
+      "required": true,
+      "component": "Slider"
+    },
+    "general_mcut_enabled": {
+      "type": "bool",
+      "description": "Use MCut threshold",
+      "required": true,
+      "component": "Checkbox"
+    },
+    "character_thresh": {
+      "type": "float",
+      "description": "Character Tags Threshold",
+      "required": true,
+      "component": "Slider"
+    },
+    "character_mcut_enabled": {
+      "type": "bool",
+      "description": "Use MCut threshold",
+      "required": true,
+      "component": "Checkbox"
+    }
+  },
+  "output_schema": {
+    "Output (string)": {
+      "type": "str",
+      "description": "Output (string)",
+      "component": "Textbox"
+    },
+    "Output (Booru)": {
+      "type": "str",
+      "description": "Output (Booru)",
+      "component": "Textbox"
+    },
+    "Rating": {
+      "type": "dict(label: str | int | float | None, confidences: list[dict(label: str | int | float | None, confid",
+      "description": "Rating",
+      "component": "Label"
+    },
+    "Output (characters)": {
+      "type": "dict(label: str | int | float | None, confidences: list[dict(label: str | int | float | None, confid",
+      "description": "Output (characters)",
+      "component": "Label"
+    },
+    "Output (tags)": {
+      "type": "dict(label: str | int | float | None, confidences: list[dict(label: str | int | float | None, confid",
+      "description": "Output (tags)",
+      "component": "Label"
+    }
+  },
+  "license": "unknown",
+  "hardware": "5.29.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 20,
+  "last_modified": "2025-05-14 15:05:07+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_tags_enriched": true,
+  "estimated_latency_s": 3.0,
+  "speed_tier": "fast",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/predict",
+      "parameters": [
+        {
+          "name": "image",
+          "label": "Input",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "model_repo",
+          "label": "Model",
+          "type": "Literal['SmilingWolf/wd-swinv2-tagger-v3', 'SmilingWolf/wd-convnext-tagger-v3', 'SmilingWolf/wd-vit-tagger-v3', 'SmilingWolf/wd-vit-large-tagger-v3', 'SmilingWolf/wd-eva02-large-tagger-v3', 'SmilingWo",
+          "component": "Dropdown"
+        },
+        {
+          "name": "general_thresh",
+          "label": "General Tags Threshold",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "general_mcut_enabled",
+          "label": "Use MCut threshold",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "character_thresh",
+          "label": "Character Tags Threshold",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "character_mcut_enabled",
+          "label": "Use MCut threshold",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output (string)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Output (Booru)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Rating",
+          "type": "dict(label: str | int | float | None, confidences: list[dict(label: str | int | float | None, confidence: float | None)] | None)",
+          "component": "Label"
+        },
+        {
+          "label": "Output (characters)",
+          "type": "dict(label: str | int | float | None, confidences: list[dict(label: str | int | float | None, confidence: float | None)] | None)",
+          "component": "Label"
+        },
+        {
+          "label": "Output (tags)",
+          "type": "dict(label: str | int | float | None, confidences: list[dict(label: str | int | float | None, confidence: float | None)] | None)",
+          "component": "Label"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/predict",
+  "_api_verified": true
+}

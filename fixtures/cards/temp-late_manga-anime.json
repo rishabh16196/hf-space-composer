@@ -1,0 +1,71 @@
+{
+  "space_id": "temp-late/manga-anime",
+  "title": "Manga Anime",
+  "emoji": "\ud83d\udcc9",
+  "description": "Manga Anime",
+  "input_schema": {
+    "img": {
+      "type": "str",
+      "description": "img",
+      "required": true,
+      "component": "Image"
+    },
+    "Version": {
+      "type": "str",
+      "description": "Version",
+      "required": true,
+      "component": "Radio"
+    }
+  },
+  "output_schema": {
+    "output": {
+      "type": "str",
+      "description": "output",
+      "component": "Image"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 7,
+  "last_modified": "2022-02-28 10:17:41+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/predict",
+      "parameters": [
+        {
+          "name": "img",
+          "label": "img",
+          "type": "str",
+          "component": "Image"
+        },
+        {
+          "name": "Version",
+          "label": "Version",
+          "type": "str",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "output",
+          "type": "str",
+          "component": "Image"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/predict",
+  "_api_verified": true
+}

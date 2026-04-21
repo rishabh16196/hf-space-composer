@@ -1,0 +1,63 @@
+{
+  "space_id": "akhaliq/nano-banana",
+  "title": "Nano Banana",
+  "emoji": "\ud83d\udc40",
+  "description": "Nano Banana",
+  "input_schema": {
+    "message": {
+      "type": "dict(text: str, files: list[filepath])",
+      "description": "Message",
+      "required": true,
+      "component": "Multimodaltextbox"
+    }
+  },
+  "output_schema": {
+    "Response": {
+      "type": "str | float | bool | list | dict",
+      "description": "Response",
+      "component": "Json"
+    }
+  },
+  "license": "unknown",
+  "hardware": "5.44.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "anycoder",
+    "region:us"
+  ],
+  "likes": 9,
+  "last_modified": "2025-08-27 04:13:39+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/chat",
+      "parameters": [
+        {
+          "name": "message",
+          "label": "Message",
+          "type": "dict(text: str, files: list[filepath])",
+          "component": "Multimodaltextbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Response",
+          "type": "str | float | bool | list | dict",
+          "component": "Json"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/chat",
+  "_api_verified": true,
+  "estimated_latency_s": 3.63,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 3.63,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:50:11.269906+00:00"
+}

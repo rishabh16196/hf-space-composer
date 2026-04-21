@@ -1,0 +1,194 @@
+{
+  "space_id": "hysts/LongCat-AudioDiT-3.5B",
+  "title": "LongCat AudioDiT 3.5B",
+  "emoji": "\ud83d\udc31",
+  "description": "LongCat AudioDiT 3.5B",
+  "input_schema": {
+    "randomize_seed": {
+      "type": "bool",
+      "description": "Randomize seed",
+      "required": true,
+      "component": "Checkbox"
+    },
+    "seed": {
+      "type": "float",
+      "description": "Seed",
+      "required": true,
+      "component": "Slider"
+    }
+  },
+  "output_schema": {
+    "Seed": {
+      "type": "float",
+      "description": "Seed",
+      "component": "Slider"
+    }
+  },
+  "license": "unknown",
+  "hardware": "6.10.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 32,
+  "last_modified": "2026-03-31 07:43:40+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/get_seed",
+      "parameters": [
+        {
+          "name": "randomize_seed",
+          "label": "Randomize seed",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "seed",
+          "label": "Seed",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Seed",
+          "type": "float",
+          "component": "Slider"
+        }
+      ]
+    },
+    {
+      "name": "/generate_tts",
+      "parameters": [
+        {
+          "name": "text",
+          "label": "Text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "guidance_method",
+          "label": "Guidance",
+          "type": "Literal['cfg', 'apg']",
+          "component": "Radio"
+        },
+        {
+          "name": "nfe",
+          "label": "NFE Steps",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "guidance_strength",
+          "label": "Guidance Strength",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "seed",
+          "label": "Seed",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ]
+    },
+    {
+      "name": "/get_seed_1",
+      "parameters": [
+        {
+          "name": "randomize_seed",
+          "label": "Randomize seed",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "seed",
+          "label": "Seed",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Seed",
+          "type": "float",
+          "component": "Slider"
+        }
+      ]
+    },
+    {
+      "name": "/generate_voice_clone",
+      "parameters": [
+        {
+          "name": "text",
+          "label": "Text to Synthesize",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "prompt_text",
+          "label": "Prompt Text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "prompt_audio",
+          "label": "Prompt Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "name": "guidance_method",
+          "label": "Guidance",
+          "type": "Literal['cfg', 'apg']",
+          "component": "Radio"
+        },
+        {
+          "name": "nfe",
+          "label": "NFE Steps",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "guidance_strength",
+          "label": "Guidance Strength",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "seed",
+          "label": "Seed",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/get_seed",
+  "_api_verified": true,
+  "estimated_latency_s": 4.74,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 4.74,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:50:49.947068+00:00"
+}

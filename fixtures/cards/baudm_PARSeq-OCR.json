@@ -1,0 +1,113 @@
+{
+  "space_id": "baudm/PARSeq-OCR",
+  "title": "PARSeq OCR",
+  "emoji": "\ud83d\udcda",
+  "description": "PARSeq OCR",
+  "input_schema": {
+    "model_name": {
+      "type": "Literal['parseq', 'parseq_tiny', 'abinet', 'crnn', 'trba', 'vitstr']",
+      "description": "The STR model to use",
+      "required": true,
+      "component": "Radio"
+    },
+    "image": {
+      "type": "filepath",
+      "description": "Image",
+      "required": true,
+      "component": "Image"
+    }
+  },
+  "output_schema": {
+    "Model output": {
+      "type": "str",
+      "description": "Model output",
+      "component": "Textbox"
+    },
+    "Raw output with confidence values ([0, 1] interval; [B] - BLANK token; [E] - EOS token)": {
+      "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+      "description": "Raw output with confidence values ([0, 1] interval; [B] - BLANK token; [E] - EOS token)",
+      "component": "Dataframe"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "4.36.1",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 34,
+  "last_modified": "2024-06-19 17:29:02+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/App",
+      "parameters": [
+        {
+          "name": "model_name",
+          "label": "The STR model to use",
+          "type": "Literal['parseq', 'parseq_tiny', 'abinet', 'crnn', 'trba', 'vitstr']",
+          "component": "Radio"
+        },
+        {
+          "name": "image",
+          "label": "Image",
+          "type": "filepath",
+          "component": "Image"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Model output",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Raw output with confidence values ([0, 1] interval; [B] - BLANK token; [E] - EOS token)",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/App_1",
+      "parameters": [
+        {
+          "name": "model_name",
+          "label": "The STR model to use",
+          "type": "Literal['parseq', 'parseq_tiny', 'abinet', 'crnn', 'trba', 'vitstr']",
+          "component": "Radio"
+        },
+        {
+          "name": "image",
+          "label": "Sketch",
+          "type": "Dict(background: filepath | None, layers: List[filepath], composite: filepath | None, id: str | None)",
+          "component": "Imageeditor"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Model output",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Raw output with confidence values ([0, 1] interval; [B] - BLANK token; [E] - EOS token)",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/App",
+  "_api_verified": true,
+  "estimated_latency_s": 2.84,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 2.84,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:50:21.929293+00:00"
+}

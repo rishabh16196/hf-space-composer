@@ -1,0 +1,35 @@
+{
+  "space_id": "omarelsayeed/SentenceSimilarity-Quran-v2",
+  "title": "SentenceSimilarity Quran V2",
+  "emoji": "\ud83d\ude3b",
+  "description": "SentenceSimilarity Quran V2",
+  "input_schema": {
+    "input": {
+      "type": "string",
+      "description": "Input",
+      "required": true
+    }
+  },
+  "output_schema": {
+    "output": {
+      "type": "string"
+    }
+  },
+  "license": "creativeml-openrail-m",
+  "hardware": "4",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 5,
+  "last_modified": "2024-01-26 23:32:06+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "error",
+  "_api_error": "(Request ID: Root=1-69e77b94-0f18ebec117df0fa2e4d4a78;11597027-0283-4e53-8aea-c3a6e6a47871)\n\n429 Too Many Requests: you have reached your 'api' rate limit.\nRetry after 74 seconds (0/2500 requests rema"
+}

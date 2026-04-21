@@ -1,0 +1,266 @@
+{
+  "space_id": "alexander00001/Private.Test.Space.2",
+  "title": "ADULT.NSFW.AI.Anime&Comic",
+  "emoji": "\ud83d\ude80",
+  "description": "Adult AI images,anima & comic,non-realistic",
+  "input_schema": {
+    "prompt": {
+      "type": "str",
+      "description": "Detailed Prompt (Use Danbooru tags style)",
+      "required": true,
+      "component": "Textbox"
+    },
+    "style": {
+      "type": "Literal['None', 'Standard Quality', 'High Detail', 'Realistic', 'Anime', 'Artistic']",
+      "description": "Style Preset",
+      "required": true,
+      "component": "Radio"
+    },
+    "neg_prompt": {
+      "type": "str",
+      "description": "Negative Prompt (Optional)",
+      "required": true,
+      "component": "Textbox"
+    },
+    "steps": {
+      "type": "float",
+      "description": "Steps",
+      "required": true,
+      "component": "Slider"
+    },
+    "cfg": {
+      "type": "float",
+      "description": "CFG Scale",
+      "required": true,
+      "component": "Slider"
+    },
+    "seed": {
+      "type": "int",
+      "description": "Seed (-1 for random)",
+      "required": true,
+      "component": "Number"
+    },
+    "width": {
+      "type": "float",
+      "description": "Width",
+      "required": true,
+      "component": "Slider"
+    },
+    "height": {
+      "type": "float",
+      "description": "Height",
+      "required": true,
+      "component": "Slider"
+    }
+  },
+  "output_schema": {
+    "Generated Image": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "Generated Image",
+      "component": "Image"
+    },
+    "Generation Info": {
+      "type": "str",
+      "description": "Generation Info",
+      "component": "Textbox"
+    },
+    "Image Metadata": {
+      "type": "str",
+      "description": "Image Metadata",
+      "component": "Textbox"
+    },
+    "Generation Info_3": {
+      "type": "str",
+      "description": "Generation Info",
+      "component": "Textbox"
+    },
+    "Image Metadata_4": {
+      "type": "str",
+      "description": "Image Metadata",
+      "component": "Textbox"
+    }
+  },
+  "license": "unknown",
+  "hardware": "6.2.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 47,
+  "last_modified": "2026-01-09 13:48:02+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/on_generate",
+      "parameters": [
+        {
+          "name": "prompt",
+          "label": "Detailed Prompt (Use Danbooru tags style)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "style",
+          "label": "Style Preset",
+          "type": "Literal['None', 'Standard Quality', 'High Detail', 'Realistic', 'Anime', 'Artistic']",
+          "component": "Radio"
+        },
+        {
+          "name": "neg_prompt",
+          "label": "Negative Prompt (Optional)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "steps",
+          "label": "Steps",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "cfg",
+          "label": "CFG Scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "seed",
+          "label": "Seed (-1 for random)",
+          "type": "int",
+          "component": "Number"
+        },
+        {
+          "name": "width",
+          "label": "Width",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "height",
+          "label": "Height",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Generated Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "Generation Info",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Image Metadata",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Generation Info",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Image Metadata",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/on_generate_1",
+      "parameters": [
+        {
+          "name": "prompt",
+          "label": "Detailed Prompt (Use Danbooru tags style)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "style",
+          "label": "Style Preset",
+          "type": "Literal['None', 'Standard Quality', 'High Detail', 'Realistic', 'Anime', 'Artistic']",
+          "component": "Radio"
+        },
+        {
+          "name": "neg_prompt",
+          "label": "Negative Prompt (Optional)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "steps",
+          "label": "Steps",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "cfg",
+          "label": "CFG Scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "seed",
+          "label": "Seed (-1 for random)",
+          "type": "int",
+          "component": "Number"
+        },
+        {
+          "name": "width",
+          "label": "Width",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "height",
+          "label": "Height",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Generated Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "Generation Info",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Image Metadata",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Generation Info",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Image Metadata",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/on_generate",
+  "_api_verified": true,
+  "estimated_latency_s": 3.4,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 3.4,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:50:11.205138+00:00"
+}

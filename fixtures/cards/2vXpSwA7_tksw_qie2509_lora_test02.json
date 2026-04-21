@@ -1,0 +1,118 @@
+{
+  "space_id": "2vXpSwA7/tksw_qie2509_lora_test02",
+  "title": "Qwen Image Edit - Katame Transfer",
+  "emoji": "\ud83d\udc49\ud83e\udeb5\ud83e\uddf6",
+  "description": "Qwen Image Edit - Katame Transfer",
+  "input_schema": {},
+  "output_schema": {
+    "output_0": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "",
+      "component": "Image"
+    }
+  },
+  "license": "unknown",
+  "hardware": "5.49.1",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 9,
+  "last_modified": "2025-11-24 20:22:01+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/select_slotA_image",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/select_slotB_image",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/apply_texture",
+      "parameters": [
+        {
+          "name": "content_image",
+          "label": "",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "texture_image",
+          "label": "",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "prompt",
+          "label": "",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "seed",
+          "label": "\ud83c\udfb2 Seed",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "randomize_seed",
+          "label": "\ud83d\udd00 Randomize Seed",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "true_guidance_scale",
+          "label": "\ud83c\udfaf Guidance Scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "num_inference_steps",
+          "label": "\u26a1 Inference Steps",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "\ud83c\udf31 Used Seed",
+          "type": "float",
+          "component": "Number"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/select_slotA_image",
+  "_api_verified": true,
+  "estimated_latency_s": 4.29,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 4.29,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:49:02.986165+00:00"
+}

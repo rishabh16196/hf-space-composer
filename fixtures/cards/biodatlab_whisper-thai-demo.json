@@ -1,0 +1,47 @@
+{
+  "space_id": "biodatlab/whisper-thai-demo",
+  "title": "Thonburian Whisper",
+  "emoji": "\ud83d\ude80",
+  "description": "Thonburian Whisper",
+  "input_schema": {
+    "audio_url": {
+      "type": "string",
+      "description": "Audio file URL",
+      "required": true
+    },
+    "language": {
+      "type": "string",
+      "description": "ISO lang code (optional)",
+      "required": false
+    }
+  },
+  "output_schema": {
+    "transcript": {
+      "type": "string",
+      "description": "Transcription"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "5.9.1",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "whisper-event",
+    "thai",
+    "transcription",
+    "region:us",
+    "asr",
+    "audio"
+  ],
+  "likes": 21,
+  "last_modified": "2025-01-07 08:03:44+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_tags_enriched": true,
+  "estimated_latency_s": 5.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "error",
+  "_api_error": "The read operation timed out"
+}

@@ -1,0 +1,205 @@
+{
+  "space_id": "multimodalart/civitai-to-hf",
+  "title": "CivitAI To HF",
+  "emoji": "\ud83e\udd17",
+  "description": "CivitAI To HF",
+  "input_schema": {
+    "url": {
+      "type": "str",
+      "description": "CivitAI model URL",
+      "required": true,
+      "component": "Textbox"
+    }
+  },
+  "output_schema": {
+    "value_20": {
+      "type": "str",
+      "description": "value_20",
+      "component": "Html"
+    },
+    "HunyuanVideo Type (Select if model is Hunyuan Video)": {
+      "type": "Literal['Image-to-Video', 'Text-to-Video']",
+      "description": "HunyuanVideo Type (Select if model is Hunyuan Video)",
+      "component": "Radio"
+    }
+  },
+  "license": "mit",
+  "hardware": "4.44.1",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 80,
+  "last_modified": "2025-08-25 18:57:40+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/check_civit_link",
+      "parameters": [
+        {
+          "name": "url",
+          "label": "CivitAI model URL",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_20",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "HunyuanVideo Type (Select if model is Hunyuan Video)",
+          "type": "Literal['Image-to-Video', 'Text-to-Video']",
+          "component": "Radio"
+        }
+      ]
+    },
+    {
+      "name": "/check_civit_link_1",
+      "parameters": [
+        {
+          "name": "url",
+          "label": "CivitAI model URL",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_20",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "HunyuanVideo Type (Select if model is Hunyuan Video)",
+          "type": "Literal['Image-to-Video', 'Text-to-Video']",
+          "component": "Radio"
+        }
+      ]
+    },
+    {
+      "name": "/list_civit_models",
+      "parameters": [
+        {
+          "name": "username_civitai",
+          "label": "Your CivitAI Username (Optional)",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "CivitAI Model URLs (One per line)",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/show_output",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Upload Progress & Results",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/upload_civit_to_hf",
+      "parameters": [
+        {
+          "name": "url",
+          "label": "CivitAI model URL",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "link_civit",
+          "label": "Link back to original CivitAI page in README?",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "hunyuan_type",
+          "label": "HunyuanVideo Type (Select if model is Hunyuan Video)",
+          "type": "Literal['Image-to-Video', 'Text-to-Video']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Upload Progress & Results",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/show_output_1",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Upload Progress & Results",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/bulk_upload",
+      "parameters": [
+        {
+          "name": "urls_text",
+          "label": "CivitAI Model URLs (One per line)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "link_civit",
+          "label": "Link back to original CivitAI page in README?",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "hunyuan_type",
+          "label": "HunyuanVideo Type (Select if model is Hunyuan Video)",
+          "type": "Literal['Image-to-Video', 'Text-to-Video']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Upload Progress & Results",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/swap_fill",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/_check_login_status",
+      "parameters": [],
+      "returns": []
+    }
+  ],
+  "endpoint": "/check_civit_link",
+  "_api_verified": true,
+  "estimated_latency_s": 3.71,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 3.71,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:51:19.058010+00:00"
+}

@@ -1,0 +1,258 @@
+{
+  "space_id": "asigalov61/Advanced-MIDI-Renderer",
+  "title": "Advanced MIDI Renderer",
+  "emoji": "\ud83c\udfb9",
+  "description": "Transform and render any MIDI",
+  "input_schema": {
+    "input_midi": {
+      "type": "filepath",
+      "description": "Input MIDI",
+      "required": true,
+      "component": "File"
+    },
+    "render_type": {
+      "type": "Literal['Render as-is', 'Custom render', 'Extract melody', 'Flip', 'Reverse', 'Repair Durations', 'R",
+      "description": "Render type",
+      "required": true,
+      "component": "Radio"
+    },
+    "soundfont_bank": {
+      "type": "Literal['Super GM', 'Orpheus GM', 'Live HQ GM', 'Nice Strings + Orchestra', 'Real Choir', 'Super Gam",
+      "description": "SoundFont bank",
+      "required": true,
+      "component": "Radio"
+    },
+    "render_sample_rate": {
+      "type": "Literal['16000', '32000', '44100']",
+      "description": "MIDI audio render sample rate",
+      "required": true,
+      "component": "Radio"
+    },
+    "render_with_sustains": {
+      "type": "bool",
+      "description": "Render with sustains (if present)",
+      "required": true,
+      "component": "Checkbox"
+    },
+    "merge_misaligned_notes": {
+      "type": "float",
+      "description": "Merge misaligned notes",
+      "required": true,
+      "component": "Slider"
+    },
+    "custom_render_patch": {
+      "type": "float",
+      "description": "Custom render MIDI patch",
+      "required": true,
+      "component": "Slider"
+    },
+    "render_align": {
+      "type": "Literal['Do not align', 'Start Times', 'Start Times and Durations', 'Start Times and Split Durations",
+      "description": "Align output to bars",
+      "required": true,
+      "component": "Radio"
+    },
+    "render_transpose_value": {
+      "type": "float",
+      "description": "Transpose value",
+      "required": true,
+      "component": "Slider"
+    },
+    "render_transpose_to_C4": {
+      "type": "bool",
+      "description": "Transpose to C4",
+      "required": true,
+      "component": "Checkbox"
+    },
+    "render_output_as_solo_piano": {
+      "type": "bool",
+      "description": "Output as Solo Piano",
+      "required": true,
+      "component": "Checkbox"
+    },
+    "render_remove_drums": {
+      "type": "bool",
+      "description": "Remove drums",
+      "required": true,
+      "component": "Checkbox"
+    }
+  },
+  "output_schema": {
+    "Output MIDI md5 hash": {
+      "type": "str",
+      "description": "Output MIDI md5 hash",
+      "component": "Textbox"
+    },
+    "Output MIDI title": {
+      "type": "str",
+      "description": "Output MIDI title",
+      "component": "Textbox"
+    },
+    "Output MIDI summary": {
+      "type": "str",
+      "description": "Output MIDI summary",
+      "component": "Textbox"
+    },
+    "Output MIDI file": {
+      "type": "filepath",
+      "description": "Output MIDI file",
+      "component": "File"
+    },
+    "Output MIDI audio": {
+      "type": "filepath",
+      "description": "Output MIDI audio",
+      "component": "Audio"
+    },
+    "Output MIDI score plot": {
+      "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+      "description": "Output MIDI score plot",
+      "component": "Plot"
+    },
+    "Output MIDI description": {
+      "type": "str",
+      "description": "Output MIDI description",
+      "component": "Textbox"
+    }
+  },
+  "license": "cc-by-nc-4.0",
+  "hardware": "6.12.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "MIDI",
+    "renderer",
+    "MIDI rendering",
+    "MIDI renderer",
+    "region:us"
+  ],
+  "likes": 43,
+  "last_modified": "2026-04-19 08:21:29+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/Render_MIDI",
+      "parameters": [
+        {
+          "name": "input_midi",
+          "label": "Input MIDI",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "name": "render_type",
+          "label": "Render type",
+          "type": "Literal['Render as-is', 'Custom render', 'Extract melody', 'Flip', 'Reverse', 'Repair Durations', 'Repair Chords', 'Remove Duplicate Pitches', 'Longest Repeating Phrase', 'Multi-Instrumental Summary',",
+          "component": "Radio"
+        },
+        {
+          "name": "soundfont_bank",
+          "label": "SoundFont bank",
+          "type": "Literal['Super GM', 'Orpheus GM', 'Live HQ GM', 'Nice Strings + Orchestra', 'Real Choir', 'Super Game Boy', 'Proto Square']",
+          "component": "Radio"
+        },
+        {
+          "name": "render_sample_rate",
+          "label": "MIDI audio render sample rate",
+          "type": "Literal['16000', '32000', '44100']",
+          "component": "Radio"
+        },
+        {
+          "name": "render_with_sustains",
+          "label": "Render with sustains (if present)",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "merge_misaligned_notes",
+          "label": "Merge misaligned notes",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "custom_render_patch",
+          "label": "Custom render MIDI patch",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "render_align",
+          "label": "Align output to bars",
+          "type": "Literal['Do not align', 'Start Times', 'Start Times and Durations', 'Start Times and Split Durations']",
+          "component": "Radio"
+        },
+        {
+          "name": "render_transpose_value",
+          "label": "Transpose value",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "render_transpose_to_C4",
+          "label": "Transpose to C4",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "render_output_as_solo_piano",
+          "label": "Output as Solo Piano",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "render_remove_drums",
+          "label": "Remove drums",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output MIDI md5 hash",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Output MIDI title",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Output MIDI summary",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Output MIDI file",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "label": "Output MIDI audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Output MIDI score plot",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "Output MIDI description",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/Render_MIDI",
+  "_api_verified": true,
+  "estimated_latency_s": 3.45,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 3.45,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:50:17.513422+00:00"
+}

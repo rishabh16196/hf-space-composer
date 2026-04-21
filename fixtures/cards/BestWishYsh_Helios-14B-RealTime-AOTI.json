@@ -1,0 +1,150 @@
+{
+  "space_id": "BestWishYsh/Helios-14B-RealTime-AOTI",
+  "title": "Helios 14B RealTime AOTI",
+  "emoji": "\ud83e\udd80",
+  "description": "Generate videos from text, images, or video",
+  "input_schema": {
+    "mode": {
+      "type": "Literal['Text-to-Video', 'Image-to-Video', 'Video-to-Video']",
+      "description": "Generation Mode",
+      "required": true,
+      "component": "Radio"
+    }
+  },
+  "output_schema": {
+    "Image (for I2V)": {
+      "type": "filepath",
+      "description": "Image (for I2V)",
+      "component": "Image"
+    },
+    "Video (for V2V)": {
+      "type": "filepath",
+      "description": "Video (for V2V)",
+      "component": "Video"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "6.11.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 75,
+  "last_modified": "2026-04-10 04:25:25+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/update_conditional_visibility",
+      "parameters": [
+        {
+          "name": "mode",
+          "label": "Generation Mode",
+          "type": "Literal['Text-to-Video', 'Image-to-Video', 'Video-to-Video']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Image (for I2V)",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "Video (for V2V)",
+          "type": "filepath",
+          "component": "Video"
+        }
+      ]
+    },
+    {
+      "name": "/generate_video",
+      "parameters": [
+        {
+          "name": "mode",
+          "label": "Generation Mode",
+          "type": "Literal['Text-to-Video', 'Image-to-Video', 'Video-to-Video']",
+          "component": "Radio"
+        },
+        {
+          "name": "prompt",
+          "label": "Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "image_input",
+          "label": "Image (for I2V)",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "name": "video_input",
+          "label": "Video (for V2V)",
+          "type": "filepath",
+          "component": "Video"
+        },
+        {
+          "name": "height",
+          "label": "Height",
+          "type": "int",
+          "component": "Number"
+        },
+        {
+          "name": "width",
+          "label": "Width",
+          "type": "int",
+          "component": "Number"
+        },
+        {
+          "name": "num_frames",
+          "label": "Num Frames",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "num_inference_steps",
+          "label": "Steps per stage",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "seed",
+          "label": "Seed",
+          "type": "int",
+          "component": "Number"
+        },
+        {
+          "name": "is_amplify_first_chunk",
+          "label": "Amplify First Chunk",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Generated Video",
+          "type": "filepath",
+          "component": "Video"
+        },
+        {
+          "label": "Info",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/update_conditional_visibility",
+  "_api_verified": true,
+  "estimated_latency_s": 3.06,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "_tags_enriched": true,
+  "measured_latency_s": 3.06,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:49:09.310056+00:00"
+}

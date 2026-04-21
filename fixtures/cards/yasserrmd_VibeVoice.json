@@ -1,0 +1,173 @@
+{
+  "space_id": "yasserrmd/VibeVoice",
+  "title": "VibeVoice",
+  "emoji": "\ud83c\udfc3",
+  "description": "VibeVoice",
+  "input_schema": {
+    "num_speakers": {
+      "type": "float",
+      "description": "Number of Speakers",
+      "required": true,
+      "component": "Slider"
+    }
+  },
+  "output_schema": {
+    "Speaker 1": {
+      "type": "Literal['ar-Ahmed-man', 'ar-Hamad-man', 'ar-Hamdan-man', 'ar-Yasser-man', 'en-Alice_woman', 'en-Alic",
+      "description": "Speaker 1",
+      "component": "Dropdown"
+    },
+    "Speaker 2": {
+      "type": "Literal['ar-Ahmed-man', 'ar-Hamad-man', 'ar-Hamdan-man', 'ar-Yasser-man', 'en-Alice_woman', 'en-Alic",
+      "description": "Speaker 2",
+      "component": "Dropdown"
+    },
+    "Speaker 3": {
+      "type": "Literal['ar-Ahmed-man', 'ar-Hamad-man', 'ar-Hamdan-man', 'ar-Yasser-man', 'en-Alice_woman', 'en-Alic",
+      "description": "Speaker 3",
+      "component": "Dropdown"
+    },
+    "Speaker 4": {
+      "type": "Literal['ar-Ahmed-man', 'ar-Hamad-man', 'ar-Hamdan-man', 'ar-Yasser-man', 'en-Alice_woman', 'en-Alic",
+      "description": "Speaker 4",
+      "component": "Dropdown"
+    }
+  },
+  "license": "unknown",
+  "hardware": "5.43.1",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 174,
+  "last_modified": "2025-09-13 05:09:01+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/update_speaker_visibility",
+      "parameters": [
+        {
+          "name": "num_speakers",
+          "label": "Number of Speakers",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Speaker 1",
+          "type": "Literal['ar-Ahmed-man', 'ar-Hamad-man', 'ar-Hamdan-man', 'ar-Yasser-man', 'en-Alice_woman', 'en-Alice_woman_bgm', 'en-Carter_man', 'en-Frank_man', 'en-Maya_woman', 'en-Yasser_man', 'hi-Asad-man', 'in-",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Speaker 2",
+          "type": "Literal['ar-Ahmed-man', 'ar-Hamad-man', 'ar-Hamdan-man', 'ar-Yasser-man', 'en-Alice_woman', 'en-Alice_woman_bgm', 'en-Carter_man', 'en-Frank_man', 'en-Maya_woman', 'en-Yasser_man', 'hi-Asad-man', 'in-",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Speaker 3",
+          "type": "Literal['ar-Ahmed-man', 'ar-Hamad-man', 'ar-Hamdan-man', 'ar-Yasser-man', 'en-Alice_woman', 'en-Alice_woman_bgm', 'en-Carter_man', 'en-Frank_man', 'en-Maya_woman', 'en-Yasser_man', 'hi-Asad-man', 'in-",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Speaker 4",
+          "type": "Literal['ar-Ahmed-man', 'ar-Hamad-man', 'ar-Hamdan-man', 'ar-Yasser-man', 'en-Alice_woman', 'en-Alice_woman_bgm', 'en-Carter_man', 'en-Frank_man', 'en-Maya_woman', 'en-Yasser_man', 'hi-Asad-man', 'in-",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/generate_podcast_wrapper",
+      "parameters": [
+        {
+          "name": "model_choice",
+          "label": "Model",
+          "type": "Literal['VibeVoice-Large', 'VibeVoice-7B', 'VibeVoice-1.5B']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "num_speakers",
+          "label": "Number of Speakers",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "script",
+          "label": "Conversation Script",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_3",
+          "label": "Speaker 1",
+          "type": "Literal['ar-Ahmed-man', 'ar-Hamad-man', 'ar-Hamdan-man', 'ar-Yasser-man', 'en-Alice_woman', 'en-Alice_woman_bgm', 'en-Carter_man', 'en-Frank_man', 'en-Maya_woman', 'en-Yasser_man', 'hi-Asad-man', 'in-",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_4",
+          "label": "Speaker 2",
+          "type": "Literal['ar-Ahmed-man', 'ar-Hamad-man', 'ar-Hamdan-man', 'ar-Yasser-man', 'en-Alice_woman', 'en-Alice_woman_bgm', 'en-Carter_man', 'en-Frank_man', 'en-Maya_woman', 'en-Yasser_man', 'hi-Asad-man', 'in-",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_5",
+          "label": "Speaker 3",
+          "type": "Literal['ar-Ahmed-man', 'ar-Hamad-man', 'ar-Hamdan-man', 'ar-Yasser-man', 'en-Alice_woman', 'en-Alice_woman_bgm', 'en-Carter_man', 'en-Frank_man', 'en-Maya_woman', 'en-Yasser_man', 'hi-Asad-man', 'in-",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_6",
+          "label": "Speaker 4",
+          "type": "Literal['ar-Ahmed-man', 'ar-Hamad-man', 'ar-Hamdan-man', 'ar-Yasser-man', 'en-Alice_woman', 'en-Alice_woman_bgm', 'en-Carter_man', 'en-Frank_man', 'en-Maya_woman', 'en-Yasser_man', 'hi-Asad-man', 'in-",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_7",
+          "label": "CFG Scale (Guidance Strength)",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Complete Podcast (Download)",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Generation Log",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/load_random_example",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Number of Speakers",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Conversation Script",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/update_speaker_visibility",
+  "_api_verified": true,
+  "estimated_latency_s": 5.56,
+  "speed_tier": "medium",
+  "_latency_source": "measured",
+  "measured_latency_s": 5.56,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:52:06.582610+00:00"
+}

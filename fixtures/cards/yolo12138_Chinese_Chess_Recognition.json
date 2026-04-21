@@ -1,0 +1,100 @@
+{
+  "space_id": "yolo12138/Chinese_Chess_Recognition",
+  "title": "Chinese Chess Recognition",
+  "emoji": "\ud83c\udf16",
+  "description": "\u4e2d\u56fd\u8c61\u68cb\u8bc6\u522b\uff0c\u68cb\u8c31\u8bc6\u522b",
+  "input_schema": {
+    "image": {
+      "type": "Dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "\u4e0a\u4f20\u68cb\u76d8\u56fe\u7247",
+      "required": true,
+      "component": "Image"
+    }
+  },
+  "output_schema": {
+    "step1: \u539f\u56fe\u5e26\u5173\u952e\u70b9": {
+      "type": "Dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "step1: \u539f\u56fe\u5e26\u5173\u952e\u70b9",
+      "component": "Image"
+    },
+    "step2: \u62c9\u4f38\u68cb\u76d8": {
+      "type": "Dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "step2: \u62c9\u4f38\u68cb\u76d8",
+      "component": "Image"
+    },
+    "\u68cb\u5b50\u8bc6\u522b": {
+      "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+      "description": "\u68cb\u5b50\u8bc6\u522b",
+      "component": "Dataframe"
+    },
+    "value_15": {
+      "type": "str",
+      "description": "value_15",
+      "component": "Html"
+    },
+    "\u7528\u65f6": {
+      "type": "str",
+      "description": "\u7528\u65f6",
+      "component": "Textbox"
+    }
+  },
+  "license": "mit",
+  "hardware": "5.8.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 13,
+  "last_modified": "2025-03-20 04:37:47+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_tags_enriched": true,
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/detect_chessboard",
+      "parameters": [
+        {
+          "name": "image",
+          "label": "\u4e0a\u4f20\u68cb\u76d8\u56fe\u7247",
+          "type": "Dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ],
+      "returns": [
+        {
+          "label": "step1: \u539f\u56fe\u5e26\u5173\u952e\u70b9",
+          "type": "Dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "step2: \u62c9\u4f38\u68cb\u76d8",
+          "type": "Dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "\u68cb\u5b50\u8bc6\u522b",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_15",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "\u7528\u65f6",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/detect_chessboard",
+  "_api_verified": true
+}

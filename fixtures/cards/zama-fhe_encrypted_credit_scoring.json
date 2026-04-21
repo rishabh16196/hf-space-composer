@@ -1,0 +1,275 @@
+{
+  "space_id": "zama-fhe/encrypted_credit_scoring",
+  "title": "Encrypted Credit Card Approval Prediction Using Fully Homomorphic Encryption",
+  "emoji": "\ud83d\udcb3 \u2705",
+  "description": "Encrypted Credit Card Approval Prediction Using Fully Homomorphic Encryption",
+  "input_schema": {},
+  "output_schema": {
+    "output_0": {
+      "type": "str",
+      "description": "",
+      "component": "Textbox"
+    },
+    "Evaluation key representation:": {
+      "type": "str",
+      "description": "Evaluation key representation:",
+      "component": "Textbox"
+    }
+  },
+  "license": "unknown",
+  "hardware": "4.44.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "FHE",
+    "PPML",
+    "privacy",
+    "privacy preserving machine learning",
+    "credit card approval",
+    "credit score",
+    "homomorphic encryption",
+    "security",
+    "region:us"
+  ],
+  "likes": 57,
+  "last_modified": "2024-09-17 17:00:45+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/keygen_send",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Evaluation key representation:",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/pre_process_encrypt_send_applicant",
+      "parameters": [
+        {
+          "name": "client_id",
+          "label": "",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_1",
+          "label": "Which of the following do you actively hold or own?",
+          "type": "List[Literal['Car', 'Property', 'Mobile phone']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "param_2",
+          "label": "Number of children",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_3",
+          "label": "Household size",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_4",
+          "label": "Income",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_5",
+          "label": "Age",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_6",
+          "label": "Income type",
+          "type": "Literal['Salaried', 'Pensioner', 'Self-employed', 'Student']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_7",
+          "label": "Education",
+          "type": "Literal['Higher education', 'Secondary', 'Incomplete higher', 'Lower secondary']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_8",
+          "label": "Family",
+          "type": "Literal['Married', 'Widow', 'Single', 'Divorced']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_9",
+          "label": "Occupation",
+          "type": "Literal['Engineer', 'Retired', 'Business Owner', 'Teacher', 'Entrepreneur', 'Office Worker', 'Manager', 'Salesperson', 'Designer', 'Consultant', 'Doctor', 'Student', 'Cooking Staff', 'Lawyer', 'Carpen",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_10",
+          "label": "Housing",
+          "type": "Literal['House / apartment', 'Rented apartment', 'With parents']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Encrypted input representation:",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/pre_process_encrypt_send_bank",
+      "parameters": [
+        {
+          "name": "client_id",
+          "label": "",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_1",
+          "label": "Account age (months)",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Encrypted input representation:",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/pre_process_encrypt_send_credit_bureau",
+      "parameters": [
+        {
+          "name": "client_id",
+          "label": "",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_1",
+          "label": "Years of employment",
+          "type": "Literal['0-2', '2-5', '5-8', '8-11', '11-18', '18+']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_2",
+          "label": "Is the person employed ?",
+          "type": "Literal['Yes', 'No']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Encrypted input representation:",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/run_fhe",
+      "parameters": [
+        {
+          "name": "client_id",
+          "label": "",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Total FHE execution time (in seconds):",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/get_output_and_decrypt",
+      "parameters": [
+        {
+          "name": "client_id",
+          "label": "",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Prediction",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Encrypted output representation: ",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/explain_encrypt_run_decrypt",
+      "parameters": [
+        {
+          "name": "client_id",
+          "label": "",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "prediction_output",
+          "label": "Prediction",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_2",
+          "label": "Years of employment",
+          "type": "Literal['0-2', '2-5', '5-8', '8-11', '11-18', '18+']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_3",
+          "label": "Is the person employed ?",
+          "type": "Literal['Yes', 'No']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Additional years of employed required.",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/keygen_send",
+  "_api_verified": true,
+  "estimated_latency_s": 3.65,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 3.65,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:52:08.466807+00:00"
+}

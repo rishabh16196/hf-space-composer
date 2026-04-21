@@ -1,0 +1,108 @@
+{
+  "space_id": "baidu/ERNIE-Image-Turbo",
+  "title": "ERNIE Image",
+  "emoji": "\ud83d\udc41",
+  "description": "ERNIE-Image Demo",
+  "input_schema": {
+    "prompt": {
+      "type": "str",
+      "description": "Prompt",
+      "required": true,
+      "component": "Textbox"
+    },
+    "size": {
+      "type": "Literal['1024x1024', '848x1264', '1264x848', '1376x768', '1200x896', '896x1200', '768x1376']",
+      "description": "Image Size",
+      "required": true,
+      "component": "Dropdown"
+    },
+    "seed": {
+      "type": "int",
+      "description": "Random Seed\uff08-1: Random\uff09",
+      "required": true,
+      "component": "Number"
+    },
+    "use_pe": {
+      "type": "bool",
+      "description": "use_pe",
+      "required": true,
+      "component": "Checkbox"
+    }
+  },
+  "output_schema": {
+    "Output": {
+      "type": "filepath",
+      "description": "Output",
+      "component": "Image"
+    },
+    "revised_prompt": {
+      "type": "str",
+      "description": "revised_prompt",
+      "component": "Textbox"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "6.11.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 50,
+  "last_modified": "2026-04-15 01:27:33+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/generate_image",
+      "parameters": [
+        {
+          "name": "prompt",
+          "label": "Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "size",
+          "label": "Image Size",
+          "type": "Literal['1024x1024', '848x1264', '1264x848', '1376x768', '1200x896', '896x1200', '768x1376']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "seed",
+          "label": "Random Seed\uff08-1: Random\uff09",
+          "type": "int",
+          "component": "Number"
+        },
+        {
+          "name": "use_pe",
+          "label": "use_pe",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "revised_prompt",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/generate_image",
+  "_api_verified": true,
+  "estimated_latency_s": 3.11,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 3.11,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:50:21.284813+00:00"
+}

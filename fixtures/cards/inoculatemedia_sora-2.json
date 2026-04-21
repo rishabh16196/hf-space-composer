@@ -1,0 +1,107 @@
+{
+  "space_id": "inoculatemedia/sora-2",
+  "title": "Sora 2",
+  "emoji": "\ud83d\udcc9",
+  "description": "Sora 2",
+  "input_schema": {
+    "prompt": {
+      "type": "str",
+      "description": "Enter your prompt",
+      "required": true,
+      "component": "Textbox"
+    }
+  },
+  "output_schema": {
+    "Generated Video": {
+      "type": "dict(video: filepath, subtitles: filepath | None)",
+      "description": "Generated Video",
+      "component": "Video"
+    },
+    "Status": {
+      "type": "str",
+      "description": "Status",
+      "component": "Textbox"
+    }
+  },
+  "license": "unknown",
+  "hardware": "5.49.1",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "anycoder",
+    "region:us"
+  ],
+  "likes": 36,
+  "last_modified": "2025-10-11 16:31:34+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/generate_with_auth",
+      "parameters": [
+        {
+          "name": "prompt",
+          "label": "Enter your prompt",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Generated Video",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        },
+        {
+          "label": "Status",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/generate_with_auth_image",
+      "parameters": [
+        {
+          "name": "prompt",
+          "label": "Describe how the scene should evolve",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "image_path",
+          "label": "Upload an image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Generated Video (from Image)",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        },
+        {
+          "label": "Status",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/_check_login_status",
+      "parameters": [],
+      "returns": []
+    }
+  ],
+  "endpoint": "/generate_with_auth",
+  "_api_verified": true,
+  "estimated_latency_s": 3.65,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 3.65,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:50:59.041066+00:00"
+}

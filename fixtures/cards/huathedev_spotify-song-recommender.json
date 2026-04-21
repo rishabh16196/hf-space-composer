@@ -1,0 +1,39 @@
+{
+  "space_id": "huathedev/spotify-song-recommender",
+  "title": "FindYourSong",
+  "emoji": "\ud83c\udfb6",
+  "description": "FindYourSong",
+  "input_schema": {
+    "input": {
+      "type": "string",
+      "description": "Input",
+      "required": true
+    }
+  },
+  "output_schema": {
+    "output": {
+      "type": "string"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "1.17.0",
+  "sdk": "streamlit",
+  "tags": [
+    "streamlit",
+    "region:us",
+    "audio",
+    "music",
+    "song-generation"
+  ],
+  "likes": 5,
+  "last_modified": "2025-06-30 11:16:34+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_tags_enriched": true,
+  "estimated_latency_s": 60.0,
+  "speed_tier": "very_slow",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "error",
+  "_api_error": "(Request ID: Root=1-69e77b99-075469fc6022dc957d04bd7c;637c21de-1b2b-41f7-8a4a-3185f39247fa)\n\n429 Too Many Requests: you have reached your 'api' rate limit.\nRetry after 69 seconds (0/2500 requests rema"
+}

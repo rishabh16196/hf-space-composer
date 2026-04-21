@@ -1,0 +1,191 @@
+{
+  "space_id": "signsur4739379373/qwen-image-edit-rapid-aio-nsfw-v23",
+  "title": "Qwen Image Edit Rapid AIO (NSFW)",
+  "emoji": "\ud83c\udf0d",
+  "description": "Qwen Image Edit Rapid AIO (NSFW)",
+  "input_schema": {
+    "images": {
+      "type": "list[dict(image: dict(path: str | None (Path to a local file), url: str | None (Publicly available u",
+      "description": "Input Images",
+      "required": true,
+      "component": "Gallery"
+    },
+    "prompt": {
+      "type": "str",
+      "description": "Prompt",
+      "required": true,
+      "component": "Textbox"
+    },
+    "seed": {
+      "type": "float",
+      "description": "Seed",
+      "required": true,
+      "component": "Slider"
+    },
+    "randomize_seed": {
+      "type": "bool",
+      "description": "Randomize seed",
+      "required": true,
+      "component": "Checkbox"
+    },
+    "true_guidance_scale": {
+      "type": "float",
+      "description": "True guidance scale",
+      "required": true,
+      "component": "Slider"
+    },
+    "num_inference_steps": {
+      "type": "float",
+      "description": "Number of inference steps",
+      "required": true,
+      "component": "Slider"
+    },
+    "height": {
+      "type": "float",
+      "description": "Height",
+      "required": true,
+      "component": "Slider"
+    },
+    "width": {
+      "type": "float",
+      "description": "Width",
+      "required": true,
+      "component": "Slider"
+    },
+    "rewrite_prompt": {
+      "type": "bool",
+      "description": "Rewrite prompt",
+      "required": true,
+      "component": "Checkbox"
+    }
+  },
+  "output_schema": {
+    "Result": {
+      "type": "list[dict(image: dict(path: str | None (Path to a local file), url: str | None (Publicly available u",
+      "description": "Result",
+      "component": "Gallery"
+    },
+    "Seed": {
+      "type": "float",
+      "description": "Seed",
+      "component": "Slider"
+    }
+  },
+  "license": "unknown",
+  "hardware": "6.1.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "not-for-all-audiences",
+    "mcp-server",
+    "region:us",
+    "image-generation",
+    "vision"
+  ],
+  "likes": 339,
+  "last_modified": "2026-04-13 00:04:20+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/infer",
+      "parameters": [
+        {
+          "name": "images",
+          "label": "Input Images",
+          "type": "list[dict(image: dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Origi",
+          "component": "Gallery"
+        },
+        {
+          "name": "prompt",
+          "label": "Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "seed",
+          "label": "Seed",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "randomize_seed",
+          "label": "Randomize seed",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "true_guidance_scale",
+          "label": "True guidance scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "num_inference_steps",
+          "label": "Number of inference steps",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "height",
+          "label": "Height",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "width",
+          "label": "Width",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "rewrite_prompt",
+          "label": "Rewrite prompt",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Result",
+          "type": "list[dict(image: dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Origi",
+          "component": "Gallery"
+        },
+        {
+          "label": "Seed",
+          "type": "float",
+          "component": "Slider"
+        }
+      ]
+    },
+    {
+      "name": "/use_output_as_input",
+      "parameters": [
+        {
+          "name": "output_images",
+          "label": "Result",
+          "type": "list[dict(image: dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Origi",
+          "component": "Gallery"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Input Images",
+          "type": "list[dict(image: dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Origi",
+          "component": "Gallery"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/infer",
+  "_api_verified": true,
+  "estimated_latency_s": 4.88,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "_tags_enriched": true,
+  "measured_latency_s": 4.88,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:51:52.262515+00:00"
+}

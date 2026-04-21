@@ -1,0 +1,36 @@
+{
+  "space_id": "nvidia/Kimodo",
+  "title": "Kimodo",
+  "emoji": "\ud83c\udfc3",
+  "description": "Generate high-quality motions from text prompts",
+  "input_schema": {
+    "input": {
+      "type": "string",
+      "description": "Input",
+      "required": true
+    }
+  },
+  "output_schema": {
+    "output": {
+      "type": "string"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "",
+  "sdk": "docker",
+  "tags": [
+    "docker",
+    "region:us"
+  ],
+  "likes": 200,
+  "last_modified": "2026-03-16 21:02:18+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "error",
+  "_api_error": "Could not get Gradio config from: https://nvidia-kimodo.hf.space",
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_tags_enriched": true
+}

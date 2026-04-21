@@ -1,0 +1,63 @@
+{
+  "space_id": "deep-div/MCP-Web-Search",
+  "title": "MCP Web Search",
+  "emoji": "\ud83d\udc20",
+  "description": "A tool that lets Gemini perform real-time web searches.",
+  "input_schema": {
+    "prompt": {
+      "type": "str",
+      "description": "Query Field",
+      "required": true,
+      "component": "Textbox"
+    }
+  },
+  "output_schema": {
+    "value_7": {
+      "type": "str",
+      "description": "value_7",
+      "component": "Markdown"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "5.42.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "mcp-server",
+    "region:us"
+  ],
+  "likes": 14,
+  "last_modified": "2025-08-17 08:18:46+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/webSearch",
+      "parameters": [
+        {
+          "name": "prompt",
+          "label": "Query Field",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_7",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/webSearch",
+  "_api_verified": true,
+  "estimated_latency_s": 3.26,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 3.26,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:50:27.837720+00:00"
+}

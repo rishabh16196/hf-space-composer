@@ -1,0 +1,190 @@
+{
+  "space_id": "stevengrove/JoyAI-Image-Edit",
+  "title": "JoyAI-Image-Edit-Space",
+  "emoji": "\ud83d\ude80",
+  "description": "JoyAI-Image-Edit-Space",
+  "input_schema": {
+    "image": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "Input Image",
+      "required": true,
+      "component": "Image"
+    },
+    "prompt": {
+      "type": "str",
+      "description": "Prompt",
+      "required": true,
+      "component": "Textbox"
+    },
+    "seed": {
+      "type": "float",
+      "description": "Seed",
+      "required": true,
+      "component": "Slider"
+    },
+    "randomize_seed": {
+      "type": "bool",
+      "description": "Randomize seed",
+      "required": true,
+      "component": "Checkbox"
+    },
+    "guidance_scale": {
+      "type": "float",
+      "description": "Guidance scale",
+      "required": true,
+      "component": "Slider"
+    },
+    "num_inference_steps": {
+      "type": "float",
+      "description": "Number of inference steps",
+      "required": true,
+      "component": "Slider"
+    },
+    "height": {
+      "type": "float",
+      "description": "Height (for T2I)",
+      "required": true,
+      "component": "Slider"
+    },
+    "width": {
+      "type": "float",
+      "description": "Width (for T2I)",
+      "required": true,
+      "component": "Slider"
+    },
+    "rewrite_prompt": {
+      "type": "bool",
+      "description": "Rewrite prompt",
+      "required": true,
+      "component": "Checkbox"
+    },
+    "dash_api_key": {
+      "type": "str",
+      "description": "DASH_API_KEY",
+      "required": true,
+      "component": "Textbox"
+    }
+  },
+  "output_schema": {
+    "Result": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "Result",
+      "component": "Image"
+    },
+    "Seed": {
+      "type": "float",
+      "description": "Seed",
+      "component": "Slider"
+    },
+    "Final prompt used": {
+      "type": "str",
+      "description": "Final prompt used",
+      "component": "Textbox"
+    }
+  },
+  "license": "unknown",
+  "hardware": "6.5.1",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us",
+    "image-generation",
+    "vision"
+  ],
+  "likes": 2,
+  "last_modified": "2026-04-10 11:28:43+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_tags_enriched": true,
+  "estimated_latency_s": 30.0,
+  "speed_tier": "slow",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/run_inference",
+      "parameters": [
+        {
+          "name": "image",
+          "label": "Input Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "prompt",
+          "label": "Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "seed",
+          "label": "Seed",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "randomize_seed",
+          "label": "Randomize seed",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "guidance_scale",
+          "label": "Guidance scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "num_inference_steps",
+          "label": "Number of inference steps",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "height",
+          "label": "Height (for T2I)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "width",
+          "label": "Width (for T2I)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "rewrite_prompt",
+          "label": "Rewrite prompt",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "dash_api_key",
+          "label": "DASH_API_KEY",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Result",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "Seed",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Final prompt used",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/run_inference",
+  "_api_verified": true
+}

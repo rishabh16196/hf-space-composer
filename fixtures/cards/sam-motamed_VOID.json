@@ -1,0 +1,122 @@
+{
+  "space_id": "sam-motamed/VOID",
+  "title": "VOID",
+  "emoji": "\ud83d\udc40",
+  "description": "VOID: Video Object and Interaction Deletion",
+  "input_schema": {
+    "input_video_path": {
+      "type": "filepath",
+      "description": "Input video",
+      "required": true,
+      "component": "Video"
+    },
+    "mask_video_path": {
+      "type": "filepath",
+      "description": "Quadmask video",
+      "required": true,
+      "component": "Video"
+    },
+    "prompt": {
+      "type": "str",
+      "description": "Prompt \u2014 describe the scene after removal",
+      "required": true,
+      "component": "Textbox"
+    },
+    "num_steps": {
+      "type": "float",
+      "description": "Inference steps",
+      "required": true,
+      "component": "Slider"
+    },
+    "guidance_scale": {
+      "type": "float",
+      "description": "Guidance scale",
+      "required": true,
+      "component": "Slider"
+    },
+    "seed": {
+      "type": "int",
+      "description": "Seed",
+      "required": true,
+      "component": "Number"
+    }
+  },
+  "output_schema": {
+    "Inpainted output": {
+      "type": "filepath",
+      "description": "Inpainted output",
+      "component": "Video"
+    }
+  },
+  "license": "mit",
+  "hardware": "6.9.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 75,
+  "last_modified": "2026-04-07 08:16:17+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/run_inpaint",
+      "parameters": [
+        {
+          "name": "input_video_path",
+          "label": "Input video",
+          "type": "filepath",
+          "component": "Video"
+        },
+        {
+          "name": "mask_video_path",
+          "label": "Quadmask video",
+          "type": "filepath",
+          "component": "Video"
+        },
+        {
+          "name": "prompt",
+          "label": "Prompt \u2014 describe the scene after removal",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "num_steps",
+          "label": "Inference steps",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "guidance_scale",
+          "label": "Guidance scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "seed",
+          "label": "Seed",
+          "type": "int",
+          "component": "Number"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Inpainted output",
+          "type": "filepath",
+          "component": "Video"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/run_inpaint",
+  "_api_verified": true,
+  "estimated_latency_s": 4.27,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 4.27,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:51:47.385125+00:00"
+}

@@ -1,0 +1,38 @@
+{
+  "space_id": "amu-cai/pl-asr-leaderboard",
+  "title": "AMU Polish ASR Leaderboard",
+  "emoji": "\ud83d\udcca",
+  "description": "AMU Polish ASR Leaderboard",
+  "input_schema": {
+    "input": {
+      "type": "string",
+      "description": "Input",
+      "required": true
+    }
+  },
+  "output_schema": {
+    "output": {
+      "type": "string"
+    }
+  },
+  "license": "cc-by-nc-sa-4.0",
+  "hardware": "1.32.0",
+  "sdk": "streamlit",
+  "tags": [
+    "streamlit",
+    "region:us",
+    "benchmark",
+    "leaderboard"
+  ],
+  "likes": 11,
+  "last_modified": "2024-12-01 14:53:17+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "error",
+  "_api_error": "Could not get Gradio config from: https://amu-cai-pl-asr-leaderboard.hf.space",
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_tags_enriched": true
+}

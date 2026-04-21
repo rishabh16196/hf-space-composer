@@ -1,0 +1,107 @@
+{
+  "space_id": "Wardrobe/Train_RVC",
+  "title": "Train RVC",
+  "emoji": "\ud83c\udfc3",
+  "description": "Train RVC",
+  "input_schema": {
+    "audio_files": {
+      "type": "list[filepath]",
+      "description": "\ud83c\udfa7 Upload Audio Files (.wav)",
+      "required": true,
+      "component": "File"
+    },
+    "model_name": {
+      "type": "str",
+      "description": "Model Name",
+      "required": true,
+      "component": "Textbox"
+    }
+  },
+  "output_schema": {
+    "Status": {
+      "type": "str",
+      "description": "Status",
+      "component": "Textbox"
+    }
+  },
+  "license": "unknown",
+  "hardware": "6.1.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 2,
+  "last_modified": "2025-12-11 22:30:18+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/upload_audio",
+      "parameters": [
+        {
+          "name": "audio_files",
+          "label": "\ud83c\udfa7 Upload Audio Files (.wav)",
+          "type": "list[filepath]",
+          "component": "File"
+        },
+        {
+          "name": "model_name",
+          "label": "Model Name",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Status",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/train_rvc",
+      "parameters": [
+        {
+          "name": "model_name",
+          "label": "Model Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "sample_rate",
+          "label": "Sample Rate (Hz)",
+          "type": "Literal['32000', '40000', '48000']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "epochs",
+          "label": "Number of Epochs",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "batch_size",
+          "label": "Batch Size",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Training Status",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/upload_audio",
+  "_api_verified": true
+}

@@ -1,0 +1,176 @@
+{
+  "space_id": "facebook/fairchem_leaderboard",
+  "title": "FAIR Chemistry Leaderboard",
+  "emoji": "\ud83e\udd47",
+  "description": "FAIR Chemistry Leaderboard",
+  "input_schema": {
+    "choice": {
+      "type": "Literal['OMol25', 'OC20']",
+      "description": "Select Dataset",
+      "required": true,
+      "component": "Radio"
+    }
+  },
+  "output_schema": {
+    "Eval Type": {
+      "type": "Literal['Validation', 'Test', 'Ligand pocket', 'Ligand strain', 'Conformers', 'Protonation', 'Distan",
+      "description": "Eval Type",
+      "component": "Dropdown"
+    },
+    "Training set": {
+      "type": "Literal['OMol-102M', 'OMol-4M', 'UMA-459M', 'Other']",
+      "description": "Training set",
+      "component": "Dropdown"
+    },
+    "Is this a total energy model?": {
+      "type": "bool",
+      "description": "Is this a total energy model?",
+      "component": "Checkbox"
+    }
+  },
+  "license": "unknown",
+  "hardware": "5.45.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "leaderboard",
+    "chemistry",
+    "molecules",
+    "region:us",
+    "benchmark"
+  ],
+  "likes": 28,
+  "last_modified": "2026-03-23 16:38:11+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/toggle_dataset",
+      "parameters": [
+        {
+          "name": "choice",
+          "label": "Select Dataset",
+          "type": "Literal['OMol25', 'OC20']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Eval Type",
+          "type": "Literal['Validation', 'Test', 'Ligand pocket', 'Ligand strain', 'Conformers', 'Protonation', 'Distance scaling', 'IE_EA', 'Spin gap']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Training set",
+          "type": "Literal['OMol-102M', 'OMol-4M', 'UMA-459M', 'Other']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Is this a total energy model?",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ]
+    },
+    {
+      "name": "/add_new_eval",
+      "parameters": [
+        {
+          "name": "path_to_file",
+          "label": "parameter_102",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "name": "eval_type",
+          "label": "Eval Type",
+          "type": "Literal['Validation', 'Test', 'Ligand pocket', 'Ligand strain', 'Conformers', 'Protonation', 'Distance scaling', 'IE_EA', 'Spin gap']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "organization",
+          "label": "Organization",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "model",
+          "label": "Model name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "model_url",
+          "label": "Model/Checkpoint URL",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "paper_url",
+          "label": "Paper URL",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "energy_conserving",
+          "label": "Is the model energy conserving? (i.e. F= -dE/dx)",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "total_energy_model",
+          "label": "Is this a total energy model?",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "mail",
+          "label": "Contact email (will be stored privately, & used if there is an issue with your submission)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "training_set",
+          "label": "Training set",
+          "type": "Literal['OMol-102M', 'OMol-4M', 'UMA-459M', 'Other']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "additional_info",
+          "label": "Additional info (cutoff radius, # of params, etc.)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "submission_visibility",
+          "label": "Submission visibility",
+          "type": "Literal['Public', 'Private']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Status",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/_check_login_status",
+      "parameters": [],
+      "returns": []
+    }
+  ],
+  "endpoint": "/toggle_dataset",
+  "_api_verified": true,
+  "estimated_latency_s": 4.59,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "_tags_enriched": true,
+  "measured_latency_s": 4.59,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:50:33.842302+00:00"
+}

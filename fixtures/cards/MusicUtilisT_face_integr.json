@@ -1,0 +1,87 @@
+{
+  "space_id": "MusicUtilisT/face_integr",
+  "title": "face_in",
+  "emoji": "\ud83d\udcc8",
+  "description": "face_in",
+  "input_schema": {
+    "source_file": {
+      "type": "str",
+      "description": "source_file",
+      "required": true,
+      "component": "Image"
+    },
+    "target_file": {
+      "type": "str",
+      "description": "target_file",
+      "required": true,
+      "component": "Image"
+    },
+    "\u041f\u0440\u0438\u043c\u0435\u043d\u0438\u0442\u044c \u0430\u043b\u0433\u043e\u0440\u0438\u0442\u043c?": {
+      "type": "bool",
+      "description": "\u041f\u0440\u0438\u043c\u0435\u043d\u0438\u0442\u044c \u0430\u043b\u0433\u043e\u0440\u0438\u0442\u043c?",
+      "required": true,
+      "component": "Checkbox"
+    }
+  },
+  "output_schema": {
+    "output": {
+      "type": "str",
+      "description": "output",
+      "component": "Image"
+    }
+  },
+  "license": "unknown",
+  "hardware": "3.35.2",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 42,
+  "last_modified": "2024-01-01 01:38:34+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/predict",
+      "parameters": [
+        {
+          "name": "source_file",
+          "label": "source_file",
+          "type": "str",
+          "component": "Image"
+        },
+        {
+          "name": "target_file",
+          "label": "target_file",
+          "type": "str",
+          "component": "Image"
+        },
+        {
+          "name": "\u041f\u0440\u0438\u043c\u0435\u043d\u0438\u0442\u044c \u0430\u043b\u0433\u043e\u0440\u0438\u0442\u043c?",
+          "label": "\u041f\u0440\u0438\u043c\u0435\u043d\u0438\u0442\u044c \u0430\u043b\u0433\u043e\u0440\u0438\u0442\u043c?",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "output",
+          "type": "str",
+          "component": "Image"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/predict",
+  "_api_verified": true,
+  "estimated_latency_s": 3.18,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "_tags_enriched": true,
+  "measured_latency_s": 3.18,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:49:39.364981+00:00"
+}

@@ -1,0 +1,142 @@
+{
+  "space_id": "gagndeep/Apple-Sharp-Image-to-3D-View-Synthesis",
+  "title": "SHARP - 3D Gaussian Scene Prediction from Apple",
+  "emoji": "\ud83d\udd2a",
+  "description": "Convert any static image into a 3D Gaussian Splat scene",
+  "input_schema": {
+    "image_path": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "Input Image",
+      "required": true,
+      "component": "Image"
+    },
+    "trajectory_type": {
+      "type": "Literal['swipe', 'shake', 'rotate', 'rotate_forward']",
+      "description": "Camera Movement",
+      "required": true,
+      "component": "Dropdown"
+    },
+    "output_long_side": {
+      "type": "Literal['0', '512', '1024']",
+      "description": "Output Resolution",
+      "required": true,
+      "component": "Dropdown"
+    },
+    "num_frames": {
+      "type": "float",
+      "description": "Frames",
+      "required": true,
+      "component": "Slider"
+    },
+    "fps": {
+      "type": "float",
+      "description": "FPS",
+      "required": true,
+      "component": "Slider"
+    },
+    "render_video": {
+      "type": "bool",
+      "description": "Render Video Preview",
+      "required": true,
+      "component": "Checkbox"
+    }
+  },
+  "output_schema": {
+    "3D Preview": {
+      "type": "filepath",
+      "description": "3D Preview",
+      "component": "Video"
+    },
+    "Download .PLY File": {
+      "type": "filepath",
+      "description": "Download .PLY File",
+      "component": "Downloadbutton"
+    },
+    "value_23": {
+      "type": "str",
+      "description": "value_23",
+      "component": "Markdown"
+    }
+  },
+  "license": "unknown",
+  "hardware": "6.1.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 98,
+  "last_modified": "2026-01-04 07:22:00+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/run_sharp",
+      "parameters": [
+        {
+          "name": "image_path",
+          "label": "Input Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "trajectory_type",
+          "label": "Camera Movement",
+          "type": "Literal['swipe', 'shake', 'rotate', 'rotate_forward']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "output_long_side",
+          "label": "Output Resolution",
+          "type": "Literal['0', '512', '1024']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "num_frames",
+          "label": "Frames",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "fps",
+          "label": "FPS",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "render_video",
+          "label": "Render Video Preview",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "3D Preview",
+          "type": "filepath",
+          "component": "Video"
+        },
+        {
+          "label": "Download .PLY File",
+          "type": "filepath",
+          "component": "Downloadbutton"
+        },
+        {
+          "label": "value_23",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/run_sharp",
+  "_api_verified": true,
+  "estimated_latency_s": 3.19,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 3.19,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:50:39.360655+00:00"
+}

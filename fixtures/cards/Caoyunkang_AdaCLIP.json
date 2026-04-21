@@ -1,0 +1,96 @@
+{
+  "space_id": "Caoyunkang/AdaCLIP",
+  "title": "AdaCLIP -- Zero-shot Anomaly Detection",
+  "emoji": "\ud83d\ude80",
+  "description": "Detecting visual anomalies for novel categories! ",
+  "input_schema": {
+    "image": {
+      "type": "filepath",
+      "description": "Upload Image",
+      "required": true,
+      "component": "Image"
+    },
+    "text": {
+      "type": "str",
+      "description": "Class Name",
+      "required": true,
+      "component": "Textbox"
+    },
+    "options": {
+      "type": "Literal['MVTec AD+Colondb', 'VisA+Clinicdb', 'All']",
+      "description": "Pre-trained Datasets",
+      "required": true,
+      "component": "Radio"
+    }
+  },
+  "output_schema": {
+    "Output Image": {
+      "type": "filepath",
+      "description": "Output Image",
+      "component": "Image"
+    },
+    "Anomaly Score": {
+      "type": "str",
+      "description": "Anomaly Score",
+      "component": "Textbox"
+    }
+  },
+  "license": "unknown",
+  "hardware": "4.39.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 14,
+  "last_modified": "2024-07-24 09:07:57+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/predict",
+      "parameters": [
+        {
+          "name": "image",
+          "label": "Upload Image",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "name": "text",
+          "label": "Class Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "options",
+          "label": "Pre-trained Datasets",
+          "type": "Literal['MVTec AD+Colondb', 'VisA+Clinicdb', 'All']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output Image",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "Anomaly Score",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/predict",
+  "_api_verified": true,
+  "estimated_latency_s": 2.73,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 2.73,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:49:12.514343+00:00"
+}

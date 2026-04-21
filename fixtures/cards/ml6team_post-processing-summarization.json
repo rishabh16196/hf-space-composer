@@ -1,0 +1,35 @@
+{
+  "space_id": "ml6team/post-processing-summarization",
+  "title": "Hallucination detection in summaries",
+  "emoji": "\ud83d\udca1",
+  "description": "Hallucination detection in summaries",
+  "input_schema": {
+    "input": {
+      "type": "string",
+      "description": "Input",
+      "required": true
+    }
+  },
+  "output_schema": {
+    "output": {
+      "type": "string"
+    }
+  },
+  "license": "unknown",
+  "hardware": "1.2.0",
+  "sdk": "streamlit",
+  "tags": [
+    "streamlit",
+    "region:us"
+  ],
+  "likes": 15,
+  "last_modified": "2024-09-16 09:40:10+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "sleeping",
+  "_api_error": "Space is in RUNTIME_ERROR state",
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred"
+}

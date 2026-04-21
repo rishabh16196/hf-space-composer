@@ -1,0 +1,36 @@
+{
+  "space_id": "nafisehNik/mt5-persian-summary",
+  "title": "mT5 Persian Summary",
+  "emoji": "\ud83d\udcf0",
+  "description": "mT5 Persian Summary",
+  "input_schema": {
+    "input": {
+      "type": "string",
+      "description": "Input",
+      "required": true
+    }
+  },
+  "output_schema": {
+    "output": {
+      "type": "string"
+    }
+  },
+  "license": "mit",
+  "hardware": "1.10.0",
+  "sdk": "streamlit",
+  "tags": [
+    "streamlit",
+    "region:us"
+  ],
+  "likes": 3,
+  "last_modified": "2023-11-08 17:09:47+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_tags_enriched": true,
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "error",
+  "_api_error": "Expecting value: line 1 column 1 (char 0)"
+}

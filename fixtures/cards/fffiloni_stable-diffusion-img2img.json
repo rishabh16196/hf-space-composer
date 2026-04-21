@@ -1,0 +1,124 @@
+{
+  "space_id": "fffiloni/stable-diffusion-img2img",
+  "title": "Stable Diffusion Img2img CPU",
+  "emoji": "\ud83c\udfa8\ud83c\udf20",
+  "description": "Stable Diffusion Img2img CPU",
+  "input_schema": {
+    "init_img | 512*512 px": {
+      "type": "str",
+      "description": "init_img | 512*512 px",
+      "required": true,
+      "component": "Image"
+    },
+    "prompt": {
+      "type": "str",
+      "description": "prompt",
+      "required": true,
+      "component": "Textbox"
+    },
+    "Guidence Scale": {
+      "type": "int | float",
+      "description": "Guidence Scale",
+      "required": true,
+      "component": "Slider"
+    },
+    "Number of Iterations": {
+      "type": "int | float",
+      "description": "Number of Iterations",
+      "required": true,
+      "component": "Slider"
+    },
+    "Seed": {
+      "type": "int | float",
+      "description": "Seed",
+      "required": true,
+      "component": "Slider"
+    },
+    "Strength": {
+      "type": "int | float",
+      "description": "Strength",
+      "required": true,
+      "component": "Slider"
+    }
+  },
+  "output_schema": {
+    "Generated images": {
+      "type": "Tuple[Dict(name: str (name of file), data: str (base64 representation of file), size: int (size of i",
+      "description": "Generated images",
+      "component": "Gallery"
+    }
+  },
+  "license": "unknown",
+  "hardware": "3.6",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us",
+    "diffusion",
+    "image-generation",
+    "text-to-image",
+    "vision"
+  ],
+  "likes": 259,
+  "last_modified": "2022-10-21 09:17:20+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_tags_enriched": true,
+  "estimated_latency_s": 40.0,
+  "speed_tier": "slow",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/predict",
+      "parameters": [
+        {
+          "name": "init_img | 512*512 px",
+          "label": "init_img | 512*512 px",
+          "type": "str",
+          "component": "Image"
+        },
+        {
+          "name": "prompt",
+          "label": "prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "Guidence Scale",
+          "label": "Guidence Scale",
+          "type": "int | float",
+          "component": "Slider"
+        },
+        {
+          "name": "Number of Iterations",
+          "label": "Number of Iterations",
+          "type": "int | float",
+          "component": "Slider"
+        },
+        {
+          "name": "Seed",
+          "label": "Seed",
+          "type": "int | float",
+          "component": "Slider"
+        },
+        {
+          "name": "Strength",
+          "label": "Strength",
+          "type": "int | float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Generated images",
+          "type": "Tuple[Dict(name: str (name of file), data: str (base64 representation of file), size: int (size of image in bytes), is_file: bool (true if the file has been uploaded to the server), orig_name: str (or",
+          "component": "Gallery"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/predict",
+  "_api_verified": true
+}

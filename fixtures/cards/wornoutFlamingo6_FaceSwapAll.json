@@ -1,0 +1,466 @@
+{
+  "space_id": "wornoutFlamingo6/FaceSwapAll",
+  "title": "FaceSwapAll",
+  "emoji": "\ud83c\udfc6",
+  "description": "All-in-one face swapping: single photo, video, multi-source,",
+  "input_schema": {
+    "src_img": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "Source Image",
+      "required": true,
+      "component": "Image"
+    },
+    "src_idx": {
+      "type": "float",
+      "description": "Source Face Index",
+      "required": true,
+      "component": "Number"
+    },
+    "dst_img": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "Destination Image",
+      "required": true,
+      "component": "Image"
+    },
+    "dst_idx": {
+      "type": "float",
+      "description": "Destination Face Index",
+      "required": true,
+      "component": "Number"
+    }
+  },
+  "output_schema": {
+    "Swapped Image": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "Swapped Image",
+      "component": "Image"
+    },
+    "Log Output": {
+      "type": "str",
+      "description": "Log Output",
+      "component": "Textbox"
+    }
+  },
+  "license": "unknown",
+  "hardware": "5.29.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 17,
+  "last_modified": "2025-07-05 13:39:19+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/predict",
+      "parameters": [
+        {
+          "name": "src_img",
+          "label": "Source Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "src_idx",
+          "label": "Source Face Index",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "dst_img",
+          "label": "Destination Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "dst_idx",
+          "label": "Destination Face Index",
+          "type": "float",
+          "component": "Number"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Swapped Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "Log Output",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/predict_1",
+      "parameters": [
+        {
+          "name": "src_img",
+          "label": "Source Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "dst_imgs",
+          "label": "Destination Images",
+          "type": "list[dict(image: dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Origi",
+          "component": "Gallery"
+        },
+        {
+          "name": "dst_indices",
+          "label": "Destination Face Indices (comma-separated, e.g. 1,1,2)",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Swapped Images",
+          "type": "list[dict(image: dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Origi",
+          "component": "Gallery"
+        },
+        {
+          "label": "Log Output",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/predict_2",
+      "parameters": [
+        {
+          "name": "src_imgs",
+          "label": "Source Images",
+          "type": "list[dict(image: dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Origi",
+          "component": "Gallery"
+        },
+        {
+          "name": "dst_img",
+          "label": "Destination Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "dst_idx",
+          "label": "Destination Face Index",
+          "type": "float",
+          "component": "Number"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Swapped Images",
+          "type": "list[dict(image: dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Origi",
+          "component": "Gallery"
+        },
+        {
+          "label": "Log Output",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/predict_3",
+      "parameters": [
+        {
+          "name": "src_imgs",
+          "label": "Source Images",
+          "type": "list[dict(image: dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Origi",
+          "component": "Gallery"
+        },
+        {
+          "name": "dst_imgs",
+          "label": "Destination Images",
+          "type": "list[dict(image: dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Origi",
+          "component": "Gallery"
+        },
+        {
+          "name": "dst_indices",
+          "label": "Destination Face Indices (comma-separated, e.g. 1,1,2)",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Swapped Images",
+          "type": "list[dict(image: dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Origi",
+          "component": "Gallery"
+        },
+        {
+          "label": "Log Output",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/predict_4",
+      "parameters": [
+        {
+          "name": "src_imgs",
+          "label": "Source Images",
+          "type": "list[dict(image: dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Origi",
+          "component": "Gallery"
+        },
+        {
+          "name": "dst_img",
+          "label": "Destination Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "mapping_str",
+          "label": "Mapping (comma-separated, e.g. 2,1,3)",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Swapped Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "Log Output",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/predict_5",
+      "parameters": [
+        {
+          "name": "src_img",
+          "label": "Source Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "src_idx",
+          "label": "Source Face Index",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "video",
+          "label": "Target Video",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        },
+        {
+          "name": "dst_idx",
+          "label": "Destination Face Index",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "delete_frames_dir",
+          "label": "Delete video_frames directory after processing",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "add_audio",
+          "label": "Add audio from original video",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "copy_to_drive",
+          "label": "Copy swapped video (no audio) to Google Drive root",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Swapped Video",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        },
+        {
+          "label": "Log Output",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/predict_6",
+      "parameters": [
+        {
+          "name": "src_img",
+          "label": "Source Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "video",
+          "label": "Target Video",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        },
+        {
+          "name": "num_faces_to_swap",
+          "label": "Number of Faces to Swap",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "delete_frames_dir",
+          "label": "Delete video_frames directory after processing",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "add_audio",
+          "label": "Add audio from original video",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "copy_to_drive",
+          "label": "Copy swapped video (no audio) to Google Drive root",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Swapped Video",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        },
+        {
+          "label": "Log Output",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/predict_7",
+      "parameters": [
+        {
+          "name": "src_imgs",
+          "label": "Source Images",
+          "type": "list[dict(image: dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Origi",
+          "component": "Gallery"
+        },
+        {
+          "name": "video",
+          "label": "Target Video",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        },
+        {
+          "name": "mapping_str",
+          "label": "Mapping (comma-separated, e.g. 2,1,3)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "delete_frames_dir",
+          "label": "Delete video_frames directory after processing",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "add_audio",
+          "label": "Add audio from original video",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "copy_to_drive",
+          "label": "Copy swapped video (no audio) to Google Drive root",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Swapped Video",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        },
+        {
+          "label": "Log Output",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/predict_8",
+      "parameters": [
+        {
+          "name": "src_img",
+          "label": "Source Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "dst_videos",
+          "label": "Target Videos (select multiple)",
+          "type": "list[filepath]",
+          "component": "File"
+        },
+        {
+          "name": "dst_indices",
+          "label": "Destination Face Indices (comma-separated, e.g. 1,2,1)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "delete_frames_dir",
+          "label": "Delete video_frames directory after processing",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "add_audio",
+          "label": "Add audio from original video",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "copy_to_drive",
+          "label": "Copy swapped video (no audio) to Google Drive root",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Swapped Videos",
+          "type": "list[dict(image: dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Origi",
+          "component": "Gallery"
+        },
+        {
+          "label": "Log Output",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/predict",
+  "_api_verified": true,
+  "estimated_latency_s": 5.94,
+  "speed_tier": "medium",
+  "_latency_source": "measured",
+  "measured_latency_s": 5.94,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:52:04.809757+00:00"
+}

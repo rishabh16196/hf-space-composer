@@ -1,0 +1,72 @@
+{
+  "space_id": "HuSusu/SuperResolution",
+  "title": "SuperResolution",
+  "emoji": "\ud83d\udc20",
+  "description": "SuperResolution",
+  "input_schema": {
+    "input_image": {
+      "type": "filepath",
+      "description": "Upload image",
+      "required": true,
+      "component": "Image"
+    }
+  },
+  "output_schema": {
+    "Convolutional neural network": {
+      "type": "filepath",
+      "description": "Convolutional neural network",
+      "component": "Image"
+    },
+    "Bicubic interpoloation": {
+      "type": "filepath",
+      "description": "Bicubic interpoloation",
+      "component": "Image"
+    }
+  },
+  "license": "afl-3.0",
+  "hardware": "4.36.1",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 35,
+  "last_modified": "2024-06-11 13:21:03+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/predict",
+      "parameters": [
+        {
+          "name": "input_image",
+          "label": "Upload image",
+          "type": "filepath",
+          "component": "Image"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Convolutional neural network",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "Bicubic interpoloation",
+          "type": "filepath",
+          "component": "Image"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/predict",
+  "_api_verified": true,
+  "estimated_latency_s": 3.01,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 3.01,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:49:25.717406+00:00"
+}

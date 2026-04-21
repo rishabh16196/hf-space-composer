@@ -1,0 +1,178 @@
+{
+  "space_id": "VAST-AI/TripoSG-scribble",
+  "title": "TripoSG Scribble",
+  "emoji": "\u26a1",
+  "description": "TripoSG Scribble",
+  "input_schema": {
+    "scribble_image_dict": {
+      "type": "dict(background: filepath | None, layers: list[filepath], composite: filepath | None, id: str | None",
+      "description": "Scribble Input (Draw Black on White)",
+      "required": true,
+      "component": "Imageeditor"
+    },
+    "prompt": {
+      "type": "str",
+      "description": "Prompt",
+      "required": true,
+      "component": "Textbox"
+    },
+    "scribble_confidence": {
+      "type": "float",
+      "description": "Scribble Confidence",
+      "required": true,
+      "component": "Slider"
+    },
+    "text_confidence": {
+      "type": "float",
+      "description": "Prompt Confidence",
+      "required": true,
+      "component": "Slider"
+    },
+    "seed": {
+      "type": "float",
+      "description": "Seed",
+      "required": true,
+      "component": "Number"
+    }
+  },
+  "output_schema": {
+    "Generated 3D Model": {
+      "type": "filepath",
+      "description": "Generated 3D Model",
+      "component": "Model3d"
+    },
+    "Prompt": {
+      "type": "str",
+      "description": "Prompt",
+      "component": "Textbox"
+    }
+  },
+  "license": "mit",
+  "hardware": "5.25.2",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 18,
+  "last_modified": "2025-04-18 08:59:45+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/generate_3d",
+      "parameters": [
+        {
+          "name": "scribble_image_dict",
+          "label": "Scribble Input (Draw Black on White)",
+          "type": "dict(background: filepath | None, layers: list[filepath], composite: filepath | None, id: str | None)",
+          "component": "Imageeditor"
+        },
+        {
+          "name": "prompt",
+          "label": "Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "scribble_confidence",
+          "label": "Scribble Confidence",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "text_confidence",
+          "label": "Prompt Confidence",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "seed",
+          "label": "Seed",
+          "type": "float",
+          "component": "Number"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Generated 3D Model",
+          "type": "filepath",
+          "component": "Model3d"
+        },
+        {
+          "label": "Prompt",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/get_random_seed",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Seed",
+          "type": "float",
+          "component": "Number"
+        }
+      ]
+    },
+    {
+      "name": "/generate_3d_1",
+      "parameters": [
+        {
+          "name": "scribble_image_dict",
+          "label": "Scribble Input (Draw Black on White)",
+          "type": "dict(background: filepath | None, layers: list[filepath], composite: filepath | None, id: str | None)",
+          "component": "Imageeditor"
+        },
+        {
+          "name": "prompt",
+          "label": "Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "scribble_confidence",
+          "label": "Scribble Confidence",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "text_confidence",
+          "label": "Prompt Confidence",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "seed",
+          "label": "Seed",
+          "type": "float",
+          "component": "Number"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Generated 3D Model",
+          "type": "filepath",
+          "component": "Model3d"
+        },
+        {
+          "label": "Prompt",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/generate_3d",
+  "_api_verified": true,
+  "estimated_latency_s": 3.25,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 3.25,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:50:01.277316+00:00"
+}

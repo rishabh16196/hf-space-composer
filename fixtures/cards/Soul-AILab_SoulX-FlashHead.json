@@ -1,0 +1,131 @@
+{
+  "space_id": "Soul-AILab/SoulX-FlashHead",
+  "title": "SoulX FlashHead",
+  "emoji": "\ud83d\udc28",
+  "description": "streaming demo ",
+  "input_schema": {
+    "ckpt_dir": {
+      "type": "str",
+      "description": "FlashHead Checkpoint Directory",
+      "required": true,
+      "component": "Textbox"
+    },
+    "wav2vec_dir": {
+      "type": "str",
+      "description": "Wav2Vec Directory",
+      "required": true,
+      "component": "Textbox"
+    },
+    "model_type": {
+      "type": "Literal['pro', 'lite']",
+      "description": "Model Type",
+      "required": true,
+      "component": "Dropdown"
+    },
+    "cond_image": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "Condition Image",
+      "required": true,
+      "component": "Image"
+    },
+    "audio_path": {
+      "type": "filepath",
+      "description": "Audio Input",
+      "required": true,
+      "component": "Audio"
+    },
+    "seed": {
+      "type": "int",
+      "description": "Random Seed",
+      "required": true,
+      "component": "Number"
+    },
+    "use_face_crop": {
+      "type": "bool",
+      "description": "Use Face Crop",
+      "required": true,
+      "component": "Checkbox"
+    }
+  },
+  "output_schema": {
+    "Generated Video": {
+      "type": "dict(video: filepath, subtitles: filepath | None)",
+      "description": "Generated Video",
+      "component": "Video"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "5.50.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 8,
+  "last_modified": "2026-03-09 09:06:19+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/run_inference_streaming",
+      "parameters": [
+        {
+          "name": "ckpt_dir",
+          "label": "FlashHead Checkpoint Directory",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "wav2vec_dir",
+          "label": "Wav2Vec Directory",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "model_type",
+          "label": "Model Type",
+          "type": "Literal['pro', 'lite']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "cond_image",
+          "label": "Condition Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "audio_path",
+          "label": "Audio Input",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "name": "seed",
+          "label": "Random Seed",
+          "type": "int",
+          "component": "Number"
+        },
+        {
+          "name": "use_face_crop",
+          "label": "Use Face Crop",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Generated Video",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/run_inference_streaming",
+  "_api_verified": true
+}

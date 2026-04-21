@@ -1,0 +1,35 @@
+{
+  "space_id": "DevNumb/fakeNewsDetector",
+  "title": "FakeNewsDetector",
+  "emoji": "\ud83d\ude80",
+  "description": "FakeNewsDetector",
+  "input_schema": {
+    "input": {
+      "type": "string",
+      "description": "Input",
+      "required": true
+    }
+  },
+  "output_schema": {
+    "output": {
+      "type": "string"
+    }
+  },
+  "license": "unknown",
+  "hardware": "5.49.1",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 3,
+  "last_modified": "2025-11-19 09:04:32+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "error",
+  "_api_error": "(Request ID: Root=1-69e77bd8-658caf981ecb3c91737a88d7;a81f0b00-d421-4f31-b815-11a5ee9a694c)\n\n429 Too Many Requests: you have reached your 'api' rate limit.\nRetry after 6 seconds (0/2500 requests remai"
+}

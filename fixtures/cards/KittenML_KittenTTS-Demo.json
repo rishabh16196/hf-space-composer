@@ -1,0 +1,99 @@
+{
+  "space_id": "KittenML/KittenTTS-Demo",
+  "title": "KittenTTS Demo",
+  "emoji": "\ud83d\ude3b",
+  "description": "KittenTTS Demo",
+  "input_schema": {
+    "text": {
+      "type": "str",
+      "description": "Text",
+      "required": true,
+      "component": "Textbox"
+    },
+    "model_name": {
+      "type": "Literal['Nano (15M - Fastest)', 'Micro (40M - Balanced)', 'Mini (80M - Best Quality)']",
+      "description": "Model",
+      "required": true,
+      "component": "Dropdown"
+    },
+    "voice": {
+      "type": "Literal['Bella', 'Jasper', 'Luna', 'Bruno', 'Rosie', 'Hugo', 'Kiki', 'Leo']",
+      "description": "Voice",
+      "required": true,
+      "component": "Dropdown"
+    },
+    "speed": {
+      "type": "float",
+      "description": "Speed",
+      "required": true,
+      "component": "Slider"
+    }
+  },
+  "output_schema": {
+    "Output": {
+      "type": "filepath",
+      "description": "Output",
+      "component": "Audio"
+    }
+  },
+  "license": "unknown",
+  "hardware": "6.6.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 82,
+  "last_modified": "2026-03-03 02:55:14+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/synthesize",
+      "parameters": [
+        {
+          "name": "text",
+          "label": "Text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "model_name",
+          "label": "Model",
+          "type": "Literal['Nano (15M - Fastest)', 'Micro (40M - Balanced)', 'Mini (80M - Best Quality)']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "voice",
+          "label": "Voice",
+          "type": "Literal['Bella', 'Jasper', 'Luna', 'Bruno', 'Rosie', 'Hugo', 'Kiki', 'Leo']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "speed",
+          "label": "Speed",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/synthesize",
+  "_api_verified": true,
+  "estimated_latency_s": 2.84,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "_tags_enriched": true,
+  "measured_latency_s": 2.84,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:49:31.820568+00:00"
+}

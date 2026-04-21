@@ -1,0 +1,528 @@
+{
+  "space_id": "FINAL-Bench/security-scan",
+  "title": "Invisible Watermark Against Unauthorized AI Training \u2014 Text, Image & Video Protection",
+  "emoji": "\u26a1",
+  "description": "One embed. Four invisible layers. 34 attacks defeated.",
+  "input_schema": {
+    "t": {
+      "type": "str",
+      "description": "\ud83d\udccc Title",
+      "required": true,
+      "component": "Textbox"
+    },
+    "x": {
+      "type": "str",
+      "description": "\ud83d\udcdd Body Text",
+      "required": true,
+      "component": "Textbox"
+    },
+    "r": {
+      "type": "float",
+      "description": "\ud83d\udd04 ZW Repeat Count",
+      "required": true,
+      "component": "Slider"
+    }
+  },
+  "output_schema": {
+    "\ud83d\udccb Embedding Log": {
+      "type": "str",
+      "description": "\ud83d\udccb Embedding Log",
+      "component": "Textbox"
+    },
+    "value_22": {
+      "type": "str",
+      "description": "value_22",
+      "component": "Html"
+    },
+    "value_23": {
+      "type": "str",
+      "description": "value_23",
+      "component": "Html"
+    },
+    "value_24": {
+      "type": "str",
+      "description": "value_24",
+      "component": "Html"
+    },
+    "Watermarked Text": {
+      "type": "str",
+      "description": "Watermarked Text",
+      "component": "Textbox"
+    },
+    "Content ID": {
+      "type": "str",
+      "description": "Content ID",
+      "component": "Textbox"
+    },
+    "Evidence Package (L3)": {
+      "type": "str",
+      "description": "Evidence Package (L3)",
+      "component": "Textbox"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "6.6.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 24,
+  "last_modified": "2026-03-01 06:12:32+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/on_e",
+      "parameters": [
+        {
+          "name": "t",
+          "label": "\ud83d\udccc Title",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "x",
+          "label": "\ud83d\udcdd Body Text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "r",
+          "label": "\ud83d\udd04 ZW Repeat Count",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "\ud83d\udccb Embedding Log",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "value_22",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "value_23",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "value_24",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "Watermarked Text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Content ID",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Evidence Package (L3)",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/run_text_extract",
+      "parameters": [
+        {
+          "name": "suspect_text",
+          "label": "\ud83d\udd0d Text to Inspect",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "known_cid",
+          "label": "\ud83d\udccc Content ID (optional)",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_36",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "\ud83d\udccb Extraction Log",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/lambda",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_43",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "\ud83d\udccb Detailed Log",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_1",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_49",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "value_50",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "\ud83d\udccb Analysis Log",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_2",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_56",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "\ud83d\udccb Pipeline Log",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Final Output",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_3",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Diagnostics Result",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/run_all_llm",
+      "parameters": [
+        {
+          "name": "task",
+          "label": "\ud83c\udfaf Attack Scenario",
+          "type": "Literal['\ud83d\udcdd Summary', '\ud83d\udd04 Paraphrasing', '\ud83d\udcd6 Expansion', '\ud83c\udf10 Back-Translation', '\u2702\ufe0f Key Excerpt', '\ud83c\udfad Style Transform', '\ud83d\udccb Bullet Points', '\ud83d\udd00 Collage Rewrite']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_67",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "\ud83d\udccb LLM Test Log",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/run_plagiarism",
+      "parameters": [
+        {
+          "name": "original",
+          "label": "\ud83d\udcc4 Original Text (My Work)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "suspect",
+          "label": "\ud83d\udd0d Suspect Text (Potential Plagiarism)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "mode",
+          "label": "\ud83c\udfaf Analysis Mode",
+          "type": "Literal['\ud83d\udd0d Comprehensive \u2014 Full Plagiarism Check', '\ud83d\udcca N-gram Precision \u2014 Phrase Matching', '\ud83d\udcdd Sentence Matching \u2014 1:1 Comparison', '\ud83d\udd00 Structure \u2014 Order/Arrangement Retention', '\ud83e\udde0 AI Rewrite Detection ",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_86",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "\ud83d\udccb Analysis Log",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/demo_plagiarism",
+      "parameters": [
+        {
+          "name": "orig",
+          "label": "\ud83d\udcc4 Original Text (My Work)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "mode",
+          "label": "\ud83c\udfaf Analysis Mode",
+          "type": "Literal['\ud83d\udd0d Comprehensive \u2014 Full Plagiarism Check', '\ud83d\udcca N-gram Precision \u2014 Phrase Matching', '\ud83d\udcdd Sentence Matching \u2014 1:1 Comparison', '\ud83d\udd00 Structure \u2014 Order/Arrangement Retention', '\ud83e\udde0 AI Rewrite Detection ",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "\ud83d\udd0d Suspect Text (Potential Plagiarism)",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/run_image_similarity",
+      "parameters": [
+        {
+          "name": "img1",
+          "label": "\ud83d\udcc4 Original Image (My Work)",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "img2",
+          "label": "\ud83d\udd0d Suspect Image (Potential Theft)",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "mode",
+          "label": "\ud83c\udfaf Analysis Mode",
+          "type": "Literal['\ud83d\udd0d Comprehensive Similarity', '\ud83d\udd22 Perceptual Hash', '\ud83d\udcd0 Structural Similarity (SSIM)', '\ud83c\udfa8 Color Distribution', '\ud83e\udde9 Feature Matching']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_102",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "\ud83d\udccb Analysis Log",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/run_image_watermark",
+      "parameters": [
+        {
+          "name": "img",
+          "label": "\ud83d\udccc Original Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "title",
+          "label": "\ud83d\udccc Title",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "msg",
+          "label": "\ud83d\udcac Embed Message (auto if blank)",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "\ud83d\udd0f Watermarked Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "value_120",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "\ud83d\udccb Embedding Log",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/run_image_extract",
+      "parameters": [
+        {
+          "name": "img",
+          "label": "\ud83d\udd0d Image to Inspect",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_127",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "\ud83d\udccb Extraction Log",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/run_video_similarity",
+      "parameters": [
+        {
+          "name": "vid1",
+          "label": "\ud83d\udcc4 Original Video (My Work)",
+          "type": "filepath",
+          "component": "Video"
+        },
+        {
+          "name": "vid2",
+          "label": "\ud83d\udd0d Suspect Video (Potential Theft)",
+          "type": "filepath",
+          "component": "Video"
+        },
+        {
+          "name": "mode",
+          "label": "\ud83c\udfaf Analysis Mode",
+          "type": "Literal['\ud83d\udd0d Comprehensive Similarity', '\ud83d\udd50 DTW Temporal Matching', '\ud83d\udd22 Keyframe Hash Comparison', '\ud83d\udcd0 SSIM Structural']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_142",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "\ud83d\udccb Analysis Log",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/video_embed_watermark",
+      "parameters": [
+        {
+          "name": "video_path",
+          "label": "\ud83d\udccc Original Video",
+          "type": "filepath",
+          "component": "Video"
+        },
+        {
+          "name": "title",
+          "label": "\ud83d\udccc Title",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "message",
+          "label": "\ud83d\udcac Embed Message (auto if blank)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "kf_interval_sec",
+          "label": "\ud83d\udd04 Keyframe Interval (sec)",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "\ud83d\udd0f Watermarked Video",
+          "type": "filepath",
+          "component": "Video"
+        },
+        {
+          "label": "value_161",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "\ud83d\udccb Embedding Log",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/video_extract_watermark",
+      "parameters": [
+        {
+          "name": "video_path",
+          "label": "\ud83d\udd0d Video to Inspect",
+          "type": "filepath",
+          "component": "Video"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_168",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "\ud83d\udccb Extraction Log",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/on_e",
+  "_api_verified": true,
+  "estimated_latency_s": 4.03,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 4.03,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:49:19.400298+00:00"
+}

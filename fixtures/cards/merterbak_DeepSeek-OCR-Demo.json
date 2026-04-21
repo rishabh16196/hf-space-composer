@@ -1,0 +1,221 @@
+{
+  "space_id": "merterbak/DeepSeek-OCR-Demo",
+  "title": "DeepSeek OCR 2 Demo",
+  "emoji": "\ud83d\ude80",
+  "description": "Try out DeepSeek-OCR-2 on your PDFs or images",
+  "input_schema": {
+    "file_path": {
+      "type": "filepath",
+      "description": "Upload Image or PDF",
+      "required": true,
+      "component": "File"
+    },
+    "page_num": {
+      "type": "float",
+      "description": "Select Page",
+      "required": true,
+      "component": "Number"
+    }
+  },
+  "output_schema": {
+    "Input Image": {
+      "type": "filepath",
+      "description": "Input Image",
+      "component": "Image"
+    }
+  },
+  "license": "mit",
+  "hardware": "6.10.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us",
+    "ocr",
+    "vision"
+  ],
+  "likes": 463,
+  "last_modified": "2026-03-31 14:32:43+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "endpoint": "/load_image",
+  "_verified_live": true,
+  "_tags_enriched": true,
+  "estimated_latency_s": 6.0,
+  "speed_tier": "medium",
+  "_latency_source": "measured",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/load_image",
+      "parameters": [
+        {
+          "name": "file_path",
+          "label": "Upload Image or PDF",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "name": "page_num",
+          "label": "Select Page",
+          "type": "float",
+          "component": "Number"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Input Image",
+          "type": "filepath",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/update_page_selector",
+      "parameters": [
+        {
+          "name": "file_path",
+          "label": "Upload Image or PDF",
+          "type": "filepath",
+          "component": "File"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Select Page",
+          "type": "float",
+          "component": "Number"
+        }
+      ]
+    },
+    {
+      "name": "/load_image_1",
+      "parameters": [
+        {
+          "name": "file_path",
+          "label": "Upload Image or PDF",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "name": "page_num",
+          "label": "Select Page",
+          "type": "float",
+          "component": "Number"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Input Image",
+          "type": "filepath",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/toggle_prompt",
+      "parameters": [
+        {
+          "name": "task",
+          "label": "Task",
+          "type": "Literal['\ud83d\udccb Markdown', '\ud83d\udcdd Free OCR', '\ud83d\udccd Locate', '\ud83d\udd0d Describe', '\u270f\ufe0f Custom']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Prompt",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/select_boxes",
+      "parameters": [
+        {
+          "name": "task",
+          "label": "Task",
+          "type": "Literal['\ud83d\udccb Markdown', '\ud83d\udcdd Free OCR', '\ud83d\udccd Locate', '\ud83d\udd0d Describe', '\u270f\ufe0f Custom']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/run",
+      "parameters": [
+        {
+          "name": "image",
+          "label": "Input Image",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "name": "file_path",
+          "label": "Upload Image or PDF",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "name": "task",
+          "label": "Task",
+          "type": "Literal['\ud83d\udccb Markdown', '\ud83d\udcdd Free OCR', '\ud83d\udccd Locate', '\ud83d\udd0d Describe', '\u270f\ufe0f Custom']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "custom_prompt",
+          "label": "Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "page_num",
+          "label": "Select Page",
+          "type": "float",
+          "component": "Number"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_14",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "value_17",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_23",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "value_19",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "value_21",
+          "type": "list[dict(image: filepath, caption: str | None) | dict(video: filepath, caption: str | None)]",
+          "component": "Gallery"
+        }
+      ]
+    },
+    {
+      "name": "/select_boxes_1",
+      "parameters": [
+        {
+          "name": "task",
+          "label": "Task",
+          "type": "Literal['\ud83d\udccb Markdown', '\ud83d\udcdd Free OCR', '\ud83d\udccd Locate', '\ud83d\udd0d Describe', '\u270f\ufe0f Custom']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": []
+    }
+  ],
+  "_api_verified": true
+}

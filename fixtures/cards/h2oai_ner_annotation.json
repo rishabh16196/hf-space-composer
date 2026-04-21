@@ -1,0 +1,39 @@
+{
+  "space_id": "h2oai/ner_annotation",
+  "title": "H2O Wave NER Annotation",
+  "emoji": "\ud83d\udcdd",
+  "description": "H2O Wave NER Annotation",
+  "input_schema": {
+    "input": {
+      "type": "string",
+      "description": "Input",
+      "required": true
+    }
+  },
+  "output_schema": {
+    "output": {
+      "type": "string"
+    }
+  },
+  "license": "unknown",
+  "hardware": "",
+  "sdk": "docker",
+  "tags": [
+    "docker",
+    "region:us",
+    "entity-extraction",
+    "ner",
+    "text"
+  ],
+  "likes": 8,
+  "last_modified": "2023-01-16 12:16:33+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_tags_enriched": true,
+  "estimated_latency_s": 3.0,
+  "speed_tier": "fast",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "error",
+  "_api_error": "Could not fetch config for https://h2oai-ner-annotation.hf.space"
+}

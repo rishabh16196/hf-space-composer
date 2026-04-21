@@ -1,0 +1,6548 @@
+{
+  "space_id": "3DTopia/3DGen-Arena",
+  "title": "3DGen Arena",
+  "emoji": "\ud83d\udc20",
+  "description": "3DGen Arena",
+  "input_schema": {
+    "model_selector0": {
+      "type": "str",
+      "description": "parameter_23",
+      "required": true,
+      "component": "Markdown"
+    },
+    "model_selector1": {
+      "type": "str",
+      "description": "parameter_25",
+      "required": true,
+      "component": "Markdown"
+    },
+    "dim_md": {
+      "type": "str",
+      "description": "parameter_35",
+      "required": true,
+      "component": "Markdown"
+    }
+  },
+  "output_schema": {
+    "value_23": {
+      "type": "str",
+      "description": "value_23",
+      "component": "Markdown"
+    },
+    "value_25": {
+      "type": "str",
+      "description": "value_25",
+      "component": "Markdown"
+    }
+  },
+  "license": "unknown",
+  "hardware": "4.24.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us",
+    "benchmark",
+    "leaderboard"
+  ],
+  "likes": 103,
+  "last_modified": "2025-03-06 05:36:32+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/leftvote_last_response_t2s_anony",
+      "parameters": [
+        {
+          "name": "model_selector0",
+          "label": "parameter_23",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "name": "model_selector1",
+          "label": "parameter_25",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "name": "dim_md",
+          "label": "parameter_35",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_23",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_25",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/rightvote_last_response_t2s_anony",
+      "parameters": [
+        {
+          "name": "model_selector0",
+          "label": "parameter_23",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "name": "model_selector1",
+          "label": "parameter_25",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "name": "dim_md",
+          "label": "parameter_35",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_23",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_25",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/tievote_last_response_t2s_anony",
+      "parameters": [
+        {
+          "name": "model_selector0",
+          "label": "parameter_23",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "name": "model_selector1",
+          "label": "parameter_25",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "name": "dim_md",
+          "label": "parameter_35",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_23",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_25",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/bothbad_vote_last_response_t2s_anony",
+      "parameters": [
+        {
+          "name": "model_selector0",
+          "label": "parameter_23",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "name": "model_selector1",
+          "label": "parameter_25",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "name": "dim_md",
+          "label": "parameter_35",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_23",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_25",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/leftvote_last_response_t2s_anony_1",
+      "parameters": [
+        {
+          "name": "model_selector0",
+          "label": "parameter_23",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "name": "model_selector1",
+          "label": "parameter_25",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "name": "dim_md",
+          "label": "parameter_41",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_23",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_25",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/rightvote_last_response_t2s_anony_1",
+      "parameters": [
+        {
+          "name": "model_selector0",
+          "label": "parameter_23",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "name": "model_selector1",
+          "label": "parameter_25",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "name": "dim_md",
+          "label": "parameter_41",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_23",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_25",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/tievote_last_response_t2s_anony_1",
+      "parameters": [
+        {
+          "name": "model_selector0",
+          "label": "parameter_23",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "name": "model_selector1",
+          "label": "parameter_25",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "name": "dim_md",
+          "label": "parameter_41",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_23",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_25",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/bothbad_vote_last_response_t2s_anony_1",
+      "parameters": [
+        {
+          "name": "model_selector0",
+          "label": "parameter_23",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "name": "model_selector1",
+          "label": "parameter_25",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "name": "dim_md",
+          "label": "parameter_41",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_23",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_25",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/leftvote_last_response_t2s_anony_2",
+      "parameters": [
+        {
+          "name": "model_selector0",
+          "label": "parameter_23",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "name": "model_selector1",
+          "label": "parameter_25",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "name": "dim_md",
+          "label": "parameter_53",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_23",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_25",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/rightvote_last_response_t2s_anony_2",
+      "parameters": [
+        {
+          "name": "model_selector0",
+          "label": "parameter_23",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "name": "model_selector1",
+          "label": "parameter_25",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "name": "dim_md",
+          "label": "parameter_53",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_23",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_25",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/tievote_last_response_t2s_anony_2",
+      "parameters": [
+        {
+          "name": "model_selector0",
+          "label": "parameter_23",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "name": "model_selector1",
+          "label": "parameter_25",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "name": "dim_md",
+          "label": "parameter_53",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_23",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_25",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/bothbad_vote_last_response_t2s_anony_2",
+      "parameters": [
+        {
+          "name": "model_selector0",
+          "label": "parameter_23",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "name": "model_selector1",
+          "label": "parameter_25",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "name": "dim_md",
+          "label": "parameter_53",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_23",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_25",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/leftvote_last_response_t2s_anony_3",
+      "parameters": [
+        {
+          "name": "model_selector0",
+          "label": "parameter_23",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "name": "model_selector1",
+          "label": "parameter_25",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "name": "dim_md",
+          "label": "parameter_29",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_23",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_25",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/rightvote_last_response_t2s_anony_3",
+      "parameters": [
+        {
+          "name": "model_selector0",
+          "label": "parameter_23",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "name": "model_selector1",
+          "label": "parameter_25",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "name": "dim_md",
+          "label": "parameter_29",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_23",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_25",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/tievote_last_response_t2s_anony_3",
+      "parameters": [
+        {
+          "name": "model_selector0",
+          "label": "parameter_23",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "name": "model_selector1",
+          "label": "parameter_25",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "name": "dim_md",
+          "label": "parameter_29",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_23",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_25",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/bothbad_vote_last_response_t2s_anony_3",
+      "parameters": [
+        {
+          "name": "model_selector0",
+          "label": "parameter_23",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "name": "model_selector1",
+          "label": "parameter_25",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "name": "dim_md",
+          "label": "parameter_29",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_23",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_25",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/leftvote_last_response_t2s_anony_4",
+      "parameters": [
+        {
+          "name": "model_selector0",
+          "label": "parameter_23",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "name": "model_selector1",
+          "label": "parameter_25",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "name": "dim_md",
+          "label": "parameter_47",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_23",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_25",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/rightvote_last_response_t2s_anony_4",
+      "parameters": [
+        {
+          "name": "model_selector0",
+          "label": "parameter_23",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "name": "model_selector1",
+          "label": "parameter_25",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "name": "dim_md",
+          "label": "parameter_47",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_23",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_25",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/tievote_last_response_t2s_anony_4",
+      "parameters": [
+        {
+          "name": "model_selector0",
+          "label": "parameter_23",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "name": "model_selector1",
+          "label": "parameter_25",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "name": "dim_md",
+          "label": "parameter_47",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_23",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_25",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/bothbad_vote_last_response_t2s_anony_4",
+      "parameters": [
+        {
+          "name": "model_selector0",
+          "label": "parameter_23",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "name": "model_selector1",
+          "label": "parameter_25",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "name": "dim_md",
+          "label": "parameter_47",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_23",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_25",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/sample_btn_anony",
+      "parameters": [
+        {
+          "name": "model_name_0",
+          "label": "parameter_23",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "name": "model_name_1",
+          "label": "parameter_25",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_59",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/reset_states_side_by_side_anony",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_23",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_25",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "Geometry A",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "Normal A",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "RGB A",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "Geometry B",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "Normal B",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "RGB B",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "value_35",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_41",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_53",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_29",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_47",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/reset_states_side_by_side_anony_1",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_23",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_25",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "Geometry A",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "Normal A",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "RGB A",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "Geometry B",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "Normal B",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "RGB B",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "value_35",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_41",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_53",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_29",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_47",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/submit_btn_anony",
+      "parameters": [
+        {
+          "name": "text",
+          "label": "parameter_59",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "model_name_0",
+          "label": "parameter_23",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "name": "model_name_1",
+          "label": "parameter_25",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Geometry A",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "Normal A",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "RGB A",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "Geometry B",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "Normal B",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "RGB B",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "value_23",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_25",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/enable_mds",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_35",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_41",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_53",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_29",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_47",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/enable_buttons_side_by_side",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/reset_states_side_by_side_anony_2",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_23",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_25",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "Geometry A",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "Normal A",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "RGB A",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "Geometry B",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "Normal B",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "RGB B",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "value_35",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_41",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_53",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_29",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_47",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/send_btn_anony",
+      "parameters": [
+        {
+          "name": "text",
+          "label": "parameter_59",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "model_name_0",
+          "label": "parameter_23",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "name": "model_name_1",
+          "label": "parameter_25",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Geometry A",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "Normal A",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "RGB A",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "Geometry B",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "Normal B",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "RGB B",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "value_23",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_25",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/enable_mds_1",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_35",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_41",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_53",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_29",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_47",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/enable_buttons_side_by_side_1",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/clear_btn_anony",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_59",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Geometry A",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "Normal A",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "RGB A",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "Geometry B",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "Normal B",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "RGB B",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "value_23",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_25",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/disable_mds",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_35",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_41",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_53",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_29",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_47",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/disable_buttons_side_by_side",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/reset_states_side_by_side_anony_3",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_23",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_25",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "Geometry A",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "Normal A",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "RGB A",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "Geometry B",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "Normal B",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "RGB B",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "value_35",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_41",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_53",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_29",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_47",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/regenerate_btn_anony",
+      "parameters": [
+        {
+          "name": "text",
+          "label": "parameter_59",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "model_name_0",
+          "label": "parameter_23",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "name": "model_name_1",
+          "label": "parameter_25",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Geometry A",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "Normal A",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "RGB A",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "Geometry B",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "Normal B",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "RGB B",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "value_23",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_25",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/enable_mds_2",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_35",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_41",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_53",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_29",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_47",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/enable_buttons_side_by_side_2",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/share_click_t2s_multi",
+      "parameters": [
+        {
+          "name": "model_selector0",
+          "label": "parameter_23",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "name": "model_selector1",
+          "label": "parameter_25",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/model_selector_left",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_122",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Geometry A",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "Normal A",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "RGB A",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "Geometry B",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "Normal B",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "RGB B",
+          "type": "filepath",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/disable_mds_1",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_98",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_104",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_116",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_92",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_110",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/disable_buttons_side_by_side_1",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/model_selector_right",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_122",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Geometry A",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "Normal A",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "RGB A",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "Geometry B",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "Normal B",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "RGB B",
+          "type": "filepath",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/disable_mds_2",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_98",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_104",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_116",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_92",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_110",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/disable_buttons_side_by_side_2",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/leftvote_last_response_t2s_named",
+      "parameters": [
+        {
+          "name": "model_selector0",
+          "label": "parameter_77",
+          "type": "Literal['dreamfusion', 'grm-t', 'latent-nerf', 'lucid-dreamer', 'magic3d', 'mvdream', 'point-e-t', 'shap-e-t', 'sjc']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "model_selector1",
+          "label": "parameter_79",
+          "type": "Literal['dreamfusion', 'grm-t', 'latent-nerf', 'lucid-dreamer', 'magic3d', 'mvdream', 'point-e-t', 'shap-e-t', 'sjc']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "dim_md",
+          "label": "parameter_98",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/rightvote_last_response_t2s_named",
+      "parameters": [
+        {
+          "name": "model_selector0",
+          "label": "parameter_77",
+          "type": "Literal['dreamfusion', 'grm-t', 'latent-nerf', 'lucid-dreamer', 'magic3d', 'mvdream', 'point-e-t', 'shap-e-t', 'sjc']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "model_selector1",
+          "label": "parameter_79",
+          "type": "Literal['dreamfusion', 'grm-t', 'latent-nerf', 'lucid-dreamer', 'magic3d', 'mvdream', 'point-e-t', 'shap-e-t', 'sjc']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "dim_md",
+          "label": "parameter_98",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/tievote_last_response_t2s_named",
+      "parameters": [
+        {
+          "name": "model_selector0",
+          "label": "parameter_77",
+          "type": "Literal['dreamfusion', 'grm-t', 'latent-nerf', 'lucid-dreamer', 'magic3d', 'mvdream', 'point-e-t', 'shap-e-t', 'sjc']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "model_selector1",
+          "label": "parameter_79",
+          "type": "Literal['dreamfusion', 'grm-t', 'latent-nerf', 'lucid-dreamer', 'magic3d', 'mvdream', 'point-e-t', 'shap-e-t', 'sjc']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "dim_md",
+          "label": "parameter_98",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/bothbad_vote_last_response_t2s_named",
+      "parameters": [
+        {
+          "name": "model_selector0",
+          "label": "parameter_77",
+          "type": "Literal['dreamfusion', 'grm-t', 'latent-nerf', 'lucid-dreamer', 'magic3d', 'mvdream', 'point-e-t', 'shap-e-t', 'sjc']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "model_selector1",
+          "label": "parameter_79",
+          "type": "Literal['dreamfusion', 'grm-t', 'latent-nerf', 'lucid-dreamer', 'magic3d', 'mvdream', 'point-e-t', 'shap-e-t', 'sjc']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "dim_md",
+          "label": "parameter_98",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/leftvote_last_response_t2s_named_1",
+      "parameters": [
+        {
+          "name": "model_selector0",
+          "label": "parameter_77",
+          "type": "Literal['dreamfusion', 'grm-t', 'latent-nerf', 'lucid-dreamer', 'magic3d', 'mvdream', 'point-e-t', 'shap-e-t', 'sjc']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "model_selector1",
+          "label": "parameter_79",
+          "type": "Literal['dreamfusion', 'grm-t', 'latent-nerf', 'lucid-dreamer', 'magic3d', 'mvdream', 'point-e-t', 'shap-e-t', 'sjc']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "dim_md",
+          "label": "parameter_104",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/rightvote_last_response_t2s_named_1",
+      "parameters": [
+        {
+          "name": "model_selector0",
+          "label": "parameter_77",
+          "type": "Literal['dreamfusion', 'grm-t', 'latent-nerf', 'lucid-dreamer', 'magic3d', 'mvdream', 'point-e-t', 'shap-e-t', 'sjc']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "model_selector1",
+          "label": "parameter_79",
+          "type": "Literal['dreamfusion', 'grm-t', 'latent-nerf', 'lucid-dreamer', 'magic3d', 'mvdream', 'point-e-t', 'shap-e-t', 'sjc']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "dim_md",
+          "label": "parameter_104",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/tievote_last_response_t2s_named_1",
+      "parameters": [
+        {
+          "name": "model_selector0",
+          "label": "parameter_77",
+          "type": "Literal['dreamfusion', 'grm-t', 'latent-nerf', 'lucid-dreamer', 'magic3d', 'mvdream', 'point-e-t', 'shap-e-t', 'sjc']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "model_selector1",
+          "label": "parameter_79",
+          "type": "Literal['dreamfusion', 'grm-t', 'latent-nerf', 'lucid-dreamer', 'magic3d', 'mvdream', 'point-e-t', 'shap-e-t', 'sjc']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "dim_md",
+          "label": "parameter_104",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/bothbad_vote_last_response_t2s_named_1",
+      "parameters": [
+        {
+          "name": "model_selector0",
+          "label": "parameter_77",
+          "type": "Literal['dreamfusion', 'grm-t', 'latent-nerf', 'lucid-dreamer', 'magic3d', 'mvdream', 'point-e-t', 'shap-e-t', 'sjc']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "model_selector1",
+          "label": "parameter_79",
+          "type": "Literal['dreamfusion', 'grm-t', 'latent-nerf', 'lucid-dreamer', 'magic3d', 'mvdream', 'point-e-t', 'shap-e-t', 'sjc']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "dim_md",
+          "label": "parameter_104",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/leftvote_last_response_t2s_named_2",
+      "parameters": [
+        {
+          "name": "model_selector0",
+          "label": "parameter_77",
+          "type": "Literal['dreamfusion', 'grm-t', 'latent-nerf', 'lucid-dreamer', 'magic3d', 'mvdream', 'point-e-t', 'shap-e-t', 'sjc']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "model_selector1",
+          "label": "parameter_79",
+          "type": "Literal['dreamfusion', 'grm-t', 'latent-nerf', 'lucid-dreamer', 'magic3d', 'mvdream', 'point-e-t', 'shap-e-t', 'sjc']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "dim_md",
+          "label": "parameter_116",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/rightvote_last_response_t2s_named_2",
+      "parameters": [
+        {
+          "name": "model_selector0",
+          "label": "parameter_77",
+          "type": "Literal['dreamfusion', 'grm-t', 'latent-nerf', 'lucid-dreamer', 'magic3d', 'mvdream', 'point-e-t', 'shap-e-t', 'sjc']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "model_selector1",
+          "label": "parameter_79",
+          "type": "Literal['dreamfusion', 'grm-t', 'latent-nerf', 'lucid-dreamer', 'magic3d', 'mvdream', 'point-e-t', 'shap-e-t', 'sjc']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "dim_md",
+          "label": "parameter_116",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/tievote_last_response_t2s_named_2",
+      "parameters": [
+        {
+          "name": "model_selector0",
+          "label": "parameter_77",
+          "type": "Literal['dreamfusion', 'grm-t', 'latent-nerf', 'lucid-dreamer', 'magic3d', 'mvdream', 'point-e-t', 'shap-e-t', 'sjc']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "model_selector1",
+          "label": "parameter_79",
+          "type": "Literal['dreamfusion', 'grm-t', 'latent-nerf', 'lucid-dreamer', 'magic3d', 'mvdream', 'point-e-t', 'shap-e-t', 'sjc']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "dim_md",
+          "label": "parameter_116",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/bothbad_vote_last_response_t2s_named_2",
+      "parameters": [
+        {
+          "name": "model_selector0",
+          "label": "parameter_77",
+          "type": "Literal['dreamfusion', 'grm-t', 'latent-nerf', 'lucid-dreamer', 'magic3d', 'mvdream', 'point-e-t', 'shap-e-t', 'sjc']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "model_selector1",
+          "label": "parameter_79",
+          "type": "Literal['dreamfusion', 'grm-t', 'latent-nerf', 'lucid-dreamer', 'magic3d', 'mvdream', 'point-e-t', 'shap-e-t', 'sjc']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "dim_md",
+          "label": "parameter_116",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/leftvote_last_response_t2s_named_3",
+      "parameters": [
+        {
+          "name": "model_selector0",
+          "label": "parameter_77",
+          "type": "Literal['dreamfusion', 'grm-t', 'latent-nerf', 'lucid-dreamer', 'magic3d', 'mvdream', 'point-e-t', 'shap-e-t', 'sjc']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "model_selector1",
+          "label": "parameter_79",
+          "type": "Literal['dreamfusion', 'grm-t', 'latent-nerf', 'lucid-dreamer', 'magic3d', 'mvdream', 'point-e-t', 'shap-e-t', 'sjc']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "dim_md",
+          "label": "parameter_92",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/rightvote_last_response_t2s_named_3",
+      "parameters": [
+        {
+          "name": "model_selector0",
+          "label": "parameter_77",
+          "type": "Literal['dreamfusion', 'grm-t', 'latent-nerf', 'lucid-dreamer', 'magic3d', 'mvdream', 'point-e-t', 'shap-e-t', 'sjc']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "model_selector1",
+          "label": "parameter_79",
+          "type": "Literal['dreamfusion', 'grm-t', 'latent-nerf', 'lucid-dreamer', 'magic3d', 'mvdream', 'point-e-t', 'shap-e-t', 'sjc']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "dim_md",
+          "label": "parameter_92",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/tievote_last_response_t2s_named_3",
+      "parameters": [
+        {
+          "name": "model_selector0",
+          "label": "parameter_77",
+          "type": "Literal['dreamfusion', 'grm-t', 'latent-nerf', 'lucid-dreamer', 'magic3d', 'mvdream', 'point-e-t', 'shap-e-t', 'sjc']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "model_selector1",
+          "label": "parameter_79",
+          "type": "Literal['dreamfusion', 'grm-t', 'latent-nerf', 'lucid-dreamer', 'magic3d', 'mvdream', 'point-e-t', 'shap-e-t', 'sjc']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "dim_md",
+          "label": "parameter_92",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/bothbad_vote_last_response_t2s_named_3",
+      "parameters": [
+        {
+          "name": "model_selector0",
+          "label": "parameter_77",
+          "type": "Literal['dreamfusion', 'grm-t', 'latent-nerf', 'lucid-dreamer', 'magic3d', 'mvdream', 'point-e-t', 'shap-e-t', 'sjc']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "model_selector1",
+          "label": "parameter_79",
+          "type": "Literal['dreamfusion', 'grm-t', 'latent-nerf', 'lucid-dreamer', 'magic3d', 'mvdream', 'point-e-t', 'shap-e-t', 'sjc']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "dim_md",
+          "label": "parameter_92",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/leftvote_last_response_t2s_named_4",
+      "parameters": [
+        {
+          "name": "model_selector0",
+          "label": "parameter_77",
+          "type": "Literal['dreamfusion', 'grm-t', 'latent-nerf', 'lucid-dreamer', 'magic3d', 'mvdream', 'point-e-t', 'shap-e-t', 'sjc']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "model_selector1",
+          "label": "parameter_79",
+          "type": "Literal['dreamfusion', 'grm-t', 'latent-nerf', 'lucid-dreamer', 'magic3d', 'mvdream', 'point-e-t', 'shap-e-t', 'sjc']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "dim_md",
+          "label": "parameter_110",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/rightvote_last_response_t2s_named_4",
+      "parameters": [
+        {
+          "name": "model_selector0",
+          "label": "parameter_77",
+          "type": "Literal['dreamfusion', 'grm-t', 'latent-nerf', 'lucid-dreamer', 'magic3d', 'mvdream', 'point-e-t', 'shap-e-t', 'sjc']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "model_selector1",
+          "label": "parameter_79",
+          "type": "Literal['dreamfusion', 'grm-t', 'latent-nerf', 'lucid-dreamer', 'magic3d', 'mvdream', 'point-e-t', 'shap-e-t', 'sjc']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "dim_md",
+          "label": "parameter_110",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/tievote_last_response_t2s_named_4",
+      "parameters": [
+        {
+          "name": "model_selector0",
+          "label": "parameter_77",
+          "type": "Literal['dreamfusion', 'grm-t', 'latent-nerf', 'lucid-dreamer', 'magic3d', 'mvdream', 'point-e-t', 'shap-e-t', 'sjc']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "model_selector1",
+          "label": "parameter_79",
+          "type": "Literal['dreamfusion', 'grm-t', 'latent-nerf', 'lucid-dreamer', 'magic3d', 'mvdream', 'point-e-t', 'shap-e-t', 'sjc']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "dim_md",
+          "label": "parameter_110",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/bothbad_vote_last_response_t2s_named_4",
+      "parameters": [
+        {
+          "name": "model_selector0",
+          "label": "parameter_77",
+          "type": "Literal['dreamfusion', 'grm-t', 'latent-nerf', 'lucid-dreamer', 'magic3d', 'mvdream', 'point-e-t', 'shap-e-t', 'sjc']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "model_selector1",
+          "label": "parameter_79",
+          "type": "Literal['dreamfusion', 'grm-t', 'latent-nerf', 'lucid-dreamer', 'magic3d', 'mvdream', 'point-e-t', 'shap-e-t', 'sjc']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "dim_md",
+          "label": "parameter_110",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/sample_btn_named",
+      "parameters": [
+        {
+          "name": "model_name_0",
+          "label": "parameter_77",
+          "type": "Literal['dreamfusion', 'grm-t', 'latent-nerf', 'lucid-dreamer', 'magic3d', 'mvdream', 'point-e-t', 'shap-e-t', 'sjc']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "model_name_1",
+          "label": "parameter_79",
+          "type": "Literal['dreamfusion', 'grm-t', 'latent-nerf', 'lucid-dreamer', 'magic3d', 'mvdream', 'point-e-t', 'shap-e-t', 'sjc']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_122",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/reset_states_side_by_side",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Geometry A",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "Normal A",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "RGB A",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "Geometry B",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "Normal B",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "RGB B",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "value_98",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_104",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_116",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_92",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_110",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/reset_states_side_by_side_1",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Geometry A",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "Normal A",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "RGB A",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "Geometry B",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "Normal B",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "RGB B",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "value_98",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_104",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_116",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_92",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_110",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/submit_btn_named",
+      "parameters": [
+        {
+          "name": "text",
+          "label": "parameter_122",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "model_name_0",
+          "label": "parameter_77",
+          "type": "Literal['dreamfusion', 'grm-t', 'latent-nerf', 'lucid-dreamer', 'magic3d', 'mvdream', 'point-e-t', 'shap-e-t', 'sjc']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "model_name_1",
+          "label": "parameter_79",
+          "type": "Literal['dreamfusion', 'grm-t', 'latent-nerf', 'lucid-dreamer', 'magic3d', 'mvdream', 'point-e-t', 'shap-e-t', 'sjc']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Geometry A",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "Normal A",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "RGB A",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "Geometry B",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "Normal B",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "RGB B",
+          "type": "filepath",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/enable_mds_3",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_98",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_104",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_116",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_92",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_110",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/enable_buttons_side_by_side_3",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/reset_states_side_by_side_2",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Geometry A",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "Normal A",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "RGB A",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "Geometry B",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "Normal B",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "RGB B",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "value_98",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_104",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_116",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_92",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_110",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/send_btn_named",
+      "parameters": [
+        {
+          "name": "text",
+          "label": "parameter_122",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "model_name_0",
+          "label": "parameter_77",
+          "type": "Literal['dreamfusion', 'grm-t', 'latent-nerf', 'lucid-dreamer', 'magic3d', 'mvdream', 'point-e-t', 'shap-e-t', 'sjc']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "model_name_1",
+          "label": "parameter_79",
+          "type": "Literal['dreamfusion', 'grm-t', 'latent-nerf', 'lucid-dreamer', 'magic3d', 'mvdream', 'point-e-t', 'shap-e-t', 'sjc']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Geometry A",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "Normal A",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "RGB A",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "Geometry B",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "Normal B",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "RGB B",
+          "type": "filepath",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/enable_mds_4",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_98",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_104",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_116",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_92",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_110",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/enable_buttons_side_by_side_4",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/clear_btn_named",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_122",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Geometry A",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "Normal A",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "RGB A",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "Geometry B",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "Normal B",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "RGB B",
+          "type": "filepath",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/disable_mds_3",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_98",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_104",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_116",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_92",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_110",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/disable_buttons_side_by_side_3",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/reset_states_side_by_side_3",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Geometry A",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "Normal A",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "RGB A",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "Geometry B",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "Normal B",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "RGB B",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "value_98",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_104",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_116",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_92",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_110",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/regenerate_btn_named",
+      "parameters": [
+        {
+          "name": "text",
+          "label": "parameter_122",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "model_name_0",
+          "label": "parameter_77",
+          "type": "Literal['dreamfusion', 'grm-t', 'latent-nerf', 'lucid-dreamer', 'magic3d', 'mvdream', 'point-e-t', 'shap-e-t', 'sjc']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "model_name_1",
+          "label": "parameter_79",
+          "type": "Literal['dreamfusion', 'grm-t', 'latent-nerf', 'lucid-dreamer', 'magic3d', 'mvdream', 'point-e-t', 'shap-e-t', 'sjc']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Geometry A",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "Normal A",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "RGB A",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "Geometry B",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "Normal B",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "RGB B",
+          "type": "filepath",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/enable_mds_5",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_98",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_104",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_116",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_92",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_110",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/enable_buttons_side_by_side_5",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/share_click_t2s_multi_1",
+      "parameters": [
+        {
+          "name": "model_selector0",
+          "label": "parameter_77",
+          "type": "Literal['dreamfusion', 'grm-t', 'latent-nerf', 'lucid-dreamer', 'magic3d', 'mvdream', 'point-e-t', 'shap-e-t', 'sjc']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "model_selector1",
+          "label": "parameter_79",
+          "type": "Literal['dreamfusion', 'grm-t', 'latent-nerf', 'lucid-dreamer', 'magic3d', 'mvdream', 'point-e-t', 'shap-e-t', 'sjc']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/upvote_last_response_t2s",
+      "parameters": [
+        {
+          "name": "model_selector",
+          "label": "parameter_137",
+          "type": "Literal['dreamfusion', 'grm-t', 'latent-nerf', 'lucid-dreamer', 'magic3d', 'mvdream', 'point-e-t', 'shap-e-t', 'sjc']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "dim_md",
+          "label": "parameter_149",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/downvote_last_response_t2s",
+      "parameters": [
+        {
+          "name": "model_selector",
+          "label": "parameter_137",
+          "type": "Literal['dreamfusion', 'grm-t', 'latent-nerf', 'lucid-dreamer', 'magic3d', 'mvdream', 'point-e-t', 'shap-e-t', 'sjc']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "dim_md",
+          "label": "parameter_149",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/flag_last_response_t2s",
+      "parameters": [
+        {
+          "name": "model_selector",
+          "label": "parameter_137",
+          "type": "Literal['dreamfusion', 'grm-t', 'latent-nerf', 'lucid-dreamer', 'magic3d', 'mvdream', 'point-e-t', 'shap-e-t', 'sjc']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "dim_md",
+          "label": "parameter_149",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/upvote_last_response_t2s_1",
+      "parameters": [
+        {
+          "name": "model_selector",
+          "label": "parameter_137",
+          "type": "Literal['dreamfusion', 'grm-t', 'latent-nerf', 'lucid-dreamer', 'magic3d', 'mvdream', 'point-e-t', 'shap-e-t', 'sjc']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "dim_md",
+          "label": "parameter_154",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/downvote_last_response_t2s_1",
+      "parameters": [
+        {
+          "name": "model_selector",
+          "label": "parameter_137",
+          "type": "Literal['dreamfusion', 'grm-t', 'latent-nerf', 'lucid-dreamer', 'magic3d', 'mvdream', 'point-e-t', 'shap-e-t', 'sjc']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "dim_md",
+          "label": "parameter_154",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/flag_last_response_t2s_1",
+      "parameters": [
+        {
+          "name": "model_selector",
+          "label": "parameter_137",
+          "type": "Literal['dreamfusion', 'grm-t', 'latent-nerf', 'lucid-dreamer', 'magic3d', 'mvdream', 'point-e-t', 'shap-e-t', 'sjc']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "dim_md",
+          "label": "parameter_154",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/upvote_last_response_t2s_2",
+      "parameters": [
+        {
+          "name": "model_selector",
+          "label": "parameter_137",
+          "type": "Literal['dreamfusion', 'grm-t', 'latent-nerf', 'lucid-dreamer', 'magic3d', 'mvdream', 'point-e-t', 'shap-e-t', 'sjc']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "dim_md",
+          "label": "parameter_164",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/downvote_last_response_t2s_2",
+      "parameters": [
+        {
+          "name": "model_selector",
+          "label": "parameter_137",
+          "type": "Literal['dreamfusion', 'grm-t', 'latent-nerf', 'lucid-dreamer', 'magic3d', 'mvdream', 'point-e-t', 'shap-e-t', 'sjc']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "dim_md",
+          "label": "parameter_164",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/flag_last_response_t2s_2",
+      "parameters": [
+        {
+          "name": "model_selector",
+          "label": "parameter_137",
+          "type": "Literal['dreamfusion', 'grm-t', 'latent-nerf', 'lucid-dreamer', 'magic3d', 'mvdream', 'point-e-t', 'shap-e-t', 'sjc']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "dim_md",
+          "label": "parameter_164",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/upvote_last_response_t2s_3",
+      "parameters": [
+        {
+          "name": "model_selector",
+          "label": "parameter_137",
+          "type": "Literal['dreamfusion', 'grm-t', 'latent-nerf', 'lucid-dreamer', 'magic3d', 'mvdream', 'point-e-t', 'shap-e-t', 'sjc']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "dim_md",
+          "label": "parameter_144",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/downvote_last_response_t2s_3",
+      "parameters": [
+        {
+          "name": "model_selector",
+          "label": "parameter_137",
+          "type": "Literal['dreamfusion', 'grm-t', 'latent-nerf', 'lucid-dreamer', 'magic3d', 'mvdream', 'point-e-t', 'shap-e-t', 'sjc']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "dim_md",
+          "label": "parameter_144",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/flag_last_response_t2s_3",
+      "parameters": [
+        {
+          "name": "model_selector",
+          "label": "parameter_137",
+          "type": "Literal['dreamfusion', 'grm-t', 'latent-nerf', 'lucid-dreamer', 'magic3d', 'mvdream', 'point-e-t', 'shap-e-t', 'sjc']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "dim_md",
+          "label": "parameter_144",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/upvote_last_response_t2s_4",
+      "parameters": [
+        {
+          "name": "model_selector",
+          "label": "parameter_137",
+          "type": "Literal['dreamfusion', 'grm-t', 'latent-nerf', 'lucid-dreamer', 'magic3d', 'mvdream', 'point-e-t', 'shap-e-t', 'sjc']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "dim_md",
+          "label": "parameter_159",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/downvote_last_response_t2s_4",
+      "parameters": [
+        {
+          "name": "model_selector",
+          "label": "parameter_137",
+          "type": "Literal['dreamfusion', 'grm-t', 'latent-nerf', 'lucid-dreamer', 'magic3d', 'mvdream', 'point-e-t', 'shap-e-t', 'sjc']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "dim_md",
+          "label": "parameter_159",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/flag_last_response_t2s_4",
+      "parameters": [
+        {
+          "name": "model_selector",
+          "label": "parameter_137",
+          "type": "Literal['dreamfusion', 'grm-t', 'latent-nerf', 'lucid-dreamer', 'magic3d', 'mvdream', 'point-e-t', 'shap-e-t', 'sjc']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "dim_md",
+          "label": "parameter_159",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/clear_history_single",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_169",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Geometry",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "Normal",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "RGB",
+          "type": "filepath",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/disable_buttons",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/sample_btn_single",
+      "parameters": [
+        {
+          "name": "model_name",
+          "label": "parameter_137",
+          "type": "Literal['dreamfusion', 'grm-t', 'latent-nerf', 'lucid-dreamer', 'magic3d', 'mvdream', 'point-e-t', 'shap-e-t', 'sjc']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_169",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/reset_state",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Geometry",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "Normal",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "RGB",
+          "type": "filepath",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/reset_state_1",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Geometry",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "Normal",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "RGB",
+          "type": "filepath",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/submit_btn_single",
+      "parameters": [
+        {
+          "name": "text",
+          "label": "parameter_169",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "model_name",
+          "label": "parameter_137",
+          "type": "Literal['dreamfusion', 'grm-t', 'latent-nerf', 'lucid-dreamer', 'magic3d', 'mvdream', 'point-e-t', 'shap-e-t', 'sjc']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Geometry",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "Normal",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "RGB",
+          "type": "filepath",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/enable_buttons",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/reset_state_2",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Geometry",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "Normal",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "RGB",
+          "type": "filepath",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/send_btn_single",
+      "parameters": [
+        {
+          "name": "text",
+          "label": "parameter_169",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "model_name",
+          "label": "parameter_137",
+          "type": "Literal['dreamfusion', 'grm-t', 'latent-nerf', 'lucid-dreamer', 'magic3d', 'mvdream', 'point-e-t', 'shap-e-t', 'sjc']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Geometry",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "Normal",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "RGB",
+          "type": "filepath",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/enable_buttons_1",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/clear_history_single_1",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_169",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Geometry",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "Normal",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "RGB",
+          "type": "filepath",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/disable_buttons_1",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/reset_state_3",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Geometry",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "Normal",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "RGB",
+          "type": "filepath",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/regenerate_btn_single",
+      "parameters": [
+        {
+          "name": "text",
+          "label": "parameter_169",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "model_name",
+          "label": "parameter_137",
+          "type": "Literal['dreamfusion', 'grm-t', 'latent-nerf', 'lucid-dreamer', 'magic3d', 'mvdream', 'point-e-t', 'shap-e-t', 'sjc']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Geometry",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "Normal",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "RGB",
+          "type": "filepath",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/enable_buttons_2",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/leftvote_last_response_i2s_anony",
+      "parameters": [
+        {
+          "name": "model_selector0",
+          "label": "parameter_212",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "name": "model_selector1",
+          "label": "parameter_214",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "name": "dim_md",
+          "label": "parameter_228",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_212",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_214",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/rightvote_last_response_i2s_anony",
+      "parameters": [
+        {
+          "name": "model_selector0",
+          "label": "parameter_212",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "name": "model_selector1",
+          "label": "parameter_214",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "name": "dim_md",
+          "label": "parameter_228",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_212",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_214",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/tievote_last_response_i2s_anony",
+      "parameters": [
+        {
+          "name": "model_selector0",
+          "label": "parameter_212",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "name": "model_selector1",
+          "label": "parameter_214",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "name": "dim_md",
+          "label": "parameter_228",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_212",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_214",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/bothbad_vote_last_response_i2s_anony",
+      "parameters": [
+        {
+          "name": "model_selector0",
+          "label": "parameter_212",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "name": "model_selector1",
+          "label": "parameter_214",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "name": "dim_md",
+          "label": "parameter_228",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_212",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_214",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/leftvote_last_response_i2s_anony_1",
+      "parameters": [
+        {
+          "name": "model_selector0",
+          "label": "parameter_212",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "name": "model_selector1",
+          "label": "parameter_214",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "name": "dim_md",
+          "label": "parameter_234",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_212",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_214",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/rightvote_last_response_i2s_anony_1",
+      "parameters": [
+        {
+          "name": "model_selector0",
+          "label": "parameter_212",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "name": "model_selector1",
+          "label": "parameter_214",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "name": "dim_md",
+          "label": "parameter_234",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_212",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_214",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/tievote_last_response_i2s_anony_1",
+      "parameters": [
+        {
+          "name": "model_selector0",
+          "label": "parameter_212",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "name": "model_selector1",
+          "label": "parameter_214",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "name": "dim_md",
+          "label": "parameter_234",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_212",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_214",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/bothbad_vote_last_response_i2s_anony_1",
+      "parameters": [
+        {
+          "name": "model_selector0",
+          "label": "parameter_212",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "name": "model_selector1",
+          "label": "parameter_214",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "name": "dim_md",
+          "label": "parameter_234",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_212",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_214",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/leftvote_last_response_i2s_anony_2",
+      "parameters": [
+        {
+          "name": "model_selector0",
+          "label": "parameter_212",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "name": "model_selector1",
+          "label": "parameter_214",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "name": "dim_md",
+          "label": "parameter_246",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_212",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_214",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/rightvote_last_response_i2s_anony_2",
+      "parameters": [
+        {
+          "name": "model_selector0",
+          "label": "parameter_212",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "name": "model_selector1",
+          "label": "parameter_214",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "name": "dim_md",
+          "label": "parameter_246",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_212",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_214",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/tievote_last_response_i2s_anony_2",
+      "parameters": [
+        {
+          "name": "model_selector0",
+          "label": "parameter_212",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "name": "model_selector1",
+          "label": "parameter_214",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "name": "dim_md",
+          "label": "parameter_246",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_212",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_214",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/bothbad_vote_last_response_i2s_anony_2",
+      "parameters": [
+        {
+          "name": "model_selector0",
+          "label": "parameter_212",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "name": "model_selector1",
+          "label": "parameter_214",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "name": "dim_md",
+          "label": "parameter_246",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_212",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_214",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/leftvote_last_response_i2s_anony_3",
+      "parameters": [
+        {
+          "name": "model_selector0",
+          "label": "parameter_212",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "name": "model_selector1",
+          "label": "parameter_214",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "name": "dim_md",
+          "label": "parameter_222",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_212",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_214",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/rightvote_last_response_i2s_anony_3",
+      "parameters": [
+        {
+          "name": "model_selector0",
+          "label": "parameter_212",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "name": "model_selector1",
+          "label": "parameter_214",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "name": "dim_md",
+          "label": "parameter_222",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_212",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_214",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/tievote_last_response_i2s_anony_3",
+      "parameters": [
+        {
+          "name": "model_selector0",
+          "label": "parameter_212",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "name": "model_selector1",
+          "label": "parameter_214",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "name": "dim_md",
+          "label": "parameter_222",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_212",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_214",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/bothbad_vote_last_response_i2s_anony_3",
+      "parameters": [
+        {
+          "name": "model_selector0",
+          "label": "parameter_212",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "name": "model_selector1",
+          "label": "parameter_214",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "name": "dim_md",
+          "label": "parameter_222",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_212",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_214",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/leftvote_last_response_i2s_anony_4",
+      "parameters": [
+        {
+          "name": "model_selector0",
+          "label": "parameter_212",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "name": "model_selector1",
+          "label": "parameter_214",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "name": "dim_md",
+          "label": "parameter_240",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_212",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_214",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/rightvote_last_response_i2s_anony_4",
+      "parameters": [
+        {
+          "name": "model_selector0",
+          "label": "parameter_212",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "name": "model_selector1",
+          "label": "parameter_214",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "name": "dim_md",
+          "label": "parameter_240",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_212",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_214",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/tievote_last_response_i2s_anony_4",
+      "parameters": [
+        {
+          "name": "model_selector0",
+          "label": "parameter_212",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "name": "model_selector1",
+          "label": "parameter_214",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "name": "dim_md",
+          "label": "parameter_240",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_212",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_214",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/bothbad_vote_last_response_i2s_anony_4",
+      "parameters": [
+        {
+          "name": "model_selector0",
+          "label": "parameter_212",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "name": "model_selector1",
+          "label": "parameter_214",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "name": "dim_md",
+          "label": "parameter_240",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_212",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_214",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/sample_btn_anony_1",
+      "parameters": [
+        {
+          "name": "model_name_0",
+          "label": "parameter_212",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "name": "model_name_1",
+          "label": "parameter_214",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Prompt",
+          "type": "filepath",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/reset_states_side_by_side_anony_4",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_212",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_214",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "Geometry A",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "Normal A",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "RGB A",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "Geometry B",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "Normal B",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "RGB B",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "value_228",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_234",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_246",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_222",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_240",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/reset_states_side_by_side_anony_5",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_212",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_214",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "Geometry A",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "Normal A",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "RGB A",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "Geometry B",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "Normal B",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "RGB B",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "value_228",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_234",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_246",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_222",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_240",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/submit_btn_named_1",
+      "parameters": [
+        {
+          "name": "image",
+          "label": "Prompt",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "name": "model_name_0",
+          "label": "parameter_212",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "name": "model_name_1",
+          "label": "parameter_214",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Geometry A",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "Normal A",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "RGB A",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "Geometry B",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "Normal B",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "RGB B",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "value_212",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_214",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/enable_mds_6",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_228",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_234",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_246",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_222",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_240",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/enable_buttons_side_by_side_6",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/reset_states_side_by_side_anony_6",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_212",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_214",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "Geometry A",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "Normal A",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "RGB A",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "Geometry B",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "Normal B",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "RGB B",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "value_228",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_234",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_246",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_222",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_240",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/send_btn_anony_1",
+      "parameters": [
+        {
+          "name": "image",
+          "label": "Prompt",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "name": "model_name_0",
+          "label": "parameter_212",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "name": "model_name_1",
+          "label": "parameter_214",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Geometry A",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "Normal A",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "RGB A",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "Geometry B",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "Normal B",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "RGB B",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "value_212",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_214",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/enable_mds_7",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_228",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_234",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_246",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_222",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_240",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/enable_buttons_side_by_side_7",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/clear_btn_anony_1",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Prompt",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "Geometry A",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "Normal A",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "RGB A",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "Geometry B",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "Normal B",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "RGB B",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "value_212",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_214",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/disable_mds_4",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_228",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_234",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_246",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_222",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_240",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/disable_buttons_side_by_side_4",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/reset_states_side_by_side_anony_7",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_212",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_214",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "Geometry A",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "Normal A",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "RGB A",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "Geometry B",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "Normal B",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "RGB B",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "value_228",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_234",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_246",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_222",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_240",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/regenerate_btn_anony_1",
+      "parameters": [
+        {
+          "name": "image",
+          "label": "Prompt",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "name": "model_name_0",
+          "label": "parameter_212",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "name": "model_name_1",
+          "label": "parameter_214",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Geometry A",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "Normal A",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "RGB A",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "Geometry B",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "Normal B",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "RGB B",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "value_212",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_214",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/enable_mds_8",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_228",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_234",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_246",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_222",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_240",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/enable_buttons_side_by_side_8",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/share_click_i2s_multi",
+      "parameters": [
+        {
+          "name": "model_selector0",
+          "label": "parameter_212",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "name": "model_selector1",
+          "label": "parameter_214",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/model_selector_left_1",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Prompt",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "Geometry A",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "Normal A",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "RGB A",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "Geometry B",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "Normal B",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "RGB B",
+          "type": "filepath",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/disable_mds_5",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_290",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_296",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_308",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_284",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_302",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/disable_buttons_side_by_side_5",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/model_selector_right_1",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Prompt",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "Geometry A",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "Normal A",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "RGB A",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "Geometry B",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "Normal B",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "RGB B",
+          "type": "filepath",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/disable_mds_6",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_290",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_296",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_308",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_284",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_302",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/disable_buttons_side_by_side_6",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/leftvote_last_response_i2s_named",
+      "parameters": [
+        {
+          "name": "model_selector0",
+          "label": "parameter_267",
+          "type": "Literal['escher-net', 'free3d', 'lgm', 'magic123', 'grm-i', 'openlrm', 'point-e-i', 'shap-e-i', 'stable-zero123', 'syncdreamer', 'triplane-gaussian', 'wonder3d', 'zero123-xl', 'instant-mesh']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "model_selector1",
+          "label": "parameter_269",
+          "type": "Literal['escher-net', 'free3d', 'lgm', 'magic123', 'grm-i', 'openlrm', 'point-e-i', 'shap-e-i', 'stable-zero123', 'syncdreamer', 'triplane-gaussian', 'wonder3d', 'zero123-xl', 'instant-mesh']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "dim_md",
+          "label": "parameter_290",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/rightvote_last_response_i2s_named",
+      "parameters": [
+        {
+          "name": "model_selector0",
+          "label": "parameter_267",
+          "type": "Literal['escher-net', 'free3d', 'lgm', 'magic123', 'grm-i', 'openlrm', 'point-e-i', 'shap-e-i', 'stable-zero123', 'syncdreamer', 'triplane-gaussian', 'wonder3d', 'zero123-xl', 'instant-mesh']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "model_selector1",
+          "label": "parameter_269",
+          "type": "Literal['escher-net', 'free3d', 'lgm', 'magic123', 'grm-i', 'openlrm', 'point-e-i', 'shap-e-i', 'stable-zero123', 'syncdreamer', 'triplane-gaussian', 'wonder3d', 'zero123-xl', 'instant-mesh']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "dim_md",
+          "label": "parameter_290",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/tievote_last_response_i2s_named",
+      "parameters": [
+        {
+          "name": "model_selector0",
+          "label": "parameter_267",
+          "type": "Literal['escher-net', 'free3d', 'lgm', 'magic123', 'grm-i', 'openlrm', 'point-e-i', 'shap-e-i', 'stable-zero123', 'syncdreamer', 'triplane-gaussian', 'wonder3d', 'zero123-xl', 'instant-mesh']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "model_selector1",
+          "label": "parameter_269",
+          "type": "Literal['escher-net', 'free3d', 'lgm', 'magic123', 'grm-i', 'openlrm', 'point-e-i', 'shap-e-i', 'stable-zero123', 'syncdreamer', 'triplane-gaussian', 'wonder3d', 'zero123-xl', 'instant-mesh']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "dim_md",
+          "label": "parameter_290",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/bothbad_vote_last_response_i2s_named",
+      "parameters": [
+        {
+          "name": "model_selector0",
+          "label": "parameter_267",
+          "type": "Literal['escher-net', 'free3d', 'lgm', 'magic123', 'grm-i', 'openlrm', 'point-e-i', 'shap-e-i', 'stable-zero123', 'syncdreamer', 'triplane-gaussian', 'wonder3d', 'zero123-xl', 'instant-mesh']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "model_selector1",
+          "label": "parameter_269",
+          "type": "Literal['escher-net', 'free3d', 'lgm', 'magic123', 'grm-i', 'openlrm', 'point-e-i', 'shap-e-i', 'stable-zero123', 'syncdreamer', 'triplane-gaussian', 'wonder3d', 'zero123-xl', 'instant-mesh']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "dim_md",
+          "label": "parameter_290",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/leftvote_last_response_i2s_named_1",
+      "parameters": [
+        {
+          "name": "model_selector0",
+          "label": "parameter_267",
+          "type": "Literal['escher-net', 'free3d', 'lgm', 'magic123', 'grm-i', 'openlrm', 'point-e-i', 'shap-e-i', 'stable-zero123', 'syncdreamer', 'triplane-gaussian', 'wonder3d', 'zero123-xl', 'instant-mesh']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "model_selector1",
+          "label": "parameter_269",
+          "type": "Literal['escher-net', 'free3d', 'lgm', 'magic123', 'grm-i', 'openlrm', 'point-e-i', 'shap-e-i', 'stable-zero123', 'syncdreamer', 'triplane-gaussian', 'wonder3d', 'zero123-xl', 'instant-mesh']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "dim_md",
+          "label": "parameter_296",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/rightvote_last_response_i2s_named_1",
+      "parameters": [
+        {
+          "name": "model_selector0",
+          "label": "parameter_267",
+          "type": "Literal['escher-net', 'free3d', 'lgm', 'magic123', 'grm-i', 'openlrm', 'point-e-i', 'shap-e-i', 'stable-zero123', 'syncdreamer', 'triplane-gaussian', 'wonder3d', 'zero123-xl', 'instant-mesh']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "model_selector1",
+          "label": "parameter_269",
+          "type": "Literal['escher-net', 'free3d', 'lgm', 'magic123', 'grm-i', 'openlrm', 'point-e-i', 'shap-e-i', 'stable-zero123', 'syncdreamer', 'triplane-gaussian', 'wonder3d', 'zero123-xl', 'instant-mesh']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "dim_md",
+          "label": "parameter_296",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/tievote_last_response_i2s_named_1",
+      "parameters": [
+        {
+          "name": "model_selector0",
+          "label": "parameter_267",
+          "type": "Literal['escher-net', 'free3d', 'lgm', 'magic123', 'grm-i', 'openlrm', 'point-e-i', 'shap-e-i', 'stable-zero123', 'syncdreamer', 'triplane-gaussian', 'wonder3d', 'zero123-xl', 'instant-mesh']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "model_selector1",
+          "label": "parameter_269",
+          "type": "Literal['escher-net', 'free3d', 'lgm', 'magic123', 'grm-i', 'openlrm', 'point-e-i', 'shap-e-i', 'stable-zero123', 'syncdreamer', 'triplane-gaussian', 'wonder3d', 'zero123-xl', 'instant-mesh']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "dim_md",
+          "label": "parameter_296",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/bothbad_vote_last_response_i2s_named_1",
+      "parameters": [
+        {
+          "name": "model_selector0",
+          "label": "parameter_267",
+          "type": "Literal['escher-net', 'free3d', 'lgm', 'magic123', 'grm-i', 'openlrm', 'point-e-i', 'shap-e-i', 'stable-zero123', 'syncdreamer', 'triplane-gaussian', 'wonder3d', 'zero123-xl', 'instant-mesh']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "model_selector1",
+          "label": "parameter_269",
+          "type": "Literal['escher-net', 'free3d', 'lgm', 'magic123', 'grm-i', 'openlrm', 'point-e-i', 'shap-e-i', 'stable-zero123', 'syncdreamer', 'triplane-gaussian', 'wonder3d', 'zero123-xl', 'instant-mesh']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "dim_md",
+          "label": "parameter_296",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/leftvote_last_response_i2s_named_2",
+      "parameters": [
+        {
+          "name": "model_selector0",
+          "label": "parameter_267",
+          "type": "Literal['escher-net', 'free3d', 'lgm', 'magic123', 'grm-i', 'openlrm', 'point-e-i', 'shap-e-i', 'stable-zero123', 'syncdreamer', 'triplane-gaussian', 'wonder3d', 'zero123-xl', 'instant-mesh']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "model_selector1",
+          "label": "parameter_269",
+          "type": "Literal['escher-net', 'free3d', 'lgm', 'magic123', 'grm-i', 'openlrm', 'point-e-i', 'shap-e-i', 'stable-zero123', 'syncdreamer', 'triplane-gaussian', 'wonder3d', 'zero123-xl', 'instant-mesh']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "dim_md",
+          "label": "parameter_308",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/rightvote_last_response_i2s_named_2",
+      "parameters": [
+        {
+          "name": "model_selector0",
+          "label": "parameter_267",
+          "type": "Literal['escher-net', 'free3d', 'lgm', 'magic123', 'grm-i', 'openlrm', 'point-e-i', 'shap-e-i', 'stable-zero123', 'syncdreamer', 'triplane-gaussian', 'wonder3d', 'zero123-xl', 'instant-mesh']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "model_selector1",
+          "label": "parameter_269",
+          "type": "Literal['escher-net', 'free3d', 'lgm', 'magic123', 'grm-i', 'openlrm', 'point-e-i', 'shap-e-i', 'stable-zero123', 'syncdreamer', 'triplane-gaussian', 'wonder3d', 'zero123-xl', 'instant-mesh']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "dim_md",
+          "label": "parameter_308",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/tievote_last_response_i2s_named_2",
+      "parameters": [
+        {
+          "name": "model_selector0",
+          "label": "parameter_267",
+          "type": "Literal['escher-net', 'free3d', 'lgm', 'magic123', 'grm-i', 'openlrm', 'point-e-i', 'shap-e-i', 'stable-zero123', 'syncdreamer', 'triplane-gaussian', 'wonder3d', 'zero123-xl', 'instant-mesh']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "model_selector1",
+          "label": "parameter_269",
+          "type": "Literal['escher-net', 'free3d', 'lgm', 'magic123', 'grm-i', 'openlrm', 'point-e-i', 'shap-e-i', 'stable-zero123', 'syncdreamer', 'triplane-gaussian', 'wonder3d', 'zero123-xl', 'instant-mesh']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "dim_md",
+          "label": "parameter_308",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/bothbad_vote_last_response_i2s_named_2",
+      "parameters": [
+        {
+          "name": "model_selector0",
+          "label": "parameter_267",
+          "type": "Literal['escher-net', 'free3d', 'lgm', 'magic123', 'grm-i', 'openlrm', 'point-e-i', 'shap-e-i', 'stable-zero123', 'syncdreamer', 'triplane-gaussian', 'wonder3d', 'zero123-xl', 'instant-mesh']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "model_selector1",
+          "label": "parameter_269",
+          "type": "Literal['escher-net', 'free3d', 'lgm', 'magic123', 'grm-i', 'openlrm', 'point-e-i', 'shap-e-i', 'stable-zero123', 'syncdreamer', 'triplane-gaussian', 'wonder3d', 'zero123-xl', 'instant-mesh']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "dim_md",
+          "label": "parameter_308",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/leftvote_last_response_i2s_named_3",
+      "parameters": [
+        {
+          "name": "model_selector0",
+          "label": "parameter_267",
+          "type": "Literal['escher-net', 'free3d', 'lgm', 'magic123', 'grm-i', 'openlrm', 'point-e-i', 'shap-e-i', 'stable-zero123', 'syncdreamer', 'triplane-gaussian', 'wonder3d', 'zero123-xl', 'instant-mesh']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "model_selector1",
+          "label": "parameter_269",
+          "type": "Literal['escher-net', 'free3d', 'lgm', 'magic123', 'grm-i', 'openlrm', 'point-e-i', 'shap-e-i', 'stable-zero123', 'syncdreamer', 'triplane-gaussian', 'wonder3d', 'zero123-xl', 'instant-mesh']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "dim_md",
+          "label": "parameter_284",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/rightvote_last_response_i2s_named_3",
+      "parameters": [
+        {
+          "name": "model_selector0",
+          "label": "parameter_267",
+          "type": "Literal['escher-net', 'free3d', 'lgm', 'magic123', 'grm-i', 'openlrm', 'point-e-i', 'shap-e-i', 'stable-zero123', 'syncdreamer', 'triplane-gaussian', 'wonder3d', 'zero123-xl', 'instant-mesh']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "model_selector1",
+          "label": "parameter_269",
+          "type": "Literal['escher-net', 'free3d', 'lgm', 'magic123', 'grm-i', 'openlrm', 'point-e-i', 'shap-e-i', 'stable-zero123', 'syncdreamer', 'triplane-gaussian', 'wonder3d', 'zero123-xl', 'instant-mesh']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "dim_md",
+          "label": "parameter_284",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/tievote_last_response_i2s_named_3",
+      "parameters": [
+        {
+          "name": "model_selector0",
+          "label": "parameter_267",
+          "type": "Literal['escher-net', 'free3d', 'lgm', 'magic123', 'grm-i', 'openlrm', 'point-e-i', 'shap-e-i', 'stable-zero123', 'syncdreamer', 'triplane-gaussian', 'wonder3d', 'zero123-xl', 'instant-mesh']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "model_selector1",
+          "label": "parameter_269",
+          "type": "Literal['escher-net', 'free3d', 'lgm', 'magic123', 'grm-i', 'openlrm', 'point-e-i', 'shap-e-i', 'stable-zero123', 'syncdreamer', 'triplane-gaussian', 'wonder3d', 'zero123-xl', 'instant-mesh']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "dim_md",
+          "label": "parameter_284",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/bothbad_vote_last_response_i2s_named_3",
+      "parameters": [
+        {
+          "name": "model_selector0",
+          "label": "parameter_267",
+          "type": "Literal['escher-net', 'free3d', 'lgm', 'magic123', 'grm-i', 'openlrm', 'point-e-i', 'shap-e-i', 'stable-zero123', 'syncdreamer', 'triplane-gaussian', 'wonder3d', 'zero123-xl', 'instant-mesh']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "model_selector1",
+          "label": "parameter_269",
+          "type": "Literal['escher-net', 'free3d', 'lgm', 'magic123', 'grm-i', 'openlrm', 'point-e-i', 'shap-e-i', 'stable-zero123', 'syncdreamer', 'triplane-gaussian', 'wonder3d', 'zero123-xl', 'instant-mesh']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "dim_md",
+          "label": "parameter_284",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/leftvote_last_response_i2s_named_4",
+      "parameters": [
+        {
+          "name": "model_selector0",
+          "label": "parameter_267",
+          "type": "Literal['escher-net', 'free3d', 'lgm', 'magic123', 'grm-i', 'openlrm', 'point-e-i', 'shap-e-i', 'stable-zero123', 'syncdreamer', 'triplane-gaussian', 'wonder3d', 'zero123-xl', 'instant-mesh']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "model_selector1",
+          "label": "parameter_269",
+          "type": "Literal['escher-net', 'free3d', 'lgm', 'magic123', 'grm-i', 'openlrm', 'point-e-i', 'shap-e-i', 'stable-zero123', 'syncdreamer', 'triplane-gaussian', 'wonder3d', 'zero123-xl', 'instant-mesh']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "dim_md",
+          "label": "parameter_302",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/rightvote_last_response_i2s_named_4",
+      "parameters": [
+        {
+          "name": "model_selector0",
+          "label": "parameter_267",
+          "type": "Literal['escher-net', 'free3d', 'lgm', 'magic123', 'grm-i', 'openlrm', 'point-e-i', 'shap-e-i', 'stable-zero123', 'syncdreamer', 'triplane-gaussian', 'wonder3d', 'zero123-xl', 'instant-mesh']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "model_selector1",
+          "label": "parameter_269",
+          "type": "Literal['escher-net', 'free3d', 'lgm', 'magic123', 'grm-i', 'openlrm', 'point-e-i', 'shap-e-i', 'stable-zero123', 'syncdreamer', 'triplane-gaussian', 'wonder3d', 'zero123-xl', 'instant-mesh']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "dim_md",
+          "label": "parameter_302",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/tievote_last_response_i2s_named_4",
+      "parameters": [
+        {
+          "name": "model_selector0",
+          "label": "parameter_267",
+          "type": "Literal['escher-net', 'free3d', 'lgm', 'magic123', 'grm-i', 'openlrm', 'point-e-i', 'shap-e-i', 'stable-zero123', 'syncdreamer', 'triplane-gaussian', 'wonder3d', 'zero123-xl', 'instant-mesh']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "model_selector1",
+          "label": "parameter_269",
+          "type": "Literal['escher-net', 'free3d', 'lgm', 'magic123', 'grm-i', 'openlrm', 'point-e-i', 'shap-e-i', 'stable-zero123', 'syncdreamer', 'triplane-gaussian', 'wonder3d', 'zero123-xl', 'instant-mesh']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "dim_md",
+          "label": "parameter_302",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/bothbad_vote_last_response_i2s_named_4",
+      "parameters": [
+        {
+          "name": "model_selector0",
+          "label": "parameter_267",
+          "type": "Literal['escher-net', 'free3d', 'lgm', 'magic123', 'grm-i', 'openlrm', 'point-e-i', 'shap-e-i', 'stable-zero123', 'syncdreamer', 'triplane-gaussian', 'wonder3d', 'zero123-xl', 'instant-mesh']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "model_selector1",
+          "label": "parameter_269",
+          "type": "Literal['escher-net', 'free3d', 'lgm', 'magic123', 'grm-i', 'openlrm', 'point-e-i', 'shap-e-i', 'stable-zero123', 'syncdreamer', 'triplane-gaussian', 'wonder3d', 'zero123-xl', 'instant-mesh']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "dim_md",
+          "label": "parameter_302",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/sample_btn_named_1",
+      "parameters": [
+        {
+          "name": "model_name_0",
+          "label": "parameter_267",
+          "type": "Literal['escher-net', 'free3d', 'lgm', 'magic123', 'grm-i', 'openlrm', 'point-e-i', 'shap-e-i', 'stable-zero123', 'syncdreamer', 'triplane-gaussian', 'wonder3d', 'zero123-xl', 'instant-mesh']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "model_name_1",
+          "label": "parameter_269",
+          "type": "Literal['escher-net', 'free3d', 'lgm', 'magic123', 'grm-i', 'openlrm', 'point-e-i', 'shap-e-i', 'stable-zero123', 'syncdreamer', 'triplane-gaussian', 'wonder3d', 'zero123-xl', 'instant-mesh']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Prompt",
+          "type": "filepath",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/reset_states_side_by_side_4",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Geometry A",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "Normal A",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "RGB A",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "Geometry B",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "Normal B",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "RGB B",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "value_290",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_296",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_308",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_284",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_302",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/reset_states_side_by_side_5",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Geometry A",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "Normal A",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "RGB A",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "Geometry B",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "Normal B",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "RGB B",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "value_290",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_296",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_308",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_284",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_302",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/submit_btn_named_2",
+      "parameters": [
+        {
+          "name": "image",
+          "label": "Prompt",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "name": "model_name_0",
+          "label": "parameter_267",
+          "type": "Literal['escher-net', 'free3d', 'lgm', 'magic123', 'grm-i', 'openlrm', 'point-e-i', 'shap-e-i', 'stable-zero123', 'syncdreamer', 'triplane-gaussian', 'wonder3d', 'zero123-xl', 'instant-mesh']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "model_name_1",
+          "label": "parameter_269",
+          "type": "Literal['escher-net', 'free3d', 'lgm', 'magic123', 'grm-i', 'openlrm', 'point-e-i', 'shap-e-i', 'stable-zero123', 'syncdreamer', 'triplane-gaussian', 'wonder3d', 'zero123-xl', 'instant-mesh']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Geometry A",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "Normal A",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "RGB A",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "Geometry B",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "Normal B",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "RGB B",
+          "type": "filepath",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/enable_mds_9",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_290",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_296",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_308",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_284",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_302",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/enable_buttons_side_by_side_9",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/reset_states_side_by_side_6",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Geometry A",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "Normal A",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "RGB A",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "Geometry B",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "Normal B",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "RGB B",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "value_290",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_296",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_308",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_284",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_302",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/send_btn_named_1",
+      "parameters": [
+        {
+          "name": "image",
+          "label": "Prompt",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "name": "model_name_0",
+          "label": "parameter_267",
+          "type": "Literal['escher-net', 'free3d', 'lgm', 'magic123', 'grm-i', 'openlrm', 'point-e-i', 'shap-e-i', 'stable-zero123', 'syncdreamer', 'triplane-gaussian', 'wonder3d', 'zero123-xl', 'instant-mesh']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "model_name_1",
+          "label": "parameter_269",
+          "type": "Literal['escher-net', 'free3d', 'lgm', 'magic123', 'grm-i', 'openlrm', 'point-e-i', 'shap-e-i', 'stable-zero123', 'syncdreamer', 'triplane-gaussian', 'wonder3d', 'zero123-xl', 'instant-mesh']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Geometry A",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "Normal A",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "RGB A",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "Geometry B",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "Normal B",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "RGB B",
+          "type": "filepath",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/enable_mds_10",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_290",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_296",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_308",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_284",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_302",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/enable_buttons_side_by_side_10",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/clear_btn_named_1",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Prompt",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "Geometry A",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "Normal A",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "RGB A",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "Geometry B",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "Normal B",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "RGB B",
+          "type": "filepath",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/disable_mds_7",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_290",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_296",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_308",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_284",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_302",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/disable_buttons_side_by_side_7",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/reset_states_side_by_side_7",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Geometry A",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "Normal A",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "RGB A",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "Geometry B",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "Normal B",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "RGB B",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "value_290",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_296",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_308",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_284",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_302",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/regenerate_btn_named_1",
+      "parameters": [
+        {
+          "name": "image",
+          "label": "Prompt",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "name": "model_name_0",
+          "label": "parameter_267",
+          "type": "Literal['escher-net', 'free3d', 'lgm', 'magic123', 'grm-i', 'openlrm', 'point-e-i', 'shap-e-i', 'stable-zero123', 'syncdreamer', 'triplane-gaussian', 'wonder3d', 'zero123-xl', 'instant-mesh']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "model_name_1",
+          "label": "parameter_269",
+          "type": "Literal['escher-net', 'free3d', 'lgm', 'magic123', 'grm-i', 'openlrm', 'point-e-i', 'shap-e-i', 'stable-zero123', 'syncdreamer', 'triplane-gaussian', 'wonder3d', 'zero123-xl', 'instant-mesh']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Geometry A",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "Normal A",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "RGB A",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "Geometry B",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "Normal B",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "RGB B",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "value_267",
+          "type": "Literal['escher-net', 'free3d', 'lgm', 'magic123', 'grm-i', 'openlrm', 'point-e-i', 'shap-e-i', 'stable-zero123', 'syncdreamer', 'triplane-gaussian', 'wonder3d', 'zero123-xl', 'instant-mesh']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "value_269",
+          "type": "Literal['escher-net', 'free3d', 'lgm', 'magic123', 'grm-i', 'openlrm', 'point-e-i', 'shap-e-i', 'stable-zero123', 'syncdreamer', 'triplane-gaussian', 'wonder3d', 'zero123-xl', 'instant-mesh']",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/enable_mds_11",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_290",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_296",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_308",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_284",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_302",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/enable_buttons_side_by_side_11",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/share_click_i2s_multi_1",
+      "parameters": [
+        {
+          "name": "model_selector0",
+          "label": "parameter_267",
+          "type": "Literal['escher-net', 'free3d', 'lgm', 'magic123', 'grm-i', 'openlrm', 'point-e-i', 'shap-e-i', 'stable-zero123', 'syncdreamer', 'triplane-gaussian', 'wonder3d', 'zero123-xl', 'instant-mesh']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "model_selector1",
+          "label": "parameter_269",
+          "type": "Literal['escher-net', 'free3d', 'lgm', 'magic123', 'grm-i', 'openlrm', 'point-e-i', 'shap-e-i', 'stable-zero123', 'syncdreamer', 'triplane-gaussian', 'wonder3d', 'zero123-xl', 'instant-mesh']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/upvote_last_response_i2s",
+      "parameters": [
+        {
+          "name": "model_selector",
+          "label": "parameter_326",
+          "type": "Literal['escher-net', 'free3d', 'lgm', 'magic123', 'grm-i', 'openlrm', 'point-e-i', 'shap-e-i', 'stable-zero123', 'syncdreamer', 'triplane-gaussian', 'wonder3d', 'zero123-xl', 'instant-mesh']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "dim_md",
+          "label": "parameter_342",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/downvote_last_response_i2s",
+      "parameters": [
+        {
+          "name": "model_selector",
+          "label": "parameter_326",
+          "type": "Literal['escher-net', 'free3d', 'lgm', 'magic123', 'grm-i', 'openlrm', 'point-e-i', 'shap-e-i', 'stable-zero123', 'syncdreamer', 'triplane-gaussian', 'wonder3d', 'zero123-xl', 'instant-mesh']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "dim_md",
+          "label": "parameter_342",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/flag_last_response_i2s",
+      "parameters": [
+        {
+          "name": "model_selector",
+          "label": "parameter_326",
+          "type": "Literal['escher-net', 'free3d', 'lgm', 'magic123', 'grm-i', 'openlrm', 'point-e-i', 'shap-e-i', 'stable-zero123', 'syncdreamer', 'triplane-gaussian', 'wonder3d', 'zero123-xl', 'instant-mesh']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "dim_md",
+          "label": "parameter_342",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/upvote_last_response_i2s_1",
+      "parameters": [
+        {
+          "name": "model_selector",
+          "label": "parameter_326",
+          "type": "Literal['escher-net', 'free3d', 'lgm', 'magic123', 'grm-i', 'openlrm', 'point-e-i', 'shap-e-i', 'stable-zero123', 'syncdreamer', 'triplane-gaussian', 'wonder3d', 'zero123-xl', 'instant-mesh']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "dim_md",
+          "label": "parameter_347",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/downvote_last_response_i2s_1",
+      "parameters": [
+        {
+          "name": "model_selector",
+          "label": "parameter_326",
+          "type": "Literal['escher-net', 'free3d', 'lgm', 'magic123', 'grm-i', 'openlrm', 'point-e-i', 'shap-e-i', 'stable-zero123', 'syncdreamer', 'triplane-gaussian', 'wonder3d', 'zero123-xl', 'instant-mesh']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "dim_md",
+          "label": "parameter_347",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/flag_last_response_i2s_1",
+      "parameters": [
+        {
+          "name": "model_selector",
+          "label": "parameter_326",
+          "type": "Literal['escher-net', 'free3d', 'lgm', 'magic123', 'grm-i', 'openlrm', 'point-e-i', 'shap-e-i', 'stable-zero123', 'syncdreamer', 'triplane-gaussian', 'wonder3d', 'zero123-xl', 'instant-mesh']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "dim_md",
+          "label": "parameter_347",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/upvote_last_response_i2s_2",
+      "parameters": [
+        {
+          "name": "model_selector",
+          "label": "parameter_326",
+          "type": "Literal['escher-net', 'free3d', 'lgm', 'magic123', 'grm-i', 'openlrm', 'point-e-i', 'shap-e-i', 'stable-zero123', 'syncdreamer', 'triplane-gaussian', 'wonder3d', 'zero123-xl', 'instant-mesh']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "dim_md",
+          "label": "parameter_357",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/downvote_last_response_i2s_2",
+      "parameters": [
+        {
+          "name": "model_selector",
+          "label": "parameter_326",
+          "type": "Literal['escher-net', 'free3d', 'lgm', 'magic123', 'grm-i', 'openlrm', 'point-e-i', 'shap-e-i', 'stable-zero123', 'syncdreamer', 'triplane-gaussian', 'wonder3d', 'zero123-xl', 'instant-mesh']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "dim_md",
+          "label": "parameter_357",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/flag_last_response_i2s_2",
+      "parameters": [
+        {
+          "name": "model_selector",
+          "label": "parameter_326",
+          "type": "Literal['escher-net', 'free3d', 'lgm', 'magic123', 'grm-i', 'openlrm', 'point-e-i', 'shap-e-i', 'stable-zero123', 'syncdreamer', 'triplane-gaussian', 'wonder3d', 'zero123-xl', 'instant-mesh']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "dim_md",
+          "label": "parameter_357",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/upvote_last_response_i2s_3",
+      "parameters": [
+        {
+          "name": "model_selector",
+          "label": "parameter_326",
+          "type": "Literal['escher-net', 'free3d', 'lgm', 'magic123', 'grm-i', 'openlrm', 'point-e-i', 'shap-e-i', 'stable-zero123', 'syncdreamer', 'triplane-gaussian', 'wonder3d', 'zero123-xl', 'instant-mesh']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "dim_md",
+          "label": "parameter_337",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/downvote_last_response_i2s_3",
+      "parameters": [
+        {
+          "name": "model_selector",
+          "label": "parameter_326",
+          "type": "Literal['escher-net', 'free3d', 'lgm', 'magic123', 'grm-i', 'openlrm', 'point-e-i', 'shap-e-i', 'stable-zero123', 'syncdreamer', 'triplane-gaussian', 'wonder3d', 'zero123-xl', 'instant-mesh']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "dim_md",
+          "label": "parameter_337",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/flag_last_response_i2s_3",
+      "parameters": [
+        {
+          "name": "model_selector",
+          "label": "parameter_326",
+          "type": "Literal['escher-net', 'free3d', 'lgm', 'magic123', 'grm-i', 'openlrm', 'point-e-i', 'shap-e-i', 'stable-zero123', 'syncdreamer', 'triplane-gaussian', 'wonder3d', 'zero123-xl', 'instant-mesh']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "dim_md",
+          "label": "parameter_337",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/upvote_last_response_i2s_4",
+      "parameters": [
+        {
+          "name": "model_selector",
+          "label": "parameter_326",
+          "type": "Literal['escher-net', 'free3d', 'lgm', 'magic123', 'grm-i', 'openlrm', 'point-e-i', 'shap-e-i', 'stable-zero123', 'syncdreamer', 'triplane-gaussian', 'wonder3d', 'zero123-xl', 'instant-mesh']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "dim_md",
+          "label": "parameter_352",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/downvote_last_response_i2s_4",
+      "parameters": [
+        {
+          "name": "model_selector",
+          "label": "parameter_326",
+          "type": "Literal['escher-net', 'free3d', 'lgm', 'magic123', 'grm-i', 'openlrm', 'point-e-i', 'shap-e-i', 'stable-zero123', 'syncdreamer', 'triplane-gaussian', 'wonder3d', 'zero123-xl', 'instant-mesh']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "dim_md",
+          "label": "parameter_352",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/flag_last_response_i2s_4",
+      "parameters": [
+        {
+          "name": "model_selector",
+          "label": "parameter_326",
+          "type": "Literal['escher-net', 'free3d', 'lgm', 'magic123', 'grm-i', 'openlrm', 'point-e-i', 'shap-e-i', 'stable-zero123', 'syncdreamer', 'triplane-gaussian', 'wonder3d', 'zero123-xl', 'instant-mesh']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "dim_md",
+          "label": "parameter_352",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/clear_history_single_2",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Prompt",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "Geometry",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "Normal",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "RGB",
+          "type": "filepath",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/disable_buttons_2",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/sample_btn_single_1",
+      "parameters": [
+        {
+          "name": "model_name",
+          "label": "parameter_326",
+          "type": "Literal['escher-net', 'free3d', 'lgm', 'magic123', 'grm-i', 'openlrm', 'point-e-i', 'shap-e-i', 'stable-zero123', 'syncdreamer', 'triplane-gaussian', 'wonder3d', 'zero123-xl', 'instant-mesh']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Prompt",
+          "type": "filepath",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/reset_state_4",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Geometry",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "Normal",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "RGB",
+          "type": "filepath",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/reset_state_5",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Geometry",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "Normal",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "RGB",
+          "type": "filepath",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/submit_btn_single_1",
+      "parameters": [
+        {
+          "name": "image",
+          "label": "Prompt",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "name": "model_name",
+          "label": "parameter_326",
+          "type": "Literal['escher-net', 'free3d', 'lgm', 'magic123', 'grm-i', 'openlrm', 'point-e-i', 'shap-e-i', 'stable-zero123', 'syncdreamer', 'triplane-gaussian', 'wonder3d', 'zero123-xl', 'instant-mesh']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Geometry",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "Normal",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "RGB",
+          "type": "filepath",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/enable_buttons_3",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/reset_state_6",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Geometry",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "Normal",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "RGB",
+          "type": "filepath",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/send_btn_single_1",
+      "parameters": [
+        {
+          "name": "image",
+          "label": "Prompt",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "name": "model_name",
+          "label": "parameter_326",
+          "type": "Literal['escher-net', 'free3d', 'lgm', 'magic123', 'grm-i', 'openlrm', 'point-e-i', 'shap-e-i', 'stable-zero123', 'syncdreamer', 'triplane-gaussian', 'wonder3d', 'zero123-xl', 'instant-mesh']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Geometry",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "Normal",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "RGB",
+          "type": "filepath",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/enable_buttons_4",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/clear_history_single_3",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Prompt",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "Geometry",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "Normal",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "RGB",
+          "type": "filepath",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/disable_buttons_3",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/reset_state_7",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Geometry",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "Normal",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "RGB",
+          "type": "filepath",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/regenerate_btn_single_1",
+      "parameters": [
+        {
+          "name": "image",
+          "label": "Prompt",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "name": "model_name",
+          "label": "parameter_326",
+          "type": "Literal['escher-net', 'free3d', 'lgm', 'magic123', 'grm-i', 'openlrm', 'point-e-i', 'shap-e-i', 'stable-zero123', 'syncdreamer', 'triplane-gaussian', 'wonder3d', 'zero123-xl', 'instant-mesh']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Geometry",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "Normal",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "RGB",
+          "type": "filepath",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/enable_buttons_5",
+      "parameters": [],
+      "returns": []
+    }
+  ],
+  "endpoint": "/leftvote_last_response_t2s_anony",
+  "_api_verified": true,
+  "estimated_latency_s": 6.45,
+  "speed_tier": "medium",
+  "_latency_source": "measured",
+  "_tags_enriched": true,
+  "measured_latency_s": 6.45,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:49:05.140937+00:00"
+}

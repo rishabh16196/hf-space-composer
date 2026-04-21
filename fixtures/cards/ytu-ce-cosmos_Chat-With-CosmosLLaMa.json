@@ -1,0 +1,108 @@
+{
+  "space_id": "ytu-ce-cosmos/Chat-With-CosmosLLaMa",
+  "title": "Chat With CosmosLLaMa",
+  "emoji": "\ud83d\udcda",
+  "description": "Chat With CosmosLLaMa",
+  "input_schema": {
+    "message": {
+      "type": "str",
+      "description": "Message",
+      "required": true,
+      "component": "Textbox"
+    }
+  },
+  "output_schema": {
+    "Response": {
+      "type": "str",
+      "description": "Response",
+      "component": "Textbox"
+    }
+  },
+  "license": "unknown",
+  "hardware": "4.41.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 20,
+  "last_modified": "2025-03-22 23:36:33+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/chat",
+      "parameters": [
+        {
+          "name": "message",
+          "label": "Message",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Response",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/clear_conversation",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/undo_message",
+      "parameters": [
+        {
+          "name": "history",
+          "label": "Cosmos LLM",
+          "type": "Tuple[str | Dict(file: filepath, alt_text: str | None) | Dict(component: str, value: Any, constructor_args: Dict(), props: Dict()) | None, str | Dict(file: filepath, alt_text: str | None) | Dict(compo",
+          "component": "Chatbot"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Cosmos LLM",
+          "type": "Tuple[str | Dict(file: filepath, alt_text: str | None) | Dict(component: str, value: Any, constructor_args: Dict(), props: Dict()) | None, str | Dict(file: filepath, alt_text: str | None) | Dict(compo",
+          "component": "Chatbot"
+        }
+      ]
+    },
+    {
+      "name": "/retry_message",
+      "parameters": [
+        {
+          "name": "history",
+          "label": "Cosmos LLM",
+          "type": "Tuple[str | Dict(file: filepath, alt_text: str | None) | Dict(component: str, value: Any, constructor_args: Dict(), props: Dict()) | None, str | Dict(file: filepath, alt_text: str | None) | Dict(compo",
+          "component": "Chatbot"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Cosmos LLM",
+          "type": "Tuple[str | Dict(file: filepath, alt_text: str | None) | Dict(component: str, value: Any, constructor_args: Dict(), props: Dict()) | None, str | Dict(file: filepath, alt_text: str | None) | Dict(compo",
+          "component": "Chatbot"
+        }
+      ]
+    },
+    {
+      "name": "/clear_conversation_1",
+      "parameters": [],
+      "returns": []
+    }
+  ],
+  "endpoint": "/chat",
+  "_api_verified": true,
+  "estimated_latency_s": 4.28,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 4.28,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:52:06.581840+00:00"
+}

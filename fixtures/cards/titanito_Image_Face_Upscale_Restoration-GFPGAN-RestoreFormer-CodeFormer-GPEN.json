@@ -1,0 +1,228 @@
+{
+  "space_id": "titanito/Image_Face_Upscale_Restoration-GFPGAN-RestoreFormer-CodeFormer-GPEN",
+  "title": "Image Face Upscale Restoration-GFPGAN-RestoreFormerPlusPlus-CodeFormer",
+  "emoji": "\ud83d\udcc8",
+  "description": "Image Face Upscale Restoration-GFPGAN-RestoreFormerPlusPlus-CodeFormer",
+  "input_schema": {
+    "gallery": {
+      "type": "list[dict(image: dict(path: str | None (Path to a local file), url: str | None (Publicly available u",
+      "description": "Gallery that displaying a grid of images(The online environment image limit is 5)",
+      "required": true,
+      "component": "Gallery"
+    },
+    "image": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "Upload an Image or clicking paste from clipboard button",
+      "required": true,
+      "component": "Image"
+    }
+  },
+  "output_schema": {
+    "Gallery that displaying a grid of images(The online environment image limit is 5)": {
+      "type": "list[dict(image: dict(path: str | None (Path to a local file), url: str | None (Publicly available u",
+      "description": "Gallery that displaying a grid of images(The online environment image limit is 5)",
+      "component": "Gallery"
+    },
+    "Upload an Image or clicking paste from clipboard button": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "Upload an Image or clicking paste from clipboard button",
+      "component": "Image"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "5.16.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us",
+    "code"
+  ],
+  "likes": 77,
+  "last_modified": "2025-02-19 07:34:00+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/append_gallery",
+      "parameters": [
+        {
+          "name": "gallery",
+          "label": "Gallery that displaying a grid of images(The online environment image limit is 5)",
+          "type": "list[dict(image: dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Origi",
+          "component": "Gallery"
+        },
+        {
+          "name": "image",
+          "label": "Upload an Image or clicking paste from clipboard button",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Gallery that displaying a grid of images(The online environment image limit is 5)",
+          "type": "list[dict(image: dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Origi",
+          "component": "Gallery"
+        },
+        {
+          "label": "Upload an Image or clicking paste from clipboard button",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/extend_gallery",
+      "parameters": [
+        {
+          "name": "gallery",
+          "label": "Gallery that displaying a grid of images(The online environment image limit is 5)",
+          "type": "list[dict(image: dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Origi",
+          "component": "Gallery"
+        },
+        {
+          "name": "images",
+          "label": "Upload multiple images",
+          "type": "list[filepath]",
+          "component": "Uploadbutton"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Gallery that displaying a grid of images(The online environment image limit is 5)",
+          "type": "list[dict(image: dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Origi",
+          "component": "Gallery"
+        }
+      ]
+    },
+    {
+      "name": "/get_selection_from_gallery",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Selected Image",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/limit_gallery",
+      "parameters": [
+        {
+          "name": "gallery",
+          "label": "Gallery that displaying a grid of images(The online environment image limit is 5)",
+          "type": "list[dict(image: dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Origi",
+          "component": "Gallery"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Gallery that displaying a grid of images(The online environment image limit is 5)",
+          "type": "list[dict(image: dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Origi",
+          "component": "Gallery"
+        }
+      ]
+    },
+    {
+      "name": "/remove_image_from_gallery",
+      "parameters": [
+        {
+          "name": "gallery",
+          "label": "Gallery that displaying a grid of images(The online environment image limit is 5)",
+          "type": "list[dict(image: dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Origi",
+          "component": "Gallery"
+        },
+        {
+          "name": "selected_image",
+          "label": "Selected Image",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Gallery that displaying a grid of images(The online environment image limit is 5)",
+          "type": "list[dict(image: dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Origi",
+          "component": "Gallery"
+        }
+      ]
+    },
+    {
+      "name": "/inference",
+      "parameters": [
+        {
+          "name": "gallery",
+          "label": "Gallery that displaying a grid of images(The online environment image limit is 5)",
+          "type": "list[dict(image: dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Origi",
+          "component": "Gallery"
+        },
+        {
+          "name": "face_restoration",
+          "label": "Face Restoration version",
+          "type": "Literal['None', 'GFPGANv1.4.pth', 'RestoreFormer++.ckpt', 'CodeFormer.pth', 'GPEN-BFR-512.pth', 'GPEN-BFR-1024.pt', 'GPEN-BFR-2048.pt', 'GFPGANv1.3.pth', 'GFPGANv1.2.pth', 'RestoreFormer.ckpt']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "upscale_model",
+          "label": "UpScale version",
+          "type": "Literal['None', 'SRVGG, realesr-general-x4v3.pth', 'SRVGG, realesr-animevideov3.pth', 'SRVGG, 4xLSDIRCompact.pth', 'SRVGG, 4xLSDIRCompactC.pth', 'SRVGG, 4xLSDIRCompactR.pth', 'SRVGG, 4xLSDIRCompactN.p",
+          "component": "Dropdown"
+        },
+        {
+          "name": "scale",
+          "label": "Rescaling factor",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "face_detection",
+          "label": "Face Detection type",
+          "type": "Literal['retinaface_resnet50', 'YOLOv5l', 'YOLOv5n']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "face_detection_threshold",
+          "label": "Face eye dist threshold",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "face_detection_only_center",
+          "label": "Face detection only center",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "outputWithModelName",
+          "label": "Output image files name with model name",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output (The whole image)",
+          "type": "list[dict(image: dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Origi",
+          "component": "Gallery"
+        },
+        {
+          "label": "Download the output image",
+          "type": "filepath",
+          "component": "File"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/append_gallery",
+  "_api_verified": true,
+  "estimated_latency_s": 5.46,
+  "speed_tier": "medium",
+  "_latency_source": "measured",
+  "_tags_enriched": true,
+  "measured_latency_s": 5.46,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:51:58.648288+00:00"
+}

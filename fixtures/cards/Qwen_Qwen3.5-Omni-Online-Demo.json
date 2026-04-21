@@ -1,0 +1,152 @@
+{
+  "space_id": "Qwen/Qwen3.5-Omni-Online-Demo",
+  "title": "Qwen3.5 Omni Online Demo",
+  "emoji": "\ud83d\udcda",
+  "description": "Qwen3.5 Omni Online Demo",
+  "input_schema": {
+    "voice_group": {
+      "type": "Literal['Recommended Voices / \u63a8\u8350\u97f3\u8272', 'Chinese Dialects / \u4e2d\u6587\u65b9\u8a00', 'Multilingual / \u591a\u8bed\u8a00', 'Healing & War",
+      "description": "Voice Category\uff08\u97f3\u8272\u7c7b\u522b\uff09",
+      "required": true,
+      "component": "Radio"
+    }
+  },
+  "output_schema": {
+    "Voice Choice\uff08\u97f3\u8272\u9009\u62e9\uff09": {
+      "type": "Literal['Tina / \u4e2d\u6587-\u751c\u751c', 'Cindy / \u4e2d\u6587-\u53f0\u6e7e\u53e3\u97f3-\u6797\u6b23\u5b9c', 'Liora Mira / \u4e2d\u6587-\u6e05\u6b22', 'Sunnybobi / \u4e2d\u6587-\u77e5\u829d', 'Raymond /",
+      "description": "Voice Choice\uff08\u97f3\u8272\u9009\u62e9\uff09",
+      "component": "Dropdown"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "5.42.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 64,
+  "last_modified": "2026-03-30 12:37:26+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/update_voice_choices",
+      "parameters": [
+        {
+          "name": "voice_group",
+          "label": "Voice Category\uff08\u97f3\u8272\u7c7b\u522b\uff09",
+          "type": "Literal['Recommended Voices / \u63a8\u8350\u97f3\u8272', 'Chinese Dialects / \u4e2d\u6587\u65b9\u8a00', 'Multilingual / \u591a\u8bed\u8a00', 'Healing & Warmth / \u60c5\u611f\u966a\u4f34-\u6cbb\u6108\u6e29\u6696', 'Energetic & Playful / \u60c5\u611f\u966a\u4f34-\u6d3b\u529b\u4e2a\u6027', 'Roleplay / \u89d2\u8272\u626e\u6f14', 'Game & Anime / \u6e38\u620f\u52a8\u6f2b\u914d\u97f3']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Voice Choice\uff08\u97f3\u8272\u9009\u62e9\uff09",
+          "type": "Literal['Tina / \u4e2d\u6587-\u751c\u751c', 'Cindy / \u4e2d\u6587-\u53f0\u6e7e\u53e3\u97f3-\u6797\u6b23\u5b9c', 'Liora Mira / \u4e2d\u6587-\u6e05\u6b22', 'Sunnybobi / \u4e2d\u6587-\u77e5\u829d', 'Raymond / \u4e2d\u6587-\u6797\u5ddd\u91ce']",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/media_predict",
+      "parameters": [
+        {
+          "name": "audio",
+          "label": "Record Audio (\u5f55\u5236\u97f3\u9891)",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "name": "video",
+          "label": "Record/Upload Video (\u5f55\u5236/\u4e0a\u4f20\u89c6\u9891)",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        },
+        {
+          "name": "history",
+          "label": "Chat History (\u5bf9\u8bdd\u5386\u53f2)",
+          "type": "list[dict(role: str, metadata: dict(title: str, id: int | str, parent_id: int | str, log: str, duration: float, status: Literal['pending', 'done']) | None, content: str | dict(file: filepath, alt_text",
+          "component": "Chatbot"
+        },
+        {
+          "name": "voice_choice",
+          "label": "Voice Choice\uff08\u97f3\u8272\u9009\u62e9\uff09",
+          "type": "Literal['Tina / \u4e2d\u6587-\u751c\u751c', 'Cindy / \u4e2d\u6587-\u53f0\u6e7e\u53e3\u97f3-\u6797\u6b23\u5b9c', 'Liora Mira / \u4e2d\u6587-\u6e05\u6b22', 'Sunnybobi / \u4e2d\u6587-\u77e5\u829d', 'Raymond / \u4e2d\u6587-\u6797\u5ddd\u91ce']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "temperature",
+          "label": "Temperature",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "top_p",
+          "label": "Top P",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "top_k",
+          "label": "Top K",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Record Audio (\u5f55\u5236\u97f3\u9891)",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Record/Upload Video (\u5f55\u5236/\u4e0a\u4f20\u89c6\u9891)",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        },
+        {
+          "label": "Chat History (\u5bf9\u8bdd\u5386\u53f2)",
+          "type": "list[dict(role: str, metadata: dict(title: str, id: int | str, parent_id: int | str, log: str, duration: float, status: Literal['pending', 'done']) | None, content: str | dict(file: filepath, alt_text",
+          "component": "Chatbot"
+        }
+      ]
+    },
+    {
+      "name": "/lambda",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/clear_history_online",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Chat History (\u5bf9\u8bdd\u5386\u53f2)",
+          "type": "list[dict(role: str, metadata: dict(title: str, id: int | str, parent_id: int | str, log: str, duration: float, status: Literal['pending', 'done']) | None, content: str | dict(file: filepath, alt_text",
+          "component": "Chatbot"
+        },
+        {
+          "label": "Record Audio (\u5f55\u5236\u97f3\u9891)",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Record/Upload Video (\u5f55\u5236/\u4e0a\u4f20\u89c6\u9891)",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/update_voice_choices",
+  "_api_verified": true,
+  "estimated_latency_s": 3.44,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 3.44,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:49:52.912815+00:00"
+}

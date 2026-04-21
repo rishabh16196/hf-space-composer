@@ -1,0 +1,2477 @@
+{
+  "space_id": "BraUndress/inpaint-mask-maker",
+  "title": "Inpaint mask maker",
+  "emoji": "\ud83d\udc7a",
+  "description": "Inpaint mask maker",
+  "input_schema": {
+    "img": {
+      "type": "Dict(background: filepath | None, layers: List[filepath], composite: filepath | None, id: str | None",
+      "description": "base image",
+      "required": true,
+      "component": "Imageeditor"
+    }
+  },
+  "output_schema": {
+    "mask image": {
+      "type": "filepath",
+      "description": "mask image",
+      "component": "Image"
+    }
+  },
+  "license": "unknown",
+  "hardware": "4.37.2",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us",
+    "image-generation",
+    "vision"
+  ],
+  "likes": 16,
+  "last_modified": "2024-10-31 12:42:05+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/dummy",
+      "parameters": [
+        {
+          "name": "img",
+          "label": "base image",
+          "type": "Dict(background: filepath | None, layers: List[filepath], composite: filepath | None, id: str | None)",
+          "component": "Imageeditor"
+        }
+      ],
+      "returns": [
+        {
+          "label": "mask image",
+          "type": "filepath",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/adujst_color_process",
+      "parameters": [
+        {
+          "name": "image_a",
+          "label": "Input Face Image A(\u8f93\u5165\u4eba\u8138\u56fe\u7247)",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "name": "image_b",
+          "label": "Input Face Swapped Image B(\u8f93\u5165\u6362\u8138\u56fe\u7247)",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "name": "scale_factor",
+          "label": "Face Scale Factor(\u4eba\u8138\u653e\u5927)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "offset_x",
+          "label": "Face Offset X(\u4eba\u8138\u6c34\u5e73\u6a2a\u79fb)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "offset_y",
+          "label": "Face Offset Y(\u4eba\u8138\u5782\u76f4\u6a2a\u79fb)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "rotation_angle",
+          "label": "Face Rotation Angle(\u4eba\u8138\u65cb\u8f6c)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "margin_left",
+          "label": "Face Margin Left(\u4eba\u8138\u5de6\u8fb9\u7f18\u6269\u5c55)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "margin_right",
+          "label": "Face Margin Right(\u4eba\u8138\u53f3\u8fb9\u7f18\u6269\u5c55)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "margin_top",
+          "label": "Face Margin Top(\u4eba\u8138\u4e0a\u8fb9\u7f18\u6269\u5c55)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "margin_bottom",
+          "label": "Face Margin Bottom(\u4eba\u8138\u4e0b\u8fb9\u7f18\u6269\u5c55)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "mirror_face_a",
+          "label": "Mirror Face A(\u4eba\u8138\u955c\u50cf)",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "saturation",
+          "label": "Saturation(\u9971\u548c\u5ea6)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "temperature",
+          "label": "Color Temperature(\u8272\u6e29)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "contrast",
+          "label": "Contrast(\u5bf9\u6bd4\u5ea6)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "brightness",
+          "label": "Brightness(\u4eae\u5ea6)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "saturation_b",
+          "label": "Saturation(\u9971\u548c\u5ea6)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "temperature_b",
+          "label": "Color Temperature(\u8272\u6e29)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "contrast_b",
+          "label": "Contrast(\u5bf9\u6bd4\u5ea6)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "brightness_b",
+          "label": "Brightness(\u4eae\u5ea6)",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Result Image",
+          "type": "filepath",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/adujst_color_process_1",
+      "parameters": [
+        {
+          "name": "image_a",
+          "label": "Input Face Image A(\u8f93\u5165\u4eba\u8138\u56fe\u7247)",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "name": "image_b",
+          "label": "Input Face Swapped Image B(\u8f93\u5165\u6362\u8138\u56fe\u7247)",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "name": "scale_factor",
+          "label": "Face Scale Factor(\u4eba\u8138\u653e\u5927)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "offset_x",
+          "label": "Face Offset X(\u4eba\u8138\u6c34\u5e73\u6a2a\u79fb)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "offset_y",
+          "label": "Face Offset Y(\u4eba\u8138\u5782\u76f4\u6a2a\u79fb)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "rotation_angle",
+          "label": "Face Rotation Angle(\u4eba\u8138\u65cb\u8f6c)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "margin_left",
+          "label": "Face Margin Left(\u4eba\u8138\u5de6\u8fb9\u7f18\u6269\u5c55)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "margin_right",
+          "label": "Face Margin Right(\u4eba\u8138\u53f3\u8fb9\u7f18\u6269\u5c55)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "margin_top",
+          "label": "Face Margin Top(\u4eba\u8138\u4e0a\u8fb9\u7f18\u6269\u5c55)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "margin_bottom",
+          "label": "Face Margin Bottom(\u4eba\u8138\u4e0b\u8fb9\u7f18\u6269\u5c55)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "mirror_face_a",
+          "label": "Mirror Face A(\u4eba\u8138\u955c\u50cf)",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "saturation",
+          "label": "Saturation(\u9971\u548c\u5ea6)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "temperature",
+          "label": "Color Temperature(\u8272\u6e29)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "contrast",
+          "label": "Contrast(\u5bf9\u6bd4\u5ea6)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "brightness",
+          "label": "Brightness(\u4eae\u5ea6)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "saturation_b",
+          "label": "Saturation(\u9971\u548c\u5ea6)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "temperature_b",
+          "label": "Color Temperature(\u8272\u6e29)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "contrast_b",
+          "label": "Contrast(\u5bf9\u6bd4\u5ea6)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "brightness_b",
+          "label": "Brightness(\u4eae\u5ea6)",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Result Image",
+          "type": "filepath",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/adujst_color_process_2",
+      "parameters": [
+        {
+          "name": "image_a",
+          "label": "Input Face Image A(\u8f93\u5165\u4eba\u8138\u56fe\u7247)",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "name": "image_b",
+          "label": "Input Face Swapped Image B(\u8f93\u5165\u6362\u8138\u56fe\u7247)",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "name": "scale_factor",
+          "label": "Face Scale Factor(\u4eba\u8138\u653e\u5927)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "offset_x",
+          "label": "Face Offset X(\u4eba\u8138\u6c34\u5e73\u6a2a\u79fb)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "offset_y",
+          "label": "Face Offset Y(\u4eba\u8138\u5782\u76f4\u6a2a\u79fb)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "rotation_angle",
+          "label": "Face Rotation Angle(\u4eba\u8138\u65cb\u8f6c)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "margin_left",
+          "label": "Face Margin Left(\u4eba\u8138\u5de6\u8fb9\u7f18\u6269\u5c55)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "margin_right",
+          "label": "Face Margin Right(\u4eba\u8138\u53f3\u8fb9\u7f18\u6269\u5c55)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "margin_top",
+          "label": "Face Margin Top(\u4eba\u8138\u4e0a\u8fb9\u7f18\u6269\u5c55)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "margin_bottom",
+          "label": "Face Margin Bottom(\u4eba\u8138\u4e0b\u8fb9\u7f18\u6269\u5c55)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "mirror_face_a",
+          "label": "Mirror Face A(\u4eba\u8138\u955c\u50cf)",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "saturation",
+          "label": "Saturation(\u9971\u548c\u5ea6)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "temperature",
+          "label": "Color Temperature(\u8272\u6e29)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "contrast",
+          "label": "Contrast(\u5bf9\u6bd4\u5ea6)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "brightness",
+          "label": "Brightness(\u4eae\u5ea6)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "saturation_b",
+          "label": "Saturation(\u9971\u548c\u5ea6)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "temperature_b",
+          "label": "Color Temperature(\u8272\u6e29)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "contrast_b",
+          "label": "Contrast(\u5bf9\u6bd4\u5ea6)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "brightness_b",
+          "label": "Brightness(\u4eae\u5ea6)",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Result Image",
+          "type": "filepath",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/adujst_color_process_3",
+      "parameters": [
+        {
+          "name": "image_a",
+          "label": "Input Face Image A(\u8f93\u5165\u4eba\u8138\u56fe\u7247)",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "name": "image_b",
+          "label": "Input Face Swapped Image B(\u8f93\u5165\u6362\u8138\u56fe\u7247)",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "name": "scale_factor",
+          "label": "Face Scale Factor(\u4eba\u8138\u653e\u5927)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "offset_x",
+          "label": "Face Offset X(\u4eba\u8138\u6c34\u5e73\u6a2a\u79fb)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "offset_y",
+          "label": "Face Offset Y(\u4eba\u8138\u5782\u76f4\u6a2a\u79fb)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "rotation_angle",
+          "label": "Face Rotation Angle(\u4eba\u8138\u65cb\u8f6c)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "margin_left",
+          "label": "Face Margin Left(\u4eba\u8138\u5de6\u8fb9\u7f18\u6269\u5c55)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "margin_right",
+          "label": "Face Margin Right(\u4eba\u8138\u53f3\u8fb9\u7f18\u6269\u5c55)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "margin_top",
+          "label": "Face Margin Top(\u4eba\u8138\u4e0a\u8fb9\u7f18\u6269\u5c55)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "margin_bottom",
+          "label": "Face Margin Bottom(\u4eba\u8138\u4e0b\u8fb9\u7f18\u6269\u5c55)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "mirror_face_a",
+          "label": "Mirror Face A(\u4eba\u8138\u955c\u50cf)",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "saturation",
+          "label": "Saturation(\u9971\u548c\u5ea6)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "temperature",
+          "label": "Color Temperature(\u8272\u6e29)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "contrast",
+          "label": "Contrast(\u5bf9\u6bd4\u5ea6)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "brightness",
+          "label": "Brightness(\u4eae\u5ea6)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "saturation_b",
+          "label": "Saturation(\u9971\u548c\u5ea6)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "temperature_b",
+          "label": "Color Temperature(\u8272\u6e29)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "contrast_b",
+          "label": "Contrast(\u5bf9\u6bd4\u5ea6)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "brightness_b",
+          "label": "Brightness(\u4eae\u5ea6)",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Result Image",
+          "type": "filepath",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/adujst_color_process_4",
+      "parameters": [
+        {
+          "name": "image_a",
+          "label": "Input Face Image A(\u8f93\u5165\u4eba\u8138\u56fe\u7247)",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "name": "image_b",
+          "label": "Input Face Swapped Image B(\u8f93\u5165\u6362\u8138\u56fe\u7247)",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "name": "scale_factor",
+          "label": "Face Scale Factor(\u4eba\u8138\u653e\u5927)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "offset_x",
+          "label": "Face Offset X(\u4eba\u8138\u6c34\u5e73\u6a2a\u79fb)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "offset_y",
+          "label": "Face Offset Y(\u4eba\u8138\u5782\u76f4\u6a2a\u79fb)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "rotation_angle",
+          "label": "Face Rotation Angle(\u4eba\u8138\u65cb\u8f6c)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "margin_left",
+          "label": "Face Margin Left(\u4eba\u8138\u5de6\u8fb9\u7f18\u6269\u5c55)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "margin_right",
+          "label": "Face Margin Right(\u4eba\u8138\u53f3\u8fb9\u7f18\u6269\u5c55)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "margin_top",
+          "label": "Face Margin Top(\u4eba\u8138\u4e0a\u8fb9\u7f18\u6269\u5c55)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "margin_bottom",
+          "label": "Face Margin Bottom(\u4eba\u8138\u4e0b\u8fb9\u7f18\u6269\u5c55)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "mirror_face_a",
+          "label": "Mirror Face A(\u4eba\u8138\u955c\u50cf)",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "saturation",
+          "label": "Saturation(\u9971\u548c\u5ea6)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "temperature",
+          "label": "Color Temperature(\u8272\u6e29)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "contrast",
+          "label": "Contrast(\u5bf9\u6bd4\u5ea6)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "brightness",
+          "label": "Brightness(\u4eae\u5ea6)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "saturation_b",
+          "label": "Saturation(\u9971\u548c\u5ea6)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "temperature_b",
+          "label": "Color Temperature(\u8272\u6e29)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "contrast_b",
+          "label": "Contrast(\u5bf9\u6bd4\u5ea6)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "brightness_b",
+          "label": "Brightness(\u4eae\u5ea6)",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Result Image",
+          "type": "filepath",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/adujst_color_process_5",
+      "parameters": [
+        {
+          "name": "image_a",
+          "label": "Input Face Image A(\u8f93\u5165\u4eba\u8138\u56fe\u7247)",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "name": "image_b",
+          "label": "Input Face Swapped Image B(\u8f93\u5165\u6362\u8138\u56fe\u7247)",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "name": "scale_factor",
+          "label": "Face Scale Factor(\u4eba\u8138\u653e\u5927)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "offset_x",
+          "label": "Face Offset X(\u4eba\u8138\u6c34\u5e73\u6a2a\u79fb)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "offset_y",
+          "label": "Face Offset Y(\u4eba\u8138\u5782\u76f4\u6a2a\u79fb)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "rotation_angle",
+          "label": "Face Rotation Angle(\u4eba\u8138\u65cb\u8f6c)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "margin_left",
+          "label": "Face Margin Left(\u4eba\u8138\u5de6\u8fb9\u7f18\u6269\u5c55)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "margin_right",
+          "label": "Face Margin Right(\u4eba\u8138\u53f3\u8fb9\u7f18\u6269\u5c55)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "margin_top",
+          "label": "Face Margin Top(\u4eba\u8138\u4e0a\u8fb9\u7f18\u6269\u5c55)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "margin_bottom",
+          "label": "Face Margin Bottom(\u4eba\u8138\u4e0b\u8fb9\u7f18\u6269\u5c55)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "mirror_face_a",
+          "label": "Mirror Face A(\u4eba\u8138\u955c\u50cf)",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "saturation",
+          "label": "Saturation(\u9971\u548c\u5ea6)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "temperature",
+          "label": "Color Temperature(\u8272\u6e29)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "contrast",
+          "label": "Contrast(\u5bf9\u6bd4\u5ea6)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "brightness",
+          "label": "Brightness(\u4eae\u5ea6)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "saturation_b",
+          "label": "Saturation(\u9971\u548c\u5ea6)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "temperature_b",
+          "label": "Color Temperature(\u8272\u6e29)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "contrast_b",
+          "label": "Contrast(\u5bf9\u6bd4\u5ea6)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "brightness_b",
+          "label": "Brightness(\u4eae\u5ea6)",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Result Image",
+          "type": "filepath",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/adujst_color_process_6",
+      "parameters": [
+        {
+          "name": "image_a",
+          "label": "Input Face Image A(\u8f93\u5165\u4eba\u8138\u56fe\u7247)",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "name": "image_b",
+          "label": "Input Face Swapped Image B(\u8f93\u5165\u6362\u8138\u56fe\u7247)",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "name": "scale_factor",
+          "label": "Face Scale Factor(\u4eba\u8138\u653e\u5927)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "offset_x",
+          "label": "Face Offset X(\u4eba\u8138\u6c34\u5e73\u6a2a\u79fb)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "offset_y",
+          "label": "Face Offset Y(\u4eba\u8138\u5782\u76f4\u6a2a\u79fb)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "rotation_angle",
+          "label": "Face Rotation Angle(\u4eba\u8138\u65cb\u8f6c)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "margin_left",
+          "label": "Face Margin Left(\u4eba\u8138\u5de6\u8fb9\u7f18\u6269\u5c55)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "margin_right",
+          "label": "Face Margin Right(\u4eba\u8138\u53f3\u8fb9\u7f18\u6269\u5c55)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "margin_top",
+          "label": "Face Margin Top(\u4eba\u8138\u4e0a\u8fb9\u7f18\u6269\u5c55)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "margin_bottom",
+          "label": "Face Margin Bottom(\u4eba\u8138\u4e0b\u8fb9\u7f18\u6269\u5c55)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "mirror_face_a",
+          "label": "Mirror Face A(\u4eba\u8138\u955c\u50cf)",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "saturation",
+          "label": "Saturation(\u9971\u548c\u5ea6)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "temperature",
+          "label": "Color Temperature(\u8272\u6e29)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "contrast",
+          "label": "Contrast(\u5bf9\u6bd4\u5ea6)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "brightness",
+          "label": "Brightness(\u4eae\u5ea6)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "saturation_b",
+          "label": "Saturation(\u9971\u548c\u5ea6)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "temperature_b",
+          "label": "Color Temperature(\u8272\u6e29)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "contrast_b",
+          "label": "Contrast(\u5bf9\u6bd4\u5ea6)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "brightness_b",
+          "label": "Brightness(\u4eae\u5ea6)",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Result Image",
+          "type": "filepath",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/adujst_color_process_7",
+      "parameters": [
+        {
+          "name": "image_a",
+          "label": "Input Face Image A(\u8f93\u5165\u4eba\u8138\u56fe\u7247)",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "name": "image_b",
+          "label": "Input Face Swapped Image B(\u8f93\u5165\u6362\u8138\u56fe\u7247)",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "name": "scale_factor",
+          "label": "Face Scale Factor(\u4eba\u8138\u653e\u5927)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "offset_x",
+          "label": "Face Offset X(\u4eba\u8138\u6c34\u5e73\u6a2a\u79fb)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "offset_y",
+          "label": "Face Offset Y(\u4eba\u8138\u5782\u76f4\u6a2a\u79fb)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "rotation_angle",
+          "label": "Face Rotation Angle(\u4eba\u8138\u65cb\u8f6c)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "margin_left",
+          "label": "Face Margin Left(\u4eba\u8138\u5de6\u8fb9\u7f18\u6269\u5c55)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "margin_right",
+          "label": "Face Margin Right(\u4eba\u8138\u53f3\u8fb9\u7f18\u6269\u5c55)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "margin_top",
+          "label": "Face Margin Top(\u4eba\u8138\u4e0a\u8fb9\u7f18\u6269\u5c55)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "margin_bottom",
+          "label": "Face Margin Bottom(\u4eba\u8138\u4e0b\u8fb9\u7f18\u6269\u5c55)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "mirror_face_a",
+          "label": "Mirror Face A(\u4eba\u8138\u955c\u50cf)",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "saturation",
+          "label": "Saturation(\u9971\u548c\u5ea6)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "temperature",
+          "label": "Color Temperature(\u8272\u6e29)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "contrast",
+          "label": "Contrast(\u5bf9\u6bd4\u5ea6)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "brightness",
+          "label": "Brightness(\u4eae\u5ea6)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "saturation_b",
+          "label": "Saturation(\u9971\u548c\u5ea6)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "temperature_b",
+          "label": "Color Temperature(\u8272\u6e29)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "contrast_b",
+          "label": "Contrast(\u5bf9\u6bd4\u5ea6)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "brightness_b",
+          "label": "Brightness(\u4eae\u5ea6)",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Result Image",
+          "type": "filepath",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/adujst_color_process_8",
+      "parameters": [
+        {
+          "name": "image_a",
+          "label": "Input Face Image A(\u8f93\u5165\u4eba\u8138\u56fe\u7247)",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "name": "image_b",
+          "label": "Input Face Swapped Image B(\u8f93\u5165\u6362\u8138\u56fe\u7247)",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "name": "scale_factor",
+          "label": "Face Scale Factor(\u4eba\u8138\u653e\u5927)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "offset_x",
+          "label": "Face Offset X(\u4eba\u8138\u6c34\u5e73\u6a2a\u79fb)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "offset_y",
+          "label": "Face Offset Y(\u4eba\u8138\u5782\u76f4\u6a2a\u79fb)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "rotation_angle",
+          "label": "Face Rotation Angle(\u4eba\u8138\u65cb\u8f6c)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "margin_left",
+          "label": "Face Margin Left(\u4eba\u8138\u5de6\u8fb9\u7f18\u6269\u5c55)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "margin_right",
+          "label": "Face Margin Right(\u4eba\u8138\u53f3\u8fb9\u7f18\u6269\u5c55)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "margin_top",
+          "label": "Face Margin Top(\u4eba\u8138\u4e0a\u8fb9\u7f18\u6269\u5c55)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "margin_bottom",
+          "label": "Face Margin Bottom(\u4eba\u8138\u4e0b\u8fb9\u7f18\u6269\u5c55)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "mirror_face_a",
+          "label": "Mirror Face A(\u4eba\u8138\u955c\u50cf)",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "saturation",
+          "label": "Saturation(\u9971\u548c\u5ea6)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "temperature",
+          "label": "Color Temperature(\u8272\u6e29)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "contrast",
+          "label": "Contrast(\u5bf9\u6bd4\u5ea6)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "brightness",
+          "label": "Brightness(\u4eae\u5ea6)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "saturation_b",
+          "label": "Saturation(\u9971\u548c\u5ea6)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "temperature_b",
+          "label": "Color Temperature(\u8272\u6e29)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "contrast_b",
+          "label": "Contrast(\u5bf9\u6bd4\u5ea6)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "brightness_b",
+          "label": "Brightness(\u4eae\u5ea6)",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Result Image",
+          "type": "filepath",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/adujst_color_process_9",
+      "parameters": [
+        {
+          "name": "image_a",
+          "label": "Input Face Image A(\u8f93\u5165\u4eba\u8138\u56fe\u7247)",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "name": "image_b",
+          "label": "Input Face Swapped Image B(\u8f93\u5165\u6362\u8138\u56fe\u7247)",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "name": "scale_factor",
+          "label": "Face Scale Factor(\u4eba\u8138\u653e\u5927)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "offset_x",
+          "label": "Face Offset X(\u4eba\u8138\u6c34\u5e73\u6a2a\u79fb)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "offset_y",
+          "label": "Face Offset Y(\u4eba\u8138\u5782\u76f4\u6a2a\u79fb)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "rotation_angle",
+          "label": "Face Rotation Angle(\u4eba\u8138\u65cb\u8f6c)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "margin_left",
+          "label": "Face Margin Left(\u4eba\u8138\u5de6\u8fb9\u7f18\u6269\u5c55)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "margin_right",
+          "label": "Face Margin Right(\u4eba\u8138\u53f3\u8fb9\u7f18\u6269\u5c55)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "margin_top",
+          "label": "Face Margin Top(\u4eba\u8138\u4e0a\u8fb9\u7f18\u6269\u5c55)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "margin_bottom",
+          "label": "Face Margin Bottom(\u4eba\u8138\u4e0b\u8fb9\u7f18\u6269\u5c55)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "mirror_face_a",
+          "label": "Mirror Face A(\u4eba\u8138\u955c\u50cf)",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "saturation",
+          "label": "Saturation(\u9971\u548c\u5ea6)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "temperature",
+          "label": "Color Temperature(\u8272\u6e29)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "contrast",
+          "label": "Contrast(\u5bf9\u6bd4\u5ea6)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "brightness",
+          "label": "Brightness(\u4eae\u5ea6)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "saturation_b",
+          "label": "Saturation(\u9971\u548c\u5ea6)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "temperature_b",
+          "label": "Color Temperature(\u8272\u6e29)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "contrast_b",
+          "label": "Contrast(\u5bf9\u6bd4\u5ea6)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "brightness_b",
+          "label": "Brightness(\u4eae\u5ea6)",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Result Image",
+          "type": "filepath",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/adujst_color_process_10",
+      "parameters": [
+        {
+          "name": "image_a",
+          "label": "Input Face Image A(\u8f93\u5165\u4eba\u8138\u56fe\u7247)",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "name": "image_b",
+          "label": "Input Face Swapped Image B(\u8f93\u5165\u6362\u8138\u56fe\u7247)",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "name": "scale_factor",
+          "label": "Face Scale Factor(\u4eba\u8138\u653e\u5927)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "offset_x",
+          "label": "Face Offset X(\u4eba\u8138\u6c34\u5e73\u6a2a\u79fb)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "offset_y",
+          "label": "Face Offset Y(\u4eba\u8138\u5782\u76f4\u6a2a\u79fb)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "rotation_angle",
+          "label": "Face Rotation Angle(\u4eba\u8138\u65cb\u8f6c)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "margin_left",
+          "label": "Face Margin Left(\u4eba\u8138\u5de6\u8fb9\u7f18\u6269\u5c55)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "margin_right",
+          "label": "Face Margin Right(\u4eba\u8138\u53f3\u8fb9\u7f18\u6269\u5c55)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "margin_top",
+          "label": "Face Margin Top(\u4eba\u8138\u4e0a\u8fb9\u7f18\u6269\u5c55)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "margin_bottom",
+          "label": "Face Margin Bottom(\u4eba\u8138\u4e0b\u8fb9\u7f18\u6269\u5c55)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "mirror_face_a",
+          "label": "Mirror Face A(\u4eba\u8138\u955c\u50cf)",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "saturation",
+          "label": "Saturation(\u9971\u548c\u5ea6)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "temperature",
+          "label": "Color Temperature(\u8272\u6e29)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "contrast",
+          "label": "Contrast(\u5bf9\u6bd4\u5ea6)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "brightness",
+          "label": "Brightness(\u4eae\u5ea6)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "saturation_b",
+          "label": "Saturation(\u9971\u548c\u5ea6)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "temperature_b",
+          "label": "Color Temperature(\u8272\u6e29)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "contrast_b",
+          "label": "Contrast(\u5bf9\u6bd4\u5ea6)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "brightness_b",
+          "label": "Brightness(\u4eae\u5ea6)",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Result Image",
+          "type": "filepath",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/adujst_color_process_11",
+      "parameters": [
+        {
+          "name": "image_a",
+          "label": "Input Face Image A(\u8f93\u5165\u4eba\u8138\u56fe\u7247)",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "name": "image_b",
+          "label": "Input Face Swapped Image B(\u8f93\u5165\u6362\u8138\u56fe\u7247)",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "name": "scale_factor",
+          "label": "Face Scale Factor(\u4eba\u8138\u653e\u5927)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "offset_x",
+          "label": "Face Offset X(\u4eba\u8138\u6c34\u5e73\u6a2a\u79fb)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "offset_y",
+          "label": "Face Offset Y(\u4eba\u8138\u5782\u76f4\u6a2a\u79fb)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "rotation_angle",
+          "label": "Face Rotation Angle(\u4eba\u8138\u65cb\u8f6c)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "margin_left",
+          "label": "Face Margin Left(\u4eba\u8138\u5de6\u8fb9\u7f18\u6269\u5c55)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "margin_right",
+          "label": "Face Margin Right(\u4eba\u8138\u53f3\u8fb9\u7f18\u6269\u5c55)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "margin_top",
+          "label": "Face Margin Top(\u4eba\u8138\u4e0a\u8fb9\u7f18\u6269\u5c55)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "margin_bottom",
+          "label": "Face Margin Bottom(\u4eba\u8138\u4e0b\u8fb9\u7f18\u6269\u5c55)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "mirror_face_a",
+          "label": "Mirror Face A(\u4eba\u8138\u955c\u50cf)",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "saturation",
+          "label": "Saturation(\u9971\u548c\u5ea6)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "temperature",
+          "label": "Color Temperature(\u8272\u6e29)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "contrast",
+          "label": "Contrast(\u5bf9\u6bd4\u5ea6)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "brightness",
+          "label": "Brightness(\u4eae\u5ea6)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "saturation_b",
+          "label": "Saturation(\u9971\u548c\u5ea6)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "temperature_b",
+          "label": "Color Temperature(\u8272\u6e29)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "contrast_b",
+          "label": "Contrast(\u5bf9\u6bd4\u5ea6)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "brightness_b",
+          "label": "Brightness(\u4eae\u5ea6)",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Result Image",
+          "type": "filepath",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/adujst_color_process_12",
+      "parameters": [
+        {
+          "name": "image_a",
+          "label": "Input Face Image A(\u8f93\u5165\u4eba\u8138\u56fe\u7247)",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "name": "image_b",
+          "label": "Input Face Swapped Image B(\u8f93\u5165\u6362\u8138\u56fe\u7247)",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "name": "scale_factor",
+          "label": "Face Scale Factor(\u4eba\u8138\u653e\u5927)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "offset_x",
+          "label": "Face Offset X(\u4eba\u8138\u6c34\u5e73\u6a2a\u79fb)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "offset_y",
+          "label": "Face Offset Y(\u4eba\u8138\u5782\u76f4\u6a2a\u79fb)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "rotation_angle",
+          "label": "Face Rotation Angle(\u4eba\u8138\u65cb\u8f6c)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "margin_left",
+          "label": "Face Margin Left(\u4eba\u8138\u5de6\u8fb9\u7f18\u6269\u5c55)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "margin_right",
+          "label": "Face Margin Right(\u4eba\u8138\u53f3\u8fb9\u7f18\u6269\u5c55)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "margin_top",
+          "label": "Face Margin Top(\u4eba\u8138\u4e0a\u8fb9\u7f18\u6269\u5c55)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "margin_bottom",
+          "label": "Face Margin Bottom(\u4eba\u8138\u4e0b\u8fb9\u7f18\u6269\u5c55)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "mirror_face_a",
+          "label": "Mirror Face A(\u4eba\u8138\u955c\u50cf)",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "saturation",
+          "label": "Saturation(\u9971\u548c\u5ea6)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "temperature",
+          "label": "Color Temperature(\u8272\u6e29)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "contrast",
+          "label": "Contrast(\u5bf9\u6bd4\u5ea6)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "brightness",
+          "label": "Brightness(\u4eae\u5ea6)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "saturation_b",
+          "label": "Saturation(\u9971\u548c\u5ea6)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "temperature_b",
+          "label": "Color Temperature(\u8272\u6e29)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "contrast_b",
+          "label": "Contrast(\u5bf9\u6bd4\u5ea6)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "brightness_b",
+          "label": "Brightness(\u4eae\u5ea6)",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Result Image",
+          "type": "filepath",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/adujst_color_process_13",
+      "parameters": [
+        {
+          "name": "image_a",
+          "label": "Input Face Image A(\u8f93\u5165\u4eba\u8138\u56fe\u7247)",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "name": "image_b",
+          "label": "Input Face Swapped Image B(\u8f93\u5165\u6362\u8138\u56fe\u7247)",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "name": "scale_factor",
+          "label": "Face Scale Factor(\u4eba\u8138\u653e\u5927)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "offset_x",
+          "label": "Face Offset X(\u4eba\u8138\u6c34\u5e73\u6a2a\u79fb)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "offset_y",
+          "label": "Face Offset Y(\u4eba\u8138\u5782\u76f4\u6a2a\u79fb)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "rotation_angle",
+          "label": "Face Rotation Angle(\u4eba\u8138\u65cb\u8f6c)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "margin_left",
+          "label": "Face Margin Left(\u4eba\u8138\u5de6\u8fb9\u7f18\u6269\u5c55)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "margin_right",
+          "label": "Face Margin Right(\u4eba\u8138\u53f3\u8fb9\u7f18\u6269\u5c55)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "margin_top",
+          "label": "Face Margin Top(\u4eba\u8138\u4e0a\u8fb9\u7f18\u6269\u5c55)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "margin_bottom",
+          "label": "Face Margin Bottom(\u4eba\u8138\u4e0b\u8fb9\u7f18\u6269\u5c55)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "mirror_face_a",
+          "label": "Mirror Face A(\u4eba\u8138\u955c\u50cf)",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "saturation",
+          "label": "Saturation(\u9971\u548c\u5ea6)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "temperature",
+          "label": "Color Temperature(\u8272\u6e29)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "contrast",
+          "label": "Contrast(\u5bf9\u6bd4\u5ea6)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "brightness",
+          "label": "Brightness(\u4eae\u5ea6)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "saturation_b",
+          "label": "Saturation(\u9971\u548c\u5ea6)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "temperature_b",
+          "label": "Color Temperature(\u8272\u6e29)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "contrast_b",
+          "label": "Contrast(\u5bf9\u6bd4\u5ea6)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "brightness_b",
+          "label": "Brightness(\u4eae\u5ea6)",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Result Image",
+          "type": "filepath",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/adujst_color_process_14",
+      "parameters": [
+        {
+          "name": "image_a",
+          "label": "Input Face Image A(\u8f93\u5165\u4eba\u8138\u56fe\u7247)",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "name": "image_b",
+          "label": "Input Face Swapped Image B(\u8f93\u5165\u6362\u8138\u56fe\u7247)",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "name": "scale_factor",
+          "label": "Face Scale Factor(\u4eba\u8138\u653e\u5927)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "offset_x",
+          "label": "Face Offset X(\u4eba\u8138\u6c34\u5e73\u6a2a\u79fb)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "offset_y",
+          "label": "Face Offset Y(\u4eba\u8138\u5782\u76f4\u6a2a\u79fb)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "rotation_angle",
+          "label": "Face Rotation Angle(\u4eba\u8138\u65cb\u8f6c)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "margin_left",
+          "label": "Face Margin Left(\u4eba\u8138\u5de6\u8fb9\u7f18\u6269\u5c55)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "margin_right",
+          "label": "Face Margin Right(\u4eba\u8138\u53f3\u8fb9\u7f18\u6269\u5c55)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "margin_top",
+          "label": "Face Margin Top(\u4eba\u8138\u4e0a\u8fb9\u7f18\u6269\u5c55)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "margin_bottom",
+          "label": "Face Margin Bottom(\u4eba\u8138\u4e0b\u8fb9\u7f18\u6269\u5c55)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "mirror_face_a",
+          "label": "Mirror Face A(\u4eba\u8138\u955c\u50cf)",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "saturation",
+          "label": "Saturation(\u9971\u548c\u5ea6)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "temperature",
+          "label": "Color Temperature(\u8272\u6e29)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "contrast",
+          "label": "Contrast(\u5bf9\u6bd4\u5ea6)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "brightness",
+          "label": "Brightness(\u4eae\u5ea6)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "saturation_b",
+          "label": "Saturation(\u9971\u548c\u5ea6)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "temperature_b",
+          "label": "Color Temperature(\u8272\u6e29)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "contrast_b",
+          "label": "Contrast(\u5bf9\u6bd4\u5ea6)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "brightness_b",
+          "label": "Brightness(\u4eae\u5ea6)",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Result Image",
+          "type": "filepath",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/adujst_color_process_15",
+      "parameters": [
+        {
+          "name": "image_a",
+          "label": "Input Face Image A(\u8f93\u5165\u4eba\u8138\u56fe\u7247)",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "name": "image_b",
+          "label": "Input Face Swapped Image B(\u8f93\u5165\u6362\u8138\u56fe\u7247)",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "name": "scale_factor",
+          "label": "Face Scale Factor(\u4eba\u8138\u653e\u5927)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "offset_x",
+          "label": "Face Offset X(\u4eba\u8138\u6c34\u5e73\u6a2a\u79fb)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "offset_y",
+          "label": "Face Offset Y(\u4eba\u8138\u5782\u76f4\u6a2a\u79fb)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "rotation_angle",
+          "label": "Face Rotation Angle(\u4eba\u8138\u65cb\u8f6c)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "margin_left",
+          "label": "Face Margin Left(\u4eba\u8138\u5de6\u8fb9\u7f18\u6269\u5c55)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "margin_right",
+          "label": "Face Margin Right(\u4eba\u8138\u53f3\u8fb9\u7f18\u6269\u5c55)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "margin_top",
+          "label": "Face Margin Top(\u4eba\u8138\u4e0a\u8fb9\u7f18\u6269\u5c55)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "margin_bottom",
+          "label": "Face Margin Bottom(\u4eba\u8138\u4e0b\u8fb9\u7f18\u6269\u5c55)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "mirror_face_a",
+          "label": "Mirror Face A(\u4eba\u8138\u955c\u50cf)",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "saturation",
+          "label": "Saturation(\u9971\u548c\u5ea6)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "temperature",
+          "label": "Color Temperature(\u8272\u6e29)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "contrast",
+          "label": "Contrast(\u5bf9\u6bd4\u5ea6)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "brightness",
+          "label": "Brightness(\u4eae\u5ea6)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "saturation_b",
+          "label": "Saturation(\u9971\u548c\u5ea6)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "temperature_b",
+          "label": "Color Temperature(\u8272\u6e29)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "contrast_b",
+          "label": "Contrast(\u5bf9\u6bd4\u5ea6)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "brightness_b",
+          "label": "Brightness(\u4eae\u5ea6)",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Result Image",
+          "type": "filepath",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/adujst_color_process_16",
+      "parameters": [
+        {
+          "name": "image_a",
+          "label": "Input Face Image A(\u8f93\u5165\u4eba\u8138\u56fe\u7247)",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "name": "image_b",
+          "label": "Input Face Swapped Image B(\u8f93\u5165\u6362\u8138\u56fe\u7247)",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "name": "scale_factor",
+          "label": "Face Scale Factor(\u4eba\u8138\u653e\u5927)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "offset_x",
+          "label": "Face Offset X(\u4eba\u8138\u6c34\u5e73\u6a2a\u79fb)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "offset_y",
+          "label": "Face Offset Y(\u4eba\u8138\u5782\u76f4\u6a2a\u79fb)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "rotation_angle",
+          "label": "Face Rotation Angle(\u4eba\u8138\u65cb\u8f6c)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "margin_left",
+          "label": "Face Margin Left(\u4eba\u8138\u5de6\u8fb9\u7f18\u6269\u5c55)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "margin_right",
+          "label": "Face Margin Right(\u4eba\u8138\u53f3\u8fb9\u7f18\u6269\u5c55)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "margin_top",
+          "label": "Face Margin Top(\u4eba\u8138\u4e0a\u8fb9\u7f18\u6269\u5c55)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "margin_bottom",
+          "label": "Face Margin Bottom(\u4eba\u8138\u4e0b\u8fb9\u7f18\u6269\u5c55)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "mirror_face_a",
+          "label": "Mirror Face A(\u4eba\u8138\u955c\u50cf)",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "saturation",
+          "label": "Saturation(\u9971\u548c\u5ea6)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "temperature",
+          "label": "Color Temperature(\u8272\u6e29)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "contrast",
+          "label": "Contrast(\u5bf9\u6bd4\u5ea6)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "brightness",
+          "label": "Brightness(\u4eae\u5ea6)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "saturation_b",
+          "label": "Saturation(\u9971\u548c\u5ea6)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "temperature_b",
+          "label": "Color Temperature(\u8272\u6e29)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "contrast_b",
+          "label": "Contrast(\u5bf9\u6bd4\u5ea6)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "brightness_b",
+          "label": "Brightness(\u4eae\u5ea6)",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Result Image",
+          "type": "filepath",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/adujst_color_process_17",
+      "parameters": [
+        {
+          "name": "image_a",
+          "label": "Input Face Image A(\u8f93\u5165\u4eba\u8138\u56fe\u7247)",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "name": "image_b",
+          "label": "Input Face Swapped Image B(\u8f93\u5165\u6362\u8138\u56fe\u7247)",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "name": "scale_factor",
+          "label": "Face Scale Factor(\u4eba\u8138\u653e\u5927)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "offset_x",
+          "label": "Face Offset X(\u4eba\u8138\u6c34\u5e73\u6a2a\u79fb)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "offset_y",
+          "label": "Face Offset Y(\u4eba\u8138\u5782\u76f4\u6a2a\u79fb)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "rotation_angle",
+          "label": "Face Rotation Angle(\u4eba\u8138\u65cb\u8f6c)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "margin_left",
+          "label": "Face Margin Left(\u4eba\u8138\u5de6\u8fb9\u7f18\u6269\u5c55)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "margin_right",
+          "label": "Face Margin Right(\u4eba\u8138\u53f3\u8fb9\u7f18\u6269\u5c55)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "margin_top",
+          "label": "Face Margin Top(\u4eba\u8138\u4e0a\u8fb9\u7f18\u6269\u5c55)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "margin_bottom",
+          "label": "Face Margin Bottom(\u4eba\u8138\u4e0b\u8fb9\u7f18\u6269\u5c55)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "mirror_face_a",
+          "label": "Mirror Face A(\u4eba\u8138\u955c\u50cf)",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "saturation",
+          "label": "Saturation(\u9971\u548c\u5ea6)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "temperature",
+          "label": "Color Temperature(\u8272\u6e29)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "contrast",
+          "label": "Contrast(\u5bf9\u6bd4\u5ea6)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "brightness",
+          "label": "Brightness(\u4eae\u5ea6)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "saturation_b",
+          "label": "Saturation(\u9971\u548c\u5ea6)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "temperature_b",
+          "label": "Color Temperature(\u8272\u6e29)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "contrast_b",
+          "label": "Contrast(\u5bf9\u6bd4\u5ea6)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "brightness_b",
+          "label": "Brightness(\u4eae\u5ea6)",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Result Image",
+          "type": "filepath",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/adujst_color_process_18",
+      "parameters": [
+        {
+          "name": "image_a",
+          "label": "Input Face Image A(\u8f93\u5165\u4eba\u8138\u56fe\u7247)",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "name": "image_b",
+          "label": "Input Face Swapped Image B(\u8f93\u5165\u6362\u8138\u56fe\u7247)",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "name": "scale_factor",
+          "label": "Face Scale Factor(\u4eba\u8138\u653e\u5927)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "offset_x",
+          "label": "Face Offset X(\u4eba\u8138\u6c34\u5e73\u6a2a\u79fb)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "offset_y",
+          "label": "Face Offset Y(\u4eba\u8138\u5782\u76f4\u6a2a\u79fb)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "rotation_angle",
+          "label": "Face Rotation Angle(\u4eba\u8138\u65cb\u8f6c)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "margin_left",
+          "label": "Face Margin Left(\u4eba\u8138\u5de6\u8fb9\u7f18\u6269\u5c55)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "margin_right",
+          "label": "Face Margin Right(\u4eba\u8138\u53f3\u8fb9\u7f18\u6269\u5c55)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "margin_top",
+          "label": "Face Margin Top(\u4eba\u8138\u4e0a\u8fb9\u7f18\u6269\u5c55)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "margin_bottom",
+          "label": "Face Margin Bottom(\u4eba\u8138\u4e0b\u8fb9\u7f18\u6269\u5c55)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "mirror_face_a",
+          "label": "Mirror Face A(\u4eba\u8138\u955c\u50cf)",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "saturation",
+          "label": "Saturation(\u9971\u548c\u5ea6)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "temperature",
+          "label": "Color Temperature(\u8272\u6e29)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "contrast",
+          "label": "Contrast(\u5bf9\u6bd4\u5ea6)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "brightness",
+          "label": "Brightness(\u4eae\u5ea6)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "saturation_b",
+          "label": "Saturation(\u9971\u548c\u5ea6)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "temperature_b",
+          "label": "Color Temperature(\u8272\u6e29)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "contrast_b",
+          "label": "Contrast(\u5bf9\u6bd4\u5ea6)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "brightness_b",
+          "label": "Brightness(\u4eae\u5ea6)",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Result Image",
+          "type": "filepath",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/update_image",
+      "parameters": [
+        {
+          "name": "image",
+          "label": "Result Image",
+          "type": "filepath",
+          "component": "Image"
+        }
+      ],
+      "returns": [
+        {
+          "label": "base image",
+          "type": "Dict(background: filepath | None, layers: List[filepath], composite: filepath | None, id: str | None)",
+          "component": "Imageeditor"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/dummy",
+  "_api_verified": true,
+  "estimated_latency_s": 3.73,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "_tags_enriched": true,
+  "measured_latency_s": 3.73,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:49:12.423743+00:00"
+}

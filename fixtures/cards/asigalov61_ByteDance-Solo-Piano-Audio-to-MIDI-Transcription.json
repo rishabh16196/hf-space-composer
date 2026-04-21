@@ -1,0 +1,110 @@
+{
+  "space_id": "asigalov61/ByteDance-Solo-Piano-Audio-to-MIDI-Transcription",
+  "title": "ByteDance Solo Piano Audio To MIDI Transcription",
+  "emoji": "\ud83e\udd80",
+  "description": "Solo Piano Audio to MIDI Transcription",
+  "input_schema": {
+    "input_file": {
+      "type": "filepath",
+      "description": "Input Solo Piano WAV or MP3 Audio File",
+      "required": true,
+      "component": "File"
+    }
+  },
+  "output_schema": {
+    "Output MIDI title": {
+      "type": "str",
+      "description": "Output MIDI title",
+      "component": "Textbox"
+    },
+    "Output MIDI summary": {
+      "type": "str",
+      "description": "Output MIDI summary",
+      "component": "Textbox"
+    },
+    "Output MIDI file": {
+      "type": "filepath",
+      "description": "Output MIDI file",
+      "component": "File"
+    },
+    "Output MIDI audio": {
+      "type": "filepath",
+      "description": "Output MIDI audio",
+      "component": "Audio"
+    },
+    "Output MIDI score plot": {
+      "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+      "description": "Output MIDI score plot",
+      "component": "Plot"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "6.3.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "audio-to-MIDI",
+    "MIDI",
+    "audio transcription",
+    "piano transcription",
+    "piano audio transcription",
+    "music transcription",
+    "MIDI transcription",
+    "mcp-server",
+    "region:us"
+  ],
+  "likes": 64,
+  "last_modified": "2026-01-22 11:18:51+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/TranscribePianoAudio",
+      "parameters": [
+        {
+          "name": "input_file",
+          "label": "Input Solo Piano WAV or MP3 Audio File",
+          "type": "filepath",
+          "component": "File"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output MIDI title",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Output MIDI summary",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Output MIDI file",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "label": "Output MIDI audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Output MIDI score plot",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/TranscribePianoAudio",
+  "_api_verified": true,
+  "estimated_latency_s": 2.98,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 2.98,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:50:17.539853+00:00"
+}

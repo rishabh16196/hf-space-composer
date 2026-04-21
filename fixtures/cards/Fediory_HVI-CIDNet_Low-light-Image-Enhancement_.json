@@ -1,0 +1,132 @@
+{
+  "space_id": "Fediory/HVI-CIDNet_Low-light-Image-Enhancement_",
+  "title": "HVI CIDNet",
+  "emoji": "\ud83d\udcda",
+  "description": "A demo of HVI-CIDNet",
+  "input_schema": {
+    "input_img": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "Low-light Image",
+      "required": true,
+      "component": "Image"
+    },
+    "score": {
+      "type": "Literal['Yes', 'No']",
+      "description": "Image Score",
+      "required": true,
+      "component": "Radio"
+    },
+    "model_path": {
+      "type": "Literal['Generalization', 'Sony-Total-Dark', 'LOL-Blur', 'SICE', 'FiveK', 'LOLv2-real-bestSSIM', 'LO",
+      "description": "Model Weights",
+      "required": true,
+      "component": "Radio"
+    },
+    "gamma": {
+      "type": "float",
+      "description": "gamma curve",
+      "required": true,
+      "component": "Slider"
+    },
+    "alpha_s": {
+      "type": "float",
+      "description": "Alpha-s",
+      "required": true,
+      "component": "Slider"
+    },
+    "alpha_i": {
+      "type": "float",
+      "description": "Alpha-i",
+      "required": true,
+      "component": "Slider"
+    }
+  },
+  "output_schema": {
+    "Result": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "Result",
+      "component": "Image"
+    },
+    "NIQE": {
+      "type": "str",
+      "description": "NIQE",
+      "component": "Textbox"
+    }
+  },
+  "license": "unknown",
+  "hardware": "5.17.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 29,
+  "last_modified": "2025-10-28 03:08:54+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/predict",
+      "parameters": [
+        {
+          "name": "input_img",
+          "label": "Low-light Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "score",
+          "label": "Image Score",
+          "type": "Literal['Yes', 'No']",
+          "component": "Radio"
+        },
+        {
+          "name": "model_path",
+          "label": "Model Weights",
+          "type": "Literal['Generalization', 'Sony-Total-Dark', 'LOL-Blur', 'SICE', 'FiveK', 'LOLv2-real-bestSSIM', 'LOLv2-real-bestPSNR', 'LOLv2-syn-wperc', 'LOLv2-syn-woperc', 'LOLv1-wperc', 'LOLv1-woperc']",
+          "component": "Radio"
+        },
+        {
+          "name": "gamma",
+          "label": "gamma curve",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "alpha_s",
+          "label": "Alpha-s",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "alpha_i",
+          "label": "Alpha-i",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Result",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "NIQE",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/predict",
+  "_api_verified": true,
+  "estimated_latency_s": 2.86,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 2.86,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:49:18.323606+00:00"
+}

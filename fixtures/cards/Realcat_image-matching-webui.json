@@ -1,0 +1,523 @@
+{
+  "space_id": "Realcat/image-matching-webui",
+  "title": "Image Matching Webui",
+  "emoji": "\ud83e\udd17",
+  "description": "Image Matching Webui",
+  "input_schema": {
+    "visible": {
+      "type": "bool",
+      "description": "Force Resize",
+      "required": true,
+      "component": "Checkbox"
+    }
+  },
+  "output_schema": {
+    "Image Width": {
+      "type": "float",
+      "description": "Image Width",
+      "component": "Slider"
+    },
+    "Image Height": {
+      "type": "float",
+      "description": "Image Height",
+      "component": "Slider"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "5.38.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 180,
+  "last_modified": "2026-04-02 15:43:06+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/_on_select_force_resize",
+      "parameters": [
+        {
+          "name": "visible",
+          "label": "Force Resize",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Image Width",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Image Height",
+          "type": "float",
+          "component": "Slider"
+        }
+      ]
+    },
+    {
+      "name": "/ui_change_imagebox",
+      "parameters": [
+        {
+          "name": "choice",
+          "label": "Image Source",
+          "type": "Literal['upload', 'webcam', 'clipboard']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Image 0",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/ui_change_imagebox_1",
+      "parameters": [
+        {
+          "name": "choice",
+          "label": "Image Source",
+          "type": "Literal['upload', 'webcam', 'clipboard']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Image 1",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/run_matching",
+      "parameters": [
+        {
+          "name": "image0",
+          "label": "Image 0",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "image1",
+          "label": "Image 1",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "match_threshold",
+          "label": "Match threshold",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "extract_max_keypoints",
+          "label": "Max features",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "keypoint_threshold",
+          "label": "Keypoint threshold",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "key",
+          "label": "Matching Model",
+          "type": "Literal['dad(RoMa)', 'minima(loftr)', 'minima(RoMa)', 'omniglue', 'Mast3R', 'DUSt3R', 'GIM(RoMa)', 'GIM(dkm)', 'RoMa', 'dkm', 'loftr', 'eloftr', 'xoftr', 'topicfm', 'aspanformer', 'xfeat+lightglue', '",
+          "component": "Dropdown"
+        },
+        {
+          "name": "ransac_method",
+          "label": "RANSAC Method",
+          "type": "Literal['POSELIB', 'CV2_RANSAC', 'CV2_USAC_MAGSAC', 'CV2_USAC_DEFAULT', 'CV2_USAC_FM_8PTS', 'CV2_USAC_PROSAC', 'CV2_USAC_FAST', 'CV2_USAC_ACCURATE', 'CV2_USAC_PARALLEL']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "ransac_reproj_threshold",
+          "label": "Ransac Reproj threshold",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "ransac_confidence",
+          "label": "Ransac Confidence",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "ransac_max_iter",
+          "label": "Ransac Iterations",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "choice_geometry_type",
+          "label": "Reconstruct Geometry",
+          "type": "Literal['Fundamental', 'Homography']",
+          "component": "Radio"
+        },
+        {
+          "name": "force_resize",
+          "label": "Force Resize",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "image_width",
+          "label": "Image Width",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "image_height",
+          "label": "Image Height",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Keypoints",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "Raw Matches",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "Ransac Matches",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "Matches Statistics",
+          "type": "str | float | bool | list | dict",
+          "component": "Json"
+        },
+        {
+          "label": "Match info",
+          "type": "str | float | bool | list | dict",
+          "component": "Json"
+        },
+        {
+          "label": "Reconstructed Geometry",
+          "type": "str | float | bool | list | dict",
+          "component": "Json"
+        },
+        {
+          "label": "Wrapped Pair",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "Outputs",
+          "type": "filepath",
+          "component": "File"
+        }
+      ]
+    },
+    {
+      "name": "/ui_reset_state",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Image 0",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "Image 1",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "Match threshold",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Max features",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Keypoint threshold",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Matching Model",
+          "type": "Literal['dad(RoMa)', 'minima(loftr)', 'minima(RoMa)', 'omniglue', 'Mast3R', 'DUSt3R', 'GIM(RoMa)', 'GIM(dkm)', 'RoMa', 'dkm', 'loftr', 'eloftr', 'xoftr', 'topicfm', 'aspanformer', 'xfeat+lightglue', '",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Image 0",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "Image 1",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "Image Source",
+          "type": "Literal['upload', 'webcam', 'clipboard']",
+          "component": "Radio"
+        },
+        {
+          "label": "Keypoints",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "Raw Matches",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "Ransac Matches",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "Matches Statistics",
+          "type": "str | float | bool | list | dict",
+          "component": "Json"
+        },
+        {
+          "label": "Match info",
+          "type": "str | float | bool | list | dict",
+          "component": "Json"
+        },
+        {
+          "label": "Wrapped Pair",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "Reconstructed Geometry",
+          "type": "str | float | bool | list | dict",
+          "component": "Json"
+        },
+        {
+          "label": "RANSAC Method",
+          "type": "Literal['POSELIB', 'CV2_RANSAC', 'CV2_USAC_MAGSAC', 'CV2_USAC_DEFAULT', 'CV2_USAC_FM_8PTS', 'CV2_USAC_PROSAC', 'CV2_USAC_FAST', 'CV2_USAC_ACCURATE', 'CV2_USAC_PARALLEL']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Ransac Reproj threshold",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Ransac Confidence",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Ransac Iterations",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Reconstruct Geometry",
+          "type": "Literal['Fundamental', 'Homography']",
+          "component": "Radio"
+        },
+        {
+          "label": "Outputs",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "label": "Force Resize",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ]
+    },
+    {
+      "name": "/run_ransac",
+      "parameters": [
+        {
+          "name": "choice_geometry_type",
+          "label": "Reconstruct Geometry",
+          "type": "Literal['Fundamental', 'Homography']",
+          "component": "Radio"
+        },
+        {
+          "name": "ransac_method",
+          "label": "RANSAC Method",
+          "type": "Literal['POSELIB', 'CV2_RANSAC', 'CV2_USAC_MAGSAC', 'CV2_USAC_DEFAULT', 'CV2_USAC_FM_8PTS', 'CV2_USAC_PROSAC', 'CV2_USAC_FAST', 'CV2_USAC_ACCURATE', 'CV2_USAC_PARALLEL']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "ransac_reproj_threshold",
+          "label": "Ransac Reproj threshold",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "ransac_confidence",
+          "label": "Ransac Confidence",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "ransac_max_iter",
+          "label": "Ransac Iterations",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Ransac Matches",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "Matches Statistics",
+          "type": "str | float | bool | list | dict",
+          "component": "Json"
+        },
+        {
+          "label": "Wrapped Pair",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "Outputs",
+          "type": "filepath",
+          "component": "File"
+        }
+      ]
+    },
+    {
+      "name": "/send_to_match",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Image 0",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "Image 1",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/swap_images",
+      "parameters": [
+        {
+          "name": "image0",
+          "label": "Image 0",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "image1",
+          "label": "Image 1",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Image 0",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "Image 1",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/generate_warp_images",
+      "parameters": [
+        {
+          "name": "input_image0",
+          "label": "Image 0",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "input_image1",
+          "label": "Image 1",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "matches_info",
+          "label": "Reconstructed Geometry",
+          "type": "str | float | bool | list | dict",
+          "component": "Json"
+        },
+        {
+          "name": "choice",
+          "label": "Reconstruct Geometry",
+          "type": "Literal['Fundamental', 'Homography']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Wrapped Pair",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "Reconstructed Geometry",
+          "type": "str | float | bool | list | dict",
+          "component": "Json"
+        }
+      ]
+    },
+    {
+      "name": "/_on_select_custom_params",
+      "parameters": [
+        {
+          "name": "value",
+          "label": "Custom Params",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Camera Params",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/info",
+      "parameters": [],
+      "returns": []
+    }
+  ],
+  "endpoint": "/_on_select_force_resize",
+  "_api_verified": true
+}

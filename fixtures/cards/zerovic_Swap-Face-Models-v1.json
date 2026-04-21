@@ -1,0 +1,81 @@
+{
+  "space_id": "zerovic/Swap-Face-Models-v1",
+  "title": "Swap Face Model",
+  "emoji": "\ud83d\ude3b",
+  "description": "Swap Face Model",
+  "input_schema": {
+    "target_image": {
+      "type": "filepath",
+      "description": "Target Image (the photo you want to change)",
+      "required": true,
+      "component": "Image"
+    },
+    "swap_image": {
+      "type": "filepath",
+      "description": "Swap Face Image (the face you want to use)",
+      "required": true,
+      "component": "Image"
+    }
+  },
+  "output_schema": {
+    "Result": {
+      "type": "filepath",
+      "description": "Result",
+      "component": "Image"
+    },
+    "Status": {
+      "type": "str",
+      "description": "Status",
+      "component": "Textbox"
+    }
+  },
+  "license": "mit",
+  "hardware": "",
+  "sdk": "docker",
+  "tags": [
+    "docker",
+    "region:us"
+  ],
+  "likes": 7,
+  "last_modified": "2026-04-04 16:36:47+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/predict",
+      "parameters": [
+        {
+          "name": "target_image",
+          "label": "Target Image (the photo you want to change)",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "name": "swap_image",
+          "label": "Swap Face Image (the face you want to use)",
+          "type": "filepath",
+          "component": "Image"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Result",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "Status",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/predict",
+  "_api_verified": true
+}

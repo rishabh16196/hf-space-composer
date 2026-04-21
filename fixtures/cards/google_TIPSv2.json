@@ -1,0 +1,299 @@
+{
+  "space_id": "google/TIPSv2",
+  "title": "TIPSv2 Feature Explorer",
+  "emoji": "\ud83d\udd0d",
+  "description": "Explore TIPSv2 features, segmentations, depth and normals",
+  "input_schema": {
+    "variant_name": {
+      "type": "Literal['TIPS v2 \u2014 B/14', 'TIPS v2 \u2014 L/14', 'TIPS v2 \u2014 SO400m/14', 'TIPS v2 \u2014 g/14']",
+      "description": "Model variant",
+      "required": true,
+      "component": "Dropdown"
+    }
+  },
+  "output_schema": {
+    "PCA (3 components \u2192 RGB)": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "PCA (3 components \u2192 RGB)",
+      "component": "Image"
+    },
+    "1st PCA component": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "1st PCA component",
+      "component": "Image"
+    },
+    "K-means clusters": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "K-means clusters",
+      "component": "Image"
+    },
+    "Segmentation overlay": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "Segmentation overlay",
+      "component": "Image"
+    },
+    "Segmentation mask": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "Segmentation mask",
+      "component": "Image"
+    },
+    "Detected classes (sorted by area)": {
+      "type": "str",
+      "description": "Detected classes (sorted by area)",
+      "component": "Textbox"
+    },
+    "Not detected": {
+      "type": "str",
+      "description": "Not detected",
+      "component": "Textbox"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "5.49.1",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us",
+    "depth-estimation",
+    "vision"
+  ],
+  "likes": 11,
+  "last_modified": "2026-04-15 21:24:39+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/on_variant_change",
+      "parameters": [
+        {
+          "name": "variant_name",
+          "label": "Model variant",
+          "type": "Literal['TIPS v2 \u2014 B/14', 'TIPS v2 \u2014 L/14', 'TIPS v2 \u2014 SO400m/14', 'TIPS v2 \u2014 g/14']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "PCA (3 components \u2192 RGB)",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "1st PCA component",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "K-means clusters",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "Segmentation overlay",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "Segmentation mask",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "Detected classes (sorted by area)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Not detected",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/on_pca_extract",
+      "parameters": [
+        {
+          "name": "image",
+          "label": "Input image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "resolution",
+          "label": "Resolution (higher = better quality, slower)",
+          "type": "Literal['224', '336', '448', '672', '896', '1120', '1372', '1792']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "PCA (3 components \u2192 RGB)",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "1st PCA component",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "K-means clusters",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/on_recluster",
+      "parameters": [
+        {
+          "name": "image",
+          "label": "Input image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "resolution",
+          "label": "Resolution (higher = better quality, slower)",
+          "type": "Literal['224', '336', '448', '672', '896', '1120', '1372', '1792']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "n_clusters",
+          "label": "Clusters",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "K-means clusters",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/on_depth_normals_predict",
+      "parameters": [
+        {
+          "name": "image",
+          "label": "Input image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "dpt_variant",
+          "label": "Model variant",
+          "type": "Literal['TIPS v2 \u2014 B/14', 'TIPS v2 \u2014 L/14', 'TIPS v2 \u2014 SO400m/14', 'TIPS v2 \u2014 g/14']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "resolution",
+          "label": "Resolution (higher = better quality, slower)",
+          "type": "Literal['224', '336', '448', '672', '896', '1120', '1372', '1792']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "DPT Depth Map",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "DPT Surface Normals",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/on_segmentation_predict",
+      "parameters": [
+        {
+          "name": "image",
+          "label": "Input image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "dpt_variant",
+          "label": "Model variant",
+          "type": "Literal['TIPS v2 \u2014 B/14', 'TIPS v2 \u2014 L/14', 'TIPS v2 \u2014 SO400m/14', 'TIPS v2 \u2014 g/14']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "resolution",
+          "label": "Resolution (higher = better quality, slower)",
+          "type": "Literal['224', '336', '448', '672', '896', '1120', '1372', '1792']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "DPT Segmentation (ADE20K)",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/on_zeroseg_custom",
+      "parameters": [
+        {
+          "name": "image",
+          "label": "Input image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "resolution",
+          "label": "Resolution (higher = better quality, slower)",
+          "type": "Literal['224', '336', '448', '672', '896', '1120', '1372', '1792']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "class_names_str",
+          "label": "Class names (comma-separated)",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Segmentation overlay",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "Segmentation mask",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "Detected classes (sorted by area)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Not detected",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/on_variant_change",
+  "_api_verified": true,
+  "estimated_latency_s": 3.6,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "_tags_enriched": true,
+  "measured_latency_s": 3.6,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:50:41.927888+00:00"
+}

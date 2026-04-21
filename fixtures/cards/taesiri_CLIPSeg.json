@@ -1,0 +1,127 @@
+{
+  "space_id": "taesiri/CLIPSeg",
+  "title": "CLIPSeg",
+  "emoji": "\ud83e\udd80",
+  "description": "CLIPSeg",
+  "input_schema": {
+    "image": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "parameter_7",
+      "required": true,
+      "component": "Image"
+    },
+    "prompt": {
+      "type": "str",
+      "description": "Please describe what you want to identify",
+      "required": true,
+      "component": "Textbox"
+    },
+    "threshold": {
+      "type": "float",
+      "description": "Threshold",
+      "required": true,
+      "component": "Slider"
+    },
+    "alpha_value": {
+      "type": "float",
+      "description": "Alpha",
+      "required": true,
+      "component": "Slider"
+    },
+    "draw_rectangles": {
+      "type": "bool",
+      "description": "Draw rectangles",
+      "required": true,
+      "component": "Checkbox"
+    }
+  },
+  "output_schema": {
+    "Segmentation Result": {
+      "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+      "description": "Segmentation Result",
+      "component": "Plot"
+    },
+    "Mask": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "Mask",
+      "component": "Image"
+    },
+    "Output Image": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "Output Image",
+      "component": "Image"
+    }
+  },
+  "license": "unknown",
+  "hardware": "5.29.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 40,
+  "last_modified": "2025-05-06 03:27:12+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/process_image",
+      "parameters": [
+        {
+          "name": "image",
+          "label": "parameter_7",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "prompt",
+          "label": "Please describe what you want to identify",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "threshold",
+          "label": "Threshold",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "alpha_value",
+          "label": "Alpha",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "draw_rectangles",
+          "label": "Draw rectangles",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Segmentation Result",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "Mask",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "Output Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/process_image",
+  "_api_verified": true
+}

@@ -1,0 +1,39 @@
+{
+  "space_id": "kazuk/youtube-whisper-01",
+  "title": "Youtube Whisper",
+  "emoji": "\u26a1",
+  "description": "Youtube Whisper",
+  "input_schema": {
+    "input": {
+      "type": "string",
+      "description": "Input",
+      "required": true
+    }
+  },
+  "output_schema": {
+    "output": {
+      "type": "string"
+    }
+  },
+  "license": "unknown",
+  "hardware": "4.36.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us",
+    "asr",
+    "audio",
+    "transcription"
+  ],
+  "likes": 18,
+  "last_modified": "2024-06-09 22:41:07+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_tags_enriched": true,
+  "estimated_latency_s": 5.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "sleeping",
+  "_api_error": "Space is in RUNTIME_ERROR state"
+}

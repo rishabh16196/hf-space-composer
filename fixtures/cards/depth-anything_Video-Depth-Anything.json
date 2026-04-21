@@ -1,0 +1,123 @@
+{
+  "space_id": "depth-anything/Video-Depth-Anything",
+  "title": "Video Depth Anything",
+  "emoji": "\ud83d\udc40",
+  "description": "Video Depth Anything",
+  "input_schema": {
+    "input_video": {
+      "type": "dict(video: filepath, subtitles: filepath | None)",
+      "description": "Input Video",
+      "required": true,
+      "component": "Video"
+    },
+    "max_len": {
+      "type": "float",
+      "description": "max process length",
+      "required": true,
+      "component": "Slider"
+    },
+    "target_fps": {
+      "type": "float",
+      "description": "target FPS",
+      "required": true,
+      "component": "Slider"
+    },
+    "max_res": {
+      "type": "float",
+      "description": "max side resolution",
+      "required": true,
+      "component": "Slider"
+    },
+    "grayscale": {
+      "type": "bool",
+      "description": "grayscale",
+      "required": true,
+      "component": "Checkbox"
+    }
+  },
+  "output_schema": {
+    "Preprocessed video": {
+      "type": "dict(video: filepath, subtitles: filepath | None)",
+      "description": "Preprocessed video",
+      "component": "Video"
+    },
+    "Generated Depth Video": {
+      "type": "dict(video: filepath, subtitles: filepath | None)",
+      "description": "Generated Depth Video",
+      "component": "Video"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "5.12.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us",
+    "depth-estimation",
+    "vision"
+  ],
+  "likes": 224,
+  "last_modified": "2025-03-05 10:44:40+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/infer_video_depth",
+      "parameters": [
+        {
+          "name": "input_video",
+          "label": "Input Video",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        },
+        {
+          "name": "max_len",
+          "label": "max process length",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "target_fps",
+          "label": "target FPS",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "max_res",
+          "label": "max side resolution",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "grayscale",
+          "label": "grayscale",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Preprocessed video",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        },
+        {
+          "label": "Generated Depth Video",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/infer_video_depth",
+  "_api_verified": true,
+  "estimated_latency_s": 2.94,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "_tags_enriched": true,
+  "measured_latency_s": 2.94,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:50:29.056887+00:00"
+}

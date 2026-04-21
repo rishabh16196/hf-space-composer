@@ -1,0 +1,1579 @@
+{
+  "space_id": "John6666/flux-lora-the-explorer",
+  "title": "FLUX LoRA the Explorer Mod",
+  "emoji": "\ud83c\udfc6\ud83d\ude3b",
+  "description": "FLUX LoRA the Explorer Mod",
+  "input_schema": {
+    "width": {
+      "type": "float",
+      "description": "Width",
+      "required": true,
+      "component": "Slider"
+    },
+    "height": {
+      "type": "float",
+      "description": "Height",
+      "required": true,
+      "component": "Slider"
+    }
+  },
+  "output_schema": {
+    "Prompt": {
+      "type": "str",
+      "description": "Prompt",
+      "component": "Textbox"
+    },
+    "value_43": {
+      "type": "str",
+      "description": "value_43",
+      "component": "Markdown"
+    },
+    "value_54": {
+      "type": "str",
+      "description": "value_54",
+      "component": "Markdown"
+    },
+    "value_65": {
+      "type": "str",
+      "description": "value_65",
+      "component": "Markdown"
+    },
+    "value_76": {
+      "type": "str",
+      "description": "value_76",
+      "component": "Markdown"
+    },
+    "value_87": {
+      "type": "str",
+      "description": "value_87",
+      "component": "Markdown"
+    },
+    "LoRA 1 Scale": {
+      "type": "float",
+      "description": "LoRA 1 Scale",
+      "component": "Slider"
+    },
+    "LoRA 2 Scale": {
+      "type": "float",
+      "description": "LoRA 2 Scale",
+      "component": "Slider"
+    },
+    "LoRA 3 Scale": {
+      "type": "float",
+      "description": "LoRA 3 Scale",
+      "component": "Slider"
+    },
+    "LoRA 4 Scale": {
+      "type": "float",
+      "description": "LoRA 4 Scale",
+      "component": "Slider"
+    },
+    "LoRA 5 Scale": {
+      "type": "float",
+      "description": "LoRA 5 Scale",
+      "component": "Slider"
+    },
+    "Width": {
+      "type": "float",
+      "description": "Width",
+      "component": "Slider"
+    },
+    "Height": {
+      "type": "float",
+      "description": "Height",
+      "component": "Slider"
+    },
+    "LoRA 1 Image": {
+      "type": "filepath",
+      "description": "LoRA 1 Image",
+      "component": "Image"
+    },
+    "LoRA 2 Image": {
+      "type": "filepath",
+      "description": "LoRA 2 Image",
+      "component": "Image"
+    },
+    "LoRA 3 Image": {
+      "type": "filepath",
+      "description": "LoRA 3 Image",
+      "component": "Image"
+    },
+    "LoRA 4 Image": {
+      "type": "filepath",
+      "description": "LoRA 4 Image",
+      "component": "Image"
+    },
+    "LoRA 5 Image": {
+      "type": "filepath",
+      "description": "LoRA 5 Image",
+      "component": "Image"
+    }
+  },
+  "license": "mit",
+  "hardware": "6.10.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us",
+    "diffusion",
+    "image-generation",
+    "text-to-image",
+    "vision"
+  ],
+  "likes": 153,
+  "last_modified": "2026-04-13 00:48:00+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/update_selection",
+      "parameters": [
+        {
+          "name": "width",
+          "label": "Width",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "height",
+          "label": "Height",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "value_43",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_54",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_65",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_76",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_87",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "LoRA 1 Scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "LoRA 2 Scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "LoRA 3 Scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "LoRA 4 Scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "LoRA 5 Scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Width",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Height",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "LoRA 1 Image",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "LoRA 2 Image",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "LoRA 3 Image",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "LoRA 4 Image",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "LoRA 5 Image",
+          "type": "filepath",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/remove_lora",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_43",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_54",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_65",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_76",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_87",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "LoRA 1 Scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "LoRA 2 Scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "LoRA 3 Scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "LoRA 4 Scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "LoRA 5 Scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "LoRA 1 Image",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "LoRA 2 Image",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "LoRA 3 Image",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "LoRA 4 Image",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "LoRA 5 Image",
+          "type": "filepath",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_1",
+      "parameters": [
+        {
+          "name": "s",
+          "label": "LoRA 1 Scale",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/remove_lora_1",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_43",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_54",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_65",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_76",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_87",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "LoRA 1 Scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "LoRA 2 Scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "LoRA 3 Scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "LoRA 4 Scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "LoRA 5 Scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "LoRA 1 Image",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "LoRA 2 Image",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "LoRA 3 Image",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "LoRA 4 Image",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "LoRA 5 Image",
+          "type": "filepath",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_2",
+      "parameters": [
+        {
+          "name": "s",
+          "label": "LoRA 2 Scale",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/remove_lora_2",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_43",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_54",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_65",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_76",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_87",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "LoRA 1 Scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "LoRA 2 Scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "LoRA 3 Scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "LoRA 4 Scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "LoRA 5 Scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "LoRA 1 Image",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "LoRA 2 Image",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "LoRA 3 Image",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "LoRA 4 Image",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "LoRA 5 Image",
+          "type": "filepath",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_3",
+      "parameters": [
+        {
+          "name": "s",
+          "label": "LoRA 3 Scale",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/remove_lora_3",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_43",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_54",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_65",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_76",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_87",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "LoRA 1 Scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "LoRA 2 Scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "LoRA 3 Scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "LoRA 4 Scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "LoRA 5 Scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "LoRA 1 Image",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "LoRA 2 Image",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "LoRA 3 Image",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "LoRA 4 Image",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "LoRA 5 Image",
+          "type": "filepath",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_4",
+      "parameters": [
+        {
+          "name": "s",
+          "label": "LoRA 4 Scale",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/remove_lora_4",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_43",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_54",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_65",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_76",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_87",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "LoRA 1 Scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "LoRA 2 Scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "LoRA 3 Scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "LoRA 4 Scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "LoRA 5 Scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "LoRA 1 Image",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "LoRA 2 Image",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "LoRA 3 Image",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "LoRA 4 Image",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "LoRA 5 Image",
+          "type": "filepath",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_5",
+      "parameters": [
+        {
+          "name": "s",
+          "label": "LoRA 5 Scale",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/randomize_loras",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_43",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_54",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_65",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_76",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_87",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "LoRA 1 Scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "LoRA 2 Scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "LoRA 3 Scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "LoRA 4 Scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "LoRA 5 Scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "LoRA 1 Image",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "LoRA 2 Image",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "LoRA 3 Image",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "LoRA 4 Image",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "LoRA 5 Image",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "Prompt",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/add_custom_lora",
+      "parameters": [
+        {
+          "name": "custom_lora",
+          "label": "Custom LoRA",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "gallery",
+          "label": "LoRA Gallery",
+          "type": "list[dict(image: filepath, caption: str | None) | dict(video: filepath, caption: str | None)]",
+          "component": "Gallery"
+        }
+      ],
+      "returns": [
+        {
+          "label": "LoRA Gallery",
+          "type": "list[dict(image: filepath, caption: str | None) | dict(video: filepath, caption: str | None)]",
+          "component": "Gallery"
+        },
+        {
+          "label": "value_43",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_54",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_65",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_76",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_87",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "LoRA 1 Scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "LoRA 2 Scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "LoRA 3 Scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "LoRA 4 Scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "LoRA 5 Scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "LoRA 1 Image",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "LoRA 2 Image",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "LoRA 3 Image",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "LoRA 4 Image",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "LoRA 5 Image",
+          "type": "filepath",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/remove_custom_lora",
+      "parameters": [
+        {
+          "name": "gallery",
+          "label": "LoRA Gallery",
+          "type": "list[dict(image: filepath, caption: str | None) | dict(video: filepath, caption: str | None)]",
+          "component": "Gallery"
+        }
+      ],
+      "returns": [
+        {
+          "label": "LoRA Gallery",
+          "type": "list[dict(image: filepath, caption: str | None) | dict(video: filepath, caption: str | None)]",
+          "component": "Gallery"
+        },
+        {
+          "label": "value_43",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_54",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_65",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_76",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_87",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "LoRA 1 Scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "LoRA 2 Scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "LoRA 3 Scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "LoRA 4 Scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "LoRA 5 Scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "LoRA 1 Image",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "LoRA 2 Image",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "LoRA 3 Image",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "LoRA 4 Image",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "LoRA 5 Image",
+          "type": "filepath",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/run_lora",
+      "parameters": [
+        {
+          "name": "prompt",
+          "label": "Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "image_input",
+          "label": "Input image",
+          "type": "dict(background: filepath | None, layers: list[filepath], composite: filepath | None, id: str | None)",
+          "component": "Imageeditor"
+        },
+        {
+          "name": "image_strength",
+          "label": "Strength",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "task_type",
+          "label": "Task",
+          "type": "Literal['Text-to-Image', 'Image-to-Image', 'Inpainting', 'Flux Fill', 'Canny', 'Depth', 'Edit']",
+          "component": "Radio"
+        },
+        {
+          "name": "turbo_mode",
+          "label": "Turbo mode",
+          "type": "Literal['None', 'Hyper-FLUX.1-dev-8steps', 'Hyper-FLUX.1-dev-16steps', 'FLUX.1-Turbo-Alpha 8-steps']",
+          "component": "Radio"
+        },
+        {
+          "name": "blur_mask",
+          "label": "Blur mask",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "blur_factor",
+          "label": "Blur factor",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "cfg_scale",
+          "label": "CFG Scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "steps",
+          "label": "Steps",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "randomize_seed",
+          "label": "Randomize seed",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "seed",
+          "label": "Seed",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "width",
+          "label": "Width",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "height",
+          "label": "Height",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "sigmas_factor",
+          "label": "Sigmas factor",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "lora_json",
+          "label": "parameter_152",
+          "type": "str | float | bool | list | dict",
+          "component": "Json"
+        },
+        {
+          "name": "cn_on",
+          "label": "Use ControlNet",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "translate_on",
+          "label": "Auto translate to English",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Generated Image",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "Seed",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "value_104",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/search_civitai_lora_json",
+      "parameters": [
+        {
+          "name": "query",
+          "label": "Query",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "base_model",
+          "label": "Search LoRA for",
+          "type": "list[Literal['Flux.1 D', 'Flux.1 S']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_242",
+          "type": "str | float | bool | list | dict",
+          "component": "Json"
+        }
+      ]
+    },
+    {
+      "name": "/create_caption",
+      "parameters": [
+        {
+          "name": "image",
+          "label": "Input Image (optional)",
+          "type": "filepath",
+          "component": "Image"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Generated Caption",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/generate_prompt_with_dynamic_seed",
+      "parameters": [
+        {
+          "name": "param_0",
+          "label": "Custom Input Prompt (optional)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_1",
+          "label": "Subject (optional)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_2",
+          "label": "Gender",
+          "type": "Literal['female', 'male']",
+          "component": "Radio"
+        },
+        {
+          "name": "param_3",
+          "label": "Artform",
+          "type": "Literal['disabled', 'random', 'photography', 'art']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_4",
+          "label": "Photo Type",
+          "type": "Literal['disabled', 'random', 'front view', 'bilaterally symmetrical', 'side view', 'back view', 'from above', 'from below', 'from behind', 'wide angle view', 'fisheyes view', 'macro view', 'overhead ",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_5",
+          "label": "Body Types",
+          "type": "Literal['disabled', 'random', 'pretty', 'chubby', 'midweight', 'overweight', 'fat', 'flabby', 'buxom', 'voluptuous', 'hefty', 'pudgy', 'plump', 'obese', 'morbidly obese', 'stout', 'rotund', 'thick-bod",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_6",
+          "label": "Default Tags",
+          "type": "Literal['disabled', 'random', 'a woman', 'a young woman', 'a middle aged woman', 'an old woman', 'a man', 'a young man', 'a middle aged man', 'an old man']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_7",
+          "label": "Roles",
+          "type": "Literal['disabled', 'random', 'as a ((cyborg))', 'as an ((x-men character))', 'as a ((marvel character))', 'as a ((character from lord of the rings))', 'as a ((superhero character))', 'as a ((scifi ch",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_8",
+          "label": "Hairstyles",
+          "type": "Literal['disabled', 'random', 'with ((long hair))', 'with ((very curly hair))', 'with ((curly hair))', 'with ((pixie cut hair))', 'with ((bob cut hair))', 'with ((undercut hair))', 'with ((messy hair)",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_9",
+          "label": "Additional Details",
+          "type": "Literal['disabled', 'random', 'a purple iridescent suit', 'wearing a (necklace)', 'wearing ((earrings))', 'wearing a (bracelet)', 'wearing one or multiple (rings)', 'wearing a (brooch)', 'wearing (eye",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_10",
+          "label": "Photography Styles",
+          "type": "Literal['disabled', 'random', 'high fashion photography', 'avant garde photography', 'fashion photography', 'portrait photography', 'landscape photography', 'documentary photography', 'street photogra",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_11",
+          "label": "Device",
+          "type": "Literal['disabled', 'random', 'Canon EOS 5D Mark IV with Canon EF 24-70mm f-2.8L II', 'Canon EOS 90D with Canon EF-S 18-135mm f-3.5-5.6 IS USM', 'Canon EOS M6 Mark II with Canon EF-M 32mm f-1.4', 'Can",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_12",
+          "label": "Photographer",
+          "type": "Literal['disabled', 'random', 'Alessio Albi', 'Alvin Langdon Coburn', 'Anne Brigman', 'Ansel Adams', 'Anton Corbijn', 'Berenice Abbott', 'Bill Brandt', 'Brooke DiDonato', 'Bruce Davidson', 'Bruno Barb",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_13",
+          "label": "Artist",
+          "type": "Literal['disabled', 'random', 'Akihito Tsukushi', 'Al Hirschfeld', 'Alan Lee', 'Albert Bierstadt', 'Albert Uderzo', 'Alberto Giacometti', 'Alberto Vargas', 'Albrecht Durer', 'Alejandro Burdisio', 'Ale",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_14",
+          "label": "Digital Artform",
+          "type": "Literal['disabled', 'random', 'Glitch Art art', 'Digital Painting art', 'Acrylic Paint art', 'Algorithmic art', 'Animation art', 'Art glass art', 'Assemblage art', 'Augmented reality art', 'Batik art'",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_15",
+          "label": "Place",
+          "type": "Literal['disabled', 'random', 'indoor', 'outdoor', 'at night', 'in the park', 'studio', 'at a party', 'at a festival', 'at a concert', 'on persons home planet', 'magical portal with particles', 'in a ",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_16",
+          "label": "Lighting",
+          "type": "Literal['disabled', 'random', 'popping colors, popart style', 'bokeh', 'dramatic', 'golden hour', 'depth of field', 'movie still', 'colorful', 'soft lighting', 'studio lighting with strong rim light',",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_17",
+          "label": "Clothing",
+          "type": "Literal['disabled', 'random', 'white crop top, denim shorts,silver bracelet,white texture,denim texture', 'white top, sleeveless, button-up, white bottoms, ribbed texture', 'white crop top, blue jeans",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_18",
+          "label": "Composition",
+          "type": "Literal['disabled', 'random', 'lush greenery, blurred foliage, natural lighting', 'geometric tiles, circular mirror, bright lighting, hexagonal patterns', 'graffiti on door, urban setting, dark tones,",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_19",
+          "label": "Pose",
+          "type": "Literal['disabled', 'random', 'standing straight, facing camera, leaf in hand', 'standing, hands on surface, facing camera', 'one arm bent, hip jutted out, direct gaze', 'standing straight, hands on p",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_20",
+          "label": "Background",
+          "type": "Literal['disabled', 'random', 'Eye-level shot, centered subject, direct perspective', 'Eye-level shot, centered subject, natural daylight', 'Eye-level shot, central framing, natural lighting', 'Eye-le",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_21",
+          "label": "Input Image (optional)",
+          "type": "filepath",
+          "component": "Image"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Used Seed",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "label": "Generated Prompt / Input Text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "value_346",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "label": "T5XXL Output",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "CLIP L Output",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "CLIP G Output",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/add_caption_to_prompt",
+      "parameters": [
+        {
+          "name": "prompt",
+          "label": "Generated Prompt / Input Text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "caption",
+          "label": "Generated Caption",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Generated Prompt / Input Text",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/sync_prompt_profile",
+      "parameters": [
+        {
+          "name": "profile_name",
+          "label": "Prompt Profile",
+          "type": "Literal['auto', 'happy', 'simple', 'poster', 'only_objects', 'no_figure', 'landscape', 'fantasy']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "custom_base_prompt",
+          "label": "Custom Base Prompt / Profile Name",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Custom Base Prompt / Profile Name",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/sync_prompt_profile_1",
+      "parameters": [
+        {
+          "name": "profile_name",
+          "label": "Prompt Profile",
+          "type": "Literal['auto', 'happy', 'simple', 'poster', 'only_objects', 'no_figure', 'landscape', 'fantasy']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "custom_base_prompt",
+          "label": "Custom Base Prompt / Profile Name",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Custom Base Prompt / Profile Name",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/generate",
+      "parameters": [
+        {
+          "name": "input_text",
+          "label": "Generated Prompt / Input Text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "happy_talk",
+          "label": "Happy Talk",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "compress",
+          "label": "Compress",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "compression_level",
+          "label": "Compression Level",
+          "type": "Literal['soft', 'medium', 'hard']",
+          "component": "Radio"
+        },
+        {
+          "name": "poster",
+          "label": "Poster",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "custom_base_prompt",
+          "label": "Custom Base Prompt / Profile Name",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Enhanced Text",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/update_all_options",
+      "parameters": [
+        {
+          "name": "choice",
+          "label": "Set all options to:",
+          "type": "Literal['Disabled', 'Random', 'No Figure Rand']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Artform",
+          "type": "Literal['disabled', 'random', 'photography', 'art']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Photo Type",
+          "type": "Literal['disabled', 'random', 'front view', 'bilaterally symmetrical', 'side view', 'back view', 'from above', 'from below', 'from behind', 'wide angle view', 'fisheyes view', 'macro view', 'overhead ",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Body Types",
+          "type": "Literal['disabled', 'random', 'pretty', 'chubby', 'midweight', 'overweight', 'fat', 'flabby', 'buxom', 'voluptuous', 'hefty', 'pudgy', 'plump', 'obese', 'morbidly obese', 'stout', 'rotund', 'thick-bod",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Default Tags",
+          "type": "Literal['disabled', 'random', 'a woman', 'a young woman', 'a middle aged woman', 'an old woman', 'a man', 'a young man', 'a middle aged man', 'an old man']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Roles",
+          "type": "Literal['disabled', 'random', 'as a ((cyborg))', 'as an ((x-men character))', 'as a ((marvel character))', 'as a ((character from lord of the rings))', 'as a ((superhero character))', 'as a ((scifi ch",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Hairstyles",
+          "type": "Literal['disabled', 'random', 'with ((long hair))', 'with ((very curly hair))', 'with ((curly hair))', 'with ((pixie cut hair))', 'with ((bob cut hair))', 'with ((undercut hair))', 'with ((messy hair)",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Clothing",
+          "type": "Literal['disabled', 'random', 'white crop top, denim shorts,silver bracelet,white texture,denim texture', 'white top, sleeveless, button-up, white bottoms, ribbed texture', 'white crop top, blue jeans",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Place",
+          "type": "Literal['disabled', 'random', 'indoor', 'outdoor', 'at night', 'in the park', 'studio', 'at a party', 'at a festival', 'at a concert', 'on persons home planet', 'magical portal with particles', 'in a ",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Lighting",
+          "type": "Literal['disabled', 'random', 'popping colors, popart style', 'bokeh', 'dramatic', 'golden hour', 'depth of field', 'movie still', 'colorful', 'soft lighting', 'studio lighting with strong rim light',",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Composition",
+          "type": "Literal['disabled', 'random', 'lush greenery, blurred foliage, natural lighting', 'geometric tiles, circular mirror, bright lighting, hexagonal patterns', 'graffiti on door, urban setting, dark tones,",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Pose",
+          "type": "Literal['disabled', 'random', 'standing straight, facing camera, leaf in hand', 'standing, hands on surface, facing camera', 'one arm bent, hip jutted out, direct gaze', 'standing straight, hands on p",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Background",
+          "type": "Literal['disabled', 'random', 'Eye-level shot, centered subject, direct perspective', 'Eye-level shot, centered subject, natural daylight', 'Eye-level shot, central framing, natural lighting', 'Eye-le",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Additional Details",
+          "type": "Literal['disabled', 'random', 'a purple iridescent suit', 'wearing a (necklace)', 'wearing ((earrings))', 'wearing a (bracelet)', 'wearing one or multiple (rings)', 'wearing a (brooch)', 'wearing (eye",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Photography Styles",
+          "type": "Literal['disabled', 'random', 'high fashion photography', 'avant garde photography', 'fashion photography', 'portrait photography', 'landscape photography', 'documentary photography', 'street photogra",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Device",
+          "type": "Literal['disabled', 'random', 'Canon EOS 5D Mark IV with Canon EF 24-70mm f-2.8L II', 'Canon EOS 90D with Canon EF-S 18-135mm f-3.5-5.6 IS USM', 'Canon EOS M6 Mark II with Canon EF-M 32mm f-1.4', 'Can",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Photographer",
+          "type": "Literal['disabled', 'random', 'Alessio Albi', 'Alvin Langdon Coburn', 'Anne Brigman', 'Ansel Adams', 'Anton Corbijn', 'Berenice Abbott', 'Bill Brandt', 'Brooke DiDonato', 'Bruce Davidson', 'Bruno Barb",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Artist",
+          "type": "Literal['disabled', 'random', 'Akihito Tsukushi', 'Al Hirschfeld', 'Alan Lee', 'Albert Bierstadt', 'Albert Uderzo', 'Alberto Giacometti', 'Alberto Vargas', 'Albrecht Durer', 'Alejandro Burdisio', 'Ale",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Digital Artform",
+          "type": "Literal['disabled', 'random', 'Glitch Art art', 'Digital Painting art', 'Acrylic Paint art', 'Algorithmic art', 'Animation art', 'Art glass art', 'Assemblage art', 'Augmented reality art', 'Batik art'",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/extract_exif_data",
+      "parameters": [
+        {
+          "name": "image",
+          "label": "Image with metadata",
+          "type": "filepath",
+          "component": "Image"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Metadata",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/get_random_value",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Seed",
+          "type": "float",
+          "component": "Slider"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/update_selection",
+  "_api_verified": true,
+  "estimated_latency_s": 8.29,
+  "speed_tier": "medium",
+  "_latency_source": "measured",
+  "_tags_enriched": true,
+  "measured_latency_s": 8.29,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:49:35.389036+00:00"
+}

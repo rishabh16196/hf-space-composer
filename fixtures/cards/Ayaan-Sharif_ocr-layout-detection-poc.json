@@ -1,0 +1,287 @@
+{
+  "space_id": "Ayaan-Sharif/ocr-layout-detection-poc",
+  "title": "Document Layout Detection",
+  "emoji": "\ud83d\udcc4",
+  "description": "Document Layout Detection",
+  "input_schema": {
+    "file": {
+      "type": "filepath",
+      "description": "Upload Document",
+      "required": true,
+      "component": "File"
+    },
+    "mode": {
+      "type": "Literal['Fast', 'Accurate']",
+      "description": "Processing Mode",
+      "required": true,
+      "component": "Dropdown"
+    },
+    "enable_ocr": {
+      "type": "bool",
+      "description": "Enable OCR",
+      "required": true,
+      "component": "Checkbox"
+    },
+    "enable_tables": {
+      "type": "bool",
+      "description": "Enable Table Detection",
+      "required": true,
+      "component": "Checkbox"
+    },
+    "run_signature_yolo": {
+      "type": "bool",
+      "description": "Also detect signatures (Finetuned Signature Model)",
+      "required": true,
+      "component": "Checkbox"
+    },
+    "signature_conf": {
+      "type": "float",
+      "description": "Signature confidence",
+      "required": true,
+      "component": "Slider"
+    }
+  },
+  "output_schema": {
+    "Layout Visualization (First Page)": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "Layout Visualization (First Page)",
+      "component": "Image"
+    },
+    "Summary": {
+      "type": "str",
+      "description": "Summary",
+      "component": "Markdown"
+    },
+    "Extracted Content (Markdown)": {
+      "type": "str",
+      "description": "Extracted Content (Markdown)",
+      "component": "Textbox"
+    },
+    "Layout Predictions (JSON)": {
+      "type": "str",
+      "description": "Layout Predictions (JSON)",
+      "component": "Code"
+    }
+  },
+  "license": "mit",
+  "hardware": "5.49.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 6,
+  "last_modified": "2025-11-03 07:54:09+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/gradio_interface",
+      "parameters": [
+        {
+          "name": "file",
+          "label": "Upload Document",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "name": "mode",
+          "label": "Processing Mode",
+          "type": "Literal['Fast', 'Accurate']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "enable_ocr",
+          "label": "Enable OCR",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "enable_tables",
+          "label": "Enable Table Detection",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "run_signature_yolo",
+          "label": "Also detect signatures (Finetuned Signature Model)",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "signature_conf",
+          "label": "Signature confidence",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Layout Visualization (First Page)",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "Summary",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "Extracted Content (Markdown)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Layout Predictions (JSON)",
+          "type": "str",
+          "component": "Code"
+        }
+      ]
+    },
+    {
+      "name": "/analyze_with_preview",
+      "parameters": [
+        {
+          "name": "file",
+          "label": "Upload Document",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "name": "mode",
+          "label": "Processing Mode",
+          "type": "Literal['Fast', 'Accurate']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "enable_ocr",
+          "label": "Enable OCR",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "enable_tables",
+          "label": "Enable Table Detection",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "run_signature_yolo",
+          "label": "Also detect signatures (Finetuned Signature Model)",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "signature_conf",
+          "label": "Signature confidence",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Input Preview",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "Layout Visualization (First Page)",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "Summary",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "Extracted Content (Markdown)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Layout Predictions (JSON)",
+          "type": "str",
+          "component": "Code"
+        }
+      ]
+    },
+    {
+      "name": "/signature_only_infer",
+      "parameters": [
+        {
+          "name": "file",
+          "label": "Upload Image or PDF (first page processed)",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "name": "try_scales",
+          "label": "Try multiscale (1.0, 1.5, 2.0)",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "conf",
+          "label": "Confidence",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "iou",
+          "label": "IoU",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "augment",
+          "label": "Augment (slower, more recall)",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Annotated Signatures",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "Signature Summary",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "Detections JSON",
+          "type": "str",
+          "component": "Code"
+        }
+      ]
+    },
+    {
+      "name": "/preview_first_page",
+      "parameters": [
+        {
+          "name": "file",
+          "label": "Upload Image or PDF (first page processed)",
+          "type": "filepath",
+          "component": "File"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Input Preview",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/gradio_interface",
+  "_api_verified": true
+}

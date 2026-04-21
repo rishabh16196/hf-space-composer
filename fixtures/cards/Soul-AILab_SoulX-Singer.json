@@ -1,0 +1,302 @@
+{
+  "space_id": "Soul-AILab/SoulX-Singer",
+  "title": "SoulX-Singer",
+  "emoji": "\ud83c\udfa4",
+  "description": "SoulX-Singer",
+  "input_schema": {},
+  "output_schema": {
+    "Prompt metadata": {
+      "type": "filepath",
+      "description": "Prompt metadata",
+      "component": "File"
+    }
+  },
+  "license": "unknown",
+  "hardware": "6.3.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 150,
+  "last_modified": "2026-03-12 19:11:55+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/lambda",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Prompt metadata",
+          "type": "filepath",
+          "component": "File"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_1",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Target metadata",
+          "type": "filepath",
+          "component": "File"
+        }
+      ]
+    },
+    {
+      "name": "/transcription_function",
+      "parameters": [
+        {
+          "name": "prompt_audio",
+          "label": "Prompt audio (reference voice), max 30s",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "name": "target_audio",
+          "label": "Target audio (melody / lyrics source), max 60s",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "name": "prompt_metadata",
+          "label": "Prompt metadata",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "name": "target_metadata",
+          "label": "Target metadata",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "name": "prompt_lyric_lang",
+          "label": "Prompt lyric language",
+          "type": "Literal['Mandarin', 'Cantonese', 'English']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "target_lyric_lang",
+          "label": "Target lyric language",
+          "type": "Literal['Mandarin', 'Cantonese', 'English']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "prompt_vocal_sep",
+          "label": "Prompt vocal separation",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "target_vocal_sep",
+          "label": "Target vocal separation",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Prompt metadata",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "label": "Target metadata",
+          "type": "filepath",
+          "component": "File"
+        }
+      ]
+    },
+    {
+      "name": "/synthesis_function",
+      "parameters": [
+        {
+          "name": "prompt_audio",
+          "label": "Prompt audio (reference voice), max 30s",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "name": "target_audio",
+          "label": "Target audio (melody / lyrics source), max 60s",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "name": "prompt_metadata",
+          "label": "Prompt metadata",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "name": "target_metadata",
+          "label": "Target metadata",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "name": "control",
+          "label": "Control type",
+          "type": "Literal['melody', 'score']",
+          "component": "Radio"
+        },
+        {
+          "name": "auto_shift",
+          "label": "Auto pitch shift",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "pitch_shift",
+          "label": "Pitch shift (semitones)",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "seed",
+          "label": "Seed",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "prompt_lyric_lang",
+          "label": "Prompt lyric language",
+          "type": "Literal['Mandarin', 'Cantonese', 'English']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "target_lyric_lang",
+          "label": "Target lyric language",
+          "type": "Literal['Mandarin', 'Cantonese', 'English']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "prompt_vocal_sep",
+          "label": "Prompt vocal separation",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "target_vocal_sep",
+          "label": "Target vocal separation",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Generated audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Prompt metadata",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "label": "Target metadata",
+          "type": "filepath",
+          "component": "File"
+        }
+      ]
+    },
+    {
+      "name": "/_run_svc_preprocess",
+      "parameters": [
+        {
+          "name": "prompt_audio",
+          "label": "Prompt audio (reference voice)",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "name": "target_audio",
+          "label": "Target audio (to convert)",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "name": "prompt_vocal_sep",
+          "label": "Prompt vocal separation",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "target_vocal_sep",
+          "label": "Target vocal separation",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/_run_svc_convert",
+      "parameters": [
+        {
+          "name": "auto_shift",
+          "label": "Auto pitch shift",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "auto_mix_acc",
+          "label": "Auto mix accompaniment",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "pitch_shift",
+          "label": "Pitch shift (semitones)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "n_step",
+          "label": "diffusion steps",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "cfg",
+          "label": "cfg scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "use_fp16",
+          "label": "Use FP16",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "seed",
+          "label": "Seed",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Generated audio",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/lambda",
+  "_api_verified": true,
+  "estimated_latency_s": 3.78,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 3.78,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:49:56.922975+00:00"
+}

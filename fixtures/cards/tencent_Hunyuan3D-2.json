@@ -1,0 +1,408 @@
+{
+  "space_id": "tencent/Hunyuan3D-2",
+  "title": "Hunyuan3D-2.0",
+  "emoji": "\ud83c\udf0d",
+  "description": "Text-to-3D and Image-to-3D Generation",
+  "input_schema": {},
+  "output_schema": {},
+  "license": "unknown",
+  "hardware": "4.44.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us",
+    "3d",
+    "text-to-3d",
+    "vision"
+  ],
+  "likes": 3250,
+  "last_modified": "2025-06-02 15:04:38+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/lambda",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/lambda_1",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/shape_generation",
+      "parameters": [
+        {
+          "name": "caption",
+          "label": "Text Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "image",
+          "label": "Image",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "name": "mv_image_front",
+          "label": "Front",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "name": "mv_image_back",
+          "label": "Back",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "name": "mv_image_left",
+          "label": "Left",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "name": "mv_image_right",
+          "label": "Right",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "name": "steps",
+          "label": "Inference Steps",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "guidance_scale",
+          "label": "Guidance Scale",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "seed",
+          "label": "Seed",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "octree_resolution",
+          "label": "Octree Resolution",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "check_box_rembg",
+          "label": "Remove Background",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "num_chunks",
+          "label": "Number of Chunks",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "randomize_seed",
+          "label": "Randomize seed",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "File",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "label": "Output",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "Mesh Stats",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        },
+        {
+          "label": "Seed",
+          "type": "float",
+          "component": "Slider"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_2",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Include Texture",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Simplify Mesh",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Download",
+          "type": "filepath",
+          "component": "Downloadbutton"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_3",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/generation_all",
+      "parameters": [
+        {
+          "name": "caption",
+          "label": "Text Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "image",
+          "label": "Image",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "name": "mv_image_front",
+          "label": "Front",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "name": "mv_image_back",
+          "label": "Back",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "name": "mv_image_left",
+          "label": "Left",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "name": "mv_image_right",
+          "label": "Right",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "name": "steps",
+          "label": "Inference Steps",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "guidance_scale",
+          "label": "Guidance Scale",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "seed",
+          "label": "Seed",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "octree_resolution",
+          "label": "Octree Resolution",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "check_box_rembg",
+          "label": "Remove Background",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "num_chunks",
+          "label": "Number of Chunks",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "randomize_seed",
+          "label": "Randomize seed",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "File",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "label": "File",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "label": "Output",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "Mesh Stats",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        },
+        {
+          "label": "Seed",
+          "type": "float",
+          "component": "Slider"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_4",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Include Texture",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Simplify Mesh",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Download",
+          "type": "filepath",
+          "component": "Downloadbutton"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_5",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/on_gen_mode_change",
+      "parameters": [
+        {
+          "name": "value",
+          "label": "Generation Mode",
+          "type": "Literal['Turbo', 'Fast', 'Standard']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Inference Steps",
+          "type": "float",
+          "component": "Slider"
+        }
+      ]
+    },
+    {
+      "name": "/on_decode_mode_change",
+      "parameters": [
+        {
+          "name": "value",
+          "label": "Decoding Mode",
+          "type": "Literal['Low', 'Standard', 'High']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Octree Resolution",
+          "type": "float",
+          "component": "Slider"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_6",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/on_export_click",
+      "parameters": [
+        {
+          "name": "file_out",
+          "label": "File",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "name": "file_out2",
+          "label": "File",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "name": "file_type",
+          "label": "File Type",
+          "type": "Literal['glb', 'obj', 'ply', 'stl']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "reduce_face",
+          "label": "Simplify Mesh",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "export_texture",
+          "label": "Include Texture",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "target_face_num",
+          "label": "Target Face Number",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "Download",
+          "type": "filepath",
+          "component": "Downloadbutton"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/lambda",
+  "_api_verified": true,
+  "estimated_latency_s": 4.46,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "_tags_enriched": true,
+  "measured_latency_s": 4.46,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:51:56.986050+00:00",
+  "_inference_attempt_status": "predict_failed",
+  "_inference_attempt_error": "cannot identify image file '/tmp/gradio/ca6cf068d5b5f1f49d92fde53054d027da6230d56a2e493f118568c68899ba5f/document_ocr.png'"
+}

@@ -1,0 +1,149 @@
+{
+  "space_id": "obsxrver/wan2.2-i2v-lora-demo",
+  "title": "Wan2.2 I2V LoRA Demo",
+  "emoji": "\ud83d\udca6",
+  "description": "Omni-Blink LoRA Demo",
+  "input_schema": {},
+  "output_schema": {
+    "value_11": {
+      "type": "str",
+      "description": "value_11",
+      "component": "Markdown"
+    }
+  },
+  "license": "unknown",
+  "hardware": "5.44.1",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "not-for-all-audiences",
+    "region:us"
+  ],
+  "likes": 63,
+  "last_modified": "2026-04-19 19:00:52+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/reset_verification",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_11",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/verify_passcode",
+      "parameters": [
+        {
+          "name": "passcode",
+          "label": "Passcode",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_11",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/generate_video",
+      "parameters": [
+        {
+          "name": "input_image",
+          "label": "Input Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "prompt",
+          "label": "Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "steps",
+          "label": "Inference Steps",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "negative_prompt",
+          "label": "Negative Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "duration_seconds",
+          "label": "Duration (seconds)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "guidance_scale",
+          "label": "Guidance Scale (high noise stage)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "guidance_scale_2",
+          "label": "Guidance Scale 2 (low noise stage)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "seed",
+          "label": "Seed",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "randomize_seed",
+          "label": "Randomize seed",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Generated Video",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        },
+        {
+          "label": "Seed",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "value_28",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "Download Video",
+          "type": "filepath",
+          "component": "File"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/reset_verification",
+  "_api_verified": true,
+  "estimated_latency_s": 3.93,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "_tags_enriched": true,
+  "measured_latency_s": 3.93,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:51:27.663505+00:00"
+}

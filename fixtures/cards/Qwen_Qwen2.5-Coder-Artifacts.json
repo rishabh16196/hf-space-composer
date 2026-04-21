@@ -1,0 +1,125 @@
+{
+  "space_id": "Qwen/Qwen2.5-Coder-Artifacts",
+  "title": "Qwen2.5 Coder Artifacts",
+  "emoji": "\ud83d\udc22",
+  "description": "Qwen2.5 Coder Artifacts",
+  "input_schema": {},
+  "output_schema": {
+    "value_11": {
+      "type": "str",
+      "description": "value_11",
+      "component": "Antdinputtextarea"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "5.33.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us",
+    "code",
+    "code-generation"
+  ],
+  "likes": 1727,
+  "last_modified": "2025-06-07 13:34:11+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "endpoint": "/demo_card_click",
+  "_verified_live": true,
+  "_tags_enriched": true,
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "measured",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/demo_card_click",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_11",
+          "type": "str",
+          "component": "Antdinputtextarea"
+        }
+      ]
+    },
+    {
+      "name": "/lambda",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/lambda_1",
+      "parameters": [
+        {
+          "name": "input",
+          "label": "parameter_27",
+          "type": "str",
+          "component": "Antdinputtextarea"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/lambda_2",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/lambda_3",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/lambda_4",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/history_render",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_31",
+          "type": "tuple[dict(id: str | None, elem_id: str | None, elem_classes: str | list[str] | None, name: str | None, text: str | None, flushing: bool | None, avatar: str | filepath | None, files: list[dict(file: f",
+          "component": "Modelscopechatbot"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_5",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/generation_code",
+      "parameters": [
+        {
+          "name": "query",
+          "label": "parameter_11",
+          "type": "str",
+          "component": "Antdinputtextarea"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_29",
+          "type": "str",
+          "component": "Modelscopemarkdown"
+        },
+        {
+          "label": "value_41",
+          "type": "str",
+          "component": "Html"
+        }
+      ]
+    },
+    {
+      "name": "/clear_history",
+      "parameters": [],
+      "returns": []
+    }
+  ],
+  "_api_verified": true
+}

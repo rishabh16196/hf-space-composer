@@ -1,0 +1,118 @@
+{
+  "space_id": "neuphonic/neutts-nano-multilingual-collection",
+  "title": "NeuTTS-Nano Multilingual Collection",
+  "emoji": "\ud83c\udf0d",
+  "description": "Generate speech with voice cloning, now in four languages!",
+  "input_schema": {
+    "language": {
+      "type": "Literal['English', 'Spanish', 'German', 'French']",
+      "description": "Language",
+      "required": true,
+      "component": "Dropdown"
+    }
+  },
+  "output_schema": {
+    "Reference Text": {
+      "type": "str",
+      "description": "Reference Text",
+      "component": "Textbox"
+    },
+    "Reference Audio": {
+      "type": "filepath",
+      "description": "Reference Audio",
+      "component": "Audio"
+    },
+    "Text to Generate": {
+      "type": "str",
+      "description": "Text to Generate",
+      "component": "Textbox"
+    }
+  },
+  "license": "other",
+  "hardware": "5.48.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "mcp-server",
+    "region:us",
+    "audio"
+  ],
+  "likes": 34,
+  "last_modified": "2026-03-05 16:44:05+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_tags_enriched": true,
+  "estimated_latency_s": 3.0,
+  "speed_tier": "fast",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/update_defaults",
+      "parameters": [
+        {
+          "name": "language",
+          "label": "Language",
+          "type": "Literal['English', 'Spanish', 'German', 'French']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Reference Text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Reference Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Text to Generate",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/infer",
+      "parameters": [
+        {
+          "name": "ref_text",
+          "label": "Reference Text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "ref_audio_path",
+          "label": "Reference Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "name": "gen_text",
+          "label": "Text to Generate",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "language",
+          "label": "Language",
+          "type": "Literal['English', 'Spanish', 'German', 'French']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Generated Speech",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/update_defaults",
+  "_api_verified": true
+}

@@ -1,0 +1,1405 @@
+{
+  "space_id": "galileo-ai/agent-leaderboard",
+  "title": "Agent Leaderboard",
+  "emoji": "\ud83d\udcac",
+  "description": "Ranking of LLMs for agentic tasks",
+  "input_schema": {
+    "param_0": {
+      "type": "Literal['\ud83c\udf10 All', '\ud83c\udfe6 Banking', '\ud83c\udfe5 Healthcare', '\ud83d\udee1\ufe0f Insurance', '\ud83d\udcb0 Investment', '\ud83d\udcf1 Telecom']",
+      "description": "",
+      "required": true,
+      "component": "Radio"
+    },
+    "param_1": {
+      "type": "Literal['All', 'Open Source', 'Proprietary']",
+      "description": "\ud83d\udd13 Model Access",
+      "required": true,
+      "component": "Radio"
+    },
+    "param_2": {
+      "type": "Literal['All', 'Reasoning', 'Normal']",
+      "description": "\ud83e\udde0 Output Type",
+      "required": true,
+      "component": "Radio"
+    },
+    "param_3": {
+      "type": "Literal['Avg Action Completion', 'Avg Tool Selection Quality', 'Avg Session Cost', 'Avg Session Dura",
+      "description": "",
+      "required": true,
+      "component": "Radio"
+    },
+    "param_4": {
+      "type": "Literal['Descending', 'Ascending']",
+      "description": "\ud83d\udd04 Sort Order",
+      "required": true,
+      "component": "Radio"
+    }
+  },
+  "output_schema": {
+    "value_29": {
+      "type": "str",
+      "description": "value_29",
+      "component": "Html"
+    },
+    "value_30": {
+      "type": "str",
+      "description": "value_30",
+      "component": "Html"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "5.35.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us",
+    "benchmark",
+    "leaderboard"
+  ],
+  "likes": 448,
+  "last_modified": "2025-11-18 13:45:47+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/update_table",
+      "parameters": [
+        {
+          "name": "param_0",
+          "label": "",
+          "type": "Literal['\ud83c\udf10 All', '\ud83c\udfe6 Banking', '\ud83c\udfe5 Healthcare', '\ud83d\udee1\ufe0f Insurance', '\ud83d\udcb0 Investment', '\ud83d\udcf1 Telecom']",
+          "component": "Radio"
+        },
+        {
+          "name": "param_1",
+          "label": "\ud83d\udd13 Model Access",
+          "type": "Literal['All', 'Open Source', 'Proprietary']",
+          "component": "Radio"
+        },
+        {
+          "name": "param_2",
+          "label": "\ud83e\udde0 Output Type",
+          "type": "Literal['All', 'Reasoning', 'Normal']",
+          "component": "Radio"
+        },
+        {
+          "name": "param_3",
+          "label": "",
+          "type": "Literal['Avg Action Completion', 'Avg Tool Selection Quality', 'Avg Session Cost', 'Avg Session Duration', 'Avg Turns']",
+          "component": "Radio"
+        },
+        {
+          "name": "param_4",
+          "label": "\ud83d\udd04 Sort Order",
+          "type": "Literal['Descending', 'Ascending']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_29",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "value_30",
+          "type": "str",
+          "component": "Html"
+        }
+      ]
+    },
+    {
+      "name": "/update_radar_chart",
+      "parameters": [
+        {
+          "name": "domain_filter",
+          "label": "",
+          "type": "Literal['\ud83c\udf10 All', '\ud83c\udfe6 Banking', '\ud83c\udfe5 Healthcare', '\ud83d\udee1\ufe0f Insurance', '\ud83d\udcb0 Investment', '\ud83d\udcf1 Telecom']",
+          "component": "Radio"
+        },
+        {
+          "name": "model_type_filter",
+          "label": "\ud83d\udd13 Model Access",
+          "type": "Literal['All', 'Open Source', 'Proprietary']",
+          "component": "Radio"
+        },
+        {
+          "name": "reasoning_filter",
+          "label": "\ud83e\udde0 Output Type",
+          "type": "Literal['All', 'Reasoning', 'Normal']",
+          "component": "Radio"
+        },
+        {
+          "name": "sort_by",
+          "label": "",
+          "type": "Literal['Avg Action Completion', 'Avg Tool Selection Quality', 'Avg Session Cost', 'Avg Session Duration', 'Avg Turns']",
+          "component": "Radio"
+        },
+        {
+          "name": "sort_order",
+          "label": "\ud83d\udd04 Sort Order",
+          "type": "Literal['Descending', 'Ascending']",
+          "component": "Radio"
+        },
+        {
+          "name": "selected_models",
+          "label": "\ud83c\udfaf Select Models for Comparison",
+          "type": "list[Literal['gpt-4.1-2025-04-14', 'mistral-medium-2508', 'gpt-4.1-mini-2025-04-14', 'claude-sonnet-4-20250514', 'kimi-k2-instruct', 'qwen3-235b-a22b-instruct-2507', 'qwen2.5-72b-instruct', 'gemini-2.",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "\ud83c\udfaf Select Models for Comparison",
+          "type": "list[Literal['gpt-4.1-2025-04-14', 'mistral-medium-2508', 'gpt-4.1-mini-2025-04-14', 'claude-sonnet-4-20250514', 'kimi-k2-instruct', 'qwen3-235b-a22b-instruct-2507', 'qwen2.5-72b-instruct', 'gemini-2.",
+          "component": "Dropdown"
+        },
+        {
+          "label": "",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        }
+      ]
+    },
+    {
+      "name": "/update_table_1",
+      "parameters": [
+        {
+          "name": "param_0",
+          "label": "",
+          "type": "Literal['\ud83c\udf10 All', '\ud83c\udfe6 Banking', '\ud83c\udfe5 Healthcare', '\ud83d\udee1\ufe0f Insurance', '\ud83d\udcb0 Investment', '\ud83d\udcf1 Telecom']",
+          "component": "Radio"
+        },
+        {
+          "name": "param_1",
+          "label": "\ud83d\udd13 Model Access",
+          "type": "Literal['All', 'Open Source', 'Proprietary']",
+          "component": "Radio"
+        },
+        {
+          "name": "param_2",
+          "label": "\ud83e\udde0 Output Type",
+          "type": "Literal['All', 'Reasoning', 'Normal']",
+          "component": "Radio"
+        },
+        {
+          "name": "param_3",
+          "label": "",
+          "type": "Literal['Avg Action Completion', 'Avg Tool Selection Quality', 'Avg Session Cost', 'Avg Session Duration', 'Avg Turns']",
+          "component": "Radio"
+        },
+        {
+          "name": "param_4",
+          "label": "\ud83d\udd04 Sort Order",
+          "type": "Literal['Descending', 'Ascending']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_29",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "value_30",
+          "type": "str",
+          "component": "Html"
+        }
+      ]
+    },
+    {
+      "name": "/update_radar_chart_1",
+      "parameters": [
+        {
+          "name": "domain_filter",
+          "label": "",
+          "type": "Literal['\ud83c\udf10 All', '\ud83c\udfe6 Banking', '\ud83c\udfe5 Healthcare', '\ud83d\udee1\ufe0f Insurance', '\ud83d\udcb0 Investment', '\ud83d\udcf1 Telecom']",
+          "component": "Radio"
+        },
+        {
+          "name": "model_type_filter",
+          "label": "\ud83d\udd13 Model Access",
+          "type": "Literal['All', 'Open Source', 'Proprietary']",
+          "component": "Radio"
+        },
+        {
+          "name": "reasoning_filter",
+          "label": "\ud83e\udde0 Output Type",
+          "type": "Literal['All', 'Reasoning', 'Normal']",
+          "component": "Radio"
+        },
+        {
+          "name": "sort_by",
+          "label": "",
+          "type": "Literal['Avg Action Completion', 'Avg Tool Selection Quality', 'Avg Session Cost', 'Avg Session Duration', 'Avg Turns']",
+          "component": "Radio"
+        },
+        {
+          "name": "sort_order",
+          "label": "\ud83d\udd04 Sort Order",
+          "type": "Literal['Descending', 'Ascending']",
+          "component": "Radio"
+        },
+        {
+          "name": "selected_models",
+          "label": "\ud83c\udfaf Select Models for Comparison",
+          "type": "list[Literal['gpt-4.1-2025-04-14', 'mistral-medium-2508', 'gpt-4.1-mini-2025-04-14', 'claude-sonnet-4-20250514', 'kimi-k2-instruct', 'qwen3-235b-a22b-instruct-2507', 'qwen2.5-72b-instruct', 'gemini-2.",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "\ud83c\udfaf Select Models for Comparison",
+          "type": "list[Literal['gpt-4.1-2025-04-14', 'mistral-medium-2508', 'gpt-4.1-mini-2025-04-14', 'claude-sonnet-4-20250514', 'kimi-k2-instruct', 'qwen3-235b-a22b-instruct-2507', 'qwen2.5-72b-instruct', 'gemini-2.",
+          "component": "Dropdown"
+        },
+        {
+          "label": "",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        }
+      ]
+    },
+    {
+      "name": "/update_table_2",
+      "parameters": [
+        {
+          "name": "param_0",
+          "label": "",
+          "type": "Literal['\ud83c\udf10 All', '\ud83c\udfe6 Banking', '\ud83c\udfe5 Healthcare', '\ud83d\udee1\ufe0f Insurance', '\ud83d\udcb0 Investment', '\ud83d\udcf1 Telecom']",
+          "component": "Radio"
+        },
+        {
+          "name": "param_1",
+          "label": "\ud83d\udd13 Model Access",
+          "type": "Literal['All', 'Open Source', 'Proprietary']",
+          "component": "Radio"
+        },
+        {
+          "name": "param_2",
+          "label": "\ud83e\udde0 Output Type",
+          "type": "Literal['All', 'Reasoning', 'Normal']",
+          "component": "Radio"
+        },
+        {
+          "name": "param_3",
+          "label": "",
+          "type": "Literal['Avg Action Completion', 'Avg Tool Selection Quality', 'Avg Session Cost', 'Avg Session Duration', 'Avg Turns']",
+          "component": "Radio"
+        },
+        {
+          "name": "param_4",
+          "label": "\ud83d\udd04 Sort Order",
+          "type": "Literal['Descending', 'Ascending']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_29",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "value_30",
+          "type": "str",
+          "component": "Html"
+        }
+      ]
+    },
+    {
+      "name": "/update_radar_chart_2",
+      "parameters": [
+        {
+          "name": "domain_filter",
+          "label": "",
+          "type": "Literal['\ud83c\udf10 All', '\ud83c\udfe6 Banking', '\ud83c\udfe5 Healthcare', '\ud83d\udee1\ufe0f Insurance', '\ud83d\udcb0 Investment', '\ud83d\udcf1 Telecom']",
+          "component": "Radio"
+        },
+        {
+          "name": "model_type_filter",
+          "label": "\ud83d\udd13 Model Access",
+          "type": "Literal['All', 'Open Source', 'Proprietary']",
+          "component": "Radio"
+        },
+        {
+          "name": "reasoning_filter",
+          "label": "\ud83e\udde0 Output Type",
+          "type": "Literal['All', 'Reasoning', 'Normal']",
+          "component": "Radio"
+        },
+        {
+          "name": "sort_by",
+          "label": "",
+          "type": "Literal['Avg Action Completion', 'Avg Tool Selection Quality', 'Avg Session Cost', 'Avg Session Duration', 'Avg Turns']",
+          "component": "Radio"
+        },
+        {
+          "name": "sort_order",
+          "label": "\ud83d\udd04 Sort Order",
+          "type": "Literal['Descending', 'Ascending']",
+          "component": "Radio"
+        },
+        {
+          "name": "selected_models",
+          "label": "\ud83c\udfaf Select Models for Comparison",
+          "type": "list[Literal['gpt-4.1-2025-04-14', 'mistral-medium-2508', 'gpt-4.1-mini-2025-04-14', 'claude-sonnet-4-20250514', 'kimi-k2-instruct', 'qwen3-235b-a22b-instruct-2507', 'qwen2.5-72b-instruct', 'gemini-2.",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "\ud83c\udfaf Select Models for Comparison",
+          "type": "list[Literal['gpt-4.1-2025-04-14', 'mistral-medium-2508', 'gpt-4.1-mini-2025-04-14', 'claude-sonnet-4-20250514', 'kimi-k2-instruct', 'qwen3-235b-a22b-instruct-2507', 'qwen2.5-72b-instruct', 'gemini-2.",
+          "component": "Dropdown"
+        },
+        {
+          "label": "",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        }
+      ]
+    },
+    {
+      "name": "/update_table_3",
+      "parameters": [
+        {
+          "name": "param_0",
+          "label": "",
+          "type": "Literal['\ud83c\udf10 All', '\ud83c\udfe6 Banking', '\ud83c\udfe5 Healthcare', '\ud83d\udee1\ufe0f Insurance', '\ud83d\udcb0 Investment', '\ud83d\udcf1 Telecom']",
+          "component": "Radio"
+        },
+        {
+          "name": "param_1",
+          "label": "\ud83d\udd13 Model Access",
+          "type": "Literal['All', 'Open Source', 'Proprietary']",
+          "component": "Radio"
+        },
+        {
+          "name": "param_2",
+          "label": "\ud83e\udde0 Output Type",
+          "type": "Literal['All', 'Reasoning', 'Normal']",
+          "component": "Radio"
+        },
+        {
+          "name": "param_3",
+          "label": "",
+          "type": "Literal['Avg Action Completion', 'Avg Tool Selection Quality', 'Avg Session Cost', 'Avg Session Duration', 'Avg Turns']",
+          "component": "Radio"
+        },
+        {
+          "name": "param_4",
+          "label": "\ud83d\udd04 Sort Order",
+          "type": "Literal['Descending', 'Ascending']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_29",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "value_30",
+          "type": "str",
+          "component": "Html"
+        }
+      ]
+    },
+    {
+      "name": "/update_radar_chart_3",
+      "parameters": [
+        {
+          "name": "domain_filter",
+          "label": "",
+          "type": "Literal['\ud83c\udf10 All', '\ud83c\udfe6 Banking', '\ud83c\udfe5 Healthcare', '\ud83d\udee1\ufe0f Insurance', '\ud83d\udcb0 Investment', '\ud83d\udcf1 Telecom']",
+          "component": "Radio"
+        },
+        {
+          "name": "model_type_filter",
+          "label": "\ud83d\udd13 Model Access",
+          "type": "Literal['All', 'Open Source', 'Proprietary']",
+          "component": "Radio"
+        },
+        {
+          "name": "reasoning_filter",
+          "label": "\ud83e\udde0 Output Type",
+          "type": "Literal['All', 'Reasoning', 'Normal']",
+          "component": "Radio"
+        },
+        {
+          "name": "sort_by",
+          "label": "",
+          "type": "Literal['Avg Action Completion', 'Avg Tool Selection Quality', 'Avg Session Cost', 'Avg Session Duration', 'Avg Turns']",
+          "component": "Radio"
+        },
+        {
+          "name": "sort_order",
+          "label": "\ud83d\udd04 Sort Order",
+          "type": "Literal['Descending', 'Ascending']",
+          "component": "Radio"
+        },
+        {
+          "name": "selected_models",
+          "label": "\ud83c\udfaf Select Models for Comparison",
+          "type": "list[Literal['gpt-4.1-2025-04-14', 'mistral-medium-2508', 'gpt-4.1-mini-2025-04-14', 'claude-sonnet-4-20250514', 'kimi-k2-instruct', 'qwen3-235b-a22b-instruct-2507', 'qwen2.5-72b-instruct', 'gemini-2.",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "\ud83c\udfaf Select Models for Comparison",
+          "type": "list[Literal['gpt-4.1-2025-04-14', 'mistral-medium-2508', 'gpt-4.1-mini-2025-04-14', 'claude-sonnet-4-20250514', 'kimi-k2-instruct', 'qwen3-235b-a22b-instruct-2507', 'qwen2.5-72b-instruct', 'gemini-2.",
+          "component": "Dropdown"
+        },
+        {
+          "label": "",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        }
+      ]
+    },
+    {
+      "name": "/update_table_4",
+      "parameters": [
+        {
+          "name": "param_0",
+          "label": "",
+          "type": "Literal['\ud83c\udf10 All', '\ud83c\udfe6 Banking', '\ud83c\udfe5 Healthcare', '\ud83d\udee1\ufe0f Insurance', '\ud83d\udcb0 Investment', '\ud83d\udcf1 Telecom']",
+          "component": "Radio"
+        },
+        {
+          "name": "param_1",
+          "label": "\ud83d\udd13 Model Access",
+          "type": "Literal['All', 'Open Source', 'Proprietary']",
+          "component": "Radio"
+        },
+        {
+          "name": "param_2",
+          "label": "\ud83e\udde0 Output Type",
+          "type": "Literal['All', 'Reasoning', 'Normal']",
+          "component": "Radio"
+        },
+        {
+          "name": "param_3",
+          "label": "",
+          "type": "Literal['Avg Action Completion', 'Avg Tool Selection Quality', 'Avg Session Cost', 'Avg Session Duration', 'Avg Turns']",
+          "component": "Radio"
+        },
+        {
+          "name": "param_4",
+          "label": "\ud83d\udd04 Sort Order",
+          "type": "Literal['Descending', 'Ascending']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_29",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "value_30",
+          "type": "str",
+          "component": "Html"
+        }
+      ]
+    },
+    {
+      "name": "/update_radar_chart_4",
+      "parameters": [
+        {
+          "name": "domain_filter",
+          "label": "",
+          "type": "Literal['\ud83c\udf10 All', '\ud83c\udfe6 Banking', '\ud83c\udfe5 Healthcare', '\ud83d\udee1\ufe0f Insurance', '\ud83d\udcb0 Investment', '\ud83d\udcf1 Telecom']",
+          "component": "Radio"
+        },
+        {
+          "name": "model_type_filter",
+          "label": "\ud83d\udd13 Model Access",
+          "type": "Literal['All', 'Open Source', 'Proprietary']",
+          "component": "Radio"
+        },
+        {
+          "name": "reasoning_filter",
+          "label": "\ud83e\udde0 Output Type",
+          "type": "Literal['All', 'Reasoning', 'Normal']",
+          "component": "Radio"
+        },
+        {
+          "name": "sort_by",
+          "label": "",
+          "type": "Literal['Avg Action Completion', 'Avg Tool Selection Quality', 'Avg Session Cost', 'Avg Session Duration', 'Avg Turns']",
+          "component": "Radio"
+        },
+        {
+          "name": "sort_order",
+          "label": "\ud83d\udd04 Sort Order",
+          "type": "Literal['Descending', 'Ascending']",
+          "component": "Radio"
+        },
+        {
+          "name": "selected_models",
+          "label": "\ud83c\udfaf Select Models for Comparison",
+          "type": "list[Literal['gpt-4.1-2025-04-14', 'mistral-medium-2508', 'gpt-4.1-mini-2025-04-14', 'claude-sonnet-4-20250514', 'kimi-k2-instruct', 'qwen3-235b-a22b-instruct-2507', 'qwen2.5-72b-instruct', 'gemini-2.",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "\ud83c\udfaf Select Models for Comparison",
+          "type": "list[Literal['gpt-4.1-2025-04-14', 'mistral-medium-2508', 'gpt-4.1-mini-2025-04-14', 'claude-sonnet-4-20250514', 'kimi-k2-instruct', 'qwen3-235b-a22b-instruct-2507', 'qwen2.5-72b-instruct', 'gemini-2.",
+          "component": "Dropdown"
+        },
+        {
+          "label": "",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        }
+      ]
+    },
+    {
+      "name": "/update_prediction_chart_and_insights",
+      "parameters": [
+        {
+          "name": "domain_filter",
+          "label": "",
+          "type": "Literal['\ud83c\udf10 All', '\ud83c\udfe6 Banking', '\ud83c\udfe5 Healthcare', '\ud83d\udee1\ufe0f Insurance', '\ud83d\udcb0 Investment', '\ud83d\udcf1 Telecom']",
+          "component": "Radio"
+        },
+        {
+          "name": "model_type_filter",
+          "label": "\ud83d\udd13 Model Access",
+          "type": "Literal['All', 'Open Source', 'Proprietary']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "value_35",
+          "type": "str",
+          "component": "Html"
+        }
+      ]
+    },
+    {
+      "name": "/update_prediction_chart_and_insights_1",
+      "parameters": [
+        {
+          "name": "domain_filter",
+          "label": "",
+          "type": "Literal['\ud83c\udf10 All', '\ud83c\udfe6 Banking', '\ud83c\udfe5 Healthcare', '\ud83d\udee1\ufe0f Insurance', '\ud83d\udcb0 Investment', '\ud83d\udcf1 Telecom']",
+          "component": "Radio"
+        },
+        {
+          "name": "model_type_filter",
+          "label": "\ud83d\udd13 Model Access",
+          "type": "Literal['All', 'Open Source', 'Proprietary']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "value_35",
+          "type": "str",
+          "component": "Html"
+        }
+      ]
+    },
+    {
+      "name": "/update_radar_only",
+      "parameters": [
+        {
+          "name": "domain_filter",
+          "label": "",
+          "type": "Literal['\ud83c\udf10 All', '\ud83c\udfe6 Banking', '\ud83c\udfe5 Healthcare', '\ud83d\udee1\ufe0f Insurance', '\ud83d\udcb0 Investment', '\ud83d\udcf1 Telecom']",
+          "component": "Radio"
+        },
+        {
+          "name": "model_type_filter",
+          "label": "\ud83d\udd13 Model Access",
+          "type": "Literal['All', 'Open Source', 'Proprietary']",
+          "component": "Radio"
+        },
+        {
+          "name": "reasoning_filter",
+          "label": "\ud83e\udde0 Output Type",
+          "type": "Literal['All', 'Reasoning', 'Normal']",
+          "component": "Radio"
+        },
+        {
+          "name": "sort_by",
+          "label": "",
+          "type": "Literal['Avg Action Completion', 'Avg Tool Selection Quality', 'Avg Session Cost', 'Avg Session Duration', 'Avg Turns']",
+          "component": "Radio"
+        },
+        {
+          "name": "sort_order",
+          "label": "\ud83d\udd04 Sort Order",
+          "type": "Literal['Descending', 'Ascending']",
+          "component": "Radio"
+        },
+        {
+          "name": "selected_models",
+          "label": "\ud83c\udfaf Select Models for Comparison",
+          "type": "list[Literal['gpt-4.1-2025-04-14', 'mistral-medium-2508', 'gpt-4.1-mini-2025-04-14', 'claude-sonnet-4-20250514', 'kimi-k2-instruct', 'qwen3-235b-a22b-instruct-2507', 'qwen2.5-72b-instruct', 'gemini-2.",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        }
+      ]
+    },
+    {
+      "name": "/update_sort_order_automatically",
+      "parameters": [
+        {
+          "name": "sort_by_value",
+          "label": "",
+          "type": "Literal['Avg Action Completion', 'Avg Tool Selection Quality', 'Avg Session Cost', 'Avg Session Duration', 'Avg Turns']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "\ud83d\udd04 Sort Order",
+          "type": "Literal['Descending', 'Ascending']",
+          "component": "Radio"
+        }
+      ]
+    },
+    {
+      "name": "/update_cost_performance",
+      "parameters": [
+        {
+          "name": "efficiency_metric",
+          "label": "\ud83d\udcca Performance Metric",
+          "type": "Literal['Avg Action Completion', 'Avg Tool Selection Quality']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        }
+      ]
+    },
+    {
+      "name": "/update_speed_accuracy",
+      "parameters": [
+        {
+          "name": "efficiency_metric",
+          "label": "\ud83d\udcca Performance Metric",
+          "type": "Literal['Avg Action Completion', 'Avg Tool Selection Quality']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        }
+      ]
+    },
+    {
+      "name": "/update_domain_specialization",
+      "parameters": [
+        {
+          "name": "specialization_metric",
+          "label": "\ud83d\udcca Metric Type",
+          "type": "Literal['AC (Action Completion)', 'TSQ (Tool Selection Quality)']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        }
+      ]
+    },
+    {
+      "name": "/update_performance_gap",
+      "parameters": [
+        {
+          "name": "specialization_metric",
+          "label": "\ud83d\udcca Metric Type",
+          "type": "Literal['AC (Action Completion)', 'TSQ (Tool Selection Quality)']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        }
+      ]
+    },
+    {
+      "name": "/update_all_visualizations",
+      "parameters": [
+        {
+          "name": "domain_filter",
+          "label": "",
+          "type": "Literal['\ud83c\udf10 All', '\ud83c\udfe6 Banking', '\ud83c\udfe5 Healthcare', '\ud83d\udee1\ufe0f Insurance', '\ud83d\udcb0 Investment', '\ud83d\udcf1 Telecom']",
+          "component": "Radio"
+        },
+        {
+          "name": "model_type_filter",
+          "label": "\ud83d\udd13 Model Access",
+          "type": "Literal['All', 'Open Source', 'Proprietary']",
+          "component": "Radio"
+        },
+        {
+          "name": "reasoning_filter",
+          "label": "\ud83e\udde0 Output Type",
+          "type": "Literal['All', 'Reasoning', 'Normal']",
+          "component": "Radio"
+        },
+        {
+          "name": "sort_by",
+          "label": "",
+          "type": "Literal['Avg Action Completion', 'Avg Tool Selection Quality', 'Avg Session Cost', 'Avg Session Duration', 'Avg Turns']",
+          "component": "Radio"
+        },
+        {
+          "name": "sort_order",
+          "label": "\ud83d\udd04 Sort Order",
+          "type": "Literal['Descending', 'Ascending']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        }
+      ]
+    },
+    {
+      "name": "/update_all_visualizations_1",
+      "parameters": [
+        {
+          "name": "domain_filter",
+          "label": "",
+          "type": "Literal['\ud83c\udf10 All', '\ud83c\udfe6 Banking', '\ud83c\udfe5 Healthcare', '\ud83d\udee1\ufe0f Insurance', '\ud83d\udcb0 Investment', '\ud83d\udcf1 Telecom']",
+          "component": "Radio"
+        },
+        {
+          "name": "model_type_filter",
+          "label": "\ud83d\udd13 Model Access",
+          "type": "Literal['All', 'Open Source', 'Proprietary']",
+          "component": "Radio"
+        },
+        {
+          "name": "reasoning_filter",
+          "label": "\ud83e\udde0 Output Type",
+          "type": "Literal['All', 'Reasoning', 'Normal']",
+          "component": "Radio"
+        },
+        {
+          "name": "sort_by",
+          "label": "",
+          "type": "Literal['Avg Action Completion', 'Avg Tool Selection Quality', 'Avg Session Cost', 'Avg Session Duration', 'Avg Turns']",
+          "component": "Radio"
+        },
+        {
+          "name": "sort_order",
+          "label": "\ud83d\udd04 Sort Order",
+          "type": "Literal['Descending', 'Ascending']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        }
+      ]
+    },
+    {
+      "name": "/update_all_visualizations_2",
+      "parameters": [
+        {
+          "name": "domain_filter",
+          "label": "",
+          "type": "Literal['\ud83c\udf10 All', '\ud83c\udfe6 Banking', '\ud83c\udfe5 Healthcare', '\ud83d\udee1\ufe0f Insurance', '\ud83d\udcb0 Investment', '\ud83d\udcf1 Telecom']",
+          "component": "Radio"
+        },
+        {
+          "name": "model_type_filter",
+          "label": "\ud83d\udd13 Model Access",
+          "type": "Literal['All', 'Open Source', 'Proprietary']",
+          "component": "Radio"
+        },
+        {
+          "name": "reasoning_filter",
+          "label": "\ud83e\udde0 Output Type",
+          "type": "Literal['All', 'Reasoning', 'Normal']",
+          "component": "Radio"
+        },
+        {
+          "name": "sort_by",
+          "label": "",
+          "type": "Literal['Avg Action Completion', 'Avg Tool Selection Quality', 'Avg Session Cost', 'Avg Session Duration', 'Avg Turns']",
+          "component": "Radio"
+        },
+        {
+          "name": "sort_order",
+          "label": "\ud83d\udd04 Sort Order",
+          "type": "Literal['Descending', 'Ascending']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        }
+      ]
+    },
+    {
+      "name": "/update_all_visualizations_3",
+      "parameters": [
+        {
+          "name": "domain_filter",
+          "label": "",
+          "type": "Literal['\ud83c\udf10 All', '\ud83c\udfe6 Banking', '\ud83c\udfe5 Healthcare', '\ud83d\udee1\ufe0f Insurance', '\ud83d\udcb0 Investment', '\ud83d\udcf1 Telecom']",
+          "component": "Radio"
+        },
+        {
+          "name": "model_type_filter",
+          "label": "\ud83d\udd13 Model Access",
+          "type": "Literal['All', 'Open Source', 'Proprietary']",
+          "component": "Radio"
+        },
+        {
+          "name": "reasoning_filter",
+          "label": "\ud83e\udde0 Output Type",
+          "type": "Literal['All', 'Reasoning', 'Normal']",
+          "component": "Radio"
+        },
+        {
+          "name": "sort_by",
+          "label": "",
+          "type": "Literal['Avg Action Completion', 'Avg Tool Selection Quality', 'Avg Session Cost', 'Avg Session Duration', 'Avg Turns']",
+          "component": "Radio"
+        },
+        {
+          "name": "sort_order",
+          "label": "\ud83d\udd04 Sort Order",
+          "type": "Literal['Descending', 'Ascending']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        }
+      ]
+    },
+    {
+      "name": "/update_all_visualizations_4",
+      "parameters": [
+        {
+          "name": "domain_filter",
+          "label": "",
+          "type": "Literal['\ud83c\udf10 All', '\ud83c\udfe6 Banking', '\ud83c\udfe5 Healthcare', '\ud83d\udee1\ufe0f Insurance', '\ud83d\udcb0 Investment', '\ud83d\udcf1 Telecom']",
+          "component": "Radio"
+        },
+        {
+          "name": "model_type_filter",
+          "label": "\ud83d\udd13 Model Access",
+          "type": "Literal['All', 'Open Source', 'Proprietary']",
+          "component": "Radio"
+        },
+        {
+          "name": "reasoning_filter",
+          "label": "\ud83e\udde0 Output Type",
+          "type": "Literal['All', 'Reasoning', 'Normal']",
+          "component": "Radio"
+        },
+        {
+          "name": "sort_by",
+          "label": "",
+          "type": "Literal['Avg Action Completion', 'Avg Tool Selection Quality', 'Avg Session Cost', 'Avg Session Duration', 'Avg Turns']",
+          "component": "Radio"
+        },
+        {
+          "name": "sort_order",
+          "label": "\ud83d\udd04 Sort Order",
+          "type": "Literal['Descending', 'Ascending']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        }
+      ]
+    },
+    {
+      "name": "/generate_performance_card",
+      "parameters": [
+        {
+          "name": "model_name",
+          "label": "\ud83e\udd16 Select Model",
+          "type": "Literal['gpt-4.1-2025-04-14', 'mistral-medium-2508', 'gpt-4.1-mini-2025-04-14', 'claude-sonnet-4-20250514', 'kimi-k2-instruct', 'qwen3-235b-a22b-instruct-2507', 'qwen2.5-72b-instruct', 'gemini-2.5-fla",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_88",
+          "type": "str",
+          "component": "Html"
+        }
+      ]
+    },
+    {
+      "name": "/update_dropdown_and_card",
+      "parameters": [
+        {
+          "name": "param_0",
+          "label": "",
+          "type": "Literal['\ud83c\udf10 All', '\ud83c\udfe6 Banking', '\ud83c\udfe5 Healthcare', '\ud83d\udee1\ufe0f Insurance', '\ud83d\udcb0 Investment', '\ud83d\udcf1 Telecom']",
+          "component": "Radio"
+        },
+        {
+          "name": "param_1",
+          "label": "\ud83d\udd13 Model Access",
+          "type": "Literal['All', 'Open Source', 'Proprietary']",
+          "component": "Radio"
+        },
+        {
+          "name": "param_2",
+          "label": "\ud83e\udde0 Output Type",
+          "type": "Literal['All', 'Reasoning', 'Normal']",
+          "component": "Radio"
+        },
+        {
+          "name": "param_3",
+          "label": "",
+          "type": "Literal['Avg Action Completion', 'Avg Tool Selection Quality', 'Avg Session Cost', 'Avg Session Duration', 'Avg Turns']",
+          "component": "Radio"
+        },
+        {
+          "name": "param_4",
+          "label": "\ud83d\udd04 Sort Order",
+          "type": "Literal['Descending', 'Ascending']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "\ud83e\udd16 Select Model",
+          "type": "Literal['gpt-4.1-2025-04-14', 'mistral-medium-2508', 'gpt-4.1-mini-2025-04-14', 'claude-sonnet-4-20250514', 'kimi-k2-instruct', 'qwen3-235b-a22b-instruct-2507', 'qwen2.5-72b-instruct', 'gemini-2.5-fla",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/update_dropdown_and_card_1",
+      "parameters": [
+        {
+          "name": "param_0",
+          "label": "",
+          "type": "Literal['\ud83c\udf10 All', '\ud83c\udfe6 Banking', '\ud83c\udfe5 Healthcare', '\ud83d\udee1\ufe0f Insurance', '\ud83d\udcb0 Investment', '\ud83d\udcf1 Telecom']",
+          "component": "Radio"
+        },
+        {
+          "name": "param_1",
+          "label": "\ud83d\udd13 Model Access",
+          "type": "Literal['All', 'Open Source', 'Proprietary']",
+          "component": "Radio"
+        },
+        {
+          "name": "param_2",
+          "label": "\ud83e\udde0 Output Type",
+          "type": "Literal['All', 'Reasoning', 'Normal']",
+          "component": "Radio"
+        },
+        {
+          "name": "param_3",
+          "label": "",
+          "type": "Literal['Avg Action Completion', 'Avg Tool Selection Quality', 'Avg Session Cost', 'Avg Session Duration', 'Avg Turns']",
+          "component": "Radio"
+        },
+        {
+          "name": "param_4",
+          "label": "\ud83d\udd04 Sort Order",
+          "type": "Literal['Descending', 'Ascending']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "\ud83e\udd16 Select Model",
+          "type": "Literal['gpt-4.1-2025-04-14', 'mistral-medium-2508', 'gpt-4.1-mini-2025-04-14', 'claude-sonnet-4-20250514', 'kimi-k2-instruct', 'qwen3-235b-a22b-instruct-2507', 'qwen2.5-72b-instruct', 'gemini-2.5-fla",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/update_dropdown_and_card_2",
+      "parameters": [
+        {
+          "name": "param_0",
+          "label": "",
+          "type": "Literal['\ud83c\udf10 All', '\ud83c\udfe6 Banking', '\ud83c\udfe5 Healthcare', '\ud83d\udee1\ufe0f Insurance', '\ud83d\udcb0 Investment', '\ud83d\udcf1 Telecom']",
+          "component": "Radio"
+        },
+        {
+          "name": "param_1",
+          "label": "\ud83d\udd13 Model Access",
+          "type": "Literal['All', 'Open Source', 'Proprietary']",
+          "component": "Radio"
+        },
+        {
+          "name": "param_2",
+          "label": "\ud83e\udde0 Output Type",
+          "type": "Literal['All', 'Reasoning', 'Normal']",
+          "component": "Radio"
+        },
+        {
+          "name": "param_3",
+          "label": "",
+          "type": "Literal['Avg Action Completion', 'Avg Tool Selection Quality', 'Avg Session Cost', 'Avg Session Duration', 'Avg Turns']",
+          "component": "Radio"
+        },
+        {
+          "name": "param_4",
+          "label": "\ud83d\udd04 Sort Order",
+          "type": "Literal['Descending', 'Ascending']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "\ud83e\udd16 Select Model",
+          "type": "Literal['gpt-4.1-2025-04-14', 'mistral-medium-2508', 'gpt-4.1-mini-2025-04-14', 'claude-sonnet-4-20250514', 'kimi-k2-instruct', 'qwen3-235b-a22b-instruct-2507', 'qwen2.5-72b-instruct', 'gemini-2.5-fla",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/update_dropdown_and_card_3",
+      "parameters": [
+        {
+          "name": "param_0",
+          "label": "",
+          "type": "Literal['\ud83c\udf10 All', '\ud83c\udfe6 Banking', '\ud83c\udfe5 Healthcare', '\ud83d\udee1\ufe0f Insurance', '\ud83d\udcb0 Investment', '\ud83d\udcf1 Telecom']",
+          "component": "Radio"
+        },
+        {
+          "name": "param_1",
+          "label": "\ud83d\udd13 Model Access",
+          "type": "Literal['All', 'Open Source', 'Proprietary']",
+          "component": "Radio"
+        },
+        {
+          "name": "param_2",
+          "label": "\ud83e\udde0 Output Type",
+          "type": "Literal['All', 'Reasoning', 'Normal']",
+          "component": "Radio"
+        },
+        {
+          "name": "param_3",
+          "label": "",
+          "type": "Literal['Avg Action Completion', 'Avg Tool Selection Quality', 'Avg Session Cost', 'Avg Session Duration', 'Avg Turns']",
+          "component": "Radio"
+        },
+        {
+          "name": "param_4",
+          "label": "\ud83d\udd04 Sort Order",
+          "type": "Literal['Descending', 'Ascending']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "\ud83e\udd16 Select Model",
+          "type": "Literal['gpt-4.1-2025-04-14', 'mistral-medium-2508', 'gpt-4.1-mini-2025-04-14', 'claude-sonnet-4-20250514', 'kimi-k2-instruct', 'qwen3-235b-a22b-instruct-2507', 'qwen2.5-72b-instruct', 'gemini-2.5-fla",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/update_dropdown_and_card_4",
+      "parameters": [
+        {
+          "name": "param_0",
+          "label": "",
+          "type": "Literal['\ud83c\udf10 All', '\ud83c\udfe6 Banking', '\ud83c\udfe5 Healthcare', '\ud83d\udee1\ufe0f Insurance', '\ud83d\udcb0 Investment', '\ud83d\udcf1 Telecom']",
+          "component": "Radio"
+        },
+        {
+          "name": "param_1",
+          "label": "\ud83d\udd13 Model Access",
+          "type": "Literal['All', 'Open Source', 'Proprietary']",
+          "component": "Radio"
+        },
+        {
+          "name": "param_2",
+          "label": "\ud83e\udde0 Output Type",
+          "type": "Literal['All', 'Reasoning', 'Normal']",
+          "component": "Radio"
+        },
+        {
+          "name": "param_3",
+          "label": "",
+          "type": "Literal['Avg Action Completion', 'Avg Tool Selection Quality', 'Avg Session Cost', 'Avg Session Duration', 'Avg Turns']",
+          "component": "Radio"
+        },
+        {
+          "name": "param_4",
+          "label": "\ud83d\udd04 Sort Order",
+          "type": "Literal['Descending', 'Ascending']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "\ud83e\udd16 Select Model",
+          "type": "Literal['gpt-4.1-2025-04-14', 'mistral-medium-2508', 'gpt-4.1-mini-2025-04-14', 'claude-sonnet-4-20250514', 'kimi-k2-instruct', 'qwen3-235b-a22b-instruct-2507', 'qwen2.5-72b-instruct', 'gemini-2.5-fla",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/lambda",
+      "parameters": [
+        {
+          "name": "m",
+          "label": "Model Type",
+          "type": "Literal['All', 'Private', 'Open source']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "c",
+          "label": "Category",
+          "type": "Literal['Overall', 'Overall single turn', 'Overall multi turn', 'Single func call', 'Multiple func call', 'Irrelevant query', 'Long context', 'Missing func', 'Missing params', 'Composite']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "s",
+          "label": "Sort by",
+          "type": "Literal['Performance', 'Cost']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_108",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "value_109",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "value_110",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_1",
+      "parameters": [
+        {
+          "name": "m",
+          "label": "Model Type",
+          "type": "Literal['All', 'Private', 'Open source']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "c",
+          "label": "Category",
+          "type": "Literal['Overall', 'Overall single turn', 'Overall multi turn', 'Single func call', 'Multiple func call', 'Irrelevant query', 'Long context', 'Missing func', 'Missing params', 'Composite']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "s",
+          "label": "Sort by",
+          "type": "Literal['Performance', 'Cost']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_108",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "value_109",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "value_110",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_2",
+      "parameters": [
+        {
+          "name": "m",
+          "label": "Model Type",
+          "type": "Literal['All', 'Private', 'Open source']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "c",
+          "label": "Category",
+          "type": "Literal['Overall', 'Overall single turn', 'Overall multi turn', 'Single func call', 'Multiple func call', 'Irrelevant query', 'Long context', 'Missing func', 'Missing params', 'Composite']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "s",
+          "label": "Sort by",
+          "type": "Literal['Performance', 'Cost']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_108",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "value_109",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "value_110",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_3",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_108",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "value_109",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "value_110",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/update_table",
+  "_api_verified": true,
+  "estimated_latency_s": 2.49,
+  "speed_tier": "fast",
+  "_latency_source": "measured_inference",
+  "_tags_enriched": true,
+  "measured_latency_s": 2.49,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:50:41.300289+00:00",
+  "measured_inference_s": 2.49,
+  "measured_inference_timestamp": "2026-04-20T07:59:36.000090+00:00",
+  "measured_inference_method": "auto_predict",
+  "measured_inference_api": "/update_table"
+}

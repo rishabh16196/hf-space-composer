@@ -1,0 +1,230 @@
+{
+  "space_id": "AlekseyCalvin/fast-Kontext-Flux-LoRAs-bySilverAgePoets",
+  "title": "fast kontext flux w/Silver Age Poets LoRAs",
+  "emoji": "\ud83c\udf0d\ud83e\uddde\u200d\u2640\ufe0f",
+  "description": "Flux.1 Kontext Dev 8-step w/Adapters by SilverAgePoets.com",
+  "input_schema": {
+    "link": {
+      "type": "str",
+      "description": "Or enter a custom HuggingFace FLUX LoRA",
+      "required": true,
+      "component": "Textbox"
+    }
+  },
+  "output_schema": {
+    "value_11": {
+      "type": "str",
+      "description": "value_11",
+      "component": "Html"
+    },
+    "value_11_1": {
+      "type": "str",
+      "description": "value_11",
+      "component": "Html"
+    },
+    "Pick a LoRA": {
+      "type": "list[dict(image: dict(path: str | None (Path to a local file), url: str | None (Publicly available u",
+      "description": "Pick a LoRA",
+      "component": "Gallery"
+    },
+    "value_30": {
+      "type": "str",
+      "description": "value_30",
+      "component": "Markdown"
+    }
+  },
+  "license": "mit",
+  "hardware": "5.43.1",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "mcp-server",
+    "region:us",
+    "diffusion",
+    "image-generation",
+    "text-to-image",
+    "vision"
+  ],
+  "likes": 18,
+  "last_modified": "2026-04-05 13:20:08+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/load_custom_lora",
+      "parameters": [
+        {
+          "name": "link",
+          "label": "Or enter a custom HuggingFace FLUX LoRA",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_11",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "value_11",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "Pick a LoRA",
+          "type": "list[dict(image: dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Origi",
+          "component": "Gallery"
+        },
+        {
+          "label": "value_30",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/remove_custom_lora",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Or enter a custom HuggingFace FLUX LoRA",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "value_11",
+          "type": "str",
+          "component": "Html"
+        }
+      ]
+    },
+    {
+      "name": "/update_selection",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_30",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "Editing Prompt",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/infer_with_lora_wrapper",
+      "parameters": [
+        {
+          "name": "input_image",
+          "label": "Upload a picture",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "prompt",
+          "label": "Editing Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "seed",
+          "label": "Seed",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "randomize_seed",
+          "label": "Randomize seed",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "steps",
+          "label": "Steps",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "guidance_scale",
+          "label": "Guidance Scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "lora_scale",
+          "label": "LoRA Scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "width",
+          "label": "Width",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "height",
+          "label": "Height",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Generated Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "Seed",
+          "type": "float",
+          "component": "Slider"
+        }
+      ]
+    },
+    {
+      "name": "/lambda",
+      "parameters": [
+        {
+          "name": "image",
+          "label": "Generated Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Upload a picture",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/classify_gallery",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Pick a LoRA",
+          "type": "list[dict(image: dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Origi",
+          "component": "Gallery"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/load_custom_lora",
+  "_api_verified": true,
+  "estimated_latency_s": 2.95,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "_tags_enriched": true,
+  "measured_latency_s": 2.95,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:49:05.925467+00:00"
+}

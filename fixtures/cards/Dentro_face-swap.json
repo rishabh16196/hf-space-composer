@@ -1,0 +1,101 @@
+{
+  "space_id": "Dentro/face-swap",
+  "title": "Face Swap",
+  "emoji": "\ud83d\udcca",
+  "description": "Face Swap",
+  "input_schema": {
+    "sourceImage": {
+      "type": "Dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "Source Image (the image with the face that you want to use)",
+      "required": true,
+      "component": "Image"
+    },
+    "sourceFaceIndex": {
+      "type": "float",
+      "description": "Source Face Position",
+      "required": true,
+      "component": "Number"
+    },
+    "destinationImage": {
+      "type": "Dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "Destination Image (the image with the face that you want to replace)",
+      "required": true,
+      "component": "Image"
+    },
+    "destinationFaceIndex": {
+      "type": "float",
+      "description": "Destination Face Position",
+      "required": true,
+      "component": "Number"
+    }
+  },
+  "output_schema": {
+    "output": {
+      "type": "Dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "output",
+      "component": "Image"
+    }
+  },
+  "license": "unknown",
+  "hardware": "5.6.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us",
+    "video",
+    "vision"
+  ],
+  "likes": 77,
+  "last_modified": "2024-11-27 18:29:14+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/predict",
+      "parameters": [
+        {
+          "name": "sourceImage",
+          "label": "Source Image (the image with the face that you want to use)",
+          "type": "Dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "sourceFaceIndex",
+          "label": "Source Face Position",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "destinationImage",
+          "label": "Destination Image (the image with the face that you want to replace)",
+          "type": "Dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "destinationFaceIndex",
+          "label": "Destination Face Position",
+          "type": "float",
+          "component": "Number"
+        }
+      ],
+      "returns": [
+        {
+          "label": "output",
+          "type": "Dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/predict",
+  "_api_verified": true,
+  "estimated_latency_s": 2.89,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "_tags_enriched": true,
+  "measured_latency_s": 2.89,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:49:15.458316+00:00"
+}

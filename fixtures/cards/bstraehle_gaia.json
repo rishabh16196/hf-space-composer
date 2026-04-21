@@ -1,0 +1,146 @@
+{
+  "space_id": "bstraehle/gaia",
+  "title": "General AI Assistant - MCP Client & Server",
+  "emoji": "\ud83e\udd16",
+  "description": "Solves GAIA Benchmark & Humanity's Last Exam problems",
+  "input_schema": {
+    "question": {
+      "type": "str",
+      "description": "Question *",
+      "required": true,
+      "component": "Textbox"
+    },
+    "openai_api_key": {
+      "type": "str",
+      "description": "OpenAI API Key *",
+      "required": true,
+      "component": "Textbox"
+    },
+    "gemini_api_key": {
+      "type": "str",
+      "description": "Gemini API Key *",
+      "required": true,
+      "component": "Textbox"
+    },
+    "anthropic_api_key": {
+      "type": "str",
+      "description": "Anthropic API Key *",
+      "required": true,
+      "component": "Textbox"
+    },
+    "file_name": {
+      "type": "str",
+      "description": "File Name",
+      "required": true,
+      "component": "Textbox"
+    }
+  },
+  "output_schema": {
+    "Answer": {
+      "type": "str",
+      "description": "Answer",
+      "component": "Textbox"
+    },
+    "Output": {
+      "type": "str",
+      "description": "Output",
+      "component": "Textbox"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "6.12.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "building-mcp-track-consumer",
+    "mcp-in-action-track-consumer",
+    "mcp-server",
+    "region:us"
+  ],
+  "likes": 21,
+  "last_modified": "2026-04-17 01:18:17+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/ask",
+      "parameters": [
+        {
+          "name": "question",
+          "label": "Question *",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "openai_api_key",
+          "label": "OpenAI API Key *",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "gemini_api_key",
+          "label": "Gemini API Key *",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "anthropic_api_key",
+          "label": "Anthropic API Key *",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "file_name",
+          "label": "File Name",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Answer",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Output",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/update_file_link",
+      "parameters": [
+        {
+          "name": "file_name",
+          "label": "File Name",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "File Link",
+          "type": "str",
+          "component": "Html"
+        }
+      ]
+    },
+    {
+      "name": "/_check_login_status",
+      "parameters": [],
+      "returns": []
+    }
+  ],
+  "endpoint": "/ask",
+  "_api_verified": true,
+  "estimated_latency_s": 3.76,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 3.76,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:50:26.442821+00:00"
+}

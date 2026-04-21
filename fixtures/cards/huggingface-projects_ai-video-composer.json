@@ -1,0 +1,137 @@
+{
+  "space_id": "huggingface-projects/ai-video-composer",
+  "title": "AI Video Composer - Natural Language FFMPEG",
+  "emoji": "\ud83c\udfde",
+  "description": "Describe what you want, AI writes the FFMPEG command",
+  "input_schema": {
+    "files": {
+      "type": "list[dict(image: dict(path: str | None (Path to a local file), url: str | None (Publicly available u",
+      "description": "Media Assets",
+      "required": true,
+      "component": "Mediagallery"
+    },
+    "prompt": {
+      "type": "str",
+      "description": "Instructions",
+      "required": true,
+      "component": "Textbox"
+    },
+    "top_p": {
+      "type": "float",
+      "description": "Top-p (nucleus sampling)",
+      "required": true,
+      "component": "Slider"
+    },
+    "temperature": {
+      "type": "float",
+      "description": "Temperature",
+      "required": true,
+      "component": "Slider"
+    },
+    "model_choice": {
+      "type": "Literal['moonshotai/Kimi-K2-Instruct', 'zai-org/GLM-4.7-Flash']",
+      "description": "Model",
+      "required": true,
+      "component": "Radio"
+    }
+  },
+  "output_schema": {
+    "Generated Video": {
+      "type": "dict(video: filepath, subtitles: filepath | None)",
+      "description": "Generated Video",
+      "component": "Video"
+    },
+    "Model Output": {
+      "type": "str",
+      "description": "Model Output",
+      "component": "Textbox"
+    }
+  },
+  "license": "unknown",
+  "hardware": "6.2.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "ffmpeg",
+    "video-editing",
+    "natural-language",
+    "ai-video",
+    "no-code",
+    "video-processing",
+    "media-converter",
+    "slideshow-maker",
+    "video-merger",
+    "command-generator",
+    "waveform-visualization",
+    "audio-to-video",
+    "image-to-video",
+    "mcp-server",
+    "region:us"
+  ],
+  "likes": 650,
+  "last_modified": "2026-01-21 08:02:47+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/update",
+      "parameters": [
+        {
+          "name": "files",
+          "label": "Media Assets",
+          "type": "list[dict(image: dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Origi",
+          "component": "Mediagallery"
+        },
+        {
+          "name": "prompt",
+          "label": "Instructions",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "top_p",
+          "label": "Top-p (nucleus sampling)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "temperature",
+          "label": "Temperature",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "model_choice",
+          "label": "Model",
+          "type": "Literal['moonshotai/Kimi-K2-Instruct', 'zai-org/GLM-4.7-Flash']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Generated Video",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        },
+        {
+          "label": "Model Output",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/update",
+  "_api_verified": true,
+  "estimated_latency_s": 3.07,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "_tags_enriched": true,
+  "measured_latency_s": 3.07,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:50:45.915291+00:00",
+  "_inference_attempt_status": "predict_failed",
+  "_inference_attempt_error": "The upstream Gradio app has raised an exception but has not enabled verbose error reporting. To enable, set show_error=True in launch()."
+}

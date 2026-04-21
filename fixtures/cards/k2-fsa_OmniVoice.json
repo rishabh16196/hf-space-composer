@@ -1,0 +1,317 @@
+{
+  "space_id": "k2-fsa/OmniVoice",
+  "title": "OmniVoice",
+  "emoji": "\ud83c\udf0d",
+  "description": "High-quality voice cloning TTS for 600+ languages",
+  "input_schema": {
+    "text": {
+      "type": "str",
+      "description": "Text to Synthesize / \u5f85\u5408\u6210\u6587\u672c",
+      "required": true,
+      "component": "Textbox"
+    },
+    "lang": {
+      "type": "Literal['Auto', 'Abadi', 'Abkhazian', 'Abron', 'Abua', 'Adamawa Fulfulde', 'Adyghe', 'Afade', 'Afrik",
+      "description": "Language (optional) / \u8bed\u79cd (\u53ef\u9009)",
+      "required": true,
+      "component": "Dropdown"
+    },
+    "ref_aud": {
+      "type": "filepath",
+      "description": "Reference Audio / \u53c2\u8003\u97f3\u9891",
+      "required": true,
+      "component": "Audio"
+    },
+    "ref_text": {
+      "type": "str",
+      "description": "Reference Text (optional) / \u53c2\u8003\u97f3\u9891\u6587\u672c\uff08\u53ef\u9009\uff09",
+      "required": true,
+      "component": "Textbox"
+    },
+    "instruct": {
+      "type": "str",
+      "description": "Instruct",
+      "required": true,
+      "component": "Textbox"
+    },
+    "ns": {
+      "type": "float",
+      "description": "Inference Steps",
+      "required": true,
+      "component": "Slider"
+    },
+    "gs": {
+      "type": "float",
+      "description": "Guidance Scale (CFG)",
+      "required": true,
+      "component": "Slider"
+    },
+    "dn": {
+      "type": "bool",
+      "description": "Denoise",
+      "required": true,
+      "component": "Checkbox"
+    },
+    "sp": {
+      "type": "float",
+      "description": "Speed",
+      "required": true,
+      "component": "Slider"
+    },
+    "du": {
+      "type": "float",
+      "description": "Duration (seconds)",
+      "required": true,
+      "component": "Number"
+    },
+    "pp": {
+      "type": "bool",
+      "description": "Preprocess Prompt",
+      "required": true,
+      "component": "Checkbox"
+    },
+    "po": {
+      "type": "bool",
+      "description": "Postprocess Output",
+      "required": true,
+      "component": "Checkbox"
+    }
+  },
+  "output_schema": {
+    "Output Audio / \u5408\u6210\u7ed3\u679c": {
+      "type": "filepath",
+      "description": "Output Audio / \u5408\u6210\u7ed3\u679c",
+      "component": "Audio"
+    },
+    "Status / \u72b6\u6001": {
+      "type": "str",
+      "description": "Status / \u72b6\u6001",
+      "component": "Textbox"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "6.10.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us",
+    "audio",
+    "speech-synthesis",
+    "tts"
+  ],
+  "likes": 610,
+  "last_modified": "2026-04-13 06:55:17+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/_clone_fn",
+      "parameters": [
+        {
+          "name": "text",
+          "label": "Text to Synthesize / \u5f85\u5408\u6210\u6587\u672c",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "lang",
+          "label": "Language (optional) / \u8bed\u79cd (\u53ef\u9009)",
+          "type": "Literal['Auto', 'Abadi', 'Abkhazian', 'Abron', 'Abua', 'Adamawa Fulfulde', 'Adyghe', 'Afade', 'Afrikaans', 'Agwagwune', 'Aja (Benin)', 'Akebu', 'Alago', 'Albanian', 'Algerian Arabic', 'Algerian Sahara",
+          "component": "Dropdown"
+        },
+        {
+          "name": "ref_aud",
+          "label": "Reference Audio / \u53c2\u8003\u97f3\u9891",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "name": "ref_text",
+          "label": "Reference Text (optional) / \u53c2\u8003\u97f3\u9891\u6587\u672c\uff08\u53ef\u9009\uff09",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "instruct",
+          "label": "Instruct",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "ns",
+          "label": "Inference Steps",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "gs",
+          "label": "Guidance Scale (CFG)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "dn",
+          "label": "Denoise",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "sp",
+          "label": "Speed",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "du",
+          "label": "Duration (seconds)",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "pp",
+          "label": "Preprocess Prompt",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "po",
+          "label": "Postprocess Output",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output Audio / \u5408\u6210\u7ed3\u679c",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Status / \u72b6\u6001",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/_design_fn",
+      "parameters": [
+        {
+          "name": "text",
+          "label": "Text to Synthesize / \u5f85\u5408\u6210\u6587\u672c",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "lang",
+          "label": "Language (optional) / \u8bed\u79cd (\u53ef\u9009)",
+          "type": "Literal['Auto', 'Abadi', 'Abkhazian', 'Abron', 'Abua', 'Adamawa Fulfulde', 'Adyghe', 'Afade', 'Afrikaans', 'Agwagwune', 'Aja (Benin)', 'Akebu', 'Alago', 'Albanian', 'Algerian Arabic', 'Algerian Sahara",
+          "component": "Dropdown"
+        },
+        {
+          "name": "ns",
+          "label": "Inference Steps",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "gs",
+          "label": "Guidance Scale (CFG)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "dn",
+          "label": "Denoise",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "sp",
+          "label": "Speed",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "du",
+          "label": "Duration (seconds)",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "pp",
+          "label": "Preprocess Prompt",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "po",
+          "label": "Postprocess Output",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_9",
+          "label": "Gender / \u6027\u522b",
+          "type": "Literal['Auto', 'Male / \u7537', 'Female / \u5973']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_10",
+          "label": "Age / \u5e74\u9f84",
+          "type": "Literal['Auto', 'Child / \u513f\u7ae5', 'Teenager / \u5c11\u5e74', 'Young Adult / \u9752\u5e74', 'Middle-aged / \u4e2d\u5e74', 'Elderly / \u8001\u5e74']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_11",
+          "label": "Pitch / \u97f3\u8c03",
+          "type": "Literal['Auto', 'Very Low Pitch / \u6781\u4f4e\u97f3\u8c03', 'Low Pitch / \u4f4e\u97f3\u8c03', 'Moderate Pitch / \u4e2d\u97f3\u8c03', 'High Pitch / \u9ad8\u97f3\u8c03', 'Very High Pitch / \u6781\u9ad8\u97f3\u8c03']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_12",
+          "label": "Style / \u98ce\u683c",
+          "type": "Literal['Auto', 'Whisper / \u8033\u8bed']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_13",
+          "label": "English Accent / \u82f1\u6587\u53e3\u97f3",
+          "type": "Literal['Auto', 'American Accent / \u7f8e\u5f0f\u53e3\u97f3', 'Australian Accent / \u6fb3\u5927\u5229\u4e9a\u53e3\u97f3', 'British Accent / \u82f1\u56fd\u53e3\u97f3', 'Chinese Accent / \u4e2d\u56fd\u53e3\u97f3', 'Canadian Accent / \u52a0\u62ff\u5927\u53e3\u97f3', 'Indian Accent / \u5370\u5ea6\u53e3\u97f3', 'Korean Accent / \u97e9\u56fd\u53e3\u97f3', 'Po",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_14",
+          "label": "Chinese Dialect / \u4e2d\u6587\u65b9\u8a00",
+          "type": "Literal['Auto', 'Henan Dialect / \u6cb3\u5357\u8bdd', 'Shaanxi Dialect / \u9655\u897f\u8bdd', 'Sichuan Dialect / \u56db\u5ddd\u8bdd', 'Guizhou Dialect / \u8d35\u5dde\u8bdd', 'Yunnan Dialect / \u4e91\u5357\u8bdd', 'Guilin Dialect / \u6842\u6797\u8bdd', 'Jinan Dialect / \u6d4e\u5357\u8bdd', 'Shijiazhuang D",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output Audio / \u5408\u6210\u7ed3\u679c",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Status / \u72b6\u6001",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/_clone_fn",
+  "_api_verified": true,
+  "estimated_latency_s": 4.4,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "_tags_enriched": true,
+  "measured_latency_s": 4.4,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:51:02.417856+00:00",
+  "_inference_attempt_status": "predict_failed",
+  "_inference_attempt_error": "Value:  is not in the list of choices: ['Auto', 'Abadi', 'Abkhazian', 'Abron', 'Abua', 'Adamawa Fulfulde', 'Adyghe', 'Afade', 'Afrikaans', 'Agwagwune', 'Aja (Benin)', 'Akebu', 'Alago', 'Albanian', 'Al"
+}

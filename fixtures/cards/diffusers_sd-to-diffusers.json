@@ -1,0 +1,134 @@
+{
+  "space_id": "diffusers/sd-to-diffusers",
+  "title": "SD To Diffusers",
+  "emoji": "\ud83c\udfa8\u27a1\ufe0f\ud83e\udde8",
+  "description": "SD To Diffusers",
+  "input_schema": {
+    "your_hf_token": {
+      "type": "str",
+      "description": "your_hf_token",
+      "required": true,
+      "component": "Textbox"
+    },
+    "model_id": {
+      "type": "str",
+      "description": "model_id",
+      "required": true,
+      "component": "Textbox"
+    },
+    "filename": {
+      "type": "str",
+      "description": "filename",
+      "required": true,
+      "component": "Textbox"
+    },
+    "Model type": {
+      "type": "str",
+      "description": "Model type",
+      "required": true,
+      "component": "Radio"
+    },
+    "Sample size (px)": {
+      "type": "str",
+      "description": "Sample size (px)",
+      "required": true,
+      "component": "Radio"
+    },
+    "Scheduler type": {
+      "type": "str",
+      "description": "Scheduler type",
+      "required": true,
+      "component": "Radio"
+    },
+    "Extract EMA or non-EMA?": {
+      "type": "str",
+      "description": "Extract EMA or non-EMA?",
+      "required": true,
+      "component": "Radio"
+    }
+  },
+  "output_schema": {
+    "value_7": {
+      "type": "str",
+      "description": "value_7",
+      "component": "Markdown"
+    }
+  },
+  "license": "mit",
+  "hardware": "3.31.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us",
+    "diffusion",
+    "image-generation"
+  ],
+  "likes": 73,
+  "last_modified": "2024-02-15 10:20:48+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_tags_enriched": true,
+  "estimated_latency_s": 40.0,
+  "speed_tier": "slow",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/predict",
+      "parameters": [
+        {
+          "name": "your_hf_token",
+          "label": "your_hf_token",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "model_id",
+          "label": "model_id",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "filename",
+          "label": "filename",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "Model type",
+          "label": "Model type",
+          "type": "str",
+          "component": "Radio"
+        },
+        {
+          "name": "Sample size (px)",
+          "label": "Sample size (px)",
+          "type": "str",
+          "component": "Radio"
+        },
+        {
+          "name": "Scheduler type",
+          "label": "Scheduler type",
+          "type": "str",
+          "component": "Radio"
+        },
+        {
+          "name": "Extract EMA or non-EMA?",
+          "label": "Extract EMA or non-EMA?",
+          "type": "str",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_7",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/predict",
+  "_api_verified": true
+}

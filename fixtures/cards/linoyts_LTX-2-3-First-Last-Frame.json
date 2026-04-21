@@ -1,0 +1,243 @@
+{
+  "space_id": "linoyts/LTX-2-3-First-Last-Frame",
+  "title": "LTX 2.3 First-Last Frame",
+  "emoji": "\ud83c\udfa5",
+  "description": "LTX 2.3 First-Last Frame",
+  "input_schema": {
+    "first_image": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "First Frame (Optional)",
+      "required": true,
+      "component": "Image"
+    },
+    "last_image": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "Last Frame (Optional)",
+      "required": true,
+      "component": "Image"
+    },
+    "high_res": {
+      "type": "bool",
+      "description": "High Resolution",
+      "required": true,
+      "component": "Checkbox"
+    }
+  },
+  "output_schema": {
+    "Width": {
+      "type": "int",
+      "description": "Width",
+      "component": "Number"
+    },
+    "Height": {
+      "type": "int",
+      "description": "Height",
+      "component": "Number"
+    }
+  },
+  "license": "unknown",
+  "hardware": "6.8.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 100,
+  "last_modified": "2026-04-17 14:05:50+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/on_image_upload",
+      "parameters": [
+        {
+          "name": "first_image",
+          "label": "First Frame (Optional)",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "last_image",
+          "label": "Last Frame (Optional)",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "high_res",
+          "label": "High Resolution",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Width",
+          "type": "int",
+          "component": "Number"
+        },
+        {
+          "label": "Height",
+          "type": "int",
+          "component": "Number"
+        }
+      ]
+    },
+    {
+      "name": "/on_image_upload_1",
+      "parameters": [
+        {
+          "name": "first_image",
+          "label": "First Frame (Optional)",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "last_image",
+          "label": "Last Frame (Optional)",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "high_res",
+          "label": "High Resolution",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Width",
+          "type": "int",
+          "component": "Number"
+        },
+        {
+          "label": "Height",
+          "type": "int",
+          "component": "Number"
+        }
+      ]
+    },
+    {
+      "name": "/on_highres_toggle",
+      "parameters": [
+        {
+          "name": "first_image",
+          "label": "First Frame (Optional)",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "last_image",
+          "label": "Last Frame (Optional)",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "high_res",
+          "label": "High Resolution",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Width",
+          "type": "int",
+          "component": "Number"
+        },
+        {
+          "label": "Height",
+          "type": "int",
+          "component": "Number"
+        }
+      ]
+    },
+    {
+      "name": "/generate_video",
+      "parameters": [
+        {
+          "name": "first_image",
+          "label": "First Frame (Optional)",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "last_image",
+          "label": "Last Frame (Optional)",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "input_audio",
+          "label": "Audio Input (Optional)",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "name": "prompt",
+          "label": "Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "duration",
+          "label": "Duration (seconds)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "enhance_prompt",
+          "label": "Enhance Prompt",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "seed",
+          "label": "Seed",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "randomize_seed",
+          "label": "Randomize Seed",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "height",
+          "label": "Height",
+          "type": "int",
+          "component": "Number"
+        },
+        {
+          "name": "width",
+          "label": "Width",
+          "type": "int",
+          "component": "Number"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Generated Video",
+          "type": "filepath",
+          "component": "Video"
+        },
+        {
+          "label": "Seed",
+          "type": "float",
+          "component": "Slider"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/on_image_upload",
+  "_api_verified": true,
+  "estimated_latency_s": 3.76,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 3.76,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:51:09.218031+00:00"
+}

@@ -1,0 +1,191 @@
+{
+  "space_id": "Plachta/Seed-VC",
+  "title": "Seed Voice Conversion",
+  "emoji": "\ud83c\udfa4\ud83d\udd04",
+  "description": "Seed Voice Conversion",
+  "input_schema": {},
+  "output_schema": {},
+  "license": "gpl-3.0",
+  "hardware": "5.24.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 480,
+  "last_modified": "2025-04-18 13:24:41+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/lambda",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/predict",
+      "parameters": [
+        {
+          "name": "source_audio_path",
+          "label": "Source Audio / \u6e90\u97f3\u9891",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "name": "target_audio_path",
+          "label": "Reference Audio / \u53c2\u8003\u97f3\u9891",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "name": "diffusion_steps",
+          "label": "Diffusion Steps / \u6269\u6563\u6b65\u6570",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "length_adjust",
+          "label": "Length Adjust / \u957f\u5ea6\u8c03\u6574",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "intelligebility_cfg_rate",
+          "label": "Intelligibility CFG Rate",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "similarity_cfg_rate",
+          "label": "Similarity CFG Rate",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "top_p",
+          "label": "Top-p",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "temperature",
+          "label": "Temperature",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "repetition_penalty",
+          "label": "Repetition Penalty",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "convert_style",
+          "label": "convert style/emotion/accent",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "anonymization_only",
+          "label": "anonymization only",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Stream Output Audio / \u6d41\u5f0f\u8f93\u51fa",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Full Output Audio / \u5b8c\u6574\u8f93\u51fa",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_2",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/predict_1",
+      "parameters": [
+        {
+          "name": "source_audio_path",
+          "label": "Source Audio / \u6e90\u97f3\u9891",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "name": "target_audio_path",
+          "label": "Reference Audio / \u53c2\u8003\u97f3\u9891",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "name": "diffusion_steps",
+          "label": "Diffusion Steps / \u6269\u6563\u6b65\u6570",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "length_adjust",
+          "label": "Length Adjust / \u957f\u5ea6\u8c03\u6574",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "inference_cfg_rate",
+          "label": "Inference CFG Rate",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "f0_condition",
+          "label": "Use F0 conditioned model / \u542f\u7528F0\u8f93\u5165",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "auto_f0_adjust",
+          "label": "Auto F0 adjust / \u81ea\u52a8F0\u8c03\u6574",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "pitch_shift",
+          "label": "Pitch shift / \u97f3\u8c03\u53d8\u6362",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Stream Output Audio / \u6d41\u5f0f\u8f93\u51fa",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Full Output Audio / \u5b8c\u6574\u8f93\u51fa",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/lambda",
+  "_api_verified": true,
+  "estimated_latency_s": 3.31,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 3.31,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:49:47.562123+00:00",
+  "_inference_attempt_status": "predict_failed",
+  "_inference_attempt_error": "TypeError"
+}

@@ -1,0 +1,35 @@
+{
+  "space_id": "RapidAI/RapidOCR",
+  "title": "RapidOCR",
+  "emoji": "\u26a1",
+  "description": "RapidOCR",
+  "input_schema": {
+    "input": {
+      "type": "string",
+      "description": "Input",
+      "required": true
+    }
+  },
+  "output_schema": {
+    "output": {
+      "type": "string"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "1.25.0",
+  "sdk": "streamlit",
+  "tags": [
+    "streamlit",
+    "region:us"
+  ],
+  "likes": 58,
+  "last_modified": "2025-04-12 08:15:08+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "error",
+  "_api_error": "Could not get Gradio config from: https://rapidai-rapidocr.hf.space"
+}

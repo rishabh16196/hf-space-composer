@@ -1,0 +1,35 @@
+{
+  "space_id": "AFCMEgypt/colorimetric_analyzer",
+  "title": "Colorimetric Analyzer",
+  "emoji": "\ud83d\ude3b",
+  "description": "Colorimetric Analyzer",
+  "input_schema": {
+    "input": {
+      "type": "string",
+      "description": "Input",
+      "required": true
+    }
+  },
+  "output_schema": {
+    "output": {
+      "type": "string"
+    }
+  },
+  "license": "bigscience-bloom-rail-1.0",
+  "hardware": "4.41.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 4,
+  "last_modified": "2024-08-14 22:11:07+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "error",
+  "_api_error": "(Request ID: Root=1-69e77bd3-1c3c2af17c9d1d6261bc223a;6c9946c1-3534-4b62-910c-e778331f435b)\n\n429 Too Many Requests: you have reached your 'api' rate limit.\nRetry after 11 seconds (0/2500 requests rema"
+}

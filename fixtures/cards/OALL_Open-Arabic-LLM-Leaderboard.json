@@ -1,0 +1,569 @@
+{
+  "space_id": "OALL/Open-Arabic-LLM-Leaderboard",
+  "title": "Open Arabic LLM Leaderboard",
+  "emoji": "\ud83c\udfc6",
+  "description": "Track, rank and evaluate open Arabic LLMs and chatbots",
+  "input_schema": {
+    "search_query": {
+      "type": "str",
+      "description": "Search",
+      "required": true,
+      "component": "Textbox"
+    },
+    "selected_cols": {
+      "type": "list[Literal['Rank', 'T', 'Model Name', 'Average \u2b06\ufe0f', 'AlGhafa', 'ArabicMMLU', 'EXAMS', 'MadinahQA',",
+      "description": "Select columns to display",
+      "required": true,
+      "component": "Checkboxgroup"
+    },
+    "t_filter_values": {
+      "type": "list[Literal['Missing', '\ud83d\udcac : chat models (RLHF, DPO, IFT, ...)', '\ud83d\udd36 : fine-tuned on domain-specific ",
+      "description": "Filter by Model Type",
+      "required": true,
+      "component": "Checkboxgroup"
+    },
+    "lic_filter_values": {
+      "type": "list[Literal['CC-BY-NC-4.0', 'None', 'apache-2.0', 'bigscience-bloom-rail-1.0', 'cc-by-nc-4.0', 'cc-",
+      "description": "Filter by License",
+      "required": true,
+      "component": "Checkboxgroup"
+    },
+    "prec_filter_values": {
+      "type": "list[Literal['bfloat16', 'float16', 'Missing']]",
+      "description": "Filter by Precision",
+      "required": true,
+      "component": "Checkboxgroup"
+    },
+    "min_sz": {
+      "type": "float",
+      "description": "Minimum Model Size (params)",
+      "required": true,
+      "component": "Slider"
+    },
+    "max_sz": {
+      "type": "float",
+      "description": "Maximum Model Size (params)",
+      "required": true,
+      "component": "Slider"
+    }
+  },
+  "output_schema": {
+    "value_19": {
+      "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+      "description": "value_19",
+      "component": "Dataframe"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "5.16.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "leaderboard",
+    "region:us",
+    "benchmark"
+  ],
+  "likes": 179,
+  "last_modified": "2025-10-09 10:34:33+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/filter_leaderboard",
+      "parameters": [
+        {
+          "name": "search_query",
+          "label": "Search",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "selected_cols",
+          "label": "Select columns to display",
+          "type": "list[Literal['Rank', 'T', 'Model Name', 'Average \u2b06\ufe0f', 'AlGhafa', 'ArabicMMLU', 'EXAMS', 'MadinahQA', 'AraTrust', 'ALRAGE', 'ArbMMLU-HT', 'Model Size', 'Hub \u2764\ufe0f', 'License', 'Precision', 'Revision']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "t_filter_values",
+          "label": "Filter by Model Type",
+          "type": "list[Literal['Missing', '\ud83d\udcac : chat models (RLHF, DPO, IFT, ...)', '\ud83d\udd36 : fine-tuned on domain-specific datasets', '\ud83d\udfe2 : pretrained', '\ud83d\udfe9 : continuously pretrained', '\ud83e\udd1d : base merges and merges']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "lic_filter_values",
+          "label": "Filter by License",
+          "type": "list[Literal['CC-BY-NC-4.0', 'None', 'apache-2.0', 'bigscience-bloom-rail-1.0', 'cc-by-nc-4.0', 'cc-by-nc-nd-4.0', 'cc-by-nc-sa-4.0', 'gemma', 'gpl-3.0', 'llama3.1', 'llama3.2', 'llama3.3', 'mit', 'ot",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "prec_filter_values",
+          "label": "Filter by Precision",
+          "type": "list[Literal['bfloat16', 'float16', 'Missing']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "min_sz",
+          "label": "Minimum Model Size (params)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "max_sz",
+          "label": "Maximum Model Size (params)",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_19",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/filter_leaderboard_1",
+      "parameters": [
+        {
+          "name": "search_query",
+          "label": "Search",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "selected_cols",
+          "label": "Select columns to display",
+          "type": "list[Literal['Rank', 'T', 'Model Name', 'Average \u2b06\ufe0f', 'AlGhafa', 'ArabicMMLU', 'EXAMS', 'MadinahQA', 'AraTrust', 'ALRAGE', 'ArbMMLU-HT', 'Model Size', 'Hub \u2764\ufe0f', 'License', 'Precision', 'Revision']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "t_filter_values",
+          "label": "Filter by Model Type",
+          "type": "list[Literal['Missing', '\ud83d\udcac : chat models (RLHF, DPO, IFT, ...)', '\ud83d\udd36 : fine-tuned on domain-specific datasets', '\ud83d\udfe2 : pretrained', '\ud83d\udfe9 : continuously pretrained', '\ud83e\udd1d : base merges and merges']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "lic_filter_values",
+          "label": "Filter by License",
+          "type": "list[Literal['CC-BY-NC-4.0', 'None', 'apache-2.0', 'bigscience-bloom-rail-1.0', 'cc-by-nc-4.0', 'cc-by-nc-nd-4.0', 'cc-by-nc-sa-4.0', 'gemma', 'gpl-3.0', 'llama3.1', 'llama3.2', 'llama3.3', 'mit', 'ot",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "prec_filter_values",
+          "label": "Filter by Precision",
+          "type": "list[Literal['bfloat16', 'float16', 'Missing']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "min_sz",
+          "label": "Minimum Model Size (params)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "max_sz",
+          "label": "Maximum Model Size (params)",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_19",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/filter_leaderboard_2",
+      "parameters": [
+        {
+          "name": "search_query",
+          "label": "Search",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "selected_cols",
+          "label": "Select columns to display",
+          "type": "list[Literal['Rank', 'T', 'Model Name', 'Average \u2b06\ufe0f', 'AlGhafa', 'ArabicMMLU', 'EXAMS', 'MadinahQA', 'AraTrust', 'ALRAGE', 'ArbMMLU-HT', 'Model Size', 'Hub \u2764\ufe0f', 'License', 'Precision', 'Revision']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "t_filter_values",
+          "label": "Filter by Model Type",
+          "type": "list[Literal['Missing', '\ud83d\udcac : chat models (RLHF, DPO, IFT, ...)', '\ud83d\udd36 : fine-tuned on domain-specific datasets', '\ud83d\udfe2 : pretrained', '\ud83d\udfe9 : continuously pretrained', '\ud83e\udd1d : base merges and merges']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "lic_filter_values",
+          "label": "Filter by License",
+          "type": "list[Literal['CC-BY-NC-4.0', 'None', 'apache-2.0', 'bigscience-bloom-rail-1.0', 'cc-by-nc-4.0', 'cc-by-nc-nd-4.0', 'cc-by-nc-sa-4.0', 'gemma', 'gpl-3.0', 'llama3.1', 'llama3.2', 'llama3.3', 'mit', 'ot",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "prec_filter_values",
+          "label": "Filter by Precision",
+          "type": "list[Literal['bfloat16', 'float16', 'Missing']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "min_sz",
+          "label": "Minimum Model Size (params)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "max_sz",
+          "label": "Maximum Model Size (params)",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_19",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/filter_leaderboard_3",
+      "parameters": [
+        {
+          "name": "search_query",
+          "label": "Search",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "selected_cols",
+          "label": "Select columns to display",
+          "type": "list[Literal['Rank', 'T', 'Model Name', 'Average \u2b06\ufe0f', 'AlGhafa', 'ArabicMMLU', 'EXAMS', 'MadinahQA', 'AraTrust', 'ALRAGE', 'ArbMMLU-HT', 'Model Size', 'Hub \u2764\ufe0f', 'License', 'Precision', 'Revision']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "t_filter_values",
+          "label": "Filter by Model Type",
+          "type": "list[Literal['Missing', '\ud83d\udcac : chat models (RLHF, DPO, IFT, ...)', '\ud83d\udd36 : fine-tuned on domain-specific datasets', '\ud83d\udfe2 : pretrained', '\ud83d\udfe9 : continuously pretrained', '\ud83e\udd1d : base merges and merges']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "lic_filter_values",
+          "label": "Filter by License",
+          "type": "list[Literal['CC-BY-NC-4.0', 'None', 'apache-2.0', 'bigscience-bloom-rail-1.0', 'cc-by-nc-4.0', 'cc-by-nc-nd-4.0', 'cc-by-nc-sa-4.0', 'gemma', 'gpl-3.0', 'llama3.1', 'llama3.2', 'llama3.3', 'mit', 'ot",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "prec_filter_values",
+          "label": "Filter by Precision",
+          "type": "list[Literal['bfloat16', 'float16', 'Missing']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "min_sz",
+          "label": "Minimum Model Size (params)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "max_sz",
+          "label": "Maximum Model Size (params)",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_19",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/filter_leaderboard_4",
+      "parameters": [
+        {
+          "name": "search_query",
+          "label": "Search",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "selected_cols",
+          "label": "Select columns to display",
+          "type": "list[Literal['Rank', 'T', 'Model Name', 'Average \u2b06\ufe0f', 'AlGhafa', 'ArabicMMLU', 'EXAMS', 'MadinahQA', 'AraTrust', 'ALRAGE', 'ArbMMLU-HT', 'Model Size', 'Hub \u2764\ufe0f', 'License', 'Precision', 'Revision']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "t_filter_values",
+          "label": "Filter by Model Type",
+          "type": "list[Literal['Missing', '\ud83d\udcac : chat models (RLHF, DPO, IFT, ...)', '\ud83d\udd36 : fine-tuned on domain-specific datasets', '\ud83d\udfe2 : pretrained', '\ud83d\udfe9 : continuously pretrained', '\ud83e\udd1d : base merges and merges']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "lic_filter_values",
+          "label": "Filter by License",
+          "type": "list[Literal['CC-BY-NC-4.0', 'None', 'apache-2.0', 'bigscience-bloom-rail-1.0', 'cc-by-nc-4.0', 'cc-by-nc-nd-4.0', 'cc-by-nc-sa-4.0', 'gemma', 'gpl-3.0', 'llama3.1', 'llama3.2', 'llama3.3', 'mit', 'ot",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "prec_filter_values",
+          "label": "Filter by Precision",
+          "type": "list[Literal['bfloat16', 'float16', 'Missing']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "min_sz",
+          "label": "Minimum Model Size (params)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "max_sz",
+          "label": "Maximum Model Size (params)",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_19",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/filter_leaderboard_5",
+      "parameters": [
+        {
+          "name": "search_query",
+          "label": "Search",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "selected_cols",
+          "label": "Select columns to display",
+          "type": "list[Literal['Rank', 'T', 'Model Name', 'Average \u2b06\ufe0f', 'AlGhafa', 'ArabicMMLU', 'EXAMS', 'MadinahQA', 'AraTrust', 'ALRAGE', 'ArbMMLU-HT', 'Model Size', 'Hub \u2764\ufe0f', 'License', 'Precision', 'Revision']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "t_filter_values",
+          "label": "Filter by Model Type",
+          "type": "list[Literal['Missing', '\ud83d\udcac : chat models (RLHF, DPO, IFT, ...)', '\ud83d\udd36 : fine-tuned on domain-specific datasets', '\ud83d\udfe2 : pretrained', '\ud83d\udfe9 : continuously pretrained', '\ud83e\udd1d : base merges and merges']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "lic_filter_values",
+          "label": "Filter by License",
+          "type": "list[Literal['CC-BY-NC-4.0', 'None', 'apache-2.0', 'bigscience-bloom-rail-1.0', 'cc-by-nc-4.0', 'cc-by-nc-nd-4.0', 'cc-by-nc-sa-4.0', 'gemma', 'gpl-3.0', 'llama3.1', 'llama3.2', 'llama3.3', 'mit', 'ot",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "prec_filter_values",
+          "label": "Filter by Precision",
+          "type": "list[Literal['bfloat16', 'float16', 'Missing']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "min_sz",
+          "label": "Minimum Model Size (params)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "max_sz",
+          "label": "Maximum Model Size (params)",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_19",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/filter_leaderboard_6",
+      "parameters": [
+        {
+          "name": "search_query",
+          "label": "Search",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "selected_cols",
+          "label": "Select columns to display",
+          "type": "list[Literal['Rank', 'T', 'Model Name', 'Average \u2b06\ufe0f', 'AlGhafa', 'ArabicMMLU', 'EXAMS', 'MadinahQA', 'AraTrust', 'ALRAGE', 'ArbMMLU-HT', 'Model Size', 'Hub \u2764\ufe0f', 'License', 'Precision', 'Revision']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "t_filter_values",
+          "label": "Filter by Model Type",
+          "type": "list[Literal['Missing', '\ud83d\udcac : chat models (RLHF, DPO, IFT, ...)', '\ud83d\udd36 : fine-tuned on domain-specific datasets', '\ud83d\udfe2 : pretrained', '\ud83d\udfe9 : continuously pretrained', '\ud83e\udd1d : base merges and merges']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "lic_filter_values",
+          "label": "Filter by License",
+          "type": "list[Literal['CC-BY-NC-4.0', 'None', 'apache-2.0', 'bigscience-bloom-rail-1.0', 'cc-by-nc-4.0', 'cc-by-nc-nd-4.0', 'cc-by-nc-sa-4.0', 'gemma', 'gpl-3.0', 'llama3.1', 'llama3.2', 'llama3.3', 'mit', 'ot",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "prec_filter_values",
+          "label": "Filter by Precision",
+          "type": "list[Literal['bfloat16', 'float16', 'Missing']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "min_sz",
+          "label": "Minimum Model Size (params)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "max_sz",
+          "label": "Maximum Model Size (params)",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_19",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/filter_leaderboard_7",
+      "parameters": [
+        {
+          "name": "search_query",
+          "label": "Search",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "selected_cols",
+          "label": "Select columns to display",
+          "type": "list[Literal['Rank', 'T', 'Model Name', 'Average \u2b06\ufe0f', 'AlGhafa', 'ArabicMMLU', 'EXAMS', 'MadinahQA', 'AraTrust', 'ALRAGE', 'ArbMMLU-HT', 'Model Size', 'Hub \u2764\ufe0f', 'License', 'Precision', 'Revision']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "t_filter_values",
+          "label": "Filter by Model Type",
+          "type": "list[Literal['Missing', '\ud83d\udcac : chat models (RLHF, DPO, IFT, ...)', '\ud83d\udd36 : fine-tuned on domain-specific datasets', '\ud83d\udfe2 : pretrained', '\ud83d\udfe9 : continuously pretrained', '\ud83e\udd1d : base merges and merges']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "lic_filter_values",
+          "label": "Filter by License",
+          "type": "list[Literal['CC-BY-NC-4.0', 'None', 'apache-2.0', 'bigscience-bloom-rail-1.0', 'cc-by-nc-4.0', 'cc-by-nc-nd-4.0', 'cc-by-nc-sa-4.0', 'gemma', 'gpl-3.0', 'llama3.1', 'llama3.2', 'llama3.3', 'mit', 'ot",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "prec_filter_values",
+          "label": "Filter by Precision",
+          "type": "list[Literal['bfloat16', 'float16', 'Missing']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "min_sz",
+          "label": "Minimum Model Size (params)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "max_sz",
+          "label": "Maximum Model Size (params)",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_19",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/submit_model",
+      "parameters": [
+        {
+          "name": "model_name",
+          "label": "Model Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "base_model",
+          "label": "Base Model (if adapter or delta weights)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "revision",
+          "label": "Revision Commit",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "precision",
+          "label": "Precision",
+          "type": "Literal['float16', 'bfloat16', '8bit', '4bit']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "weight_type",
+          "label": "Weight Type",
+          "type": "Literal['Original', 'Adapter', 'Delta']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "model_type",
+          "label": "Model Type",
+          "type": "Literal['\ud83d\udfe2 : pretrained', '\ud83d\udfe9 : continuously pretrained', '\ud83d\udcac : chat models (RLHF, DPO, IFT, ...)', '\ud83d\udd36 : fine-tuned on domain-specific datasets', '\ud83e\udd1d : base merges and merges', 'Missing']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "chat_template",
+          "label": "Evaluate using chat-template?",
+          "type": "Literal['Yes', 'No']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_38",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/filter_leaderboard",
+  "_api_verified": true,
+  "estimated_latency_s": 3.88,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "_tags_enriched": true,
+  "measured_latency_s": 3.88,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:49:43.246790+00:00"
+}

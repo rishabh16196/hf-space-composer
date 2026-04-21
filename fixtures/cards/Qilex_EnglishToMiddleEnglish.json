@@ -1,0 +1,59 @@
+{
+  "space_id": "Qilex/EnglishToMiddleEnglish",
+  "title": "EnglishToMiddleEnglish",
+  "emoji": "\ud83d\udc09\ud83d\udcac\ud83c\udff0",
+  "description": "EnglishToMiddleEnglish",
+  "input_schema": {
+    "sentence": {
+      "type": "str",
+      "description": "sentence",
+      "required": true,
+      "component": "Textbox"
+    }
+  },
+  "output_schema": {
+    "output": {
+      "type": "str",
+      "description": "output",
+      "component": "Textbox"
+    }
+  },
+  "license": "afl-3.0",
+  "hardware": "5.5.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 15,
+  "last_modified": "2024-11-13 23:07:36+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/predict",
+      "parameters": [
+        {
+          "name": "sentence",
+          "label": "sentence",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "output",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/predict",
+  "_api_verified": true
+}

@@ -1,0 +1,170 @@
+{
+  "space_id": "openadmet/OpenADMET-ExpansionRx-Challenge",
+  "title": "OpenADMET ExpansionRx Blind Challenge",
+  "emoji": "\ud83d\udd0b",
+  "description": "OpenADMET ExpansionRx Blind Challenge",
+  "input_schema": {},
+  "output_schema": {
+    "\ud83d\udce5 Download current leaderboard as a csv file": {
+      "type": "filepath",
+      "description": "\ud83d\udce5 Download current leaderboard as a csv file",
+      "component": "Downloadbutton"
+    }
+  },
+  "license": "unknown",
+  "hardware": "",
+  "sdk": "docker",
+  "tags": [
+    "docker",
+    "region:us"
+  ],
+  "likes": 56,
+  "last_modified": "2026-04-06 21:52:47+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/get_leaderboard_csv_aux",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "\ud83d\udce5 Download current leaderboard as a csv file",
+          "type": "filepath",
+          "component": "Downloadbutton"
+        }
+      ]
+    },
+    {
+      "name": "/get_leaderboard_csv_aux_1",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "\ud83d\udce5 Download final leaderboard as a csv file",
+          "type": "filepath",
+          "component": "Downloadbutton"
+        }
+      ]
+    },
+    {
+      "name": "/get_leaderboard_csv_aux_2",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "\ud83d\udce5 Download leaderboard as a csv file",
+          "type": "filepath",
+          "component": "Downloadbutton"
+        }
+      ]
+    },
+    {
+      "name": "/get_leaderboard_csv_aux_3",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "\ud83d\udce5 Download leaderboard as a csv file",
+          "type": "filepath",
+          "component": "Downloadbutton"
+        }
+      ]
+    },
+    {
+      "name": "/get_leaderboard_csv_aux_4",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "\ud83d\udce5 Download leaderboard as a csv file",
+          "type": "filepath",
+          "component": "Downloadbutton"
+        }
+      ]
+    },
+    {
+      "name": "/get_leaderboard_csv_aux_5",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "\ud83d\udce5 Download leaderboard as a csv file",
+          "type": "filepath",
+          "component": "Downloadbutton"
+        }
+      ]
+    },
+    {
+      "name": "/get_leaderboard_csv_aux_6",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "\ud83d\udce5 Download leaderboard as a csv file",
+          "type": "filepath",
+          "component": "Downloadbutton"
+        }
+      ]
+    },
+    {
+      "name": "/get_leaderboard_csv_aux_7",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "\ud83d\udce5 Download leaderboard as a csv file",
+          "type": "filepath",
+          "component": "Downloadbutton"
+        }
+      ]
+    },
+    {
+      "name": "/get_leaderboard_csv_aux_8",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "\ud83d\udce5 Download leaderboard as a csv file",
+          "type": "filepath",
+          "component": "Downloadbutton"
+        }
+      ]
+    },
+    {
+      "name": "/get_leaderboard_csv_aux_9",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "\ud83d\udce5 Download leaderboard as a csv file",
+          "type": "filepath",
+          "component": "Downloadbutton"
+        }
+      ]
+    },
+    {
+      "name": "/get_leaderboard_csv_aux_10",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "\ud83d\udce5 Download leaderboard as a csv file",
+          "type": "filepath",
+          "component": "Downloadbutton"
+        }
+      ]
+    },
+    {
+      "name": "/lambda",
+      "parameters": [
+        {
+          "name": "x",
+          "label": "Username",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": []
+    }
+  ],
+  "endpoint": "/get_leaderboard_csv_aux",
+  "_api_verified": true,
+  "estimated_latency_s": 4.89,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 4.89,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:51:30.234508+00:00"
+}

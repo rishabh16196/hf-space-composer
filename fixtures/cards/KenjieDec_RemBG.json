@@ -1,0 +1,139 @@
+{
+  "space_id": "KenjieDec/RemBG",
+  "title": "Rembg",
+  "emoji": "\ud83d\udc40",
+  "description": "Rembg",
+  "input_schema": {
+    "model": {
+      "type": "Literal['u2net', 'u2netp', 'u2net_human_seg', 'u2net_cloth_seg', 'silueta', 'isnet-general-use', 'is",
+      "description": "Model Selection",
+      "required": true,
+      "component": "Dropdown"
+    }
+  },
+  "output_schema": {
+    "Mouse X Coordinate": {
+      "type": "float",
+      "description": "Mouse X Coordinate",
+      "component": "Number"
+    },
+    "Mouse Y Coordinate": {
+      "type": "float",
+      "description": "Mouse Y Coordinate",
+      "component": "Number"
+    },
+    "value_9": {
+      "type": "str",
+      "description": "value_9",
+      "component": "Markdown"
+    }
+  },
+  "license": "unknown",
+  "hardware": "5.6.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 217,
+  "last_modified": "2025-12-17 15:15:23+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/show_coords",
+      "parameters": [
+        {
+          "name": "model",
+          "label": "Model Selection",
+          "type": "Literal['u2net', 'u2netp', 'u2net_human_seg', 'u2net_cloth_seg', 'silueta', 'isnet-general-use', 'isnet-anime', 'sam', 'bria-rmbg', 'birefnet-general', 'birefnet-general-lite', 'birefnet-portrait', 'b",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Mouse X Coordinate",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "label": "Mouse Y Coordinate",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "label": "value_9",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/get_coords",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Mouse X Coordinate",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "label": "Mouse Y Coordinate",
+          "type": "float",
+          "component": "Number"
+        }
+      ]
+    },
+    {
+      "name": "/inference",
+      "parameters": [
+        {
+          "name": "file",
+          "label": "Input Image",
+          "type": "Dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "model",
+          "label": "Model Selection",
+          "type": "Literal['u2net', 'u2netp', 'u2net_human_seg', 'u2net_cloth_seg', 'silueta', 'isnet-general-use', 'isnet-anime', 'sam', 'bria-rmbg', 'birefnet-general', 'birefnet-general-lite', 'birefnet-portrait', 'b",
+          "component": "Dropdown"
+        },
+        {
+          "name": "x",
+          "label": "Mouse X Coordinate",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "y",
+          "label": "Mouse Y Coordinate",
+          "type": "float",
+          "component": "Number"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output Image",
+          "type": "Dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "Output Mask",
+          "type": "Dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/show_coords",
+  "_api_verified": true,
+  "estimated_latency_s": 2.8,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 2.8,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:49:30.753275+00:00"
+}

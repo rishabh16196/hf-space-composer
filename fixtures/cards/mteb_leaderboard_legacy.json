@@ -1,0 +1,4002 @@
+{
+  "space_id": "mteb/leaderboard_legacy",
+  "title": "MTEB Legacy Leaderboard",
+  "emoji": "\ud83e\udd47",
+  "description": "MTEB Legacy Leaderboard",
+  "input_schema": {
+    "parameter_1": {
+      "type": "Dict[Any, Any]",
+      "description": "parameter_1",
+      "required": true,
+      "component": "Json"
+    },
+    "parameter_2": {
+      "type": "Dict[Any, Any]",
+      "description": "parameter_2",
+      "required": true,
+      "component": "Json"
+    }
+  },
+  "output_schema": {
+    "value_1": {
+      "type": "Dict[Any, Any]",
+      "description": "value_1",
+      "component": "Json"
+    },
+    "value_2": {
+      "type": "Dict[Any, Any]",
+      "description": "value_2",
+      "component": "Json"
+    }
+  },
+  "license": "unknown",
+  "hardware": "4.20.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "leaderboard",
+    "region:us",
+    "benchmark"
+  ],
+  "likes": 39,
+  "last_modified": "2026-02-08 18:15:59+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/update_url_task",
+      "parameters": [
+        {
+          "name": "parameter_1",
+          "label": "parameter_1",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        },
+        {
+          "name": "parameter_2",
+          "label": "parameter_2",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_1",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        },
+        {
+          "label": "value_2",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        }
+      ]
+    },
+    {
+      "name": "/update_url_language",
+      "parameters": [
+        {
+          "name": "parameter_1",
+          "label": "parameter_1",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        },
+        {
+          "name": "parameter_2",
+          "label": "parameter_2",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_1",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        },
+        {
+          "label": "value_2",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        }
+      ]
+    },
+    {
+      "name": "/update_url_language_1",
+      "parameters": [
+        {
+          "name": "parameter_1",
+          "label": "parameter_1",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        },
+        {
+          "name": "parameter_2",
+          "label": "parameter_2",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_1",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        },
+        {
+          "label": "value_2",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        }
+      ]
+    },
+    {
+      "name": "/update_url_language_2",
+      "parameters": [
+        {
+          "name": "parameter_1",
+          "label": "parameter_1",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        },
+        {
+          "name": "parameter_2",
+          "label": "parameter_2",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_1",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        },
+        {
+          "label": "value_2",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        }
+      ]
+    },
+    {
+      "name": "/update_url_language_3",
+      "parameters": [
+        {
+          "name": "parameter_1",
+          "label": "parameter_1",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        },
+        {
+          "name": "parameter_2",
+          "label": "parameter_2",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_1",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        },
+        {
+          "label": "value_2",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        }
+      ]
+    },
+    {
+      "name": "/update_url_language_4",
+      "parameters": [
+        {
+          "name": "parameter_1",
+          "label": "parameter_1",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        },
+        {
+          "name": "parameter_2",
+          "label": "parameter_2",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_1",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        },
+        {
+          "label": "value_2",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        }
+      ]
+    },
+    {
+      "name": "/update_url_task_1",
+      "parameters": [
+        {
+          "name": "parameter_1",
+          "label": "parameter_1",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        },
+        {
+          "name": "parameter_2",
+          "label": "parameter_2",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_1",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        },
+        {
+          "label": "value_2",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        }
+      ]
+    },
+    {
+      "name": "/update_url_language_5",
+      "parameters": [
+        {
+          "name": "parameter_1",
+          "label": "parameter_1",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        },
+        {
+          "name": "parameter_2",
+          "label": "parameter_2",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_1",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        },
+        {
+          "label": "value_2",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        }
+      ]
+    },
+    {
+      "name": "/update_url_language_6",
+      "parameters": [
+        {
+          "name": "parameter_1",
+          "label": "parameter_1",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        },
+        {
+          "name": "parameter_2",
+          "label": "parameter_2",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_1",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        },
+        {
+          "label": "value_2",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        }
+      ]
+    },
+    {
+      "name": "/update_url_task_2",
+      "parameters": [
+        {
+          "name": "parameter_1",
+          "label": "parameter_1",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        },
+        {
+          "name": "parameter_2",
+          "label": "parameter_2",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_1",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        },
+        {
+          "label": "value_2",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        }
+      ]
+    },
+    {
+      "name": "/update_url_language_7",
+      "parameters": [
+        {
+          "name": "parameter_1",
+          "label": "parameter_1",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        },
+        {
+          "name": "parameter_2",
+          "label": "parameter_2",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_1",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        },
+        {
+          "label": "value_2",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        }
+      ]
+    },
+    {
+      "name": "/update_url_language_8",
+      "parameters": [
+        {
+          "name": "parameter_1",
+          "label": "parameter_1",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        },
+        {
+          "name": "parameter_2",
+          "label": "parameter_2",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_1",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        },
+        {
+          "label": "value_2",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        }
+      ]
+    },
+    {
+      "name": "/update_url_language_9",
+      "parameters": [
+        {
+          "name": "parameter_1",
+          "label": "parameter_1",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        },
+        {
+          "name": "parameter_2",
+          "label": "parameter_2",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_1",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        },
+        {
+          "label": "value_2",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        }
+      ]
+    },
+    {
+      "name": "/update_url_language_10",
+      "parameters": [
+        {
+          "name": "parameter_1",
+          "label": "parameter_1",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        },
+        {
+          "name": "parameter_2",
+          "label": "parameter_2",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_1",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        },
+        {
+          "label": "value_2",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        }
+      ]
+    },
+    {
+      "name": "/update_url_language_11",
+      "parameters": [
+        {
+          "name": "parameter_1",
+          "label": "parameter_1",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        },
+        {
+          "name": "parameter_2",
+          "label": "parameter_2",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_1",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        },
+        {
+          "label": "value_2",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        }
+      ]
+    },
+    {
+      "name": "/update_url_language_12",
+      "parameters": [
+        {
+          "name": "parameter_1",
+          "label": "parameter_1",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        },
+        {
+          "name": "parameter_2",
+          "label": "parameter_2",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_1",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        },
+        {
+          "label": "value_2",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        }
+      ]
+    },
+    {
+      "name": "/update_url_language_13",
+      "parameters": [
+        {
+          "name": "parameter_1",
+          "label": "parameter_1",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        },
+        {
+          "name": "parameter_2",
+          "label": "parameter_2",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_1",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        },
+        {
+          "label": "value_2",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        }
+      ]
+    },
+    {
+      "name": "/update_url_language_14",
+      "parameters": [
+        {
+          "name": "parameter_1",
+          "label": "parameter_1",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        },
+        {
+          "name": "parameter_2",
+          "label": "parameter_2",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_1",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        },
+        {
+          "label": "value_2",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        }
+      ]
+    },
+    {
+      "name": "/update_url_language_15",
+      "parameters": [
+        {
+          "name": "parameter_1",
+          "label": "parameter_1",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        },
+        {
+          "name": "parameter_2",
+          "label": "parameter_2",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_1",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        },
+        {
+          "label": "value_2",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        }
+      ]
+    },
+    {
+      "name": "/update_url_language_16",
+      "parameters": [
+        {
+          "name": "parameter_1",
+          "label": "parameter_1",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        },
+        {
+          "name": "parameter_2",
+          "label": "parameter_2",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_1",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        },
+        {
+          "label": "value_2",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        }
+      ]
+    },
+    {
+      "name": "/update_url_task_3",
+      "parameters": [
+        {
+          "name": "parameter_1",
+          "label": "parameter_1",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        },
+        {
+          "name": "parameter_2",
+          "label": "parameter_2",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_1",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        },
+        {
+          "label": "value_2",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        }
+      ]
+    },
+    {
+      "name": "/update_url_language_17",
+      "parameters": [
+        {
+          "name": "parameter_1",
+          "label": "parameter_1",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        },
+        {
+          "name": "parameter_2",
+          "label": "parameter_2",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_1",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        },
+        {
+          "label": "value_2",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        }
+      ]
+    },
+    {
+      "name": "/update_url_language_18",
+      "parameters": [
+        {
+          "name": "parameter_1",
+          "label": "parameter_1",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        },
+        {
+          "name": "parameter_2",
+          "label": "parameter_2",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_1",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        },
+        {
+          "label": "value_2",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        }
+      ]
+    },
+    {
+      "name": "/update_url_language_19",
+      "parameters": [
+        {
+          "name": "parameter_1",
+          "label": "parameter_1",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        },
+        {
+          "name": "parameter_2",
+          "label": "parameter_2",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_1",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        },
+        {
+          "label": "value_2",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        }
+      ]
+    },
+    {
+      "name": "/update_url_language_20",
+      "parameters": [
+        {
+          "name": "parameter_1",
+          "label": "parameter_1",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        },
+        {
+          "name": "parameter_2",
+          "label": "parameter_2",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_1",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        },
+        {
+          "label": "value_2",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        }
+      ]
+    },
+    {
+      "name": "/update_url_language_21",
+      "parameters": [
+        {
+          "name": "parameter_1",
+          "label": "parameter_1",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        },
+        {
+          "name": "parameter_2",
+          "label": "parameter_2",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_1",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        },
+        {
+          "label": "value_2",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        }
+      ]
+    },
+    {
+      "name": "/update_url_language_22",
+      "parameters": [
+        {
+          "name": "parameter_1",
+          "label": "parameter_1",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        },
+        {
+          "name": "parameter_2",
+          "label": "parameter_2",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_1",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        },
+        {
+          "label": "value_2",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        }
+      ]
+    },
+    {
+      "name": "/update_url_task_4",
+      "parameters": [
+        {
+          "name": "parameter_1",
+          "label": "parameter_1",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        },
+        {
+          "name": "parameter_2",
+          "label": "parameter_2",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_1",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        },
+        {
+          "label": "value_2",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        }
+      ]
+    },
+    {
+      "name": "/update_url_language_23",
+      "parameters": [
+        {
+          "name": "parameter_1",
+          "label": "parameter_1",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        },
+        {
+          "name": "parameter_2",
+          "label": "parameter_2",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_1",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        },
+        {
+          "label": "value_2",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        }
+      ]
+    },
+    {
+      "name": "/update_url_language_24",
+      "parameters": [
+        {
+          "name": "parameter_1",
+          "label": "parameter_1",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        },
+        {
+          "name": "parameter_2",
+          "label": "parameter_2",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_1",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        },
+        {
+          "label": "value_2",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        }
+      ]
+    },
+    {
+      "name": "/update_url_language_25",
+      "parameters": [
+        {
+          "name": "parameter_1",
+          "label": "parameter_1",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        },
+        {
+          "name": "parameter_2",
+          "label": "parameter_2",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_1",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        },
+        {
+          "label": "value_2",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        }
+      ]
+    },
+    {
+      "name": "/update_url_language_26",
+      "parameters": [
+        {
+          "name": "parameter_1",
+          "label": "parameter_1",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        },
+        {
+          "name": "parameter_2",
+          "label": "parameter_2",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_1",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        },
+        {
+          "label": "value_2",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        }
+      ]
+    },
+    {
+      "name": "/update_url_language_27",
+      "parameters": [
+        {
+          "name": "parameter_1",
+          "label": "parameter_1",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        },
+        {
+          "name": "parameter_2",
+          "label": "parameter_2",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_1",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        },
+        {
+          "label": "value_2",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        }
+      ]
+    },
+    {
+      "name": "/update_url_language_28",
+      "parameters": [
+        {
+          "name": "parameter_1",
+          "label": "parameter_1",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        },
+        {
+          "name": "parameter_2",
+          "label": "parameter_2",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_1",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        },
+        {
+          "label": "value_2",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        }
+      ]
+    },
+    {
+      "name": "/update_url_task_5",
+      "parameters": [
+        {
+          "name": "parameter_1",
+          "label": "parameter_1",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        },
+        {
+          "name": "parameter_2",
+          "label": "parameter_2",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_1",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        },
+        {
+          "label": "value_2",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        }
+      ]
+    },
+    {
+      "name": "/update_url_language_29",
+      "parameters": [
+        {
+          "name": "parameter_1",
+          "label": "parameter_1",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        },
+        {
+          "name": "parameter_2",
+          "label": "parameter_2",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_1",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        },
+        {
+          "label": "value_2",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        }
+      ]
+    },
+    {
+      "name": "/update_url_language_30",
+      "parameters": [
+        {
+          "name": "parameter_1",
+          "label": "parameter_1",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        },
+        {
+          "name": "parameter_2",
+          "label": "parameter_2",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_1",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        },
+        {
+          "label": "value_2",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        }
+      ]
+    },
+    {
+      "name": "/update_url_language_31",
+      "parameters": [
+        {
+          "name": "parameter_1",
+          "label": "parameter_1",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        },
+        {
+          "name": "parameter_2",
+          "label": "parameter_2",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_1",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        },
+        {
+          "label": "value_2",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        }
+      ]
+    },
+    {
+      "name": "/update_url_language_32",
+      "parameters": [
+        {
+          "name": "parameter_1",
+          "label": "parameter_1",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        },
+        {
+          "name": "parameter_2",
+          "label": "parameter_2",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_1",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        },
+        {
+          "label": "value_2",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        }
+      ]
+    },
+    {
+      "name": "/update_url_language_33",
+      "parameters": [
+        {
+          "name": "parameter_1",
+          "label": "parameter_1",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        },
+        {
+          "name": "parameter_2",
+          "label": "parameter_2",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_1",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        },
+        {
+          "label": "value_2",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        }
+      ]
+    },
+    {
+      "name": "/update_url_task_6",
+      "parameters": [
+        {
+          "name": "parameter_1",
+          "label": "parameter_1",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        },
+        {
+          "name": "parameter_2",
+          "label": "parameter_2",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_1",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        },
+        {
+          "label": "value_2",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        }
+      ]
+    },
+    {
+      "name": "/update_url_language_34",
+      "parameters": [
+        {
+          "name": "parameter_1",
+          "label": "parameter_1",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        },
+        {
+          "name": "parameter_2",
+          "label": "parameter_2",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_1",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        },
+        {
+          "label": "value_2",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        }
+      ]
+    },
+    {
+      "name": "/update_url_language_35",
+      "parameters": [
+        {
+          "name": "parameter_1",
+          "label": "parameter_1",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        },
+        {
+          "name": "parameter_2",
+          "label": "parameter_2",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_1",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        },
+        {
+          "label": "value_2",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        }
+      ]
+    },
+    {
+      "name": "/update_url_language_36",
+      "parameters": [
+        {
+          "name": "parameter_1",
+          "label": "parameter_1",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        },
+        {
+          "name": "parameter_2",
+          "label": "parameter_2",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_1",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        },
+        {
+          "label": "value_2",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        }
+      ]
+    },
+    {
+      "name": "/update_url_language_37",
+      "parameters": [
+        {
+          "name": "parameter_1",
+          "label": "parameter_1",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        },
+        {
+          "name": "parameter_2",
+          "label": "parameter_2",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_1",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        },
+        {
+          "label": "value_2",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        }
+      ]
+    },
+    {
+      "name": "/update_url_language_38",
+      "parameters": [
+        {
+          "name": "parameter_1",
+          "label": "parameter_1",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        },
+        {
+          "name": "parameter_2",
+          "label": "parameter_2",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_1",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        },
+        {
+          "label": "value_2",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        }
+      ]
+    },
+    {
+      "name": "/update_url_language_39",
+      "parameters": [
+        {
+          "name": "parameter_1",
+          "label": "parameter_1",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        },
+        {
+          "name": "parameter_2",
+          "label": "parameter_2",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_1",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        },
+        {
+          "label": "value_2",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        }
+      ]
+    },
+    {
+      "name": "/update_url_language_40",
+      "parameters": [
+        {
+          "name": "parameter_1",
+          "label": "parameter_1",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        },
+        {
+          "name": "parameter_2",
+          "label": "parameter_2",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_1",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        },
+        {
+          "label": "value_2",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        }
+      ]
+    },
+    {
+      "name": "/update_url_language_41",
+      "parameters": [
+        {
+          "name": "parameter_1",
+          "label": "parameter_1",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        },
+        {
+          "name": "parameter_2",
+          "label": "parameter_2",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_1",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        },
+        {
+          "label": "value_2",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        }
+      ]
+    },
+    {
+      "name": "/update_url_language_42",
+      "parameters": [
+        {
+          "name": "parameter_1",
+          "label": "parameter_1",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        },
+        {
+          "name": "parameter_2",
+          "label": "parameter_2",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_1",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        },
+        {
+          "label": "value_2",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        }
+      ]
+    },
+    {
+      "name": "/update_url_language_43",
+      "parameters": [
+        {
+          "name": "parameter_1",
+          "label": "parameter_1",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        },
+        {
+          "name": "parameter_2",
+          "label": "parameter_2",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_1",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        },
+        {
+          "label": "value_2",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        }
+      ]
+    },
+    {
+      "name": "/update_url_language_44",
+      "parameters": [
+        {
+          "name": "parameter_1",
+          "label": "parameter_1",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        },
+        {
+          "name": "parameter_2",
+          "label": "parameter_2",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_1",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        },
+        {
+          "label": "value_2",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        }
+      ]
+    },
+    {
+      "name": "/update_url_language_45",
+      "parameters": [
+        {
+          "name": "parameter_1",
+          "label": "parameter_1",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        },
+        {
+          "name": "parameter_2",
+          "label": "parameter_2",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_1",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        },
+        {
+          "label": "value_2",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        }
+      ]
+    },
+    {
+      "name": "/update_url_task_7",
+      "parameters": [
+        {
+          "name": "parameter_1",
+          "label": "parameter_1",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        },
+        {
+          "name": "parameter_2",
+          "label": "parameter_2",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_1",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        },
+        {
+          "label": "value_2",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        }
+      ]
+    },
+    {
+      "name": "/update_url_language_46",
+      "parameters": [
+        {
+          "name": "parameter_1",
+          "label": "parameter_1",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        },
+        {
+          "name": "parameter_2",
+          "label": "parameter_2",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_1",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        },
+        {
+          "label": "value_2",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        }
+      ]
+    },
+    {
+      "name": "/update_url_language_47",
+      "parameters": [
+        {
+          "name": "parameter_1",
+          "label": "parameter_1",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        },
+        {
+          "name": "parameter_2",
+          "label": "parameter_2",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_1",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        },
+        {
+          "label": "value_2",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        }
+      ]
+    },
+    {
+      "name": "/update_url_language_48",
+      "parameters": [
+        {
+          "name": "parameter_1",
+          "label": "parameter_1",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        },
+        {
+          "name": "parameter_2",
+          "label": "parameter_2",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_1",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        },
+        {
+          "label": "value_2",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        }
+      ]
+    },
+    {
+      "name": "/update_url_language_49",
+      "parameters": [
+        {
+          "name": "parameter_1",
+          "label": "parameter_1",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        },
+        {
+          "name": "parameter_2",
+          "label": "parameter_2",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_1",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        },
+        {
+          "label": "value_2",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        }
+      ]
+    },
+    {
+      "name": "/update_url_language_50",
+      "parameters": [
+        {
+          "name": "parameter_1",
+          "label": "parameter_1",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        },
+        {
+          "name": "parameter_2",
+          "label": "parameter_2",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_1",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        },
+        {
+          "label": "value_2",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        }
+      ]
+    },
+    {
+      "name": "/update_url_language_51",
+      "parameters": [
+        {
+          "name": "parameter_1",
+          "label": "parameter_1",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        },
+        {
+          "name": "parameter_2",
+          "label": "parameter_2",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_1",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        },
+        {
+          "label": "value_2",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        }
+      ]
+    },
+    {
+      "name": "/update_url_language_52",
+      "parameters": [
+        {
+          "name": "parameter_1",
+          "label": "parameter_1",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        },
+        {
+          "name": "parameter_2",
+          "label": "parameter_2",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_1",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        },
+        {
+          "label": "value_2",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        }
+      ]
+    },
+    {
+      "name": "/update_url_task_8",
+      "parameters": [
+        {
+          "name": "parameter_1",
+          "label": "parameter_1",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        },
+        {
+          "name": "parameter_2",
+          "label": "parameter_2",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_1",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        },
+        {
+          "label": "value_2",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        }
+      ]
+    },
+    {
+      "name": "/update_url_language_53",
+      "parameters": [
+        {
+          "name": "parameter_1",
+          "label": "parameter_1",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        },
+        {
+          "name": "parameter_2",
+          "label": "parameter_2",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_1",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        },
+        {
+          "label": "value_2",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        }
+      ]
+    },
+    {
+      "name": "/update_url_language_54",
+      "parameters": [
+        {
+          "name": "parameter_1",
+          "label": "parameter_1",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        },
+        {
+          "name": "parameter_2",
+          "label": "parameter_2",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_1",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        },
+        {
+          "label": "value_2",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        }
+      ]
+    },
+    {
+      "name": "/update_url_task_9",
+      "parameters": [
+        {
+          "name": "parameter_1",
+          "label": "parameter_1",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        },
+        {
+          "name": "parameter_2",
+          "label": "parameter_2",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_1",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        },
+        {
+          "label": "value_2",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        }
+      ]
+    },
+    {
+      "name": "/update_url_language_55",
+      "parameters": [
+        {
+          "name": "parameter_1",
+          "label": "parameter_1",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        },
+        {
+          "name": "parameter_2",
+          "label": "parameter_2",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_1",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        },
+        {
+          "label": "value_2",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        }
+      ]
+    },
+    {
+      "name": "/update_url_task_10",
+      "parameters": [
+        {
+          "name": "parameter_1",
+          "label": "parameter_1",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        },
+        {
+          "name": "parameter_2",
+          "label": "parameter_2",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_1",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        },
+        {
+          "label": "value_2",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        }
+      ]
+    },
+    {
+      "name": "/update_url_language_56",
+      "parameters": [
+        {
+          "name": "parameter_1",
+          "label": "parameter_1",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        },
+        {
+          "name": "parameter_2",
+          "label": "parameter_2",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_1",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        },
+        {
+          "label": "value_2",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        }
+      ]
+    },
+    {
+      "name": "/set_tabs_on_load",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_1",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        },
+        {
+          "label": "value_2",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        }
+      ]
+    },
+    {
+      "name": "/filter_data",
+      "parameters": [
+        {
+          "name": "Search Bar (separate multiple queries with `;`)",
+          "label": "Search Bar (separate multiple queries with `;`)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "Model types",
+          "label": "Model types",
+          "type": "List[Literal['Open', 'Proprietary', 'Sentence Transformers', 'Cross-Encoders', 'Bi-Encoders', 'Uses Instructions', 'No Instructions']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "Model sizes (in number of parameters)",
+          "label": "Model sizes (in number of parameters)",
+          "type": "List[Literal['<100M', '100M to 250M', '250M to 500M', '500M to 1B', '>1B']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "parameter_17",
+          "label": "parameter_17",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "name": "parameter_23",
+          "label": "parameter_23",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "name": "parameter_29",
+          "label": "parameter_29",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "name": "parameter_35",
+          "label": "parameter_35",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "name": "parameter_41",
+          "label": "parameter_41",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "name": "parameter_50",
+          "label": "parameter_50",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "name": "parameter_56",
+          "label": "parameter_56",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "name": "parameter_65",
+          "label": "parameter_65",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "name": "parameter_71",
+          "label": "parameter_71",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "name": "parameter_77",
+          "label": "parameter_77",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "name": "parameter_83",
+          "label": "parameter_83",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "name": "parameter_89",
+          "label": "parameter_89",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "name": "parameter_95",
+          "label": "parameter_95",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "name": "parameter_101",
+          "label": "parameter_101",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "name": "parameter_107",
+          "label": "parameter_107",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "name": "parameter_113",
+          "label": "parameter_113",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "name": "parameter_119",
+          "label": "parameter_119",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "name": "parameter_128",
+          "label": "parameter_128",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "name": "parameter_134",
+          "label": "parameter_134",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "name": "parameter_140",
+          "label": "parameter_140",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "name": "parameter_146",
+          "label": "parameter_146",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "name": "parameter_152",
+          "label": "parameter_152",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "name": "parameter_158",
+          "label": "parameter_158",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "name": "parameter_167",
+          "label": "parameter_167",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "name": "parameter_173",
+          "label": "parameter_173",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "name": "parameter_179",
+          "label": "parameter_179",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "name": "parameter_185",
+          "label": "parameter_185",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "name": "parameter_191",
+          "label": "parameter_191",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "name": "parameter_197",
+          "label": "parameter_197",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "name": "parameter_206",
+          "label": "parameter_206",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "name": "parameter_212",
+          "label": "parameter_212",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "name": "parameter_218",
+          "label": "parameter_218",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "name": "parameter_224",
+          "label": "parameter_224",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "name": "parameter_230",
+          "label": "parameter_230",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "name": "parameter_239",
+          "label": "parameter_239",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "name": "parameter_245",
+          "label": "parameter_245",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "name": "parameter_251",
+          "label": "parameter_251",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "name": "parameter_257",
+          "label": "parameter_257",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "name": "parameter_263",
+          "label": "parameter_263",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "name": "parameter_269",
+          "label": "parameter_269",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "name": "parameter_275",
+          "label": "parameter_275",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "name": "parameter_281",
+          "label": "parameter_281",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "name": "parameter_287",
+          "label": "parameter_287",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "name": "parameter_293",
+          "label": "parameter_293",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "name": "parameter_299",
+          "label": "parameter_299",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "name": "parameter_305",
+          "label": "parameter_305",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "name": "parameter_314",
+          "label": "parameter_314",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "name": "parameter_320",
+          "label": "parameter_320",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "name": "parameter_326",
+          "label": "parameter_326",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "name": "parameter_332",
+          "label": "parameter_332",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "name": "parameter_338",
+          "label": "parameter_338",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "name": "parameter_344",
+          "label": "parameter_344",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "name": "parameter_350",
+          "label": "parameter_350",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "name": "parameter_359",
+          "label": "parameter_359",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "name": "parameter_365",
+          "label": "parameter_365",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "name": "parameter_374",
+          "label": "parameter_374",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "name": "parameter_383",
+          "label": "parameter_383",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_16",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_22",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_28",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_34",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_40",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_49",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_55",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_64",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_70",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_76",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_82",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_88",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_94",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_100",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_106",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_112",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_118",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_127",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_133",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_139",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_145",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_151",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_157",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_166",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_172",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_178",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_184",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_190",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_196",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_205",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_211",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_217",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_223",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_229",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_238",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_244",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_250",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_256",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_262",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_268",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_274",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_280",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_286",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_292",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_298",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_304",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_313",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_319",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_325",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_331",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_337",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_343",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_349",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_358",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_364",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_373",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_382",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/filter_data_1",
+      "parameters": [
+        {
+          "name": "Search Bar (separate multiple queries with `;`)",
+          "label": "Search Bar (separate multiple queries with `;`)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "Model types",
+          "label": "Model types",
+          "type": "List[Literal['Open', 'Proprietary', 'Sentence Transformers', 'Cross-Encoders', 'Bi-Encoders', 'Uses Instructions', 'No Instructions']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "Model sizes (in number of parameters)",
+          "label": "Model sizes (in number of parameters)",
+          "type": "List[Literal['<100M', '100M to 250M', '250M to 500M', '500M to 1B', '>1B']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "parameter_17",
+          "label": "parameter_17",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "name": "parameter_23",
+          "label": "parameter_23",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "name": "parameter_29",
+          "label": "parameter_29",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "name": "parameter_35",
+          "label": "parameter_35",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "name": "parameter_41",
+          "label": "parameter_41",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "name": "parameter_50",
+          "label": "parameter_50",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "name": "parameter_56",
+          "label": "parameter_56",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "name": "parameter_65",
+          "label": "parameter_65",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "name": "parameter_71",
+          "label": "parameter_71",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "name": "parameter_77",
+          "label": "parameter_77",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "name": "parameter_83",
+          "label": "parameter_83",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "name": "parameter_89",
+          "label": "parameter_89",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "name": "parameter_95",
+          "label": "parameter_95",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "name": "parameter_101",
+          "label": "parameter_101",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "name": "parameter_107",
+          "label": "parameter_107",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "name": "parameter_113",
+          "label": "parameter_113",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "name": "parameter_119",
+          "label": "parameter_119",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "name": "parameter_128",
+          "label": "parameter_128",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "name": "parameter_134",
+          "label": "parameter_134",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "name": "parameter_140",
+          "label": "parameter_140",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "name": "parameter_146",
+          "label": "parameter_146",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "name": "parameter_152",
+          "label": "parameter_152",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "name": "parameter_158",
+          "label": "parameter_158",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "name": "parameter_167",
+          "label": "parameter_167",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "name": "parameter_173",
+          "label": "parameter_173",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "name": "parameter_179",
+          "label": "parameter_179",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "name": "parameter_185",
+          "label": "parameter_185",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "name": "parameter_191",
+          "label": "parameter_191",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "name": "parameter_197",
+          "label": "parameter_197",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "name": "parameter_206",
+          "label": "parameter_206",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "name": "parameter_212",
+          "label": "parameter_212",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "name": "parameter_218",
+          "label": "parameter_218",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "name": "parameter_224",
+          "label": "parameter_224",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "name": "parameter_230",
+          "label": "parameter_230",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "name": "parameter_239",
+          "label": "parameter_239",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "name": "parameter_245",
+          "label": "parameter_245",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "name": "parameter_251",
+          "label": "parameter_251",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "name": "parameter_257",
+          "label": "parameter_257",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "name": "parameter_263",
+          "label": "parameter_263",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "name": "parameter_269",
+          "label": "parameter_269",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "name": "parameter_275",
+          "label": "parameter_275",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "name": "parameter_281",
+          "label": "parameter_281",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "name": "parameter_287",
+          "label": "parameter_287",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "name": "parameter_293",
+          "label": "parameter_293",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "name": "parameter_299",
+          "label": "parameter_299",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "name": "parameter_305",
+          "label": "parameter_305",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "name": "parameter_314",
+          "label": "parameter_314",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "name": "parameter_320",
+          "label": "parameter_320",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "name": "parameter_326",
+          "label": "parameter_326",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "name": "parameter_332",
+          "label": "parameter_332",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "name": "parameter_338",
+          "label": "parameter_338",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "name": "parameter_344",
+          "label": "parameter_344",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "name": "parameter_350",
+          "label": "parameter_350",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "name": "parameter_359",
+          "label": "parameter_359",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "name": "parameter_365",
+          "label": "parameter_365",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "name": "parameter_374",
+          "label": "parameter_374",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "name": "parameter_383",
+          "label": "parameter_383",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_16",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_22",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_28",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_34",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_40",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_49",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_55",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_64",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_70",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_76",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_82",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_88",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_94",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_100",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_106",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_112",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_118",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_127",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_133",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_139",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_145",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_151",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_157",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_166",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_172",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_178",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_184",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_190",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_196",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_205",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_211",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_217",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_223",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_229",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_238",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_244",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_250",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_256",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_262",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_268",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_274",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_280",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_286",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_292",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_298",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_304",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_313",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_319",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_325",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_331",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_337",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_343",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_349",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_358",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_364",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_373",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_382",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/filter_data_2",
+      "parameters": [
+        {
+          "name": "Search Bar (separate multiple queries with `;`)",
+          "label": "Search Bar (separate multiple queries with `;`)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "Model types",
+          "label": "Model types",
+          "type": "List[Literal['Open', 'Proprietary', 'Sentence Transformers', 'Cross-Encoders', 'Bi-Encoders', 'Uses Instructions', 'No Instructions']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "Model sizes (in number of parameters)",
+          "label": "Model sizes (in number of parameters)",
+          "type": "List[Literal['<100M', '100M to 250M', '250M to 500M', '500M to 1B', '>1B']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "parameter_17",
+          "label": "parameter_17",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "name": "parameter_23",
+          "label": "parameter_23",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "name": "parameter_29",
+          "label": "parameter_29",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "name": "parameter_35",
+          "label": "parameter_35",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "name": "parameter_41",
+          "label": "parameter_41",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "name": "parameter_50",
+          "label": "parameter_50",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "name": "parameter_56",
+          "label": "parameter_56",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "name": "parameter_65",
+          "label": "parameter_65",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "name": "parameter_71",
+          "label": "parameter_71",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "name": "parameter_77",
+          "label": "parameter_77",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "name": "parameter_83",
+          "label": "parameter_83",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "name": "parameter_89",
+          "label": "parameter_89",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "name": "parameter_95",
+          "label": "parameter_95",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "name": "parameter_101",
+          "label": "parameter_101",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "name": "parameter_107",
+          "label": "parameter_107",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "name": "parameter_113",
+          "label": "parameter_113",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "name": "parameter_119",
+          "label": "parameter_119",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "name": "parameter_128",
+          "label": "parameter_128",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "name": "parameter_134",
+          "label": "parameter_134",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "name": "parameter_140",
+          "label": "parameter_140",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "name": "parameter_146",
+          "label": "parameter_146",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "name": "parameter_152",
+          "label": "parameter_152",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "name": "parameter_158",
+          "label": "parameter_158",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "name": "parameter_167",
+          "label": "parameter_167",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "name": "parameter_173",
+          "label": "parameter_173",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "name": "parameter_179",
+          "label": "parameter_179",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "name": "parameter_185",
+          "label": "parameter_185",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "name": "parameter_191",
+          "label": "parameter_191",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "name": "parameter_197",
+          "label": "parameter_197",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "name": "parameter_206",
+          "label": "parameter_206",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "name": "parameter_212",
+          "label": "parameter_212",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "name": "parameter_218",
+          "label": "parameter_218",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "name": "parameter_224",
+          "label": "parameter_224",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "name": "parameter_230",
+          "label": "parameter_230",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "name": "parameter_239",
+          "label": "parameter_239",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "name": "parameter_245",
+          "label": "parameter_245",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "name": "parameter_251",
+          "label": "parameter_251",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "name": "parameter_257",
+          "label": "parameter_257",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "name": "parameter_263",
+          "label": "parameter_263",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "name": "parameter_269",
+          "label": "parameter_269",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "name": "parameter_275",
+          "label": "parameter_275",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "name": "parameter_281",
+          "label": "parameter_281",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "name": "parameter_287",
+          "label": "parameter_287",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "name": "parameter_293",
+          "label": "parameter_293",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "name": "parameter_299",
+          "label": "parameter_299",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "name": "parameter_305",
+          "label": "parameter_305",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "name": "parameter_314",
+          "label": "parameter_314",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "name": "parameter_320",
+          "label": "parameter_320",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "name": "parameter_326",
+          "label": "parameter_326",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "name": "parameter_332",
+          "label": "parameter_332",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "name": "parameter_338",
+          "label": "parameter_338",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "name": "parameter_344",
+          "label": "parameter_344",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "name": "parameter_350",
+          "label": "parameter_350",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "name": "parameter_359",
+          "label": "parameter_359",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "name": "parameter_365",
+          "label": "parameter_365",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "name": "parameter_374",
+          "label": "parameter_374",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "name": "parameter_383",
+          "label": "parameter_383",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_16",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_22",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_28",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_34",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_40",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_49",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_55",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_64",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_70",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_76",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_82",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_88",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_94",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_100",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_106",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_112",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_118",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_127",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_133",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_139",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_145",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_151",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_157",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_166",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_172",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_178",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_184",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_190",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_196",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_205",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_211",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_217",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_223",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_229",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_238",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_244",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_250",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_256",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_262",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_268",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_274",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_280",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_286",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_292",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_298",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_304",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_313",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_319",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_325",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_331",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_337",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_343",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_349",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_358",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_364",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_373",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_382",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/update_url_task",
+  "_api_verified": true,
+  "estimated_latency_s": 6.71,
+  "speed_tier": "medium",
+  "_latency_source": "measured",
+  "_tags_enriched": true,
+  "measured_latency_s": 6.71,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:51:21.555376+00:00"
+}

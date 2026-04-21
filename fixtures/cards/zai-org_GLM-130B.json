@@ -1,0 +1,190 @@
+{
+  "space_id": "zai-org/GLM-130B",
+  "title": "GLM 130B",
+  "emoji": "\ud83d\udcda",
+  "description": "GLM 130B",
+  "input_schema": {
+    "text": {
+      "type": "str",
+      "description": "Input",
+      "required": true,
+      "component": "Textbox"
+    },
+    "seed": {
+      "type": "float",
+      "description": "Seed",
+      "required": true,
+      "component": "Slider"
+    },
+    "out_seq_length": {
+      "type": "float",
+      "description": "Output Sequence Length",
+      "required": true,
+      "component": "Slider"
+    },
+    "min_gen_length": {
+      "type": "float",
+      "description": "Min Generate Length",
+      "required": true,
+      "component": "Slider"
+    },
+    "sampling_strategy": {
+      "type": "Literal['BeamSearchStrategy', 'BaseStrategy']",
+      "description": "Search Strategy",
+      "required": true,
+      "component": "Radio"
+    },
+    "num_beams": {
+      "type": "float",
+      "description": "Number of Beams",
+      "required": true,
+      "component": "Slider"
+    },
+    "length_penalty": {
+      "type": "float",
+      "description": "Length Penalty",
+      "required": true,
+      "component": "Slider"
+    },
+    "no_repeat_ngram_size": {
+      "type": "float",
+      "description": "No Repeat Ngram Size",
+      "required": true,
+      "component": "Slider"
+    },
+    "temperature": {
+      "type": "float",
+      "description": "Temperature",
+      "required": true,
+      "component": "Slider"
+    },
+    "topk": {
+      "type": "float",
+      "description": "Top K",
+      "required": true,
+      "component": "Slider"
+    },
+    "topp": {
+      "type": "float",
+      "description": "Top P",
+      "required": true,
+      "component": "Slider"
+    }
+  },
+  "output_schema": {
+    "Output": {
+      "type": "str",
+      "description": "Output",
+      "component": "Textbox"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "5.29.1",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 535,
+  "last_modified": "2026-03-27 09:45:20+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/predict",
+      "parameters": [
+        {
+          "name": "text",
+          "label": "Input",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "seed",
+          "label": "Seed",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "out_seq_length",
+          "label": "Output Sequence Length",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "min_gen_length",
+          "label": "Min Generate Length",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "sampling_strategy",
+          "label": "Search Strategy",
+          "type": "Literal['BeamSearchStrategy', 'BaseStrategy']",
+          "component": "Radio"
+        },
+        {
+          "name": "num_beams",
+          "label": "Number of Beams",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "length_penalty",
+          "label": "Length Penalty",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "no_repeat_ngram_size",
+          "label": "No Repeat Ngram Size",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "temperature",
+          "label": "Temperature",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "topk",
+          "label": "Top K",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "topp",
+          "label": "Top P",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/lambda",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Input",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/predict",
+  "_api_verified": true
+}

@@ -1,0 +1,220 @@
+{
+  "space_id": "finegrain/finegrain-image-enhancer",
+  "title": "Finegrain Image Enhancer",
+  "emoji": "\ud83d\uddbc\ufe0f\ud83e\ude84",
+  "description": "Clarity AI Upscaler Reproduction",
+  "input_schema": {
+    "input_image": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "Input Image",
+      "required": true,
+      "component": "Image"
+    },
+    "prompt": {
+      "type": "str",
+      "description": "Prompt",
+      "required": true,
+      "component": "Textbox"
+    },
+    "negative_prompt": {
+      "type": "str",
+      "description": "Negative Prompt",
+      "required": true,
+      "component": "Textbox"
+    },
+    "seed": {
+      "type": "float",
+      "description": "Seed",
+      "required": true,
+      "component": "Slider"
+    },
+    "upscale_factor": {
+      "type": "float",
+      "description": "Upscale Factor",
+      "required": true,
+      "component": "Slider"
+    },
+    "controlnet_scale": {
+      "type": "float",
+      "description": "ControlNet Scale",
+      "required": true,
+      "component": "Slider"
+    },
+    "controlnet_decay": {
+      "type": "float",
+      "description": "ControlNet Scale Decay",
+      "required": true,
+      "component": "Slider"
+    },
+    "condition_scale": {
+      "type": "float",
+      "description": "Condition Scale",
+      "required": true,
+      "component": "Slider"
+    },
+    "tile_width": {
+      "type": "float",
+      "description": "Latent Tile Width",
+      "required": true,
+      "component": "Slider"
+    },
+    "tile_height": {
+      "type": "float",
+      "description": "Latent Tile Height",
+      "required": true,
+      "component": "Slider"
+    },
+    "denoise_strength": {
+      "type": "float",
+      "description": "Denoise Strength",
+      "required": true,
+      "component": "Slider"
+    },
+    "num_inference_steps": {
+      "type": "float",
+      "description": "Number of Inference Steps",
+      "required": true,
+      "component": "Slider"
+    },
+    "solver": {
+      "type": "Literal['DDIM', 'DPMSolver']",
+      "description": "Solver",
+      "required": true,
+      "component": "Radio"
+    }
+  },
+  "output_schema": {
+    "Before / After": {
+      "type": "tuple[dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base6",
+      "description": "Before / After",
+      "component": "Imageslider"
+    }
+  },
+  "license": "mit",
+  "hardware": "5.27.1",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "enhancer",
+    "upscaler",
+    "clarity",
+    "refiners",
+    "image-to-image",
+    "stable-diffusion",
+    "juggernaut",
+    "sd1.5",
+    "art",
+    "region:us",
+    "image-generation",
+    "vision"
+  ],
+  "likes": 2098,
+  "last_modified": "2026-01-31 19:12:59+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/process",
+      "parameters": [
+        {
+          "name": "input_image",
+          "label": "Input Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "prompt",
+          "label": "Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "negative_prompt",
+          "label": "Negative Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "seed",
+          "label": "Seed",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "upscale_factor",
+          "label": "Upscale Factor",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "controlnet_scale",
+          "label": "ControlNet Scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "controlnet_decay",
+          "label": "ControlNet Scale Decay",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "condition_scale",
+          "label": "Condition Scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "tile_width",
+          "label": "Latent Tile Width",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "tile_height",
+          "label": "Latent Tile Height",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "denoise_strength",
+          "label": "Denoise Strength",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "num_inference_steps",
+          "label": "Number of Inference Steps",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "solver",
+          "label": "Solver",
+          "type": "Literal['DDIM', 'DPMSolver']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Before / After",
+          "type": "tuple[dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filenam",
+          "component": "Imageslider"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/process",
+  "_api_verified": true,
+  "estimated_latency_s": 3.35,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "_tags_enriched": true,
+  "measured_latency_s": 3.35,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:50:38.140345+00:00",
+  "_inference_attempt_status": "predict_failed",
+  "_inference_attempt_error": "The upstream Gradio app has raised an exception but has not enabled verbose error reporting. To enable, set show_error=True in launch()."
+}

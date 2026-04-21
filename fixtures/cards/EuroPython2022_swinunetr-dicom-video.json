@@ -1,0 +1,35 @@
+{
+  "space_id": "EuroPython2022/swinunetr-dicom-video",
+  "title": "Swinunetr Dicom Video",
+  "emoji": "\ud83d\udcd6\ud83c\udfac",
+  "description": "Swinunetr Dicom Video",
+  "input_schema": {
+    "input": {
+      "type": "string",
+      "description": "Input",
+      "required": true
+    }
+  },
+  "output_schema": {
+    "output": {
+      "type": "string"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "3.0.24",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 5,
+  "last_modified": "2022-07-15 22:38:37+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "error",
+  "_api_error": "(Request ID: Root=1-69e77b91-7d85bda461c5f3220f2fdfe3;90baafdd-026b-4f00-bee2-035e84cb63ec)\n\n429 Too Many Requests: you have reached your 'api' rate limit.\nRetry after 77 seconds (0/2500 requests rema"
+}

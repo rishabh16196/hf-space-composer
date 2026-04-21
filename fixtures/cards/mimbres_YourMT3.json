@@ -1,0 +1,114 @@
+{
+  "space_id": "mimbres/YourMT3",
+  "title": "YourMT3",
+  "emoji": "\ud83c\udfb8",
+  "description": "YourMT3",
+  "input_schema": {
+    "youtube_url": {
+      "type": "str",
+      "description": "YouTube Link URL",
+      "required": true,
+      "component": "Textbox"
+    }
+  },
+  "output_schema": {
+    "value_17": {
+      "type": "str",
+      "description": "value_17",
+      "component": "Html"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "4.39.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 101,
+  "last_modified": "2025-01-31 14:38:17+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/process_audio_yt_temp",
+      "parameters": [
+        {
+          "name": "youtube_url",
+          "label": "YouTube Link URL",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_17",
+          "type": "str",
+          "component": "Html"
+        }
+      ]
+    },
+    {
+      "name": "/play_video",
+      "parameters": [
+        {
+          "name": "youtube_url",
+          "label": "YouTube Link URL",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_10",
+          "type": "str",
+          "component": "Html"
+        }
+      ]
+    },
+    {
+      "name": "/handle_load_event",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/process_audio",
+      "parameters": [
+        {
+          "name": "audio_filepath",
+          "label": "Record Audio",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_27",
+          "type": "str",
+          "component": "Html"
+        }
+      ]
+    },
+    {
+      "name": "/read_to_end",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_20",
+          "type": "str",
+          "component": "Log"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/process_audio_yt_temp",
+  "_api_verified": true,
+  "estimated_latency_s": 3.07,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 3.07,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:51:14.019629+00:00"
+}

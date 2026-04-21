@@ -1,0 +1,31 @@
+{
+  "space_id": "microsoft/trocr-base",
+  "description": "TrOCR \u2014 Transformer-based OCR for printed and handwritten text. Robust on noisy backgrounds.",
+  "input_schema": {
+    "image_url": {
+      "type": "string",
+      "description": "URL to image",
+      "required": true
+    }
+  },
+  "output_schema": {
+    "caption": {
+      "type": "string",
+      "description": "Image caption"
+    }
+  },
+  "license": "bsd-3-clause",
+  "sdk": "gradio",
+  "tags": [
+    "ocr",
+    "image",
+    "text-extraction",
+    "vision"
+  ],
+  "_api_scraped": true,
+  "_api_status": "not_found",
+  "_api_error": "404",
+  "estimated_latency_s": 4.0,
+  "speed_tier": "fast",
+  "_latency_source": "measured"
+}

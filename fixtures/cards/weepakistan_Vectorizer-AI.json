@@ -1,0 +1,204 @@
+{
+  "space_id": "weepakistan/Vectorizer-AI",
+  "title": "Vectorizer AI",
+  "emoji": "\ud83c\udf0d",
+  "description": "Vectorizer AI",
+  "input_schema": {
+    "image": {
+      "type": "filepath",
+      "description": "Upload Image",
+      "required": true,
+      "component": "Image"
+    },
+    "color_mode": {
+      "type": "Literal['Color', 'Binary']",
+      "description": "Color Mode",
+      "required": true,
+      "component": "Radio"
+    },
+    "hierarchical": {
+      "type": "Literal['Stacked', 'Cutout']",
+      "description": "Hierarchical",
+      "required": true,
+      "component": "Radio"
+    },
+    "mode": {
+      "type": "Literal['Spline', 'Polygon', 'None']",
+      "description": "Mode",
+      "required": true,
+      "component": "Radio"
+    },
+    "filter_speckle": {
+      "type": "float",
+      "description": "Filter Speckle",
+      "required": true,
+      "component": "Slider"
+    },
+    "color_precision": {
+      "type": "float",
+      "description": "Color Precision",
+      "required": true,
+      "component": "Slider"
+    },
+    "layer_difference": {
+      "type": "float",
+      "description": "Layer Difference",
+      "required": true,
+      "component": "Slider"
+    },
+    "corner_threshold": {
+      "type": "float",
+      "description": "Corner Threshold",
+      "required": true,
+      "component": "Slider"
+    },
+    "length_threshold": {
+      "type": "float",
+      "description": "Length Threshold",
+      "required": true,
+      "component": "Slider"
+    },
+    "max_iterations": {
+      "type": "float",
+      "description": "Max Iterations",
+      "required": true,
+      "component": "Slider"
+    },
+    "splice_threshold": {
+      "type": "float",
+      "description": "Splice Threshold",
+      "required": true,
+      "component": "Slider"
+    },
+    "path_precision": {
+      "type": "float",
+      "description": "Path Precision",
+      "required": true,
+      "component": "Slider"
+    }
+  },
+  "output_schema": {
+    "SVG Output": {
+      "type": "str",
+      "description": "SVG Output",
+      "component": "Html"
+    },
+    "Download SVG": {
+      "type": "filepath",
+      "description": "Download SVG",
+      "component": "File"
+    }
+  },
+  "license": "unknown",
+  "hardware": "4.37.1",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 134,
+  "last_modified": "2024-09-28 06:26:45+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/predict",
+      "parameters": [
+        {
+          "name": "image",
+          "label": "Upload Image",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "name": "color_mode",
+          "label": "Color Mode",
+          "type": "Literal['Color', 'Binary']",
+          "component": "Radio"
+        },
+        {
+          "name": "hierarchical",
+          "label": "Hierarchical",
+          "type": "Literal['Stacked', 'Cutout']",
+          "component": "Radio"
+        },
+        {
+          "name": "mode",
+          "label": "Mode",
+          "type": "Literal['Spline', 'Polygon', 'None']",
+          "component": "Radio"
+        },
+        {
+          "name": "filter_speckle",
+          "label": "Filter Speckle",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "color_precision",
+          "label": "Color Precision",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "layer_difference",
+          "label": "Layer Difference",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "corner_threshold",
+          "label": "Corner Threshold",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "length_threshold",
+          "label": "Length Threshold",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "max_iterations",
+          "label": "Max Iterations",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "splice_threshold",
+          "label": "Splice Threshold",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "path_precision",
+          "label": "Path Precision",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "SVG Output",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "Download SVG",
+          "type": "filepath",
+          "component": "File"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/predict",
+  "_api_verified": true,
+  "estimated_latency_s": 4.11,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 4.11,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:52:02.305071+00:00"
+}

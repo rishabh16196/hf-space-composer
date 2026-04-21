@@ -1,0 +1,63 @@
+{
+  "space_id": "ed-donner/Career_Conversation",
+  "title": "Career_Conversation",
+  "emoji": "",
+  "description": "Career_Conversation",
+  "input_schema": {
+    "message": {
+      "type": "str",
+      "description": "Message",
+      "required": true,
+      "component": "Textbox"
+    }
+  },
+  "output_schema": {
+    "Response": {
+      "type": "str | float | bool | list | dict",
+      "description": "Response",
+      "component": "Json"
+    }
+  },
+  "license": "unknown",
+  "hardware": "5.22.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 66,
+  "last_modified": "2025-03-30 00:07:08+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/chat",
+      "parameters": [
+        {
+          "name": "message",
+          "label": "Message",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Response",
+          "type": "str | float | bool | list | dict",
+          "component": "Json"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/chat",
+  "_api_verified": true,
+  "estimated_latency_s": 3.42,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "_tags_enriched": true,
+  "measured_latency_s": 3.42,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:50:31.470910+00:00"
+}

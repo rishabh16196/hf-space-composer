@@ -1,0 +1,539 @@
+{
+  "space_id": "r3gm/AICoverGen",
+  "title": "AICoverGen",
+  "emoji": "\ud83d\ude80",
+  "description": "AICoverGen",
+  "input_schema": {
+    "file": {
+      "type": "filepath",
+      "description": "Upload \ud83d\udcc2",
+      "required": true,
+      "component": "Uploadbutton"
+    }
+  },
+  "output_schema": {
+    "Audio file": {
+      "type": "filepath",
+      "description": "Audio file",
+      "component": "File"
+    },
+    "Song input": {
+      "type": "str",
+      "description": "Song input",
+      "component": "Textbox"
+    }
+  },
+  "license": "mit",
+  "hardware": "5.44.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 483,
+  "last_modified": "2025-08-29 03:47:10+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/process_file_upload",
+      "parameters": [
+        {
+          "name": "file",
+          "label": "Upload \ud83d\udcc2",
+          "type": "filepath",
+          "component": "Uploadbutton"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Audio file",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "label": "Song input",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/swap_visibility",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Song input",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Audio file",
+          "type": "filepath",
+          "component": "File"
+        }
+      ]
+    },
+    {
+      "name": "/swap_visibility_1",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Song input",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Audio file",
+          "type": "filepath",
+          "component": "File"
+        }
+      ]
+    },
+    {
+      "name": "/show_hop_slider",
+      "parameters": [
+        {
+          "name": "pitch_detection_algo",
+          "label": "Pitch detection algorithm",
+          "type": "Literal['rmvpe+', 'rmvpe', 'mangio-crepe']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Crepe hop length",
+          "type": "float",
+          "component": "Slider"
+        }
+      ]
+    },
+    {
+      "name": "/update_models_list",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Voice Models",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/song_cover_pipeline",
+      "parameters": [
+        {
+          "name": "song_input",
+          "label": "Audio file",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "name": "voice_model",
+          "label": "Voice Models",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "pitch_change",
+          "label": "Pitch Change (Vocals ONLY)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "keep_files",
+          "label": "Keep intermediate files",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "is_webui",
+          "label": "parameter_64",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "main_gain",
+          "label": "Main Vocals",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "backup_gain",
+          "label": "Backup Vocals",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "inst_gain",
+          "label": "Music",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "index_rate",
+          "label": "Index Rate",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "filter_radius",
+          "label": "Filter radius",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "rms_mix_rate",
+          "label": "RMS mix rate",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "f0_method",
+          "label": "Pitch detection algorithm",
+          "type": "Literal['rmvpe+', 'rmvpe', 'mangio-crepe']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "crepe_hop_length",
+          "label": "Crepe hop length",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "protect",
+          "label": "Protect rate",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "pitch_change_all",
+          "label": "Overall Pitch Change",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "reverb_rm_size",
+          "label": "Room size",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "reverb_wet",
+          "label": "Wetness level",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "reverb_dry",
+          "label": "Dryness level",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "reverb_damping",
+          "label": "Damping level",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "output_format",
+          "label": "Output file type",
+          "type": "Literal['mp3', 'wav']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "extra_denoise",
+          "label": "Denoise",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "steps",
+          "label": "Steps",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "AI Cover",
+          "type": "filepath",
+          "component": "File"
+        }
+      ]
+    },
+    {
+      "name": "/lambda",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Pitch Change (Vocals ONLY)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Main Vocals",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Backup Vocals",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Music",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Index Rate",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Filter radius",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "RMS mix rate",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Protect rate",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Pitch detection algorithm",
+          "type": "Literal['rmvpe+', 'rmvpe', 'mangio-crepe']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Crepe hop length",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Overall Pitch Change",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Room size",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Wetness level",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Dryness level",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Damping level",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Output file type",
+          "type": "Literal['mp3', 'wav']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "AI Cover",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "label": "Denoise",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Steps",
+          "type": "float",
+          "component": "Slider"
+        }
+      ]
+    },
+    {
+      "name": "/download_online_model",
+      "parameters": [
+        {
+          "name": "url",
+          "label": "Download link to model",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "dir_name",
+          "label": "Name your model",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output Message",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/pub_dl_autofill",
+      "parameters": [
+        {
+          "name": "pub_models",
+          "label": "Available Public Models",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Download link to model",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Model name",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/load_public_models",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Available Public Models",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "Show voice models with tags",
+          "type": "list[Literal[]]",
+          "component": "Checkboxgroup"
+        }
+      ]
+    },
+    {
+      "name": "/filter_models",
+      "parameters": [
+        {
+          "name": "tags",
+          "label": "Show voice models with tags",
+          "type": "list[Literal[]]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "query",
+          "label": "Search",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Available Public Models",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/filter_models_1",
+      "parameters": [
+        {
+          "name": "tags",
+          "label": "Show voice models with tags",
+          "type": "list[Literal[]]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "query",
+          "label": "Search",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Available Public Models",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/download_online_model_1",
+      "parameters": [
+        {
+          "name": "url",
+          "label": "Download link to model",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "dir_name",
+          "label": "Model name",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output Message",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/upload_local_model",
+      "parameters": [
+        {
+          "name": "zip_path",
+          "label": "Zip file",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "name": "dir_name",
+          "label": "Model name",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output Message",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/process_file_upload",
+  "_api_verified": true,
+  "estimated_latency_s": 5.42,
+  "speed_tier": "medium",
+  "_latency_source": "measured",
+  "measured_latency_s": 5.42,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:51:41.324224+00:00",
+  "_inference_attempt_status": "predict_failed",
+  "_inference_attempt_error": "Failed to download file. Status code: 404"
+}

@@ -1,0 +1,407 @@
+{
+  "space_id": "multimodalart/qwen-image-multiple-angles-3d-camera",
+  "title": "Qwen Image Multiple Angles 3D Camera",
+  "emoji": "\ud83c\udfa5",
+  "description": "Qwen Image Multiple Angles 3D Camera",
+  "input_schema": {
+    "azimuth": {
+      "type": "float",
+      "description": "Azimuth (Horizontal Rotation)",
+      "required": true,
+      "component": "Slider"
+    },
+    "elevation": {
+      "type": "float",
+      "description": "Elevation (Vertical Angle)",
+      "required": true,
+      "component": "Slider"
+    },
+    "distance": {
+      "type": "float",
+      "description": "Distance",
+      "required": true,
+      "component": "Slider"
+    }
+  },
+  "output_schema": {
+    "Generated Prompt": {
+      "type": "str",
+      "description": "Generated Prompt",
+      "component": "Textbox"
+    }
+  },
+  "license": "unknown",
+  "hardware": "6.2.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 2335,
+  "last_modified": "2026-01-08 13:10:29+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/update_prompt_from_sliders",
+      "parameters": [
+        {
+          "name": "azimuth",
+          "label": "Azimuth (Horizontal Rotation)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "elevation",
+          "label": "Elevation (Vertical Angle)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "distance",
+          "label": "Distance",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Generated Prompt",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/update_prompt_from_sliders_1",
+      "parameters": [
+        {
+          "name": "azimuth",
+          "label": "Azimuth (Horizontal Rotation)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "elevation",
+          "label": "Elevation (Vertical Angle)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "distance",
+          "label": "Distance",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Generated Prompt",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/update_prompt_from_sliders_2",
+      "parameters": [
+        {
+          "name": "azimuth",
+          "label": "Azimuth (Horizontal Rotation)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "elevation",
+          "label": "Elevation (Vertical Angle)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "distance",
+          "label": "Distance",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Generated Prompt",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/sync_3d_to_sliders",
+      "parameters": [
+        {
+          "name": "camera_value",
+          "label": "parameter_7",
+          "type": "str",
+          "component": "Cameracontrol3d"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Azimuth (Horizontal Rotation)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Elevation (Vertical Angle)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Distance",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Generated Prompt",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/sync_sliders_to_3d",
+      "parameters": [
+        {
+          "name": "azimuth",
+          "label": "Azimuth (Horizontal Rotation)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "elevation",
+          "label": "Elevation (Vertical Angle)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "distance",
+          "label": "Distance",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_7",
+          "type": "str",
+          "component": "Cameracontrol3d"
+        }
+      ]
+    },
+    {
+      "name": "/sync_sliders_to_3d_1",
+      "parameters": [
+        {
+          "name": "azimuth",
+          "label": "Azimuth (Horizontal Rotation)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "elevation",
+          "label": "Elevation (Vertical Angle)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "distance",
+          "label": "Distance",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_7",
+          "type": "str",
+          "component": "Cameracontrol3d"
+        }
+      ]
+    },
+    {
+      "name": "/sync_sliders_to_3d_2",
+      "parameters": [
+        {
+          "name": "azimuth",
+          "label": "Azimuth (Horizontal Rotation)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "elevation",
+          "label": "Elevation (Vertical Angle)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "distance",
+          "label": "Distance",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_7",
+          "type": "str",
+          "component": "Cameracontrol3d"
+        }
+      ]
+    },
+    {
+      "name": "/infer_camera_edit",
+      "parameters": [
+        {
+          "name": "image",
+          "label": "Input Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "azimuth",
+          "label": "Azimuth (Horizontal Rotation)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "elevation",
+          "label": "Elevation (Vertical Angle)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "distance",
+          "label": "Distance",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "seed",
+          "label": "Seed",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "randomize_seed",
+          "label": "Randomize Seed",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "guidance_scale",
+          "label": "Guidance Scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "num_inference_steps",
+          "label": "Inference Steps",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "height",
+          "label": "Height",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "width",
+          "label": "Width",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "Seed",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Generated Prompt",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/update_dimensions_on_upload",
+      "parameters": [
+        {
+          "name": "image",
+          "label": "Input Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Width",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Height",
+          "type": "float",
+          "component": "Slider"
+        }
+      ]
+    },
+    {
+      "name": "/update_3d_image",
+      "parameters": [
+        {
+          "name": "image",
+          "label": "Input Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_7",
+          "type": "str",
+          "component": "Cameracontrol3d"
+        }
+      ]
+    },
+    {
+      "name": "/lambda",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_7",
+          "type": "str",
+          "component": "Cameracontrol3d"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/update_prompt_from_sliders",
+  "_api_verified": true,
+  "estimated_latency_s": 2.28,
+  "speed_tier": "fast",
+  "_latency_source": "measured_inference",
+  "measured_latency_s": 2.28,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:51:22.562473+00:00",
+  "measured_inference_s": 2.28,
+  "measured_inference_timestamp": "2026-04-20T07:58:26.414670+00:00",
+  "measured_inference_method": "auto_predict",
+  "measured_inference_api": "/update_prompt_from_sliders"
+}

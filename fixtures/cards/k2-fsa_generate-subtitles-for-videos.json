@@ -1,0 +1,277 @@
+{
+  "space_id": "k2-fsa/generate-subtitles-for-videos",
+  "title": "Generate subtitles",
+  "emoji": "\ud83c\udf0d",
+  "description": "Generate subtitles",
+  "input_schema": {
+    "language": {
+      "type": "Literal['52 languages (Qwen3 ASR)', '31 languages (FunASR Nano)', '14 languages (Cohere Transcribe)'",
+      "description": "Language",
+      "required": true,
+      "component": "Radio"
+    }
+  },
+  "output_schema": {
+    "Select a model": {
+      "type": "Literal['csukuangfj2/sherpa-onnx-qwen3-asr-0.6B-int8-2026-03-25']",
+      "description": "Select a model",
+      "component": "Dropdown"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "5.25.2",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 6,
+  "last_modified": "2026-04-09 05:49:28+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_tags_enriched": true,
+  "estimated_latency_s": 3.0,
+  "speed_tier": "fast",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/update_model_dropdown",
+      "parameters": [
+        {
+          "name": "language",
+          "label": "Language",
+          "type": "Literal['52 languages (Qwen3 ASR)', '31 languages (FunASR Nano)', '14 languages (Cohere Transcribe)', '1600+ languages', '25 European languages', '\u8d85\u591a\u79cd\u4e2d\u6587\u65b9\u8a00', 'Chinese+English', 'Chinese+English+Korean+",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Select a model",
+          "type": "Literal['csukuangfj2/sherpa-onnx-qwen3-asr-0.6B-int8-2026-03-25']",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/lambda",
+      "parameters": [
+        {
+          "name": "language",
+          "label": "Language",
+          "type": "Literal['52 languages (Qwen3 ASR)', '31 languages (FunASR Nano)', '14 languages (Cohere Transcribe)', '1600+ languages', '25 European languages', '\u8d85\u591a\u79cd\u4e2d\u6587\u65b9\u8a00', 'Chinese+English', 'Chinese+English+Korean+",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Cohere Transcribe language code",
+          "type": "Literal['en', 'fr', 'de', 'it', 'es', 'pt', 'el', 'nl', 'pl', 'zh', 'ja', 'ko', 'vi', 'ar']",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/update_cohere_language_visibility",
+      "parameters": [
+        {
+          "name": "repo_id",
+          "label": "Select a model",
+          "type": "Literal['csukuangfj2/sherpa-onnx-qwen3-asr-0.6B-int8-2026-03-25']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Cohere Transcribe language code",
+          "type": "Literal['en', 'fr', 'de', 'it', 'es', 'pt', 'el', 'nl', 'pl', 'zh', 'ja', 'ko', 'vi', 'ar']",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/process_uploaded_video_file",
+      "parameters": [
+        {
+          "name": "language",
+          "label": "Language",
+          "type": "Literal['52 languages (Qwen3 ASR)', '31 languages (FunASR Nano)', '14 languages (Cohere Transcribe)', '1600+ languages', '25 European languages', '\u8d85\u591a\u79cd\u4e2d\u6587\u65b9\u8a00', 'Chinese+English', 'Chinese+English+Korean+",
+          "component": "Radio"
+        },
+        {
+          "name": "repo_id",
+          "label": "Select a model",
+          "type": "Literal['csukuangfj2/sherpa-onnx-qwen3-asr-0.6B-int8-2026-03-25']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "cohere_language",
+          "label": "Cohere Transcribe language code",
+          "type": "Literal['en', 'fr', 'de', 'it', 'es', 'pt', 'el', 'nl', 'pl', 'zh', 'ja', 'ko', 'vi', 'ar']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "add_punctuation",
+          "label": "Whether to add punctuation",
+          "type": "Literal['Yes', 'No']",
+          "component": "Radio"
+        },
+        {
+          "name": "in_filename",
+          "label": "Upload from disk",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        },
+        {
+          "label": "Generated subtitles",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "label": "Info",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "Recognized speech from uploaded video file (srt format)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Recognized speech from uploaded video file (all in one)",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/process_uploaded_audio_file",
+      "parameters": [
+        {
+          "name": "language",
+          "label": "Language",
+          "type": "Literal['52 languages (Qwen3 ASR)', '31 languages (FunASR Nano)', '14 languages (Cohere Transcribe)', '1600+ languages', '25 European languages', '\u8d85\u591a\u79cd\u4e2d\u6587\u65b9\u8a00', 'Chinese+English', 'Chinese+English+Korean+",
+          "component": "Radio"
+        },
+        {
+          "name": "repo_id",
+          "label": "Select a model",
+          "type": "Literal['csukuangfj2/sherpa-onnx-qwen3-asr-0.6B-int8-2026-03-25']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "cohere_language",
+          "label": "Cohere Transcribe language code",
+          "type": "Literal['en', 'fr', 'de', 'it', 'es', 'pt', 'el', 'nl', 'pl', 'zh', 'ja', 'ko', 'vi', 'ar']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "add_punctuation",
+          "label": "Whether to add punctuation",
+          "type": "Literal['Yes', 'No']",
+          "component": "Radio"
+        },
+        {
+          "name": "in_filename",
+          "label": "Upload audio from disk",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Generated subtitles",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "label": "Info",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "Recognized speech from uploaded audio file (srt format)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Recognized speech from uploaded audio file (all in one)",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/process_url",
+      "parameters": [
+        {
+          "name": "language",
+          "label": "Language",
+          "type": "Literal['52 languages (Qwen3 ASR)', '31 languages (FunASR Nano)', '14 languages (Cohere Transcribe)', '1600+ languages', '25 European languages', '\u8d85\u591a\u79cd\u4e2d\u6587\u65b9\u8a00', 'Chinese+English', 'Chinese+English+Korean+",
+          "component": "Radio"
+        },
+        {
+          "name": "repo_id",
+          "label": "Select a model",
+          "type": "Literal['csukuangfj2/sherpa-onnx-qwen3-asr-0.6B-int8-2026-03-25']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "cohere_language",
+          "label": "Cohere Transcribe language code",
+          "type": "Literal['en', 'fr', 'de', 'it', 'es', 'pt', 'el', 'nl', 'pl', 'zh', 'ja', 'ko', 'vi', 'ar']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "add_punctuation",
+          "label": "Whether to add punctuation",
+          "type": "Literal['Yes', 'No']",
+          "component": "Radio"
+        },
+        {
+          "name": "url",
+          "label": "URL",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Generated subtitles",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "label": "Info",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "Recognized speech from audio URL (srt format)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Recognized speech from audio URL (all in one)",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/update_model_dropdown",
+  "_api_verified": true
+}

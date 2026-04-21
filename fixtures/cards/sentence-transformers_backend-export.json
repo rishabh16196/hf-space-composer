@@ -1,0 +1,1196 @@
+{
+  "space_id": "sentence-transformers/backend-export",
+  "title": "Backend Export",
+  "emoji": "\u2699\ufe0f",
+  "description": "Export Sentence Transformer models to accelerated backends",
+  "input_schema": {
+    "create_pr": {
+      "type": "bool",
+      "description": "Create PR",
+      "required": true,
+      "component": "Checkbox"
+    }
+  },
+  "output_schema": {
+    "Model repository to write to": {
+      "type": "str",
+      "description": "Model repository to write to",
+      "component": "Textbox"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "5.42.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 13,
+  "last_modified": "2025-08-12 12:27:33+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/lambda",
+      "parameters": [
+        {
+          "name": "create_pr",
+          "label": "Create PR",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Model repository to write to",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_1",
+      "parameters": [
+        {
+          "name": "backend",
+          "label": "Backend",
+          "type": "Literal['ONNX', 'ONNX (Dynamic Quantization)', 'ONNX (Optimization)', 'OpenVINO', 'OpenVINO (Static Quantization)']",
+          "component": "Radio"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/on_submit",
+      "parameters": [
+        {
+          "name": "model_id",
+          "label": "SentenceTransformer, SparseEncoder, or CrossEncoder model to export",
+          "type": "str",
+          "component": "Huggingfacehubsearch"
+        },
+        {
+          "name": "create_pr",
+          "label": "Create PR",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "output_model_id",
+          "label": "Model repository to write to",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "backend",
+          "label": "Backend",
+          "type": "Literal['ONNX', 'ONNX (Dynamic Quantization)', 'ONNX (Optimization)', 'OpenVINO', 'OpenVINO (Static Quantization)']",
+          "component": "Radio"
+        },
+        {
+          "name": "onnx_quantization_config",
+          "label": "Quantization config",
+          "type": "Literal['arm64', 'avx2', 'avx512', 'avx512_vnni']",
+          "component": "Radio"
+        },
+        {
+          "name": "onnx_optimization_config",
+          "label": "Optimization config",
+          "type": "Literal['O1', 'O2', 'O3', 'O4']",
+          "component": "Radio"
+        },
+        {
+          "name": "ov_quant_dataset_name",
+          "label": "Calibration Dataset Name",
+          "type": "str",
+          "component": "Huggingfacehubsearch"
+        },
+        {
+          "name": "ov_quant_dataset_subset",
+          "label": "Calibration Dataset Subset",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "ov_quant_dataset_split",
+          "label": "Calibration Dataset Split",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "ov_quant_dataset_column_name",
+          "label": "Calibration Dataset Column Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "ov_quant_dataset_num_samples",
+          "label": "Calibration Dataset Num Samples",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "inference_snippet",
+          "label": "Inference Snippet",
+          "type": "str",
+          "component": "Code"
+        }
+      ],
+      "returns": [
+        {
+          "label": "",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "Inference Snippet",
+          "type": "str",
+          "component": "Code"
+        },
+        {
+          "label": "Error",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/on_change",
+      "parameters": [
+        {
+          "name": "model_id",
+          "label": "SentenceTransformer, SparseEncoder, or CrossEncoder model to export",
+          "type": "str",
+          "component": "Huggingfacehubsearch"
+        },
+        {
+          "name": "create_pr",
+          "label": "Create PR",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "output_model_id",
+          "label": "Model repository to write to",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "backend",
+          "label": "Backend",
+          "type": "Literal['ONNX', 'ONNX (Dynamic Quantization)', 'ONNX (Optimization)', 'OpenVINO', 'OpenVINO (Static Quantization)']",
+          "component": "Radio"
+        },
+        {
+          "name": "onnx_quantization_config",
+          "label": "Quantization config",
+          "type": "Literal['arm64', 'avx2', 'avx512', 'avx512_vnni']",
+          "component": "Radio"
+        },
+        {
+          "name": "onnx_optimization_config",
+          "label": "Optimization config",
+          "type": "Literal['O1', 'O2', 'O3', 'O4']",
+          "component": "Radio"
+        },
+        {
+          "name": "ov_quant_dataset_name",
+          "label": "Calibration Dataset Name",
+          "type": "str",
+          "component": "Huggingfacehubsearch"
+        },
+        {
+          "name": "ov_quant_dataset_subset",
+          "label": "Calibration Dataset Subset",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "ov_quant_dataset_split",
+          "label": "Calibration Dataset Split",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "ov_quant_dataset_column_name",
+          "label": "Calibration Dataset Column Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "ov_quant_dataset_num_samples",
+          "label": "Calibration Dataset Num Samples",
+          "type": "float",
+          "component": "Number"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Requirements",
+          "type": "str",
+          "component": "Code"
+        },
+        {
+          "label": "Export Snippet",
+          "type": "str",
+          "component": "Code"
+        },
+        {
+          "label": "Inference Snippet",
+          "type": "str",
+          "component": "Code"
+        },
+        {
+          "label": "Error",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/on_change_1",
+      "parameters": [
+        {
+          "name": "model_id",
+          "label": "SentenceTransformer, SparseEncoder, or CrossEncoder model to export",
+          "type": "str",
+          "component": "Huggingfacehubsearch"
+        },
+        {
+          "name": "create_pr",
+          "label": "Create PR",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "output_model_id",
+          "label": "Model repository to write to",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "backend",
+          "label": "Backend",
+          "type": "Literal['ONNX', 'ONNX (Dynamic Quantization)', 'ONNX (Optimization)', 'OpenVINO', 'OpenVINO (Static Quantization)']",
+          "component": "Radio"
+        },
+        {
+          "name": "onnx_quantization_config",
+          "label": "Quantization config",
+          "type": "Literal['arm64', 'avx2', 'avx512', 'avx512_vnni']",
+          "component": "Radio"
+        },
+        {
+          "name": "onnx_optimization_config",
+          "label": "Optimization config",
+          "type": "Literal['O1', 'O2', 'O3', 'O4']",
+          "component": "Radio"
+        },
+        {
+          "name": "ov_quant_dataset_name",
+          "label": "Calibration Dataset Name",
+          "type": "str",
+          "component": "Huggingfacehubsearch"
+        },
+        {
+          "name": "ov_quant_dataset_subset",
+          "label": "Calibration Dataset Subset",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "ov_quant_dataset_split",
+          "label": "Calibration Dataset Split",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "ov_quant_dataset_column_name",
+          "label": "Calibration Dataset Column Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "ov_quant_dataset_num_samples",
+          "label": "Calibration Dataset Num Samples",
+          "type": "float",
+          "component": "Number"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Requirements",
+          "type": "str",
+          "component": "Code"
+        },
+        {
+          "label": "Export Snippet",
+          "type": "str",
+          "component": "Code"
+        },
+        {
+          "label": "Inference Snippet",
+          "type": "str",
+          "component": "Code"
+        },
+        {
+          "label": "Error",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/on_change_2",
+      "parameters": [
+        {
+          "name": "model_id",
+          "label": "SentenceTransformer, SparseEncoder, or CrossEncoder model to export",
+          "type": "str",
+          "component": "Huggingfacehubsearch"
+        },
+        {
+          "name": "create_pr",
+          "label": "Create PR",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "output_model_id",
+          "label": "Model repository to write to",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "backend",
+          "label": "Backend",
+          "type": "Literal['ONNX', 'ONNX (Dynamic Quantization)', 'ONNX (Optimization)', 'OpenVINO', 'OpenVINO (Static Quantization)']",
+          "component": "Radio"
+        },
+        {
+          "name": "onnx_quantization_config",
+          "label": "Quantization config",
+          "type": "Literal['arm64', 'avx2', 'avx512', 'avx512_vnni']",
+          "component": "Radio"
+        },
+        {
+          "name": "onnx_optimization_config",
+          "label": "Optimization config",
+          "type": "Literal['O1', 'O2', 'O3', 'O4']",
+          "component": "Radio"
+        },
+        {
+          "name": "ov_quant_dataset_name",
+          "label": "Calibration Dataset Name",
+          "type": "str",
+          "component": "Huggingfacehubsearch"
+        },
+        {
+          "name": "ov_quant_dataset_subset",
+          "label": "Calibration Dataset Subset",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "ov_quant_dataset_split",
+          "label": "Calibration Dataset Split",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "ov_quant_dataset_column_name",
+          "label": "Calibration Dataset Column Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "ov_quant_dataset_num_samples",
+          "label": "Calibration Dataset Num Samples",
+          "type": "float",
+          "component": "Number"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Requirements",
+          "type": "str",
+          "component": "Code"
+        },
+        {
+          "label": "Export Snippet",
+          "type": "str",
+          "component": "Code"
+        },
+        {
+          "label": "Inference Snippet",
+          "type": "str",
+          "component": "Code"
+        },
+        {
+          "label": "Error",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/on_change_3",
+      "parameters": [
+        {
+          "name": "model_id",
+          "label": "SentenceTransformer, SparseEncoder, or CrossEncoder model to export",
+          "type": "str",
+          "component": "Huggingfacehubsearch"
+        },
+        {
+          "name": "create_pr",
+          "label": "Create PR",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "output_model_id",
+          "label": "Model repository to write to",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "backend",
+          "label": "Backend",
+          "type": "Literal['ONNX', 'ONNX (Dynamic Quantization)', 'ONNX (Optimization)', 'OpenVINO', 'OpenVINO (Static Quantization)']",
+          "component": "Radio"
+        },
+        {
+          "name": "onnx_quantization_config",
+          "label": "Quantization config",
+          "type": "Literal['arm64', 'avx2', 'avx512', 'avx512_vnni']",
+          "component": "Radio"
+        },
+        {
+          "name": "onnx_optimization_config",
+          "label": "Optimization config",
+          "type": "Literal['O1', 'O2', 'O3', 'O4']",
+          "component": "Radio"
+        },
+        {
+          "name": "ov_quant_dataset_name",
+          "label": "Calibration Dataset Name",
+          "type": "str",
+          "component": "Huggingfacehubsearch"
+        },
+        {
+          "name": "ov_quant_dataset_subset",
+          "label": "Calibration Dataset Subset",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "ov_quant_dataset_split",
+          "label": "Calibration Dataset Split",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "ov_quant_dataset_column_name",
+          "label": "Calibration Dataset Column Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "ov_quant_dataset_num_samples",
+          "label": "Calibration Dataset Num Samples",
+          "type": "float",
+          "component": "Number"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Requirements",
+          "type": "str",
+          "component": "Code"
+        },
+        {
+          "label": "Export Snippet",
+          "type": "str",
+          "component": "Code"
+        },
+        {
+          "label": "Inference Snippet",
+          "type": "str",
+          "component": "Code"
+        },
+        {
+          "label": "Error",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/on_change_4",
+      "parameters": [
+        {
+          "name": "model_id",
+          "label": "SentenceTransformer, SparseEncoder, or CrossEncoder model to export",
+          "type": "str",
+          "component": "Huggingfacehubsearch"
+        },
+        {
+          "name": "create_pr",
+          "label": "Create PR",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "output_model_id",
+          "label": "Model repository to write to",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "backend",
+          "label": "Backend",
+          "type": "Literal['ONNX', 'ONNX (Dynamic Quantization)', 'ONNX (Optimization)', 'OpenVINO', 'OpenVINO (Static Quantization)']",
+          "component": "Radio"
+        },
+        {
+          "name": "onnx_quantization_config",
+          "label": "Quantization config",
+          "type": "Literal['arm64', 'avx2', 'avx512', 'avx512_vnni']",
+          "component": "Radio"
+        },
+        {
+          "name": "onnx_optimization_config",
+          "label": "Optimization config",
+          "type": "Literal['O1', 'O2', 'O3', 'O4']",
+          "component": "Radio"
+        },
+        {
+          "name": "ov_quant_dataset_name",
+          "label": "Calibration Dataset Name",
+          "type": "str",
+          "component": "Huggingfacehubsearch"
+        },
+        {
+          "name": "ov_quant_dataset_subset",
+          "label": "Calibration Dataset Subset",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "ov_quant_dataset_split",
+          "label": "Calibration Dataset Split",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "ov_quant_dataset_column_name",
+          "label": "Calibration Dataset Column Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "ov_quant_dataset_num_samples",
+          "label": "Calibration Dataset Num Samples",
+          "type": "float",
+          "component": "Number"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Requirements",
+          "type": "str",
+          "component": "Code"
+        },
+        {
+          "label": "Export Snippet",
+          "type": "str",
+          "component": "Code"
+        },
+        {
+          "label": "Inference Snippet",
+          "type": "str",
+          "component": "Code"
+        },
+        {
+          "label": "Error",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/on_change_5",
+      "parameters": [
+        {
+          "name": "model_id",
+          "label": "SentenceTransformer, SparseEncoder, or CrossEncoder model to export",
+          "type": "str",
+          "component": "Huggingfacehubsearch"
+        },
+        {
+          "name": "create_pr",
+          "label": "Create PR",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "output_model_id",
+          "label": "Model repository to write to",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "backend",
+          "label": "Backend",
+          "type": "Literal['ONNX', 'ONNX (Dynamic Quantization)', 'ONNX (Optimization)', 'OpenVINO', 'OpenVINO (Static Quantization)']",
+          "component": "Radio"
+        },
+        {
+          "name": "onnx_quantization_config",
+          "label": "Quantization config",
+          "type": "Literal['arm64', 'avx2', 'avx512', 'avx512_vnni']",
+          "component": "Radio"
+        },
+        {
+          "name": "onnx_optimization_config",
+          "label": "Optimization config",
+          "type": "Literal['O1', 'O2', 'O3', 'O4']",
+          "component": "Radio"
+        },
+        {
+          "name": "ov_quant_dataset_name",
+          "label": "Calibration Dataset Name",
+          "type": "str",
+          "component": "Huggingfacehubsearch"
+        },
+        {
+          "name": "ov_quant_dataset_subset",
+          "label": "Calibration Dataset Subset",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "ov_quant_dataset_split",
+          "label": "Calibration Dataset Split",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "ov_quant_dataset_column_name",
+          "label": "Calibration Dataset Column Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "ov_quant_dataset_num_samples",
+          "label": "Calibration Dataset Num Samples",
+          "type": "float",
+          "component": "Number"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Requirements",
+          "type": "str",
+          "component": "Code"
+        },
+        {
+          "label": "Export Snippet",
+          "type": "str",
+          "component": "Code"
+        },
+        {
+          "label": "Inference Snippet",
+          "type": "str",
+          "component": "Code"
+        },
+        {
+          "label": "Error",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/on_change_6",
+      "parameters": [
+        {
+          "name": "model_id",
+          "label": "SentenceTransformer, SparseEncoder, or CrossEncoder model to export",
+          "type": "str",
+          "component": "Huggingfacehubsearch"
+        },
+        {
+          "name": "create_pr",
+          "label": "Create PR",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "output_model_id",
+          "label": "Model repository to write to",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "backend",
+          "label": "Backend",
+          "type": "Literal['ONNX', 'ONNX (Dynamic Quantization)', 'ONNX (Optimization)', 'OpenVINO', 'OpenVINO (Static Quantization)']",
+          "component": "Radio"
+        },
+        {
+          "name": "onnx_quantization_config",
+          "label": "Quantization config",
+          "type": "Literal['arm64', 'avx2', 'avx512', 'avx512_vnni']",
+          "component": "Radio"
+        },
+        {
+          "name": "onnx_optimization_config",
+          "label": "Optimization config",
+          "type": "Literal['O1', 'O2', 'O3', 'O4']",
+          "component": "Radio"
+        },
+        {
+          "name": "ov_quant_dataset_name",
+          "label": "Calibration Dataset Name",
+          "type": "str",
+          "component": "Huggingfacehubsearch"
+        },
+        {
+          "name": "ov_quant_dataset_subset",
+          "label": "Calibration Dataset Subset",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "ov_quant_dataset_split",
+          "label": "Calibration Dataset Split",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "ov_quant_dataset_column_name",
+          "label": "Calibration Dataset Column Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "ov_quant_dataset_num_samples",
+          "label": "Calibration Dataset Num Samples",
+          "type": "float",
+          "component": "Number"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Requirements",
+          "type": "str",
+          "component": "Code"
+        },
+        {
+          "label": "Export Snippet",
+          "type": "str",
+          "component": "Code"
+        },
+        {
+          "label": "Inference Snippet",
+          "type": "str",
+          "component": "Code"
+        },
+        {
+          "label": "Error",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/on_change_7",
+      "parameters": [
+        {
+          "name": "model_id",
+          "label": "SentenceTransformer, SparseEncoder, or CrossEncoder model to export",
+          "type": "str",
+          "component": "Huggingfacehubsearch"
+        },
+        {
+          "name": "create_pr",
+          "label": "Create PR",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "output_model_id",
+          "label": "Model repository to write to",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "backend",
+          "label": "Backend",
+          "type": "Literal['ONNX', 'ONNX (Dynamic Quantization)', 'ONNX (Optimization)', 'OpenVINO', 'OpenVINO (Static Quantization)']",
+          "component": "Radio"
+        },
+        {
+          "name": "onnx_quantization_config",
+          "label": "Quantization config",
+          "type": "Literal['arm64', 'avx2', 'avx512', 'avx512_vnni']",
+          "component": "Radio"
+        },
+        {
+          "name": "onnx_optimization_config",
+          "label": "Optimization config",
+          "type": "Literal['O1', 'O2', 'O3', 'O4']",
+          "component": "Radio"
+        },
+        {
+          "name": "ov_quant_dataset_name",
+          "label": "Calibration Dataset Name",
+          "type": "str",
+          "component": "Huggingfacehubsearch"
+        },
+        {
+          "name": "ov_quant_dataset_subset",
+          "label": "Calibration Dataset Subset",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "ov_quant_dataset_split",
+          "label": "Calibration Dataset Split",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "ov_quant_dataset_column_name",
+          "label": "Calibration Dataset Column Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "ov_quant_dataset_num_samples",
+          "label": "Calibration Dataset Num Samples",
+          "type": "float",
+          "component": "Number"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Requirements",
+          "type": "str",
+          "component": "Code"
+        },
+        {
+          "label": "Export Snippet",
+          "type": "str",
+          "component": "Code"
+        },
+        {
+          "label": "Inference Snippet",
+          "type": "str",
+          "component": "Code"
+        },
+        {
+          "label": "Error",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/on_change_8",
+      "parameters": [
+        {
+          "name": "model_id",
+          "label": "SentenceTransformer, SparseEncoder, or CrossEncoder model to export",
+          "type": "str",
+          "component": "Huggingfacehubsearch"
+        },
+        {
+          "name": "create_pr",
+          "label": "Create PR",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "output_model_id",
+          "label": "Model repository to write to",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "backend",
+          "label": "Backend",
+          "type": "Literal['ONNX', 'ONNX (Dynamic Quantization)', 'ONNX (Optimization)', 'OpenVINO', 'OpenVINO (Static Quantization)']",
+          "component": "Radio"
+        },
+        {
+          "name": "onnx_quantization_config",
+          "label": "Quantization config",
+          "type": "Literal['arm64', 'avx2', 'avx512', 'avx512_vnni']",
+          "component": "Radio"
+        },
+        {
+          "name": "onnx_optimization_config",
+          "label": "Optimization config",
+          "type": "Literal['O1', 'O2', 'O3', 'O4']",
+          "component": "Radio"
+        },
+        {
+          "name": "ov_quant_dataset_name",
+          "label": "Calibration Dataset Name",
+          "type": "str",
+          "component": "Huggingfacehubsearch"
+        },
+        {
+          "name": "ov_quant_dataset_subset",
+          "label": "Calibration Dataset Subset",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "ov_quant_dataset_split",
+          "label": "Calibration Dataset Split",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "ov_quant_dataset_column_name",
+          "label": "Calibration Dataset Column Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "ov_quant_dataset_num_samples",
+          "label": "Calibration Dataset Num Samples",
+          "type": "float",
+          "component": "Number"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Requirements",
+          "type": "str",
+          "component": "Code"
+        },
+        {
+          "label": "Export Snippet",
+          "type": "str",
+          "component": "Code"
+        },
+        {
+          "label": "Inference Snippet",
+          "type": "str",
+          "component": "Code"
+        },
+        {
+          "label": "Error",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/on_change_9",
+      "parameters": [
+        {
+          "name": "model_id",
+          "label": "SentenceTransformer, SparseEncoder, or CrossEncoder model to export",
+          "type": "str",
+          "component": "Huggingfacehubsearch"
+        },
+        {
+          "name": "create_pr",
+          "label": "Create PR",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "output_model_id",
+          "label": "Model repository to write to",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "backend",
+          "label": "Backend",
+          "type": "Literal['ONNX', 'ONNX (Dynamic Quantization)', 'ONNX (Optimization)', 'OpenVINO', 'OpenVINO (Static Quantization)']",
+          "component": "Radio"
+        },
+        {
+          "name": "onnx_quantization_config",
+          "label": "Quantization config",
+          "type": "Literal['arm64', 'avx2', 'avx512', 'avx512_vnni']",
+          "component": "Radio"
+        },
+        {
+          "name": "onnx_optimization_config",
+          "label": "Optimization config",
+          "type": "Literal['O1', 'O2', 'O3', 'O4']",
+          "component": "Radio"
+        },
+        {
+          "name": "ov_quant_dataset_name",
+          "label": "Calibration Dataset Name",
+          "type": "str",
+          "component": "Huggingfacehubsearch"
+        },
+        {
+          "name": "ov_quant_dataset_subset",
+          "label": "Calibration Dataset Subset",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "ov_quant_dataset_split",
+          "label": "Calibration Dataset Split",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "ov_quant_dataset_column_name",
+          "label": "Calibration Dataset Column Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "ov_quant_dataset_num_samples",
+          "label": "Calibration Dataset Num Samples",
+          "type": "float",
+          "component": "Number"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Requirements",
+          "type": "str",
+          "component": "Code"
+        },
+        {
+          "label": "Export Snippet",
+          "type": "str",
+          "component": "Code"
+        },
+        {
+          "label": "Inference Snippet",
+          "type": "str",
+          "component": "Code"
+        },
+        {
+          "label": "Error",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/on_change_10",
+      "parameters": [
+        {
+          "name": "model_id",
+          "label": "SentenceTransformer, SparseEncoder, or CrossEncoder model to export",
+          "type": "str",
+          "component": "Huggingfacehubsearch"
+        },
+        {
+          "name": "create_pr",
+          "label": "Create PR",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "output_model_id",
+          "label": "Model repository to write to",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "backend",
+          "label": "Backend",
+          "type": "Literal['ONNX', 'ONNX (Dynamic Quantization)', 'ONNX (Optimization)', 'OpenVINO', 'OpenVINO (Static Quantization)']",
+          "component": "Radio"
+        },
+        {
+          "name": "onnx_quantization_config",
+          "label": "Quantization config",
+          "type": "Literal['arm64', 'avx2', 'avx512', 'avx512_vnni']",
+          "component": "Radio"
+        },
+        {
+          "name": "onnx_optimization_config",
+          "label": "Optimization config",
+          "type": "Literal['O1', 'O2', 'O3', 'O4']",
+          "component": "Radio"
+        },
+        {
+          "name": "ov_quant_dataset_name",
+          "label": "Calibration Dataset Name",
+          "type": "str",
+          "component": "Huggingfacehubsearch"
+        },
+        {
+          "name": "ov_quant_dataset_subset",
+          "label": "Calibration Dataset Subset",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "ov_quant_dataset_split",
+          "label": "Calibration Dataset Split",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "ov_quant_dataset_column_name",
+          "label": "Calibration Dataset Column Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "ov_quant_dataset_num_samples",
+          "label": "Calibration Dataset Num Samples",
+          "type": "float",
+          "component": "Number"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Requirements",
+          "type": "str",
+          "component": "Code"
+        },
+        {
+          "label": "Export Snippet",
+          "type": "str",
+          "component": "Code"
+        },
+        {
+          "label": "Inference Snippet",
+          "type": "str",
+          "component": "Code"
+        },
+        {
+          "label": "Error",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/_check_login_status",
+      "parameters": [],
+      "returns": []
+    }
+  ],
+  "endpoint": "/lambda",
+  "_api_verified": true,
+  "estimated_latency_s": 4.07,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 4.07,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:51:49.125731+00:00"
+}

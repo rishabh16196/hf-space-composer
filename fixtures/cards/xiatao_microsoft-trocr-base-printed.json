@@ -1,0 +1,38 @@
+{
+  "space_id": "xiatao/microsoft-trocr-base-printed",
+  "title": "Microsoft Trocr Base Printed",
+  "emoji": "\ud83d\ude3b",
+  "description": "Microsoft Trocr Base Printed",
+  "input_schema": {
+    "input": {
+      "type": "string",
+      "description": "Input",
+      "required": true
+    }
+  },
+  "output_schema": {
+    "output": {
+      "type": "string"
+    }
+  },
+  "license": "unknown",
+  "hardware": "",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us",
+    "ocr",
+    "vision"
+  ],
+  "likes": 4,
+  "last_modified": "2021-11-19 07:09:17+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_tags_enriched": true,
+  "estimated_latency_s": 5.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "error",
+  "_api_error": "(Request ID: Root=1-69e77bcd-4aa444664af011712105374c;36a455e9-a40e-42d6-9d43-d599488947aa)\n\n429 Too Many Requests: you have reached your 'api' rate limit.\nRetry after 17 seconds (0/2500 requests rema"
+}

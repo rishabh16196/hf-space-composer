@@ -1,0 +1,1429 @@
+{
+  "space_id": "gokaygokay/FLUX-Prompt-Generator",
+  "title": "FLUX Prompt Generator",
+  "emoji": "\ud83d\ude3b",
+  "description": "FLUX Prompt Generator",
+  "input_schema": {
+    "value": {
+      "type": "Literal['happy', 'simple', 'poster', 'only_objects', 'no_figure', 'landscape', 'fantasy']",
+      "description": "Prompt Type",
+      "required": true,
+      "component": "Dropdown"
+    }
+  },
+  "output_schema": {
+    "Prompt Type": {
+      "type": "Literal['happy', 'simple', 'poster', 'only_objects', 'no_figure', 'landscape', 'fantasy']",
+      "description": "Prompt Type",
+      "component": "Dropdown"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "4.44.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us",
+    "diffusion",
+    "image-generation",
+    "text",
+    "text-to-image",
+    "vision"
+  ],
+  "likes": 1377,
+  "last_modified": "2026-01-11 20:27:42+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/update_prompt_type",
+      "parameters": [
+        {
+          "name": "value",
+          "label": "Prompt Type",
+          "type": "Literal['happy', 'simple', 'poster', 'only_objects', 'no_figure', 'landscape', 'fantasy']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Prompt Type",
+          "type": "Literal['happy', 'simple', 'poster', 'only_objects', 'no_figure', 'landscape', 'fantasy']",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/create_caption",
+      "parameters": [
+        {
+          "name": "image",
+          "label": "Input Image (optional)",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "name": "model",
+          "label": "Caption Model",
+          "type": "Literal['Florence-2', 'Qwen2-VL', 'JoyCaption']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Generated Caption",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/generate_prompt_with_dynamic_seed",
+      "parameters": [
+        {
+          "name": "param_0",
+          "label": "Custom Input Prompt (optional)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_1",
+          "label": "Subject (optional)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_2",
+          "label": "Gender",
+          "type": "Literal['female', 'male']",
+          "component": "Radio"
+        },
+        {
+          "name": "param_3",
+          "label": "Artform",
+          "type": "Literal['disabled', 'random', 'photography', 'art']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_4",
+          "label": "Photo Type",
+          "type": "Literal['disabled', 'random', 'front view', 'bilaterally symmetrical', 'side view', 'back view', 'from above', 'from below', 'from behind', 'wide angle view', 'fisheyes view', 'macro view', 'overhead ",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_5",
+          "label": "Body Types",
+          "type": "Literal['disabled', 'random', 'pretty', 'chubby', 'midweight', 'overweight', 'fat', 'flabby', 'buxom', 'voluptuous', 'hefty', 'pudgy', 'plump', 'obese', 'morbidly obese', 'stout', 'rotund', 'thick-bod",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_6",
+          "label": "Default Tags",
+          "type": "Literal['disabled', 'random', 'a woman', 'a young woman', 'a middle aged woman', 'an old woman', 'a man', 'a young man', 'a middle aged man', 'an old man']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_7",
+          "label": "Roles",
+          "type": "Literal['disabled', 'random', 'as a ((cyborg))', 'as an ((x-men character))', 'as a ((marvel character))', 'as a ((character from lord of the rings))', 'as a ((superhero character))', 'as a ((scifi ch",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_8",
+          "label": "Hairstyles",
+          "type": "Literal['disabled', 'random', 'with ((long hair))', 'with ((very curly hair))', 'with ((curly hair))', 'with ((pixie cut hair))', 'with ((bob cut hair))', 'with ((undercut hair))', 'with ((messy hair)",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_9",
+          "label": "Additional Details",
+          "type": "Literal['disabled', 'random', 'a purple iridescent suit', 'wearing a (necklace)', 'wearing ((earrings))', 'wearing a (bracelet)', 'wearing one or multiple (rings)', 'wearing a (brooch)', 'wearing (eye",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_10",
+          "label": "Photography Styles",
+          "type": "Literal['disabled', 'random', 'high fashion photography', 'avant garde photography', 'fashion photography', 'portrait photography', 'landscape photography', 'documentary photography', 'street photogra",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_11",
+          "label": "Device",
+          "type": "Literal['disabled', 'random', 'Canon EOS 5D Mark IV with Canon EF 24-70mm f-2.8L II', 'Canon EOS 90D with Canon EF-S 18-135mm f-3.5-5.6 IS USM', 'Canon EOS M6 Mark II with Canon EF-M 32mm f-1.4', 'Can",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_12",
+          "label": "Photographer",
+          "type": "Literal['disabled', 'random', 'Alessio Albi', 'Alvin Langdon Coburn', 'Anne Brigman', 'Ansel Adams', 'Anton Corbijn', 'Berenice Abbott', 'Bill Brandt', 'Brooke DiDonato', 'Bruce Davidson', 'Bruno Barb",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_13",
+          "label": "Artist",
+          "type": "Literal['disabled', 'random', 'Akihito Tsukushi', 'Al Hirschfeld', 'Alan Lee', 'Albert Bierstadt', 'Albert Uderzo', 'Alberto Giacometti', 'Alberto Vargas', 'Albrecht Durer', 'Alejandro Burdisio', 'Ale",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_14",
+          "label": "Digital Artform",
+          "type": "Literal['disabled', 'random', 'Glitch Art art', 'Digital Painting art', 'Acrylic Paint art', 'Algorithmic art', 'Animation art', 'Art glass art', 'Assemblage art', 'Augmented reality art', 'Batik art'",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_15",
+          "label": "Place",
+          "type": "Literal['disabled', 'random', 'indoor', 'outdoor', 'at night', 'in the park', 'studio', 'at a party', 'at a festival', 'at a concert', 'on persons home planet', 'magical portal with particles', 'in a ",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_16",
+          "label": "Lighting",
+          "type": "Literal['disabled', 'random', 'popping colors, popart style', 'bokeh', 'dramatic', 'golden hour', 'depth of field', 'movie still', 'colorful', 'soft lighting', 'studio lighting with strong rim light',",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_17",
+          "label": "Clothing",
+          "type": "Literal['disabled', 'random', 'white crop top, denim shorts,silver bracelet,white texture,denim texture', 'white top, sleeveless, button-up, white bottoms, ribbed texture', 'white crop top, blue jeans",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_18",
+          "label": "Composition",
+          "type": "Literal['disabled', 'random', 'lush greenery, blurred foliage, natural lighting', 'geometric tiles, circular mirror, bright lighting, hexagonal patterns', 'graffiti on door, urban setting, dark tones,",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_19",
+          "label": "Pose",
+          "type": "Literal['disabled', 'random', 'standing straight, facing camera, leaf in hand', 'standing, hands on surface, facing camera', 'one arm bent, hip jutted out, direct gaze', 'standing straight, hands on p",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_20",
+          "label": "Background",
+          "type": "Literal['disabled', 'random', 'Eye-level shot, centered subject, direct perspective', 'Eye-level shot, centered subject, natural daylight', 'Eye-level shot, central framing, natural lighting', 'Eye-le",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_21",
+          "label": "Input Image (optional)",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "name": "param_22",
+          "label": "Architect",
+          "type": "Literal['None', 'Random', 'Multiple Random', 'A. Quincy Jones', 'Aldo Rossi', 'Aldo van Eyck', 'Alvar Aalto', '\u00c1lvaro Siza Vieira', 'Antoni Gaudi', 'Arata Isozaki', 'Archigram', 'Arthur Erickson', 'Ar",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_23",
+          "label": "Architecture",
+          "type": "Literal['None', 'Random', 'Multiple Random', 'Mid-Century Modern', 'Neo-Rationalism', 'Postmodernism', 'Structuralism', 'Scandinavian', 'Modernism', 'Catalan Modernism', 'Metabolism', 'Futuristic', 'W",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_24",
+          "label": "Buildings",
+          "type": "Literal['None', 'Random', 'Multiple Random', '1200 Intrepid Avenue, Philadelphia, USA', '30 St Mary Axe (The Gherkin), London, UK', '56 Leonard Street, New York, USA', 'Aalto University Library, Espoo",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_25",
+          "label": "Detailed_styles",
+          "type": "Literal['None', 'Random', 'Multiple Random', 'american foursquare', 'ancient egyptian', 'art brut', 'art deco', 'art nouveau', 'baroque', 'bauhaus', 'bay-and-gable', 'beaux arts classicism', 'beaux-ar",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_26",
+          "label": "Exotic",
+          "type": "Literal['None', 'Random', 'Multiple Random', 'Crystal House', 'Desert House', 'Garden House', 'Geodesic Dome', 'Glass House', 'High-Tech House', 'Home in the Clouds', 'Ice House', 'Infinity House', 'L",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_27",
+          "label": "Extreme_location",
+          "type": "Literal['None', 'Random', 'Multiple Random', 'at the top of a tall building', 'between lanes on a highway', 'built into a cave', 'built into a cliff', 'built into a cliff face overlooking a valley', '",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_28",
+          "label": "Homes",
+          "type": "Literal['None', 'Random', 'Multiple Random', 'A-frame', 'Adobe home', 'Apartment', 'Barge', 'Barn', 'Brownstone', 'Bungalow', 'Cabin', 'Cape Cod', 'Carriage house', 'Castle', 'Cave', 'Cave house', 'Ch",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_29",
+          "label": "Interior",
+          "type": "Literal['None', 'Random', 'Multiple Random', 'art deco interior', 'art deco interior design', 'bohemian interior', 'bohemian interior design', 'coastal interior', 'coastal interior design', 'contempor",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_30",
+          "label": "Interior_design",
+          "type": "Literal['None', 'Random', 'Multiple Random', 'art deco design', 'art deco, geometric shapes', 'art nouveau, curved lines', 'artisanal craftsmanship, handcrafted decor', 'artistic bohemian, mixed patte",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_31",
+          "label": "Materials",
+          "type": "Literal['None', 'Random', 'Multiple Random', 'acrylic', 'adobe', 'aggregate', 'aluminium', 'asphalt', 'bamboo', 'basalt', 'beams', 'brick', 'bronze', 'carbon fiber', 'cast iron', 'cedar shingles', 'ce",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_32",
+          "label": "Public",
+          "type": "Literal['None', 'Random', 'Multiple Random', 'Airport', 'Amusement park', 'Aquarium', 'Art gallery', 'Art museum', 'Baseball field', 'Basketball court', 'Beach', 'Beach access', 'Beach park', 'Beach r",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_33",
+          "label": "Rooms",
+          "type": "Literal['None', 'Random', 'Multiple Random', 'Attic', 'Basement', 'Bathroom', 'Bedroom', 'Boardroom', 'Break room', 'Conference room', 'Copy room', 'Deck', 'Den', 'Garage', 'Guest room', 'Home office'",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_34",
+          "label": "Styles",
+          "type": "Literal['None', 'Random', 'Multiple Random', 'adam style', 'adamesque', 'aesthetic movement', 'american beaux-arts', 'american colonial revival', 'american craftsman', 'american eclectic', 'american f",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_35",
+          "label": "Terms",
+          "type": "Literal['None', 'Random', 'Multiple Random', 'abstract pattern', 'accent lighting', 'ambient lighting', 'artificial light', 'artistic focal point', 'asymmetrical balance', 'asymmetry', 'atmospheric pe",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_36",
+          "label": "Painting",
+          "type": "Literal['None', 'Random', 'Multiple Random', 'angular, abstract, dynamic, mixed media', 'angular, abstract, hard-edged, mixed media', 'atmospheric, expressionistic, smoky, oil', 'bold, abstract, geome",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_37",
+          "label": "Palette",
+          "type": "Literal['None', 'Random', 'Multiple Random', '(autumn harvest palette)', '(autumn leaves palette)', '(autumnal bliss palette)', '(beach house palette)', '(berry tones palette)', '(black and white chic",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_38",
+          "label": "Patterns",
+          "type": "Literal['None', 'Random', 'Multiple Random', 'abstract', 'animal print', 'argent', 'argyle', 'arrow', 'aztec', 'bandana', 'baroque', 'basketweave', 'batik', 'birdseye', 'brocade', 'brocatelle', 'bubbl",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_39",
+          "label": "Sculpture",
+          "type": "Literal['None', 'Random', 'Multiple Random', '(acrylic, transparent and lightweight material)', '(alabaster, soft stone)', '(aluminum, lightweight metal)', '(amber, fossilized resin)', '(balsa wood, s",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_40",
+          "label": "Styles",
+          "type": "Literal['None', 'Random', 'Multiple Random', '(1950s pulp sci-fi cover)', '(2d game art)', '(3d vr painting)', '(8k resolution)', '(anime)', '(artistic photograph)', '(baroque painting)', '(byzantine ",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_41",
+          "label": "Techniques",
+          "type": "Literal['None', 'Random', 'Multiple Random', 'acrylic painting technique', 'airbrush painting tool', 'aquatint etching technique', 'blender painting tool', 'bold textural effect', 'bold textural influ",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_42",
+          "label": "Types",
+          "type": "Literal['None', 'Random', 'Multiple Random', 'abstract expressionism', 'abstraction', 'airbrush painting', 'altered books', 'animation', 'antique restoration', 'applique', 'architecture', 'architextur",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_43",
+          "label": "Concept",
+          "type": "Literal['None', 'Random', 'Multiple Random', 'albert bierstadt', 'alfons maria mucha', 'anato finnstark', 'anders zorn', 'chesley bonestell', 'chriss foss', 'dean ellis', 'don maitz', 'federico pelat'",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_44",
+          "label": "Dark",
+          "type": "Literal['None', 'Random', 'Multiple Random', 'alfred kubin', 'bastien lecouffe-deharme', 'daniel merriam', 'dave mckean', 'earnst haeckel', 'edmund dulac', 'emmanuel shiu', 'jean delville', 'john baue",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_45",
+          "label": "Illustrator",
+          "type": "Literal['None', 'Random', 'Multiple Random', 'arthur rackham', 'aubrey beardsley', 'audrey wood', 'axel scheffler', 'beatrix potter', 'bill peet', 'bill watterson', 'charles addams', 'charles m. schul",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_46",
+          "label": "Painters",
+          "type": "Literal['None', 'Random', 'Multiple Random', 'andrew wyeth', 'bartolom\u00e9 esteban murillo', 'benjamin west', 'camille pissarro', 'caravaggio', 'caspar david friedrich', 'claude monet', 'diego rivera', '",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_47",
+          "label": "Brands",
+          "type": "Literal['None', 'Random', 'Multiple Random', '20th century studios', 'abercrombie & fitch', 'accenture', 'acer', 'activision blizzard', 'adidas', 'adobe', 'agent provocateur', 'airbnb', 'airbus', 'ali",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_48",
+          "label": "Famous_brand_with_objects",
+          "type": "Literal['None', 'Random', 'Multiple Random', 'Apple iPhone', 'Apple MacBook', 'Apple AirPods', 'Apple Watch', 'Apple iPad', 'Nike sneakers', 'Nike hoodie', 'Nike socks', 'Nike backpack', 'Nike basketb",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_49",
+          "label": "Random_with_objects",
+          "type": "Literal['None', 'Random', 'Multiple Random', 'Gucci bag', 'Louis Vuitton wallet', 'Rolex watch', 'Nike sneakers', 'Apple iPhone', 'Chanel perfume', 'Herm\u00e8s scarf', 'Prada sunglasses', 'Adidas tracksui",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_50",
+          "label": "Action",
+          "type": "Literal['None', 'Random', 'Multiple Random', 'assassin', 'biker', 'black ops agent', 'bodyguard', 'bomb squad specialist', 'bomber', 'commando', 'covert operative', 'crime boss', 'criminal mastermind'",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_51",
+          "label": "Anime",
+          "type": "Literal['None', 'Random', 'Multiple Random', 'aang', 'alexander anderson', 'all might', 'alphonse elric', 'alucard', 'ami mizuno (sailor mercury)', 'armin arlert', 'ash ketchum', 'asuka langley soryu'",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_52",
+          "label": "Fantasy",
+          "type": "Literal['None', 'Random', 'Multiple Random', 'a banshee', 'a basilisk', 'a centaur', 'a cyclops', 'a dark wizard', 'a demon', 'a demon prince', 'a demon princess', 'a dragon', 'a dragon rider', 'a dra",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_53",
+          "label": "Fictional",
+          "type": "Literal['None', 'Random', 'Multiple Random', 'aladdin', 'albus dumbledore', 'alice in wonderland', 'amy wong', 'anakin skywalker', 'anna (frozen)', 'anne shirley', 'aragorn', 'ariel (the little mermai",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_54",
+          "label": "General",
+          "type": "Literal['None', 'Random', 'Multiple Random', 'a assassin', 'a billionaire', 'a clown', 'a conspiracy theorist', 'a cop', 'a criminal', 'a cult leader', 'a cursed individual', 'a cursed object owner', ",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_55",
+          "label": "Monsters",
+          "type": "Literal['None', 'Random', 'Multiple Random', 'abominable snowman', 'banshee', 'basilisk', 'beast of bray road', 'behemoth', 'bigfoot', 'brownie', 'bunyip', 'byakhee', 'centaur', 'cerberus', 'changelin",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_56",
+          "label": "Scifi",
+          "type": "Literal['None', 'Random', 'Multiple Random', 'a colonizer of a new world', 'a cosmic horror entity', 'a cyber-enhanced soldier', 'a cyberpunk anti-hero', 'a cyborg', 'a cyborg assassin', 'a cyborg reb",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_57",
+          "label": "Superheroes",
+          "type": "Literal['None', 'Random', 'Multiple Random', 'adam warlock', 'angel', 'ant-man', 'aquaman', 'atom', 'batgirl', 'batman', 'batwoman', 'beast', 'beast boy', 'black bolt', 'black canary', 'black lightnin",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_58",
+          "label": "Supervillains",
+          "type": "Literal['None', 'Random', 'Multiple Random', 'abomination', 'absorbing man', 'apocalypse', 'ares', 'arnim zola', 'bane', 'baron mordo', 'baron zemo', 'bizarro', 'black adam', 'black manta', 'blackfire",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_59",
+          "label": "Aesthetics",
+          "type": "Literal['None', 'Random', 'Multiple Random', '2 Tone', '2000s Virtual Singer', '2010s Internet', '2014 Girly', '2014 Tumblr', '2020s E-Kid', '2020s Gamer', '2K1', '2K5', '2K7', '50s Suburbia', '7 HD',",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_60",
+          "label": "Cinematic_effects",
+          "type": "Literal['None', 'Random', 'Multiple Random', 'anamorphic', 'blur', 'bokeh', 'cgi', 'chromakey', 'chromatic aberrations', 'cinemascope', 'cineon', 'cinestill', 'de-noise', 'deep focus', 'depth of field",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_61",
+          "label": "Color_grading",
+          "type": "Literal['None', 'Random', 'Multiple Random', 'bold color grading', 'bright color grading', 'color grading', 'cool color grading', 'cool-toned color grading', 'cross-processed color grading', 'day-for-",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_62",
+          "label": "Color_modifiers",
+          "type": "Literal['None', 'Random', 'Multiple Random', 'autumnal', 'bold', 'bright', 'clear', 'cool', 'dark', 'deep', 'dull', 'earthy', 'faded', 'foggy', 'glossy', 'glowing', 'harsh', 'hazy', 'industrial', 'iri",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_63",
+          "label": "Directors",
+          "type": "Literal['None', 'Random', 'Multiple Random', 'Akira Kurosawa', 'Alejandro Jodorowsky', 'Alfred Hitchcock', 'Ang Lee', 'Baz Luhrmann', 'Christopher Doyle', 'Christopher Nolan', 'Coen Brothers (Ethan an",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_64",
+          "label": "Effects",
+          "type": "Literal['None', 'Random', 'Multiple Random', 'Abney effect', 'Afterimage', 'Bezold effect', 'Bezold\u2013Br\u00fccke shift', 'Chromatic adaptation', 'Chromostereopsis', 'Color assimilation', 'Color constancy', ",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_65",
+          "label": "Film_type",
+          "type": "Literal['None', 'Random', 'Multiple Random', '16mm film', '28mm film', '35mm film', '4k resolution', '70mm film', '8k resolution', '8mm film', '9.5mm film', 'anamorphic', 'betamax', 'chromakey', 'cine",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_66",
+          "label": "Genre",
+          "type": "Literal['None', 'Random', 'Multiple Random', 'action', 'action adventure', 'action comedy', 'action crime', 'action drama', 'action horror', 'action mystery', 'action thriller', 'adventure', 'animatio",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_67",
+          "label": "Movies",
+          "type": "Literal['None', 'Random', 'Multiple Random', '2001: A Space Odyssey (1968)', 'Am\u00e9lie (2001)', 'Big Fish (2003)', 'Black Swan (2010)', 'Blade (1998)', 'Blade Runner (1982)', 'Blue Is the Warmest Color ",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_68",
+          "label": "Shot_type",
+          "type": "Literal['None', 'Random', 'Multiple Random', 'aerial shot', 'bird's-eye view shot', 'close-up scene', 'close-up shot', 'crane shot', 'crowd shot', 'cutaway scene', 'cutaway shot', 'dolly shot', 'dolly",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_69",
+          "label": "Accessories",
+          "type": "Literal['None', 'Random', 'Multiple Random', 'anklet', 'arm warmers', 'armlet', 'ascot', 'backpack', 'bandana', 'bangle', 'barrette', 'barrettes', 'baseball cap', 'beaded bracelet', 'beanie', 'belly b",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_70",
+          "label": "Cultural",
+          "type": "Literal['None', 'Random', 'Multiple Random', '80s power suit', '90s grunge flannel shirt', 'afghan pakol hat', 'african dashiki shirt', 'african kufi cap', 'algerian burnous cloak', 'arabian thobe', '",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_71",
+          "label": "Designers",
+          "type": "Literal['None', 'Random', 'Multiple Random', 'acne studios', 'akris', 'alberta ferretti', 'alexander mcqueen', 'alexandre vauthier', 'ann demeulemeester', 'armani', 'badgley mischka', 'balenciaga', 'b",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_72",
+          "label": "Feminine",
+          "type": "Literal['None', 'Random', 'Multiple Random', 'backpack', 'balaclava', 'ball gown', 'base layer tops', 'bathing suit cover-up', 'beach bag', 'belt', 'bikini', 'blazer', 'blouse', 'board shorts', 'boots",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_73",
+          "label": "Feminine_hair_styles",
+          "type": "Literal['None', 'Random', 'Multiple Random', 'a-line bob (haircut)', 'afro (hairstyle)', 'angled bob (haircut)', 'asymmetrical bob (haircut)', 'ballerina braids (hairstyle)', 'ballerina bun (hairstyle",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_74",
+          "label": "Feminine_outfits",
+          "type": "Literal['None', 'Random', 'Multiple Random', '1920s art deco', '1920s flapper', '1920s parisian', '1930s film noir', '1930s hollywood glamour', '1940s military', '1940s pin-up', '1940s secretary', '19",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_75",
+          "label": "Masculine",
+          "type": "Literal['None', 'Random', 'Multiple Random', 'athletic pants', 'athletic shirt', 'athletic shirts', 'athletic shorts', 'athletic socks', 'backpack', 'balaclava', 'bandana', 'base layer tops', 'basebal",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_76",
+          "label": "Masculine_hair_styles",
+          "type": "Literal['None', 'Random', 'Multiple Random', 'afro (hairstyle)', 'bald with beard (haircut)', 'bald with shaved beard (haircut)', 'bowl cut (haircut)', 'braided (hairstyle)', 'brush cut (haircut)', 'b",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_77",
+          "label": "Creepy",
+          "type": "Literal['None', 'Random', 'Multiple Random', 'anxiety', 'chilling', 'creepy', 'creepy-crawly', 'disquieting', 'disturbing', 'dread', 'eerie', 'fear', 'frightening', 'ghostly', 'ghoulish', 'goosebumps'",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_78",
+          "label": "Loving",
+          "type": "Literal['None', 'Random', 'Multiple Random', 'admired', 'adored', 'affection', 'affectionate actions', 'affectionate gesture', 'appreciated', 'beaming', 'beloved', 'blessed', 'blissful', 'calming', 'c",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_79",
+          "label": "Melancholy",
+          "type": "Literal['None', 'Random', 'Multiple Random', 'aching', 'bleak', 'broken-hearted', 'cheerless', 'contemplative', 'dejected', 'depressed', 'desolate', 'despondent', 'disheartened', 'downcast', 'dreary',",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_80",
+          "label": "Unnerved",
+          "type": "Literal['None', 'Random', 'Multiple Random', 'agitated', 'anxious', 'apprehensive', 'befuddled', 'bewildered', 'confused', 'discombobulated', 'discomposed', 'disorganized', 'disoriented', 'disquieted'",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_81",
+          "label": "1word_food",
+          "type": "Literal['None', 'Random', 'Multiple Random', 'pizza', 'sushi', 'pasta', 'burger', 'salad', 'steak', 'soup', 'taco', 'sandwich', 'curry', 'risotto', 'lasagna', 'sashimi', 'burrito', 'omelette', 'pancak",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_82",
+          "label": "2word_food",
+          "type": "Literal['None', 'Random', 'Multiple Random', 'pizza margherita', 'sushi rolls', 'chicken parmesan', 'beef stroganoff', 'caesar salad', 'apple pie', 'french fries', 'ice cream', 'lasagna bolognese', 't",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_83",
+          "label": "3word_foods",
+          "type": "Literal['None', 'Random', 'Multiple Random', 'creamy tomato soup', 'spicy chicken wings', 'chocolate chip cookies', 'grilled cheese sandwich', 'crispy fried chicken', 'hearty beef stew', 'fresh garden",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_84",
+          "label": "Interesting_foods",
+          "type": "Literal['None', 'Random', 'Multiple Random', 'escargot', 'fugu', 'haggis', 'durian', 'kimchi', 'poutine', 'caviar', 'foie gras', 'truffles', 'saffron', 'wasabi', 'natto', 'century egg', 'bird's nest s",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_85",
+          "label": "Countries",
+          "type": "Literal['None', 'Random', 'Multiple Random', 'Afghanistan', 'Albania', 'Algeria', 'Andorra', 'Angola', 'Antigua and Barbuda', 'Argentina', 'Armenia', 'Australia', 'Austria', 'Azerbaijan', 'Bahrain', '",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_86",
+          "label": "Nationalities",
+          "type": "Literal['None', 'Random', 'Multiple Random', 'afghan', 'albanian', 'algerian', 'american', 'andorran', 'angolan', 'antiguan', 'argentine', 'argentinian', 'armenian', 'australian', 'austrian', 'azerbai",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_87",
+          "label": "Territories",
+          "type": "Literal['None', 'Random', 'Multiple Random', 'Abu Dhabi', 'Ajman', 'Akrotiri', 'American Samoa', 'Anguilla', 'Antarctica', 'Aruba', 'Ascension', 'Baker Island', 'Bermuda', 'Bonaire', 'Bouvet Island', ",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_88",
+          "label": "Festivities",
+          "type": "Literal['None', 'Random', 'Multiple Random', 'baisakhi', 'bastille day', 'bonfire night', 'burning man', 'carnival', 'cherry blossom festival', 'chinese new year', 'christmas', 'day of the dead', 'dia",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_89",
+          "label": "Groups",
+          "type": "Literal['None', 'Random', 'Multiple Random', 'assembly', 'attendees', 'audience', 'bunch', 'bystanders', 'clients', 'community', 'commuters', 'congregation', 'crowd', 'customers', 'delegates', 'fans',",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_90",
+          "label": "Hobbies",
+          "type": "Literal['None', 'Random', 'Multiple Random', 'acting', 'acupuncture', 'advocacy', 'animal rights', 'animation', 'apiary', 'app development', 'aquarium keeping', 'archery', 'aromatherapy', 'art therapy",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_91",
+          "label": "Jobs",
+          "type": "Literal['None', 'Random', 'Multiple Random', 'able-bodied seaman', 'accountant', 'activist', 'actor/actress', 'administrator', 'aerospace engineer', 'agricultural engineer', 'agricultural scientist', ",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_92",
+          "label": "Couple_interactions",
+          "type": "Literal['None', 'Random', 'Multiple Random', 'Adoring someone', 'Argument', 'Assistance', 'Being intimate', 'Being rejected', 'Betrayal', 'Bonding', 'Building a partnership', 'Building trust', 'Collab",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_93",
+          "label": "Couple_negative",
+          "type": "Literal['None', 'Random', 'Multiple Random', 'Accusing each other', 'Bickering with each other', 'Blaming each other', 'Complaining to each other', 'Criticizing each other', 'Displaying condescension ",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_94",
+          "label": "Crowd_interactions",
+          "type": "Literal['None', 'Random', 'Multiple Random', 'Attending a concert', 'Attending a festival', 'Attending a march', 'Attending a memorial service', 'Attending a parade', 'Attending a religious ceremony',",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_95",
+          "label": "Detailed_individual_interactions",
+          "type": "Literal['None', 'Random', 'Multiple Random', 'Adjusts a tie, looks in the mirror, and then nods in satisfaction', 'Adjusts glasses, squints at something in the distance, then nods in understanding', '",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_96",
+          "label": "Group_interactions",
+          "type": "Literal['None', 'Random', 'Multiple Random', 'Attempting to break a world record', 'Attending a high school reunion', 'Battling supernatural forces', 'Becoming a superhero', 'Competing in a reality sh",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_97",
+          "label": "Individual_interactions",
+          "type": "Literal['None', 'Random', 'Multiple Random', 'adjusts a hat on head', 'adjusts a tie', 'adjusts backpack straps', 'adjusts clothing self-consciously', 'adjusts glasses on nose', 'adjusts headphones on",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_98",
+          "label": "Detailed",
+          "type": "Literal['None', 'Random', 'Multiple Random', 'accurate', 'artistically-detailed', 'carefully-detailed', 'clear', 'complex', 'crisp', 'detailed', 'detailed picture', 'distinct', 'elaborate', 'expertly-",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_99",
+          "label": "Epic",
+          "type": "Literal['None', 'Random', 'Multiple Random', 'admirable', 'apotheotic', 'artistic', 'atmospheric', 'awe-inspiring', 'awesome', 'beautiful', 'bombastic', 'breathtaking', 'colorful', 'colossal', 'deligh",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_100",
+          "label": "Genres",
+          "type": "Literal['None', 'Random', 'Multiple Random', 'ancient', 'art deco', 'cyber gothic', 'cyber-baroque', 'cyber-goth', 'cyber-medieval', 'cyber-renaissance', 'cyber-steampunk', 'cyber-western', 'cyberfunk",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_101",
+          "label": "Glitch",
+          "type": "Literal['None', 'Random', 'Multiple Random', 'anomaly', 'artifact', 'banding', 'blemish', 'bug', 'burn-in', 'chromatic aberration', 'compression artifact', 'defect', 'disruption', 'distortion', 'doubl",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_102",
+          "label": "Modifiers",
+          "type": "Literal['None', 'Random', 'Multiple Random', '60s kitsch and psychedelia', 'abstract illusionism', 'afrofuturism', 'ambrotype', 'american romanticism', 'anaglyph effect', 'anaglyph filter', 'anime', '",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_103",
+          "label": "Negatives",
+          "type": "Literal['None', 'Random', 'Multiple Random', '3d', 'artifacts', 'asymmetry', 'b&w', 'bad anatomy', 'bad art', 'banding', 'blocked', 'blur', 'blurry', 'cartoon', 'childish', 'close up', 'copyright', 'd",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_104",
+          "label": "Prayers",
+          "type": "Literal['None', 'Random', 'Multiple Random', '4k', '8k', 'advanced', 'award winning', 'beautiful', 'breathtaking', 'cinematic', 'crystal clear', 'cutting-edge', 'detailed', 'elite', 'exceptional', 'ex",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_105",
+          "label": "Trending",
+          "type": "Literal['None', 'Random', 'Multiple Random', 'featured on 500px', 'featured on cgsociety', 'featured on conceptartworld', 'featured on getty images', 'featured on pixiv', 'trending on 500px', 'trendin",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_106",
+          "label": "Unusual",
+          "type": "Literal['None', 'Random', 'Multiple Random', 'abnormal', 'amazing', 'atypical', 'avant-garde', 'baffling', 'bewildering', 'bizarre', 'confusing', 'crazy', 'curious', 'different', 'eccentric', 'enigmat",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_107",
+          "label": "3word_objects",
+          "type": "Literal['None', 'Random', 'Multiple Random', 'vintage leather suitcase', 'ornate silver mirror', 'antique brass telescope', 'hand-painted ceramic vase', 'rustic wooden chest', 'elegant crystal chandel",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_108",
+          "label": "Classical_objects",
+          "type": "Literal['None', 'Random', 'Multiple Random', 'table', 'candle', 'shovel', 'book', 'chair', 'lamp', 'pencil', 'computer', 'mug', 'clock', 'mirror', 'vase', 'pillow', 'blanket', 'scissors', 'phone', 'ca",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_109",
+          "label": "Detailed_objects",
+          "type": "Literal['None', 'Random', 'Multiple Random', 'antique brass pocket watch with intricate engravings', 'hand-carved mahogany rocking chair with floral cushions', 'vintage Polaroid camera with rainbow st",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_110",
+          "label": "Magical_objects",
+          "type": "Literal['None', 'Random', 'Multiple Random', 'time machine', 'invisibility cloak', 'philosopher's stone', 'dragon egg', 'magic wand', 'teleportation device', 'antigravity boots', 'shrink ray', 'hologr",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_111",
+          "label": "Archtypes",
+          "type": "Literal['None', 'Random', 'Multiple Random', 'geek', 'gentleman', 'lady', 'man', 'middle-aged man', 'middle-aged woman', 'millennial', 'model', 'old man', 'old woman', 'person', 'woman', 'young man', ",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_112",
+          "label": "Body_types",
+          "type": "Literal['None', 'Random', 'Multiple Random', 'apple-shaped torso with slim limbs', 'apple-shaped with short torso', 'athletic build with visible muscle definition', 'balanced curves with defined waist",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_113",
+          "label": "Expressions",
+          "type": "Literal['None', 'Random', 'Multiple Random', 'amused expression with slightly upturned lips and soft eyes', 'barely contained grief with clenched fists', 'bawling loudly with red, puffy eyes', 'bawlin",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_114",
+          "label": "Eye_color",
+          "type": "Literal['None', 'Random', 'Multiple Random', 'amber eyes', 'amethyst eyes', 'aquamarine eyes', 'black eyes', 'blue eyes', 'brown eyes', 'coral eyes', 'dark brown eyes', 'gold eyes', 'green eyes', 'gre",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_115",
+          "label": "Camera",
+          "type": "Literal['None', 'Random', 'Multiple Random', 'aaton ltr', 'aaton xtr prod', 'arri alexa', 'arri alexa mini', 'arriflex 35', 'arriflex 435es', 'arriflex 535b', 'blackmagic cinema camera 2.5k', 'blackma",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_116",
+          "label": "Color_grading",
+          "type": "Literal['None', 'Random', 'Multiple Random', 'bold color grading', 'bright color grading', 'color grading', 'cool color grading', 'cool-toned color grading', 'cross-processed color grading', 'day-for-",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_117",
+          "label": "Film",
+          "type": "Literal['None', 'Random', 'Multiple Random', 'adox pan 100 film', 'adox silvermax 100 film', 'agfa vista plus 200 film', 'agfaphoto ct100 film', 'black and white negative film', 'color negative film',",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_118",
+          "label": "Keywords",
+          "type": "Literal['None', 'Random', 'Multiple Random', 'angles', 'animals', 'b&w', 'balance', 'barns', 'beaches', 'birds', 'bridges', 'buildings', 'churches', 'close-ups', 'clouds', 'color', 'composition', 'con",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_119",
+          "label": "Landscape_subject",
+          "type": "Literal['None', 'Random', 'Multiple Random', 'abandoned building', 'airport', 'aqueduct', 'arboretum', 'archipelago', 'badlands', 'beach', 'bike trail', 'boat', 'bog', 'botanical garden', 'bridge', 'c",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_120",
+          "label": "Lenses",
+          "type": "Literal['None', 'Random', 'Multiple Random', '100mm', '18mm', '200mm', '300mm', '35mm', '400mm', '50mm', '85mm', 'canon ef 100mm', 'canon ef 11-24mm', 'canon ef 14mm', 'canon ef 16-35mm', 'canon ef 17",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_121",
+          "label": "Lighting",
+          "type": "Literal['None', 'Random', 'Multiple Random', '3 spots lighting', 'afternoon lighting', 'ambient lighting', 'antique lighting', 'artificial lighting', 'autumn lighting', 'backlighting', 'bioluminescent",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_122",
+          "label": "Portrait_photographer",
+          "type": "Literal['None', 'Random', 'Multiple Random', 'alec soth', 'andreas gursky', 'andres serrano', 'annie leibovitz', 'annie liebovitz', 'august sander', 'bill brandt', 'brassa\u00ef', 'bruce davidson', 'bruce ",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_123",
+          "label": "Action",
+          "type": "Literal['None', 'Random', 'Multiple Random', 'Breaking into a secure location', 'Dealing with a corrupt government or law enforcement', 'Defending against a cyber attack or hacking attempt', 'Defendin",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_124",
+          "label": "Arthouse",
+          "type": "Literal['None', 'Random', 'Multiple Random', 'Battling with a chronic illness', 'Being caught in a love triangle', 'Being haunted by a ghost', 'Being held captive', 'Being trapped in a dysfunctional r",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_125",
+          "label": "Cyberpunk",
+          "type": "Literal['None', 'Random', 'Multiple Random', 'Battling against cyborgs and robots', 'Dealing with the aftermath of a cyber-disaster', 'Dealing with the consequences of artificial intelligence', 'Deali",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_126",
+          "label": "Fantasy",
+          "type": "Literal['None', 'Random', 'Multiple Random', 'Battling against evil forces or dark wizards', 'Dealing with the aftermath of a spell gone wrong', 'Dealing with the consequences of using dark magic', 'D",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_127",
+          "label": "General",
+          "type": "Literal['None', 'Random', 'Multiple Random', 'Attempting to break a world record', 'Attending a destination wedding', 'Attending a high school reunion', 'Attending a music festival', 'Battling superna",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_128",
+          "label": "Horror",
+          "type": "Literal['None', 'Random', 'Multiple Random', 'Battling a cursed object', 'Battling a dark cult', 'Battling a powerful evil entity', 'Battling a supernatural entity', 'Battling a voodoo curse', 'Escapi",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_129",
+          "label": "Musical",
+          "type": "Literal['None', 'Random', 'Multiple Random', 'Competing in a musical competition', 'Dealing with the challenges of being a solo artist', 'Dealing with the challenges of touring', 'Dealing with the imp",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_130",
+          "label": "Romance",
+          "type": "Literal['None', 'Random', 'Multiple Random', 'Breaking down personal barriers to love', 'Building a relationship despite personal insecurities', 'Building a relationship while balancing career and oth",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_131",
+          "label": "Scifi",
+          "type": "Literal['None', 'Random', 'Multiple Random', 'A group of astronauts must navigate a deadly asteroid field to save humanity', 'A group of astronauts tries to save Earth from an alien attack using a mys",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_132",
+          "label": "War",
+          "type": "Literal['None', 'Random', 'Multiple Random', 'Carrying out a dangerous mission', 'Conducting a commando and special forces mission', 'Conducting a covert operation', 'Conducting a deep penetration mis",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_133",
+          "label": "Portrait_poses",
+          "type": "Literal['None', 'Random', 'Multiple Random', '3/4 shot', 'against a wall', 'arms crossed', 'close-up', 'environmental portrait', 'full body shot', 'head tilted to the side', 'headshot', 'leaning', 'le",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_134",
+          "label": "Poses",
+          "type": "Literal['None', 'Random', 'Multiple Random', 'blowing a kiss', 'closing eyes and tilting head', 'crouching', 'crouching down with hands on ground in front of body', 'dancing or jumping in mid-air with",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_135",
+          "label": "Houseplants",
+          "type": "Literal['None', 'Random', 'Multiple Random', 'Abutilon', 'Aechmea', 'Aeschynanthus', 'Aglaonema', 'Alcea rosea', 'Alocasia', 'Alternanthera', 'Amaranthus', 'Anthurium', 'Arctotis', 'Begonia', 'Billber",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_136",
+          "label": "Modifiers",
+          "type": "Literal['None', 'Random', 'Multiple Random', 'After rain', 'Apocalyptic', 'Astounding', 'Aurora', 'Beautiful', 'Cloudy', 'Cumulonimbus', 'Dark skies', 'Drizzle', 'Eerie', 'Fluffy clouds', 'Foggy', 'Fo",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_137",
+          "label": "Scenes",
+          "type": "Literal['None', 'Random', 'Multiple Random', 'Beach', 'Canopy', 'Canyon', 'Castle', 'Cave', 'Cavern', 'Church', 'Cityscape', 'Cliffs', 'Cloud forest', 'Copse', 'Crater', 'Desert', 'Expanse', 'Farmyard",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_138",
+          "label": "Textures",
+          "type": "Literal['None', 'Random', 'Multiple Random', 'Abstract paint splatters', 'Antique metal', 'Antique paper', 'Asphalt', 'Asphalt with cracks', 'Bark', 'Bark with moss', 'Brick', 'Bricks with moss', 'Bru",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_139",
+          "label": "Trees",
+          "type": "Literal['None', 'Random', 'Multiple Random', 'Alder', 'Almond', 'American holly', 'American sweetgum', 'Apple', 'Apricot', 'Arizona cypress', 'Ash', 'Aspen', 'Atlantic white cedar', 'Baldcypress', 'Ba",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_140",
+          "label": "Weather",
+          "type": "Literal['None', 'Random', 'Multiple Random', 'Altocumulus clouds', 'Altostratus clouds', 'Aurora australis', 'Aurora borealis', 'Avalanche', 'Balmy', 'Black frost', 'Black ice', 'Blizzard', 'Blustery'",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_141",
+          "label": "Astronomy",
+          "type": "Literal['None', 'Random', 'Multiple Random', 'Andromeda', 'Big Bang', 'Black hole', 'Comet', 'Comet trail', 'Dark energy', 'Dark matter', 'Exoplanet', 'Galaxy', 'Jupiter', 'Mars', 'Mercury', 'Messier'",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_142",
+          "label": "Elements",
+          "type": "Literal['None', 'Random', 'Multiple Random', 'Actinium', 'Aluminum', 'Americium', 'Antimony', 'Argon', 'Arsenic', 'Astatine', 'Barium', 'Berkelium', 'Beryllium', 'Bismuth', 'Bohrium', 'Boron', 'Bromin",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_143",
+          "label": "Mathematics",
+          "type": "Literal['None', 'Random', 'Multiple Random', 'Annulus', 'Apollonian gasket', 'Archimedean', 'Archimedean solids', 'Bravais lattice', 'Buckminster fullerene', 'Bucky ball', 'Cellular automaton', 'Chaos",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_144",
+          "label": "Medical",
+          "type": "Literal['None', 'Random', 'Multiple Random', '3D ultrasound', '4D ultrasound', 'Angiography', 'CT scan', 'CTA', 'Dental x-ray', 'DEXA scan', 'Doppler imaging', 'Echocardiography', 'Fluoroscopy', 'Intr",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_145",
+          "label": "City",
+          "type": "Literal['None', 'Random', 'Multiple Random', 'advertising sign', 'ambulance', 'antique shop', 'aquarium', 'arcade', 'arena', 'art gallery', 'auto repair shop', 'awning', 'bakery', 'balcony', 'bank', '",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_146",
+          "label": "Everyday",
+          "type": "Literal['None', 'Random', 'Multiple Random', 'air freshener', 'airplane', 'apron', 'backpack', 'barbecue', 'bath mat', 'bed', 'bench', 'bike', 'bin', 'binoculars', 'blender', 'blinds', 'boat', 'book',",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_147",
+          "label": "Fall",
+          "type": "Literal['None', 'Random', 'Multiple Random', 'Apple cider', 'Beanie', 'Boots', 'Cable knit sweater', 'Cardigan', 'Cozy scarf', 'Fall leaves', 'Flannel shirt', 'Gloves', 'Halloween decorations', 'Hot c",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_148",
+          "label": "Fantasy",
+          "type": "Literal['None', 'Random', 'Multiple Random', 'alchemy', 'apprentice', 'archer', 'armor', 'battering ram', 'black ice', 'black magic', 'breaking point', 'burn mark', 'candlelight', 'castle', 'castle ga",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_149",
+          "label": "Gadgets",
+          "type": "Literal['None', 'Random', 'Multiple Random', '3d printer', '3d printer controller', '3d scanner', '8-track tape player', 'access control system', 'air conditioner', 'air fryer', 'air purifier', 'ampli",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_150",
+          "label": "Icons",
+          "type": "Literal['None', 'Random', 'Multiple Random', 'badminton', 'baseball', 'basketball', 'battery', 'book', 'briefcase', 'building', 'bullhorn', 'button', 'calendar', 'camera', 'card game', 'chat bubble', ",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_151",
+          "label": "Office",
+          "type": "Literal['None', 'Random', 'Multiple Random', 'abacus', 'adding machine', 'atm machine', 'balance sheet', 'bank vault', 'banknote', 'blueprint', 'briefcase', 'business card', 'calculator', 'cash regist",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_152",
+          "label": "Scary",
+          "type": "Literal['None', 'Random', 'Multiple Random', 'abandoned buildings', 'abandoned hospitals', 'aliens', 'ancient curses', 'apparitions', 'being watched', 'bewitched places', 'bizarre rituals', 'black mag",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_153",
+          "label": "Scifi",
+          "type": "Literal['None', 'Random', 'Multiple Random', '3d printer', '3d printing', 'ai building construction system', 'ai companion', 'ai companion device', 'ai construction machine', 'ai deep space explorer',",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_154",
+          "label": "Space",
+          "type": "Literal['None', 'Random', 'Multiple Random', 'adrastea', 'aitne', 'alpha centauri', 'amalthea', 'ananke', 'anomalous x-ray pulsar', 'antennae galaxies', 'asteroids', 'black hole', 'black holes', 'blue",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_155",
+          "label": "Spring",
+          "type": "Literal['None', 'Random', 'Multiple Random', 'Blossom', 'Cardigan', 'Gardening gloves', 'Light jacket', 'Rain boots', 'Raincoat', 'Rain umbrella', 'Rubber boots', 'Shorts', 'Spring flowers', 'Sunglass",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_156",
+          "label": "Summer",
+          "type": "Literal['None', 'Random', 'Multiple Random', 'baseball cap', 'bbq grill', 'beach bag', 'beach ball', 'beach towel', 'beach umbrella', 'camping tent', 'canoe', 'cooler', 'corn on the cob', 'fire pit', ",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_157",
+          "label": "Winter",
+          "type": "Literal['None', 'Random', 'Multiple Random', 'Beanie', 'Blanket', 'Boots', 'Button-up coat', 'Cable knit sweater', 'Car scraper', 'Earmuffs', 'Flannel shirt', 'Gloves', 'Hot cocoa', 'Ice skates', 'Lon",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_158",
+          "label": "Century",
+          "type": "Literal['None', 'Random', 'Multiple Random', '12th century', '13th century', '14th century', '15th century', '16th century', '17th century', '18th century', '19th century', '20th century', '21st centu",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_159",
+          "label": "Decades",
+          "type": "Literal['None', 'Random', 'Multiple Random', '2000s', '2010s', '2020s', '20s', '30s', '40s', '50s', '60s', '70s', '80s', '90s']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_160",
+          "label": "Eras",
+          "type": "Literal['None', 'Random', 'Multiple Random', 'age of absolutism', 'age of enlightenment', 'age of exploration', 'age of imperialism', 'age of reason', 'american civil war', 'american revolution', 'anc",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_161",
+          "label": "Time",
+          "type": "Literal['None', 'Random', 'Multiple Random', 'afternoon', 'afternoon light', 'afternoon sun', 'afternoon twilight', 'dawn', 'daybreak', 'dusk', 'early morning', 'early morning light', 'evening light',",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_162",
+          "label": "Features",
+          "type": "Literal['None', 'Random', 'Multiple Random', 'Airy Spacing', 'Angled Stress', 'Angular Terminals', 'Balanced Letterforms', 'Ball Terminals', 'Bold Weight', 'Chunky Serifs', 'Clean Sans', 'Closed Count",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_163",
+          "label": "Font_styles",
+          "type": "Literal['None', 'Random', 'Multiple Random', 'All Caps Style Font', 'Black Italic Style Font', 'Black Style Font', 'Bold Italic Style Font', 'Bold Style Font', 'Book Style Font', 'Compact Style Font',",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_164",
+          "label": "Fonts",
+          "type": "Literal['None', 'Random', 'Multiple Random', 'Adobe Garamond Font', 'Akzidenz Grotesk Font', 'Archer Font', 'Arial Black Font', 'Arial Font', 'Avenir Font', 'Baskerville Font', 'Bembo Font', 'Bodoni F",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_165",
+          "label": "Types",
+          "type": "Literal['None', 'Random', 'Multiple Random', 'Art Deco Typography', 'Bitmap Typography', 'Blackletter Typography', 'Brush Typography', 'Calligraphic Typography', 'Comic Typography', 'Condensed Typogra",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_166",
+          "label": "Word_art",
+          "type": "Literal['None', 'Random', 'Multiple Random', 'Animal Print Text', 'Arched Text', 'Argyle Text', 'Beaded Text', 'Beveled Text', 'Braided Text', 'Brushstroke Text', 'Bubbly Text', 'Burning Text', 'Camou",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_167",
+          "label": "Cars",
+          "type": "Literal['None', 'Random', 'Multiple Random', 'Acura CL', 'Acura ILX', 'Acura MDX', 'Acura NSX', 'Acura RDX', 'Acura RLX', 'Acura TLX', 'Alfa Romeo Giulia', 'Alfa Romeo Giulietta', 'Alfa Romeo Stelvio'",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_168",
+          "label": "Classic_cars",
+          "type": "Literal['None', 'Random', 'Multiple Random', '1903 Oldsmobile Curved Dash Runabout', '1904 Cadillac Model B', '1904 Ford Model C', '1904 Rolls-Royce 10 HP', '1905 Renault Type AG', '1905 Stanley Steam",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_169",
+          "label": "Famous_cars",
+          "type": "Literal['None', 'Random', 'Multiple Random', 'Bumblebee from Transformers', 'Christine from Christine', 'Doc Brown's DeLorean from Back to the Future', 'Ecto-1 from Ghostbusters', 'Finn McMissile from",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_170",
+          "label": "Fast_cars",
+          "type": "Literal['None', 'Random', 'Multiple Random', 'Aston Martin DB11', 'Aston Martin DB11 AMR', 'Aston Martin DB7', 'Aston Martin One-77', 'Aston Martin Vanquish', 'Aston Martin Vantage', 'Audi R8', 'Audi ",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_171",
+          "label": "Types",
+          "type": "Literal['None', 'Random', 'Multiple Random', 'aircraft', 'airplane', 'amphibious vehicle', 'atv', 'backhoe', 'barge', 'bicycle', 'blimp', 'boat', 'bulldozer', 'bus', 'cable car', 'camper', 'canoe', 'c",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_172",
+          "label": "Actions",
+          "type": "Literal['None', 'Random', 'Multiple Random', 'Absorbing Mana', 'Activating an Item', 'Activating Invincibility', 'Activating Magical Runes', 'Activating Multi-Jump', 'Activating Super Power Mode', 'Ac",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_173",
+          "label": "Designers",
+          "type": "Literal['None', 'Random', 'Multiple Random', 'Alex Rigopulos', 'Amy Hennig', 'Brenda Romero', 'Chris Avellone', 'Chris Hecker', 'Chris Roberts', 'Cliff Bleszinski', 'David Braben', 'David Cage', 'Davi",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_174",
+          "label": "Engines",
+          "type": "Literal['None', 'Random', 'Multiple Random', 'Amazon Lumberyard', 'AnvilNext', 'Creation Engine', 'CryEngine', 'Decima Engine', 'Dunia Engine', 'Eclipse Engine', 'EGO Engine', 'Fox Engine', 'Frostbite",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_175",
+          "label": "Games",
+          "type": "Literal['None', 'Random', 'Multiple Random', 'ABZ\u00db', 'Amnesia: The Dark Descent', 'Among Us', 'Angry Birds', 'Animal Crossing', 'Animal Crossing: New Horizons', 'Apex Legends', 'ARMS', 'Arx Fatalis', ",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_176",
+          "label": "Regions",
+          "type": "Literal['None', 'Random', 'Multiple Random', 'Ancient Forest', 'Ancient Kingdom', 'Ancient Ruins', 'Ancient Temple', 'Aquatic Kingdom', 'Arctic Region', 'Atlantis Region', 'Avalon Region', 'Bamboo For",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_177",
+          "label": "Type",
+          "type": "Literal['None', 'Random', 'Multiple Random', 'Pixel Art', '3D Graphics', '2D Graphics', 'Hand-Drawn Art', 'Low Poly', 'Cel Shading', 'Photorealistic', 'Vector Graphics', 'Voxel Art', 'ASCII Art', 'Ret",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Used Seed",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "label": "Generated Prompt / Input Text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "value_274",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "label": "T5XXL Output",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "CLIP L Output",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "CLIP G Output",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/add_caption_to_prompt",
+      "parameters": [
+        {
+          "name": "prompt",
+          "label": "Generated Prompt / Input Text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "caption",
+          "label": "Generated Caption",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Generated Prompt / Input Text",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/update_model_choices",
+      "parameters": [
+        {
+          "name": "provider",
+          "label": "LLM Provider",
+          "type": "Literal['Hugging Face', 'SambaNova', 'OpenAI', 'Anthropic']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Model",
+          "type": "Literal['Meta-Llama-3.1-70B-Instruct', 'Meta-Llama-3.1-405B-Instruct', 'Meta-Llama-3.1-8B-Instruct']",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/update_api_key_visibility",
+      "parameters": [
+        {
+          "name": "provider",
+          "label": "LLM Provider",
+          "type": "Literal['Hugging Face', 'SambaNova', 'OpenAI', 'Anthropic']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "API Key",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/generate_text",
+      "parameters": [
+        {
+          "name": "output",
+          "label": "Generated Prompt / Input Text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "happy_talk",
+          "label": "Happy Talk",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "compress",
+          "label": "Compress",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "compression_level",
+          "label": "Compression Level",
+          "type": "Literal['soft', 'medium', 'hard']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "custom_base_prompt",
+          "label": "Custom Base Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "provider",
+          "label": "LLM Provider",
+          "type": "Literal['Hugging Face', 'SambaNova', 'OpenAI', 'Anthropic']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "api_key",
+          "label": "API Key",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "model",
+          "label": "Model",
+          "type": "Literal['Meta-Llama-3.1-70B-Instruct', 'Meta-Llama-3.1-405B-Instruct', 'Meta-Llama-3.1-8B-Instruct']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Generated Text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Prompt Type",
+          "type": "Literal['happy', 'simple', 'poster', 'only_objects', 'no_figure', 'landscape', 'fantasy']",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/update_all_options",
+      "parameters": [
+        {
+          "name": "choice",
+          "label": "Set all options to:",
+          "type": "Literal['Disabled', 'Random', 'No Figure Rand']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Artform",
+          "type": "Literal['disabled', 'random', 'photography', 'art']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Photo Type",
+          "type": "Literal['disabled', 'random', 'front view', 'bilaterally symmetrical', 'side view', 'back view', 'from above', 'from below', 'from behind', 'wide angle view', 'fisheyes view', 'macro view', 'overhead ",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Body Types",
+          "type": "Literal['disabled', 'random', 'pretty', 'chubby', 'midweight', 'overweight', 'fat', 'flabby', 'buxom', 'voluptuous', 'hefty', 'pudgy', 'plump', 'obese', 'morbidly obese', 'stout', 'rotund', 'thick-bod",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Default Tags",
+          "type": "Literal['disabled', 'random', 'a woman', 'a young woman', 'a middle aged woman', 'an old woman', 'a man', 'a young man', 'a middle aged man', 'an old man']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Roles",
+          "type": "Literal['disabled', 'random', 'as a ((cyborg))', 'as an ((x-men character))', 'as a ((marvel character))', 'as a ((character from lord of the rings))', 'as a ((superhero character))', 'as a ((scifi ch",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Hairstyles",
+          "type": "Literal['disabled', 'random', 'with ((long hair))', 'with ((very curly hair))', 'with ((curly hair))', 'with ((pixie cut hair))', 'with ((bob cut hair))', 'with ((undercut hair))', 'with ((messy hair)",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Clothing",
+          "type": "Literal['disabled', 'random', 'white crop top, denim shorts,silver bracelet,white texture,denim texture', 'white top, sleeveless, button-up, white bottoms, ribbed texture', 'white crop top, blue jeans",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Place",
+          "type": "Literal['disabled', 'random', 'indoor', 'outdoor', 'at night', 'in the park', 'studio', 'at a party', 'at a festival', 'at a concert', 'on persons home planet', 'magical portal with particles', 'in a ",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Lighting",
+          "type": "Literal['disabled', 'random', 'popping colors, popart style', 'bokeh', 'dramatic', 'golden hour', 'depth of field', 'movie still', 'colorful', 'soft lighting', 'studio lighting with strong rim light',",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Composition",
+          "type": "Literal['disabled', 'random', 'lush greenery, blurred foliage, natural lighting', 'geometric tiles, circular mirror, bright lighting, hexagonal patterns', 'graffiti on door, urban setting, dark tones,",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Pose",
+          "type": "Literal['disabled', 'random', 'standing straight, facing camera, leaf in hand', 'standing, hands on surface, facing camera', 'one arm bent, hip jutted out, direct gaze', 'standing straight, hands on p",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Background",
+          "type": "Literal['disabled', 'random', 'Eye-level shot, centered subject, direct perspective', 'Eye-level shot, centered subject, natural daylight', 'Eye-level shot, central framing, natural lighting', 'Eye-le",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Additional Details",
+          "type": "Literal['disabled', 'random', 'a purple iridescent suit', 'wearing a (necklace)', 'wearing ((earrings))', 'wearing a (bracelet)', 'wearing one or multiple (rings)', 'wearing a (brooch)', 'wearing (eye",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Photography Styles",
+          "type": "Literal['disabled', 'random', 'high fashion photography', 'avant garde photography', 'fashion photography', 'portrait photography', 'landscape photography', 'documentary photography', 'street photogra",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Device",
+          "type": "Literal['disabled', 'random', 'Canon EOS 5D Mark IV with Canon EF 24-70mm f-2.8L II', 'Canon EOS 90D with Canon EF-S 18-135mm f-3.5-5.6 IS USM', 'Canon EOS M6 Mark II with Canon EF-M 32mm f-1.4', 'Can",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Photographer",
+          "type": "Literal['disabled', 'random', 'Alessio Albi', 'Alvin Langdon Coburn', 'Anne Brigman', 'Ansel Adams', 'Anton Corbijn', 'Berenice Abbott', 'Bill Brandt', 'Brooke DiDonato', 'Bruce Davidson', 'Bruno Barb",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Artist",
+          "type": "Literal['disabled', 'random', 'Akihito Tsukushi', 'Al Hirschfeld', 'Alan Lee', 'Albert Bierstadt', 'Albert Uderzo', 'Alberto Giacometti', 'Alberto Vargas', 'Albrecht Durer', 'Alejandro Burdisio', 'Ale",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Digital Artform",
+          "type": "Literal['disabled', 'random', 'Glitch Art art', 'Digital Painting art', 'Acrylic Paint art', 'Algorithmic art', 'Animation art', 'Art glass art', 'Assemblage art', 'Augmented reality art', 'Batik art'",
+          "component": "Dropdown"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/update_prompt_type",
+  "_api_verified": true,
+  "estimated_latency_s": 2.18,
+  "speed_tier": "fast",
+  "_latency_source": "measured_inference",
+  "_tags_enriched": true,
+  "measured_latency_s": 2.18,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:50:43.784006+00:00",
+  "measured_inference_s": 2.18,
+  "measured_inference_timestamp": "2026-04-20T07:58:56.239866+00:00",
+  "measured_inference_method": "auto_predict",
+  "measured_inference_api": "/update_prompt_type"
+}

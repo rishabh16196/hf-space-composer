@@ -1,0 +1,148 @@
+{
+  "space_id": "ZhengPeng7/BiRefNet_demo",
+  "title": "BiRefNet Demo",
+  "emoji": "\ud83d\udc41",
+  "description": "BiRefNet Demo",
+  "input_schema": {
+    "images": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "Upload an image",
+      "required": true,
+      "component": "Image"
+    },
+    "resolution": {
+      "type": "str",
+      "description": "Resolution",
+      "required": true,
+      "component": "Textbox"
+    },
+    "weights_file": {
+      "type": "Literal['General', 'General-HR', 'Matting-HR', 'Matting', 'Portrait', 'General-reso_512', 'General-L",
+      "description": "Weights",
+      "required": true,
+      "component": "Radio"
+    }
+  },
+  "output_schema": {
+    "BiRefNet's prediction": {
+      "type": "tuple[dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base6",
+      "description": "BiRefNet's prediction",
+      "component": "Imageslider"
+    }
+  },
+  "license": "mit",
+  "hardware": "5.35.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 307,
+  "last_modified": "2026-02-21 14:38:38+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/image",
+      "parameters": [
+        {
+          "name": "images",
+          "label": "Upload an image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "resolution",
+          "label": "Resolution",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "weights_file",
+          "label": "Weights",
+          "type": "Literal['General', 'General-HR', 'Matting-HR', 'Matting', 'Portrait', 'General-reso_512', 'General-Lite', 'General-Lite-2K', 'DIS', 'HRSOD', 'COD', 'DIS-TR_TEs', 'General-legacy', 'General-dynamic', '",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "BiRefNet's prediction",
+          "type": "tuple[dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filenam",
+          "component": "Imageslider"
+        }
+      ]
+    },
+    {
+      "name": "/URL",
+      "parameters": [
+        {
+          "name": "images",
+          "label": "Paste an image URL",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "resolution",
+          "label": "Resolution",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "weights_file",
+          "label": "Weights",
+          "type": "Literal['General', 'General-HR', 'Matting-HR', 'Matting', 'Portrait', 'General-reso_512', 'General-Lite', 'General-Lite-2K', 'DIS', 'HRSOD', 'COD', 'DIS-TR_TEs', 'General-legacy', 'General-dynamic', '",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "BiRefNet's prediction",
+          "type": "tuple[dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filenam",
+          "component": "Imageslider"
+        }
+      ]
+    },
+    {
+      "name": "/batch",
+      "parameters": [
+        {
+          "name": "images",
+          "label": "Upload multiple images",
+          "type": "list[filepath]",
+          "component": "File"
+        },
+        {
+          "name": "resolution",
+          "label": "Resolution",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "weights_file",
+          "label": "Weights",
+          "type": "Literal['General', 'General-HR', 'Matting-HR', 'Matting', 'Portrait', 'General-reso_512', 'General-Lite', 'General-Lite-2K', 'DIS', 'HRSOD', 'COD', 'DIS-TR_TEs', 'General-legacy', 'General-dynamic', '",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "BiRefNet's predictions",
+          "type": "list[dict(image: dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Origi",
+          "component": "Gallery"
+        },
+        {
+          "label": "Download masked images.",
+          "type": "filepath",
+          "component": "File"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/image",
+  "_api_verified": true
+}

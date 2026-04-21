@@ -1,0 +1,126 @@
+{
+  "space_id": "farukalamai/YOLO26-vs-RF-DETR",
+  "title": "YOLO26 vs RF-DETR",
+  "emoji": "\ud83d\udd25",
+  "description": "YOLO26 vs RF-DETR Model Comparison",
+  "input_schema": {
+    "task": {
+      "type": "Literal['detection', 'segmentation']",
+      "description": "Task Type",
+      "required": true,
+      "component": "Radio"
+    }
+  },
+  "output_schema": {
+    "YOLO26 Variant": {
+      "type": "Literal['YOLO26n', 'YOLO26s', 'YOLO26m', 'YOLO26l', 'YOLO26x']",
+      "description": "YOLO26 Variant",
+      "component": "Dropdown"
+    },
+    "RF-DETR Variant": {
+      "type": "Literal['RFDETRNano', 'RFDETRSmall', 'RFDETRMedium', 'RFDETRLarge', 'RFDETRXLarge', 'RFDETR2XLarge']",
+      "description": "RF-DETR Variant",
+      "component": "Dropdown"
+    }
+  },
+  "license": "mit",
+  "hardware": "6.4.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 13,
+  "last_modified": "2026-02-15 09:33:26+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/update_model_choices",
+      "parameters": [
+        {
+          "name": "task",
+          "label": "Task Type",
+          "type": "Literal['detection', 'segmentation']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "YOLO26 Variant",
+          "type": "Literal['YOLO26n', 'YOLO26s', 'YOLO26m', 'YOLO26l', 'YOLO26x']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "RF-DETR Variant",
+          "type": "Literal['RFDETRNano', 'RFDETRSmall', 'RFDETRMedium', 'RFDETRLarge', 'RFDETRXLarge', 'RFDETR2XLarge']",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/process_image",
+      "parameters": [
+        {
+          "name": "image",
+          "label": "Input Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "confidence_threshold",
+          "label": "Confidence Threshold",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "image_size",
+          "label": "Image Size",
+          "type": "Literal['384', '512', '576', '624', '640', '768', '880']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "yolo_variant",
+          "label": "YOLO26 Variant",
+          "type": "Literal['YOLO26n', 'YOLO26s', 'YOLO26m', 'YOLO26l', 'YOLO26x']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "rfdetr_variant",
+          "label": "RF-DETR Variant",
+          "type": "Literal['RFDETRNano', 'RFDETRSmall', 'RFDETRMedium', 'RFDETRLarge', 'RFDETRXLarge', 'RFDETR2XLarge']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "task_type",
+          "label": "Task Type",
+          "type": "Literal['detection', 'segmentation']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "YOLO26 Result",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "RF-DETR Result",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/update_model_choices",
+  "_api_verified": true,
+  "estimated_latency_s": 3.08,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "_tags_enriched": true,
+  "measured_latency_s": 3.08,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:50:34.549201+00:00"
+}

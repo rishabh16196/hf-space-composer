@@ -1,0 +1,168 @@
+{
+  "space_id": "kapr/crypto-price-forecasts",
+  "title": "Crypto Price Forecasts",
+  "emoji": "\ud83c\udfe2",
+  "description": "Uses Prophet to forecast crypto prices",
+  "input_schema": {
+    "symbol": {
+      "type": "Literal['1INCH-EUR', '1INCH-USD', '1INCH-USDC', '1INCH-USDT', '2Z-EUR', '2Z-USD', '2Z-USDC', '2Z-USD",
+      "description": "Symbol",
+      "required": true,
+      "component": "Dropdown"
+    },
+    "timeframe": {
+      "type": "Literal['1m', '5m', '15m', '30m', '1h', '2h', '4h', '6h', '12h', '1d', '1w']",
+      "description": "Timeframe",
+      "required": true,
+      "component": "Dropdown"
+    },
+    "forecast_steps": {
+      "type": "float",
+      "description": "Forecast Steps",
+      "required": true,
+      "component": "Slider"
+    },
+    "total_candles": {
+      "type": "float",
+      "description": "Total Candles to Fetch",
+      "required": true,
+      "component": "Slider"
+    },
+    "daily_seasonality": {
+      "type": "bool",
+      "description": "Daily Seasonality",
+      "required": true,
+      "component": "Checkbox"
+    },
+    "weekly_seasonality": {
+      "type": "bool",
+      "description": "Weekly Seasonality",
+      "required": true,
+      "component": "Checkbox"
+    },
+    "yearly_seasonality": {
+      "type": "bool",
+      "description": "Yearly Seasonality",
+      "required": true,
+      "component": "Checkbox"
+    },
+    "seasonality_mode": {
+      "type": "Literal['additive', 'multiplicative']",
+      "description": "Seasonality Mode",
+      "required": true,
+      "component": "Dropdown"
+    },
+    "changepoint_prior_scale": {
+      "type": "float",
+      "description": "Changepoint Prior Scale (0.01 ~ 1.0)",
+      "required": true,
+      "component": "Slider"
+    }
+  },
+  "output_schema": {
+    "Forecast Chart": {
+      "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+      "description": "Forecast Chart",
+      "component": "Plot"
+    },
+    "Forecast (Future Only)": {
+      "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+      "description": "Forecast (Future Only)",
+      "component": "Dataframe"
+    }
+  },
+  "license": "mit",
+  "hardware": "5.12.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 45,
+  "last_modified": "2025-01-14 15:18:46+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/display_forecast",
+      "parameters": [
+        {
+          "name": "symbol",
+          "label": "Symbol",
+          "type": "Literal['1INCH-EUR', '1INCH-USD', '1INCH-USDC', '1INCH-USDT', '2Z-EUR', '2Z-USD', '2Z-USDC', '2Z-USDT', 'A-EUR', 'A-USD', 'A-USDC', 'A-USDT', 'AAVE-EUR', 'AAVE-TRY', 'AAVE-USD', 'AAVE-USDC', 'AAVE-USD",
+          "component": "Dropdown"
+        },
+        {
+          "name": "timeframe",
+          "label": "Timeframe",
+          "type": "Literal['1m', '5m', '15m', '30m', '1h', '2h', '4h', '6h', '12h', '1d', '1w']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "forecast_steps",
+          "label": "Forecast Steps",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "total_candles",
+          "label": "Total Candles to Fetch",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "daily_seasonality",
+          "label": "Daily Seasonality",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "weekly_seasonality",
+          "label": "Weekly Seasonality",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "yearly_seasonality",
+          "label": "Yearly Seasonality",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "seasonality_mode",
+          "label": "Seasonality Mode",
+          "type": "Literal['additive', 'multiplicative']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "changepoint_prior_scale",
+          "label": "Changepoint Prior Scale (0.01 ~ 1.0)",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Forecast Chart",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "Forecast (Future Only)",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/display_forecast",
+  "_api_verified": true,
+  "estimated_latency_s": 3.95,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 3.95,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:51:02.988438+00:00"
+}

@@ -1,0 +1,182 @@
+{
+  "space_id": "RavichandraNayakar/customer_support_env",
+  "title": "Customer Support OpenEnv Environment",
+  "emoji": "\ud83e\udd16",
+  "description": "Customer Support OpenEnv Environment",
+  "input_schema": {
+    "action": {
+      "type": "Literal['classify_issue', 'choose_solution', 'escalate_decision', 'close_ticket']",
+      "description": "Action Type",
+      "required": true,
+      "component": "Dropdown"
+    }
+  },
+  "output_schema": {},
+  "license": "unknown",
+  "hardware": "",
+  "sdk": "docker",
+  "tags": [
+    "docker",
+    "openenv",
+    "rl",
+    "customer-support",
+    "agent-training",
+    "rl-environment",
+    "region:us"
+  ],
+  "likes": 2,
+  "last_modified": "2026-04-13 15:51:58+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/update_form_visibility",
+      "parameters": [
+        {
+          "name": "action",
+          "label": "Action Type",
+          "type": "Literal['classify_issue', 'choose_solution', 'escalate_decision', 'close_ticket']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/step_action",
+      "parameters": [
+        {
+          "name": "action_type",
+          "label": "Action Type",
+          "type": "Literal['classify_issue', 'choose_solution', 'escalate_decision', 'close_ticket']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "classification",
+          "label": "Classification",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "category",
+          "label": "Category",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "solution",
+          "label": "Solution",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "should_escalate",
+          "label": "Escalate? (true/false)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "escalate_reason",
+          "label": "Reason (if escalating)",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_53",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "value_50",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "value_57",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "value_54",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "Full Observation JSON",
+          "type": "str",
+          "component": "Code"
+        }
+      ]
+    },
+    {
+      "name": "/reset_env",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_53",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "value_50",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "value_57",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "value_54",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "Full Observation JSON",
+          "type": "str",
+          "component": "Code"
+        }
+      ]
+    },
+    {
+      "name": "/get_state",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_53",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "value_50",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "value_57",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "value_54",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "Full Observation JSON",
+          "type": "str",
+          "component": "Code"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/update_form_visibility",
+  "_api_verified": true
+}

@@ -1,0 +1,122 @@
+{
+  "space_id": "huggingface-projects/llama-3.2-3B-Instruct",
+  "title": "Llama 3.2 3B Instruct",
+  "emoji": "\ud83d\ude3b",
+  "description": "Chatbot",
+  "input_schema": {
+    "message": {
+      "type": "str",
+      "description": "",
+      "required": true,
+      "component": "Textbox"
+    },
+    "max_new_tokens": {
+      "type": "float",
+      "description": "Max new tokens",
+      "required": true,
+      "component": "Slider"
+    },
+    "temperature": {
+      "type": "float",
+      "description": "Temperature",
+      "required": true,
+      "component": "Slider"
+    },
+    "top_p": {
+      "type": "float",
+      "description": "Top-p (nucleus sampling)",
+      "required": true,
+      "component": "Slider"
+    },
+    "top_k": {
+      "type": "float",
+      "description": "Top-k",
+      "required": true,
+      "component": "Slider"
+    },
+    "repetition_penalty": {
+      "type": "float",
+      "description": "Repetition penalty",
+      "required": true,
+      "component": "Slider"
+    }
+  },
+  "output_schema": {
+    "Response": {
+      "type": "str | float | bool | list | dict",
+      "description": "Response",
+      "component": "Json"
+    }
+  },
+  "license": "unknown",
+  "hardware": "6.10.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 127,
+  "last_modified": "2026-03-27 02:10:33+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/generate",
+      "parameters": [
+        {
+          "name": "message",
+          "label": "",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "max_new_tokens",
+          "label": "Max new tokens",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "temperature",
+          "label": "Temperature",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "top_p",
+          "label": "Top-p (nucleus sampling)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "top_k",
+          "label": "Top-k",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "repetition_penalty",
+          "label": "Repetition penalty",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Response",
+          "type": "str | float | bool | list | dict",
+          "component": "Json"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/generate",
+  "_api_verified": true,
+  "estimated_latency_s": 3.84,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 3.84,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:50:47.627061+00:00"
+}

@@ -1,0 +1,35 @@
+{
+  "space_id": "strickvl/redaction-detector-streamlit",
+  "title": "Redaction Detector for PDFs (Streamlit)",
+  "emoji": "\ud83d\udc41",
+  "description": "Redaction Detector for PDFs (Streamlit)",
+  "input_schema": {
+    "input": {
+      "type": "string",
+      "description": "Input",
+      "required": true
+    }
+  },
+  "output_schema": {
+    "output": {
+      "type": "string"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "1.2.0",
+  "sdk": "streamlit",
+  "tags": [
+    "streamlit",
+    "region:us"
+  ],
+  "likes": 3,
+  "last_modified": "2022-05-09 05:26:36+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "error",
+  "_api_error": "(Request ID: Root=1-69e77bdd-5bac2cbd15d3750e6045df09;5c7f862f-7245-4032-a5fd-1e703aeb4a35)\n\n429 Too Many Requests: you have reached your 'api' rate limit.\nRetry after 1 seconds (0/2500 requests remai"
+}

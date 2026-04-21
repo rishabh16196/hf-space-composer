@@ -1,0 +1,772 @@
+{
+  "space_id": "mahdiusp79/Applio43",
+  "title": "Applio",
+  "emoji": "\ud83c\udf4f",
+  "description": "Applio",
+  "input_schema": {},
+  "output_schema": {
+    "Voice Model": {
+      "type": "Literal[]",
+      "description": "Voice Model",
+      "component": "Dropdown"
+    },
+    "Index File": {
+      "type": "Literal[]",
+      "description": "Index File",
+      "component": "Dropdown"
+    }
+  },
+  "license": "mit",
+  "hardware": "",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 2,
+  "last_modified": "2024-04-08 00:23:01+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/lambda",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Voice Model",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Index File",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_1",
+      "parameters": [
+        {
+          "name": "model_file_value",
+          "label": "Voice Model",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Index File",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/toggle_visible",
+      "parameters": [
+        {
+          "name": "checkbox",
+          "label": "Clean Audio",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Clean Strength",
+          "type": "float",
+          "component": "Slider"
+        }
+      ]
+    },
+    {
+      "name": "/toggle_visible_1",
+      "parameters": [
+        {
+          "name": "checkbox",
+          "label": "Clean Audio",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Clean Strength",
+          "type": "float",
+          "component": "Slider"
+        }
+      ]
+    },
+    {
+      "name": "/toggle_visible_hop_length",
+      "parameters": [
+        {
+          "name": "f0method",
+          "label": "Pitch extraction algorithm",
+          "type": "Literal['pm', 'harvest', 'dio', 'crepe', 'crepe-tiny', 'rmvpe', 'fcpe', 'hybrid[rmvpe+fcpe]']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Hop Length",
+          "type": "float",
+          "component": "Slider"
+        }
+      ]
+    },
+    {
+      "name": "/toggle_visible_hop_length_1",
+      "parameters": [
+        {
+          "name": "f0method",
+          "label": "Pitch extraction algorithm",
+          "type": "Literal['pm', 'harvest', 'dio', 'crepe', 'crepe-tiny', 'rmvpe', 'fcpe', 'hybrid[rmvpe+fcpe]']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Hop Length",
+          "type": "float",
+          "component": "Slider"
+        }
+      ]
+    },
+    {
+      "name": "/change_choices",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Voice Model",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Index File",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Select Audio",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/output_path_fn",
+      "parameters": [
+        {
+          "name": "input_audio_path",
+          "label": "Select Audio",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output Path",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/save_to_wav2",
+      "parameters": [
+        {
+          "name": "upload_audio",
+          "label": "Upload Audio",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Select Audio",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Output Path",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/save_to_wav",
+      "parameters": [
+        {
+          "name": "record_button",
+          "label": "Upload Audio",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Select Audio",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Output Path",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/delete_outputs",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/delete_outputs_1",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/run_infer_script",
+      "parameters": [
+        {
+          "name": "f0up_key",
+          "label": "Pitch",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "filter_radius",
+          "label": "Filter Radius",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "index_rate",
+          "label": "Search Feature Ratio",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "rms_mix_rate",
+          "label": "Volume Envelope",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "protect",
+          "label": "Protect Voiceless Consonants",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "hop_length",
+          "label": "Hop Length",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "f0method",
+          "label": "Pitch extraction algorithm",
+          "type": "Literal['pm', 'harvest', 'dio', 'crepe', 'crepe-tiny', 'rmvpe', 'fcpe', 'hybrid[rmvpe+fcpe]']",
+          "component": "Radio"
+        },
+        {
+          "name": "input_path",
+          "label": "Select Audio",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "output_path",
+          "label": "Output Path",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "pth_path",
+          "label": "Voice Model",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "index_path",
+          "label": "Index File",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "split_audio",
+          "label": "Split Audio",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "f0autotune",
+          "label": "Autotune",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "clean_audio",
+          "label": "Clean Audio",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "clean_strength",
+          "label": "Clean Strength",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "export_format",
+          "label": "Export Format",
+          "type": "Literal['WAV', 'MP3', 'FLAC', 'OGG', 'M4A']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output Information",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Export Audio",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ]
+    },
+    {
+      "name": "/run_batch_infer_script",
+      "parameters": [
+        {
+          "name": "f0up_key",
+          "label": "Pitch",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "filter_radius",
+          "label": "Filter Radius",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "index_rate",
+          "label": "Search Feature Ratio",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "rms_mix_rate",
+          "label": "Volume Envelope",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "protect",
+          "label": "Protect Voiceless Consonants",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "hop_length",
+          "label": "Hop Length",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "f0method",
+          "label": "Pitch extraction algorithm",
+          "type": "Literal['pm', 'harvest', 'dio', 'crepe', 'crepe-tiny', 'rmvpe', 'fcpe', 'hybrid[rmvpe+fcpe]']",
+          "component": "Radio"
+        },
+        {
+          "name": "input_folder",
+          "label": "Input Folder",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "output_folder",
+          "label": "Output Folder",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "pth_path",
+          "label": "Voice Model",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "index_path",
+          "label": "Index File",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "split_audio",
+          "label": "Split Audio",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "f0autotune",
+          "label": "Autotune",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "clean_audio",
+          "label": "Clean Audio",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "clean_strength",
+          "label": "Clean Strength",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "export_format",
+          "label": "Export Format",
+          "type": "Literal['WAV', 'MP3', 'FLAC', 'OGG', 'M4A']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output Information",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_2",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Voice Model",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Index File",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_3",
+      "parameters": [
+        {
+          "name": "model_file_value",
+          "label": "Voice Model",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Index File",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/toggle_visible_2",
+      "parameters": [
+        {
+          "name": "checkbox",
+          "label": "Clean Audio",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Clean Strength",
+          "type": "float",
+          "component": "Slider"
+        }
+      ]
+    },
+    {
+      "name": "/change_choices_1",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Voice Model",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Index File",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/process_input",
+      "parameters": [
+        {
+          "name": "file_path",
+          "label": "Or you can upload a .txt file",
+          "type": "filepath",
+          "component": "File"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Text to Synthesize",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Or you can upload a .txt file",
+          "type": "filepath",
+          "component": "File"
+        }
+      ]
+    },
+    {
+      "name": "/run_tts_script",
+      "parameters": [
+        {
+          "name": "tts_text",
+          "label": "Text to Synthesize",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "tts_voice",
+          "label": "TTS Voices",
+          "type": "Literal['af-ZA-AdriNeural', 'af-ZA-WillemNeural', 'sq-AL-AnilaNeural', 'sq-AL-IlirNeural', 'am-ET-AmehaNeural', 'am-ET-MekdesNeural', 'ar-DZ-AminaNeural', 'ar-DZ-IsmaelNeural', 'ar-BH-AliNeural', 'ar-",
+          "component": "Dropdown"
+        },
+        {
+          "name": "f0up_key",
+          "label": "Pitch",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "filter_radius",
+          "label": "Filter Radius",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "index_rate",
+          "label": "Search Feature Ratio",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "rms_mix_rate",
+          "label": "Volume Envelope",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "protect",
+          "label": "Protect Voiceless Consonants",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "hop_length",
+          "label": "Hop Length",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "f0method",
+          "label": "Pitch extraction algorithm",
+          "type": "Literal['pm', 'harvest', 'dio', 'crepe', 'crepe-tiny', 'rmvpe', 'fcpe', 'hybrid[rmvpe+fcpe]']",
+          "component": "Radio"
+        },
+        {
+          "name": "output_tts_path",
+          "label": "Output Path for TTS Audio",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "output_rvc_path",
+          "label": "Output Path for RVC Audio",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "pth_path",
+          "label": "Voice Model",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "index_path",
+          "label": "Index File",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "split_audio",
+          "label": "Split Audio",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "f0autotune",
+          "label": "Autotune",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "clean_audio",
+          "label": "Clean Audio",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "clean_strength",
+          "label": "Clean Strength",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "export_format",
+          "label": "Export Format",
+          "type": "Literal['WAV', 'MP3', 'FLAC', 'OGG', 'M4A']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output Information",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Export Audio",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ]
+    },
+    {
+      "name": "/model_download",
+      "parameters": [
+        {
+          "name": "model_link",
+          "label": "Model Link",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output Information",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/save_drop_model",
+      "parameters": [
+        {
+          "name": "dropbox",
+          "label": "Drag your .pth file and .index file into this space. Drag one and then the other.",
+          "type": "filepath",
+          "component": "File"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Drag your .pth file and .index file into this space. Drag one and then the other.",
+          "type": "filepath",
+          "component": "File"
+        }
+      ]
+    },
+    {
+      "name": "/search_models",
+      "parameters": [
+        {
+          "name": "name",
+          "label": "Model Name",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_119",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/search_models_1",
+      "parameters": [
+        {
+          "name": "name",
+          "label": "Model Name",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_119",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/run_audio_analyzer_script",
+      "parameters": [
+        {
+          "name": "input_path",
+          "label": "parameter_127",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output Information",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "value_130",
+          "type": "Dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/lambda",
+  "_api_verified": true
+}

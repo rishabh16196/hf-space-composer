@@ -1,0 +1,102 @@
+{
+  "space_id": "nvidia/magpie_tts_multilingual_demo",
+  "title": "Magpietts Demo",
+  "emoji": "\ud83d\udc20",
+  "description": "Magpietts Demo",
+  "input_schema": {
+    "input_text": {
+      "type": "str",
+      "description": "Text to synthesize",
+      "required": true,
+      "component": "Textbox"
+    },
+    "language": {
+      "type": "Literal['en', 'de', 'es', 'fr', 'it', 'vi', 'zh', 'hi', 'ja']",
+      "description": "Target Language",
+      "required": true,
+      "component": "Dropdown"
+    },
+    "speaker": {
+      "type": "Literal['Sofia', 'Aria', 'Jason', 'Leo', 'John']",
+      "description": "Target Speaker",
+      "required": true,
+      "component": "Dropdown"
+    },
+    "apply_TN": {
+      "type": "Literal['Apply TN', 'Do not apply TN']",
+      "description": "Apply Text Normalization",
+      "required": true,
+      "component": "Radio"
+    }
+  },
+  "output_schema": {
+    "output": {
+      "type": "filepath",
+      "description": "output",
+      "component": "Audio"
+    }
+  },
+  "license": "other",
+  "hardware": "6.9.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us",
+    "audio",
+    "speech-synthesis",
+    "tts"
+  ],
+  "likes": 22,
+  "last_modified": "2026-04-16 17:49:44+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/demo_tts",
+      "parameters": [
+        {
+          "name": "input_text",
+          "label": "Text to synthesize",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "language",
+          "label": "Target Language",
+          "type": "Literal['en', 'de', 'es', 'fr', 'it', 'vi', 'zh', 'hi', 'ja']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "speaker",
+          "label": "Target Speaker",
+          "type": "Literal['Sofia', 'Aria', 'Jason', 'Leo', 'John']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "apply_TN",
+          "label": "Apply Text Normalization",
+          "type": "Literal['Apply TN', 'Do not apply TN']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "output",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/demo_tts",
+  "_api_verified": true,
+  "estimated_latency_s": 3.9,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "_tags_enriched": true,
+  "measured_latency_s": 3.9,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:51:26.831466+00:00"
+}

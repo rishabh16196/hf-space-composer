@@ -1,0 +1,182 @@
+{
+  "space_id": "tori29umai/Qwen-Image-2509-CharacterSheet",
+  "title": "Qwen-Image-2509-CharacterSheet",
+  "emoji": "\ud83d\udc40\ud83d\udca8",
+  "description": "Qwen-Image-2509-CharacterSheet",
+  "input_schema": {
+    "image": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "\u5165\u529b\u753b\u50cf",
+      "required": true,
+      "component": "Image"
+    },
+    "extra_prompt": {
+      "type": "str",
+      "description": "\u8ffd\u52a0\u30d7\u30ed\u30f3\u30d7\u30c8\uff08\u5404\u8996\u70b9\u30d7\u30ed\u30f3\u30d7\u30c8\u306e\u672b\u5c3e\u306b\u8ffd\u8a18\uff09",
+      "required": true,
+      "component": "Textbox"
+    },
+    "seed": {
+      "type": "float",
+      "description": "Seed",
+      "required": true,
+      "component": "Slider"
+    },
+    "randomize_seed": {
+      "type": "bool",
+      "description": "\u30e9\u30f3\u30c0\u30e0\u30b7\u30fc\u30c9",
+      "required": true,
+      "component": "Checkbox"
+    },
+    "true_guidance_scale": {
+      "type": "float",
+      "description": "True guidance scale",
+      "required": true,
+      "component": "Slider"
+    },
+    "num_inference_steps": {
+      "type": "float",
+      "description": "\u751f\u6210\u30b9\u30c6\u30c3\u30d7\u6570",
+      "required": true,
+      "component": "Slider"
+    }
+  },
+  "output_schema": {
+    "\u6b63\u9762": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "\u6b63\u9762",
+      "component": "Image"
+    },
+    "\u80cc\u9762": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "\u80cc\u9762",
+      "component": "Image"
+    },
+    "\u5de6\u5074\u9762": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "\u5de6\u5074\u9762",
+      "component": "Image"
+    },
+    "\u53f3\u5074\u9762": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "\u53f3\u5074\u9762",
+      "component": "Image"
+    },
+    "\u9023\u7d50\u753b\u50cf\uff08\u6b63\u9762\u2192\u53f3\u2192\u80cc\u9762\u2192\u5de6\uff09": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "\u9023\u7d50\u753b\u50cf\uff08\u6b63\u9762\u2192\u53f3\u2192\u80cc\u9762\u2192\u5de6\uff09",
+      "component": "Image"
+    },
+    "Seed": {
+      "type": "float",
+      "description": "Seed",
+      "component": "Slider"
+    },
+    "\u30b9\u30c6\u30fc\u30bf\u30b9": {
+      "type": "str",
+      "description": "\u30b9\u30c6\u30fc\u30bf\u30b9",
+      "component": "Textbox"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "5.46.1",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 239,
+  "last_modified": "2025-11-11 06:19:55+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/generate_turnaround",
+      "parameters": [
+        {
+          "name": "image",
+          "label": "\u5165\u529b\u753b\u50cf",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "extra_prompt",
+          "label": "\u8ffd\u52a0\u30d7\u30ed\u30f3\u30d7\u30c8\uff08\u5404\u8996\u70b9\u30d7\u30ed\u30f3\u30d7\u30c8\u306e\u672b\u5c3e\u306b\u8ffd\u8a18\uff09",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "seed",
+          "label": "Seed",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "randomize_seed",
+          "label": "\u30e9\u30f3\u30c0\u30e0\u30b7\u30fc\u30c9",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "true_guidance_scale",
+          "label": "True guidance scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "num_inference_steps",
+          "label": "\u751f\u6210\u30b9\u30c6\u30c3\u30d7\u6570",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "\u6b63\u9762",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "\u80cc\u9762",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "\u5de6\u5074\u9762",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "\u53f3\u5074\u9762",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "\u9023\u7d50\u753b\u50cf\uff08\u6b63\u9762\u2192\u53f3\u2192\u80cc\u9762\u2192\u5de6\uff09",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "Seed",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "\u30b9\u30c6\u30fc\u30bf\u30b9",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/generate_turnaround",
+  "_api_verified": true,
+  "estimated_latency_s": 3.87,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 3.87,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:51:58.863174+00:00"
+}

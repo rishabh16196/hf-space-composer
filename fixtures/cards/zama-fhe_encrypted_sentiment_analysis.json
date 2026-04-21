@@ -1,0 +1,134 @@
+{
+  "space_id": "zama-fhe/encrypted_sentiment_analysis",
+  "title": "Sentiment Analysis On Encrypted Data Using Fully Homomorphic Encryption",
+  "emoji": "\ud83e\udd77\ud83d\udcac",
+  "description": "Sentiment Analysis On Encrypted Data Using Fully Homomorphic Encryption",
+  "input_schema": {},
+  "output_schema": {
+    "Evaluation key (truncated):": {
+      "type": "str",
+      "description": "Evaluation key (truncated):",
+      "component": "Textbox"
+    },
+    "output_1": {
+      "type": "str",
+      "description": "",
+      "component": "Textbox"
+    }
+  },
+  "license": "unknown",
+  "hardware": "4.44.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "FHE",
+    "PPML",
+    "privacy",
+    "privacy preserving machine learning",
+    "homomorphic encryption",
+    "security",
+    "region:us",
+    "sentiment",
+    "text"
+  ],
+  "likes": 108,
+  "last_modified": "2024-09-17 17:09:09+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_tags_enriched": true,
+  "estimated_latency_s": 2.5,
+  "speed_tier": "fast",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/keygen",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Evaluation key (truncated):",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/encode_quantize_encrypt",
+      "parameters": [
+        {
+          "name": "text",
+          "label": "Enter a message:",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "user_id",
+          "label": "",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Transformer representation:",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Quantized transformer representation:",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Encrypted quantized transformer representation (truncated):",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/run_fhe",
+      "parameters": [
+        {
+          "name": "user_id",
+          "label": "",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Encrypted prediction (truncated):",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/decrypt_prediction",
+      "parameters": [
+        {
+          "name": "user_id",
+          "label": "",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Sentiment:",
+          "type": "Dict(label: str | int | float | None, confidences: List[Dict(label: str | int | float | None, confidence: float | None)] | None)",
+          "component": "Label"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/keygen",
+  "_api_verified": true
+}

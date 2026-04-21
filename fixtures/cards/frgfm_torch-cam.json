@@ -1,0 +1,36 @@
+{
+  "space_id": "frgfm/torch-cam",
+  "title": "TorchCAM",
+  "emoji": "\ud83c\udfa8",
+  "description": "Class activation maps for your PyTorch models (CAM, Grad-CAM",
+  "input_schema": {
+    "input": {
+      "type": "string",
+      "description": "Input",
+      "required": true
+    }
+  },
+  "output_schema": {
+    "output": {
+      "type": "string"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "",
+  "sdk": "docker",
+  "tags": [
+    "docker",
+    "streamlit",
+    "region:us"
+  ],
+  "likes": 16,
+  "last_modified": "2025-10-27 17:37:16+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "error",
+  "_api_error": "Expecting value: line 1 column 1 (char 0)",
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred"
+}

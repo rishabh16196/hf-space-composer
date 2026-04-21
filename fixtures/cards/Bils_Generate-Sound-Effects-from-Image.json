@@ -1,0 +1,78 @@
+{
+  "space_id": "Bils/Generate-Sound-Effects-from-Image",
+  "title": "Generate Sound Effects From Image",
+  "emoji": "\ud83c\udfb6",
+  "description": "Turns your image into matching sound effects",
+  "input_schema": {
+    "image_bytes": {
+      "type": "filepath",
+      "description": "Upload Image",
+      "required": true,
+      "component": "File"
+    }
+  },
+  "output_schema": {
+    "Image Description": {
+      "type": "str",
+      "description": "Image Description",
+      "component": "Textbox"
+    }
+  },
+  "license": "mit",
+  "hardware": "4.44.1",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 21,
+  "last_modified": "2025-08-06 03:01:32+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_tags_enriched": true,
+  "estimated_latency_s": 3.0,
+  "speed_tier": "fast",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/update_caption",
+      "parameters": [
+        {
+          "name": "image_bytes",
+          "label": "Upload Image",
+          "type": "filepath",
+          "component": "File"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Image Description",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/generate_sound",
+      "parameters": [
+        {
+          "name": "description",
+          "label": "Image Description",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Generated Sound Effect",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/update_caption",
+  "_api_verified": true
+}

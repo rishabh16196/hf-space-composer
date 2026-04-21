@@ -1,0 +1,700 @@
+{
+  "space_id": "PeiqingYang/MatAnyone",
+  "title": "MatAnyone",
+  "emoji": "\ud83e\udd21",
+  "description": "Gradio demo for MatAnyone 1 & 2",
+  "input_schema": {
+    "video_input": {
+      "type": "filepath",
+      "description": "Input Video",
+      "required": true,
+      "component": "Video"
+    }
+  },
+  "output_schema": {
+    "Foreground Output": {
+      "type": "filepath",
+      "description": "Foreground Output",
+      "component": "Video"
+    },
+    "Alpha Output": {
+      "type": "filepath",
+      "description": "Alpha Output",
+      "component": "Video"
+    },
+    "Start Frame": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "Start Frame",
+      "component": "Image"
+    },
+    "Start Frame_3": {
+      "type": "float",
+      "description": "Start Frame",
+      "component": "Slider"
+    },
+    "Track end frame": {
+      "type": "float",
+      "description": "Track end frame",
+      "component": "Slider"
+    },
+    "Point Prompt": {
+      "type": "Literal['Positive', 'Negative']",
+      "description": "Point Prompt",
+      "component": "Radio"
+    },
+    "Mask Selection": {
+      "type": "list[Literal[]]",
+      "description": "Mask Selection",
+      "component": "Dropdown"
+    },
+    "Video Info": {
+      "type": "str",
+      "description": "Video Info",
+      "component": "Textbox"
+    },
+    "value_42": {
+      "type": "str",
+      "description": "value_42",
+      "component": "Markdown"
+    }
+  },
+  "license": "other",
+  "hardware": "6.9.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 231,
+  "last_modified": "2026-03-15 15:03:28+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/get_frames_from_video",
+      "parameters": [
+        {
+          "name": "video_input",
+          "label": "Input Video",
+          "type": "filepath",
+          "component": "Video"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Foreground Output",
+          "type": "filepath",
+          "component": "Video"
+        },
+        {
+          "label": "Alpha Output",
+          "type": "filepath",
+          "component": "Video"
+        },
+        {
+          "label": "Start Frame",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "Start Frame",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Track end frame",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Point Prompt",
+          "type": "Literal['Positive', 'Negative']",
+          "component": "Radio"
+        },
+        {
+          "label": "Mask Selection",
+          "type": "list[Literal[]]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Video Info",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "value_42",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/select_image",
+      "parameters": [
+        {
+          "name": "image_selection_slider",
+          "label": "Start Frame",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Start Frame",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/end_image",
+      "parameters": [
+        {
+          "name": "track_pause_number_slider",
+          "label": "Track end frame",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Start Frame",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/sam_refine",
+      "parameters": [
+        {
+          "name": "point_prompt",
+          "label": "Point Prompt",
+          "type": "Literal['Positive', 'Negative']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Start Frame",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/add_multi_mask",
+      "parameters": [
+        {
+          "name": "mask_dropdown",
+          "label": "Mask Selection",
+          "type": "list[Literal[]]",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Mask Selection",
+          "type": "list[Literal[]]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Start Frame",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/remove_multi_mask",
+      "parameters": [
+        {
+          "name": "mask_dropdown",
+          "label": "Mask Selection",
+          "type": "list[Literal[]]",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Mask Selection",
+          "type": "list[Literal[]]",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/video_matting",
+      "parameters": [
+        {
+          "name": "mask_dropdown",
+          "label": "Mask Selection",
+          "type": "list[Literal[]]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "erode_kernel_size",
+          "label": "Erode Kernel Size",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "dilate_kernel_size",
+          "label": "Dilate Kernel Size",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "model_selection",
+          "label": "Model Selection",
+          "type": "Literal['MatAnyone 2', 'MatAnyone']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Foreground Output",
+          "type": "filepath",
+          "component": "Video"
+        },
+        {
+          "label": "Alpha Output",
+          "type": "filepath",
+          "component": "Video"
+        }
+      ]
+    },
+    {
+      "name": "/show_mask",
+      "parameters": [
+        {
+          "name": "mask_dropdown",
+          "label": "Mask Selection",
+          "type": "list[Literal[]]",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Start Frame",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/restart",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Foreground Output",
+          "type": "filepath",
+          "component": "Video"
+        },
+        {
+          "label": "Alpha Output",
+          "type": "filepath",
+          "component": "Video"
+        },
+        {
+          "label": "Start Frame",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "Start Frame",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Track end frame",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Point Prompt",
+          "type": "Literal['Positive', 'Negative']",
+          "component": "Radio"
+        },
+        {
+          "label": "Mask Selection",
+          "type": "list[Literal[]]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Video Info",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "value_42",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/clear_click",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Start Frame",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/show_load_components",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_95",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "Start Frame",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "Point Prompt",
+          "type": "Literal['Positive', 'Negative']",
+          "component": "Radio"
+        },
+        {
+          "label": "Mask Selection",
+          "type": "list[Literal[]]",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/get_frames_from_image",
+      "parameters": [
+        {
+          "name": "image_input",
+          "label": "Input Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Image Info",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Start Frame",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "Num of Refinement Iterations",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Track end frame",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Foreground Output",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "Alpha Output",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/select_image_1",
+      "parameters": [
+        {
+          "name": "image_selection_slider",
+          "label": "Num of Refinement Iterations",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Start Frame",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/end_image_1",
+      "parameters": [
+        {
+          "name": "track_pause_number_slider",
+          "label": "Track end frame",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Start Frame",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/sam_refine_1",
+      "parameters": [
+        {
+          "name": "point_prompt",
+          "label": "Point Prompt",
+          "type": "Literal['Positive', 'Negative']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Start Frame",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/add_multi_mask_1",
+      "parameters": [
+        {
+          "name": "mask_dropdown",
+          "label": "Mask Selection",
+          "type": "list[Literal[]]",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Mask Selection",
+          "type": "list[Literal[]]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Start Frame",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/remove_multi_mask_1",
+      "parameters": [
+        {
+          "name": "mask_dropdown",
+          "label": "Mask Selection",
+          "type": "list[Literal[]]",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Mask Selection",
+          "type": "list[Literal[]]",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/image_matting",
+      "parameters": [
+        {
+          "name": "mask_dropdown",
+          "label": "Mask Selection",
+          "type": "list[Literal[]]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "erode_kernel_size",
+          "label": "Erode Kernel Size",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "dilate_kernel_size",
+          "label": "Dilate Kernel Size",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "refine_iter",
+          "label": "Num of Refinement Iterations",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "model_selection",
+          "label": "Model Selection",
+          "type": "Literal['MatAnyone 2', 'MatAnyone']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Foreground Output",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "Alpha Output",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/show_mask_1",
+      "parameters": [
+        {
+          "name": "mask_dropdown",
+          "label": "Mask Selection",
+          "type": "list[Literal[]]",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Start Frame",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/restart_1",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Foreground Output",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "Alpha Output",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "Start Frame",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "Num of Refinement Iterations",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Track end frame",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Point Prompt",
+          "type": "Literal['Positive', 'Negative']",
+          "component": "Radio"
+        },
+        {
+          "label": "Mask Selection",
+          "type": "list[Literal[]]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Image Info",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "value_95",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/restart_2",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Foreground Output",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "Alpha Output",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "Start Frame",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "Num of Refinement Iterations",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Track end frame",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Point Prompt",
+          "type": "Literal['Positive', 'Negative']",
+          "component": "Radio"
+        },
+        {
+          "label": "Mask Selection",
+          "type": "list[Literal[]]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Image Info",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "value_95",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/clear_click_1",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Start Frame",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/get_frames_from_video",
+  "_api_verified": true,
+  "estimated_latency_s": 3.86,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 3.86,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:49:47.480774+00:00"
+}

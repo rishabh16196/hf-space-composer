@@ -1,0 +1,62 @@
+{
+  "space_id": "AlirezaF138/Markitdown",
+  "title": "Markitdown",
+  "emoji": "\ud83c\udfc3",
+  "description": "Markitdown",
+  "input_schema": {
+    "file": {
+      "type": "filepath",
+      "description": "Upload your file",
+      "required": true,
+      "component": "File"
+    }
+  },
+  "output_schema": {
+    "Markdown Output": {
+      "type": "str",
+      "description": "Markdown Output",
+      "component": "Textbox"
+    }
+  },
+  "license": "unknown",
+  "hardware": "5.9.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 9,
+  "last_modified": "2024-12-16 07:16:32+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/predict",
+      "parameters": [
+        {
+          "name": "file",
+          "label": "Upload your file",
+          "type": "filepath",
+          "component": "File"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Markdown Output",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/predict",
+  "_api_verified": true,
+  "estimated_latency_s": 2.44,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 2.44,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:49:06.246006+00:00"
+}

@@ -1,0 +1,85 @@
+{
+  "space_id": "SufficientPrune3897/Character-Creator-V2",
+  "title": "Character Creator V2",
+  "emoji": "\ud83d\udcac",
+  "description": "Generate a high quality character from just a few sentences",
+  "input_schema": {
+    "message": {
+      "type": "str",
+      "description": "",
+      "required": true,
+      "component": "Textbox"
+    },
+    "max_new_tokens": {
+      "type": "float",
+      "description": "Max new tokens",
+      "required": true,
+      "component": "Slider"
+    },
+    "temperature": {
+      "type": "float",
+      "description": "Temperature",
+      "required": true,
+      "component": "Slider"
+    }
+  },
+  "output_schema": {
+    "Response": {
+      "type": "str | float | bool | list | dict",
+      "description": "Response",
+      "component": "Json"
+    }
+  },
+  "license": "unknown",
+  "hardware": "6.10.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "not-for-all-audiences",
+    "region:us"
+  ],
+  "likes": 6,
+  "last_modified": "2026-03-25 20:16:29+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_tags_enriched": true,
+  "estimated_latency_s": 3.0,
+  "speed_tier": "fast",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/generate",
+      "parameters": [
+        {
+          "name": "message",
+          "label": "",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "max_new_tokens",
+          "label": "Max new tokens",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "temperature",
+          "label": "Temperature",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Response",
+          "type": "str | float | bool | list | dict",
+          "component": "Json"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/generate",
+  "_api_verified": true
+}

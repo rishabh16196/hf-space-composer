@@ -1,0 +1,200 @@
+{
+  "space_id": "Wan-AI/Wan2.1",
+  "title": "Wan2.1",
+  "emoji": "\ud83d\udcbb",
+  "description": "Wan: Open and Advanced Large-Scale Video Generative Models",
+  "input_schema": {},
+  "output_schema": {
+    "Generated Video": {
+      "type": "dict(video: filepath, subtitles: filepath | None)",
+      "description": "Generated Video",
+      "component": "Video"
+    }
+  },
+  "license": "mit",
+  "hardware": "5.17.1",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us",
+    "video",
+    "video-generation",
+    "vision"
+  ],
+  "likes": 2076,
+  "last_modified": "2025-03-20 12:20:36+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/online_process_change",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Generated Video",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        }
+      ]
+    },
+    {
+      "name": "/switch_i2v_tab",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/switch_t2v_tab",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/t2v_generation_async",
+      "parameters": [
+        {
+          "name": "prompt",
+          "label": "Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "size",
+          "label": "Resolution",
+          "type": "Literal['1280*720', '960*960', '720*1280', '1088*832', '832*1088']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "watermark_wan",
+          "label": "Watermark",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "seed",
+          "label": "Seed",
+          "type": "float",
+          "component": "Number"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Cost Time(secs)",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "label": "Estimated Waiting Time(secs)",
+          "type": "float",
+          "component": "Number"
+        }
+      ]
+    },
+    {
+      "name": "/i2v_generation_async",
+      "parameters": [
+        {
+          "name": "prompt",
+          "label": "Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "image",
+          "label": "Upload Input Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "watermark_wan",
+          "label": "Watermark",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "seed",
+          "label": "Seed",
+          "type": "float",
+          "component": "Number"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Cost Time(secs)",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "label": "Estimated Waiting Time(secs)",
+          "type": "float",
+          "component": "Number"
+        }
+      ]
+    },
+    {
+      "name": "/status_refresh",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Generated Video",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        },
+        {
+          "label": "Cost Time(secs)",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "label": "Estimated Waiting Time(secs)",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "label": "",
+          "type": "float",
+          "component": "Slider"
+        }
+      ]
+    },
+    {
+      "name": "/status_refresh_1",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Generated Video",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        },
+        {
+          "label": "Cost Time(secs)",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "label": "Estimated Waiting Time(secs)",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "label": "",
+          "type": "float",
+          "component": "Slider"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/online_process_change",
+  "_api_verified": true,
+  "estimated_latency_s": 2.22,
+  "speed_tier": "fast",
+  "_latency_source": "measured_inference",
+  "_tags_enriched": true,
+  "measured_latency_s": 2.22,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:50:02.985658+00:00",
+  "measured_inference_s": 2.22,
+  "measured_inference_timestamp": "2026-04-20T07:58:32.015677+00:00",
+  "measured_inference_method": "auto_predict",
+  "measured_inference_api": "/t2v_generation_async"
+}

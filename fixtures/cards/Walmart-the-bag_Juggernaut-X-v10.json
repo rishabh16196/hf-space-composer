@@ -1,0 +1,110 @@
+{
+  "space_id": "Walmart-the-bag/Juggernaut-X-v10",
+  "title": "Juggernaut X V10",
+  "emoji": "\ud83c\udfc3",
+  "description": "Juggernaut X V10, a powerful text2image model.",
+  "input_schema": {
+    "prompt": {
+      "type": "str",
+      "description": "Prompt",
+      "required": true,
+      "component": "Textbox"
+    },
+    "negative_prompt": {
+      "type": "str",
+      "description": "Negative Prompt",
+      "required": true,
+      "component": "Textbox"
+    },
+    "steps": {
+      "type": "float",
+      "description": "Steps",
+      "required": true,
+      "component": "Slider"
+    },
+    "guidance_scale": {
+      "type": "float",
+      "description": "Guidance Scale",
+      "required": true,
+      "component": "Slider"
+    },
+    "add_4k_masterpiece": {
+      "type": "bool",
+      "description": "Add recommended prompt items (4k, masterpiece)",
+      "required": true,
+      "component": "Checkbox"
+    }
+  },
+  "output_schema": {
+    "output": {
+      "type": "filepath",
+      "description": "output",
+      "component": "Image"
+    }
+  },
+  "license": "creativeml-openrail-m",
+  "hardware": "4.27.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 93,
+  "last_modified": "2024-08-21 03:34:58+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/predict",
+      "parameters": [
+        {
+          "name": "prompt",
+          "label": "Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "negative_prompt",
+          "label": "Negative Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "steps",
+          "label": "Steps",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "guidance_scale",
+          "label": "Guidance Scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "add_4k_masterpiece",
+          "label": "Add recommended prompt items (4k, masterpiece)",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "output",
+          "type": "filepath",
+          "component": "Image"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/predict",
+  "_api_verified": true,
+  "estimated_latency_s": 3.09,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 3.09,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:50:02.582180+00:00"
+}

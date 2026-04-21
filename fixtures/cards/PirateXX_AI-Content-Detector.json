@@ -1,0 +1,59 @@
+{
+  "space_id": "PirateXX/AI-Content-Detector",
+  "title": "AI Content Detector",
+  "emoji": "\u26a1",
+  "description": "AI Content Detector",
+  "input_schema": {
+    "text": {
+      "type": "str",
+      "description": "text",
+      "required": true,
+      "component": "Textbox"
+    }
+  },
+  "output_schema": {
+    "output": {
+      "type": "Dict[Any, Any]",
+      "description": "output",
+      "component": "Json"
+    }
+  },
+  "license": "artistic-2.0",
+  "hardware": "4.37.2",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 65,
+  "last_modified": "2025-10-22 21:30:18+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/predict",
+      "parameters": [
+        {
+          "name": "text",
+          "label": "text",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "output",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/predict",
+  "_api_verified": true
+}

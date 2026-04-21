@@ -1,0 +1,89 @@
+{
+  "space_id": "awacke1/Prompt-Refinery-Text-to-Image-Generation",
+  "title": "\u270d\ufe0f\ud83c\udfed Prompt Refinery - Text to Image \ud83c\udfed\u270d\ufe0f Gradio",
+  "emoji": "\u270d\ufe0f\ud83c\udfed",
+  "description": "\u270d\ufe0f\ud83c\udfed Prompt Refinery - Text to Image \ud83c\udfed\u270d\ufe0f Gradio",
+  "input_schema": {
+    "prompt_text": {
+      "type": "str",
+      "description": "Input text prompt",
+      "required": true,
+      "component": "Textbox"
+    }
+  },
+  "output_schema": {
+    "\ud83c\udfed Expanded text prompts": {
+      "type": "str",
+      "description": "\ud83c\udfed Expanded text prompts",
+      "component": "Textbox"
+    }
+  },
+  "license": "unknown",
+  "hardware": "6.1.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us",
+    "text"
+  ],
+  "likes": 35,
+  "last_modified": "2025-12-13 23:05:17+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_tags_enriched": true,
+  "estimated_latency_s": 3.0,
+  "speed_tier": "fast",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/get_prompts",
+      "parameters": [
+        {
+          "name": "prompt_text",
+          "label": "Input text prompt",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "\ud83c\udfed Expanded text prompts",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/get_images",
+      "parameters": [
+        {
+          "name": "prompt",
+          "label": "\ud83c\udfed Expanded text prompts",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_12",
+          "type": "list[dict(image: dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Origi",
+          "component": "Gallery"
+        },
+        {
+          "label": "value_14",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "value_15",
+          "type": "str",
+          "component": "Html"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/get_prompts",
+  "_api_verified": true
+}

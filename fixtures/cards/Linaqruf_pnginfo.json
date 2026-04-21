@@ -1,0 +1,73 @@
+{
+  "space_id": "Linaqruf/pnginfo",
+  "title": "PNGInfo",
+  "emoji": "\ud83d\udcda",
+  "description": "Extract and display metadata from AI generated images",
+  "input_schema": {
+    "image": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "Input Image",
+      "required": true,
+      "component": "Image"
+    }
+  },
+  "output_schema": {
+    "Status": {
+      "type": "str",
+      "description": "Status",
+      "component": "Textbox"
+    },
+    "Metadata": {
+      "type": "str | float | bool | list | dict",
+      "description": "Metadata",
+      "component": "Json"
+    }
+  },
+  "license": "unknown",
+  "hardware": "5.38.2",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 54,
+  "last_modified": "2025-07-27 13:27:27+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/process_image",
+      "parameters": [
+        {
+          "name": "image",
+          "label": "Input Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Status",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Metadata",
+          "type": "str | float | bool | list | dict",
+          "component": "Json"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/process_image",
+  "_api_verified": true,
+  "estimated_latency_s": 2.91,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "_tags_enriched": true,
+  "measured_latency_s": 2.91,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:49:34.297645+00:00"
+}

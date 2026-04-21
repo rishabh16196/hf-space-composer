@@ -1,0 +1,176 @@
+{
+  "space_id": "fffiloni/TIGER-audio-extraction",
+  "title": "TIGER Audio Extractor",
+  "emoji": "\u2702\ufe0f",
+  "description": "Extraction & Reconstruction for Efficient Speech Separation",
+  "input_schema": {
+    "audio_file": {
+      "type": "filepath",
+      "description": "Upload Audio",
+      "required": true,
+      "component": "Audio"
+    }
+  },
+  "output_schema": {
+    "Dialog": {
+      "type": "filepath",
+      "description": "Dialog",
+      "component": "Audio"
+    },
+    "Effects": {
+      "type": "filepath",
+      "description": "Effects",
+      "component": "Audio"
+    },
+    "Music": {
+      "type": "filepath",
+      "description": "Music",
+      "component": "Audio"
+    }
+  },
+  "license": "unknown",
+  "hardware": "6.12.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "mcp-server",
+    "region:us",
+    "audio"
+  ],
+  "likes": 117,
+  "last_modified": "2026-04-15 12:07:52+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_tags_enriched": true,
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/separate_dnr",
+      "parameters": [
+        {
+          "name": "audio_file",
+          "label": "Upload Audio",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Dialog",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Effects",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Music",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ]
+    },
+    {
+      "name": "/separate_speakers",
+      "parameters": [
+        {
+          "name": "audio_path",
+          "label": "Upload Speech Audio",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Speaker 1",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Speaker 2",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Speaker 3",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Speaker 4",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ]
+    },
+    {
+      "name": "/separate_dnr_video",
+      "parameters": [
+        {
+          "name": "video_path",
+          "label": "Upload Video",
+          "type": "filepath",
+          "component": "Video"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Dialog Video",
+          "type": "filepath",
+          "component": "Video"
+        },
+        {
+          "label": "Effects Video",
+          "type": "filepath",
+          "component": "Video"
+        },
+        {
+          "label": "Music Video",
+          "type": "filepath",
+          "component": "Video"
+        }
+      ]
+    },
+    {
+      "name": "/separate_speakers_video",
+      "parameters": [
+        {
+          "name": "video_path",
+          "label": "Upload Video",
+          "type": "filepath",
+          "component": "Video"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Speaker 1",
+          "type": "filepath",
+          "component": "Video"
+        },
+        {
+          "label": "Speaker 2",
+          "type": "filepath",
+          "component": "Video"
+        },
+        {
+          "label": "Speaker 3",
+          "type": "filepath",
+          "component": "Video"
+        },
+        {
+          "label": "Speaker 4",
+          "type": "filepath",
+          "component": "Video"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/separate_dnr",
+  "_api_verified": true
+}

@@ -1,0 +1,136 @@
+{
+  "space_id": "diffusers/stable-diffusion-xl-inpainting",
+  "title": "SDXL Inpainting",
+  "emoji": "\ud83d\udd25",
+  "description": "SDXL Inpainting",
+  "input_schema": {
+    "input_image": {
+      "type": "dict(background: filepath | None, layers: list[filepath], composite: filepath | None, id: str | None",
+      "description": "Input Image",
+      "required": true,
+      "component": "Imageeditor"
+    },
+    "prompt": {
+      "type": "str",
+      "description": "parameter_7",
+      "required": true,
+      "component": "Textbox"
+    },
+    "negative_prompt": {
+      "type": "str",
+      "description": "negative_prompt",
+      "required": true,
+      "component": "Textbox"
+    },
+    "guidance_scale": {
+      "type": "float",
+      "description": "guidance_scale",
+      "required": true,
+      "component": "Number"
+    },
+    "steps": {
+      "type": "float",
+      "description": "steps",
+      "required": true,
+      "component": "Number"
+    },
+    "strength": {
+      "type": "float",
+      "description": "strength",
+      "required": true,
+      "component": "Number"
+    },
+    "scheduler": {
+      "type": "Literal['DEISMultistepScheduler', 'HeunDiscreteScheduler', 'EulerDiscreteScheduler', 'DPMSolverMulti",
+      "description": "Schedulers",
+      "required": true,
+      "component": "Dropdown"
+    }
+  },
+  "output_schema": {
+    "Output": {
+      "type": "tuple[dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base6",
+      "description": "Output",
+      "component": "Imageslider"
+    }
+  },
+  "license": "unknown",
+  "hardware": "5.34.2",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us",
+    "diffusion",
+    "image-generation",
+    "text-to-image",
+    "vision"
+  ],
+  "likes": 503,
+  "last_modified": "2026-01-12 11:53:28+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_tags_enriched": true,
+  "estimated_latency_s": 40.0,
+  "speed_tier": "slow",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/predict",
+      "parameters": [
+        {
+          "name": "input_image",
+          "label": "Input Image",
+          "type": "dict(background: filepath | None, layers: list[filepath], composite: filepath | None, id: str | None)",
+          "component": "Imageeditor"
+        },
+        {
+          "name": "prompt",
+          "label": "parameter_7",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "negative_prompt",
+          "label": "negative_prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "guidance_scale",
+          "label": "guidance_scale",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "steps",
+          "label": "steps",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "strength",
+          "label": "strength",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "scheduler",
+          "label": "Schedulers",
+          "type": "Literal['DEISMultistepScheduler', 'HeunDiscreteScheduler', 'EulerDiscreteScheduler', 'DPMSolverMultistepScheduler', 'DPMSolverMultistepScheduler-Karras', 'DPMSolverMultistepScheduler-Karras-SDE']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output",
+          "type": "tuple[dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filenam",
+          "component": "Imageslider"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/predict",
+  "_api_verified": true
+}

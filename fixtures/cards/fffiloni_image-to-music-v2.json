@@ -1,0 +1,90 @@
+{
+  "space_id": "fffiloni/image-to-music-v2",
+  "title": "Image to Music v2",
+  "emoji": "\ud83c\udfba",
+  "description": "Get a music sample inspired by the mood of an image",
+  "input_schema": {
+    "image_in": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "Image reference",
+      "required": true,
+      "component": "Image"
+    },
+    "chosen_model": {
+      "type": "Literal['ACE Step', 'AudioLDM-2', 'Riffusion', 'Mustango', 'Stable Audio Open']",
+      "description": "Choose a model",
+      "required": true,
+      "component": "Dropdown"
+    }
+  },
+  "output_schema": {
+    "Inspirational musical prompt": {
+      "type": "str",
+      "description": "Inspirational musical prompt",
+      "component": "Textbox"
+    },
+    "Music": {
+      "type": "filepath",
+      "description": "Music",
+      "component": "Audio"
+    }
+  },
+  "license": "unknown",
+  "hardware": "6.6.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "mcp-server",
+    "region:us",
+    "audio",
+    "music"
+  ],
+  "likes": 568,
+  "last_modified": "2026-02-20 10:12:52+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/infer",
+      "parameters": [
+        {
+          "name": "image_in",
+          "label": "Image reference",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "chosen_model",
+          "label": "Choose a model",
+          "type": "Literal['ACE Step', 'AudioLDM-2', 'Riffusion', 'Mustango', 'Stable Audio Open']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Inspirational musical prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Music",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/infer",
+  "_api_verified": true,
+  "estimated_latency_s": 3.54,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "_tags_enriched": true,
+  "measured_latency_s": 3.54,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:50:38.156648+00:00",
+  "_inference_attempt_status": "predict_failed",
+  "_inference_attempt_error": "Failed to download file. Status code: 404"
+}

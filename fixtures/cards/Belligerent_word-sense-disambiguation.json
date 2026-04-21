@@ -1,0 +1,110 @@
+{
+  "space_id": "Belligerent/word-sense-disambiguation",
+  "title": "Word Sense Disambiguation",
+  "emoji": "\ud83d\udc22",
+  "description": "Word Sense Disambiguation",
+  "input_schema": {
+    "word": {
+      "type": "str",
+      "description": "Based on the context, which description best matches this word: ",
+      "required": true,
+      "component": "Textbox"
+    },
+    "context": {
+      "type": "str",
+      "description": "context: ",
+      "required": true,
+      "component": "Textbox"
+    },
+    "d1": {
+      "type": "str",
+      "description": "description 1: ",
+      "required": true,
+      "component": "Textbox"
+    },
+    "d2": {
+      "type": "str",
+      "description": "description 2: ",
+      "required": true,
+      "component": "Textbox"
+    },
+    "d3": {
+      "type": "str",
+      "description": "description 3: ",
+      "required": true,
+      "component": "Textbox"
+    }
+  },
+  "output_schema": {
+    "output": {
+      "type": "str",
+      "description": "output",
+      "component": "Textbox"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "4.36.1",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 8,
+  "last_modified": "2024-06-11 01:57:28+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/predict",
+      "parameters": [
+        {
+          "name": "word",
+          "label": "Based on the context, which description best matches this word: ",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "context",
+          "label": "context: ",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "d1",
+          "label": "description 1: ",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "d2",
+          "label": "description 2: ",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "d3",
+          "label": "description 3: ",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "output",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/predict",
+  "_api_verified": true,
+  "estimated_latency_s": 3.97,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 3.97,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:49:09.896468+00:00"
+}

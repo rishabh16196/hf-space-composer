@@ -1,0 +1,37 @@
+{
+  "space_id": "projectlosangeles/Chords-Progressions-Transformer",
+  "title": "Chords Progressions Transformer",
+  "emoji": "\ud83c\udfb5",
+  "description": "Generate and texture unique chords progressions",
+  "input_schema": {
+    "input": {
+      "type": "string",
+      "description": "Input",
+      "required": true
+    }
+  },
+  "output_schema": {
+    "output": {
+      "type": "string"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "6.12.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "mcp-server",
+    "region:us"
+  ],
+  "likes": 3,
+  "last_modified": "2026-04-20 02:54:30+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_tags_enriched": true,
+  "estimated_latency_s": 3.0,
+  "speed_tier": "fast",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "error",
+  "_api_error": "(Request ID: Root=1-69e77bd7-72dfe7010a08066f6d756a2e;79776b4c-ce11-4b36-b44d-556166a714ab)\n\n429 Too Many Requests: you have reached your 'api' rate limit.\nRetry after 7 seconds (0/2500 requests remai"
+}

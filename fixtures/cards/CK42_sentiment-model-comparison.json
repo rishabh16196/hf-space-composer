@@ -1,0 +1,152 @@
+{
+  "space_id": "CK42/sentiment-model-comparison",
+  "title": "Sentiment Model Comparison",
+  "emoji": "\ud83d\udcda",
+  "description": "Sentiment Model Comparison",
+  "input_schema": {
+    "Type text here.": {
+      "type": "str",
+      "description": "Type text here.",
+      "required": true,
+      "component": "Textbox"
+    }
+  },
+  "output_schema": {
+    "Predictions for Model 1": {
+      "type": "str",
+      "description": "Predictions for Model 1",
+      "component": "Textbox"
+    }
+  },
+  "license": "unknown",
+  "hardware": "",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us",
+    "sentiment",
+    "text"
+  ],
+  "likes": 8,
+  "last_modified": "2024-01-04 22:27:45+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_tags_enriched": true,
+  "estimated_latency_s": 2.5,
+  "speed_tier": "fast",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/predict",
+      "parameters": [
+        {
+          "name": "Type text here.",
+          "label": "Type text here.",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Predictions for Model 1",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/predict_1",
+      "parameters": [
+        {
+          "name": "Type text here.",
+          "label": "Type text here.",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Predictions for Model 2",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/predict_2",
+      "parameters": [
+        {
+          "name": "Type text here.",
+          "label": "Type text here.",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Predictions for Model 3",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/predict_3",
+      "parameters": [
+        {
+          "name": "Type text here.",
+          "label": "Type text here.",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Predictions for Model 4",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/predict_4",
+      "parameters": [
+        {
+          "name": "Type text here.",
+          "label": "Type text here.",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Predictions for Model 5",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/predict_5",
+      "parameters": [
+        {
+          "name": "Type text here.",
+          "label": "Type text here.",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Predictions for Model 6",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/predict",
+  "_api_verified": true
+}

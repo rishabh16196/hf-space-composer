@@ -1,0 +1,218 @@
+{
+  "space_id": "bigcode/bigcodebench-evaluator",
+  "title": "BigCodeBench Evaluator",
+  "emoji": "\ud83e\udd47",
+  "description": "BigCodeBench Evaluator",
+  "input_schema": {
+    "split": {
+      "type": "Literal['complete', 'instruct']",
+      "description": "BigCodeBench Split",
+      "required": true,
+      "component": "Dropdown"
+    },
+    "subset": {
+      "type": "Literal['full', 'hard']",
+      "description": "BigCodeBench Subset",
+      "required": true,
+      "component": "Dropdown"
+    },
+    "samples": {
+      "type": "filepath",
+      "description": "Samples Path (.jsonl)",
+      "required": true,
+      "component": "File"
+    },
+    "pass_k": {
+      "type": "str",
+      "description": "Pass k Values (comma-separated)",
+      "required": true,
+      "component": "Textbox"
+    },
+    "parallel": {
+      "type": "float",
+      "description": "Parallel Workers",
+      "required": true,
+      "component": "Slider"
+    },
+    "min_time_limit": {
+      "type": "float",
+      "description": "Min Time Limit",
+      "required": true,
+      "component": "Slider"
+    },
+    "max_as_limit": {
+      "type": "float",
+      "description": "Max AS Limit",
+      "required": true,
+      "component": "Slider"
+    },
+    "max_data_limit": {
+      "type": "float",
+      "description": "Max Data Limit",
+      "required": true,
+      "component": "Slider"
+    },
+    "max_stack_limit": {
+      "type": "float",
+      "description": "Max Stack Limit",
+      "required": true,
+      "component": "Slider"
+    },
+    "calibrated": {
+      "type": "bool",
+      "description": "Calibrated",
+      "required": true,
+      "component": "Checkbox"
+    },
+    "check_gt_only": {
+      "type": "bool",
+      "description": "Check GT Only",
+      "required": true,
+      "component": "Checkbox"
+    },
+    "no_gt": {
+      "type": "bool",
+      "description": "No GT",
+      "required": true,
+      "component": "Checkbox"
+    },
+    "selective_evaluate": {
+      "type": "str",
+      "description": "Selective Evaluated Task IDs (comma-separated, e.g. '0,1,2')",
+      "required": true,
+      "component": "Textbox"
+    }
+  },
+  "output_schema": {
+    "Results": {
+      "type": "str | float | bool | list | dict",
+      "description": "Results",
+      "component": "Json"
+    },
+    "Eval Results": {
+      "type": "str | float | bool | list | dict",
+      "description": "Eval Results",
+      "component": "Json"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "",
+  "sdk": "docker",
+  "tags": [
+    "docker",
+    "eval:code",
+    "test:public",
+    "judge:auto",
+    "region:us"
+  ],
+  "likes": 19,
+  "last_modified": "2025-03-02 10:57:48+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/predict",
+      "parameters": [
+        {
+          "name": "split",
+          "label": "BigCodeBench Split",
+          "type": "Literal['complete', 'instruct']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "subset",
+          "label": "BigCodeBench Subset",
+          "type": "Literal['full', 'hard']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "samples",
+          "label": "Samples Path (.jsonl)",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "name": "pass_k",
+          "label": "Pass k Values (comma-separated)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "parallel",
+          "label": "Parallel Workers",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "min_time_limit",
+          "label": "Min Time Limit",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "max_as_limit",
+          "label": "Max AS Limit",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "max_data_limit",
+          "label": "Max Data Limit",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "max_stack_limit",
+          "label": "Max Stack Limit",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "calibrated",
+          "label": "Calibrated",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "check_gt_only",
+          "label": "Check GT Only",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "no_gt",
+          "label": "No GT",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "selective_evaluate",
+          "label": "Selective Evaluated Task IDs (comma-separated, e.g. '0,1,2')",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Results",
+          "type": "str | float | bool | list | dict",
+          "component": "Json"
+        },
+        {
+          "label": "Eval Results",
+          "type": "str | float | bool | list | dict",
+          "component": "Json"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/predict",
+  "_api_verified": true,
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_tags_enriched": true,
+  "_measurement_error": "The read operation timed out"
+}

@@ -1,0 +1,146 @@
+{
+  "space_id": "taesiri/CLIPScore",
+  "title": "CLIP Score",
+  "emoji": "\ud83d\udcaf",
+  "description": "CLIP Score",
+  "input_schema": {
+    "img": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "Image",
+      "required": true,
+      "component": "Image"
+    },
+    "txt": {
+      "type": "str",
+      "description": "Text prompts (use \u2018;\u2019 to separate)",
+      "required": true,
+      "component": "Textbox"
+    },
+    "mdl": {
+      "type": "Literal['CLIP ViT-B/32', 'CLIP ViT-B/16', 'CLIP ViT-L/14', 'CLIP ViT-L/14@336', 'SigLIP Large-256', ",
+      "description": "Model",
+      "required": true,
+      "component": "Dropdown"
+    }
+  },
+  "output_schema": {
+    "Similarity (0\u20121)": {
+      "type": "dict(label: str | int | float | None, confidences: list[dict(label: str | int | float | None, confid",
+      "description": "Similarity (0\u20121)",
+      "component": "Label"
+    }
+  },
+  "license": "mit",
+  "hardware": "6.0.2",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 26,
+  "last_modified": "2025-12-03 16:06:04+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/infer",
+      "parameters": [
+        {
+          "name": "img",
+          "label": "Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "txt",
+          "label": "Text prompts (use \u2018;\u2019 to separate)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "mdl",
+          "label": "Model",
+          "type": "Literal['CLIP ViT-B/32', 'CLIP ViT-B/16', 'CLIP ViT-L/14', 'CLIP ViT-L/14@336', 'SigLIP Large-256', 'SigLIP Base-384', 'SigLIP Large-384']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Similarity (0\u20121)",
+          "type": "dict(label: str | int | float | None, confidences: list[dict(label: str | int | float | None, confidence: float | None)] | None)",
+          "component": "Label"
+        }
+      ]
+    },
+    {
+      "name": "/infer_1",
+      "parameters": [
+        {
+          "name": "img",
+          "label": "Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "txt",
+          "label": "Text prompts (use \u2018;\u2019 to separate)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "mdl",
+          "label": "Model",
+          "type": "Literal['CLIP ViT-B/32', 'CLIP ViT-B/16', 'CLIP ViT-L/14', 'CLIP ViT-L/14@336', 'SigLIP Large-256', 'SigLIP Base-384', 'SigLIP Large-384']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Similarity (0\u20121)",
+          "type": "dict(label: str | int | float | None, confidences: list[dict(label: str | int | float | None, confidence: float | None)] | None)",
+          "component": "Label"
+        }
+      ]
+    },
+    {
+      "name": "/infer_2",
+      "parameters": [
+        {
+          "name": "img",
+          "label": "Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "txt",
+          "label": "Text prompts (use \u2018;\u2019 to separate)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "mdl",
+          "label": "Model",
+          "type": "Literal['CLIP ViT-B/32', 'CLIP ViT-B/16', 'CLIP ViT-L/14', 'CLIP ViT-L/14@336', 'SigLIP Large-256', 'SigLIP Base-384', 'SigLIP Large-384']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Similarity (0\u20121)",
+          "type": "dict(label: str | int | float | None, confidences: list[dict(label: str | int | float | None, confidence: float | None)] | None)",
+          "component": "Label"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/infer",
+  "_api_verified": true,
+  "estimated_latency_s": 3.96,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 3.96,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:51:54.933153+00:00"
+}

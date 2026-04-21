@@ -1,0 +1,258 @@
+{
+  "space_id": "KenjieDec/GPEN",
+  "title": "GPEN",
+  "emoji": "\ud83d\udca9",
+  "description": "GPEN",
+  "input_schema": {
+    "file": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "Input Image",
+      "required": true,
+      "component": "Image"
+    },
+    "mode": {
+      "type": "Literal['enhance', 'colorize', 'inpainting', 'selfie', 'enhanced+background']",
+      "description": "Type",
+      "required": true,
+      "component": "Radio"
+    },
+    "res_percentage": {
+      "type": "float",
+      "description": "Output image Resolution Percentage (Higher% = longer processing time)",
+      "required": true,
+      "component": "Slider"
+    },
+    "zoom": {
+      "type": "float",
+      "description": "Zoom Percentage (0 = original size)",
+      "required": true,
+      "component": "Slider"
+    },
+    "x_shift": {
+      "type": "float",
+      "description": "Horizontal shift Percentage (Before/After)",
+      "required": true,
+      "component": "Slider"
+    },
+    "y_shift": {
+      "type": "float",
+      "description": "Vertical shift Percentage (Before/After)",
+      "required": true,
+      "component": "Slider"
+    }
+  },
+  "output_schema": {
+    "Result": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "Result",
+      "component": "Image"
+    },
+    "Before/After": {
+      "type": "tuple[filepath | None, filepath | None] | None",
+      "description": "Before/After",
+      "component": "Imageslider"
+    }
+  },
+  "license": "unknown",
+  "hardware": "",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 16,
+  "last_modified": "2025-09-05 05:49:01+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/inference",
+      "parameters": [
+        {
+          "name": "file",
+          "label": "Input Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "mode",
+          "label": "Type",
+          "type": "Literal['enhance', 'colorize', 'inpainting', 'selfie', 'enhanced+background']",
+          "component": "Radio"
+        },
+        {
+          "name": "res_percentage",
+          "label": "Output image Resolution Percentage (Higher% = longer processing time)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "zoom",
+          "label": "Zoom Percentage (0 = original size)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "x_shift",
+          "label": "Horizontal shift Percentage (Before/After)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "y_shift",
+          "label": "Vertical shift Percentage (Before/After)",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Result",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "Before/After",
+          "type": "tuple[filepath | None, filepath | None] | None",
+          "component": "Imageslider"
+        }
+      ]
+    },
+    {
+      "name": "/zoom_image",
+      "parameters": [
+        {
+          "name": "zoom",
+          "label": "Zoom Percentage (0 = original size)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "x_shift",
+          "label": "Horizontal shift Percentage (Before/After)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "y_shift",
+          "label": "Vertical shift Percentage (Before/After)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "input_img",
+          "label": "Input Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "output_img",
+          "label": "Result",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Before/After",
+          "type": "tuple[filepath | None, filepath | None] | None",
+          "component": "Imageslider"
+        }
+      ]
+    },
+    {
+      "name": "/zoom_image_1",
+      "parameters": [
+        {
+          "name": "zoom",
+          "label": "Zoom Percentage (0 = original size)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "x_shift",
+          "label": "Horizontal shift Percentage (Before/After)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "y_shift",
+          "label": "Vertical shift Percentage (Before/After)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "input_img",
+          "label": "Input Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "output_img",
+          "label": "Result",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Before/After",
+          "type": "tuple[filepath | None, filepath | None] | None",
+          "component": "Imageslider"
+        }
+      ]
+    },
+    {
+      "name": "/zoom_image_2",
+      "parameters": [
+        {
+          "name": "zoom",
+          "label": "Zoom Percentage (0 = original size)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "x_shift",
+          "label": "Horizontal shift Percentage (Before/After)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "y_shift",
+          "label": "Vertical shift Percentage (Before/After)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "input_img",
+          "label": "Input Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "output_img",
+          "label": "Result",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Before/After",
+          "type": "tuple[filepath | None, filepath | None] | None",
+          "component": "Imageslider"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/inference",
+  "_api_verified": true,
+  "estimated_latency_s": 2.97,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 2.97,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:49:30.734435+00:00"
+}

@@ -1,0 +1,79 @@
+{
+  "space_id": "prithivMLmods/Florence-2-Image-Caption",
+  "title": "Florence-2 Models",
+  "emoji": "\ud83d\udc20",
+  "description": "Florence-2-large / Florence-2-base",
+  "input_schema": {
+    "uploaded_image": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "Upload Image",
+      "required": true,
+      "component": "Image"
+    },
+    "model_choice": {
+      "type": "Literal['Florence-2-base', 'Florence-2-large']",
+      "description": "Model Choice",
+      "required": true,
+      "component": "Radio"
+    }
+  },
+  "output_schema": {
+    "Generated Caption": {
+      "type": "str",
+      "description": "Generated Caption",
+      "component": "Textbox"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "6.9.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "mcp-server",
+    "region:us",
+    "captioning",
+    "image-to-text",
+    "vision"
+  ],
+  "likes": 305,
+  "last_modified": "2026-03-23 05:43:30+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/describe_image",
+      "parameters": [
+        {
+          "name": "uploaded_image",
+          "label": "Upload Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "model_choice",
+          "label": "Model Choice",
+          "type": "Literal['Florence-2-base', 'Florence-2-large']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Generated Caption",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/describe_image",
+  "_api_verified": true,
+  "estimated_latency_s": 3.81,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "_tags_enriched": true,
+  "measured_latency_s": 3.81,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:51:35.308315+00:00"
+}

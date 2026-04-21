@@ -1,0 +1,90 @@
+{
+  "space_id": "Wan-AI/Wan2.2-S2V",
+  "title": "Wan2.2 S2V",
+  "emoji": "\ud83d\ude80",
+  "description": "Wan2.2 S2V",
+  "input_schema": {
+    "ref_img": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "Input image(\u8f93\u5165\u56fe\u50cf)",
+      "required": true,
+      "component": "Image"
+    },
+    "audio": {
+      "type": "filepath",
+      "description": "Audio(\u97f3\u9891\u6587\u4ef6)",
+      "required": true,
+      "component": "Audio"
+    },
+    "resolution": {
+      "type": "Literal['480P', '720P']",
+      "description": "Resolution(\u5206\u8fa8\u7387)",
+      "required": true,
+      "component": "Dropdown"
+    }
+  },
+  "output_schema": {
+    "Output Video(\u8f93\u51fa\u89c6\u9891)": {
+      "type": "dict(video: filepath, subtitles: filepath | None)",
+      "description": "Output Video(\u8f93\u51fa\u89c6\u9891)",
+      "component": "Video"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "5.43.1",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us",
+    "video",
+    "video-generation",
+    "vision"
+  ],
+  "likes": 346,
+  "last_modified": "2025-09-01 07:36:07+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/predict",
+      "parameters": [
+        {
+          "name": "ref_img",
+          "label": "Input image(\u8f93\u5165\u56fe\u50cf)",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "audio",
+          "label": "Audio(\u97f3\u9891\u6587\u4ef6)",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "name": "resolution",
+          "label": "Resolution(\u5206\u8fa8\u7387)",
+          "type": "Literal['480P', '720P']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output Video(\u8f93\u51fa\u89c6\u9891)",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/predict",
+  "_api_verified": true,
+  "estimated_latency_s": 3.38,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "_tags_enriched": true,
+  "measured_latency_s": 3.38,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:50:04.510441+00:00"
+}

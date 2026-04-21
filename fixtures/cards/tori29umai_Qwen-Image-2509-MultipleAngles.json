@@ -1,0 +1,305 @@
+{
+  "space_id": "tori29umai/Qwen-Image-2509-MultipleAngles",
+  "title": "Qwen-Image-2509-MultipleAngles",
+  "emoji": "\ud83d\udc40\ud83d\udca8",
+  "description": "Qwen-Image-2509-MultipleAngles",
+  "input_schema": {
+    "v_cn": {
+      "type": "Literal['\u955c\u5934\u65b9\u5411\u5de6\u56de\u8f6c45\u5ea6', '\u955c\u5934\u5411\u53f3\u56de\u8f6c45\u5ea6', '\u955c\u5934\u65b9\u5411\u5de6\u56de\u8f6c90\u5ea6', '\u955c\u5934\u5411\u53f3\u56de\u8f6c90\u5ea6', '\u5c06\u955c\u5934\u8f6c\u4e3a\u4fef\u89c6', '\u5c06\u955c\u5934\u8f6c\u4e3a\u4ef0\u89c6', '\u5c06\u955c\u5934\u8f6c\u4e3a\u7279\u5199\u955c\u5934', '\u5c06\u955c",
+      "description": "Camera work",
+      "required": true,
+      "component": "Dropdown"
+    },
+    "extra": {
+      "type": "str",
+      "description": "Extra prompt (optional, appended at end)(English and Chinese recommended)",
+      "required": true,
+      "component": "Textbox"
+    },
+    "custom_text": {
+      "type": "str",
+      "description": "Custom prompt(English and Chinese recommended)",
+      "required": true,
+      "component": "Textbox"
+    }
+  },
+  "output_schema": {
+    "Custom prompt(English and Chinese recommended)": {
+      "type": "str",
+      "description": "Custom prompt(English and Chinese recommended)",
+      "component": "Textbox"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "5.46.1",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 667,
+  "last_modified": "2025-11-04 17:58:08+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/_toggle_custom",
+      "parameters": [
+        {
+          "name": "v_cn",
+          "label": "Camera work",
+          "type": "Literal['\u955c\u5934\u65b9\u5411\u5de6\u56de\u8f6c45\u5ea6', '\u955c\u5934\u5411\u53f3\u56de\u8f6c45\u5ea6', '\u955c\u5934\u65b9\u5411\u5de6\u56de\u8f6c90\u5ea6', '\u955c\u5934\u5411\u53f3\u56de\u8f6c90\u5ea6', '\u5c06\u955c\u5934\u8f6c\u4e3a\u4fef\u89c6', '\u5c06\u955c\u5934\u8f6c\u4e3a\u4ef0\u89c6', '\u5c06\u955c\u5934\u8f6c\u4e3a\u7279\u5199\u955c\u5934', '\u5c06\u955c\u5934\u8f6c\u4e3a\u4e2d\u8fd1\u666f\u955c\u5934', '\u5c06\u955c\u5934\u8f6c\u4e3a\u62c9\u8fdc\u955c\u5934', '__custom__']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "extra",
+          "label": "Extra prompt (optional, appended at end)(English and Chinese recommended)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "custom_text",
+          "label": "Custom prompt(English and Chinese recommended)",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Custom prompt(English and Chinese recommended)",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/_toggle_custom_1",
+      "parameters": [
+        {
+          "name": "v_cn",
+          "label": "Camera work",
+          "type": "Literal['\u955c\u5934\u65b9\u5411\u5de6\u56de\u8f6c45\u5ea6', '\u955c\u5934\u5411\u53f3\u56de\u8f6c45\u5ea6', '\u955c\u5934\u65b9\u5411\u5de6\u56de\u8f6c90\u5ea6', '\u955c\u5934\u5411\u53f3\u56de\u8f6c90\u5ea6', '\u5c06\u955c\u5934\u8f6c\u4e3a\u4fef\u89c6', '\u5c06\u955c\u5934\u8f6c\u4e3a\u4ef0\u89c6', '\u5c06\u955c\u5934\u8f6c\u4e3a\u7279\u5199\u955c\u5934', '\u5c06\u955c\u5934\u8f6c\u4e3a\u4e2d\u8fd1\u666f\u955c\u5934', '\u5c06\u955c\u5934\u8f6c\u4e3a\u62c9\u8fdc\u955c\u5934', '__custom__']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "extra",
+          "label": "Extra prompt (optional, appended at end)(English and Chinese recommended)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "custom_text",
+          "label": "Custom prompt(English and Chinese recommended)",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Custom prompt(English and Chinese recommended)",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/_toggle_custom_2",
+      "parameters": [
+        {
+          "name": "v_cn",
+          "label": "Camera work",
+          "type": "Literal['\u955c\u5934\u65b9\u5411\u5de6\u56de\u8f6c45\u5ea6', '\u955c\u5934\u5411\u53f3\u56de\u8f6c45\u5ea6', '\u955c\u5934\u65b9\u5411\u5de6\u56de\u8f6c90\u5ea6', '\u955c\u5934\u5411\u53f3\u56de\u8f6c90\u5ea6', '\u5c06\u955c\u5934\u8f6c\u4e3a\u4fef\u89c6', '\u5c06\u955c\u5934\u8f6c\u4e3a\u4ef0\u89c6', '\u5c06\u955c\u5934\u8f6c\u4e3a\u7279\u5199\u955c\u5934', '\u5c06\u955c\u5934\u8f6c\u4e3a\u4e2d\u8fd1\u666f\u955c\u5934', '\u5c06\u955c\u5934\u8f6c\u4e3a\u62c9\u8fdc\u955c\u5934', '__custom__']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "extra",
+          "label": "Extra prompt (optional, appended at end)(English and Chinese recommended)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "custom_text",
+          "label": "Custom prompt(English and Chinese recommended)",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Custom prompt(English and Chinese recommended)",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/_switch_lang",
+      "parameters": [
+        {
+          "name": "lang",
+          "label": "UI Language",
+          "type": "Literal['en', 'ja', 'zh']",
+          "component": "Radio"
+        },
+        {
+          "name": "current_dropdown_value",
+          "label": "Camera work",
+          "type": "Literal['\u955c\u5934\u65b9\u5411\u5de6\u56de\u8f6c45\u5ea6', '\u955c\u5934\u5411\u53f3\u56de\u8f6c45\u5ea6', '\u955c\u5934\u65b9\u5411\u5de6\u56de\u8f6c90\u5ea6', '\u955c\u5934\u5411\u53f3\u56de\u8f6c90\u5ea6', '\u5c06\u955c\u5934\u8f6c\u4e3a\u4fef\u89c6', '\u5c06\u955c\u5934\u8f6c\u4e3a\u4ef0\u89c6', '\u5c06\u955c\u5934\u8f6c\u4e3a\u7279\u5199\u955c\u5934', '\u5c06\u955c\u5934\u8f6c\u4e3a\u4e2d\u8fd1\u666f\u955c\u5934', '\u5c06\u955c\u5934\u8f6c\u4e3a\u62c9\u8fdc\u955c\u5934', '__custom__']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "UI Language",
+          "type": "Literal['en', 'ja', 'zh']",
+          "component": "Radio"
+        },
+        {
+          "label": "value_2",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_4",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "Input image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "Camera work",
+          "type": "Literal['\u955c\u5934\u65b9\u5411\u5de6\u56de\u8f6c45\u5ea6', '\u955c\u5934\u5411\u53f3\u56de\u8f6c45\u5ea6', '\u955c\u5934\u65b9\u5411\u5de6\u56de\u8f6c90\u5ea6', '\u955c\u5934\u5411\u53f3\u56de\u8f6c90\u5ea6', '\u5c06\u955c\u5934\u8f6c\u4e3a\u4fef\u89c6', '\u5c06\u955c\u5934\u8f6c\u4e3a\u4ef0\u89c6', '\u5c06\u955c\u5934\u8f6c\u4e3a\u7279\u5199\u955c\u5934', '\u5c06\u955c\u5934\u8f6c\u4e3a\u4e2d\u8fd1\u666f\u955c\u5934', '\u5c06\u955c\u5934\u8f6c\u4e3a\u62c9\u8fdc\u955c\u5934', '__custom__']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Custom prompt(English and Chinese recommended)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Extra prompt (optional, appended at end)(English and Chinese recommended)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Seed",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Randomize seed",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "True guidance scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Steps",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Output image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "Status",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/generate_from_dropdown",
+      "parameters": [
+        {
+          "name": "image",
+          "label": "Input image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "dropdown_value_cn",
+          "label": "Camera work",
+          "type": "Literal['\u955c\u5934\u65b9\u5411\u5de6\u56de\u8f6c45\u5ea6', '\u955c\u5934\u5411\u53f3\u56de\u8f6c45\u5ea6', '\u955c\u5934\u65b9\u5411\u5de6\u56de\u8f6c90\u5ea6', '\u955c\u5934\u5411\u53f3\u56de\u8f6c90\u5ea6', '\u5c06\u955c\u5934\u8f6c\u4e3a\u4fef\u89c6', '\u5c06\u955c\u5934\u8f6c\u4e3a\u4ef0\u89c6', '\u5c06\u955c\u5934\u8f6c\u4e3a\u7279\u5199\u955c\u5934', '\u5c06\u955c\u5934\u8f6c\u4e3a\u4e2d\u8fd1\u666f\u955c\u5934', '\u5c06\u955c\u5934\u8f6c\u4e3a\u62c9\u8fdc\u955c\u5934', '__custom__']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "custom_cn",
+          "label": "Custom prompt(English and Chinese recommended)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "extra_prompt",
+          "label": "Extra prompt (optional, appended at end)(English and Chinese recommended)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "seed",
+          "label": "Seed",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "randomize_seed",
+          "label": "Randomize seed",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "true_guidance_scale",
+          "label": "True guidance scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "num_inference_steps",
+          "label": "Steps",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "lang",
+          "label": "UI Language",
+          "type": "Literal['en', 'ja', 'zh']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "Status",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/_toggle_custom",
+  "_api_verified": true,
+  "estimated_latency_s": 2.37,
+  "speed_tier": "fast",
+  "_latency_source": "measured_inference",
+  "measured_latency_s": 2.37,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:52:00.926399+00:00",
+  "measured_inference_s": 2.37,
+  "measured_inference_timestamp": "2026-04-20T07:59:11.934580+00:00",
+  "measured_inference_method": "auto_predict",
+  "measured_inference_api": "/_toggle_custom"
+}

@@ -1,0 +1,74 @@
+{
+  "space_id": "patriotyk/Apollo",
+  "title": "Apollo",
+  "emoji": "\ud83d\udcbb",
+  "description": "Apollo",
+  "input_schema": {
+    "choice": {
+      "type": "Literal['apollo', 'apollo_vocal', 'apollo_vocal2', 'apollo_uni']",
+      "description": "Model",
+      "required": true,
+      "component": "Dropdown"
+    },
+    "audio": {
+      "type": "filepath",
+      "description": "Input Audio:",
+      "required": true,
+      "component": "Audio"
+    }
+  },
+  "output_schema": {
+    "Output Audio": {
+      "type": "filepath",
+      "description": "Output Audio",
+      "component": "Audio"
+    }
+  },
+  "license": "unknown",
+  "hardware": "5.44.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 52,
+  "last_modified": "2025-08-27 14:24:37+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/predict",
+      "parameters": [
+        {
+          "name": "choice",
+          "label": "Model",
+          "type": "Literal['apollo', 'apollo_vocal', 'apollo_vocal2', 'apollo_uni']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "audio",
+          "label": "Input Audio:",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output Audio",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/predict",
+  "_api_verified": true,
+  "estimated_latency_s": 3.65,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 3.65,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:51:31.936443+00:00"
+}

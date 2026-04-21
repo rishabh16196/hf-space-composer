@@ -1,0 +1,108 @@
+{
+  "space_id": "naveenk-ai/openvoice_voicecloning_win",
+  "title": "Openvoice Voicecloning Win",
+  "emoji": "\ud83d\udd25",
+  "description": "Openvoice Voicecloning Win",
+  "input_schema": {
+    "prompt": {
+      "type": "str",
+      "description": "Text to speak",
+      "required": true,
+      "component": "Textbox"
+    },
+    "style": {
+      "type": "Literal['default', 'whispering', 'cheerful', 'terrified', 'angry', 'sad', 'friendly']",
+      "description": "Style",
+      "required": true,
+      "component": "Dropdown"
+    },
+    "audio_file_pth": {
+      "type": "filepath",
+      "description": "Reference Audio",
+      "required": true,
+      "component": "Audio"
+    },
+    "tau": {
+      "type": "float",
+      "description": "Tau (Voice similarity)",
+      "required": true,
+      "component": "Slider"
+    }
+  },
+  "output_schema": {
+    "Status": {
+      "type": "str",
+      "description": "Status",
+      "component": "Textbox"
+    },
+    "Generated Audio": {
+      "type": "filepath",
+      "description": "Generated Audio",
+      "component": "Audio"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "4.39.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 10,
+  "last_modified": "2025-01-13 10:48:27+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/predict",
+      "parameters": [
+        {
+          "name": "prompt",
+          "label": "Text to speak",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "style",
+          "label": "Style",
+          "type": "Literal['default', 'whispering', 'cheerful', 'terrified', 'angry', 'sad', 'friendly']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "audio_file_pth",
+          "label": "Reference Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "name": "tau",
+          "label": "Tau (Voice similarity)",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Status",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Generated Audio",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/predict",
+  "_api_verified": true,
+  "estimated_latency_s": 3.31,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 3.31,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:51:22.932739+00:00"
+}

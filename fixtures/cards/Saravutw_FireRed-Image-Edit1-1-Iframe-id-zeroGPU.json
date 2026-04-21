@@ -1,0 +1,67 @@
+{
+  "space_id": "Saravutw/FireRed-Image-Edit1-1-Iframe-id-zeroGPU",
+  "title": "FireRed-Image-Edit-1.0-Fast - v@1.1-Iframe-id-zeroGPU",
+  "emoji": "\ud83d\uddbc",
+  "description": "FireRed-Image-Edit-1.0-Fast - v@1.1-Iframe-id-zeroGPU",
+  "input_schema": {
+    "text_input": {
+      "type": "str",
+      "description": "Input (Auto-detect)",
+      "required": true,
+      "component": "Textbox"
+    }
+  },
+  "output_schema": {
+    "English (US) Result": {
+      "type": "str",
+      "description": "English (US) Result",
+      "component": "Textbox"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "5.44.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us",
+    "image-generation",
+    "vision"
+  ],
+  "likes": 6,
+  "last_modified": "2026-03-31 09:35:05+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_tags_enriched": true,
+  "estimated_latency_s": 30.0,
+  "speed_tier": "slow",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/translate_to_us",
+      "parameters": [
+        {
+          "name": "text_input",
+          "label": "Input (Auto-detect)",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "English (US) Result",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/toggle_translator",
+      "parameters": [],
+      "returns": []
+    }
+  ],
+  "endpoint": "/translate_to_us",
+  "_api_verified": true
+}

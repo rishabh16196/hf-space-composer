@@ -1,0 +1,2842 @@
+{
+  "space_id": "cin-model/kotaemon-demo",
+  "title": "Kotaemon",
+  "emoji": "\ud83d\ude80",
+  "description": "Kotaemon",
+  "input_schema": {
+    "chat_input": {
+      "type": "str",
+      "description": "parameter_51",
+      "required": true,
+      "component": "Textbox"
+    },
+    "chat_history": {
+      "type": "Tuple[str | Dict(file: filepath, alt_text: str | None) | Dict(component: str, value: Any, constructo",
+      "description": "Kotaemon",
+      "required": true,
+      "component": "Chatbot"
+    },
+    "conv_name": {
+      "type": "str",
+      "description": "(Enter) to save",
+      "required": true,
+      "component": "Textbox"
+    }
+  },
+  "output_schema": {
+    "value_51": {
+      "type": "str",
+      "description": "value_51",
+      "component": "Textbox"
+    },
+    "Kotaemon": {
+      "type": "Tuple[str | Dict(file: filepath, alt_text: str | None) | Dict(component: str, value: Any, constructo",
+      "description": "Kotaemon",
+      "component": "Chatbot"
+    },
+    "Chat sessions": {
+      "type": "Literal[]",
+      "description": "Chat sessions",
+      "component": "Dropdown"
+    },
+    "(Enter) to save": {
+      "type": "str",
+      "description": "(Enter) to save",
+      "component": "Textbox"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "",
+  "sdk": "docker",
+  "tags": [
+    "docker",
+    "region:us"
+  ],
+  "likes": 204,
+  "last_modified": "2025-01-08 10:08:43+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/submit_msg",
+      "parameters": [
+        {
+          "name": "chat_input",
+          "label": "parameter_51",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "chat_history",
+          "label": "Kotaemon",
+          "type": "Tuple[str | Dict(file: filepath, alt_text: str | None) | Dict(component: str, value: Any, constructor_args: Dict(), props: Dict()) | None, str | Dict(file: filepath, alt_text: str | None) | Dict(compo",
+          "component": "Chatbot"
+        },
+        {
+          "name": "conv_name",
+          "label": "(Enter) to save",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_51",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Kotaemon",
+          "type": "Tuple[str | Dict(file: filepath, alt_text: str | None) | Dict(component: str, value: Any, constructor_args: Dict(), props: Dict()) | None, str | Dict(file: filepath, alt_text: str | None) | Dict(compo",
+          "component": "Chatbot"
+        },
+        {
+          "label": "Chat sessions",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "(Enter) to save",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/chat_fn",
+      "parameters": [
+        {
+          "name": "chat_history",
+          "label": "Kotaemon",
+          "type": "Tuple[str | Dict(file: filepath, alt_text: str | None) | Dict(component: str, value: Any, constructor_args: Dict(), props: Dict()) | None, str | Dict(file: filepath, alt_text: str | None) | Dict(compo",
+          "component": "Chatbot"
+        },
+        {
+          "name": "param_7",
+          "label": "parameter_30",
+          "type": "Literal['all', 'select']",
+          "component": "Radio"
+        },
+        {
+          "name": "param_8",
+          "label": "Files",
+          "type": "List[Literal[]]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_10",
+          "label": "parameter_34",
+          "type": "Literal['all', 'select']",
+          "component": "Radio"
+        },
+        {
+          "name": "param_11",
+          "label": "Files",
+          "type": "List[Literal[]]",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Kotaemon",
+          "type": "Tuple[str | Dict(file: filepath, alt_text: str | None) | Dict(component: str, value: Any, constructor_args: Dict(), props: Dict()) | None, str | Dict(file: filepath, alt_text: str | None) | Dict(compo",
+          "component": "Chatbot"
+        },
+        {
+          "label": "value_66",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "value_65",
+          "type": "Dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        }
+      ]
+    },
+    {
+      "name": "/backup_original_info",
+      "parameters": [
+        {
+          "name": "chat_history",
+          "label": "Kotaemon",
+          "type": "Tuple[str | Dict(file: filepath, alt_text: str | None) | Dict(component: str, value: Any, constructor_args: Dict(), props: Dict()) | None, str | Dict(file: filepath, alt_text: str | None) | Dict(compo",
+          "component": "Chatbot"
+        },
+        {
+          "name": "info_pannel",
+          "label": "parameter_66",
+          "type": "str",
+          "component": "Html"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/persist_data_source",
+      "parameters": [
+        {
+          "name": "retrieval_msg",
+          "label": "parameter_66",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "name": "messages",
+          "label": "Kotaemon",
+          "type": "Tuple[str | Dict(file: filepath, alt_text: str | None) | Dict(component: str, value: Any, constructor_args: Dict(), props: Dict()) | None, str | Dict(file: filepath, alt_text: str | None) | Dict(compo",
+          "component": "Chatbot"
+        },
+        {
+          "name": "param_8",
+          "label": "parameter_30",
+          "type": "Literal['all', 'select']",
+          "component": "Radio"
+        },
+        {
+          "name": "param_9",
+          "label": "Files",
+          "type": "List[Literal[]]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_11",
+          "label": "parameter_34",
+          "type": "Literal['all', 'select']",
+          "component": "Radio"
+        },
+        {
+          "name": "param_12",
+          "label": "Files",
+          "type": "List[Literal[]]",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/check_and_suggest_name_conv",
+      "parameters": [
+        {
+          "name": "chat_history",
+          "label": "Kotaemon",
+          "type": "Tuple[str | Dict(file: filepath, alt_text: str | None) | Dict(component: str, value: Any, constructor_args: Dict(), props: Dict()) | None, str | Dict(file: filepath, alt_text: str | None) | Dict(compo",
+          "component": "Chatbot"
+        }
+      ],
+      "returns": [
+        {
+          "label": "(Enter) to save",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/rename_conv",
+      "parameters": [
+        {
+          "name": "new_name",
+          "label": "(Enter) to save",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Chat sessions",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Chat sessions",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "(Enter) to save",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/regen_fn",
+      "parameters": [
+        {
+          "name": "chat_history",
+          "label": "Kotaemon",
+          "type": "Tuple[str | Dict(file: filepath, alt_text: str | None) | Dict(component: str, value: Any, constructor_args: Dict(), props: Dict()) | None, str | Dict(file: filepath, alt_text: str | None) | Dict(compo",
+          "component": "Chatbot"
+        },
+        {
+          "name": "param_7",
+          "label": "parameter_30",
+          "type": "Literal['all', 'select']",
+          "component": "Radio"
+        },
+        {
+          "name": "param_8",
+          "label": "Files",
+          "type": "List[Literal[]]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_10",
+          "label": "parameter_34",
+          "type": "Literal['all', 'select']",
+          "component": "Radio"
+        },
+        {
+          "name": "param_11",
+          "label": "Files",
+          "type": "List[Literal[]]",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Kotaemon",
+          "type": "Tuple[str | Dict(file: filepath, alt_text: str | None) | Dict(component: str, value: Any, constructor_args: Dict(), props: Dict()) | None, str | Dict(file: filepath, alt_text: str | None) | Dict(compo",
+          "component": "Chatbot"
+        },
+        {
+          "label": "value_66",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "value_65",
+          "type": "Dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        }
+      ]
+    },
+    {
+      "name": "/persist_data_source_1",
+      "parameters": [
+        {
+          "name": "retrieval_msg",
+          "label": "parameter_66",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "name": "messages",
+          "label": "Kotaemon",
+          "type": "Tuple[str | Dict(file: filepath, alt_text: str | None) | Dict(component: str, value: Any, constructor_args: Dict(), props: Dict()) | None, str | Dict(file: filepath, alt_text: str | None) | Dict(compo",
+          "component": "Chatbot"
+        },
+        {
+          "name": "param_8",
+          "label": "parameter_30",
+          "type": "Literal['all', 'select']",
+          "component": "Radio"
+        },
+        {
+          "name": "param_9",
+          "label": "Files",
+          "type": "List[Literal[]]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_11",
+          "label": "parameter_34",
+          "type": "Literal['all', 'select']",
+          "component": "Radio"
+        },
+        {
+          "name": "param_12",
+          "label": "Files",
+          "type": "List[Literal[]]",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/check_and_suggest_name_conv_1",
+      "parameters": [
+        {
+          "name": "chat_history",
+          "label": "Kotaemon",
+          "type": "Tuple[str | Dict(file: filepath, alt_text: str | None) | Dict(component: str, value: Any, constructor_args: Dict(), props: Dict()) | None, str | Dict(file: filepath, alt_text: str | None) | Dict(compo",
+          "component": "Chatbot"
+        }
+      ],
+      "returns": [
+        {
+          "label": "(Enter) to save",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/rename_conv_1",
+      "parameters": [
+        {
+          "name": "new_name",
+          "label": "(Enter) to save",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Chat sessions",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Chat sessions",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "(Enter) to save",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/lambda",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/is_liked",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/save_log",
+      "parameters": [
+        {
+          "name": "chat_history",
+          "label": "Kotaemon",
+          "type": "Tuple[str | Dict(file: filepath, alt_text: str | None) | Dict(component: str, value: Any, constructor_args: Dict(), props: Dict()) | None, str | Dict(file: filepath, alt_text: str | None) | Dict(compo",
+          "component": "Chatbot"
+        },
+        {
+          "name": "info_panel",
+          "label": "parameter_66",
+          "type": "str",
+          "component": "Html"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/new_conv",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Chat sessions",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/select_conv",
+      "parameters": [
+        {
+          "name": "conversation_id",
+          "label": "Chat sessions",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Chat sessions",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "(Enter) to save",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Kotaemon",
+          "type": "Tuple[str | Dict(file: filepath, alt_text: str | None) | Dict(component: str, value: Any, constructor_args: Dict(), props: Dict()) | None, str | Dict(file: filepath, alt_text: str | None) | Dict(compo",
+          "component": "Chatbot"
+        },
+        {
+          "label": "value_66",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "Shared",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "value_30",
+          "type": "Literal['all', 'select']",
+          "component": "Radio"
+        },
+        {
+          "label": "Files",
+          "type": "List[Literal[]]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "value_34",
+          "type": "Literal['all', 'select']",
+          "component": "Radio"
+        },
+        {
+          "label": "Files",
+          "type": "List[Literal[]]",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/_json_to_plot",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_65",
+          "type": "Dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_1",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/delete_conv",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Chat sessions",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/select_conv_1",
+      "parameters": [
+        {
+          "name": "conversation_id",
+          "label": "Chat sessions",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Chat sessions",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "(Enter) to save",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Kotaemon",
+          "type": "Tuple[str | Dict(file: filepath, alt_text: str | None) | Dict(component: str, value: Any, constructor_args: Dict(), props: Dict()) | None, str | Dict(file: filepath, alt_text: str | None) | Dict(compo",
+          "component": "Chatbot"
+        },
+        {
+          "label": "value_66",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "Shared",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "value_30",
+          "type": "Literal['all', 'select']",
+          "component": "Radio"
+        },
+        {
+          "label": "Files",
+          "type": "List[Literal[]]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "value_34",
+          "type": "Literal['all', 'select']",
+          "component": "Radio"
+        },
+        {
+          "label": "Files",
+          "type": "List[Literal[]]",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/_json_to_plot_1",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_65",
+          "type": "Dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_2",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/lambda_3",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/lambda_4",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "(Enter) to save",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/rename_conv_2",
+      "parameters": [
+        {
+          "name": "new_name",
+          "label": "(Enter) to save",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Chat sessions",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Chat sessions",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "(Enter) to save",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/select_conv_2",
+      "parameters": [
+        {
+          "name": "conversation_id",
+          "label": "Chat sessions",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Chat sessions",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "(Enter) to save",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Kotaemon",
+          "type": "Tuple[str | Dict(file: filepath, alt_text: str | None) | Dict(component: str, value: Any, constructor_args: Dict(), props: Dict()) | None, str | Dict(file: filepath, alt_text: str | None) | Dict(compo",
+          "component": "Chatbot"
+        },
+        {
+          "label": "value_66",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "Shared",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "value_30",
+          "type": "Literal['all', 'select']",
+          "component": "Radio"
+        },
+        {
+          "label": "Files",
+          "type": "List[Literal[]]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "value_34",
+          "type": "Literal['all', 'select']",
+          "component": "Radio"
+        },
+        {
+          "label": "Files",
+          "type": "List[Literal[]]",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/_json_to_plot_2",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_65",
+          "type": "Dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_5",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/message_selected",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_66",
+          "type": "str",
+          "component": "Html"
+        }
+      ]
+    },
+    {
+      "name": "/_json_to_plot_3",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_65",
+          "type": "Dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        }
+      ]
+    },
+    {
+      "name": "/on_set_public_conversation",
+      "parameters": [
+        {
+          "name": "is_public",
+          "label": "Shared",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "convo_id",
+          "label": "Chat sessions",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/report",
+      "parameters": [
+        {
+          "name": "correctness",
+          "label": "Correctness:",
+          "type": "Literal['correct', 'incorrect']",
+          "component": "Radio"
+        },
+        {
+          "name": "issues",
+          "label": "Other issue:",
+          "type": "List[Literal['offensive', 'wrong-evidence']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "more_detail",
+          "label": "parameter_44",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "chat_history",
+          "label": "Kotaemon",
+          "type": "Tuple[str | Dict(file: filepath, alt_text: str | None) | Dict(component: str, value: Any, constructor_args: Dict(), props: Dict()) | None, str | Dict(file: filepath, alt_text: str | None) | Dict(compo",
+          "component": "Chatbot"
+        },
+        {
+          "name": "info_panel",
+          "label": "parameter_66",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "name": "param_9",
+          "label": "parameter_30",
+          "type": "Literal['all', 'select']",
+          "component": "Radio"
+        },
+        {
+          "name": "param_10",
+          "label": "Files",
+          "type": "List[Literal[]]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_12",
+          "label": "parameter_34",
+          "type": "Literal['all', 'select']",
+          "component": "Radio"
+        },
+        {
+          "name": "param_13",
+          "label": "Files",
+          "type": "List[Literal[]]",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/reasoning_changed",
+      "parameters": [
+        {
+          "name": "reasoning_type",
+          "label": "parameter_60",
+          "type": "Literal['(default)', 'simple', 'complex', 'ReAct', 'ReWOO']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/lambda_6",
+      "parameters": [
+        {
+          "name": "x",
+          "label": "parameter_61",
+          "type": "Literal['', 'azure', 'openai', 'ollama']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/lambda_7",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_65",
+          "type": "Dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_8",
+      "parameters": [
+        {
+          "name": "mode",
+          "label": "parameter_30",
+          "type": "Literal['all', 'select']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Files",
+          "type": "List[Literal[]]",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_9",
+      "parameters": [
+        {
+          "name": "mode",
+          "label": "parameter_34",
+          "type": "Literal['all', 'select']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Files",
+          "type": "List[Literal[]]",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/delete_event",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/lambda_10",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_105",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/list_file",
+      "parameters": [
+        {
+          "name": "name_pattern",
+          "label": "Filter by name:",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_94",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/file_selected",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_106",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "Download file",
+          "type": "filepath",
+          "component": "Downloadbutton"
+        }
+      ]
+    },
+    {
+      "name": "/load_files",
+      "parameters": [
+        {
+          "name": "selected_files",
+          "label": "Files",
+          "type": "List[Literal[]]",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Files",
+          "type": "List[Literal[]]",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_11",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_105",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/file_selected_1",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_106",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "Download file",
+          "type": "filepath",
+          "component": "Downloadbutton"
+        }
+      ]
+    },
+    {
+      "name": "/download_all_files",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Download all files",
+          "type": "filepath",
+          "component": "Downloadbutton"
+        }
+      ]
+    },
+    {
+      "name": "/download_single_file",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Download file",
+          "type": "filepath",
+          "component": "Downloadbutton"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_12",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/index_fn",
+      "parameters": [
+        {
+          "name": "files",
+          "label": "parameter_77",
+          "type": "List[filepath]",
+          "component": "File"
+        },
+        {
+          "name": "reindex",
+          "label": "Force reindex file",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Upload result",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Upload info",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_13",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_40",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/index_fn_with_default_loaders",
+      "parameters": [
+        {
+          "name": "files",
+          "label": "parameter_39",
+          "type": "List[filepath]",
+          "component": "File"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/lambda_14",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_39",
+          "type": "List[filepath]",
+          "component": "File"
+        },
+        {
+          "label": "value_30",
+          "type": "Literal['all', 'select']",
+          "component": "Radio"
+        }
+      ]
+    },
+    {
+      "name": "/load_files_1",
+      "parameters": [
+        {
+          "name": "selected_files",
+          "label": "Files",
+          "type": "List[Literal[]]",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Files",
+          "type": "List[Literal[]]",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_15",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Files",
+          "type": "List[Literal[]]",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_16",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_40",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/list_file_1",
+      "parameters": [
+        {
+          "name": "name_pattern",
+          "label": "Filter by name:",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_94",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/list_file_2",
+      "parameters": [
+        {
+          "name": "name_pattern",
+          "label": "Filter by name:",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_94",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/load_files_2",
+      "parameters": [
+        {
+          "name": "selected_files",
+          "label": "Files",
+          "type": "List[Literal[]]",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Files",
+          "type": "List[Literal[]]",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_17",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_77",
+          "type": "List[filepath]",
+          "component": "File"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_18",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Upload result",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Upload info",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/interact_file_list",
+      "parameters": [
+        {
+          "name": "list_files",
+          "label": "parameter_94",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_105",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/file_selected_2",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_106",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "Download file",
+          "type": "filepath",
+          "component": "Downloadbutton"
+        }
+      ]
+    },
+    {
+      "name": "/list_file_3",
+      "parameters": [
+        {
+          "name": "name_pattern",
+          "label": "Filter by name:",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_94",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/delete_event_1",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/lambda_19",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_141",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/list_file_4",
+      "parameters": [
+        {
+          "name": "name_pattern",
+          "label": "Filter by name:",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_130",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/file_selected_3",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_142",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "Download file",
+          "type": "filepath",
+          "component": "Downloadbutton"
+        }
+      ]
+    },
+    {
+      "name": "/load_files_3",
+      "parameters": [
+        {
+          "name": "selected_files",
+          "label": "Files",
+          "type": "List[Literal[]]",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Files",
+          "type": "List[Literal[]]",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_20",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_141",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/file_selected_4",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_142",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "Download file",
+          "type": "filepath",
+          "component": "Downloadbutton"
+        }
+      ]
+    },
+    {
+      "name": "/download_all_files_1",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Download all files",
+          "type": "filepath",
+          "component": "Downloadbutton"
+        }
+      ]
+    },
+    {
+      "name": "/download_single_file_1",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Download file",
+          "type": "filepath",
+          "component": "Downloadbutton"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_21",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/index_fn_1",
+      "parameters": [
+        {
+          "name": "files",
+          "label": "parameter_113",
+          "type": "List[filepath]",
+          "component": "File"
+        },
+        {
+          "name": "reindex",
+          "label": "Force reindex file",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Upload result",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Upload info",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/list_file_5",
+      "parameters": [
+        {
+          "name": "name_pattern",
+          "label": "Filter by name:",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_130",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/load_files_4",
+      "parameters": [
+        {
+          "name": "selected_files",
+          "label": "Files",
+          "type": "List[Literal[]]",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Files",
+          "type": "List[Literal[]]",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_22",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_113",
+          "type": "List[filepath]",
+          "component": "File"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_23",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Upload result",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Upload info",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/interact_file_list_1",
+      "parameters": [
+        {
+          "name": "list_files",
+          "label": "parameter_130",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_141",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/file_selected_5",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_142",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "Download file",
+          "type": "filepath",
+          "component": "Downloadbutton"
+        }
+      ]
+    },
+    {
+      "name": "/list_file_6",
+      "parameters": [
+        {
+          "name": "name_pattern",
+          "label": "Filter by name:",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_130",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/on_index_type_change",
+      "parameters": [
+        {
+          "name": "index_type",
+          "label": "Index type",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Specification",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "value_177",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/create_index",
+      "parameters": [
+        {
+          "name": "name",
+          "label": "Index name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "index_type",
+          "label": "Index type",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "config",
+          "label": "Specification",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/list_indices",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_148",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_24",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Index name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Index type",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Specification",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "value_177",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/update_current_module_atime",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/select_index",
+      "parameters": [
+        {
+          "name": "index_list",
+          "label": "parameter_148",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_150",
+          "type": "float",
+          "component": "Number"
+        }
+      ]
+    },
+    {
+      "name": "/on_selected_index_change",
+      "parameters": [
+        {
+          "name": "selected_index_id",
+          "label": "parameter_150",
+          "type": "float",
+          "component": "Number"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Index config",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "value_165",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "Index name",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_25",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/delete_index",
+      "parameters": [
+        {
+          "name": "selected_index_id",
+          "label": "parameter_150",
+          "type": "float",
+          "component": "Number"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_150",
+          "type": "float",
+          "component": "Number"
+        }
+      ]
+    },
+    {
+      "name": "/list_indices_1",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_148",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/update_current_module_atime_1",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/lambda_26",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/update_index",
+      "parameters": [
+        {
+          "name": "selected_index_id",
+          "label": "parameter_150",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "name",
+          "label": "Index name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "config",
+          "label": "Index config",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/list_indices_2",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_148",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_27",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_150",
+          "type": "float",
+          "component": "Number"
+        }
+      ]
+    },
+    {
+      "name": "/on_llm_vendor_change",
+      "parameters": [
+        {
+          "name": "vendor",
+          "label": "LLM vendors",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Specification",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "value_212",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/create_llm",
+      "parameters": [
+        {
+          "name": "name",
+          "label": "LLM name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "choices",
+          "label": "LLM vendors",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "spec",
+          "label": "Specification",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "default",
+          "label": "Set default",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/list_llms",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_181",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_28",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "LLM name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "LLM vendors",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Specification",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Set default",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "value_212",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/select_llm",
+      "parameters": [
+        {
+          "name": "llm_list",
+          "label": "parameter_181",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_183",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/on_selected_llm_change",
+      "parameters": [
+        {
+          "name": "selected_llm_name",
+          "label": "parameter_183",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Specification",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "value_200",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "Set default",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ]
+    },
+    {
+      "name": "/on_btn_delete_click",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/delete_llm",
+      "parameters": [
+        {
+          "name": "selected_llm_name",
+          "label": "parameter_183",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_183",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/list_llms_1",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_181",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_29",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/save_llm",
+      "parameters": [
+        {
+          "name": "selected_llm_name",
+          "label": "parameter_183",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "default",
+          "label": "Set default",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "spec",
+          "label": "Specification",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/list_llms_2",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_181",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_30",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_183",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/on_emb_vendor_change",
+      "parameters": [
+        {
+          "name": "vendor",
+          "label": "Vendors",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Specification",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "value_247",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/create_emb",
+      "parameters": [
+        {
+          "name": "name",
+          "label": "Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "choices",
+          "label": "Vendors",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "spec",
+          "label": "Specification",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "default",
+          "label": "Set default",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/list_embeddings",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_216",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_31",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Vendors",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Specification",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Set default",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "value_247",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/select_emb",
+      "parameters": [
+        {
+          "name": "emb_list",
+          "label": "parameter_216",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_218",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/on_selected_emb_change",
+      "parameters": [
+        {
+          "name": "selected_emb_name",
+          "label": "parameter_218",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Specification",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "value_235",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "Set default",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ]
+    },
+    {
+      "name": "/on_btn_delete_click_1",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/delete_emb",
+      "parameters": [
+        {
+          "name": "selected_emb_name",
+          "label": "parameter_218",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_218",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/list_embeddings_1",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_216",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_32",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/save_emb",
+      "parameters": [
+        {
+          "name": "selected_emb_name",
+          "label": "parameter_218",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "default",
+          "label": "Set default",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "spec",
+          "label": "Specification",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/list_embeddings_2",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_216",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_33",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_218",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/save_setting",
+      "parameters": [
+        {
+          "name": "param_1",
+          "label": "File loader",
+          "type": "Literal['default', 'adobe', 'azure-di']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_2",
+          "label": "LLM for relevant scoring",
+          "type": "Literal['azure', 'openai', 'ollama']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_3",
+          "label": "Number of document chunks to retrieve",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "param_4",
+          "label": "Retrieval mode",
+          "type": "Literal['vector', 'text', 'hybrid']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_5",
+          "label": "Prioritize table",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_6",
+          "label": "Use MMR",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_7",
+          "label": "Use reranking",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_8",
+          "label": "Use LLM relevant scoring",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_9",
+          "label": "File loader",
+          "type": "Literal['default', 'adobe', 'azure-di']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_10",
+          "label": "Search type",
+          "type": "Literal['local', 'global']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_11",
+          "label": "Reasoning options",
+          "type": "Literal['simple', 'complex', 'ReAct', 'ReWOO']",
+          "component": "Radio"
+        },
+        {
+          "name": "param_12",
+          "label": "Language",
+          "type": "Literal['en', 'ja', 'vi']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_13",
+          "label": "Max context length (LLM)",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "param_14",
+          "label": "Language model",
+          "type": "Literal['', 'azure', 'openai', 'ollama']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_15",
+          "label": "Highlight Citation",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_16",
+          "label": "System Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_17",
+          "label": "QA Prompt (contains {context}, {question}, {lang})",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_18",
+          "label": "Number of interactions to include",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "param_19",
+          "label": "Maximum message length for context rewriting",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "param_20",
+          "label": "Language model",
+          "type": "Literal['', 'azure', 'openai', 'ollama']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_21",
+          "label": "Highlight Citation",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_22",
+          "label": "System Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_23",
+          "label": "QA Prompt (contains {context}, {question}, {lang})",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_24",
+          "label": "Number of interactions to include",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "param_25",
+          "label": "Maximum message length for context rewriting",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "param_26",
+          "label": "Decompose Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_27",
+          "label": "Language model",
+          "type": "Literal['', 'azure', 'openai', 'ollama']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_28",
+          "label": "Tools for knowledge retrieval",
+          "type": "List[Literal['Wikipedia', 'Google', 'LLM', 'SearchDoc']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "param_29",
+          "label": "Maximum number of iterations the LLM can go through",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "param_30",
+          "label": "QA Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_31",
+          "label": "Language model for Planner",
+          "type": "Literal['', 'azure', 'openai', 'ollama']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_32",
+          "label": "Language model for Solver",
+          "type": "Literal['', 'azure', 'openai', 'ollama']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_33",
+          "label": "Highlight Citation",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_34",
+          "label": "Tools for knowledge retrieval",
+          "type": "List[Literal['Wikipedia', 'Google', 'LLM', 'SearchDoc']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "param_35",
+          "label": "Planner Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_36",
+          "label": "Solver Prompt",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/change_reasoning_mode",
+      "parameters": [
+        {
+          "name": "value",
+          "label": "Reasoning options",
+          "type": "Literal['simple', 'complex', 'ReAct', 'ReWOO']",
+          "component": "Radio"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/reload_conv",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Chat sessions",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/load_files_5",
+      "parameters": [
+        {
+          "name": "selected_files",
+          "label": "Files",
+          "type": "List[Literal[]]",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Files",
+          "type": "List[Literal[]]",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/load_files_6",
+      "parameters": [
+        {
+          "name": "selected_files",
+          "label": "Files",
+          "type": "List[Literal[]]",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Files",
+          "type": "List[Literal[]]",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/list_file_7",
+      "parameters": [
+        {
+          "name": "name_pattern",
+          "label": "Filter by name:",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_94",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/list_file_8",
+      "parameters": [
+        {
+          "name": "name_pattern",
+          "label": "Filter by name:",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_130",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/list_indices_3",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_148",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_34",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Index type",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/list_llms_3",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_181",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_35",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "LLM vendors",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/list_embeddings_3",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_216",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_36",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Vendors",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/load_setting",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "File loader",
+          "type": "Literal['default', 'adobe', 'azure-di']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "LLM for relevant scoring",
+          "type": "Literal['azure', 'openai', 'ollama']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Number of document chunks to retrieve",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "label": "Retrieval mode",
+          "type": "Literal['vector', 'text', 'hybrid']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Prioritize table",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Use MMR",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Use reranking",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Use LLM relevant scoring",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "File loader",
+          "type": "Literal['default', 'adobe', 'azure-di']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Search type",
+          "type": "Literal['local', 'global']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Reasoning options",
+          "type": "Literal['simple', 'complex', 'ReAct', 'ReWOO']",
+          "component": "Radio"
+        },
+        {
+          "label": "Language",
+          "type": "Literal['en', 'ja', 'vi']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Max context length (LLM)",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "label": "Language model",
+          "type": "Literal['', 'azure', 'openai', 'ollama']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Highlight Citation",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "System Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "QA Prompt (contains {context}, {question}, {lang})",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Number of interactions to include",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "label": "Maximum message length for context rewriting",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "label": "Language model",
+          "type": "Literal['', 'azure', 'openai', 'ollama']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Highlight Citation",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "System Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "QA Prompt (contains {context}, {question}, {lang})",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Number of interactions to include",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "label": "Maximum message length for context rewriting",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "label": "Decompose Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Language model",
+          "type": "Literal['', 'azure', 'openai', 'ollama']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Tools for knowledge retrieval",
+          "type": "List[Literal['Wikipedia', 'Google', 'LLM', 'SearchDoc']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "label": "Maximum number of iterations the LLM can go through",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "label": "QA Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Language model for Planner",
+          "type": "Literal['', 'azure', 'openai', 'ollama']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Language model for Solver",
+          "type": "Literal['', 'azure', 'openai', 'ollama']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Highlight Citation",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Tools for knowledge retrieval",
+          "type": "List[Literal['Wikipedia', 'Google', 'LLM', 'SearchDoc']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "label": "Planner Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Solver Prompt",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/update_llms",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "LLM for relevant scoring",
+          "type": "Literal['azure', 'openai', 'ollama']",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/update_llms_1",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Language model",
+          "type": "Literal['', 'azure', 'openai', 'ollama']",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/update_llms_2",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Language model",
+          "type": "Literal['', 'azure', 'openai', 'ollama']",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/update_llms_3",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Language model",
+          "type": "Literal['', 'azure', 'openai', 'ollama']",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/update_llms_4",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Language model for Planner",
+          "type": "Literal['', 'azure', 'openai', 'ollama']",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/update_llms_5",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Language model for Solver",
+          "type": "Literal['', 'azure', 'openai', 'ollama']",
+          "component": "Dropdown"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/submit_msg",
+  "_api_verified": true,
+  "estimated_latency_s": 4.07,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 4.07,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:50:28.052353+00:00"
+}

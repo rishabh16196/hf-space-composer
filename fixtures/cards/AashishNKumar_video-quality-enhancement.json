@@ -1,0 +1,71 @@
+{
+  "space_id": "AashishNKumar/video-quality-enhancement",
+  "title": "Video FPS Enhancer",
+  "emoji": "\ud83d\ude80",
+  "description": "Video FPS Enhancer",
+  "input_schema": {
+    "video_path": {
+      "type": "Dict(video: filepath, subtitles: filepath | None)",
+      "description": "Upload Input Video",
+      "required": true,
+      "component": "Video"
+    },
+    "output_fps": {
+      "type": "float",
+      "description": "Desired Output FPS",
+      "required": true,
+      "component": "Slider"
+    }
+  },
+  "output_schema": {
+    "Download Enhanced Video": {
+      "type": "filepath",
+      "description": "Download Enhanced Video",
+      "component": "File"
+    }
+  },
+  "license": "unknown",
+  "hardware": "5.8.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 25,
+  "last_modified": "2024-12-06 05:23:01+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/predict",
+      "parameters": [
+        {
+          "name": "video_path",
+          "label": "Upload Input Video",
+          "type": "Dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        },
+        {
+          "name": "output_fps",
+          "label": "Desired Output FPS",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Download Enhanced Video",
+          "type": "filepath",
+          "component": "File"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/predict",
+  "_api_verified": true
+}

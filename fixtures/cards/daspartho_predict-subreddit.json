@@ -1,0 +1,35 @@
+{
+  "space_id": "daspartho/predict-subreddit",
+  "title": "Predict Subreddit",
+  "emoji": "\ud83d\udcc8",
+  "description": "Predict Subreddit",
+  "input_schema": {
+    "input": {
+      "type": "string",
+      "description": "Input",
+      "required": true
+    }
+  },
+  "output_schema": {
+    "output": {
+      "type": "string"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "5.8.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 4,
+  "last_modified": "2024-12-10 14:44:25+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "error",
+  "_api_error": "(Request ID: Root=1-69e77bd2-25dc493e27f559754ccf4886;d95e4051-ace5-490b-b359-62e5b658c9f2)\n\n429 Too Many Requests: you have reached your 'api' rate limit.\nRetry after 12 seconds (0/2500 requests rema"
+}

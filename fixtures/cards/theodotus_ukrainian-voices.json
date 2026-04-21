@@ -1,0 +1,93 @@
+{
+  "space_id": "theodotus/ukrainian-voices",
+  "title": "Ukrainian Voices",
+  "emoji": "\ud83d\udcda",
+  "description": "Ukrainian Voices",
+  "input_schema": {
+    "Input": {
+      "type": "str",
+      "description": "Input",
+      "required": true,
+      "component": "Textbox"
+    },
+    "Voice": {
+      "type": "str",
+      "description": "Voice",
+      "required": true,
+      "component": "Radio"
+    },
+    "Accentor": {
+      "type": "str",
+      "description": "Accentor",
+      "required": true,
+      "component": "Radio"
+    }
+  },
+  "output_schema": {
+    "Output": {
+      "type": "str | Dict(name: str (name of file), data: str (base64 representation of file), size: int (size of i",
+      "description": "Output",
+      "component": "Audio"
+    },
+    "Stressed": {
+      "type": "str",
+      "description": "Stressed",
+      "component": "Textbox"
+    }
+  },
+  "license": "bsd-3-clause",
+  "hardware": "3.44.4",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 25,
+  "last_modified": "2024-04-11 07:15:15+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/predict",
+      "parameters": [
+        {
+          "name": "Input",
+          "label": "Input",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "Voice",
+          "label": "Voice",
+          "type": "str",
+          "component": "Radio"
+        },
+        {
+          "name": "Accentor",
+          "label": "Accentor",
+          "type": "str",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output",
+          "type": "str | Dict(name: str (name of file), data: str (base64 representation of file), size: int (size of image in bytes), is_file: bool (true if the file has been uploaded to the server), orig_name: str (or",
+          "component": "Audio"
+        },
+        {
+          "label": "Stressed",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/predict",
+  "_api_verified": true
+}

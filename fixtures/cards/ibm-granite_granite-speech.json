@@ -1,0 +1,100 @@
+{
+  "space_id": "ibm-granite/granite-speech",
+  "title": "Granite 4.0 1B Speech",
+  "emoji": "\ud83c\udfa7",
+  "description": "Granite 4.0 1B Speech recognition and translation demo",
+  "input_schema": {
+    "audio_file": {
+      "type": "filepath",
+      "description": "Upload Audio (16kHz mono preferred)",
+      "required": true,
+      "component": "Audio"
+    },
+    "user_prompt": {
+      "type": "Literal['Transcribe the speech to text', 'Translate the speech to French', 'Translate the speech to ",
+      "description": "Prompt",
+      "required": true,
+      "component": "Dropdown"
+    },
+    "use_segmentation": {
+      "type": "bool",
+      "description": "VAD segmentation",
+      "required": true,
+      "component": "Checkbox"
+    },
+    "use_punctuation": {
+      "type": "bool",
+      "description": "Capitalization and punctuation (English only)",
+      "required": true,
+      "component": "Checkbox"
+    }
+  },
+  "output_schema": {
+    "Transcription": {
+      "type": "str",
+      "description": "Transcription",
+      "component": "Textbox"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "5.49.1",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us",
+    "audio"
+  ],
+  "likes": 27,
+  "last_modified": "2026-03-11 15:14:04+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/transcribe",
+      "parameters": [
+        {
+          "name": "audio_file",
+          "label": "Upload Audio (16kHz mono preferred)",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "name": "user_prompt",
+          "label": "Prompt",
+          "type": "Literal['Transcribe the speech to text', 'Translate the speech to French', 'Translate the speech to German', 'Translate the speech to Spanish', 'Translate the speech to Portuguese', 'Translate the spe",
+          "component": "Dropdown"
+        },
+        {
+          "name": "use_segmentation",
+          "label": "VAD segmentation",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "use_punctuation",
+          "label": "Capitalization and punctuation (English only)",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Transcription",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/transcribe",
+  "_api_verified": true,
+  "estimated_latency_s": 3.17,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "_tags_enriched": true,
+  "measured_latency_s": 3.17,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:50:55.997355+00:00"
+}

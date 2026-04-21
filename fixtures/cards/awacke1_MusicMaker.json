@@ -1,0 +1,99 @@
+{
+  "space_id": "awacke1/MusicMaker",
+  "title": "Audio\ud83c\udf0dMusicAI",
+  "emoji": "\ud83c\udf0d",
+  "description": "Audio\ud83c\udf0dMusicAI",
+  "input_schema": {
+    "text_prompt": {
+      "type": "str",
+      "description": "Prompt",
+      "required": true,
+      "component": "Textbox"
+    },
+    "audio_length_in_s": {
+      "type": "float",
+      "description": "Audio length in seconds",
+      "required": true,
+      "component": "Slider"
+    },
+    "play_steps_in_s": {
+      "type": "float",
+      "description": "Streaming interval in seconds",
+      "required": true,
+      "component": "Slider"
+    },
+    "seed": {
+      "type": "float",
+      "description": "Seed for random generations",
+      "required": true,
+      "component": "Slider"
+    }
+  },
+  "output_schema": {
+    "Generated Music": {
+      "type": "filepath",
+      "description": "Generated Music",
+      "component": "Audio"
+    }
+  },
+  "license": "mit",
+  "hardware": "6.1.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 28,
+  "last_modified": "2025-12-13 23:04:23+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/generate_audio",
+      "parameters": [
+        {
+          "name": "text_prompt",
+          "label": "Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "audio_length_in_s",
+          "label": "Audio length in seconds",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "play_steps_in_s",
+          "label": "Streaming interval in seconds",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "seed",
+          "label": "Seed for random generations",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Generated Music",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/generate_audio",
+  "_api_verified": true,
+  "estimated_latency_s": 3.31,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "_tags_enriched": true,
+  "measured_latency_s": 3.31,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:50:20.823356+00:00"
+}

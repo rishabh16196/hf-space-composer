@@ -1,0 +1,132 @@
+{
+  "space_id": "TurkBench/TurkBench",
+  "title": "TurkBench",
+  "emoji": "\ud83e\udd47",
+  "description": "Turkish Benchmark Leaderboard of LLM Models",
+  "input_schema": {
+    "model": {
+      "type": "str",
+      "description": "Model ad\u0131",
+      "required": true,
+      "component": "Textbox"
+    },
+    "base_model": {
+      "type": "str",
+      "description": "Baz model ad\u0131 (Adapter kulland\u0131ysan\u0131z)",
+      "required": true,
+      "component": "Textbox"
+    },
+    "revision": {
+      "type": "str",
+      "description": "Revizyon",
+      "required": true,
+      "component": "Textbox"
+    },
+    "precision": {
+      "type": "Literal['float32', 'float16', 'bfloat16', '8bit', '4bit', 'GPTQ', 'MXFP4']",
+      "description": "Precision",
+      "required": true,
+      "component": "Dropdown"
+    },
+    "weight_type": {
+      "type": "Literal['Adapter', 'Original']",
+      "description": "Parametre tipi",
+      "required": true,
+      "component": "Dropdown"
+    },
+    "reasoning_type": {
+      "type": "Literal['True', 'False']",
+      "description": "Reasoning yetene\u011fi var m\u0131?",
+      "required": true,
+      "component": "Dropdown"
+    }
+  },
+  "output_schema": {
+    "value_30": {
+      "type": "str",
+      "description": "value_30",
+      "component": "Markdown"
+    }
+  },
+  "license": "mit",
+  "hardware": "5.19.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us",
+    "benchmark",
+    "leaderboard"
+  ],
+  "likes": 49,
+  "last_modified": "2026-03-05 15:47:57+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_tags_enriched": true,
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/add_new_eval",
+      "parameters": [
+        {
+          "name": "model",
+          "label": "Model ad\u0131",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "base_model",
+          "label": "Baz model ad\u0131 (Adapter kulland\u0131ysan\u0131z)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "revision",
+          "label": "Revizyon",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "precision",
+          "label": "Precision",
+          "type": "Literal['float32', 'float16', 'bfloat16', '8bit', '4bit', 'GPTQ', 'MXFP4']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "weight_type",
+          "label": "Parametre tipi",
+          "type": "Literal['Adapter', 'Original']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "reasoning_type",
+          "label": "Reasoning yetene\u011fi var m\u0131?",
+          "type": "Literal['True', 'False']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_30",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/swap_visibility",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/_check_login_status",
+      "parameters": [],
+      "returns": []
+    }
+  ],
+  "endpoint": "/add_new_eval",
+  "_api_verified": true
+}

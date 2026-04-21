@@ -1,0 +1,204 @@
+{
+  "space_id": "Qwen/Qwen3-TTS",
+  "title": "Qwen3-TTS Demo",
+  "emoji": "\ud83c\udf99\ufe0f",
+  "description": "Qwen3-TTS Demo",
+  "input_schema": {
+    "text": {
+      "type": "str",
+      "description": "Text to Synthesize",
+      "required": true,
+      "component": "Textbox"
+    },
+    "language": {
+      "type": "Literal['Auto', 'Chinese', 'English', 'Japanese', 'Korean', 'French', 'German', 'Spanish', 'Portugue",
+      "description": "Language",
+      "required": true,
+      "component": "Dropdown"
+    },
+    "voice_description": {
+      "type": "str",
+      "description": "Voice Description",
+      "required": true,
+      "component": "Textbox"
+    }
+  },
+  "output_schema": {
+    "Generated Audio": {
+      "type": "filepath",
+      "description": "Generated Audio",
+      "component": "Audio"
+    },
+    "Status": {
+      "type": "str",
+      "description": "Status",
+      "component": "Textbox"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "5.33.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us",
+    "audio",
+    "speech-synthesis",
+    "tts"
+  ],
+  "likes": 1881,
+  "last_modified": "2026-02-16 14:05:59+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/generate_voice_design",
+      "parameters": [
+        {
+          "name": "text",
+          "label": "Text to Synthesize",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "language",
+          "label": "Language",
+          "type": "Literal['Auto', 'Chinese', 'English', 'Japanese', 'Korean', 'French', 'German', 'Spanish', 'Portuguese', 'Russian']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "voice_description",
+          "label": "Voice Description",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Generated Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Status",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/generate_voice_clone",
+      "parameters": [
+        {
+          "name": "ref_audio",
+          "label": "Reference Audio (Upload a voice sample to clone)",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "name": "ref_text",
+          "label": "Reference Text (Transcript of the reference audio)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "target_text",
+          "label": "Target Text (Text to synthesize with cloned voice)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "language",
+          "label": "Language",
+          "type": "Literal['Auto', 'Chinese', 'English', 'Japanese', 'Korean', 'French', 'German', 'Spanish', 'Portuguese', 'Russian']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "use_xvector_only",
+          "label": "Use x-vector only (No reference text needed, but lower quality)",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "model_size",
+          "label": "Model Size",
+          "type": "Literal['0.6B', '1.7B']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Generated Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Status",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/generate_custom_voice",
+      "parameters": [
+        {
+          "name": "text",
+          "label": "Text to Synthesize",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "language",
+          "label": "Language",
+          "type": "Literal['Auto', 'Chinese', 'English', 'Japanese', 'Korean', 'French', 'German', 'Spanish', 'Portuguese', 'Russian']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "speaker",
+          "label": "Speaker",
+          "type": "Literal['Aiden', 'Dylan', 'Eric', 'Ono_anna', 'Ryan', 'Serena', 'Sohee', 'Uncle_fu', 'Vivian']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "instruct",
+          "label": "Style Instruction (Optional)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "model_size",
+          "label": "Model Size",
+          "type": "Literal['0.6B', '1.7B']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Generated Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Status",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/generate_voice_design",
+  "_api_verified": true,
+  "estimated_latency_s": 14.56,
+  "speed_tier": "medium",
+  "_latency_source": "measured_inference",
+  "_tags_enriched": true,
+  "measured_latency_s": 14.56,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:49:51.219884+00:00",
+  "measured_inference_s": 14.56,
+  "measured_inference_timestamp": "2026-04-20T07:58:46.912593+00:00",
+  "measured_inference_method": "auto_predict",
+  "measured_inference_api": "/generate_voice_design"
+}

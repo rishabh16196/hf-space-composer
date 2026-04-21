@@ -1,0 +1,76 @@
+{
+  "space_id": "bookbot/Image-Upscaling-Playground",
+  "title": "Image Upscaling Playground",
+  "emoji": "\ud83e\udd86",
+  "description": "Image Upscaling Playground",
+  "input_schema": {
+    "Input Image": {
+      "type": "str",
+      "description": "Input Image",
+      "required": true,
+      "component": "Image"
+    },
+    "Choose Upscaler": {
+      "type": "str",
+      "description": "Choose Upscaler",
+      "required": true,
+      "component": "Radio"
+    }
+  },
+  "output_schema": {
+    "output": {
+      "type": "str",
+      "description": "output",
+      "component": "Image"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "3.41.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 819,
+  "last_modified": "2023-12-12 03:11:43+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/predict",
+      "parameters": [
+        {
+          "name": "Input Image",
+          "label": "Input Image",
+          "type": "str",
+          "component": "Image"
+        },
+        {
+          "name": "Choose Upscaler",
+          "label": "Choose Upscaler",
+          "type": "str",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "output",
+          "type": "str",
+          "component": "Image"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/predict",
+  "_api_verified": true,
+  "estimated_latency_s": 3.13,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 3.13,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:50:24.416071+00:00",
+  "_inference_attempt_status": "predict_failed",
+  "_inference_attempt_error": "Unknown protocol: ws"
+}

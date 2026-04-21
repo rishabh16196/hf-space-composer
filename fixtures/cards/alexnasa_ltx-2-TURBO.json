@@ -1,0 +1,312 @@
+{
+  "space_id": "alexnasa/ltx-2-TURBO",
+  "title": "LTX-2 Video [Turbo]",
+  "emoji": "\ud83d\udd25",
+  "description": "Fast high quality video with audio generation with FA3",
+  "input_schema": {
+    "first_frame": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "First Frame (Optional)",
+      "required": true,
+      "component": "Image"
+    },
+    "end_frame": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "Last Frame (Optional)",
+      "required": true,
+      "component": "Image"
+    },
+    "prompt": {
+      "type": "str",
+      "description": "Prompt",
+      "required": true,
+      "component": "Textbox"
+    },
+    "duration": {
+      "type": "float",
+      "description": "Duration (seconds)",
+      "required": true,
+      "component": "Slider"
+    },
+    "input_video": {
+      "type": "filepath",
+      "description": "Motion Reference Video",
+      "required": true,
+      "component": "Video"
+    },
+    "generation_mode": {
+      "type": "str",
+      "description": "parameter_4",
+      "required": true,
+      "component": "Radioanimated"
+    },
+    "motion_control_type": {
+      "type": "str",
+      "description": "Motion Control Type",
+      "required": true,
+      "component": "Radioanimated"
+    },
+    "enhance_prompt": {
+      "type": "bool",
+      "description": "Enhance Prompt",
+      "required": true,
+      "component": "Checkbox"
+    },
+    "seed": {
+      "type": "float",
+      "description": "Seed",
+      "required": true,
+      "component": "Slider"
+    },
+    "randomize_seed": {
+      "type": "bool",
+      "description": "Randomize Seed",
+      "required": true,
+      "component": "Checkbox"
+    },
+    "height": {
+      "type": "int",
+      "description": "Height",
+      "required": true,
+      "component": "Number"
+    },
+    "width": {
+      "type": "int",
+      "description": "Width",
+      "required": true,
+      "component": "Number"
+    },
+    "camera_lora": {
+      "type": "Literal['No LoRA', 'Static', 'Detailer', 'Zoom In', 'Zoom Out', 'Slide Left', 'Slide Right', 'Slide ",
+      "description": "Camera Control LoRA",
+      "required": true,
+      "component": "Dropdown"
+    },
+    "audio_path": {
+      "type": "filepath",
+      "description": "Audio (Optional)",
+      "required": true,
+      "component": "File"
+    }
+  },
+  "output_schema": {
+    "Generated Video": {
+      "type": "filepath",
+      "description": "Generated Video",
+      "component": "Video"
+    }
+  },
+  "license": "unknown",
+  "hardware": "6.2.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "mcp-server",
+    "region:us"
+  ],
+  "likes": 418,
+  "last_modified": "2026-04-18 23:52:58+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/generate_video_with_motion_type",
+      "parameters": [
+        {
+          "name": "first_frame",
+          "label": "First Frame (Optional)",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "end_frame",
+          "label": "Last Frame (Optional)",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "prompt",
+          "label": "Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "duration",
+          "label": "Duration (seconds)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "input_video",
+          "label": "Motion Reference Video",
+          "type": "filepath",
+          "component": "Video"
+        },
+        {
+          "name": "generation_mode",
+          "label": "parameter_4",
+          "type": "str",
+          "component": "Radioanimated"
+        },
+        {
+          "name": "motion_control_type",
+          "label": "Motion Control Type",
+          "type": "str",
+          "component": "Radioanimated"
+        },
+        {
+          "name": "enhance_prompt",
+          "label": "Enhance Prompt",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "seed",
+          "label": "Seed",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "randomize_seed",
+          "label": "Randomize Seed",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "height",
+          "label": "Height",
+          "type": "int",
+          "component": "Number"
+        },
+        {
+          "name": "width",
+          "label": "Width",
+          "type": "int",
+          "component": "Number"
+        },
+        {
+          "name": "camera_lora",
+          "label": "Camera Control LoRA",
+          "type": "Literal['No LoRA', 'Static', 'Detailer', 'Zoom In', 'Zoom Out', 'Slide Left', 'Slide Right', 'Slide Down', 'Slide Up']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "audio_path",
+          "label": "Audio (Optional)",
+          "type": "filepath",
+          "component": "File"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Generated Video",
+          "type": "filepath",
+          "component": "Video"
+        }
+      ]
+    },
+    {
+      "name": "/generate_video",
+      "parameters": [
+        {
+          "name": "first_frame",
+          "label": "First Frame (Optional)",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "end_frame",
+          "label": "Last Frame (Optional)",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "prompt",
+          "label": "Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "duration",
+          "label": "Duration (seconds)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "input_video",
+          "label": "Motion Reference Video",
+          "type": "filepath",
+          "component": "Video"
+        },
+        {
+          "name": "generation_mode",
+          "label": "parameter_4",
+          "type": "str",
+          "component": "Radioanimated"
+        },
+        {
+          "name": "enhance_prompt",
+          "label": "Enhance Prompt",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "seed",
+          "label": "Seed",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "randomize_seed",
+          "label": "Randomize Seed",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "height",
+          "label": "Height",
+          "type": "int",
+          "component": "Number"
+        },
+        {
+          "name": "width",
+          "label": "Width",
+          "type": "int",
+          "component": "Number"
+        },
+        {
+          "name": "camera_lora",
+          "label": "Camera Control LoRA",
+          "type": "Literal['No LoRA', 'Static', 'Detailer', 'Zoom In', 'Zoom Out', 'Slide Left', 'Slide Right', 'Slide Down', 'Slide Up']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "audio_path",
+          "label": "Audio (Optional)",
+          "type": "filepath",
+          "component": "File"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Generated Video",
+          "type": "filepath",
+          "component": "Video"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/generate_video_with_motion_type",
+  "_api_verified": true,
+  "estimated_latency_s": 3.61,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "_tags_enriched": true,
+  "measured_latency_s": 3.61,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:50:12.785249+00:00",
+  "_inference_attempt_status": "predict_failed",
+  "_inference_attempt_error": "The upstream Gradio app has raised an exception but has not enabled verbose error reporting. To enable, set show_error=True in launch()."
+}

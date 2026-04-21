@@ -1,0 +1,367 @@
+{
+  "space_id": "Nech-C/waiNSFWIllustrious_v140",
+  "title": "NSFW ANIME wai llustrious v120-150",
+  "emoji": "\ud83d\ude3b",
+  "description": "Image generation with waiNSFWIllustrious_v12-15 + gallery",
+  "input_schema": {
+    "preset": {
+      "type": "Literal['768\u00d7768 (square)', '1024\u00d71024', '832\u00d71216 (portrait)', '1152\u00d7896 (landscape)', '768\u00d71344 (p",
+      "description": "Size preset",
+      "required": true,
+      "component": "Dropdown"
+    }
+  },
+  "output_schema": {
+    "Width": {
+      "type": "float",
+      "description": "Width",
+      "component": "Slider"
+    },
+    "Height": {
+      "type": "float",
+      "description": "Height",
+      "component": "Slider"
+    }
+  },
+  "license": "other",
+  "hardware": "5.44.1",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "not-for-all-audiences",
+    "region:us"
+  ],
+  "likes": 378,
+  "last_modified": "2026-02-28 21:36:52+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/_apply_preset_ui",
+      "parameters": [
+        {
+          "name": "preset",
+          "label": "Size preset",
+          "type": "Literal['768\u00d7768 (square)', '1024\u00d71024', '832\u00d71216 (portrait)', '1152\u00d7896 (landscape)', '768\u00d71344 (portrait, lighter)']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Width",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Height",
+          "type": "float",
+          "component": "Slider"
+        }
+      ]
+    },
+    {
+      "name": "/toggle_rescale",
+      "parameters": [
+        {
+          "name": "no_rescale",
+          "label": "Do not rescale to fit screen",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Result",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "Result (original size)",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/toggle_translate",
+      "parameters": [
+        {
+          "name": "on",
+          "label": "Enable translation",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Prompt to translate",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/move_prompt_to_non_english",
+      "parameters": [
+        {
+          "name": "prompt_text",
+          "label": "Prompt",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Prompt to translate",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Prompt",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/translate_text",
+      "parameters": [
+        {
+          "name": "text",
+          "label": "Prompt to translate",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Prompt",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/toggle_controls",
+      "parameters": [
+        {
+          "name": "hide",
+          "label": "Hide advanced controls (mobile friendly)",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/clear_history",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "History",
+          "type": "list[dict(image: dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Origi",
+          "component": "Gallery"
+        }
+      ]
+    },
+    {
+      "name": "/download_all",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "images.zip",
+          "type": "filepath",
+          "component": "File"
+        }
+      ]
+    },
+    {
+      "name": "/toggle_quality_prompt",
+      "parameters": [
+        {
+          "name": "enabled",
+          "label": "Use quality prompt",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Quality prompt",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/compute_token_count",
+      "parameters": [
+        {
+          "name": "prompt",
+          "label": "Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "quality_prompt",
+          "label": "Quality prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "use_quality",
+          "label": "Use quality prompt",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Token count",
+          "type": "float",
+          "component": "Number"
+        }
+      ]
+    },
+    {
+      "name": "/compute_token_count_1",
+      "parameters": [
+        {
+          "name": "prompt",
+          "label": "Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "quality_prompt",
+          "label": "Quality prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "use_quality",
+          "label": "Use quality prompt",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Token count",
+          "type": "float",
+          "component": "Number"
+        }
+      ]
+    },
+    {
+      "name": "/infer",
+      "parameters": [
+        {
+          "name": "model",
+          "label": "Model",
+          "type": "Literal['v160', 'v150', 'v140', 'v130', 'v120']",
+          "component": "Radio"
+        },
+        {
+          "name": "prompt",
+          "label": "Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "quality_prompt",
+          "label": "Quality prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "negative_prompt",
+          "label": "Negative prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "seed",
+          "label": "Seed",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "randomize_seed",
+          "label": "Randomize seed",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "width",
+          "label": "Width",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "height",
+          "label": "Height",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "guidance_scale",
+          "label": "Guidance scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "num_inference_steps",
+          "label": "Number of inference steps",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "num_images",
+          "label": "Generations",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "use_quality",
+          "label": "Use quality prompt",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Result",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "Result (original size)",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "Seed",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "History",
+          "type": "list[dict(image: dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Origi",
+          "component": "Gallery"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/_apply_preset_ui",
+  "_api_verified": true,
+  "estimated_latency_s": 3.18,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "_tags_enriched": true,
+  "measured_latency_s": 3.18,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:49:40.063919+00:00"
+}

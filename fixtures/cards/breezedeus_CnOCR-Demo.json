@@ -1,0 +1,178 @@
+{
+  "space_id": "breezedeus/CnOCR-Demo",
+  "title": "CnOCR Demo",
+  "emoji": "\ud83c\udfa1",
+  "description": "CnOCR Demo",
+  "input_schema": {
+    "det_model_name": {
+      "type": "Literal['ch_PP-OCRv2_det', 'ch_PP-OCRv3_det', 'ch_PP-OCRv4_det', 'ch_PP-OCRv4_det_server', 'ch_PP-OC",
+      "description": "\u9009\u62e9\u68c0\u6d4b\u6a21\u578b",
+      "required": true,
+      "component": "Dropdown"
+    },
+    "is_single_line": {
+      "type": "bool",
+      "description": "\u5355\u884c\u6587\u5b57\u6a21\u5f0f\uff08\u4e0d\u4f7f\u7528\u68c0\u6d4b\u6a21\u578b\uff09",
+      "required": true,
+      "component": "Checkbox"
+    },
+    "rec_model_name": {
+      "type": "Literal['densenet_lite_136-gru', 'densenet_lite_246-gru_base', 'densenet_lite_666-gru_large', 'doc-d",
+      "description": "\u9009\u62e9\u8bc6\u522b\u6a21\u578b",
+      "required": true,
+      "component": "Dropdown"
+    },
+    "rotated_bbox": {
+      "type": "bool",
+      "description": "\u68c0\u6d4b\u5e26\u89d2\u5ea6\u6587\u672c\u6846",
+      "required": true,
+      "component": "Checkbox"
+    },
+    "use_angle_clf": {
+      "type": "bool",
+      "description": "\u4f7f\u7528\u89d2\u5ea6\u9884\u6d4b\u6a21\u578b\u6821\u6b63\u6587\u672c\u6846",
+      "required": true,
+      "component": "Checkbox"
+    },
+    "new_size": {
+      "type": "float",
+      "description": "resize \u540e\u56fe\u7247\uff08\u957f\u8fb9\uff09\u5927\u5c0f",
+      "required": true,
+      "component": "Slider"
+    },
+    "box_score_thresh": {
+      "type": "float",
+      "description": "\u5f97\u5206\u9608\u503c\uff08\u4f4e\u4e8e\u9608\u503c\u7684\u7ed3\u679c\u4f1a\u88ab\u8fc7\u6ee4\u6389\uff09",
+      "required": true,
+      "component": "Slider"
+    },
+    "min_box_size": {
+      "type": "float",
+      "description": "\u6846\u5927\u5c0f\u9608\u503c\uff08\u66f4\u5c0f\u7684\u6587\u672c\u6846\u4f1a\u88ab\u8fc7\u6ee4\u6389\uff09",
+      "required": true,
+      "component": "Slider"
+    },
+    "image_file": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "\u5f85\u8bc6\u522b\u56fe\u7247",
+      "required": true,
+      "component": "Image"
+    }
+  },
+  "output_schema": {
+    "\u8bc6\u522b\u7ed3\u679c": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "\u8bc6\u522b\u7ed3\u679c",
+      "component": "Image"
+    },
+    "value_25": {
+      "type": "str",
+      "description": "value_25",
+      "component": "Markdown"
+    },
+    "\u8bc6\u522b\u7ed3\u679c_2": {
+      "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+      "description": "\u8bc6\u522b\u7ed3\u679c",
+      "component": "Dataframe"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "5.35.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 47,
+  "last_modified": "2025-06-28 15:39:41+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/recognize",
+      "parameters": [
+        {
+          "name": "det_model_name",
+          "label": "\u9009\u62e9\u68c0\u6d4b\u6a21\u578b",
+          "type": "Literal['ch_PP-OCRv2_det', 'ch_PP-OCRv3_det', 'ch_PP-OCRv4_det', 'ch_PP-OCRv4_det_server', 'ch_PP-OCRv5_det', 'ch_PP-OCRv5_det_server', 'db_mobilenet_v3', 'db_mobilenet_v3_small', 'db_resnet18', 'db_r",
+          "component": "Dropdown"
+        },
+        {
+          "name": "is_single_line",
+          "label": "\u5355\u884c\u6587\u5b57\u6a21\u5f0f\uff08\u4e0d\u4f7f\u7528\u68c0\u6d4b\u6a21\u578b\uff09",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "rec_model_name",
+          "label": "\u9009\u62e9\u8bc6\u522b\u6a21\u578b",
+          "type": "Literal['densenet_lite_136-gru', 'densenet_lite_246-gru_base', 'densenet_lite_666-gru_large', 'doc-densenet_lite_136-gru', 'doc-densenet_lite_246-gru_base', 'doc-densenet_lite_666-gru_large', 'number-",
+          "component": "Dropdown"
+        },
+        {
+          "name": "rotated_bbox",
+          "label": "\u68c0\u6d4b\u5e26\u89d2\u5ea6\u6587\u672c\u6846",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "use_angle_clf",
+          "label": "\u4f7f\u7528\u89d2\u5ea6\u9884\u6d4b\u6a21\u578b\u6821\u6b63\u6587\u672c\u6846",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "new_size",
+          "label": "resize \u540e\u56fe\u7247\uff08\u957f\u8fb9\uff09\u5927\u5c0f",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "box_score_thresh",
+          "label": "\u5f97\u5206\u9608\u503c\uff08\u4f4e\u4e8e\u9608\u503c\u7684\u7ed3\u679c\u4f1a\u88ab\u8fc7\u6ee4\u6389\uff09",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "min_box_size",
+          "label": "\u6846\u5927\u5c0f\u9608\u503c\uff08\u66f4\u5c0f\u7684\u6587\u672c\u6846\u4f1a\u88ab\u8fc7\u6ee4\u6389\uff09",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "image_file",
+          "label": "\u5f85\u8bc6\u522b\u56fe\u7247",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ],
+      "returns": [
+        {
+          "label": "\u8bc6\u522b\u7ed3\u679c",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "value_25",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "\u8bc6\u522b\u7ed3\u679c",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/recognize",
+  "_api_verified": true,
+  "estimated_latency_s": 3.15,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 3.15,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:50:25.084722+00:00"
+}

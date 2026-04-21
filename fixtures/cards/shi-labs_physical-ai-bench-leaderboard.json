@@ -1,0 +1,389 @@
+{
+  "space_id": "shi-labs/physical-ai-bench-leaderboard",
+  "title": "Physical AI Bench Leaderboard",
+  "emoji": "\ud83e\udd16",
+  "description": "Benchmark for Physical AI generation and understanding",
+  "input_schema": {},
+  "output_schema": {
+    "Evaluation Dimensions": {
+      "type": "list[Literal['Domain', 'Quality', 'CS', 'AV', 'RO', 'IN', 'HU', 'PH', 'SC', 'BC', 'MS', 'AQ', 'IQ', ",
+      "description": "Evaluation Dimensions",
+      "component": "Checkboxgroup"
+    }
+  },
+  "license": "mit",
+  "hardware": "6.0.2",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "leaderboard",
+    "physical-ai",
+    "world-models",
+    "autonomous-driving",
+    "robotics",
+    "embodied-ai",
+    "region:us",
+    "benchmark"
+  ],
+  "likes": 20,
+  "last_modified": "2025-12-15 21:36:46+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/select_predict_domain_score",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Evaluation Dimensions",
+          "type": "list[Literal['Domain', 'Quality', 'CS', 'AV', 'RO', 'IN', 'HU', 'PH', 'SC', 'BC', 'MS', 'AQ', 'IQ', 'OC', 'IS', 'IB']]",
+          "component": "Checkboxgroup"
+        }
+      ]
+    },
+    {
+      "name": "/on_predict_dimension_selection_change",
+      "parameters": [
+        {
+          "name": "selected_columns",
+          "label": "Evaluation Dimensions",
+          "type": "list[Literal['Domain', 'Quality', 'CS', 'AV', 'RO', 'IN', 'HU', 'PH', 'SC', 'BC', 'MS', 'AQ', 'IQ', 'OC', 'IS', 'IB']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_15",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/select_predict_quality_score",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Evaluation Dimensions",
+          "type": "list[Literal['Domain', 'Quality', 'CS', 'AV', 'RO', 'IN', 'HU', 'PH', 'SC', 'BC', 'MS', 'AQ', 'IQ', 'OC', 'IS', 'IB']]",
+          "component": "Checkboxgroup"
+        }
+      ]
+    },
+    {
+      "name": "/on_predict_dimension_selection_change_1",
+      "parameters": [
+        {
+          "name": "selected_columns",
+          "label": "Evaluation Dimensions",
+          "type": "list[Literal['Domain', 'Quality', 'CS', 'AV', 'RO', 'IN', 'HU', 'PH', 'SC', 'BC', 'MS', 'AQ', 'IQ', 'OC', 'IS', 'IB']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_15",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/deselect_predict_all",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Evaluation Dimensions",
+          "type": "list[Literal['Domain', 'Quality', 'CS', 'AV', 'RO', 'IN', 'HU', 'PH', 'SC', 'BC', 'MS', 'AQ', 'IQ', 'OC', 'IS', 'IB']]",
+          "component": "Checkboxgroup"
+        }
+      ]
+    },
+    {
+      "name": "/on_predict_dimension_selection_change_2",
+      "parameters": [
+        {
+          "name": "selected_columns",
+          "label": "Evaluation Dimensions",
+          "type": "list[Literal['Domain', 'Quality', 'CS', 'AV', 'RO', 'IN', 'HU', 'PH', 'SC', 'BC', 'MS', 'AQ', 'IQ', 'OC', 'IS', 'IB']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_15",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/select_predict_all",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Evaluation Dimensions",
+          "type": "list[Literal['Domain', 'Quality', 'CS', 'AV', 'RO', 'IN', 'HU', 'PH', 'SC', 'BC', 'MS', 'AQ', 'IQ', 'OC', 'IS', 'IB']]",
+          "component": "Checkboxgroup"
+        }
+      ]
+    },
+    {
+      "name": "/on_predict_dimension_selection_change_3",
+      "parameters": [
+        {
+          "name": "selected_columns",
+          "label": "Evaluation Dimensions",
+          "type": "list[Literal['Domain', 'Quality', 'CS', 'AV', 'RO', 'IN', 'HU', 'PH', 'SC', 'BC', 'MS', 'AQ', 'IQ', 'OC', 'IS', 'IB']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_15",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/on_predict_dimension_selection_change_4",
+      "parameters": [
+        {
+          "name": "selected_columns",
+          "label": "Evaluation Dimensions",
+          "type": "list[Literal['Domain', 'Quality', 'CS', 'AV', 'RO', 'IN', 'HU', 'PH', 'SC', 'BC', 'MS', 'AQ', 'IQ', 'OC', 'IS', 'IB']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_15",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/deselect_transfer_all",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Evaluation Dimensions",
+          "type": "list[Literal['Blur SSIM \u2191', 'Edge F1 \u2191', 'Depth si-RMSE \u2193', 'Mask mIoU \u2191', 'Quality Score \u2191', 'Diversity \u2191']]",
+          "component": "Checkboxgroup"
+        }
+      ]
+    },
+    {
+      "name": "/on_transfer_dimension_selection_change",
+      "parameters": [
+        {
+          "name": "selected_columns",
+          "label": "Evaluation Dimensions",
+          "type": "list[Literal['Blur SSIM \u2191', 'Edge F1 \u2191', 'Depth si-RMSE \u2193', 'Mask mIoU \u2191', 'Quality Score \u2191', 'Diversity \u2191']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_29",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/select_transfer_all",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Evaluation Dimensions",
+          "type": "list[Literal['Blur SSIM \u2191', 'Edge F1 \u2191', 'Depth si-RMSE \u2193', 'Mask mIoU \u2191', 'Quality Score \u2191', 'Diversity \u2191']]",
+          "component": "Checkboxgroup"
+        }
+      ]
+    },
+    {
+      "name": "/on_transfer_dimension_selection_change_1",
+      "parameters": [
+        {
+          "name": "selected_columns",
+          "label": "Evaluation Dimensions",
+          "type": "list[Literal['Blur SSIM \u2191', 'Edge F1 \u2191', 'Depth si-RMSE \u2193', 'Mask mIoU \u2191', 'Quality Score \u2191', 'Diversity \u2191']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_29",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/on_transfer_dimension_selection_change_2",
+      "parameters": [
+        {
+          "name": "selected_columns",
+          "label": "Evaluation Dimensions",
+          "type": "list[Literal['Blur SSIM \u2191', 'Edge F1 \u2191', 'Depth si-RMSE \u2193', 'Mask mIoU \u2191', 'Quality Score \u2191', 'Diversity \u2191']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_29",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/select_reason_common_sense_dimensions",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Evaluation Dimensions",
+          "type": "list[Literal['CS', 'ER', 'Space', 'Time', 'Physics', 'BD', 'RV', 'RF', 'AB', 'HA', 'AV']]",
+          "component": "Checkboxgroup"
+        }
+      ]
+    },
+    {
+      "name": "/on_reason_dimension_selection_change",
+      "parameters": [
+        {
+          "name": "selected_columns",
+          "label": "Evaluation Dimensions",
+          "type": "list[Literal['CS', 'ER', 'Space', 'Time', 'Physics', 'BD', 'RV', 'RF', 'AB', 'HA', 'AV']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_43",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/select_reason_embodied_reasoning_dimensions",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Evaluation Dimensions",
+          "type": "list[Literal['CS', 'ER', 'Space', 'Time', 'Physics', 'BD', 'RV', 'RF', 'AB', 'HA', 'AV']]",
+          "component": "Checkboxgroup"
+        }
+      ]
+    },
+    {
+      "name": "/on_reason_dimension_selection_change_1",
+      "parameters": [
+        {
+          "name": "selected_columns",
+          "label": "Evaluation Dimensions",
+          "type": "list[Literal['CS', 'ER', 'Space', 'Time', 'Physics', 'BD', 'RV', 'RF', 'AB', 'HA', 'AV']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_43",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/deselect_reason_all",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Evaluation Dimensions",
+          "type": "list[Literal['CS', 'ER', 'Space', 'Time', 'Physics', 'BD', 'RV', 'RF', 'AB', 'HA', 'AV']]",
+          "component": "Checkboxgroup"
+        }
+      ]
+    },
+    {
+      "name": "/on_reason_dimension_selection_change_2",
+      "parameters": [
+        {
+          "name": "selected_columns",
+          "label": "Evaluation Dimensions",
+          "type": "list[Literal['CS', 'ER', 'Space', 'Time', 'Physics', 'BD', 'RV', 'RF', 'AB', 'HA', 'AV']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_43",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/select_reason_all",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Evaluation Dimensions",
+          "type": "list[Literal['CS', 'ER', 'Space', 'Time', 'Physics', 'BD', 'RV', 'RF', 'AB', 'HA', 'AV']]",
+          "component": "Checkboxgroup"
+        }
+      ]
+    },
+    {
+      "name": "/on_reason_dimension_selection_change_3",
+      "parameters": [
+        {
+          "name": "selected_columns",
+          "label": "Evaluation Dimensions",
+          "type": "list[Literal['CS', 'ER', 'Space', 'Time', 'Physics', 'BD', 'RV', 'RF', 'AB', 'HA', 'AV']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_43",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/on_reason_dimension_selection_change_4",
+      "parameters": [
+        {
+          "name": "selected_columns",
+          "label": "Evaluation Dimensions",
+          "type": "list[Literal['CS', 'ER', 'Space', 'Time', 'Physics', 'BD', 'RV', 'RF', 'AB', 'HA', 'AV']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_43",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/select_predict_domain_score",
+  "_api_verified": true,
+  "estimated_latency_s": 5.19,
+  "speed_tier": "medium",
+  "_latency_source": "measured",
+  "_tags_enriched": true,
+  "measured_latency_s": 5.19,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:51:50.730748+00:00"
+}

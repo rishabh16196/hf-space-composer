@@ -1,0 +1,83 @@
+{
+  "space_id": "AlirezaF138/Persian-OCR",
+  "title": "Persian OCR",
+  "emoji": "\ud83c\udf0d",
+  "description": "Persian OCR",
+  "input_schema": {
+    "input_type": {
+      "type": "Literal['PDF', 'Image']",
+      "description": "Choose Input Type",
+      "required": true,
+      "component": "Radio"
+    },
+    "file": {
+      "type": "filepath",
+      "description": "Upload PDF/Image",
+      "required": true,
+      "component": "File"
+    },
+    "lang": {
+      "type": "Literal['eng', 'chi_sim', 'hin', 'spa', 'fra', 'ara', 'ben', 'por', 'rus', 'urd', 'fas']",
+      "description": "Select OCR Language",
+      "required": true,
+      "component": "Dropdown"
+    }
+  },
+  "output_schema": {
+    "Extracted Text": {
+      "type": "str",
+      "description": "Extracted Text",
+      "component": "Textbox"
+    }
+  },
+  "license": "unknown",
+  "hardware": "5.9.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 18,
+  "last_modified": "2024-12-25 21:04:02+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/predict",
+      "parameters": [
+        {
+          "name": "input_type",
+          "label": "Choose Input Type",
+          "type": "Literal['PDF', 'Image']",
+          "component": "Radio"
+        },
+        {
+          "name": "file",
+          "label": "Upload PDF/Image",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "name": "lang",
+          "label": "Select OCR Language",
+          "type": "Literal['eng', 'chi_sim', 'hin', 'spa', 'fra', 'ara', 'ben', 'por', 'rus', 'urd', 'fas']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Extracted Text",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/predict",
+  "_api_verified": true
+}

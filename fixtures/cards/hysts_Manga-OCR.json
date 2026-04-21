@@ -1,0 +1,62 @@
+{
+  "space_id": "hysts/Manga-OCR",
+  "title": "Manga OCR",
+  "emoji": "\ud83d\udcc8",
+  "description": "Manga OCR",
+  "input_schema": {
+    "image": {
+      "type": "filepath",
+      "description": "Input",
+      "required": true,
+      "component": "Image"
+    }
+  },
+  "output_schema": {
+    "Output": {
+      "type": "str",
+      "description": "Output",
+      "component": "Textbox"
+    }
+  },
+  "license": "unknown",
+  "hardware": "4.36.1",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 13,
+  "last_modified": "2024-06-10 06:02:45+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/run",
+      "parameters": [
+        {
+          "name": "image",
+          "label": "Input",
+          "type": "filepath",
+          "component": "Image"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/run",
+  "_api_verified": true,
+  "estimated_latency_s": 4.31,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 4.31,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:50:49.964359+00:00"
+}

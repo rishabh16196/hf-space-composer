@@ -1,0 +1,93 @@
+{
+  "space_id": "UNESCO/nllb",
+  "title": "NLLB",
+  "emoji": "\ud83c\udf10",
+  "description": "NLLB",
+  "input_schema": {
+    "text": {
+      "type": "str",
+      "description": "Input Text",
+      "required": true,
+      "component": "Textbox"
+    },
+    "src_lang": {
+      "type": "Literal['Acehnese (Arabic script)', 'Acehnese (Latin script)', 'Afrikaans', 'Akan', 'Amharic', 'Arme",
+      "description": "Source Language",
+      "required": true,
+      "component": "Dropdown"
+    },
+    "tgt_lang": {
+      "type": "Literal['Acehnese (Arabic script)', 'Acehnese (Latin script)', 'Afrikaans', 'Akan', 'Amharic', 'Arme",
+      "description": "Target Language",
+      "required": true,
+      "component": "Dropdown"
+    }
+  },
+  "output_schema": {
+    "Output Text": {
+      "type": "str",
+      "description": "Output Text",
+      "component": "Textbox"
+    }
+  },
+  "license": "unknown",
+  "hardware": "4.32.2",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us",
+    "multilingual",
+    "text",
+    "translation"
+  ],
+  "likes": 184,
+  "last_modified": "2024-09-30 10:12:36+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "endpoint": "/translate",
+  "_verified_live": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/translate",
+      "parameters": [
+        {
+          "name": "text",
+          "label": "Input Text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "src_lang",
+          "label": "Source Language",
+          "type": "Literal['Acehnese (Arabic script)', 'Acehnese (Latin script)', 'Afrikaans', 'Akan', 'Amharic', 'Armenian', 'Assamese', 'Asturian', 'Awadhi', 'Ayacucho Quechua', 'Balinese', 'Bambara', 'Banjar (Arabic ",
+          "component": "Dropdown"
+        },
+        {
+          "name": "tgt_lang",
+          "label": "Target Language",
+          "type": "Literal['Acehnese (Arabic script)', 'Acehnese (Latin script)', 'Afrikaans', 'Akan', 'Amharic', 'Armenian', 'Assamese', 'Asturian', 'Awadhi', 'Ayacucho Quechua', 'Balinese', 'Bambara', 'Banjar (Arabic ",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output Text",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    }
+  ],
+  "_api_verified": true,
+  "estimated_latency_s": 2.17,
+  "speed_tier": "fast",
+  "_latency_source": "measured_inference",
+  "_tags_enriched": true,
+  "measured_latency_s": 2.17,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:49:59.958993+00:00",
+  "measured_inference_s": 2.17,
+  "measured_inference_timestamp": "2026-04-20T07:55:04Z"
+}

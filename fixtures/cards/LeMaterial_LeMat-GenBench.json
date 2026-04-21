@@ -1,0 +1,493 @@
+{
+  "space_id": "LeMaterial/LeMat-GenBench",
+  "title": "Lemat Bench",
+  "emoji": "\ud83d\ude3b",
+  "description": "Lemat Bench",
+  "input_schema": {
+    "show_percentage": {
+      "type": "bool",
+      "description": "Show as Percentages",
+      "required": true,
+      "component": "Checkbox"
+    },
+    "selected_groups": {
+      "type": "list[Literal['Validity \u2191', 'Uniqueness & Novelty \u2191', 'Energy Metrics \u2193', 'Stability \u2191', 'Metastabili",
+      "description": "Metric Families (only active when Compact View is off)",
+      "required": true,
+      "component": "Checkboxgroup"
+    },
+    "compact_view": {
+      "type": "bool",
+      "description": "Compact View",
+      "required": true,
+      "component": "Checkbox"
+    },
+    "sort_by": {
+      "type": "Literal['None', 'Model', 'Total Structures', 'Valid', 'Charge Neutral', 'Distance Valid', 'Plausibil",
+      "description": "Sort By",
+      "required": true,
+      "component": "Dropdown"
+    },
+    "sort_direction": {
+      "type": "Literal['Ascending', 'Descending']",
+      "description": "Sort Direction",
+      "required": true,
+      "component": "Radio"
+    },
+    "training_set_filter": {
+      "type": "Literal['All', 'MP-20', 'MPTS-52', 'MP-Exp', 'Alexandria', 'OQMD', 'Alex-MP-20', 'AFLOW', 'LeMat-Bul",
+      "description": "Filter by Training Set",
+      "required": true,
+      "component": "Dropdown"
+    }
+  },
+  "output_schema": {
+    "GenBench Leaderboard": {
+      "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+      "description": "GenBench Leaderboard",
+      "component": "Dataframe"
+    }
+  },
+  "license": "unknown",
+  "hardware": "5.36.2",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 17,
+  "last_modified": "2026-04-07 11:21:39+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/update_leaderboard",
+      "parameters": [
+        {
+          "name": "show_percentage",
+          "label": "Show as Percentages",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "selected_groups",
+          "label": "Metric Families (only active when Compact View is off)",
+          "type": "list[Literal['Validity \u2191', 'Uniqueness & Novelty \u2191', 'Energy Metrics \u2193', 'Stability \u2191', 'Metastability \u2191', 'Distribution \u2193', 'Diversity \u2191', 'HHI \u2193']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "compact_view",
+          "label": "Compact View",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "sort_by",
+          "label": "Sort By",
+          "type": "Literal['None', 'Model', 'Total Structures', 'Valid', 'Charge Neutral', 'Distance Valid', 'Plausibility Valid', 'Unique', 'Novel', 'Formation Energy (eV)', 'Formation Energy Std', 'E Above Hull (eV)',",
+          "component": "Dropdown"
+        },
+        {
+          "name": "sort_direction",
+          "label": "Sort Direction",
+          "type": "Literal['Ascending', 'Descending']",
+          "component": "Radio"
+        },
+        {
+          "name": "training_set_filter",
+          "label": "Filter by Training Set",
+          "type": "Literal['All', 'MP-20', 'MPTS-52', 'MP-Exp', 'Alexandria', 'OQMD', 'Alex-MP-20', 'AFLOW', 'LeMat-Bulk', 'Others (must specify)']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "GenBench Leaderboard",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/update_leaderboard_1",
+      "parameters": [
+        {
+          "name": "show_percentage",
+          "label": "Show as Percentages",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "selected_groups",
+          "label": "Metric Families (only active when Compact View is off)",
+          "type": "list[Literal['Validity \u2191', 'Uniqueness & Novelty \u2191', 'Energy Metrics \u2193', 'Stability \u2191', 'Metastability \u2191', 'Distribution \u2193', 'Diversity \u2191', 'HHI \u2193']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "compact_view",
+          "label": "Compact View",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "sort_by",
+          "label": "Sort By",
+          "type": "Literal['None', 'Model', 'Total Structures', 'Valid', 'Charge Neutral', 'Distance Valid', 'Plausibility Valid', 'Unique', 'Novel', 'Formation Energy (eV)', 'Formation Energy Std', 'E Above Hull (eV)',",
+          "component": "Dropdown"
+        },
+        {
+          "name": "sort_direction",
+          "label": "Sort Direction",
+          "type": "Literal['Ascending', 'Descending']",
+          "component": "Radio"
+        },
+        {
+          "name": "training_set_filter",
+          "label": "Filter by Training Set",
+          "type": "Literal['All', 'MP-20', 'MPTS-52', 'MP-Exp', 'Alexandria', 'OQMD', 'Alex-MP-20', 'AFLOW', 'LeMat-Bulk', 'Others (must specify)']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "GenBench Leaderboard",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/update_leaderboard_2",
+      "parameters": [
+        {
+          "name": "show_percentage",
+          "label": "Show as Percentages",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "selected_groups",
+          "label": "Metric Families (only active when Compact View is off)",
+          "type": "list[Literal['Validity \u2191', 'Uniqueness & Novelty \u2191', 'Energy Metrics \u2193', 'Stability \u2191', 'Metastability \u2191', 'Distribution \u2193', 'Diversity \u2191', 'HHI \u2193']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "compact_view",
+          "label": "Compact View",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "sort_by",
+          "label": "Sort By",
+          "type": "Literal['None', 'Model', 'Total Structures', 'Valid', 'Charge Neutral', 'Distance Valid', 'Plausibility Valid', 'Unique', 'Novel', 'Formation Energy (eV)', 'Formation Energy Std', 'E Above Hull (eV)',",
+          "component": "Dropdown"
+        },
+        {
+          "name": "sort_direction",
+          "label": "Sort Direction",
+          "type": "Literal['Ascending', 'Descending']",
+          "component": "Radio"
+        },
+        {
+          "name": "training_set_filter",
+          "label": "Filter by Training Set",
+          "type": "Literal['All', 'MP-20', 'MPTS-52', 'MP-Exp', 'Alexandria', 'OQMD', 'Alex-MP-20', 'AFLOW', 'LeMat-Bulk', 'Others (must specify)']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "GenBench Leaderboard",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/update_leaderboard_3",
+      "parameters": [
+        {
+          "name": "show_percentage",
+          "label": "Show as Percentages",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "selected_groups",
+          "label": "Metric Families (only active when Compact View is off)",
+          "type": "list[Literal['Validity \u2191', 'Uniqueness & Novelty \u2191', 'Energy Metrics \u2193', 'Stability \u2191', 'Metastability \u2191', 'Distribution \u2193', 'Diversity \u2191', 'HHI \u2193']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "compact_view",
+          "label": "Compact View",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "sort_by",
+          "label": "Sort By",
+          "type": "Literal['None', 'Model', 'Total Structures', 'Valid', 'Charge Neutral', 'Distance Valid', 'Plausibility Valid', 'Unique', 'Novel', 'Formation Energy (eV)', 'Formation Energy Std', 'E Above Hull (eV)',",
+          "component": "Dropdown"
+        },
+        {
+          "name": "sort_direction",
+          "label": "Sort Direction",
+          "type": "Literal['Ascending', 'Descending']",
+          "component": "Radio"
+        },
+        {
+          "name": "training_set_filter",
+          "label": "Filter by Training Set",
+          "type": "Literal['All', 'MP-20', 'MPTS-52', 'MP-Exp', 'Alexandria', 'OQMD', 'Alex-MP-20', 'AFLOW', 'LeMat-Bulk', 'Others (must specify)']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "GenBench Leaderboard",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/update_leaderboard_4",
+      "parameters": [
+        {
+          "name": "show_percentage",
+          "label": "Show as Percentages",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "selected_groups",
+          "label": "Metric Families (only active when Compact View is off)",
+          "type": "list[Literal['Validity \u2191', 'Uniqueness & Novelty \u2191', 'Energy Metrics \u2193', 'Stability \u2191', 'Metastability \u2191', 'Distribution \u2193', 'Diversity \u2191', 'HHI \u2193']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "compact_view",
+          "label": "Compact View",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "sort_by",
+          "label": "Sort By",
+          "type": "Literal['None', 'Model', 'Total Structures', 'Valid', 'Charge Neutral', 'Distance Valid', 'Plausibility Valid', 'Unique', 'Novel', 'Formation Energy (eV)', 'Formation Energy Std', 'E Above Hull (eV)',",
+          "component": "Dropdown"
+        },
+        {
+          "name": "sort_direction",
+          "label": "Sort Direction",
+          "type": "Literal['Ascending', 'Descending']",
+          "component": "Radio"
+        },
+        {
+          "name": "training_set_filter",
+          "label": "Filter by Training Set",
+          "type": "Literal['All', 'MP-20', 'MPTS-52', 'MP-Exp', 'Alexandria', 'OQMD', 'Alex-MP-20', 'AFLOW', 'LeMat-Bulk', 'Others (must specify)']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "GenBench Leaderboard",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/update_leaderboard_5",
+      "parameters": [
+        {
+          "name": "show_percentage",
+          "label": "Show as Percentages",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "selected_groups",
+          "label": "Metric Families (only active when Compact View is off)",
+          "type": "list[Literal['Validity \u2191', 'Uniqueness & Novelty \u2191', 'Energy Metrics \u2193', 'Stability \u2191', 'Metastability \u2191', 'Distribution \u2193', 'Diversity \u2191', 'HHI \u2193']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "compact_view",
+          "label": "Compact View",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "sort_by",
+          "label": "Sort By",
+          "type": "Literal['None', 'Model', 'Total Structures', 'Valid', 'Charge Neutral', 'Distance Valid', 'Plausibility Valid', 'Unique', 'Novel', 'Formation Energy (eV)', 'Formation Energy Std', 'E Above Hull (eV)',",
+          "component": "Dropdown"
+        },
+        {
+          "name": "sort_direction",
+          "label": "Sort Direction",
+          "type": "Literal['Ascending', 'Descending']",
+          "component": "Radio"
+        },
+        {
+          "name": "training_set_filter",
+          "label": "Filter by Training Set",
+          "type": "Literal['All', 'MP-20', 'MPTS-52', 'MP-Exp', 'Alexandria', 'OQMD', 'Alex-MP-20', 'AFLOW', 'LeMat-Bulk', 'Others (must specify)']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "GenBench Leaderboard",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/lambda",
+      "parameters": [
+        {
+          "name": "x",
+          "label": "Structures are pre-relaxed",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Relaxation Settings",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_1",
+      "parameters": [
+        {
+          "name": "x",
+          "label": "Training Dataset",
+          "type": "list[Literal['MP-20', 'MPTS-52', 'MP-Exp', 'Alexandria', 'OQMD', 'Alex-MP-20', 'AFLOW', 'LeMat-Bulk', 'Others (must specify)']]",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Other Training Dataset",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/submit_cif_files",
+      "parameters": [
+        {
+          "name": "model_name",
+          "label": "Model Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "problem_type",
+          "label": "Problem Type",
+          "type": "Literal['unconditional', 'conditional']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "cif_files",
+          "label": "Upload a CSV, a pkl, or a ZIP of CIF files.",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "name": "relaxed",
+          "label": "Structures are pre-relaxed",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "relaxation_settings",
+          "label": "Relaxation Settings",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "training_datasets",
+          "label": "Training Dataset",
+          "type": "list[Literal['MP-20', 'MPTS-52', 'MP-Exp', 'Alexandria', 'OQMD', 'Alex-MP-20', 'AFLOW', 'LeMat-Bulk', 'Others (must specify)']]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "training_dataset_other",
+          "label": "Other Training Dataset",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "paper_link",
+          "label": "Paper Link (optional)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "hf_model_link",
+          "label": "HuggingFace Model Link (optional)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "email",
+          "label": "Email Address",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Status",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/show_output_box",
+      "parameters": [
+        {
+          "name": "message",
+          "label": "Status",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Status",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/_check_login_status",
+      "parameters": [],
+      "returns": []
+    }
+  ],
+  "endpoint": "/update_leaderboard",
+  "_api_verified": true,
+  "estimated_latency_s": 3.19,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 3.19,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:49:33.926649+00:00"
+}

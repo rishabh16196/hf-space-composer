@@ -1,0 +1,110 @@
+{
+  "space_id": "Yassine/Stego",
+  "title": "Stego",
+  "emoji": "\ud83d\udd0e",
+  "description": "Stego",
+  "input_schema": {
+    "input_image": {
+      "type": "filepath",
+      "description": "Cover image (PNG)",
+      "required": true,
+      "component": "File"
+    },
+    "message": {
+      "type": "str",
+      "description": "Secret message",
+      "required": true,
+      "component": "Textbox"
+    },
+    "key": {
+      "type": "str",
+      "description": "Key",
+      "required": true,
+      "component": "Textbox"
+    }
+  },
+  "output_schema": {
+    "Stego image": {
+      "type": "filepath",
+      "description": "Stego image",
+      "component": "File"
+    }
+  },
+  "license": "unknown",
+  "hardware": "6.9.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 11,
+  "last_modified": "2026-03-21 19:07:54+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/encode",
+      "parameters": [
+        {
+          "name": "input_image",
+          "label": "Cover image (PNG)",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "name": "message",
+          "label": "Secret message",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "key",
+          "label": "Key",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Stego image",
+          "type": "filepath",
+          "component": "File"
+        }
+      ]
+    },
+    {
+      "name": "/decode",
+      "parameters": [
+        {
+          "name": "input_image",
+          "label": "Stego image (PNG)",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "name": "key",
+          "label": "Key",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Decoded message",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/encode",
+  "_api_verified": true,
+  "estimated_latency_s": 3.21,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 3.21,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:50:05.648881+00:00"
+}

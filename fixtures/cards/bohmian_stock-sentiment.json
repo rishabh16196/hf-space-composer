@@ -1,0 +1,38 @@
+{
+  "space_id": "bohmian/stock-sentiment",
+  "title": "Stock Sentiment",
+  "emoji": "\ud83d\udcca",
+  "description": "Stock Sentiment",
+  "input_schema": {
+    "input": {
+      "type": "string",
+      "description": "Input",
+      "required": true
+    }
+  },
+  "output_schema": {
+    "output": {
+      "type": "string"
+    }
+  },
+  "license": "mit",
+  "hardware": "1.29.0",
+  "sdk": "streamlit",
+  "tags": [
+    "streamlit",
+    "region:us",
+    "sentiment",
+    "text"
+  ],
+  "likes": 137,
+  "last_modified": "2023-12-12 17:45:00+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "error",
+  "_api_error": "Could not get Gradio config from: https://bohmian-stock-sentiment.hf.space",
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_tags_enriched": true
+}

@@ -1,0 +1,141 @@
+{
+  "space_id": "cpuai/PartPacker",
+  "title": "PartPacker",
+  "emoji": "\ud83e\udeb4",
+  "description": "Part-level image-to-3D generation.",
+  "input_schema": {
+    "image_path": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "\ud83d\udcf7 Upload Image",
+      "required": true,
+      "component": "Image"
+    }
+  },
+  "output_schema": {
+    "\ud83d\udd0d Processed Image": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "\ud83d\udd0d Processed Image",
+      "component": "Image"
+    }
+  },
+  "license": "other",
+  "hardware": "5.25.2",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 12,
+  "last_modified": "2025-08-14 03:00:48+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/process_image",
+      "parameters": [
+        {
+          "name": "image_path",
+          "label": "\ud83d\udcf7 Upload Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ],
+      "returns": [
+        {
+          "label": "\ud83d\udd0d Processed Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/get_random_seed",
+      "parameters": [
+        {
+          "name": "randomize_seed",
+          "label": "Randomize Seed",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "seed",
+          "label": "Seed Value",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Seed Value",
+          "type": "float",
+          "component": "Slider"
+        }
+      ]
+    },
+    {
+      "name": "/process_3d",
+      "parameters": [
+        {
+          "name": "input_image",
+          "label": "\ud83d\udd0d Processed Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "num_steps",
+          "label": "Inference Steps",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "cfg_scale",
+          "label": "CFG Scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "grid_res",
+          "label": "Grid Resolution",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "seed",
+          "label": "Seed Value",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "simplify_mesh",
+          "label": "Simplify Mesh",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "target_num_faces",
+          "label": "Target Face Count",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "\ud83c\udfad 3D Model Preview",
+          "type": "filepath",
+          "component": "Model3d"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/process_image",
+  "_api_verified": true,
+  "estimated_latency_s": 2.79,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "_tags_enriched": true,
+  "measured_latency_s": 2.79,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:50:27.203265+00:00"
+}

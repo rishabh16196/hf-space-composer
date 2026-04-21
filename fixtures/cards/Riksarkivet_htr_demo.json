@@ -1,0 +1,218 @@
+{
+  "space_id": "Riksarkivet/htr_demo",
+  "title": "HTRflow App",
+  "emoji": "\ud83c\udfe2",
+  "description": "HTR (Handwritten Text Recognition) demo application",
+  "input_schema": {},
+  "output_schema": {
+    "value_63": {
+      "type": "str",
+      "description": "value_63",
+      "component": "Html"
+    },
+    "value_1": {
+      "type": "str",
+      "description": "value_1",
+      "component": "Markdown"
+    },
+    "Image to transcribe": {
+      "type": "list[dict(image: dict(path: str | None (Path to a local file), url: str | None (Publicly available u",
+      "description": "Image to transcribe",
+      "component": "Gallery"
+    },
+    "Upload by image ID": {
+      "type": "str",
+      "description": "Upload by image ID",
+      "component": "Textbox"
+    },
+    "IIIF Manifest": {
+      "type": "str",
+      "description": "IIIF Manifest",
+      "component": "Textbox"
+    },
+    "Number of image to return from IIIF manifest": {
+      "type": "float",
+      "description": "Number of image to return from IIIF manifest",
+      "component": "Number"
+    },
+    "Image URL": {
+      "type": "str",
+      "description": "Image URL",
+      "component": "Textbox"
+    },
+    "PDF": {
+      "type": "filepath",
+      "description": "PDF",
+      "component": "File"
+    },
+    "value_26": {
+      "type": "str",
+      "description": "value_26",
+      "component": "Markdown"
+    },
+    "value_29": {
+      "type": "Literal['Swedish - Spreads', 'Swedish - Single page and snippets', 'Norwegian - Single page and snip",
+      "description": "value_29",
+      "component": "Dropdown"
+    },
+    "value_35": {
+      "type": "str",
+      "description": "value_35",
+      "component": "Markdown"
+    },
+    "value_37": {
+      "type": "str",
+      "description": "value_37",
+      "component": "Html"
+    },
+    "value_39": {
+      "type": "str",
+      "description": "value_39",
+      "component": "Markdown"
+    },
+    "\u2b07\ufe0f Download": {
+      "type": "filepath",
+      "description": "\u2b07\ufe0f Download",
+      "component": "Downloadbutton"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "6.5.1",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "mcp-server",
+    "region:us"
+  ],
+  "likes": 54,
+  "last_modified": "2026-02-12 12:27:58+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/None",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_63",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "value_1",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "Image to transcribe",
+          "type": "list[dict(image: dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Origi",
+          "component": "Gallery"
+        },
+        {
+          "label": "Upload by image ID",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "IIIF Manifest",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Number of image to return from IIIF manifest",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "label": "Image URL",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "PDF",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "label": "value_26",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_29",
+          "type": "Literal['Swedish - Spreads', 'Swedish - Single page and snippets', 'Norwegian - Single page and snippets', 'Medieval - Single page and snippets', 'English - Single page and snippets', 'Custom']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "value_35",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_37",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "value_39",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "\u2b07\ufe0f Download",
+          "type": "filepath",
+          "component": "Downloadbutton"
+        }
+      ]
+    },
+    {
+      "name": "/htr_transcribe",
+      "parameters": [
+        {
+          "name": "image_urls",
+          "label": "1st",
+          "type": "list[str]",
+          "component": "Api"
+        },
+        {
+          "name": "export_format",
+          "label": "2nd",
+          "type": "Literal['alto_xml', 'page_xml', 'json']",
+          "component": "Api"
+        },
+        {
+          "name": "language",
+          "label": "3rd",
+          "type": "Literal['swedish', 'norwegian', 'english', 'medieval']",
+          "component": "Api"
+        },
+        {
+          "name": "layout",
+          "label": "4th",
+          "type": "Literal['single_page', 'spread']",
+          "component": "Api"
+        },
+        {
+          "name": "custom_yaml",
+          "label": "5th",
+          "type": "None | str",
+          "component": "Api"
+        }
+      ],
+      "returns": [
+        {
+          "label": "1st",
+          "type": "dict(str, Any)",
+          "component": "Api"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/None",
+  "_api_verified": true
+}

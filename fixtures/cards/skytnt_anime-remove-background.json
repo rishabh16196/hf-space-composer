@@ -1,0 +1,69 @@
+{
+  "space_id": "skytnt/anime-remove-background",
+  "title": "Anime Remove Background",
+  "emoji": "\ud83e\ude84\ud83d\uddbc\ufe0f",
+  "description": "Anime Remove Background",
+  "input_schema": {
+    "img": {
+      "type": "filepath",
+      "description": "input image",
+      "required": true,
+      "component": "Image"
+    }
+  },
+  "output_schema": {
+    "mask": {
+      "type": "filepath",
+      "description": "mask",
+      "component": "Image"
+    },
+    "result": {
+      "type": "filepath",
+      "description": "result",
+      "component": "Image"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "4.36.1",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 524,
+  "last_modified": "2024-06-11 11:56:10+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/rmbg_fn",
+      "parameters": [
+        {
+          "name": "img",
+          "label": "input image",
+          "type": "filepath",
+          "component": "Image"
+        }
+      ],
+      "returns": [
+        {
+          "label": "mask",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "result",
+          "type": "filepath",
+          "component": "Image"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/rmbg_fn",
+  "_api_verified": true
+}

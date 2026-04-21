@@ -1,0 +1,46 @@
+{
+  "space_id": "laofa668/Seedance-2.0-Playground",
+  "title": "Seedance 2.0 AI Video Generator",
+  "emoji": "\ud83c\udfac",
+  "description": "Seedance 2.0 AI Video Generator",
+  "input_schema": {},
+  "output_schema": {
+    "output": {
+      "type": "str",
+      "description": "output",
+      "component": "Textbox"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "6.10.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 2,
+  "last_modified": "2026-03-27 13:32:54+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_tags_enriched": true,
+  "estimated_latency_s": 3.0,
+  "speed_tier": "fast",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/greet",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "output",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/greet",
+  "_api_verified": true
+}

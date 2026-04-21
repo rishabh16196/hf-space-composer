@@ -1,0 +1,78 @@
+{
+  "space_id": "sok99/bigcode-starcoder2-15b",
+  "title": "Bigcode Starcoder2 15b",
+  "emoji": "\ud83d\udc20",
+  "description": "Bigcode Starcoder2 15b",
+  "input_schema": {
+    "param_0": {
+      "type": "str",
+      "description": "Text",
+      "required": true,
+      "component": "Textbox"
+    }
+  },
+  "output_schema": {
+    "Text": {
+      "type": "str",
+      "description": "Text",
+      "component": "Textbox"
+    }
+  },
+  "license": "unknown",
+  "hardware": "5.7.1",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 2,
+  "last_modified": "2024-12-02 22:21:11+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_tags_enriched": true,
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/predict",
+      "parameters": [
+        {
+          "name": "param_0",
+          "label": "Text",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Text",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/bigcodestarcoder2-15b",
+      "parameters": [
+        {
+          "name": "param_0",
+          "label": "Text",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Text",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/predict",
+  "_api_verified": true
+}

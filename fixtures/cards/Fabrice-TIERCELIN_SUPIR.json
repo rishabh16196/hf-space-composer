@@ -1,0 +1,634 @@
+{
+  "space_id": "Fabrice-TIERCELIN/SUPIR",
+  "title": "Wan 2 2 First Last Frame",
+  "emoji": "\ud83d\udcbb",
+  "description": "Wan 2 2 First Last Frame",
+  "input_schema": {},
+  "output_schema": {
+    "\u2b07\ufe0f T\u00e9l\u00e9charger compiled_transformers.zip": {
+      "type": "filepath",
+      "description": "\u2b07\ufe0f T\u00e9l\u00e9charger compiled_transformers.zip",
+      "component": "Downloadbutton"
+    }
+  },
+  "license": "unknown",
+  "hardware": "5.29.1",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "mcp-server",
+    "region:us"
+  ],
+  "likes": 246,
+  "last_modified": "2026-04-17 16:38:05+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/_build_and_enable_download",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "\u2b07\ufe0f T\u00e9l\u00e9charger compiled_transformers.zip",
+          "type": "filepath",
+          "component": "Downloadbutton"
+        }
+      ]
+    },
+    {
+      "name": "/init_view",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/generate_video",
+      "parameters": [
+        {
+          "name": "start_image_pil",
+          "label": "Start Frame",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "end_image_pil",
+          "label": "End Frame",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "prompt",
+          "label": "Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "negative_prompt",
+          "label": "Negative Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "resolution",
+          "label": "Resolution (width x height)",
+          "type": "Literal['400000', '465920', '495616', '500000', '600000', '700000', '800000', '900000', '1000000', '1100000', '1200000', '1300000', '1400000', '1500000']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "duration_seconds",
+          "label": "Video Duration (seconds)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "steps",
+          "label": "Inference Steps",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "guidance_scale",
+          "label": "Guidance Scale - high noise",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "guidance_scale_2",
+          "label": "Guidance Scale - low noise",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "seed",
+          "label": "Seed",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "randomize_seed",
+          "label": "Randomize seed",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Generated Video",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        },
+        {
+          "label": "Download",
+          "type": "filepath",
+          "component": "Downloadbutton"
+        },
+        {
+          "label": "Seed",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "value_34",
+          "type": "str",
+          "component": "Html"
+        }
+      ]
+    },
+    {
+      "name": "/switch_to_upload_tab",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/lambda",
+      "parameters": [
+        {
+          "name": "img",
+          "label": "Start Frame",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ],
+      "returns": [
+        {
+          "label": "End Frame",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/generate_video_1",
+      "parameters": [
+        {
+          "name": "start_image_pil",
+          "label": "Start Frame",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "end_image_pil",
+          "label": "End Frame",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "prompt",
+          "label": "Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "negative_prompt",
+          "label": "Negative Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "resolution",
+          "label": "Resolution (width x height)",
+          "type": "Literal['400000', '465920', '495616', '500000', '600000', '700000', '800000', '900000', '1000000', '1100000', '1200000', '1300000', '1400000', '1500000']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "duration_seconds",
+          "label": "Video Duration (seconds)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "steps",
+          "label": "Inference Steps",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "guidance_scale",
+          "label": "Guidance Scale - high noise",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "guidance_scale_2",
+          "label": "Guidance Scale - low noise",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "seed",
+          "label": "Seed",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "randomize_seed",
+          "label": "Randomize seed",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Generated Video",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        },
+        {
+          "label": "Download",
+          "type": "filepath",
+          "component": "Downloadbutton"
+        },
+        {
+          "label": "Seed",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "value_34",
+          "type": "str",
+          "component": "Html"
+        }
+      ]
+    },
+    {
+      "name": "/output_video_change",
+      "parameters": [
+        {
+          "name": "output_video",
+          "label": "Generated Video",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Download",
+          "type": "filepath",
+          "component": "Downloadbutton"
+        },
+        {
+          "label": "value_34",
+          "type": "str",
+          "component": "Html"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_1",
+      "parameters": [
+        {
+          "name": "image",
+          "label": "Start Frame",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/handle_field_debug_change",
+      "parameters": [
+        {
+          "name": "input_image_debug_data",
+          "label": "Image Debug",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "end_image_debug_data",
+          "label": "End Image Debug",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "prompt_debug_data",
+          "label": "Prompt Debug",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "total_second_length_debug_data",
+          "label": "Duration Debug",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "resolution_debug_data",
+          "label": "Resolution Debug",
+          "type": "Literal['400000', '465920', '495616', '500000', '600000', '700000', '800000', '900000', '1000000', '1100000', '1200000', '1300000', '1400000', '1500000']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "factor_debug_data",
+          "label": "Factor Debug",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "allocation_time_debug_data",
+          "label": "Allocation Debug",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/handle_field_debug_change_1",
+      "parameters": [
+        {
+          "name": "input_image_debug_data",
+          "label": "Image Debug",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "end_image_debug_data",
+          "label": "End Image Debug",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "prompt_debug_data",
+          "label": "Prompt Debug",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "total_second_length_debug_data",
+          "label": "Duration Debug",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "resolution_debug_data",
+          "label": "Resolution Debug",
+          "type": "Literal['400000', '465920', '495616', '500000', '600000', '700000', '800000', '900000', '1000000', '1100000', '1200000', '1300000', '1400000', '1500000']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "factor_debug_data",
+          "label": "Factor Debug",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "allocation_time_debug_data",
+          "label": "Allocation Debug",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/handle_field_debug_change_2",
+      "parameters": [
+        {
+          "name": "input_image_debug_data",
+          "label": "Image Debug",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "end_image_debug_data",
+          "label": "End Image Debug",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "prompt_debug_data",
+          "label": "Prompt Debug",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "total_second_length_debug_data",
+          "label": "Duration Debug",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "resolution_debug_data",
+          "label": "Resolution Debug",
+          "type": "Literal['400000', '465920', '495616', '500000', '600000', '700000', '800000', '900000', '1000000', '1100000', '1200000', '1300000', '1400000', '1500000']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "factor_debug_data",
+          "label": "Factor Debug",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "allocation_time_debug_data",
+          "label": "Allocation Debug",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/handle_field_debug_change_3",
+      "parameters": [
+        {
+          "name": "input_image_debug_data",
+          "label": "Image Debug",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "end_image_debug_data",
+          "label": "End Image Debug",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "prompt_debug_data",
+          "label": "Prompt Debug",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "total_second_length_debug_data",
+          "label": "Duration Debug",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "resolution_debug_data",
+          "label": "Resolution Debug",
+          "type": "Literal['400000', '465920', '495616', '500000', '600000', '700000', '800000', '900000', '1000000', '1100000', '1200000', '1300000', '1400000', '1500000']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "factor_debug_data",
+          "label": "Factor Debug",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "allocation_time_debug_data",
+          "label": "Allocation Debug",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/handle_field_debug_change_4",
+      "parameters": [
+        {
+          "name": "input_image_debug_data",
+          "label": "Image Debug",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "end_image_debug_data",
+          "label": "End Image Debug",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "prompt_debug_data",
+          "label": "Prompt Debug",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "total_second_length_debug_data",
+          "label": "Duration Debug",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "resolution_debug_data",
+          "label": "Resolution Debug",
+          "type": "Literal['400000', '465920', '495616', '500000', '600000', '700000', '800000', '900000', '1000000', '1100000', '1200000', '1300000', '1400000', '1500000']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "factor_debug_data",
+          "label": "Factor Debug",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "allocation_time_debug_data",
+          "label": "Allocation Debug",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/handle_field_debug_change_5",
+      "parameters": [
+        {
+          "name": "input_image_debug_data",
+          "label": "Image Debug",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "end_image_debug_data",
+          "label": "End Image Debug",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "prompt_debug_data",
+          "label": "Prompt Debug",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "total_second_length_debug_data",
+          "label": "Duration Debug",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "resolution_debug_data",
+          "label": "Resolution Debug",
+          "type": "Literal['400000', '465920', '495616', '500000', '600000', '700000', '800000', '900000', '1000000', '1100000', '1200000', '1300000', '1400000', '1500000']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "factor_debug_data",
+          "label": "Factor Debug",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "allocation_time_debug_data",
+          "label": "Allocation Debug",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/handle_field_debug_change_6",
+      "parameters": [
+        {
+          "name": "input_image_debug_data",
+          "label": "Image Debug",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "end_image_debug_data",
+          "label": "End Image Debug",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "prompt_debug_data",
+          "label": "Prompt Debug",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "total_second_length_debug_data",
+          "label": "Duration Debug",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "resolution_debug_data",
+          "label": "Resolution Debug",
+          "type": "Literal['400000', '465920', '495616', '500000', '600000', '700000', '800000', '900000', '1000000', '1100000', '1200000', '1300000', '1400000', '1500000']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "factor_debug_data",
+          "label": "Factor Debug",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "allocation_time_debug_data",
+          "label": "Allocation Debug",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": []
+    }
+  ],
+  "endpoint": "/_build_and_enable_download",
+  "_api_verified": true,
+  "estimated_latency_s": 3.61,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 3.61,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:49:18.980756+00:00"
+}

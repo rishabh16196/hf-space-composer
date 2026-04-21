@@ -1,0 +1,61 @@
+{
+  "space_id": "NCSOFT/harim_plus",
+  "title": "HaRiM+",
+  "emoji": "\ud83e\udd17",
+  "description": "HaRiM+ is a reference-free summary faithfulness measure.",
+  "input_schema": {
+    "data": {
+      "type": "Dict[Any, Any]",
+      "description": "data",
+      "required": true,
+      "component": "Dataframe"
+    }
+  },
+  "output_schema": {
+    "harimplus": {
+      "type": "str",
+      "description": "harimplus",
+      "component": "Textbox"
+    }
+  },
+  "license": "unknown",
+  "hardware": "3.9",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "evaluate",
+    "metric",
+    "region:us"
+  ],
+  "likes": 12,
+  "last_modified": "2025-08-04 13:50:37+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/predict",
+      "parameters": [
+        {
+          "name": "data",
+          "label": "data",
+          "type": "Dict[Any, Any]",
+          "component": "Dataframe"
+        }
+      ],
+      "returns": [
+        {
+          "label": "harimplus",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/predict",
+  "_api_verified": true
+}

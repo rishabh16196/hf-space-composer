@@ -1,0 +1,142 @@
+{
+  "space_id": "schibsted-presplit/Facial_Recognition_with_Sentiment_Detector",
+  "title": "Facial Recognition With Sentiment Detector",
+  "emoji": "\ud83d\udc40",
+  "description": "Facial Recognition With Sentiment Detector",
+  "input_schema": {
+    "img": {
+      "type": "str",
+      "description": "img",
+      "required": true,
+      "component": "Image"
+    }
+  },
+  "output_schema": {
+    "Person 1": {
+      "type": "str",
+      "description": "Person 1",
+      "component": "Image"
+    },
+    "Emotion - Person 1": {
+      "type": "Dict[Any, Any]",
+      "description": "Emotion - Person 1",
+      "component": "Label"
+    },
+    "Sentiment - Person 1": {
+      "type": "Dict[Any, Any]",
+      "description": "Sentiment - Person 1",
+      "component": "Label"
+    },
+    "Person 2": {
+      "type": "str",
+      "description": "Person 2",
+      "component": "Image"
+    },
+    "Emotion - Person 2": {
+      "type": "Dict[Any, Any]",
+      "description": "Emotion - Person 2",
+      "component": "Label"
+    },
+    "Sentiment - Person 2": {
+      "type": "Dict[Any, Any]",
+      "description": "Sentiment - Person 2",
+      "component": "Label"
+    },
+    "Person 3": {
+      "type": "str",
+      "description": "Person 3",
+      "component": "Image"
+    },
+    "Emotion - Person 3": {
+      "type": "Dict[Any, Any]",
+      "description": "Emotion - Person 3",
+      "component": "Label"
+    },
+    "Sentiment - Person 3": {
+      "type": "Dict[Any, Any]",
+      "description": "Sentiment - Person 3",
+      "component": "Label"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "3.3",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us",
+    "sentiment",
+    "text"
+  ],
+  "likes": 23,
+  "last_modified": "2022-09-14 06:55:02+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_tags_enriched": true,
+  "estimated_latency_s": 2.5,
+  "speed_tier": "fast",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/predict",
+      "parameters": [
+        {
+          "name": "img",
+          "label": "img",
+          "type": "str",
+          "component": "Image"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Person 1",
+          "type": "str",
+          "component": "Image"
+        },
+        {
+          "label": "Emotion - Person 1",
+          "type": "Dict[Any, Any]",
+          "component": "Label"
+        },
+        {
+          "label": "Sentiment - Person 1",
+          "type": "Dict[Any, Any]",
+          "component": "Label"
+        },
+        {
+          "label": "Person 2",
+          "type": "str",
+          "component": "Image"
+        },
+        {
+          "label": "Emotion - Person 2",
+          "type": "Dict[Any, Any]",
+          "component": "Label"
+        },
+        {
+          "label": "Sentiment - Person 2",
+          "type": "Dict[Any, Any]",
+          "component": "Label"
+        },
+        {
+          "label": "Person 3",
+          "type": "str",
+          "component": "Image"
+        },
+        {
+          "label": "Emotion - Person 3",
+          "type": "Dict[Any, Any]",
+          "component": "Label"
+        },
+        {
+          "label": "Sentiment - Person 3",
+          "type": "Dict[Any, Any]",
+          "component": "Label"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/predict",
+  "_api_verified": true
+}

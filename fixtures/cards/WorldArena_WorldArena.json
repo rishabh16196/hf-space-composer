@@ -1,0 +1,223 @@
+{
+  "space_id": "WorldArena/WorldArena",
+  "title": "WorldArena",
+  "emoji": "\ud83c\udfc6",
+  "description": "the official leaderboard of the WorldArena benchmark",
+  "input_schema": {},
+  "output_schema": {
+    "value_2": {
+      "type": "str",
+      "description": "value_2",
+      "component": "Markdown"
+    },
+    "Filter by Open Source": {
+      "type": "Literal['All']",
+      "description": "Filter by Open Source",
+      "component": "Dropdown"
+    },
+    "Filter by Year": {
+      "type": "Literal['All']",
+      "description": "Filter by Year",
+      "component": "Dropdown"
+    },
+    "Leaderboard Table": {
+      "type": "str",
+      "description": "Leaderboard Table",
+      "component": "Html"
+    },
+    "Dimension Radar Chart": {
+      "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+      "description": "Dimension Radar Chart",
+      "component": "Plot"
+    }
+  },
+  "license": "mit",
+  "hardware": "5.43.1",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us",
+    "benchmark",
+    "leaderboard"
+  ],
+  "likes": 11,
+  "last_modified": "2026-04-10 06:12:45+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/reload_data",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_2",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "Filter by Open Source",
+          "type": "Literal['All']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Filter by Year",
+          "type": "Literal['All']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Leaderboard Table",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "Dimension Radar Chart",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        }
+      ]
+    },
+    {
+      "name": "/update_leaderboard_wrapper",
+      "parameters": [
+        {
+          "name": "metric",
+          "label": "Primary Ranking Metric",
+          "type": "Literal['EWMScore', '\ud83d\udcca Visual Quality', '\ud83d\udcca Motion Quality', '\ud83d\udcca Content Consistency', '\ud83d\udcca Physics Adherence', '\ud83d\udcca 3D Accuracy', '\ud83d\udcca Controllability', 'Action Following', 'Aesthetic Quality', 'Background C",
+          "component": "Dropdown"
+        },
+        {
+          "name": "top_k",
+          "label": "Display Top-K Models",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "model_filter",
+          "label": "Filter by Model Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "open_source_filter",
+          "label": "Filter by Open Source",
+          "type": "Literal['All']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "year_filter",
+          "label": "Filter by Year",
+          "type": "Literal['All']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "sort_mode",
+          "label": "Sort Order",
+          "type": "Literal['Auto', 'Ascending (low \u2192 high)', 'Descending (high \u2192 low)']",
+          "component": "Radio"
+        },
+        {
+          "name": "selected_metrics",
+          "label": "Additional Metrics to Display (\ud83d\udcca indicates dimension metrics)",
+          "type": "list[Literal['\ud83d\udcca Visual Quality', '\ud83d\udcca Motion Quality', '\ud83d\udcca Content Consistency', '\ud83d\udcca Physics Adherence', '\ud83d\udcca 3D Accuracy', '\ud83d\udcca Controllability', 'Action Following', 'Aesthetic Quality', 'Background Consiste",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Leaderboard Table",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "Dimension Radar Chart",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        }
+      ]
+    },
+    {
+      "name": "/create_comparison_plot_wrapper",
+      "parameters": [
+        {
+          "name": "model_filter",
+          "label": "Filter by Model Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "open_source_filter",
+          "label": "Filter by Open Source",
+          "type": "Literal['All']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "year_filter",
+          "label": "Filter by Year",
+          "type": "Literal['All']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "selected_plot_metric",
+          "label": "Select Metric for Comparison Plot",
+          "type": "Literal['EWMScore', '\ud83d\udcca Visual Quality', '\ud83d\udcca Motion Quality', '\ud83d\udcca Content Consistency', '\ud83d\udcca Physics Adherence', '\ud83d\udcca 3D Accuracy', '\ud83d\udcca Controllability', 'Action Following', 'Aesthetic Quality', 'Background C",
+          "component": "Radio"
+        },
+        {
+          "name": "plot_sort_mode",
+          "label": "Plot Sort Order",
+          "type": "Literal['Ascending (low \u2192 high)', 'Descending (high \u2192 low)']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Model Comparison Visualization",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        }
+      ]
+    },
+    {
+      "name": "/reload_data_1",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_2",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "Filter by Open Source",
+          "type": "Literal['All']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Filter by Year",
+          "type": "Literal['All']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Leaderboard Table",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "Dimension Radar Chart",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/reload_data",
+  "_api_verified": true,
+  "estimated_latency_s": 3.64,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "_tags_enriched": true,
+  "measured_latency_s": 3.64,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:50:05.686246+00:00"
+}

@@ -1,0 +1,280 @@
+{
+  "space_id": "ajsbsd/CyberRealistic-Pony",
+  "title": "CyberRealistic Pony",
+  "emoji": "\ud83c\udfc3",
+  "description": "CyberRealistic Pony",
+  "input_schema": {
+    "prompt": {
+      "type": "str",
+      "description": "\u2728 Prompt",
+      "required": true,
+      "component": "Textbox"
+    },
+    "negative_prompt": {
+      "type": "str",
+      "description": "\u274c Negative Prompt",
+      "required": true,
+      "component": "Textbox"
+    },
+    "steps": {
+      "type": "float",
+      "description": "\ud83d\udcca Steps",
+      "required": true,
+      "component": "Slider"
+    },
+    "guidance_scale": {
+      "type": "float",
+      "description": "\ud83c\udf9b\ufe0f CFG Scale",
+      "required": true,
+      "component": "Slider"
+    },
+    "width": {
+      "type": "float",
+      "description": "\ud83d\udcd0 Width",
+      "required": true,
+      "component": "Slider"
+    },
+    "height": {
+      "type": "float",
+      "description": "\ud83d\udcd0 Height",
+      "required": true,
+      "component": "Slider"
+    },
+    "seed": {
+      "type": "float",
+      "description": "\ud83c\udfb2 Seed (-1 = random)",
+      "required": true,
+      "component": "Slider"
+    },
+    "add_quality": {
+      "type": "bool",
+      "description": "\u2728 Add Quality Tags",
+      "required": true,
+      "component": "Checkbox"
+    }
+  },
+  "output_schema": {
+    "\ud83d\uddbc\ufe0f Generated Image": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "\ud83d\uddbc\ufe0f Generated Image",
+      "component": "Image"
+    },
+    "\ud83d\udce5 Download PNG (with metadata)": {
+      "type": "filepath",
+      "description": "\ud83d\udce5 Download PNG (with metadata)",
+      "component": "File"
+    },
+    "\u2139\ufe0f Generation Info": {
+      "type": "str",
+      "description": "\u2139\ufe0f Generation Info",
+      "component": "Textbox"
+    }
+  },
+  "license": "creativeml-openrail-m",
+  "hardware": "5.32.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 21,
+  "last_modified": "2025-06-03 07:26:30+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/generate_txt2img",
+      "parameters": [
+        {
+          "name": "prompt",
+          "label": "\u2728 Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "negative_prompt",
+          "label": "\u274c Negative Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "steps",
+          "label": "\ud83d\udcca Steps",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "guidance_scale",
+          "label": "\ud83c\udf9b\ufe0f CFG Scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "width",
+          "label": "\ud83d\udcd0 Width",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "height",
+          "label": "\ud83d\udcd0 Height",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "seed",
+          "label": "\ud83c\udfb2 Seed (-1 = random)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "add_quality",
+          "label": "\u2728 Add Quality Tags",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "\ud83d\uddbc\ufe0f Generated Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "\ud83d\udce5 Download PNG (with metadata)",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "label": "\u2139\ufe0f Generation Info",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/generate_img2img",
+      "parameters": [
+        {
+          "name": "input_image",
+          "label": "\ud83d\udce4 Input Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "prompt",
+          "label": "\u2728 Transformation Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "negative_prompt",
+          "label": "\u274c Negative Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "steps",
+          "label": "\ud83d\udcca Steps",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "guidance_scale",
+          "label": "\ud83c\udf9b\ufe0f CFG",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "strength",
+          "label": "\ud83d\udcaa Transformation Strength",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "seed",
+          "label": "\ud83c\udfb2 Seed",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "add_quality",
+          "label": "\u2728 Add Quality Tags",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "\ud83d\uddbc\ufe0f Transformed Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "\ud83d\udce5 Download PNG (with metadata)",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "label": "\u2139\ufe0f Generation Info",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/get_random_prompt",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "\u2728 Prompt",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/get_random_prompt_1",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "\u2728 Transformation Prompt",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/lambda",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "\u2728 Prompt",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_1",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "\u2728 Transformation Prompt",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/generate_txt2img",
+  "_api_verified": true,
+  "estimated_latency_s": 3.86,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 3.86,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:50:09.587982+00:00"
+}

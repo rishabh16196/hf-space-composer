@@ -1,0 +1,194 @@
+{
+  "space_id": "signsur4739379373/wan2-2-rapid-aio-ti2v",
+  "title": "Wan2.2 14B Fast",
+  "emoji": "\ud83c\udfa5\ud83d\udca8",
+  "description": "generate a video from an image with a text prompt",
+  "input_schema": {
+    "start_image": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "Start Frame",
+      "required": true,
+      "component": "Image"
+    },
+    "end_image": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "End Frame",
+      "required": true,
+      "component": "Image"
+    },
+    "prompt": {
+      "type": "str",
+      "description": "Prompt",
+      "required": true,
+      "component": "Textbox"
+    },
+    "negative_prompt": {
+      "type": "str",
+      "description": "Negative",
+      "required": true,
+      "component": "Textbox"
+    },
+    "duration_sec": {
+      "type": "float",
+      "description": "Duration (Seconds)",
+      "required": true,
+      "component": "Slider"
+    },
+    "megapixels": {
+      "type": "float",
+      "description": "Megapixels (Resolution)",
+      "required": true,
+      "component": "Slider"
+    },
+    "steps": {
+      "type": "float",
+      "description": "Steps",
+      "required": true,
+      "component": "Slider"
+    },
+    "cfg": {
+      "type": "float",
+      "description": "CFG",
+      "required": true,
+      "component": "Slider"
+    },
+    "seed": {
+      "type": "float",
+      "description": "Seed",
+      "required": true,
+      "component": "Number"
+    },
+    "randomize_seed": {
+      "type": "bool",
+      "description": "Randomize Seed",
+      "required": true,
+      "component": "Checkbox"
+    },
+    "denoise": {
+      "type": "float",
+      "description": "Denoise Strength",
+      "required": true,
+      "component": "Slider"
+    }
+  },
+  "output_schema": {
+    "Output": {
+      "type": "dict(video: filepath, subtitles: filepath | None)",
+      "description": "Output",
+      "component": "Video"
+    },
+    "Used Seed": {
+      "type": "float",
+      "description": "Used Seed",
+      "component": "Number"
+    }
+  },
+  "license": "unknown",
+  "hardware": "5.44.1",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us",
+    "text",
+    "video",
+    "video-generation",
+    "vision"
+  ],
+  "likes": 9,
+  "last_modified": "2026-02-01 08:40:42+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_tags_enriched": true,
+  "estimated_latency_s": 3.0,
+  "speed_tier": "fast",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/generate",
+      "parameters": [
+        {
+          "name": "start_image",
+          "label": "Start Frame",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "end_image",
+          "label": "End Frame",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "prompt",
+          "label": "Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "negative_prompt",
+          "label": "Negative",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "duration_sec",
+          "label": "Duration (Seconds)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "megapixels",
+          "label": "Megapixels (Resolution)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "steps",
+          "label": "Steps",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "cfg",
+          "label": "CFG",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "seed",
+          "label": "Seed",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "randomize_seed",
+          "label": "Randomize Seed",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "denoise",
+          "label": "Denoise Strength",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        },
+        {
+          "label": "Used Seed",
+          "type": "float",
+          "component": "Number"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/generate",
+  "_api_verified": true
+}

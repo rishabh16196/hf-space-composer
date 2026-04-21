@@ -1,0 +1,144 @@
+{
+  "space_id": "dharshivat123/Multimodal-vision-ai",
+  "title": "Multimodal Vision AI",
+  "emoji": "\ud83e\udde0",
+  "description": "Multilingual image description with voice & export",
+  "input_schema": {
+    "image": {
+      "type": "filepath",
+      "description": "Upload Image",
+      "required": true,
+      "component": "Image"
+    },
+    "language": {
+      "type": "Literal['English', 'Hindi', 'Marathi', 'Gujarati', 'Bengali', 'Tamil', 'Telugu', 'Kannada', 'Punjabi",
+      "description": "Output Language",
+      "required": true,
+      "component": "Dropdown"
+    }
+  },
+  "output_schema": {
+    "Generated Description": {
+      "type": "str",
+      "description": "Generated Description",
+      "component": "Textbox"
+    },
+    "output_1": {
+      "type": "str",
+      "description": "",
+      "component": "Textbox"
+    },
+    "Voice Output": {
+      "type": "filepath",
+      "description": "Voice Output",
+      "component": "Audio"
+    }
+  },
+  "license": "mit",
+  "hardware": "6.11.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 2,
+  "last_modified": "2026-04-06 16:51:53+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/generate_description",
+      "parameters": [
+        {
+          "name": "image",
+          "label": "Upload Image",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "name": "language",
+          "label": "Output Language",
+          "type": "Literal['English', 'Hindi', 'Marathi', 'Gujarati', 'Bengali', 'Tamil', 'Telugu', 'Kannada', 'Punjabi', 'Urdu', 'Spanish', 'French', 'German', 'Arabic']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Generated Description",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Voice Output",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ]
+    },
+    {
+      "name": "/clear_all",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Upload Image",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "Generated Description",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Voice Output",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "TXT File",
+          "type": "filepath",
+          "component": "File"
+        }
+      ]
+    },
+    {
+      "name": "/download_txt",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "TXT File",
+          "type": "filepath",
+          "component": "File"
+        }
+      ]
+    },
+    {
+      "name": "/download_pdf",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "PDF File",
+          "type": "filepath",
+          "component": "File"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/generate_description",
+  "_api_verified": true
+}

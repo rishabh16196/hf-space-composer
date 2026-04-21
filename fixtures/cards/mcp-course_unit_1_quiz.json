@@ -1,0 +1,228 @@
+{
+  "space_id": "mcp-course/unit_1_quiz",
+  "title": "Unit 1 Quiz - Model Context Protocol (MCP) Fundementals",
+  "emoji": "\ud83d\udd25",
+  "description": "Test your knowledge of MCP fundamentals.",
+  "input_schema": {},
+  "output_schema": {
+    "value_9": {
+      "type": "str",
+      "description": "value_9",
+      "component": "Markdown"
+    },
+    "Your Answer": {
+      "type": "Literal[]",
+      "description": "Your Answer",
+      "component": "Radio"
+    },
+    "value_13": {
+      "type": "str",
+      "description": "value_13",
+      "component": "Markdown"
+    },
+    "value_14": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "value_14",
+      "component": "Image"
+    },
+    "value_15": {
+      "type": "str",
+      "description": "value_15",
+      "component": "Html"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "5.15.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 51,
+  "last_modified": "2025-06-03 11:06:08+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/on_user_logged_in",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_9",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "Your Answer",
+          "type": "Literal[]",
+          "component": "Radio"
+        },
+        {
+          "label": "value_13",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_14",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "value_15",
+          "type": "str",
+          "component": "Html"
+        }
+      ]
+    },
+    {
+      "name": "/handle_quiz",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_9",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "Your Answer",
+          "type": "Literal[]",
+          "component": "Radio"
+        },
+        {
+          "label": "value_13",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_14",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "value_15",
+          "type": "str",
+          "component": "Html"
+        }
+      ]
+    },
+    {
+      "name": "/handle_quiz_1",
+      "parameters": [
+        {
+          "name": "selected_answer",
+          "label": "Your Answer",
+          "type": "Literal[]",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_9",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "Your Answer",
+          "type": "Literal[]",
+          "component": "Radio"
+        },
+        {
+          "label": "value_13",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_14",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "value_15",
+          "type": "str",
+          "component": "Html"
+        }
+      ]
+    },
+    {
+      "name": "/push_results_to_hub",
+      "parameters": [
+        {
+          "name": "custom_name",
+          "label": "Custom Name for Certificate",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_13",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_14",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "value_15",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "Custom Name for Certificate",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/push_results_to_hub_1",
+      "parameters": [
+        {
+          "name": "custom_name",
+          "label": "Custom Name for Certificate",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_13",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_14",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "value_15",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "Custom Name for Certificate",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/_check_login_status",
+      "parameters": [],
+      "returns": []
+    }
+  ],
+  "endpoint": "/on_user_logged_in",
+  "_api_verified": true,
+  "estimated_latency_s": 3.07,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 3.07,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:51:12.369165+00:00"
+}

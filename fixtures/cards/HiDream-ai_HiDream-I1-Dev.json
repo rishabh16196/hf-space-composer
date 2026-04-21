@@ -1,0 +1,187 @@
+{
+  "space_id": "HiDream-ai/HiDream-I1-Dev",
+  "title": "HiDream I1 Dev",
+  "emoji": "\ud83d\ude80",
+  "description": "HiDream I1 Dev",
+  "input_schema": {
+    "prompt": {
+      "type": "str",
+      "description": "Prompt",
+      "required": true,
+      "component": "Textbox"
+    },
+    "aspect_ratio": {
+      "type": "Literal['1:1', '3:4', '4:3', '9:16', '16:9']",
+      "description": "Aspect Ratio",
+      "required": true,
+      "component": "Radio"
+    },
+    "seed": {
+      "type": "float",
+      "description": "Seed (use -1 for random)",
+      "required": true,
+      "component": "Number"
+    }
+  },
+  "output_schema": {
+    "Generated Image": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "Generated Image",
+      "component": "Image"
+    },
+    "Seed Used": {
+      "type": "float",
+      "description": "Seed Used",
+      "component": "Number"
+    },
+    "value_15": {
+      "type": "str",
+      "description": "value_15",
+      "component": "Markdown"
+    },
+    "Details": {
+      "type": "str | float | bool | list | dict",
+      "description": "Details",
+      "component": "Json"
+    }
+  },
+  "license": "mit",
+  "hardware": "5.23.3",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 516,
+  "last_modified": "2025-04-13 06:31:31+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/generate_with_status",
+      "parameters": [
+        {
+          "name": "prompt",
+          "label": "Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "aspect_ratio",
+          "label": "Aspect Ratio",
+          "type": "Literal['1:1', '3:4', '4:3', '9:16', '16:9']",
+          "component": "Radio"
+        },
+        {
+          "name": "seed",
+          "label": "Seed (use -1 for random)",
+          "type": "float",
+          "component": "Number"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Generated Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "Seed Used",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "label": "value_15",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "Details",
+          "type": "str | float | bool | list | dict",
+          "component": "Json"
+        }
+      ]
+    },
+    {
+      "name": "/clear_outputs",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Generated Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "Seed Used",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "label": "value_15",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "Details",
+          "type": "str | float | bool | list | dict",
+          "component": "Json"
+        }
+      ]
+    },
+    {
+      "name": "/get_final_item",
+      "parameters": [
+        {
+          "name": "param_0",
+          "label": "Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_1",
+          "label": "Aspect Ratio",
+          "type": "Literal['1:1', '3:4', '4:3', '9:16', '16:9']",
+          "component": "Radio"
+        },
+        {
+          "name": "param_2",
+          "label": "Seed (use -1 for random)",
+          "type": "float",
+          "component": "Number"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Generated Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "Seed Used",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "label": "value_15",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "Details",
+          "type": "str | float | bool | list | dict",
+          "component": "Json"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/generate_with_status",
+  "_api_verified": true,
+  "estimated_latency_s": 2.77,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 2.77,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:49:25.175552+00:00"
+}

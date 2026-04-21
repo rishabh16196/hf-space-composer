@@ -1,0 +1,144 @@
+{
+  "space_id": "Tongyi-MAI/Z-Image",
+  "title": "Z Image",
+  "emoji": "\ud83c\udfc3",
+  "description": "Z Image",
+  "input_schema": {
+    "res_cat_value": {
+      "type": "Literal['720', '1024', '1280']",
+      "description": "Resolution Category",
+      "required": true,
+      "component": "Dropdown"
+    }
+  },
+  "output_schema": {
+    "Width x Height (Ratio)": {
+      "type": "Literal['720x720 ( 1:1 )', '896x512 ( 16:9 )', '512x896 ( 9:16 )', '832x544 ( 3:2 )', '544x832 ( 2:3",
+      "description": "Width x Height (Ratio)",
+      "component": "Dropdown"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "6.0.1",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "mcp-server",
+    "region:us",
+    "diffusion",
+    "image-generation",
+    "text-to-image",
+    "vision"
+  ],
+  "likes": 156,
+  "last_modified": "2026-01-27 21:59:31+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/update_res_choices",
+      "parameters": [
+        {
+          "name": "res_cat_value",
+          "label": "Resolution Category",
+          "type": "Literal['720', '1024', '1280']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Width x Height (Ratio)",
+          "type": "Literal['720x720 ( 1:1 )', '896x512 ( 16:9 )', '512x896 ( 9:16 )', '832x544 ( 3:2 )', '544x832 ( 2:3 )', '800x576 ( 4:3 )', '576x800 ( 3:4 )', '1024x1024 ( 1:1 )', '1152x896 ( 9:7 )', '896x1152 ( 7:9 ",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/generate",
+      "parameters": [
+        {
+          "name": "prompt",
+          "label": "Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "negative_prompt",
+          "label": "Negative Prompt (optional)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "resolution",
+          "label": "Width x Height (Ratio)",
+          "type": "Literal['720x720 ( 1:1 )', '896x512 ( 16:9 )', '512x896 ( 9:16 )', '832x544 ( 3:2 )', '544x832 ( 2:3 )', '800x576 ( 4:3 )', '576x800 ( 3:4 )', '1024x1024 ( 1:1 )', '1152x896 ( 9:7 )', '896x1152 ( 7:9 ",
+          "component": "Dropdown"
+        },
+        {
+          "name": "seed",
+          "label": "Seed",
+          "type": "int",
+          "component": "Number"
+        },
+        {
+          "name": "num_inference_steps",
+          "label": "Inference Steps",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "guidance_scale",
+          "label": "Guidance Scale (CFG)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "cfg_normalization",
+          "label": "CFG Normalization",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "random_seed",
+          "label": "Random Seed",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "gallery_images",
+          "label": "Generated Images",
+          "type": "list[dict(image: dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Origi",
+          "component": "Gallery"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Generated Images",
+          "type": "list[dict(image: dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Origi",
+          "component": "Gallery"
+        },
+        {
+          "label": "Seed Used",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Seed",
+          "type": "int",
+          "component": "Number"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/update_res_choices",
+  "_api_verified": true,
+  "estimated_latency_s": 3.75,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "_tags_enriched": true,
+  "measured_latency_s": 3.75,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:49:59.490205+00:00"
+}

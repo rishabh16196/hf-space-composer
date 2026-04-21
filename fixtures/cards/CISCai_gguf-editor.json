@@ -1,0 +1,790 @@
+{
+  "space_id": "CISCai/gguf-editor",
+  "title": "GGUF Editor",
+  "emoji": "\ud83c\udfe2",
+  "description": "GGUF Editor",
+  "input_schema": {
+    "value": {
+      "type": "int",
+      "description": "Choose an example",
+      "required": true,
+      "component": "Dataset"
+    }
+  },
+  "output_schema": {
+    "value_35": {
+      "type": "str",
+      "description": "value_35",
+      "component": "Markdown"
+    },
+    "Modify Metadata": {
+      "type": "Literal[]",
+      "description": "Modify Metadata",
+      "component": "Dropdown"
+    },
+    "Metadata Type": {
+      "type": "Literal[]",
+      "description": "Metadata Type",
+      "component": "Dropdown"
+    },
+    "Boolean": {
+      "type": "bool",
+      "description": "Boolean",
+      "component": "Checkbox"
+    },
+    "Select token": {
+      "type": "Literal[]",
+      "description": "Select token",
+      "component": "Dropdown"
+    },
+    "Token type": {
+      "type": "Literal[]",
+      "description": "Token type",
+      "component": "Dropdown"
+    },
+    "Number": {
+      "type": "float",
+      "description": "Number",
+      "component": "Number"
+    },
+    "String": {
+      "type": "str",
+      "description": "String",
+      "component": "Textbox"
+    }
+  },
+  "license": "mit",
+  "hardware": "5.25.2",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 96,
+  "last_modified": "2025-04-22 11:55:31+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/show_example",
+      "parameters": [
+        {
+          "name": "value",
+          "label": "Choose an example",
+          "type": "int",
+          "component": "Dataset"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_35",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "Modify Metadata",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Metadata Type",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Boolean",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Select token",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Token type",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Number",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "label": "String",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/get_branches",
+      "parameters": [
+        {
+          "name": "repo",
+          "label": "Search Huggingface Hub",
+          "type": "str",
+          "component": "Huggingfacehubsearch"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Branch",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/get_files",
+      "parameters": [
+        {
+          "name": "repo",
+          "label": "Search Huggingface Hub",
+          "type": "str",
+          "component": "Huggingfacehubsearch"
+        },
+        {
+          "name": "branch",
+          "label": "Branch",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_7",
+          "type": "list[list[str]]",
+          "component": "Fileexplorer"
+        },
+        {
+          "label": "Metadata Type",
+          "type": "Literal['UINT8', 'INT8', 'UINT16', 'INT16', 'UINT32', 'INT32', 'FLOAT32', 'BOOL', 'STRING', 'ARRAY', 'UINT64', 'INT64', 'FLOAT64']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Boolean",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Select token",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Token type",
+          "type": "Literal['NORMAL', 'UNKNOWN', 'CONTROL', 'USER_DEFINED', 'UNUSED', 'BYTE']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Lookup token",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Number",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "label": "String",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Unsupported",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Metadata Changes",
+          "type": "list[dict(token: str, class_or_confidence: str | float | None)]",
+          "component": "Highlightedtext"
+        },
+        {
+          "label": "value_29",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "Modify Metadata",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "value_27",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/load_metadata",
+      "parameters": [
+        {
+          "name": "repo_file",
+          "label": "parameter_7",
+          "type": "list[list[str]]",
+          "component": "Fileexplorer"
+        },
+        {
+          "name": "branch",
+          "label": "Branch",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Metadata Type",
+          "type": "Literal['UINT8', 'INT8', 'UINT16', 'INT16', 'UINT32', 'INT32', 'FLOAT32', 'BOOL', 'STRING', 'ARRAY', 'UINT64', 'INT64', 'FLOAT64']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Boolean",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Select token",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Token type",
+          "type": "Literal['NORMAL', 'UNKNOWN', 'CONTROL', 'USER_DEFINED', 'UNUSED', 'BYTE']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Lookup token",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Number",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "label": "String",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Unsupported",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Metadata Changes",
+          "type": "list[dict(token: str, class_or_confidence: str | float | None)]",
+          "component": "Highlightedtext"
+        },
+        {
+          "label": "value_29",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "Modify Metadata",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "value_27",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/update_metakey",
+      "parameters": [
+        {
+          "name": "key",
+          "label": "Modify Metadata",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Modify Metadata",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Metadata Type",
+          "type": "Literal['UINT8', 'INT8', 'UINT16', 'INT16', 'UINT32', 'INT32', 'FLOAT32', 'BOOL', 'STRING', 'ARRAY', 'UINT64', 'INT64', 'FLOAT64']",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/update_metatype",
+      "parameters": [
+        {
+          "name": "key",
+          "label": "Modify Metadata",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "typ",
+          "label": "Metadata Type",
+          "type": "Literal['UINT8', 'INT8', 'UINT16', 'INT16', 'UINT32', 'INT32', 'FLOAT32', 'BOOL', 'STRING', 'ARRAY', 'UINT64', 'INT64', 'FLOAT64']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Boolean",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Select token",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Token type",
+          "type": "Literal['NORMAL', 'UNKNOWN', 'CONTROL', 'USER_DEFINED', 'UNUSED', 'BYTE']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Lookup token",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Number",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "label": "String",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Unsupported",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/select_metakey",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Modify Metadata",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/rem_metadata",
+      "parameters": [
+        {
+          "name": "key",
+          "label": "Modify Metadata",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Metadata Changes",
+          "type": "list[dict(token: str, class_or_confidence: str | float | None)]",
+          "component": "Highlightedtext"
+        },
+        {
+          "label": "value_29",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "Modify Metadata",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "value_27",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/token_select",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Select token",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/token_selected",
+      "parameters": [
+        {
+          "name": "key",
+          "label": "Modify Metadata",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "choice",
+          "label": "Select token",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Token type",
+          "type": "Literal['NORMAL', 'UNKNOWN', 'CONTROL', 'USER_DEFINED', 'UNUSED', 'BYTE']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Number",
+          "type": "float",
+          "component": "Number"
+        }
+      ]
+    },
+    {
+      "name": "/token_lookup",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Lookup token",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/token_select_to_id",
+      "parameters": [
+        {
+          "name": "choice",
+          "label": "Lookup token",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Number",
+          "type": "float",
+          "component": "Number"
+        }
+      ]
+    },
+    {
+      "name": "/add_metadata",
+      "parameters": [
+        {
+          "name": "key",
+          "label": "Modify Metadata",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "typ",
+          "label": "Metadata Type",
+          "type": "Literal['UINT8', 'INT8', 'UINT16', 'INT16', 'UINT32', 'INT32', 'FLOAT32', 'BOOL', 'STRING', 'ARRAY', 'UINT64', 'INT64', 'FLOAT64']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "val",
+          "label": "Number",
+          "type": "float",
+          "component": "Number"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Metadata Changes",
+          "type": "list[dict(token: str, class_or_confidence: str | float | None)]",
+          "component": "Highlightedtext"
+        },
+        {
+          "label": "value_29",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "Modify Metadata",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "value_27",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/add_metadata_1",
+      "parameters": [
+        {
+          "name": "key",
+          "label": "Modify Metadata",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "typ",
+          "label": "Metadata Type",
+          "type": "Literal['UINT8', 'INT8', 'UINT16', 'INT16', 'UINT32', 'INT32', 'FLOAT32', 'BOOL', 'STRING', 'ARRAY', 'UINT64', 'INT64', 'FLOAT64']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "val",
+          "label": "Boolean",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Metadata Changes",
+          "type": "list[dict(token: str, class_or_confidence: str | float | None)]",
+          "component": "Highlightedtext"
+        },
+        {
+          "label": "value_29",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "Modify Metadata",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "value_27",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/add_metadata_2",
+      "parameters": [
+        {
+          "name": "key",
+          "label": "Modify Metadata",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "typ",
+          "label": "Metadata Type",
+          "type": "Literal['UINT8', 'INT8', 'UINT16', 'INT16', 'UINT32', 'INT32', 'FLOAT32', 'BOOL', 'STRING', 'ARRAY', 'UINT64', 'INT64', 'FLOAT64']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "val",
+          "label": "Token type",
+          "type": "Literal['NORMAL', 'UNKNOWN', 'CONTROL', 'USER_DEFINED', 'UNUSED', 'BYTE']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "choice",
+          "label": "Select token",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Metadata Changes",
+          "type": "list[dict(token: str, class_or_confidence: str | float | None)]",
+          "component": "Highlightedtext"
+        },
+        {
+          "label": "value_29",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "Modify Metadata",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "value_27",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/add_metadata_3",
+      "parameters": [
+        {
+          "name": "key",
+          "label": "Modify Metadata",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "typ",
+          "label": "Metadata Type",
+          "type": "Literal['UINT8', 'INT8', 'UINT16', 'INT16', 'UINT32', 'INT32', 'FLOAT32', 'BOOL', 'STRING', 'ARRAY', 'UINT64', 'INT64', 'FLOAT64']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "val",
+          "label": "Number",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "choice",
+          "label": "Select token",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Metadata Changes",
+          "type": "list[dict(token: str, class_or_confidence: str | float | None)]",
+          "component": "Highlightedtext"
+        },
+        {
+          "label": "value_29",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "Modify Metadata",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "value_27",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/add_metadata_4",
+      "parameters": [
+        {
+          "name": "key",
+          "label": "Modify Metadata",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "typ",
+          "label": "Metadata Type",
+          "type": "Literal['UINT8', 'INT8', 'UINT16', 'INT16', 'UINT32', 'INT32', 'FLOAT32', 'BOOL', 'STRING', 'ARRAY', 'UINT64', 'INT64', 'FLOAT64']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "val",
+          "label": "String",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Metadata Changes",
+          "type": "list[dict(token: str, class_or_confidence: str | float | None)]",
+          "component": "Highlightedtext"
+        },
+        {
+          "label": "value_29",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "Modify Metadata",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "value_27",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/add_metadata_5",
+      "parameters": [
+        {
+          "name": "key",
+          "label": "Modify Metadata",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "typ",
+          "label": "Metadata Type",
+          "type": "Literal['UINT8', 'INT8', 'UINT16', 'INT16', 'UINT32', 'INT32', 'FLOAT32', 'BOOL', 'STRING', 'ARRAY', 'UINT64', 'INT64', 'FLOAT64']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "val",
+          "label": "Unsupported",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Metadata Changes",
+          "type": "list[dict(token: str, class_or_confidence: str | float | None)]",
+          "component": "Highlightedtext"
+        },
+        {
+          "label": "value_29",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "Modify Metadata",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "value_27",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/_check_login_status",
+      "parameters": [],
+      "returns": []
+    }
+  ],
+  "endpoint": "/show_example",
+  "_api_verified": true,
+  "estimated_latency_s": 3.48,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 3.48,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:49:12.758568+00:00"
+}

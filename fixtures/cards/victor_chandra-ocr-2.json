@@ -1,0 +1,96 @@
+{
+  "space_id": "victor/chandra-ocr-2",
+  "title": "Chandra OCR 2",
+  "emoji": "\ud83d\udcc4",
+  "description": "State-of-the-art OCR with 90+ language support",
+  "input_schema": {
+    "image": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "Upload Document Image",
+      "required": true,
+      "component": "Image"
+    },
+    "prompt_type": {
+      "type": "Literal['ocr_layout', 'ocr']",
+      "description": "Mode",
+      "required": true,
+      "component": "Radio"
+    },
+    "max_tokens": {
+      "type": "float",
+      "description": "Max Output Tokens",
+      "required": true,
+      "component": "Slider"
+    }
+  },
+  "output_schema": {
+    "Markdown Output": {
+      "type": "str",
+      "description": "Markdown Output",
+      "component": "Textbox"
+    },
+    "Raw Model Output (HTML)": {
+      "type": "str",
+      "description": "Raw Model Output (HTML)",
+      "component": "Textbox"
+    }
+  },
+  "license": "unknown",
+  "hardware": "5.23.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 10,
+  "last_modified": "2026-03-19 20:45:47+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/run_ocr",
+      "parameters": [
+        {
+          "name": "image",
+          "label": "Upload Document Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "prompt_type",
+          "label": "Mode",
+          "type": "Literal['ocr_layout', 'ocr']",
+          "component": "Radio"
+        },
+        {
+          "name": "max_tokens",
+          "label": "Max Output Tokens",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Markdown Output",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Raw Model Output (HTML)",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/run_ocr",
+  "_api_verified": true,
+  "estimated_latency_s": 4.16,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 4.16,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:52:01.777740+00:00"
+}

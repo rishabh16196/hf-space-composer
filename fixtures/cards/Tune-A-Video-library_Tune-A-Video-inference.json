@@ -1,0 +1,131 @@
+{
+  "space_id": "Tune-A-Video-library/Tune-A-Video-inference",
+  "title": "Tune-A-Video Inference",
+  "emoji": "\ud83d\udc20",
+  "description": "Tune-A-Video Inference",
+  "input_schema": {
+    "model_id": {
+      "type": "Literal['Tune-A-Video-library/a-man-is-surfing', 'Tune-A-Video-library/mo-di-bear-guitar', 'Tune-A-V",
+      "description": "Model ID",
+      "required": true,
+      "component": "Dropdown"
+    },
+    "prompt": {
+      "type": "str",
+      "description": "Prompt",
+      "required": true,
+      "component": "Textbox"
+    },
+    "video_length": {
+      "type": "float",
+      "description": "Video length",
+      "required": true,
+      "component": "Slider"
+    },
+    "fps": {
+      "type": "float",
+      "description": "FPS",
+      "required": true,
+      "component": "Slider"
+    },
+    "seed": {
+      "type": "float",
+      "description": "Seed",
+      "required": true,
+      "component": "Slider"
+    },
+    "n_steps": {
+      "type": "float",
+      "description": "Number of Steps",
+      "required": true,
+      "component": "Slider"
+    },
+    "guidance_scale": {
+      "type": "float",
+      "description": "CFG Scale",
+      "required": true,
+      "component": "Slider"
+    }
+  },
+  "output_schema": {
+    "Result": {
+      "type": "Dict(video: filepath, subtitles: filepath | None)",
+      "description": "Result",
+      "component": "Video"
+    }
+  },
+  "license": "mit",
+  "hardware": "",
+  "sdk": "docker",
+  "tags": [
+    "docker",
+    "region:us"
+  ],
+  "likes": 65,
+  "last_modified": "2024-06-11 08:02:34+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/run",
+      "parameters": [
+        {
+          "name": "model_id",
+          "label": "Model ID",
+          "type": "Literal['Tune-A-Video-library/a-man-is-surfing', 'Tune-A-Video-library/mo-di-bear-guitar', 'Tune-A-Video-library/redshift-man-skiing']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "prompt",
+          "label": "Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "video_length",
+          "label": "Video length",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "fps",
+          "label": "FPS",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "seed",
+          "label": "Seed",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "n_steps",
+          "label": "Number of Steps",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "guidance_scale",
+          "label": "CFG Scale",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Result",
+          "type": "Dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/run",
+  "_api_verified": true
+}

@@ -1,0 +1,86 @@
+{
+  "space_id": "pnnbao-ump/VieNeu-TTS-v2-Turbo",
+  "title": "VieNeu-TTS-v2-Turbo",
+  "emoji": "\ud83e\udd9c",
+  "description": "Demo for VieNeu-TTS-0.3B",
+  "input_schema": {},
+  "output_schema": {},
+  "license": "apache-2.0",
+  "hardware": "6.2.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us",
+    "audio",
+    "speech-synthesis",
+    "tts"
+  ],
+  "likes": 14,
+  "last_modified": "2026-04-01 04:52:47+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/lambda",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/lambda_1",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/synthesize_speech",
+      "parameters": [
+        {
+          "name": "text",
+          "label": "V\u0103n b\u1ea3n (Nh\u1eadp Ti\u1ebfng Vi\u1ec7t ho\u1eb7c Ti\u1ebfng Anh)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "voice_choice",
+          "label": "Ch\u1ecdn nh\u00e2n v\u1eadt",
+          "type": "Literal['B\u00edch Ng\u1ecdc (N\u1eef - Mi\u1ec1n B\u1eafc)', 'Ph\u1ea1m Tuy\u00ean (Nam - Mi\u1ec1n B\u1eafc)', 'Th\u1ee5c \u0110oan (N\u1eef - Mi\u1ec1n Nam)', 'Xu\u00e2n V\u0129nh (Nam - Mi\u1ec1n Nam)']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "custom_audio",
+          "label": "Audio m\u1eabu (.wav / .mp3)",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "name": "temperature",
+          "label": "\u0110\u1ed9 s\u00e1ng t\u1ea1o (Temperature)",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Audio k\u1ebft qu\u1ea3",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Tr\u1ea1ng th\u00e1i",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/lambda",
+  "_api_verified": true,
+  "estimated_latency_s": 3.7,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "_tags_enriched": true,
+  "measured_latency_s": 3.7,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:51:33.935520+00:00"
+}

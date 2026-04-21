@@ -1,0 +1,109 @@
+{
+  "space_id": "freddyaboulton/gradio-google-forms",
+  "title": "Gradio Google Forms",
+  "emoji": "\ud83c\udfc3",
+  "description": "Gradio Google Forms",
+  "input_schema": {
+    "name": {
+      "type": "str",
+      "description": "Name",
+      "required": true,
+      "component": "Textbox"
+    },
+    "review": {
+      "type": "Literal['1', '2', '3', '4', '5']",
+      "description": "How satisfied are you with using gradio?",
+      "required": true,
+      "component": "Radio"
+    },
+    "comments": {
+      "type": "str",
+      "description": "Comments",
+      "required": true,
+      "component": "Textbox"
+    }
+  },
+  "output_schema": {
+    "value_10": {
+      "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+      "description": "value_10",
+      "component": "Dataframe"
+    },
+    "Total number of reviews": {
+      "type": "float",
+      "description": "Total number of reviews",
+      "component": "Number"
+    }
+  },
+  "license": "mit",
+  "hardware": "5.31.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 6,
+  "last_modified": "2025-05-27 17:15:00+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/add_review",
+      "parameters": [
+        {
+          "name": "name",
+          "label": "Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "review",
+          "label": "How satisfied are you with using gradio?",
+          "type": "Literal['1', '2', '3', '4', '5']",
+          "component": "Radio"
+        },
+        {
+          "name": "comments",
+          "label": "Comments",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_10",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "Total number of reviews",
+          "type": "float",
+          "component": "Number"
+        }
+      ]
+    },
+    {
+      "name": "/load_data",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_10",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "Total number of reviews",
+          "type": "float",
+          "component": "Number"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/add_review",
+  "_api_verified": true
+}

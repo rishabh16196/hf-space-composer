@@ -1,0 +1,96 @@
+{
+  "space_id": "bbqhan/SeedVR2-3B-Image-Upscale",
+  "title": "SeedVR2-3B-Image-Upscale (Better UI)",
+  "emoji": "\u2728",
+  "description": "Powered by SeedVR2 from (ByteDance Seed)",
+  "input_schema": {
+    "image_path": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "Input Image",
+      "required": true,
+      "component": "Image"
+    },
+    "seed": {
+      "type": "int",
+      "description": "Seed",
+      "required": true,
+      "component": "Number"
+    },
+    "cfg_scale": {
+      "type": "float",
+      "description": "CFG Scale",
+      "required": true,
+      "component": "Slider"
+    }
+  },
+  "output_schema": {
+    "Restored Result": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "Restored Result",
+      "component": "Image"
+    },
+    "Download High-Res": {
+      "type": "filepath",
+      "description": "Download High-Res",
+      "component": "File"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "5.49.1",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 24,
+  "last_modified": "2025-12-09 21:47:02+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/upscale_image",
+      "parameters": [
+        {
+          "name": "image_path",
+          "label": "Input Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "seed",
+          "label": "Seed",
+          "type": "int",
+          "component": "Number"
+        },
+        {
+          "name": "cfg_scale",
+          "label": "CFG Scale",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Restored Result",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "Download High-Res",
+          "type": "filepath",
+          "component": "File"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/upscale_image",
+  "_api_verified": true,
+  "estimated_latency_s": 3.69,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 3.69,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:50:22.820464+00:00"
+}

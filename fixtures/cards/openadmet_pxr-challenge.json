@@ -1,0 +1,165 @@
+{
+  "space_id": "openadmet/pxr-challenge",
+  "title": "OpenADMET PXR Blind Challenge",
+  "emoji": "\ud83d\udd0b",
+  "description": "OpenADMET PXR Blind Challenge",
+  "input_schema": {},
+  "output_schema": {
+    "value_21": {
+      "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+      "description": "value_21",
+      "component": "Leaderboard"
+    }
+  },
+  "license": "unknown",
+  "hardware": "",
+  "sdk": "docker",
+  "tags": [
+    "docker",
+    "region:us"
+  ],
+  "likes": 22,
+  "last_modified": "2026-04-13 17:34:22+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/load_activity_leaderboard",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_21",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Leaderboard"
+        }
+      ]
+    },
+    {
+      "name": "/load_structure_leaderboard",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_24",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Leaderboard"
+        }
+      ]
+    },
+    {
+      "name": "/submit_predictions",
+      "parameters": [
+        {
+          "name": "username",
+          "label": "HuggingFace Username *",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "user_alias",
+          "label": "Alias",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "anon_checkbox",
+          "label": "Submit anonymously (show alias instead of username on leaderboard and Discord submission validation bot)",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "participant_name",
+          "label": "Full Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "discord_username",
+          "label": "Discord Username",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "email",
+          "label": "Email",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "affiliation",
+          "label": "Affiliation",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "model_tag",
+          "label": "Method Report Link",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "paper_checkbox",
+          "label": "Include me in a future Challenge publication",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "proprietary_data_checkbox",
+          "label": "I used proprietary data (not publicly available) in training my model",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "track_select",
+          "label": "Track *",
+          "type": "Literal['Activity Prediction', 'Structure Prediction']",
+          "component": "Radio"
+        },
+        {
+          "name": "file_input",
+          "label": "Upload File *",
+          "type": "filepath",
+          "component": "File"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Submission Status",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/download_activity_leaderboard",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Download CSV",
+          "type": "filepath",
+          "component": "Downloadbutton"
+        }
+      ]
+    },
+    {
+      "name": "/download_structure_leaderboard",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Download CSV",
+          "type": "filepath",
+          "component": "Downloadbutton"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/load_activity_leaderboard",
+  "_api_verified": true,
+  "estimated_latency_s": 3.77,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 3.77,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:51:30.148214+00:00"
+}

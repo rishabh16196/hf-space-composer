@@ -1,0 +1,86 @@
+{
+  "space_id": "anycoderapps/Z-Image-Turbo",
+  "title": "Z-Image-Turbo",
+  "emoji": "\ud83d\udc22",
+  "description": "Z-Image-Turbo",
+  "input_schema": {
+    "prompt": {
+      "type": "str",
+      "description": "",
+      "required": true,
+      "component": "Textbox"
+    }
+  },
+  "output_schema": {
+    "output_0": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "",
+      "component": "Image"
+    }
+  },
+  "license": "unknown",
+  "hardware": "6.0.1",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "anycoder",
+    "region:us",
+    "diffusion",
+    "image-generation",
+    "text-to-image",
+    "vision"
+  ],
+  "likes": 210,
+  "last_modified": "2025-12-06 21:27:11+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/generate_image",
+      "parameters": [
+        {
+          "name": "prompt",
+          "label": "",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/generate_image_1",
+      "parameters": [
+        {
+          "name": "prompt",
+          "label": "",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/generate_image",
+  "_api_verified": true,
+  "estimated_latency_s": 3.31,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "_tags_enriched": true,
+  "measured_latency_s": 3.31,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:50:16.092645+00:00"
+}

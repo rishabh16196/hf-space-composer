@@ -1,0 +1,115 @@
+{
+  "space_id": "projectlosangeles/MIDI-music-flamingo",
+  "title": "MIDI Music Flamingo",
+  "emoji": "\ud83c\udf16",
+  "description": "NVIDIA Music Flamingo for MIDI",
+  "input_schema": {
+    "file_obj": {
+      "type": "filepath",
+      "description": "Input MIDI",
+      "required": true,
+      "component": "File"
+    }
+  },
+  "output_schema": {
+    "Rendered MIDI Audio": {
+      "type": "filepath",
+      "description": "Rendered MIDI Audio",
+      "component": "Audio"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "6.6.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "MIDI",
+    "music",
+    "music-flamingo",
+    "MIDI captions",
+    "music captions",
+    "MIDI music captioning",
+    "NVIDIA music flamingo",
+    "NVIDIA",
+    "mcp-server",
+    "region:us",
+    "audio"
+  ],
+  "likes": 8,
+  "last_modified": "2026-02-26 16:50:39+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/on_midi_upload",
+      "parameters": [
+        {
+          "name": "file_obj",
+          "label": "Input MIDI",
+          "type": "filepath",
+          "component": "File"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Rendered MIDI Audio",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ]
+    },
+    {
+      "name": "/update_prompt",
+      "parameters": [
+        {
+          "name": "template_choice",
+          "label": "Choose a prompt template",
+          "type": "Literal['Generate five most suitable MIDI titles', 'Generate fictional MIDI lyrics', 'Generate very detailed MIDI description']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Custom prompt",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/generate_on_gpu",
+      "parameters": [
+        {
+          "name": "prompt",
+          "label": "Custom prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "audio_path",
+          "label": "Rendered MIDI Audio",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Generated MIDI caption",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/on_midi_upload",
+  "_api_verified": true,
+  "estimated_latency_s": 4.28,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "_tags_enriched": true,
+  "measured_latency_s": 4.28,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:51:39.596437+00:00"
+}

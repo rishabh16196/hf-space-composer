@@ -1,0 +1,92 @@
+{
+  "space_id": "Qwen/Qwen3-TTS-Demo",
+  "title": "Qwen3 TTS Demo",
+  "emoji": "\ud83d\ude80",
+  "description": "Qwen3 TTS Demo",
+  "input_schema": {
+    "text": {
+      "type": "str",
+      "description": "Input Text / \u8f93\u5165\u6587\u672c",
+      "required": true,
+      "component": "Textbox"
+    },
+    "voice_display": {
+      "type": "Literal['Cherry / \u828a\u60a6', 'Serena / \u82cf\u7476', 'Ethan / \u6668\u7166', 'Chelsie / \u5343\u96ea', 'Momo / \u8309\u5154', 'Vivian / \u5341\u4e09', 'Moo",
+      "description": "Select Voice / \u9009\u62e9\u53d1\u97f3\u4eba",
+      "required": true,
+      "component": "Dropdown"
+    },
+    "language_display": {
+      "type": "Literal['Auto / \u81ea\u52a8', 'English / \u82f1\u6587', 'Chinese / \u4e2d\u6587', 'German / \u5fb7\u8bed', 'Italian / \u610f\u5927\u5229\u8bed', 'Portuguese / ",
+      "description": "Select Text Language / \u9009\u62e9\u6587\u672c\u8bed\u8a00",
+      "required": true,
+      "component": "Dropdown"
+    }
+  },
+  "output_schema": {
+    "Generated Speech / \u751f\u6210\u7684\u8bed\u97f3": {
+      "type": "filepath",
+      "description": "Generated Speech / \u751f\u6210\u7684\u8bed\u97f3",
+      "component": "Audio"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "5.46.1",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us",
+    "audio",
+    "speech-synthesis",
+    "tts"
+  ],
+  "likes": 398,
+  "last_modified": "2025-11-28 09:00:52+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/tts_interface",
+      "parameters": [
+        {
+          "name": "text",
+          "label": "Input Text / \u8f93\u5165\u6587\u672c",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "voice_display",
+          "label": "Select Voice / \u9009\u62e9\u53d1\u97f3\u4eba",
+          "type": "Literal['Cherry / \u828a\u60a6', 'Serena / \u82cf\u7476', 'Ethan / \u6668\u7166', 'Chelsie / \u5343\u96ea', 'Momo / \u8309\u5154', 'Vivian / \u5341\u4e09', 'Moon / \u6708\u767d', 'Maia / \u56db\u6708', 'Kai / \u51ef', 'Nofish / \u4e0d\u5403\u9c7c', 'Bella / \u840c\u5b9d', 'Jennifer / \u8a79\u59ae\u5f17', 'Ryan / \u751c\u8336', 'Kater",
+          "component": "Dropdown"
+        },
+        {
+          "name": "language_display",
+          "label": "Select Text Language / \u9009\u62e9\u6587\u672c\u8bed\u8a00",
+          "type": "Literal['Auto / \u81ea\u52a8', 'English / \u82f1\u6587', 'Chinese / \u4e2d\u6587', 'German / \u5fb7\u8bed', 'Italian / \u610f\u5927\u5229\u8bed', 'Portuguese / \u8461\u8404\u7259\u8bed', 'Spanish / \u897f\u73ed\u7259\u8bed', 'Japanese / \u65e5\u8bed', 'Korean / \u97e9\u8bed', 'French / \u6cd5\u8bed', 'Russian / \u4fc4\u8bed']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Generated Speech / \u751f\u6210\u7684\u8bed\u97f3",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/tts_interface",
+  "_api_verified": true,
+  "estimated_latency_s": 3.09,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "_tags_enriched": true,
+  "measured_latency_s": 3.09,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:49:50.927317+00:00",
+  "_inference_attempt_status": "predict_failed",
+  "_inference_attempt_error": "Value:  is not in the list of choices: ['Cherry / \u828a\u60a6', 'Serena / \u82cf\u7476', 'Ethan / \u6668\u7166', 'Chelsie / \u5343\u96ea', 'Momo / \u8309\u5154', 'Vivian / \u5341\u4e09', 'Moon / \u6708\u767d', 'Maia / \u56db\u6708', 'Kai / \u51ef', 'Nofish / \u4e0d\u5403\u9c7c', 'Bella / \u840c\u5b9d', 'Jenn"
+}

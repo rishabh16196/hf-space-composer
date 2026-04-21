@@ -1,0 +1,440 @@
+{
+  "space_id": "artificialguybr/artificialguybr-demo-lora",
+  "title": "Artificialguybr Demo Lora",
+  "emoji": "\ud83d\udc40",
+  "description": "Artificialguybr Demo Lora",
+  "input_schema": {
+    "family": {
+      "type": "Literal['sdxl', 'sd15', 'flux', 'qwen-image', 'z-image', 'other']",
+      "description": "",
+      "required": true,
+      "component": "Dropdown"
+    },
+    "search": {
+      "type": "str",
+      "description": "",
+      "required": true,
+      "component": "Textbox"
+    }
+  },
+  "output_schema": {
+    "output_0": {
+      "type": "list[dict(image: dict(path: str | None (Path to a local file), url: str | None (Publicly available u",
+      "description": "",
+      "component": "Gallery"
+    },
+    "value_11": {
+      "type": "str",
+      "description": "value_11",
+      "component": "Markdown"
+    },
+    "output_2": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "",
+      "component": "Image"
+    },
+    "value_18": {
+      "type": "str",
+      "description": "value_18",
+      "component": "Markdown"
+    },
+    "output_4": {
+      "type": "str",
+      "description": "",
+      "component": "Textbox"
+    },
+    "Steps": {
+      "type": "float",
+      "description": "Steps",
+      "component": "Slider"
+    },
+    "CFG Scale": {
+      "type": "float",
+      "description": "CFG Scale",
+      "component": "Slider"
+    },
+    "Width": {
+      "type": "float",
+      "description": "Width",
+      "component": "Slider"
+    },
+    "Height": {
+      "type": "float",
+      "description": "Height",
+      "component": "Slider"
+    },
+    "Scheduler (SD families only)": {
+      "type": "Literal['Auto', 'DPM++ 2M', 'DPM++ 2M Karras', 'DPM++ 2M SDE', 'DPM++ 2M SDE Karras', 'DPM++ SDE', '",
+      "description": "Scheduler (SD families only)",
+      "component": "Dropdown"
+    },
+    "LoRA Scale": {
+      "type": "float",
+      "description": "LoRA Scale",
+      "component": "Slider"
+    }
+  },
+  "license": "unknown",
+  "hardware": "6.9.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 167,
+  "last_modified": "2026-04-07 20:25:03+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/refresh_lora_selector",
+      "parameters": [
+        {
+          "name": "family",
+          "label": "",
+          "type": "Literal['sdxl', 'sd15', 'flux', 'qwen-image', 'z-image', 'other']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "search",
+          "label": "",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "",
+          "type": "list[dict(image: dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Origi",
+          "component": "Gallery"
+        },
+        {
+          "label": "value_11",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "value_18",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Steps",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "CFG Scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Width",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Height",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Scheduler (SD families only)",
+          "type": "Literal['Auto', 'DPM++ 2M', 'DPM++ 2M Karras', 'DPM++ 2M SDE', 'DPM++ 2M SDE Karras', 'DPM++ SDE', 'DPM++ SDE Karras', 'DPM2', 'DPM2 Karras', 'DPM2 a', 'DPM2 a Karras', 'Euler', 'Euler a', 'Heun', 'LM",
+          "component": "Dropdown"
+        },
+        {
+          "label": "LoRA Scale",
+          "type": "float",
+          "component": "Slider"
+        }
+      ]
+    },
+    {
+      "name": "/refresh_lora_selector_1",
+      "parameters": [
+        {
+          "name": "family",
+          "label": "",
+          "type": "Literal['sdxl', 'sd15', 'flux', 'qwen-image', 'z-image', 'other']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "search",
+          "label": "",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "",
+          "type": "list[dict(image: dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Origi",
+          "component": "Gallery"
+        },
+        {
+          "label": "value_11",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "value_18",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Steps",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "CFG Scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Width",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Height",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Scheduler (SD families only)",
+          "type": "Literal['Auto', 'DPM++ 2M', 'DPM++ 2M Karras', 'DPM++ 2M SDE', 'DPM++ 2M SDE Karras', 'DPM++ SDE', 'DPM++ SDE Karras', 'DPM2', 'DPM2 Karras', 'DPM2 a', 'DPM2 a Karras', 'Euler', 'Euler a', 'Heun', 'LM",
+          "component": "Dropdown"
+        },
+        {
+          "label": "LoRA Scale",
+          "type": "float",
+          "component": "Slider"
+        }
+      ]
+    },
+    {
+      "name": "/on_gallery_select",
+      "parameters": [
+        {
+          "name": "family",
+          "label": "",
+          "type": "Literal['sdxl', 'sd15', 'flux', 'qwen-image', 'z-image', 'other']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "search",
+          "label": "",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "value_18",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Steps",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "CFG Scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Width",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Height",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Scheduler (SD families only)",
+          "type": "Literal['Auto', 'DPM++ 2M', 'DPM++ 2M Karras', 'DPM++ 2M SDE', 'DPM++ 2M SDE Karras', 'DPM++ SDE', 'DPM++ SDE Karras', 'DPM2', 'DPM2 Karras', 'DPM2 a', 'DPM2 a Karras', 'Euler', 'Euler a', 'Heun', 'LM",
+          "component": "Dropdown"
+        },
+        {
+          "label": "LoRA Scale",
+          "type": "float",
+          "component": "Slider"
+        }
+      ]
+    },
+    {
+      "name": "/lambda",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "value_18",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Steps",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "CFG Scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Width",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Height",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Scheduler (SD families only)",
+          "type": "Literal['Auto', 'DPM++ 2M', 'DPM++ 2M Karras', 'DPM++ 2M SDE', 'DPM++ 2M SDE Karras', 'DPM++ SDE', 'DPM++ SDE Karras', 'DPM2', 'DPM2 Karras', 'DPM2 a', 'DPM2 a Karras', 'Euler', 'Euler a', 'Heun', 'LM",
+          "component": "Dropdown"
+        },
+        {
+          "label": "LoRA Scale",
+          "type": "float",
+          "component": "Slider"
+        }
+      ]
+    },
+    {
+      "name": "/run_lora",
+      "parameters": [
+        {
+          "name": "prompt",
+          "label": "",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "negative_prompt",
+          "label": "Negative prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "cfg_scale",
+          "label": "CFG Scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "steps",
+          "label": "Steps",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "scheduler_name",
+          "label": "Scheduler (SD families only)",
+          "type": "Literal['Auto', 'DPM++ 2M', 'DPM++ 2M Karras', 'DPM++ 2M SDE', 'DPM++ 2M SDE Karras', 'DPM++ SDE', 'DPM++ SDE Karras', 'DPM2', 'DPM2 Karras', 'DPM2 a', 'DPM2 a Karras', 'Euler', 'Euler a', 'Heun', 'LM",
+          "component": "Dropdown"
+        },
+        {
+          "name": "seed",
+          "label": "Seed",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "width",
+          "label": "Width",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "height",
+          "label": "Height",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "lora_scale",
+          "label": "LoRA Scale",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/get_random_value",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Seed",
+          "type": "float",
+          "component": "Slider"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/refresh_lora_selector",
+  "_api_verified": true,
+  "estimated_latency_s": 3.62,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 3.62,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:50:16.463924+00:00"
+}

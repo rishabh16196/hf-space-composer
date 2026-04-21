@@ -1,0 +1,40 @@
+{
+  "space_id": "vivien/depth-aware-caption",
+  "title": "Depth-aware text addition",
+  "emoji": "\u270d\ufe0f",
+  "description": "Depth-aware text addition",
+  "input_schema": {
+    "input": {
+      "type": "string",
+      "description": "Input",
+      "required": true
+    }
+  },
+  "output_schema": {
+    "output": {
+      "type": "string"
+    }
+  },
+  "license": "cc-by-4.0",
+  "hardware": "1.2.0",
+  "sdk": "streamlit",
+  "tags": [
+    "streamlit",
+    "region:us",
+    "captioning",
+    "depth-estimation",
+    "image-to-text",
+    "vision"
+  ],
+  "likes": 14,
+  "last_modified": "2023-08-23 17:48:12+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "error",
+  "_api_error": "Expecting value: line 1 column 1 (char 0)",
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_tags_enriched": true
+}

@@ -1,0 +1,130 @@
+{
+  "space_id": "fffiloni/expression-editor",
+  "title": "Expression Editor",
+  "emoji": "\ud83d\udc28",
+  "description": "Quickly edit the expression of a face",
+  "input_schema": {
+    "image_path": {
+      "type": "filepath",
+      "description": "Input image",
+      "required": true,
+      "component": "Image"
+    }
+  },
+  "output_schema": {
+    "Input image": {
+      "type": "filepath",
+      "description": "Input image",
+      "component": "Image"
+    }
+  },
+  "license": "unknown",
+  "hardware": "",
+  "sdk": "docker",
+  "tags": [
+    "docker",
+    "region:us"
+  ],
+  "likes": 1637,
+  "last_modified": "2026-04-18 13:54:28+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/preprocess_image",
+      "parameters": [
+        {
+          "name": "image_path",
+          "label": "Input image",
+          "type": "filepath",
+          "component": "Image"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Input image",
+          "type": "filepath",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/reset_parameters",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Rotate Up-Down",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Rotate Left-Right turn",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Rotate Left-Right tilt",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Blink",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Eyebrow",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Wink",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Pupil X",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Pupil Y",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Aaa",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Eee",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Woo",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Smile",
+          "type": "float",
+          "component": "Slider"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/preprocess_image",
+  "_api_verified": true,
+  "estimated_latency_s": 3.83,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 3.83,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:50:38.378319+00:00",
+  "_inference_attempt_status": "predict_failed",
+  "_inference_attempt_error": "Failed to download file. Status code: 404"
+}

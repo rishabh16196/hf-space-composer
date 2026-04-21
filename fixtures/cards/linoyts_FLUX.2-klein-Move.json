@@ -1,0 +1,220 @@
+{
+  "space_id": "linoyts/FLUX.2-klein-Move",
+  "title": "FLUX.2 [Klein] Move",
+  "emoji": "\ud83c\udf81",
+  "description": "Move & resize objects with Flux.2 [klein] LoRA ",
+  "input_schema": {
+    "b64_str": {
+      "type": "str",
+      "description": "parameter_1",
+      "required": true,
+      "component": "Textbox"
+    },
+    "boxes_json": {
+      "type": "str",
+      "description": "parameter_2",
+      "required": true,
+      "component": "Textbox"
+    },
+    "prompt": {
+      "type": "str",
+      "description": "parameter_3",
+      "required": true,
+      "component": "Textbox"
+    },
+    "seed": {
+      "type": "float",
+      "description": "parameter_4",
+      "required": true,
+      "component": "Slider"
+    },
+    "randomize_seed": {
+      "type": "bool",
+      "description": "parameter_5",
+      "required": true,
+      "component": "Checkbox"
+    },
+    "guidance_scale": {
+      "type": "float",
+      "description": "parameter_6",
+      "required": true,
+      "component": "Slider"
+    },
+    "num_inference_steps": {
+      "type": "float",
+      "description": "parameter_7",
+      "required": true,
+      "component": "Slider"
+    },
+    "height": {
+      "type": "float",
+      "description": "parameter_8",
+      "required": true,
+      "component": "Slider"
+    },
+    "width": {
+      "type": "float",
+      "description": "parameter_9",
+      "required": true,
+      "component": "Slider"
+    }
+  },
+  "output_schema": {
+    "value_10": {
+      "type": "filepath",
+      "description": "value_10",
+      "component": "Image"
+    },
+    "value_4": {
+      "type": "float",
+      "description": "value_4",
+      "component": "Slider"
+    },
+    "value_11": {
+      "type": "filepath",
+      "description": "value_11",
+      "component": "Image"
+    }
+  },
+  "license": "unknown",
+  "hardware": "6.11.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 13,
+  "last_modified": "2026-04-10 10:11:20+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/infer",
+      "parameters": [
+        {
+          "name": "b64_str",
+          "label": "parameter_1",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "boxes_json",
+          "label": "parameter_2",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "prompt",
+          "label": "parameter_3",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "seed",
+          "label": "parameter_4",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "randomize_seed",
+          "label": "parameter_5",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "guidance_scale",
+          "label": "parameter_6",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "num_inference_steps",
+          "label": "parameter_7",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "height",
+          "label": "parameter_8",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "width",
+          "label": "parameter_9",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_10",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "value_4",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "value_11",
+          "type": "filepath",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/update_dimensions_on_upload",
+      "parameters": [
+        {
+          "name": "b64_str",
+          "label": "parameter_1",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_9",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "value_8",
+          "type": "float",
+          "component": "Slider"
+        }
+      ]
+    },
+    {
+      "name": "/detect_objects",
+      "parameters": [
+        {
+          "name": "b64_str",
+          "label": "parameter_1",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_12",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/infer",
+  "_api_verified": true,
+  "estimated_latency_s": 4.13,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "_tags_enriched": true,
+  "measured_latency_s": 4.13,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:51:07.534889+00:00"
+}

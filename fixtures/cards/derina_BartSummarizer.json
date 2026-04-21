@@ -1,0 +1,36 @@
+{
+  "space_id": "derina/BartSummarizer",
+  "title": "OpenAISummarizer",
+  "emoji": "\ud83d\udc41",
+  "description": "OpenAISummarizer",
+  "input_schema": {
+    "input": {
+      "type": "string",
+      "description": "Input",
+      "required": true
+    }
+  },
+  "output_schema": {
+    "output": {
+      "type": "string"
+    }
+  },
+  "license": "bsd",
+  "hardware": "3.28.1",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 4,
+  "last_modified": "2023-09-25 05:21:21+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_tags_enriched": true,
+  "estimated_latency_s": 4.0,
+  "speed_tier": "fast",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "error",
+  "_api_error": "(Request ID: Root=1-69e77bd2-57f7936e193648771ce158be;0ecc52da-238c-4f3f-8545-47bce93c68d1)\n\n429 Too Many Requests: you have reached your 'api' rate limit.\nRetry after 12 seconds (0/2500 requests rema"
+}

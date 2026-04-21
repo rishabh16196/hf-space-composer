@@ -1,0 +1,543 @@
+{
+  "space_id": "ZealStyx/NousResearch-Hermes-3-Llama-3.1-8B",
+  "title": "NousResearch Hermes 3 Llama 3.1 8B",
+  "emoji": "\ud83d\udcac",
+  "description": "NousResearch Hermes 3 Llama 3.1 8B",
+  "input_schema": {},
+  "output_schema": {
+    "value_9": {
+      "type": "str",
+      "description": "value_9",
+      "component": "Markdown"
+    },
+    "\ud83d\udcc2 Load Slot": {
+      "type": "Literal[]",
+      "description": "\ud83d\udcc2 Load Slot",
+      "component": "Dropdown"
+    }
+  },
+  "license": "unknown",
+  "hardware": "6.5.1",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 2,
+  "last_modified": "2026-03-06 04:41:46+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/on_login",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_9",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "\ud83d\udcc2 Load Slot",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/on_login_1",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_9",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "\ud83d\udcc2 Load Slot",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/chat_fn",
+      "parameters": [
+        {
+          "name": "message",
+          "label": "parameter_28",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "n1",
+          "label": "Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "d1",
+          "label": "Description / Personality",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "n2",
+          "label": "Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "d2",
+          "label": "Description",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "n3",
+          "label": "Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "d3",
+          "label": "Description",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "scenario",
+          "label": "\ud83c\udf0d Scenario",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "initial_msg",
+          "label": "\ud83d\udcac Opening Message",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "world_info",
+          "label": "World facts injected into every prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "nsfw",
+          "label": "\ud83d\udd1e Enable NSFW Content",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "max_tok",
+          "label": "Max tokens (RP)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "temp",
+          "label": "Temperature",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "top_p",
+          "label": "Top-p",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "",
+          "type": "list[dict(role: str, metadata: dict(title: str, id: int | str, parent_id: int | str, log: str, duration: float, status: Literal['pending', 'done']) | None, content: list[dict(text: str, type: Literal[",
+          "component": "Chatbot"
+        },
+        {
+          "label": "value_21",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "\ud83d\udcd6 Story Summary",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "\ud83d\uddc2 Entities (chars/places/items)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "\ud83d\udc64 User Profile",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "\ud83d\udc9e Emotional Arc",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/chat_fn_1",
+      "parameters": [
+        {
+          "name": "message",
+          "label": "parameter_28",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "n1",
+          "label": "Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "d1",
+          "label": "Description / Personality",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "n2",
+          "label": "Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "d2",
+          "label": "Description",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "n3",
+          "label": "Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "d3",
+          "label": "Description",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "scenario",
+          "label": "\ud83c\udf0d Scenario",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "initial_msg",
+          "label": "\ud83d\udcac Opening Message",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "world_info",
+          "label": "World facts injected into every prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "nsfw",
+          "label": "\ud83d\udd1e Enable NSFW Content",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "max_tok",
+          "label": "Max tokens (RP)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "temp",
+          "label": "Temperature",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "top_p",
+          "label": "Top-p",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "",
+          "type": "list[dict(role: str, metadata: dict(title: str, id: int | str, parent_id: int | str, log: str, duration: float, status: Literal['pending', 'done']) | None, content: list[dict(text: str, type: Literal[",
+          "component": "Chatbot"
+        },
+        {
+          "label": "value_21",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "\ud83d\udcd6 Story Summary",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "\ud83d\uddc2 Entities (chars/places/items)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "\ud83d\udc64 User Profile",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "\ud83d\udc9e Emotional Arc",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/retry_fn",
+      "parameters": [
+        {
+          "name": "n1",
+          "label": "Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "d1",
+          "label": "Description / Personality",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "n2",
+          "label": "Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "d2",
+          "label": "Description",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "n3",
+          "label": "Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "d3",
+          "label": "Description",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "scenario",
+          "label": "\ud83c\udf0d Scenario",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "initial_msg",
+          "label": "\ud83d\udcac Opening Message",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "world_info",
+          "label": "World facts injected into every prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "nsfw",
+          "label": "\ud83d\udd1e Enable NSFW Content",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "max_tok",
+          "label": "Max tokens (RP)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "temp",
+          "label": "Temperature",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "top_p",
+          "label": "Top-p",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "",
+          "type": "list[dict(role: str, metadata: dict(title: str, id: int | str, parent_id: int | str, log: str, duration: float, status: Literal['pending', 'done']) | None, content: list[dict(text: str, type: Literal[",
+          "component": "Chatbot"
+        },
+        {
+          "label": "value_21",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "\ud83d\udcd6 Story Summary",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "\ud83d\uddc2 Entities (chars/places/items)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "\ud83d\udc64 User Profile",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "\ud83d\udc9e Emotional Arc",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/clear_fn",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "",
+          "type": "list[dict(role: str, metadata: dict(title: str, id: int | str, parent_id: int | str, log: str, duration: float, status: Literal['pending', 'done']) | None, content: list[dict(text: str, type: Literal[",
+          "component": "Chatbot"
+        }
+      ]
+    },
+    {
+      "name": "/new_slot_fn",
+      "parameters": [
+        {
+          "name": "slot_name",
+          "label": "New Slot Name",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "\ud83d\udcc2 Load Slot",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/load_slot_fn",
+      "parameters": [
+        {
+          "name": "slot_id",
+          "label": "\ud83d\udcc2 Load Slot",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "",
+          "type": "list[dict(role: str, metadata: dict(title: str, id: int | str, parent_id: int | str, log: str, duration: float, status: Literal['pending', 'done']) | None, content: list[dict(text: str, type: Literal[",
+          "component": "Chatbot"
+        },
+        {
+          "label": "value_21",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "\ud83d\udcd6 Story Summary",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "\ud83d\uddc2 Entities (chars/places/items)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "\ud83d\udc64 User Profile",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "\ud83d\udc9e Emotional Arc",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/delete_slot_fn",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "",
+          "type": "list[dict(role: str, metadata: dict(title: str, id: int | str, parent_id: int | str, log: str, duration: float, status: Literal['pending', 'done']) | None, content: list[dict(text: str, type: Literal[",
+          "component": "Chatbot"
+        },
+        {
+          "label": "\ud83d\udcc2 Load Slot",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/export_fn",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "\u2b07 Download",
+          "type": "filepath",
+          "component": "File"
+        }
+      ]
+    },
+    {
+      "name": "/refresh_history_fn",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_73",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/_check_login_status",
+      "parameters": [],
+      "returns": []
+    }
+  ],
+  "endpoint": "/on_login",
+  "_api_verified": true
+}

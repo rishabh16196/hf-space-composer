@@ -1,0 +1,200 @@
+{
+  "space_id": "hysts/gan-control",
+  "title": "GAN-Control",
+  "emoji": "\u26a1",
+  "description": "GAN-Control",
+  "input_schema": {
+    "seed": {
+      "type": "float",
+      "description": "Seed",
+      "required": true,
+      "component": "Slider"
+    },
+    "truncation": {
+      "type": "float",
+      "description": "Truncation",
+      "required": true,
+      "component": "Slider"
+    },
+    "yaw": {
+      "type": "float",
+      "description": "Yaw",
+      "required": true,
+      "component": "Slider"
+    },
+    "pitch": {
+      "type": "float",
+      "description": "Pitch",
+      "required": true,
+      "component": "Slider"
+    },
+    "age": {
+      "type": "float",
+      "description": "Age",
+      "required": true,
+      "component": "Slider"
+    },
+    "hair_color_r": {
+      "type": "float",
+      "description": "Hair Color (R)",
+      "required": true,
+      "component": "Slider"
+    },
+    "hair_color_g": {
+      "type": "float",
+      "description": "Hair Color (G)",
+      "required": true,
+      "component": "Slider"
+    },
+    "hair_color_b": {
+      "type": "float",
+      "description": "Hair Color (B)",
+      "required": true,
+      "component": "Slider"
+    },
+    "nrows": {
+      "type": "float",
+      "description": "Number of Rows",
+      "required": true,
+      "component": "Slider"
+    },
+    "ncols": {
+      "type": "float",
+      "description": "Number of Columns",
+      "required": true,
+      "component": "Slider"
+    }
+  },
+  "output_schema": {
+    "Generated Image": {
+      "type": "filepath",
+      "description": "Generated Image",
+      "component": "Image"
+    },
+    "Head Pose Controlled": {
+      "type": "filepath",
+      "description": "Head Pose Controlled",
+      "component": "Image"
+    },
+    "Age Controlled": {
+      "type": "filepath",
+      "description": "Age Controlled",
+      "component": "Image"
+    },
+    "Hair Color Controlled": {
+      "type": "filepath",
+      "description": "Hair Color Controlled",
+      "component": "Image"
+    }
+  },
+  "license": "unknown",
+  "hardware": "4.36.1",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 18,
+  "last_modified": "2024-06-10 06:03:33+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/predict",
+      "parameters": [
+        {
+          "name": "seed",
+          "label": "Seed",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "truncation",
+          "label": "Truncation",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "yaw",
+          "label": "Yaw",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "pitch",
+          "label": "Pitch",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "age",
+          "label": "Age",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "hair_color_r",
+          "label": "Hair Color (R)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "hair_color_g",
+          "label": "Hair Color (G)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "hair_color_b",
+          "label": "Hair Color (B)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "nrows",
+          "label": "Number of Rows",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "ncols",
+          "label": "Number of Columns",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Generated Image",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "Head Pose Controlled",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "Age Controlled",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "Hair Color Controlled",
+          "type": "filepath",
+          "component": "Image"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/predict",
+  "_api_verified": true,
+  "estimated_latency_s": 3.07,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 3.07,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:50:53.649605+00:00"
+}

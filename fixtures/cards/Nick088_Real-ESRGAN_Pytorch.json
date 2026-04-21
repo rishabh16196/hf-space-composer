@@ -1,0 +1,98 @@
+{
+  "space_id": "Nick088/Real-ESRGAN_Pytorch",
+  "title": "RealESRGAN Pytorch",
+  "emoji": "\ud83d\udd25\ud83d\udcf9",
+  "description": "User Friendly Image & Video Upscaler!",
+  "input_schema": {
+    "img": {
+      "type": "filepath",
+      "description": "Input Image",
+      "required": true,
+      "component": "Image"
+    },
+    "size_modifier": {
+      "type": "Literal['2', '4', '8']",
+      "description": "Model Upscale/Enhance Type",
+      "required": true,
+      "component": "Radio"
+    }
+  },
+  "output_schema": {
+    "Output Image": {
+      "type": "filepath",
+      "description": "Output Image",
+      "component": "Image"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "4.36.1",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 140,
+  "last_modified": "2025-10-22 16:31:11+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/predict",
+      "parameters": [
+        {
+          "name": "img",
+          "label": "Input Image",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "name": "size_modifier",
+          "label": "Model Upscale/Enhance Type",
+          "type": "Literal['2', '4', '8']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output Image",
+          "type": "filepath",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/predict_1",
+      "parameters": [
+        {
+          "name": "video_filepath",
+          "label": "Input Video",
+          "type": "Dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        },
+        {
+          "name": "size_modifier",
+          "label": "Model Upscale/Enhance Type",
+          "type": "Literal['2', '4', '8']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output Video",
+          "type": "Dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/predict",
+  "_api_verified": true,
+  "estimated_latency_s": 3.59,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 3.59,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:49:41.510975+00:00"
+}

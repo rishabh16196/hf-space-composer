@@ -1,0 +1,6775 @@
+{
+  "space_id": "9voltfan2009/Ultimate-RVC",
+  "title": "Ultimate RVC",
+  "emoji": "\ud83c\udfa4",
+  "description": "Convert Audio to Your Favorite Voice Model",
+  "input_schema": {
+    "visible_index": {
+      "type": "Literal['YouTube link/local path', 'Local file', 'Cached song']",
+      "description": "Source type",
+      "required": true,
+      "component": "Dropdown"
+    }
+  },
+  "output_schema": {
+    "Source": {
+      "type": "str",
+      "description": "Source",
+      "component": "Textbox"
+    },
+    "Source_1": {
+      "type": "filepath",
+      "description": "Source",
+      "component": "Audio"
+    },
+    "Source_2": {
+      "type": "Literal[]",
+      "description": "Source",
+      "component": "Dropdown"
+    }
+  },
+  "license": "mit",
+  "hardware": "5.49.1",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 9,
+  "last_modified": "2026-02-25 23:08:44+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/partial",
+      "parameters": [
+        {
+          "name": "visible_index",
+          "label": "Source type",
+          "type": "Literal['YouTube link/local path', 'Local file', 'Cached song']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Source",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Source",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Source",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/update_value",
+      "parameters": [
+        {
+          "name": "x",
+          "label": "Source",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Source",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/update_value_1",
+      "parameters": [
+        {
+          "name": "x",
+          "label": "Source",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Source",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/partial_1",
+      "parameters": [
+        {
+          "name": "value",
+          "label": "Autotune converted voice",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Autotune intensity",
+          "type": "float",
+          "component": "Slider"
+        }
+      ]
+    },
+    {
+      "name": "/partial_2",
+      "parameters": [
+        {
+          "name": "value",
+          "label": "Proposed pitch",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Proposed pitch threshold",
+          "type": "float",
+          "component": "Slider"
+        }
+      ]
+    },
+    {
+      "name": "/partial_3",
+      "parameters": [
+        {
+          "name": "value",
+          "label": "Clean converted voice",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Cleaning intensity",
+          "type": "float",
+          "component": "Slider"
+        }
+      ]
+    },
+    {
+      "name": "/partial_4",
+      "parameters": [
+        {
+          "name": "value",
+          "label": "Embedder model",
+          "type": "Literal['contentvec', 'spin', 'spin-v2', 'chinese-hubert-base', 'japanese-hubert-base', 'korean-hubert-base', 'custom']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Custom embedder model",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/partial_5",
+      "parameters": [
+        {
+          "name": "visible",
+          "label": "Show intermediate audio",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/partial_6",
+      "parameters": [
+        {
+          "name": "param_0",
+          "label": "Source",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_1",
+          "label": "Voice model",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_2",
+          "label": "Vocal pitch shift",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_3",
+          "label": "Overall pitch shift",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_4",
+          "label": "Pitch extraction algorithm",
+          "type": "Literal['rmvpe', 'crepe', 'crepe-tiny', 'fcpe']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_5",
+          "label": "Index rate",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_6",
+          "label": "RMS mix rate",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_7",
+          "label": "Protect rate",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_8",
+          "label": "Split input voice",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_9",
+          "label": "Autotune converted voice",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_10",
+          "label": "Autotune intensity",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_11",
+          "label": "Proposed pitch",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_12",
+          "label": "Proposed pitch threshold",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_13",
+          "label": "Clean converted voice",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_14",
+          "label": "Cleaning intensity",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_15",
+          "label": "Embedder model",
+          "type": "Literal['contentvec', 'spin', 'spin-v2', 'chinese-hubert-base', 'japanese-hubert-base', 'korean-hubert-base', 'custom']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_16",
+          "label": "Custom embedder model",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_17",
+          "label": "Speaker ID",
+          "type": "int",
+          "component": "Number"
+        },
+        {
+          "name": "param_18",
+          "label": "Room size",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_19",
+          "label": "Wetness level",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_20",
+          "label": "Dryness level",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_21",
+          "label": "Damping level",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_22",
+          "label": "Main gain",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_23",
+          "label": "Instrumentals gain",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_24",
+          "label": "Backup gain",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_25",
+          "label": "Output sample rate",
+          "type": "Literal['16000', '44100', '48000', '96000', '192000']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_26",
+          "label": "Output format",
+          "type": "Literal['mp3', 'wav', 'flac', 'ogg', 'm4a', 'aac']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_27",
+          "label": "Output name",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Song cover",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Song",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Vocals",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Instrumentals",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Main vocals",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Backup vocals",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "De-reverbed main vocals",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Main vocals with reverb",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Converted vocals",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Postprocessed vocals",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Pitch-shifted instrumentals",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Pitch-shifted backup vocals",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ]
+    },
+    {
+      "name": "/partial_7",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Source",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Source",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Song directories",
+          "type": "list[Literal[]]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Song directory",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Song directory",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Song directory",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Song directory",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Song directory",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/partial_8",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Output audio files",
+          "type": "list[Literal[]]",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/lambda",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Vocal pitch shift",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Overall pitch shift",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Pitch extraction algorithm",
+          "type": "Literal['rmvpe', 'crepe', 'crepe-tiny', 'fcpe']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Index rate",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "RMS mix rate",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Protect rate",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Split input voice",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Autotune converted voice",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Autotune intensity",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Proposed pitch",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Proposed pitch threshold",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Clean converted voice",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Cleaning intensity",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Embedder model",
+          "type": "Literal['contentvec', 'spin', 'spin-v2', 'chinese-hubert-base', 'japanese-hubert-base', 'korean-hubert-base', 'custom']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Speaker ID",
+          "type": "int",
+          "component": "Number"
+        },
+        {
+          "label": "Room size",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Wetness level",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Dryness level",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Damping level",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Main gain",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Instrumentals gain",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Backup gain",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Output sample rate",
+          "type": "Literal['16000', '44100', '48000', '96000', '192000']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Output format",
+          "type": "Literal['mp3', 'wav', 'flac', 'ogg', 'm4a', 'aac']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Show intermediate audio",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ]
+    },
+    {
+      "name": "/partial_9",
+      "parameters": [
+        {
+          "name": "visible_index",
+          "label": "Source type",
+          "type": "Literal['YouTube link/local path', 'Local file', 'Cached song']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Source",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Source",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Source",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/update_value_2",
+      "parameters": [
+        {
+          "name": "x",
+          "label": "Source",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Source",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/update_value_3",
+      "parameters": [
+        {
+          "name": "x",
+          "label": "Source",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Source",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_1",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Song destination",
+          "type": "list[Literal['Step 1: audio', 'Step 2: vocals', 'Step 3: vocals', 'Step 4: instrumentals', 'Step 4: backup vocals', 'Step 5: main vocals', 'Step 5: instrumentals', 'Step 5: backup vocals']]",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/partial_10",
+      "parameters": [
+        {
+          "name": "param_0",
+          "label": "Source",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Song",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ]
+    },
+    {
+      "name": "/partial_11",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Song directory",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Song directory",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Song directory",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Song directory",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Song directory",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Source",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Source",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/partial_12",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Song directories",
+          "type": "list[Literal[]]",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/partial_13",
+      "parameters": [
+        {
+          "name": "output_indices",
+          "label": "Song destination",
+          "type": "list[Literal['Step 1: audio', 'Step 2: vocals', 'Step 3: vocals', 'Step 4: instrumentals', 'Step 4: backup vocals', 'Step 5: main vocals', 'Step 5: instrumentals', 'Step 5: backup vocals']]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "track",
+          "label": "Song",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Vocals",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Vocals",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Instrumentals",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Backup vocals",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Main vocals",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Instrumentals",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Backup vocals",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_2",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Separation model",
+          "type": "Literal['UVR-MDX-NET-Voc_FT.onnx', 'UVR_MDXNET_KARA_2.onnx', 'Reverb_HQ_By_FoxJoy.onnx']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Segment size",
+          "type": "Literal['64', '128', '256', '512', '1024', '2048']",
+          "component": "Radio"
+        },
+        {
+          "label": "Primary stem destination",
+          "type": "list[Literal['Step 1: audio', 'Step 2: vocals', 'Step 3: vocals', 'Step 4: instrumentals', 'Step 4: backup vocals', 'Step 5: main vocals', 'Step 5: instrumentals', 'Step 5: backup vocals']]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Secondary stem destination",
+          "type": "list[Literal['Step 1: audio', 'Step 2: vocals', 'Step 3: vocals', 'Step 4: instrumentals', 'Step 4: backup vocals', 'Step 5: main vocals', 'Step 5: instrumentals', 'Step 5: backup vocals']]",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/_wrapped_fn",
+      "parameters": [
+        {
+          "name": "param_0",
+          "label": "Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "name": "param_1",
+          "label": "Song directory",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_2",
+          "label": "Separation model",
+          "type": "Literal['UVR-MDX-NET-Voc_FT.onnx', 'UVR_MDXNET_KARA_2.onnx', 'Reverb_HQ_By_FoxJoy.onnx']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_3",
+          "label": "Segment size",
+          "type": "Literal['64', '128', '256', '512', '1024', '2048']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Primary stem",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Secondary stem",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ]
+    },
+    {
+      "name": "/partial_14",
+      "parameters": [
+        {
+          "name": "output_indices",
+          "label": "Primary stem destination",
+          "type": "list[Literal['Step 1: audio', 'Step 2: vocals', 'Step 3: vocals', 'Step 4: instrumentals', 'Step 4: backup vocals', 'Step 5: main vocals', 'Step 5: instrumentals', 'Step 5: backup vocals']]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "track",
+          "label": "Primary stem",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Vocals",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Vocals",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Instrumentals",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Backup vocals",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Main vocals",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Instrumentals",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Backup vocals",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ]
+    },
+    {
+      "name": "/partial_15",
+      "parameters": [
+        {
+          "name": "output_indices",
+          "label": "Secondary stem destination",
+          "type": "list[Literal['Step 1: audio', 'Step 2: vocals', 'Step 3: vocals', 'Step 4: instrumentals', 'Step 4: backup vocals', 'Step 5: main vocals', 'Step 5: instrumentals', 'Step 5: backup vocals']]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "track",
+          "label": "Secondary stem",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Vocals",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Vocals",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Instrumentals",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Backup vocals",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Main vocals",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Instrumentals",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Backup vocals",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ]
+    },
+    {
+      "name": "/partial_16",
+      "parameters": [
+        {
+          "name": "value",
+          "label": "Autotune converted voice",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Autotune intensity",
+          "type": "float",
+          "component": "Slider"
+        }
+      ]
+    },
+    {
+      "name": "/partial_17",
+      "parameters": [
+        {
+          "name": "value",
+          "label": "Proposed pitch",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Proposed pitch threshold",
+          "type": "float",
+          "component": "Slider"
+        }
+      ]
+    },
+    {
+      "name": "/partial_18",
+      "parameters": [
+        {
+          "name": "value",
+          "label": "Clean converted voice",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Cleaning intensity",
+          "type": "float",
+          "component": "Slider"
+        }
+      ]
+    },
+    {
+      "name": "/partial_19",
+      "parameters": [
+        {
+          "name": "value",
+          "label": "Embedder model",
+          "type": "Literal['contentvec', 'spin', 'spin-v2', 'chinese-hubert-base', 'japanese-hubert-base', 'korean-hubert-base', 'custom']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Custom embedder model",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_3",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Pitch shift (octaves)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Pitch shift (semi-tones)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Pitch extraction algorithm",
+          "type": "Literal['rmvpe', 'crepe', 'crepe-tiny', 'fcpe']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Index rate",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "RMS mix rate",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Protect rate",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Split input voice",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Autotune converted voice",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Autotune intensity",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Proposed pitch",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Proposed pitch threshold",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Clean converted voice",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Cleaning intensity",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Embedder model",
+          "type": "Literal['contentvec', 'spin', 'spin-v2', 'chinese-hubert-base', 'japanese-hubert-base', 'korean-hubert-base', 'custom']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Speaker ID",
+          "type": "int",
+          "component": "Number"
+        },
+        {
+          "label": "Converted vocals destination",
+          "type": "list[Literal['Step 1: audio', 'Step 2: vocals', 'Step 3: vocals', 'Step 4: instrumentals', 'Step 4: backup vocals', 'Step 5: main vocals', 'Step 5: instrumentals', 'Step 5: backup vocals']]",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/partial_20",
+      "parameters": [
+        {
+          "name": "param_0",
+          "label": "Vocals",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "name": "param_1",
+          "label": "Song directory",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_2",
+          "label": "Voice model",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_3",
+          "label": "Pitch shift (octaves)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_4",
+          "label": "Pitch shift (semi-tones)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_5",
+          "label": "Pitch extraction algorithm",
+          "type": "Literal['rmvpe', 'crepe', 'crepe-tiny', 'fcpe']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_6",
+          "label": "Index rate",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_7",
+          "label": "RMS mix rate",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_8",
+          "label": "Protect rate",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_9",
+          "label": "Split input voice",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_10",
+          "label": "Autotune converted voice",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_11",
+          "label": "Autotune intensity",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_12",
+          "label": "Proposed pitch",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_13",
+          "label": "Proposed pitch threshold",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_14",
+          "label": "Clean converted voice",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_15",
+          "label": "Cleaning intensity",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_16",
+          "label": "Embedder model",
+          "type": "Literal['contentvec', 'spin', 'spin-v2', 'chinese-hubert-base', 'japanese-hubert-base', 'korean-hubert-base', 'custom']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_17",
+          "label": "Custom embedder model",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_18",
+          "label": "Speaker ID",
+          "type": "int",
+          "component": "Number"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Converted vocals",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ]
+    },
+    {
+      "name": "/partial_21",
+      "parameters": [
+        {
+          "name": "output_indices",
+          "label": "Converted vocals destination",
+          "type": "list[Literal['Step 1: audio', 'Step 2: vocals', 'Step 3: vocals', 'Step 4: instrumentals', 'Step 4: backup vocals', 'Step 5: main vocals', 'Step 5: instrumentals', 'Step 5: backup vocals']]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "track",
+          "label": "Converted vocals",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Vocals",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Vocals",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Instrumentals",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Backup vocals",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Main vocals",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Instrumentals",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Backup vocals",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_4",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Room size",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Wetness level",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Dryness level",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Damping level",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Effected vocals destination",
+          "type": "list[Literal['Step 1: audio', 'Step 2: vocals', 'Step 3: vocals', 'Step 4: instrumentals', 'Step 4: backup vocals', 'Step 5: main vocals', 'Step 5: instrumentals', 'Step 5: backup vocals']]",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/_wrapped_fn_1",
+      "parameters": [
+        {
+          "name": "param_0",
+          "label": "Vocals",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "name": "param_1",
+          "label": "Song directory",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_2",
+          "label": "Room size",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_3",
+          "label": "Wetness level",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_4",
+          "label": "Dryness level",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_5",
+          "label": "Damping level",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Effected vocals",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ]
+    },
+    {
+      "name": "/partial_22",
+      "parameters": [
+        {
+          "name": "output_indices",
+          "label": "Effected vocals destination",
+          "type": "list[Literal['Step 1: audio', 'Step 2: vocals', 'Step 3: vocals', 'Step 4: instrumentals', 'Step 4: backup vocals', 'Step 5: main vocals', 'Step 5: instrumentals', 'Step 5: backup vocals']]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "track",
+          "label": "Effected vocals",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Vocals",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Vocals",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Instrumentals",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Backup vocals",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Main vocals",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Instrumentals",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Backup vocals",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_5",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Instrumental pitch shift",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Backup vocal pitch shift",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Pitch-shifted instrumentals destination",
+          "type": "list[Literal['Step 1: audio', 'Step 2: vocals', 'Step 3: vocals', 'Step 4: instrumentals', 'Step 4: backup vocals', 'Step 5: main vocals', 'Step 5: instrumentals', 'Step 5: backup vocals']]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Pitch-shifted backup vocals destination",
+          "type": "list[Literal['Step 1: audio', 'Step 2: vocals', 'Step 3: vocals', 'Step 4: instrumentals', 'Step 4: backup vocals', 'Step 5: main vocals', 'Step 5: instrumentals', 'Step 5: backup vocals']]",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/_wrapped_fn_2",
+      "parameters": [
+        {
+          "name": "param_0",
+          "label": "Instrumentals",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "name": "param_1",
+          "label": "Song directory",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_2",
+          "label": "Instrumental pitch shift",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Pitch-shifted instrumentals",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ]
+    },
+    {
+      "name": "/_wrapped_fn_3",
+      "parameters": [
+        {
+          "name": "param_0",
+          "label": "Backup vocals",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "name": "param_1",
+          "label": "Song directory",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_2",
+          "label": "Backup vocal pitch shift",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Pitch-shifted backup vocals",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ]
+    },
+    {
+      "name": "/partial_23",
+      "parameters": [
+        {
+          "name": "output_indices",
+          "label": "Pitch-shifted instrumentals destination",
+          "type": "list[Literal['Step 1: audio', 'Step 2: vocals', 'Step 3: vocals', 'Step 4: instrumentals', 'Step 4: backup vocals', 'Step 5: main vocals', 'Step 5: instrumentals', 'Step 5: backup vocals']]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "track",
+          "label": "Pitch-shifted instrumentals",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Vocals",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Vocals",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Instrumentals",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Backup vocals",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Main vocals",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Instrumentals",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Backup vocals",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ]
+    },
+    {
+      "name": "/partial_24",
+      "parameters": [
+        {
+          "name": "output_indices",
+          "label": "Pitch-shifted backup vocals destination",
+          "type": "list[Literal['Step 1: audio', 'Step 2: vocals', 'Step 3: vocals', 'Step 4: instrumentals', 'Step 4: backup vocals', 'Step 5: main vocals', 'Step 5: instrumentals', 'Step 5: backup vocals']]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "track",
+          "label": "Pitch-shifted backup vocals",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Vocals",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Vocals",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Instrumentals",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Backup vocals",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Main vocals",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Instrumentals",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Backup vocals",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_6",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Main gain",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Instrumentals gain",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Backup gain",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Output sample rate",
+          "type": "Literal['16000', '44100', '48000', '96000', '192000']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Output format",
+          "type": "Literal['mp3', 'wav', 'flac', 'ogg', 'm4a', 'aac']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Song cover destination",
+          "type": "list[Literal['Step 1: audio', 'Step 2: vocals', 'Step 3: vocals', 'Step 4: instrumentals', 'Step 4: backup vocals', 'Step 5: main vocals', 'Step 5: instrumentals', 'Step 5: backup vocals']]",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/partial_25",
+      "parameters": [
+        {
+          "name": "data",
+          "label": "Main vocals",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "name": "param_1",
+          "label": "Instrumentals",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "name": "param_2",
+          "label": "Backup vocals",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "name": "param_3",
+          "label": "Main gain",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_4",
+          "label": "Instrumentals gain",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_5",
+          "label": "Backup gain",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/_wrapped_fn_4",
+      "parameters": [
+        {
+          "name": "param_1",
+          "label": "Song directory",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_2",
+          "label": "Output sample rate",
+          "type": "Literal['16000', '44100', '48000', '96000', '192000']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_3",
+          "label": "Output format",
+          "type": "Literal['mp3', 'wav', 'flac', 'ogg', 'm4a', 'aac']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_4",
+          "label": "Output name",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Song cover",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ]
+    },
+    {
+      "name": "/partial_26",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Output audio files",
+          "type": "list[Literal[]]",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/partial_27",
+      "parameters": [
+        {
+          "name": "output_indices",
+          "label": "Song cover destination",
+          "type": "list[Literal['Step 1: audio', 'Step 2: vocals', 'Step 3: vocals', 'Step 4: instrumentals', 'Step 4: backup vocals', 'Step 5: main vocals', 'Step 5: instrumentals', 'Step 5: backup vocals']]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "track",
+          "label": "Song cover",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Vocals",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Vocals",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Instrumentals",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Backup vocals",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Main vocals",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Instrumentals",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Backup vocals",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ]
+    },
+    {
+      "name": "/partial_28",
+      "parameters": [
+        {
+          "name": "visible_index",
+          "label": "Source type",
+          "type": "Literal['Text', 'Local file']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Source",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Source",
+          "type": "filepath",
+          "component": "File"
+        }
+      ]
+    },
+    {
+      "name": "/update_value_4",
+      "parameters": [
+        {
+          "name": "x",
+          "label": "Source",
+          "type": "filepath",
+          "component": "File"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Source",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/partial_29",
+      "parameters": [
+        {
+          "name": "value",
+          "label": "Autotune converted voice",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Autotune intensity",
+          "type": "float",
+          "component": "Slider"
+        }
+      ]
+    },
+    {
+      "name": "/partial_30",
+      "parameters": [
+        {
+          "name": "value",
+          "label": "Proposed pitch",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Proposed pitch threshold",
+          "type": "float",
+          "component": "Slider"
+        }
+      ]
+    },
+    {
+      "name": "/partial_31",
+      "parameters": [
+        {
+          "name": "value",
+          "label": "Clean converted voice",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Cleaning intensity",
+          "type": "float",
+          "component": "Slider"
+        }
+      ]
+    },
+    {
+      "name": "/partial_32",
+      "parameters": [
+        {
+          "name": "value",
+          "label": "Embedder model",
+          "type": "Literal['contentvec', 'spin', 'spin-v2', 'chinese-hubert-base', 'japanese-hubert-base', 'korean-hubert-base', 'custom']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Custom embedder model",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/partial_33",
+      "parameters": [
+        {
+          "name": "visible",
+          "label": "Show intermediate audio",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/partial_34",
+      "parameters": [
+        {
+          "name": "param_0",
+          "label": "Source",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_1",
+          "label": "Voice model",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_2",
+          "label": "Edge TTS voice",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_3",
+          "label": "Edge TTS pitch shift",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_4",
+          "label": "TTS speed change",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_5",
+          "label": "TTS volume change",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_6",
+          "label": "Octave shift",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_7",
+          "label": "Semitone shift",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_8",
+          "label": "Pitch extraction algorithm",
+          "type": "Literal['rmvpe', 'crepe', 'crepe-tiny', 'fcpe']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_9",
+          "label": "Index rate",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_10",
+          "label": "RMS mix rate",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_11",
+          "label": "Protect rate",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_12",
+          "label": "Split input voice",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_13",
+          "label": "Autotune converted voice",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_14",
+          "label": "Autotune intensity",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_15",
+          "label": "Proposed pitch",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_16",
+          "label": "Proposed pitch threshold",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_17",
+          "label": "Clean converted voice",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_18",
+          "label": "Cleaning intensity",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_19",
+          "label": "Embedder model",
+          "type": "Literal['contentvec', 'spin', 'spin-v2', 'chinese-hubert-base', 'japanese-hubert-base', 'korean-hubert-base', 'custom']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_20",
+          "label": "Custom embedder model",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_21",
+          "label": "Speaker ID",
+          "type": "int",
+          "component": "Number"
+        },
+        {
+          "name": "param_22",
+          "label": "Output gain",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_23",
+          "label": "Output sample rate",
+          "type": "Literal['16000', '44100', '48000', '96000', '192000']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_24",
+          "label": "Output format",
+          "type": "Literal['mp3', 'wav', 'flac', 'ogg', 'm4a', 'aac']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_25",
+          "label": "Output name",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Mixed speech",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Speech",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Converted speech",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ]
+    },
+    {
+      "name": "/partial_35",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Speech audio files",
+          "type": "list[Literal[]]",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/partial_36",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Output audio files",
+          "type": "list[Literal[]]",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_7",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Edge TTS pitch shift",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "TTS speed change",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "TTS volume change",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Octave shift",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Semitone shift",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Pitch extraction algorithm",
+          "type": "Literal['rmvpe', 'crepe', 'crepe-tiny', 'fcpe']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Index rate",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "RMS mix rate",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Protect rate",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Split input voice",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Autotune converted voice",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Autotune intensity",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Proposed pitch",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Proposed pitch threshold",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Clean converted voice",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Cleaning intensity",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Embedder model",
+          "type": "Literal['contentvec', 'spin', 'spin-v2', 'chinese-hubert-base', 'japanese-hubert-base', 'korean-hubert-base', 'custom']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Speaker ID",
+          "type": "int",
+          "component": "Number"
+        },
+        {
+          "label": "Output gain",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Output sample rate",
+          "type": "Literal['16000', '44100', '48000', '96000', '192000']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Output format",
+          "type": "Literal['mp3', 'wav', 'flac', 'ogg', 'm4a', 'aac']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Show intermediate audio",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ]
+    },
+    {
+      "name": "/partial_37",
+      "parameters": [
+        {
+          "name": "visible_index",
+          "label": "Source type",
+          "type": "Literal['Text', 'Local file']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Source",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Source",
+          "type": "filepath",
+          "component": "File"
+        }
+      ]
+    },
+    {
+      "name": "/update_value_5",
+      "parameters": [
+        {
+          "name": "x",
+          "label": "Source",
+          "type": "filepath",
+          "component": "File"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Source",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_8",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Edge TTS pitch shift",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "TTS speed change",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "TTS volume change",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Speech destination",
+          "type": "list[Literal['Step 2: speech', 'Step 3: speech']]",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/_wrapped_fn_5",
+      "parameters": [
+        {
+          "name": "param_0",
+          "label": "Source",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_1",
+          "label": "Edge TTS voice",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_2",
+          "label": "Edge TTS pitch shift",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_3",
+          "label": "TTS speed change",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_4",
+          "label": "TTS volume change",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Generated speech",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ]
+    },
+    {
+      "name": "/partial_38",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Speech audio files",
+          "type": "list[Literal[]]",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/partial_39",
+      "parameters": [
+        {
+          "name": "output_indices",
+          "label": "Speech destination",
+          "type": "list[Literal['Step 2: speech', 'Step 3: speech']]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "track",
+          "label": "Generated speech",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Speech",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Converted speech",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ]
+    },
+    {
+      "name": "/partial_40",
+      "parameters": [
+        {
+          "name": "value",
+          "label": "Autotune converted voice",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Autotune intensity",
+          "type": "float",
+          "component": "Slider"
+        }
+      ]
+    },
+    {
+      "name": "/partial_41",
+      "parameters": [
+        {
+          "name": "value",
+          "label": "Proposed pitch",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Proposed pitch threshold",
+          "type": "float",
+          "component": "Slider"
+        }
+      ]
+    },
+    {
+      "name": "/partial_42",
+      "parameters": [
+        {
+          "name": "value",
+          "label": "Clean converted voice",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Cleaning intensity",
+          "type": "float",
+          "component": "Slider"
+        }
+      ]
+    },
+    {
+      "name": "/partial_43",
+      "parameters": [
+        {
+          "name": "value",
+          "label": "Embedder model",
+          "type": "Literal['contentvec', 'spin', 'spin-v2', 'chinese-hubert-base', 'japanese-hubert-base', 'korean-hubert-base', 'custom']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Custom embedder model",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_9",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Octave shift",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Semitone shift",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Pitch extraction algorithm",
+          "type": "Literal['rmvpe', 'crepe', 'crepe-tiny', 'fcpe']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Index rate",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "RMS mix rate",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Protect rate",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Split input voice",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Autotune converted voice",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Autotune intensity",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Proposed pitch",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Proposed pitch threshold",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Clean converted voice",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Cleaning intensity",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Embedder model",
+          "type": "Literal['contentvec', 'spin', 'spin-v2', 'chinese-hubert-base', 'japanese-hubert-base', 'korean-hubert-base', 'custom']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Speaker ID",
+          "type": "int",
+          "component": "Number"
+        },
+        {
+          "label": "Converted speech destination",
+          "type": "list[Literal['Step 2: speech', 'Step 3: speech']]",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/partial_44",
+      "parameters": [
+        {
+          "name": "param_0",
+          "label": "Speech",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "name": "param_2",
+          "label": "Voice model",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_3",
+          "label": "Octave shift",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_4",
+          "label": "Semitone shift",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_5",
+          "label": "Pitch extraction algorithm",
+          "type": "Literal['rmvpe', 'crepe', 'crepe-tiny', 'fcpe']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_6",
+          "label": "Index rate",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_7",
+          "label": "RMS mix rate",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_8",
+          "label": "Protect rate",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_9",
+          "label": "Split input voice",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_10",
+          "label": "Autotune converted voice",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_11",
+          "label": "Autotune intensity",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_12",
+          "label": "Proposed pitch",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_13",
+          "label": "Proposed pitch threshold",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_14",
+          "label": "Clean converted voice",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_15",
+          "label": "Cleaning intensity",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_16",
+          "label": "Embedder model",
+          "type": "Literal['contentvec', 'spin', 'spin-v2', 'chinese-hubert-base', 'japanese-hubert-base', 'korean-hubert-base', 'custom']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_17",
+          "label": "Custom embedder model",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_18",
+          "label": "Speaker ID",
+          "type": "int",
+          "component": "Number"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Converted speech",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ]
+    },
+    {
+      "name": "/partial_45",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Speech audio files",
+          "type": "list[Literal[]]",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/partial_46",
+      "parameters": [
+        {
+          "name": "output_indices",
+          "label": "Converted speech destination",
+          "type": "list[Literal['Step 2: speech', 'Step 3: speech']]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "track",
+          "label": "Converted speech",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Speech",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Converted speech",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_10",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Output gain",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Output sample rate",
+          "type": "Literal['16000', '44100', '48000', '96000', '192000']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Output format",
+          "type": "Literal['mp3', 'wav', 'flac', 'ogg', 'm4a', 'aac']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Mixed speech destination",
+          "type": "list[Literal['Step 2: speech', 'Step 3: speech']]",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/_wrapped_fn_6",
+      "parameters": [
+        {
+          "name": "param_0",
+          "label": "Converted speech",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "name": "param_1",
+          "label": "Output gain",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_2",
+          "label": "Output sample rate",
+          "type": "Literal['16000', '44100', '48000', '96000', '192000']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_3",
+          "label": "Output format",
+          "type": "Literal['mp3', 'wav', 'flac', 'ogg', 'm4a', 'aac']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_4",
+          "label": "Output name",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Mixed speech",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ]
+    },
+    {
+      "name": "/partial_47",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Output audio files",
+          "type": "list[Literal[]]",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/partial_48",
+      "parameters": [
+        {
+          "name": "output_indices",
+          "label": "Mixed speech destination",
+          "type": "list[Literal['Step 2: speech', 'Step 3: speech']]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "track",
+          "label": "Mixed speech",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Speech",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Converted speech",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ]
+    },
+    {
+      "name": "/_filter_public_models_table",
+      "parameters": [
+        {
+          "name": "tags",
+          "label": "Tags",
+          "type": "list[Literal['English', 'Japanese', 'Other Language', 'Anime', 'Vtuber', 'Real person', 'Game character']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "query",
+          "label": "Search query",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Public models table",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/_autofill_model_name_and_url",
+      "parameters": [
+        {
+          "name": "public_models_table",
+          "label": "Public models table",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Model name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Model URL",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/_wrapped_fn_7",
+      "parameters": [
+        {
+          "name": "param_0",
+          "label": "Model URL",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_1",
+          "label": "Model name",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output message",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/partial_49",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Output message",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/_update_pretrained_sample_rates",
+      "parameters": [
+        {
+          "name": "name",
+          "label": "Pretrained model",
+          "type": "Literal['Beatz Forge', 'DMR V1', 'IMA V1', 'Italia', 'KLM4.1', 'KLM4.2', 'Nanashi v1.7', 'Ov2Super', 'RIN_E3', 'Rigel Base', 'Rigel FineTuned', 'SingerPreTrain', 'Snowie', 'Snowie-X-RinE3', 'Titan', '",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Sample rate",
+          "type": "Literal['32000', '40000', '48000']",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/_wrapped_fn_8",
+      "parameters": [
+        {
+          "name": "param_0",
+          "label": "Pretrained model",
+          "type": "Literal['Beatz Forge', 'DMR V1', 'IMA V1', 'Italia', 'KLM4.1', 'KLM4.2', 'Nanashi v1.7', 'Ov2Super', 'RIN_E3', 'Rigel Base', 'Rigel FineTuned', 'SingerPreTrain', 'Snowie', 'Snowie-X-RinE3', 'Titan', '",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_1",
+          "label": "Sample rate",
+          "type": "Literal['32000', '40000', '48000']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output message",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/partial_50",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Output message",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/_wrapped_fn_9",
+      "parameters": [
+        {
+          "name": "param_0",
+          "label": "Files",
+          "type": "list[filepath]",
+          "component": "File"
+        },
+        {
+          "name": "param_1",
+          "label": "Model name",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output message",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/partial_51",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Output message",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/_wrapped_fn_10",
+      "parameters": [
+        {
+          "name": "param_0",
+          "label": "Files",
+          "type": "list[filepath]",
+          "component": "File"
+        },
+        {
+          "name": "param_1",
+          "label": "Model name",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output message",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/partial_52",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Output message",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/_toggle_dataset_input",
+      "parameters": [
+        {
+          "name": "dataset_type",
+          "label": "Dataset type",
+          "type": "Literal['New dataset', 'Existing dataset']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Dataset name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Audio files",
+          "type": "list[filepath]",
+          "component": "File"
+        },
+        {
+          "label": "Dataset path",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/_wrapped_fn_11",
+      "parameters": [
+        {
+          "name": "param_0",
+          "label": "Dataset name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_1",
+          "label": "Audio files",
+          "type": "list[filepath]",
+          "component": "File"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/partial_53",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Audio files",
+          "type": "list[filepath]",
+          "component": "File"
+        }
+      ]
+    },
+    {
+      "name": "/partial_54",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Dataset path",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/partial_55",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Dataset audio files",
+          "type": "list[Literal[]]",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/partial_56",
+      "parameters": [
+        {
+          "name": "value",
+          "label": "Clean audio",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Cleaning intensity",
+          "type": "float",
+          "component": "Slider"
+        }
+      ]
+    },
+    {
+      "name": "/partial_57",
+      "parameters": [
+        {
+          "name": "value",
+          "label": "Audio splitting method",
+          "type": "Literal['Skip', 'Simple', 'Automatic']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Chunk length",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Overlap length",
+          "type": "float",
+          "component": "Slider"
+        }
+      ]
+    },
+    {
+      "name": "/_wrapped_fn_12",
+      "parameters": [
+        {
+          "name": "param_0",
+          "label": "Model name",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_1",
+          "label": "Dataset path",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_2",
+          "label": "Sample rate",
+          "type": "Literal['32000', '40000', '48000']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_3",
+          "label": "Normalization mode",
+          "type": "Literal['none', 'pre', 'post']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_4",
+          "label": "Filter audio",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_5",
+          "label": "Clean audio",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_6",
+          "label": "Cleaning intensity",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_7",
+          "label": "Audio splitting method",
+          "type": "Literal['Skip', 'Simple', 'Automatic']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_8",
+          "label": "Chunk length",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_9",
+          "label": "Overlap length",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_10",
+          "label": "CPU cores",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output message",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/partial_58",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Output message",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/partial_59",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Model name",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Model name",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Model name",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Training models",
+          "type": "list[Literal[]]",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/_normalize_and_update",
+      "parameters": [
+        {
+          "name": "value",
+          "label": "Model name",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Model name",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/update_value_6",
+      "parameters": [
+        {
+          "name": "x",
+          "label": "Model name",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Model name",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_11",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Sample rate",
+          "type": "Literal['32000', '40000', '48000']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Filter audio",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Clean audio",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Cleaning intensity",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Audio splitting method",
+          "type": "Literal['Skip', 'Simple', 'Automatic']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Chunk length",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Overlap length",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "CPU cores",
+          "type": "float",
+          "component": "Slider"
+        }
+      ]
+    },
+    {
+      "name": "/partial_60",
+      "parameters": [
+        {
+          "name": "value",
+          "label": "Embedder model",
+          "type": "Literal['contentvec', 'spin', 'spin-v2', 'chinese-hubert-base', 'japanese-hubert-base', 'korean-hubert-base', 'custom']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Custom embedder model",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/partial_61",
+      "parameters": [
+        {
+          "name": "value",
+          "label": "Hardware acceleration",
+          "type": "Literal['Automatic', 'CPU', 'GPU']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "GPU(s)",
+          "type": "list[Literal[]]",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/_wrapped_fn_13",
+      "parameters": [
+        {
+          "name": "param_0",
+          "label": "Model name",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_1",
+          "label": "F0 method",
+          "type": "Literal['rmvpe', 'crepe', 'crepe-tiny', 'fcpe']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_2",
+          "label": "Embedder model",
+          "type": "Literal['contentvec', 'spin', 'spin-v2', 'chinese-hubert-base', 'japanese-hubert-base', 'korean-hubert-base', 'custom']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_3",
+          "label": "Custom embedder model",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_4",
+          "label": "Include mutes",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_5",
+          "label": "CPU cores",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_6",
+          "label": "Hardware acceleration",
+          "type": "Literal['Automatic', 'CPU', 'GPU']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_7",
+          "label": "GPU(s)",
+          "type": "list[Literal[]]",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output message",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/partial_62",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Output message",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/update_value_7",
+      "parameters": [
+        {
+          "name": "x",
+          "label": "Model name",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Model name",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_12",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "F0 method",
+          "type": "Literal['rmvpe', 'crepe', 'crepe-tiny', 'fcpe']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Embedder model",
+          "type": "Literal['contentvec', 'spin', 'spin-v2', 'chinese-hubert-base', 'japanese-hubert-base', 'korean-hubert-base', 'custom']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Include mutes",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "CPU cores",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Hardware acceleration",
+          "type": "Literal['Automatic', 'CPU', 'GPU']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "GPU(s)",
+          "type": "list[Literal[]]",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/partial_63",
+      "parameters": [
+        {
+          "name": "value",
+          "label": "Detect overtraining",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Overtraining threshold",
+          "type": "float",
+          "component": "Slider"
+        }
+      ]
+    },
+    {
+      "name": "/partial_64",
+      "parameters": [
+        {
+          "name": "value",
+          "label": "Pretrained model type",
+          "type": "Literal['None', 'Default', 'Custom']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Custom pretrained model",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/partial_65",
+      "parameters": [
+        {
+          "name": "value",
+          "label": "Upload voice model",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Upload name",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/partial_66",
+      "parameters": [
+        {
+          "name": "value",
+          "label": "Hardware acceleration",
+          "type": "Literal['Automatic', 'CPU', 'GPU']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "GPU(s)",
+          "type": "list[Literal[]]",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/partial_67",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/_wrapped_fn_14",
+      "parameters": [
+        {
+          "name": "param_0",
+          "label": "Model name",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_1",
+          "label": "Number of epochs",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_2",
+          "label": "Batch size",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_3",
+          "label": "Detect overtraining",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_4",
+          "label": "Overtraining threshold",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_5",
+          "label": "Vocoder",
+          "type": "Literal['HiFi-GAN', 'MRF HiFi-GAN', 'RefineGAN']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_6",
+          "label": "Index algorithm",
+          "type": "Literal['Auto', 'Faiss', 'KMeans']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_7",
+          "label": "Pretrained model type",
+          "type": "Literal['None', 'Default', 'Custom']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_8",
+          "label": "Custom pretrained model",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_9",
+          "label": "Save interval",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_10",
+          "label": "Save all checkpoints",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_11",
+          "label": "Save all weights",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_12",
+          "label": "Clear saved data",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_13",
+          "label": "Upload voice model",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_14",
+          "label": "Upload name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_15",
+          "label": "Hardware acceleration",
+          "type": "Literal['Automatic', 'CPU', 'GPU']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_16",
+          "label": "GPU(s)",
+          "type": "list[Literal[]]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_17",
+          "label": "Precision",
+          "type": "Literal['fp32', 'fp16', 'bf16']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_18",
+          "label": "Preload dataset",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_19",
+          "label": "Reduce memory usage",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Voice model files",
+          "type": "filepath",
+          "component": "File"
+        }
+      ]
+    },
+    {
+      "name": "/partial_68",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/partial_69",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Output message",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/partial_70",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Voice model",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Voice model",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Voice model",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Voice model",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Voice models",
+          "type": "list[Literal[]]",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/stop_training",
+      "parameters": [
+        {
+          "name": "model_name",
+          "label": "Model name",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/lambda_13",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Number of epochs",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Batch size",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Detect overtraining",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Overtraining threshold",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Vocoder",
+          "type": "Literal['HiFi-GAN', 'MRF HiFi-GAN', 'RefineGAN']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Index algorithm",
+          "type": "Literal['Auto', 'Faiss', 'KMeans']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Pretrained model type",
+          "type": "Literal['None', 'Default', 'Custom']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Save interval",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Save all checkpoints",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Save all weights",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Clear saved data",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Upload voice model",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Hardware acceleration",
+          "type": "Literal['Automatic', 'CPU', 'GPU']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "GPU(s)",
+          "type": "list[Literal[]]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Precision",
+          "type": "Literal['fp32', 'fp16', 'bf16']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Preload dataset",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Reduce memory usage",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ]
+    },
+    {
+      "name": "/_wrapped_fn_15",
+      "parameters": [
+        {
+          "name": "confirm",
+          "label": "parameter_480",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_1",
+          "label": "Voice models",
+          "type": "list[Literal[]]",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output message",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/partial_71",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Output message",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/_wrapped_fn_16",
+      "parameters": [
+        {
+          "name": "confirm",
+          "label": "parameter_480",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output message",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/partial_72",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Output message",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/_wrapped_fn_17",
+      "parameters": [
+        {
+          "name": "confirm",
+          "label": "parameter_480",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_1",
+          "label": "Custom embedder models",
+          "type": "list[Literal[]]",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output message",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/partial_73",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Output message",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/_wrapped_fn_18",
+      "parameters": [
+        {
+          "name": "confirm",
+          "label": "parameter_480",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output message",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/partial_74",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Output message",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/_wrapped_fn_19",
+      "parameters": [
+        {
+          "name": "confirm",
+          "label": "parameter_480",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_1",
+          "label": "Custom pretrained models",
+          "type": "list[Literal[]]",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output message",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/partial_75",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Output message",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/_wrapped_fn_20",
+      "parameters": [
+        {
+          "name": "confirm",
+          "label": "parameter_480",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output message",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/partial_76",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Output message",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/_wrapped_fn_21",
+      "parameters": [
+        {
+          "name": "confirm",
+          "label": "parameter_480",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_1",
+          "label": "Training models",
+          "type": "list[Literal[]]",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output message",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/partial_77",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Output message",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/_wrapped_fn_22",
+      "parameters": [
+        {
+          "name": "confirm",
+          "label": "parameter_480",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output message",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/partial_78",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Output message",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/_wrapped_fn_23",
+      "parameters": [
+        {
+          "name": "confirm",
+          "label": "parameter_480",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output message",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/partial_79",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Output message",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/partial_80",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Voice model",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Voice model",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Voice model",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Voice model",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Voice models",
+          "type": "list[Literal[]]",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/partial_81",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Voice model",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Voice model",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Voice model",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Voice model",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Voice models",
+          "type": "list[Literal[]]",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/partial_82",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Voice model",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Voice model",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Voice model",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Voice model",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Voice models",
+          "type": "list[Literal[]]",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/partial_83",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Voice model",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Voice model",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Voice model",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Voice model",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Voice models",
+          "type": "list[Literal[]]",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/partial_84",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Voice model",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Voice model",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Voice model",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Voice model",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Voice models",
+          "type": "list[Literal[]]",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/partial_85",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Custom embedder model",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Custom embedder model",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Custom embedder model",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Custom embedder model",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Custom embedder model",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Custom embedder models",
+          "type": "list[Literal[]]",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/partial_86",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Custom embedder model",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Custom embedder model",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Custom embedder model",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Custom embedder model",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Custom embedder model",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Custom embedder models",
+          "type": "list[Literal[]]",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/partial_87",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Custom embedder model",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Custom embedder model",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Custom embedder model",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Custom embedder model",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Custom embedder model",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Custom embedder models",
+          "type": "list[Literal[]]",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/partial_88",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Custom embedder model",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Custom embedder model",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Custom embedder model",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Custom embedder model",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Custom embedder model",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Custom embedder models",
+          "type": "list[Literal[]]",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/partial_89",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Custom pretrained model",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Custom pretrained models",
+          "type": "list[Literal[]]",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/partial_90",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Custom pretrained model",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Custom pretrained models",
+          "type": "list[Literal[]]",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/partial_91",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Custom pretrained model",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Custom pretrained models",
+          "type": "list[Literal[]]",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/partial_92",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Custom pretrained model",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Custom pretrained models",
+          "type": "list[Literal[]]",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/partial_93",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Model name",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Model name",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Model name",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Training models",
+          "type": "list[Literal[]]",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/partial_94",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Model name",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Model name",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Model name",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Training models",
+          "type": "list[Literal[]]",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/partial_95",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Model name",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Model name",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Model name",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Training models",
+          "type": "list[Literal[]]",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/_wrapped_fn_24",
+      "parameters": [
+        {
+          "name": "confirm",
+          "label": "parameter_707",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_1",
+          "label": "Song directories",
+          "type": "list[Literal[]]",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output message",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/partial_96",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Output message",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/_wrapped_fn_25",
+      "parameters": [
+        {
+          "name": "confirm",
+          "label": "parameter_707",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output message",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/partial_97",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Output message",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/_wrapped_fn_26",
+      "parameters": [
+        {
+          "name": "confirm",
+          "label": "parameter_707",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_1",
+          "label": "Speech audio files",
+          "type": "list[Literal[]]",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output message",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/partial_98",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Output message",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/_wrapped_fn_27",
+      "parameters": [
+        {
+          "name": "confirm",
+          "label": "parameter_707",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output message",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/partial_99",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Output message",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/_wrapped_fn_28",
+      "parameters": [
+        {
+          "name": "confirm",
+          "label": "parameter_707",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_1",
+          "label": "Output audio files",
+          "type": "list[Literal[]]",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output message",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/partial_100",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Output message",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/_wrapped_fn_29",
+      "parameters": [
+        {
+          "name": "confirm",
+          "label": "parameter_707",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output message",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/partial_101",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Output message",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/_wrapped_fn_30",
+      "parameters": [
+        {
+          "name": "confirm",
+          "label": "parameter_707",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_1",
+          "label": "Dataset audio files",
+          "type": "list[Literal[]]",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output message",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/partial_102",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Output message",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/_wrapped_fn_31",
+      "parameters": [
+        {
+          "name": "confirm",
+          "label": "parameter_707",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output message",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/partial_103",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Output message",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/_wrapped_fn_32",
+      "parameters": [
+        {
+          "name": "confirm",
+          "label": "parameter_707",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output message",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/partial_104",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Output message",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/partial_105",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Song directories",
+          "type": "list[Literal[]]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Source",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Source",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Song directory",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Song directory",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Song directory",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Song directory",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Song directory",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/partial_106",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Song directories",
+          "type": "list[Literal[]]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Source",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Source",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Song directory",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Song directory",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Song directory",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Song directory",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Song directory",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/partial_107",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Song directories",
+          "type": "list[Literal[]]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Source",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Source",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Song directory",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Song directory",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Song directory",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Song directory",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Song directory",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/partial_108",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Speech audio files",
+          "type": "list[Literal[]]",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/partial_109",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Speech audio files",
+          "type": "list[Literal[]]",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/partial_110",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Speech audio files",
+          "type": "list[Literal[]]",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/partial_111",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Output audio files",
+          "type": "list[Literal[]]",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/partial_112",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Output audio files",
+          "type": "list[Literal[]]",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/partial_113",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Output audio files",
+          "type": "list[Literal[]]",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/partial_114",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Dataset audio files",
+          "type": "list[Literal[]]",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/partial_115",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Dataset path",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/partial_116",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Dataset audio files",
+          "type": "list[Literal[]]",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/partial_117",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Dataset path",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/partial_118",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Dataset audio files",
+          "type": "list[Literal[]]",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/partial_119",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Dataset path",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/_wrapped_fn_33",
+      "parameters": [
+        {
+          "name": "param_0",
+          "label": "Configuration name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_1",
+          "label": "Pitch extraction algorithm",
+          "type": "Literal['rmvpe', 'crepe', 'crepe-tiny', 'fcpe']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_2",
+          "label": "Index rate",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_3",
+          "label": "RMS mix rate",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_4",
+          "label": "Protect rate",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_5",
+          "label": "Split input voice",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_6",
+          "label": "Autotune intensity",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_7",
+          "label": "Proposed pitch threshold",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_8",
+          "label": "Speaker ID",
+          "type": "int",
+          "component": "Number"
+        },
+        {
+          "name": "param_9",
+          "label": "Output sample rate",
+          "type": "Literal['16000', '44100', '48000', '96000', '192000']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_10",
+          "label": "Output format",
+          "type": "Literal['mp3', 'wav', 'flac', 'ogg', 'm4a', 'aac']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_11",
+          "label": "Cleaning intensity",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_12",
+          "label": "Room size",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_13",
+          "label": "Wetness level",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_14",
+          "label": "Dryness level",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_15",
+          "label": "Damping level",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_16",
+          "label": "Main gain",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_17",
+          "label": "Instrumentals gain",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_18",
+          "label": "Backup gain",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_19",
+          "label": "Vocal pitch shift",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_20",
+          "label": "Overall pitch shift",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_21",
+          "label": "Pitch extraction algorithm",
+          "type": "Literal['rmvpe', 'crepe', 'crepe-tiny', 'fcpe']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_22",
+          "label": "Index rate",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_23",
+          "label": "RMS mix rate",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_24",
+          "label": "Protect rate",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_25",
+          "label": "Split input voice",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_26",
+          "label": "Autotune intensity",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_27",
+          "label": "Proposed pitch threshold",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_28",
+          "label": "Speaker ID",
+          "type": "int",
+          "component": "Number"
+        },
+        {
+          "name": "param_29",
+          "label": "Output sample rate",
+          "type": "Literal['16000', '44100', '48000', '96000', '192000']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_30",
+          "label": "Output format",
+          "type": "Literal['mp3', 'wav', 'flac', 'ogg', 'm4a', 'aac']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_31",
+          "label": "Cleaning intensity",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_32",
+          "label": "Room size",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_33",
+          "label": "Wetness level",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_34",
+          "label": "Dryness level",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_35",
+          "label": "Damping level",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_36",
+          "label": "Main gain",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_37",
+          "label": "Instrumentals gain",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_38",
+          "label": "Backup gain",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_39",
+          "label": "Separation model",
+          "type": "Literal['UVR-MDX-NET-Voc_FT.onnx', 'UVR_MDXNET_KARA_2.onnx', 'Reverb_HQ_By_FoxJoy.onnx']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_40",
+          "label": "Segment size",
+          "type": "Literal['64', '128', '256', '512', '1024', '2048']",
+          "component": "Radio"
+        },
+        {
+          "name": "param_41",
+          "label": "Pitch shift (octaves)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_42",
+          "label": "Pitch shift (semi-tones)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_43",
+          "label": "Instrumental pitch shift",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_44",
+          "label": "Backup vocal pitch shift",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_45",
+          "label": "Pitch extraction algorithm",
+          "type": "Literal['rmvpe', 'crepe', 'crepe-tiny', 'fcpe']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_46",
+          "label": "Index rate",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_47",
+          "label": "RMS mix rate",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_48",
+          "label": "Protect rate",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_49",
+          "label": "Split input voice",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_50",
+          "label": "Autotune intensity",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_51",
+          "label": "Proposed pitch threshold",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_52",
+          "label": "Speaker ID",
+          "type": "int",
+          "component": "Number"
+        },
+        {
+          "name": "param_53",
+          "label": "Output sample rate",
+          "type": "Literal['16000', '44100', '48000', '96000', '192000']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_54",
+          "label": "Output format",
+          "type": "Literal['mp3', 'wav', 'flac', 'ogg', 'm4a', 'aac']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_55",
+          "label": "Octave shift",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_56",
+          "label": "Semitone shift",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_57",
+          "label": "Edge TTS pitch shift",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_58",
+          "label": "TTS speed change",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_59",
+          "label": "TTS volume change",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_60",
+          "label": "Cleaning intensity",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_61",
+          "label": "Output gain",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_62",
+          "label": "Pitch extraction algorithm",
+          "type": "Literal['rmvpe', 'crepe', 'crepe-tiny', 'fcpe']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_63",
+          "label": "Index rate",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_64",
+          "label": "RMS mix rate",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_65",
+          "label": "Protect rate",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_66",
+          "label": "Split input voice",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_67",
+          "label": "Autotune intensity",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_68",
+          "label": "Proposed pitch threshold",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_69",
+          "label": "Speaker ID",
+          "type": "int",
+          "component": "Number"
+        },
+        {
+          "name": "param_70",
+          "label": "Output sample rate",
+          "type": "Literal['16000', '44100', '48000', '96000', '192000']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_71",
+          "label": "Output format",
+          "type": "Literal['mp3', 'wav', 'flac', 'ogg', 'm4a', 'aac']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_72",
+          "label": "Octave shift",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_73",
+          "label": "Semitone shift",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_74",
+          "label": "Edge TTS pitch shift",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_75",
+          "label": "TTS speed change",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_76",
+          "label": "TTS volume change",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_77",
+          "label": "Cleaning intensity",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_78",
+          "label": "Output gain",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_79",
+          "label": "Sample rate",
+          "type": "Literal['32000', '40000', '48000']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_80",
+          "label": "Normalization mode",
+          "type": "Literal['none', 'pre', 'post']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_81",
+          "label": "Filter audio",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_82",
+          "label": "Cleaning intensity",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_83",
+          "label": "Chunk length",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_84",
+          "label": "Overlap length",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_85",
+          "label": "Include mutes",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_86",
+          "label": "Number of epochs",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_87",
+          "label": "Batch size",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_88",
+          "label": "Overtraining threshold",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_89",
+          "label": "Vocoder",
+          "type": "Literal['HiFi-GAN', 'MRF HiFi-GAN', 'RefineGAN']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_90",
+          "label": "Index algorithm",
+          "type": "Literal['Auto', 'Faiss', 'KMeans']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_91",
+          "label": "Save interval",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_92",
+          "label": "Save all checkpoints",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_93",
+          "label": "Save all weights",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_94",
+          "label": "Clear saved data",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_95",
+          "label": "Precision",
+          "type": "Literal['fp32', 'fp16', 'bf16']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_96",
+          "label": "Preload dataset",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_97",
+          "label": "Reduce memory usage",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output message",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/partial_120",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Output message",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/partial_121",
+      "parameters": [
+        {
+          "name": "value",
+          "label": "Configuration name",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Configuration name",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/partial_122",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Configuration names",
+          "type": "list[Literal[]]",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/_wrapped_fn_34",
+      "parameters": [
+        {
+          "name": "param_0",
+          "label": "Configuration name",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Pitch extraction algorithm",
+          "type": "Literal['rmvpe', 'crepe', 'crepe-tiny', 'fcpe']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Index rate",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "RMS mix rate",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Protect rate",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Split input voice",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Autotune intensity",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Proposed pitch threshold",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Speaker ID",
+          "type": "int",
+          "component": "Number"
+        },
+        {
+          "label": "Output sample rate",
+          "type": "Literal['16000', '44100', '48000', '96000', '192000']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Output format",
+          "type": "Literal['mp3', 'wav', 'flac', 'ogg', 'm4a', 'aac']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Cleaning intensity",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Room size",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Wetness level",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Dryness level",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Damping level",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Main gain",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Instrumentals gain",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Backup gain",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Vocal pitch shift",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Overall pitch shift",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Pitch extraction algorithm",
+          "type": "Literal['rmvpe', 'crepe', 'crepe-tiny', 'fcpe']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Index rate",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "RMS mix rate",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Protect rate",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Split input voice",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Autotune intensity",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Proposed pitch threshold",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Speaker ID",
+          "type": "int",
+          "component": "Number"
+        },
+        {
+          "label": "Output sample rate",
+          "type": "Literal['16000', '44100', '48000', '96000', '192000']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Output format",
+          "type": "Literal['mp3', 'wav', 'flac', 'ogg', 'm4a', 'aac']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Cleaning intensity",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Room size",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Wetness level",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Dryness level",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Damping level",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Main gain",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Instrumentals gain",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Backup gain",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Separation model",
+          "type": "Literal['UVR-MDX-NET-Voc_FT.onnx', 'UVR_MDXNET_KARA_2.onnx', 'Reverb_HQ_By_FoxJoy.onnx']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Segment size",
+          "type": "Literal['64', '128', '256', '512', '1024', '2048']",
+          "component": "Radio"
+        },
+        {
+          "label": "Pitch shift (octaves)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Pitch shift (semi-tones)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Instrumental pitch shift",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Backup vocal pitch shift",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Pitch extraction algorithm",
+          "type": "Literal['rmvpe', 'crepe', 'crepe-tiny', 'fcpe']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Index rate",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "RMS mix rate",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Protect rate",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Split input voice",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Autotune intensity",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Proposed pitch threshold",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Speaker ID",
+          "type": "int",
+          "component": "Number"
+        },
+        {
+          "label": "Output sample rate",
+          "type": "Literal['16000', '44100', '48000', '96000', '192000']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Output format",
+          "type": "Literal['mp3', 'wav', 'flac', 'ogg', 'm4a', 'aac']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Octave shift",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Semitone shift",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Edge TTS pitch shift",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "TTS speed change",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "TTS volume change",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Cleaning intensity",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Output gain",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Pitch extraction algorithm",
+          "type": "Literal['rmvpe', 'crepe', 'crepe-tiny', 'fcpe']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Index rate",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "RMS mix rate",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Protect rate",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Split input voice",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Autotune intensity",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Proposed pitch threshold",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Speaker ID",
+          "type": "int",
+          "component": "Number"
+        },
+        {
+          "label": "Output sample rate",
+          "type": "Literal['16000', '44100', '48000', '96000', '192000']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Output format",
+          "type": "Literal['mp3', 'wav', 'flac', 'ogg', 'm4a', 'aac']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Octave shift",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Semitone shift",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Edge TTS pitch shift",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "TTS speed change",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "TTS volume change",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Cleaning intensity",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Output gain",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Sample rate",
+          "type": "Literal['32000', '40000', '48000']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Normalization mode",
+          "type": "Literal['none', 'pre', 'post']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Filter audio",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Cleaning intensity",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Chunk length",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Overlap length",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Include mutes",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Number of epochs",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Batch size",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Overtraining threshold",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Vocoder",
+          "type": "Literal['HiFi-GAN', 'MRF HiFi-GAN', 'RefineGAN']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Index algorithm",
+          "type": "Literal['Auto', 'Faiss', 'KMeans']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Save interval",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Save all checkpoints",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Save all weights",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Clear saved data",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Precision",
+          "type": "Literal['fp32', 'fp16', 'bf16']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Preload dataset",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Reduce memory usage",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ]
+    },
+    {
+      "name": "/partial_123",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Output message",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/_wrapped_fn_35",
+      "parameters": [
+        {
+          "name": "confirm",
+          "label": "parameter_753",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_1",
+          "label": "Configuration names",
+          "type": "list[Literal[]]",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output message",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/partial_124",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Output message",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/_wrapped_fn_36",
+      "parameters": [
+        {
+          "name": "confirm",
+          "label": "parameter_753",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output message",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/partial_125",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Output message",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/partial_126",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Configuration name",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Configuration names",
+          "type": "list[Literal[]]",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/partial_127",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Configuration name",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Configuration names",
+          "type": "list[Literal[]]",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/_wrapped_fn_37",
+      "parameters": [
+        {
+          "name": "confirm",
+          "label": "parameter_753",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output message",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/partial_128",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Output message",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/_init_dropdowns",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Edge TTS voice",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Edge TTS voice",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Voice model",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Voice model",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Voice model",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Voice model",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Voice models",
+          "type": "list[Literal[]]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Custom embedder model",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Custom embedder model",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Custom embedder model",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Custom embedder model",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Custom embedder model",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Custom embedder models",
+          "type": "list[Literal[]]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Custom pretrained model",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Custom pretrained models",
+          "type": "list[Literal[]]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Model name",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Model name",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Model name",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Training models",
+          "type": "list[Literal[]]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Source",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Source",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Song directory",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Song directory",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Song directory",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Song directory",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Song directory",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Song directories",
+          "type": "list[Literal[]]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Dataset path",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Speech audio files",
+          "type": "list[Literal[]]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Output audio files",
+          "type": "list[Literal[]]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Dataset audio files",
+          "type": "list[Literal[]]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Configuration name",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Configuration names",
+          "type": "list[Literal[]]",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/partial_129",
+      "parameters": [
+        {
+          "name": "param_1",
+          "label": "Source",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_2",
+          "label": "Voice model",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output name",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/partial_130",
+      "parameters": [
+        {
+          "name": "param_0",
+          "label": "Main vocals",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "name": "param_1",
+          "label": "Song directory",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output name",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/partial_131",
+      "parameters": [
+        {
+          "name": "param_0",
+          "label": "Source",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_1",
+          "label": "Voice model",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output name",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/partial_132",
+      "parameters": [
+        {
+          "name": "param_2",
+          "label": "Converted speech",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output name",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/update_value_8",
+      "parameters": [
+        {
+          "name": "x",
+          "label": "Model name",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Upload name",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/partial",
+  "_api_verified": true,
+  "estimated_latency_s": 7.09,
+  "speed_tier": "medium",
+  "_latency_source": "measured",
+  "measured_latency_s": 7.09,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:49:05.787754+00:00"
+}

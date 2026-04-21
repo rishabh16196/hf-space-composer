@@ -1,0 +1,62 @@
+{
+  "space_id": "abidlabs/Echocardiogram-Segmentation",
+  "title": "Echocardiogram Segmentation",
+  "emoji": "\ud83d\udcca",
+  "description": "Echocardiogram Segmentation",
+  "input_schema": {
+    "inp": {
+      "type": "str",
+      "description": "inp",
+      "required": true,
+      "component": "Image"
+    }
+  },
+  "output_schema": {
+    "output": {
+      "type": "str",
+      "description": "output",
+      "component": "Image"
+    }
+  },
+  "license": "unknown",
+  "hardware": "3.34.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 14,
+  "last_modified": "2023-06-15 17:36:37+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/predict",
+      "parameters": [
+        {
+          "name": "inp",
+          "label": "inp",
+          "type": "str",
+          "component": "Image"
+        }
+      ],
+      "returns": [
+        {
+          "label": "output",
+          "type": "str",
+          "component": "Image"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/predict",
+  "_api_verified": true,
+  "estimated_latency_s": 2.86,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 2.86,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:50:05.844368+00:00"
+}

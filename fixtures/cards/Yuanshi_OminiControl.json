@@ -1,0 +1,88 @@
+{
+  "space_id": "Yuanshi/OminiControl",
+  "title": "OminiControl",
+  "emoji": "\ud83c\udf0d",
+  "description": "OminiControl",
+  "input_schema": {
+    "image": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "Condition Image",
+      "required": true,
+      "component": "Image"
+    },
+    "resolution": {
+      "type": "Literal['512', '1024']",
+      "description": "Resolution",
+      "required": true,
+      "component": "Radio"
+    },
+    "text": {
+      "type": "str",
+      "description": "Text Prompt",
+      "required": true,
+      "component": "Textbox"
+    }
+  },
+  "output_schema": {
+    "value_10": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "value_10",
+      "component": "Image"
+    }
+  },
+  "license": "unknown",
+  "hardware": "5.23.2",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 941,
+  "last_modified": "2025-04-16 13:20:41+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/process_image_and_text",
+      "parameters": [
+        {
+          "name": "image",
+          "label": "Condition Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "resolution",
+          "label": "Resolution",
+          "type": "Literal['512', '1024']",
+          "component": "Radio"
+        },
+        {
+          "name": "text",
+          "label": "Text Prompt",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_10",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/process_image_and_text",
+  "_api_verified": true,
+  "estimated_latency_s": 3.14,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 3.14,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:50:05.724138+00:00",
+  "_inference_attempt_status": "predict_failed",
+  "_inference_attempt_error": "The upstream Gradio app has raised an exception but has not enabled verbose error reporting. To enable, set show_error=True in launch()."
+}

@@ -1,0 +1,655 @@
+{
+  "space_id": "Asef1/manhwa-batch-extractor",
+  "title": "Manhwa Panel Extractor",
+  "emoji": "\ud83d\udcda",
+  "description": "Manhwa Panel Extractor",
+  "input_schema": {
+    "input_image": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "Manhwa Page",
+      "required": true,
+      "component": "Image"
+    },
+    "min_panel_area": {
+      "type": "float",
+      "description": "Min Panel Area (%)",
+      "required": true,
+      "component": "Slider"
+    },
+    "edge_sigma": {
+      "type": "float",
+      "description": "Edge Sensitivity",
+      "required": true,
+      "component": "Slider"
+    },
+    "low_threshold": {
+      "type": "float",
+      "description": "Low Threshold",
+      "required": true,
+      "component": "Slider"
+    },
+    "high_threshold": {
+      "type": "float",
+      "description": "High Threshold",
+      "required": true,
+      "component": "Slider"
+    },
+    "reading_order": {
+      "type": "Literal['ltr', 'rtl']",
+      "description": "Reading Order",
+      "required": true,
+      "component": "Radio"
+    },
+    "refine_panels": {
+      "type": "bool",
+      "description": "Refine Panels (Trim Bubbles)",
+      "required": true,
+      "component": "Checkbox"
+    }
+  },
+  "output_schema": {
+    "\u2b07\ufe0f Download ZIP": {
+      "type": "filepath",
+      "description": "\u2b07\ufe0f Download ZIP",
+      "component": "File"
+    },
+    "Status": {
+      "type": "str",
+      "description": "Status",
+      "component": "Textbox"
+    },
+    "Extracted Panels": {
+      "type": "list[dict(image: dict(path: str | None (Path to a local file), url: str | None (Publicly available u",
+      "description": "Extracted Panels",
+      "component": "Gallery"
+    }
+  },
+  "license": "unknown",
+  "hardware": "5.23.3",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 2,
+  "last_modified": "2026-03-30 12:57:12+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/process_manhwa_image",
+      "parameters": [
+        {
+          "name": "input_image",
+          "label": "Manhwa Page",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "min_panel_area",
+          "label": "Min Panel Area (%)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "edge_sigma",
+          "label": "Edge Sensitivity",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "low_threshold",
+          "label": "Low Threshold",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "high_threshold",
+          "label": "High Threshold",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "reading_order",
+          "label": "Reading Order",
+          "type": "Literal['ltr', 'rtl']",
+          "component": "Radio"
+        },
+        {
+          "name": "refine_panels",
+          "label": "Refine Panels (Trim Bubbles)",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "\u2b07\ufe0f Download ZIP",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "label": "Status",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Extracted Panels",
+          "type": "list[dict(image: dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Origi",
+          "component": "Gallery"
+        }
+      ]
+    },
+    {
+      "name": "/load_sample",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Manhwa Page",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/process_chapter_batch",
+      "parameters": [
+        {
+          "name": "folder_files",
+          "label": "\ud83d\udcc1 Upload One Chapter Folder",
+          "type": "list[filepath]",
+          "component": "File"
+        },
+        {
+          "name": "folder_name",
+          "label": "Chapter Folder Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "zip_file",
+          "label": "\ud83d\udddc\ufe0f Or Upload ZIP of Chapter Folders",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "name": "min_panel_area",
+          "label": "Min Panel Area (%)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "edge_sigma",
+          "label": "Edge Sensitivity",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "low_threshold",
+          "label": "Low Threshold",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "high_threshold",
+          "label": "High Threshold",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "reading_order",
+          "label": "Reading Order",
+          "type": "Literal['ltr', 'rtl']",
+          "component": "Radio"
+        },
+        {
+          "name": "refine_panels",
+          "label": "Refine Panels (Trim Bubbles)",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "\u2b07\ufe0f Download Processed ZIP",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "label": "Status",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/download_only_series",
+      "parameters": [
+        {
+          "name": "url",
+          "label": "Series URL",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "start",
+          "label": "Start Chapter",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "end",
+          "label": "End Chapter",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "ma",
+          "label": "Min Panel Area (%)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "es",
+          "label": "Edge Sensitivity",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "lt",
+          "label": "Low Threshold",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "ht",
+          "label": "High Threshold",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "ro",
+          "label": "Reading Order",
+          "type": "Literal['ltr', 'rtl']",
+          "component": "Radio"
+        },
+        {
+          "name": "rp",
+          "label": "Refine Panels (Trim Bubbles)",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "\u2b07\ufe0f Download ZIP",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "label": "Log",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/download_and_extract_series",
+      "parameters": [
+        {
+          "name": "url",
+          "label": "Series URL",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "start",
+          "label": "Start Chapter",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "end",
+          "label": "End Chapter",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "ma",
+          "label": "Min Panel Area (%)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "es",
+          "label": "Edge Sensitivity",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "lt",
+          "label": "Low Threshold",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "ht",
+          "label": "High Threshold",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "ro",
+          "label": "Reading Order",
+          "type": "Literal['ltr', 'rtl']",
+          "component": "Radio"
+        },
+        {
+          "name": "rp",
+          "label": "Refine Panels (Trim Bubbles)",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "\u2b07\ufe0f Download ZIP",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "label": "Log",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/fetch_chapter_images_only",
+      "parameters": [
+        {
+          "name": "chapter_url",
+          "label": "Chapter URL",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "html_source",
+          "label": "HTML Page Source",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Chapter Pages Preview",
+          "type": "list[dict(image: dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Origi",
+          "component": "Gallery"
+        },
+        {
+          "label": "Select Pages to Process",
+          "type": "list[Literal[]]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "label": "Status",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/download_selected_single",
+      "parameters": [
+        {
+          "name": "selected_names",
+          "label": "Select Pages to Process",
+          "type": "list[Literal[]]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "\u2b07\ufe0f Download ZIP",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "label": "Status",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/extract_selected_single",
+      "parameters": [
+        {
+          "name": "selected_names",
+          "label": "Select Pages to Process",
+          "type": "list[Literal[]]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "min_panel_area",
+          "label": "Min Panel Area (%)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "edge_sigma",
+          "label": "Edge Sensitivity",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "low_threshold",
+          "label": "Low Threshold",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "high_threshold",
+          "label": "High Threshold",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "reading_order",
+          "label": "Reading Order",
+          "type": "Literal['ltr', 'rtl']",
+          "component": "Radio"
+        },
+        {
+          "name": "refine_panels",
+          "label": "Refine Panels (Trim Bubbles)",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "\u2b07\ufe0f Download ZIP",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "label": "Status",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/hub_search",
+      "parameters": [
+        {
+          "name": "query",
+          "label": "Search Manga Title",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "source",
+          "label": "API Source",
+          "type": "Literal['MangaDex', 'Comick']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Select Series",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/hub_get_chapters",
+      "parameters": [
+        {
+          "name": "selected_str",
+          "label": "Select Series",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "source",
+          "label": "API Source",
+          "type": "Literal['MangaDex', 'Comick']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Select Chapter",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/hub_download_chapter",
+      "parameters": [
+        {
+          "name": "selected_chap_str",
+          "label": "Select Chapter",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "source",
+          "label": "API Source",
+          "type": "Literal['MangaDex', 'Comick']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Chapter Pages Preview",
+          "type": "list[dict(image: dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Origi",
+          "component": "Gallery"
+        },
+        {
+          "label": "Select Pages to Process",
+          "type": "list[Literal[]]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "label": "Status",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/download_selected_single_1",
+      "parameters": [
+        {
+          "name": "selected_names",
+          "label": "Select Pages to Process",
+          "type": "list[Literal[]]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "\u2b07\ufe0f Download ZIP",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "label": "Status",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/extract_selected_single_1",
+      "parameters": [
+        {
+          "name": "selected_names",
+          "label": "Select Pages to Process",
+          "type": "list[Literal[]]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "min_panel_area",
+          "label": "Min Panel Area (%)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "edge_sigma",
+          "label": "Edge Sensitivity",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "low_threshold",
+          "label": "Low Threshold",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "high_threshold",
+          "label": "High Threshold",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "reading_order",
+          "label": "Reading Order",
+          "type": "Literal['ltr', 'rtl']",
+          "component": "Radio"
+        },
+        {
+          "name": "refine_panels",
+          "label": "Refine Panels (Trim Bubbles)",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "\u2b07\ufe0f Download ZIP",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "label": "Status",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/process_manhwa_image",
+  "_api_verified": true
+}

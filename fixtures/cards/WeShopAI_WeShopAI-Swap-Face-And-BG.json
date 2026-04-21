@@ -1,0 +1,74 @@
+{
+  "space_id": "WeShopAI/WeShopAI-Swap-Face-And-BG",
+  "title": "WeShopAI Swap Face And BG",
+  "emoji": "\ud83e\ude84",
+  "description": "Instantly Replace Faces and Backgrounds with AI",
+  "input_schema": {
+    "main_image": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "Target Image (face to replace)",
+      "required": true,
+      "component": "Image"
+    },
+    "fashion_model_image": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "Source Image (face to copy)",
+      "required": true,
+      "component": "Image"
+    }
+  },
+  "output_schema": {
+    "Result": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "Result",
+      "component": "Image"
+    }
+  },
+  "license": "other",
+  "hardware": "5.25.2",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 31,
+  "last_modified": "2026-02-03 11:54:41+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/simple_generate",
+      "parameters": [
+        {
+          "name": "main_image",
+          "label": "Target Image (face to replace)",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "fashion_model_image",
+          "label": "Source Image (face to copy)",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Result",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/simple_generate",
+  "_api_verified": true,
+  "estimated_latency_s": 3.02,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 3.02,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:50:04.575176+00:00"
+}

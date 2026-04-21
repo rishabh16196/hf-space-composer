@@ -1,0 +1,201 @@
+{
+  "space_id": "Jackrong/Qwen3.5-27B-Claude-4.6-Opus-Reasoning-Distilled",
+  "title": "Qwen3.5 27B Claude 4.6 Opus Reasoning Distilled",
+  "emoji": "\ud83e\udde0",
+  "description": "Qwen3.5 27B Claude 4.6 Opus Reasoning Distilled",
+  "input_schema": {
+    "message": {
+      "type": "str",
+      "description": "parameter_6",
+      "required": true,
+      "component": "Textbox"
+    },
+    "history": {
+      "type": "list[dict(role: str, metadata: dict(title: str, id: int | str, parent_id: int | str, log: str, durat",
+      "description": "parameter_5",
+      "required": true,
+      "component": "Chatbot"
+    },
+    "system_prompt": {
+      "type": "str",
+      "description": "System Prompt",
+      "required": true,
+      "component": "Textbox"
+    },
+    "max_tokens": {
+      "type": "float",
+      "description": "Max Tokens",
+      "required": true,
+      "component": "Slider"
+    },
+    "temperature": {
+      "type": "float",
+      "description": "Temperature",
+      "required": true,
+      "component": "Slider"
+    },
+    "top_p": {
+      "type": "float",
+      "description": "Top-p",
+      "required": true,
+      "component": "Slider"
+    }
+  },
+  "output_schema": {
+    "value_6": {
+      "type": "str",
+      "description": "value_6",
+      "component": "Textbox"
+    },
+    "value_5": {
+      "type": "list[dict(role: str, metadata: dict(title: str, id: int | str, parent_id: int | str, log: str, durat",
+      "description": "value_5",
+      "component": "Chatbot"
+    }
+  },
+  "license": "cc-by-nc-sa-4.0",
+  "hardware": "6.5.1",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 21,
+  "last_modified": "2026-03-26 15:57:37+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/submit_message",
+      "parameters": [
+        {
+          "name": "message",
+          "label": "parameter_6",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "history",
+          "label": "parameter_5",
+          "type": "list[dict(role: str, metadata: dict(title: str, id: int | str, parent_id: int | str, log: str, duration: float, status: Literal['pending', 'done']) | None, content: list[dict(text: str, type: Literal[",
+          "component": "Chatbot"
+        },
+        {
+          "name": "system_prompt",
+          "label": "System Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "max_tokens",
+          "label": "Max Tokens",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "temperature",
+          "label": "Temperature",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "top_p",
+          "label": "Top-p",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_6",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "value_5",
+          "type": "list[dict(role: str, metadata: dict(title: str, id: int | str, parent_id: int | str, log: str, duration: float, status: Literal['pending', 'done']) | None, content: list[dict(text: str, type: Literal[",
+          "component": "Chatbot"
+        }
+      ]
+    },
+    {
+      "name": "/submit_message_1",
+      "parameters": [
+        {
+          "name": "message",
+          "label": "parameter_6",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "history",
+          "label": "parameter_5",
+          "type": "list[dict(role: str, metadata: dict(title: str, id: int | str, parent_id: int | str, log: str, duration: float, status: Literal['pending', 'done']) | None, content: list[dict(text: str, type: Literal[",
+          "component": "Chatbot"
+        },
+        {
+          "name": "system_prompt",
+          "label": "System Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "max_tokens",
+          "label": "Max Tokens",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "temperature",
+          "label": "Temperature",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "top_p",
+          "label": "Top-p",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_6",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "value_5",
+          "type": "list[dict(role: str, metadata: dict(title: str, id: int | str, parent_id: int | str, log: str, duration: float, status: Literal['pending', 'done']) | None, content: list[dict(text: str, type: Literal[",
+          "component": "Chatbot"
+        }
+      ]
+    },
+    {
+      "name": "/clear_chat",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_5",
+          "type": "list[dict(role: str, metadata: dict(title: str, id: int | str, parent_id: int | str, log: str, duration: float, status: Literal['pending', 'done']) | None, content: list[dict(text: str, type: Literal[",
+          "component": "Chatbot"
+        },
+        {
+          "label": "value_6",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/submit_message",
+  "_api_verified": true,
+  "estimated_latency_s": 3.17,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 3.17,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:49:28.883414+00:00"
+}

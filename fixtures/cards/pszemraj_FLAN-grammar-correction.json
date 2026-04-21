@@ -1,0 +1,59 @@
+{
+  "space_id": "pszemraj/FLAN-grammar-correction",
+  "title": "FLAN Grammar Correction",
+  "emoji": "\ud83d\udd25",
+  "description": "FLAN Grammar Correction",
+  "input_schema": {
+    "text": {
+      "type": "str",
+      "description": "input",
+      "required": true,
+      "component": "Textbox"
+    }
+  },
+  "output_schema": {
+    "output": {
+      "type": "str",
+      "description": "output",
+      "component": "Textbox"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "5.4.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 50,
+  "last_modified": "2025-12-29 03:58:11+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/update",
+      "parameters": [
+        {
+          "name": "text",
+          "label": "input",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "output",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/update",
+  "_api_verified": true
+}

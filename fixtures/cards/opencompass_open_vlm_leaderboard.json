@@ -1,0 +1,5419 @@
+{
+  "space_id": "opencompass/open_vlm_leaderboard",
+  "title": "Open VLM Leaderboard",
+  "emoji": "\ud83c\udf0e",
+  "description": "VLMEvalKit Evaluation Results Collection ",
+  "input_schema": {
+    "fields": {
+      "type": "List[Literal['Avg Score', 'Avg Rank', 'MMBench_V11', 'MMStar', 'MME', 'MMMU_VAL', 'MathVista', 'OCRB",
+      "description": "Evaluation Dimension",
+      "required": true,
+      "component": "Checkboxgroup"
+    },
+    "model_name": {
+      "type": "str",
+      "description": "Model Name",
+      "required": true,
+      "component": "Textbox"
+    },
+    "model_size": {
+      "type": "List[Literal['<4B', '4B-10B', '10B-20B', '20B-40B', '>40B', 'Unknown']]",
+      "description": "Model Size",
+      "required": true,
+      "component": "Checkboxgroup"
+    },
+    "model_type": {
+      "type": "List[Literal['API', 'OpenSource']]",
+      "description": "Model Type",
+      "required": true,
+      "component": "Checkboxgroup"
+    }
+  },
+  "output_schema": {
+    "value_11": {
+      "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+      "description": "value_11",
+      "component": "Dataframe"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "4.44.1",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "leaderboard",
+    "region:us",
+    "benchmark"
+  ],
+  "likes": 1008,
+  "last_modified": "2026-03-11 10:10:05+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/filter_df",
+      "parameters": [
+        {
+          "name": "fields",
+          "label": "Evaluation Dimension",
+          "type": "List[Literal['Avg Score', 'Avg Rank', 'MMBench_V11', 'MMStar', 'MME', 'MMMU_VAL', 'MathVista', 'OCRBench', 'AI2D', 'HallusionBench', 'SEEDBench_IMG', 'MMVet', 'LLaVABench', 'CCBench', 'RealWorldQA', '",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_name",
+          "label": "Model Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "model_size",
+          "label": "Model Size",
+          "type": "List[Literal['<4B', '4B-10B', '10B-20B', '20B-40B', '>40B', 'Unknown']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_type",
+          "label": "Model Type",
+          "type": "List[Literal['API', 'OpenSource']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_11",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/filter_df_1",
+      "parameters": [
+        {
+          "name": "fields",
+          "label": "Evaluation Dimension",
+          "type": "List[Literal['Avg Score', 'Avg Rank', 'MMBench_V11', 'MMStar', 'MME', 'MMMU_VAL', 'MathVista', 'OCRBench', 'AI2D', 'HallusionBench', 'SEEDBench_IMG', 'MMVet', 'LLaVABench', 'CCBench', 'RealWorldQA', '",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_name",
+          "label": "Model Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "model_size",
+          "label": "Model Size",
+          "type": "List[Literal['<4B', '4B-10B', '10B-20B', '20B-40B', '>40B', 'Unknown']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_type",
+          "label": "Model Type",
+          "type": "List[Literal['API', 'OpenSource']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_11",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/filter_df_2",
+      "parameters": [
+        {
+          "name": "fields",
+          "label": "Evaluation Dimension",
+          "type": "List[Literal['Avg Score', 'Avg Rank', 'MMBench_V11', 'MMStar', 'MME', 'MMMU_VAL', 'MathVista', 'OCRBench', 'AI2D', 'HallusionBench', 'SEEDBench_IMG', 'MMVet', 'LLaVABench', 'CCBench', 'RealWorldQA', '",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_name",
+          "label": "Model Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "model_size",
+          "label": "Model Size",
+          "type": "List[Literal['<4B', '4B-10B', '10B-20B', '20B-40B', '>40B', 'Unknown']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_type",
+          "label": "Model Type",
+          "type": "List[Literal['API', 'OpenSource']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_11",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/filter_df_3",
+      "parameters": [
+        {
+          "name": "fields",
+          "label": "Evaluation Dimension",
+          "type": "List[Literal['Avg Score', 'Avg Rank', 'MMBench_V11', 'MMStar', 'MME', 'MMMU_VAL', 'MathVista', 'OCRBench', 'AI2D', 'HallusionBench', 'SEEDBench_IMG', 'MMVet', 'LLaVABench', 'CCBench', 'RealWorldQA', '",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_name",
+          "label": "Model Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "model_size",
+          "label": "Model Size",
+          "type": "List[Literal['<4B', '4B-10B', '10B-20B', '20B-40B', '>40B', 'Unknown']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_type",
+          "label": "Model Type",
+          "type": "List[Literal['API', 'OpenSource']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_11",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/filter_df_l2",
+      "parameters": [
+        {
+          "name": "dataset_name",
+          "label": "SEEDBench_IMG",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "fields",
+          "label": "SEEDBench_IMG CheckBoxes",
+          "type": "List[Literal['Overall', 'Overall (official)', 'Instance Attributes', 'Instance Identity', 'Instance Interaction', 'Instance Location', 'Instances Counting', 'Scene Understanding', 'Spatial Relation', ",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_name",
+          "label": "Model Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "model_size",
+          "label": "Model Size",
+          "type": "List[Literal['<4B', '4B-10B', '10B-20B', '20B-40B', '>40B', 'Unknown']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_type",
+          "label": "Model Type",
+          "type": "List[Literal['API', 'OpenSource']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_23",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/filter_df_l2_1",
+      "parameters": [
+        {
+          "name": "dataset_name",
+          "label": "SEEDBench_IMG",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "fields",
+          "label": "SEEDBench_IMG CheckBoxes",
+          "type": "List[Literal['Overall', 'Overall (official)', 'Instance Attributes', 'Instance Identity', 'Instance Interaction', 'Instance Location', 'Instances Counting', 'Scene Understanding', 'Spatial Relation', ",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_name",
+          "label": "Model Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "model_size",
+          "label": "Model Size",
+          "type": "List[Literal['<4B', '4B-10B', '10B-20B', '20B-40B', '>40B', 'Unknown']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_type",
+          "label": "Model Type",
+          "type": "List[Literal['API', 'OpenSource']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_23",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/filter_df_l2_2",
+      "parameters": [
+        {
+          "name": "dataset_name",
+          "label": "SEEDBench_IMG",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "fields",
+          "label": "SEEDBench_IMG CheckBoxes",
+          "type": "List[Literal['Overall', 'Overall (official)', 'Instance Attributes', 'Instance Identity', 'Instance Interaction', 'Instance Location', 'Instances Counting', 'Scene Understanding', 'Spatial Relation', ",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_name",
+          "label": "Model Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "model_size",
+          "label": "Model Size",
+          "type": "List[Literal['<4B', '4B-10B', '10B-20B', '20B-40B', '>40B', 'Unknown']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_type",
+          "label": "Model Type",
+          "type": "List[Literal['API', 'OpenSource']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_23",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/filter_df_l2_3",
+      "parameters": [
+        {
+          "name": "dataset_name",
+          "label": "SEEDBench_IMG",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "fields",
+          "label": "SEEDBench_IMG CheckBoxes",
+          "type": "List[Literal['Overall', 'Overall (official)', 'Instance Attributes', 'Instance Identity', 'Instance Interaction', 'Instance Location', 'Instances Counting', 'Scene Understanding', 'Spatial Relation', ",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_name",
+          "label": "Model Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "model_size",
+          "label": "Model Size",
+          "type": "List[Literal['<4B', '4B-10B', '10B-20B', '20B-40B', '>40B', 'Unknown']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_type",
+          "label": "Model Type",
+          "type": "List[Literal['API', 'OpenSource']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_23",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/filter_df_l2_4",
+      "parameters": [
+        {
+          "name": "dataset_name",
+          "label": "CCBench",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "fields",
+          "label": "CCBench CheckBoxes",
+          "type": "List[Literal['Overall', 'Sketch Reasoning', 'Historical Figure', 'Calligraphy Painting', 'Scenery Building', 'Food Clothes', 'Cultural Relic', 'Traditional Show']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_name",
+          "label": "Model Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "model_size",
+          "label": "Model Size",
+          "type": "List[Literal['<4B', '4B-10B', '10B-20B', '20B-40B', '>40B', 'Unknown']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_type",
+          "label": "Model Type",
+          "type": "List[Literal['API', 'OpenSource']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_35",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/filter_df_l2_5",
+      "parameters": [
+        {
+          "name": "dataset_name",
+          "label": "CCBench",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "fields",
+          "label": "CCBench CheckBoxes",
+          "type": "List[Literal['Overall', 'Sketch Reasoning', 'Historical Figure', 'Calligraphy Painting', 'Scenery Building', 'Food Clothes', 'Cultural Relic', 'Traditional Show']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_name",
+          "label": "Model Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "model_size",
+          "label": "Model Size",
+          "type": "List[Literal['<4B', '4B-10B', '10B-20B', '20B-40B', '>40B', 'Unknown']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_type",
+          "label": "Model Type",
+          "type": "List[Literal['API', 'OpenSource']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_35",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/filter_df_l2_6",
+      "parameters": [
+        {
+          "name": "dataset_name",
+          "label": "CCBench",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "fields",
+          "label": "CCBench CheckBoxes",
+          "type": "List[Literal['Overall', 'Sketch Reasoning', 'Historical Figure', 'Calligraphy Painting', 'Scenery Building', 'Food Clothes', 'Cultural Relic', 'Traditional Show']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_name",
+          "label": "Model Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "model_size",
+          "label": "Model Size",
+          "type": "List[Literal['<4B', '4B-10B', '10B-20B', '20B-40B', '>40B', 'Unknown']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_type",
+          "label": "Model Type",
+          "type": "List[Literal['API', 'OpenSource']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_35",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/filter_df_l2_7",
+      "parameters": [
+        {
+          "name": "dataset_name",
+          "label": "CCBench",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "fields",
+          "label": "CCBench CheckBoxes",
+          "type": "List[Literal['Overall', 'Sketch Reasoning', 'Historical Figure', 'Calligraphy Painting', 'Scenery Building', 'Food Clothes', 'Cultural Relic', 'Traditional Show']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_name",
+          "label": "Model Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "model_size",
+          "label": "Model Size",
+          "type": "List[Literal['<4B', '4B-10B', '10B-20B', '20B-40B', '>40B', 'Unknown']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_type",
+          "label": "Model Type",
+          "type": "List[Literal['API', 'OpenSource']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_35",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/filter_df_l2_8",
+      "parameters": [
+        {
+          "name": "dataset_name",
+          "label": "MMBench_TEST_EN",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "fields",
+          "label": "MMBench_TEST_EN CheckBoxes",
+          "type": "List[Literal['Overall', 'CP', 'FP-S', 'FP-C', 'AR', 'LR', 'RR']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_name",
+          "label": "Model Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "model_size",
+          "label": "Model Size",
+          "type": "List[Literal['<4B', '4B-10B', '10B-20B', '20B-40B', '>40B', 'Unknown']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_type",
+          "label": "Model Type",
+          "type": "List[Literal['API', 'OpenSource']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_47",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/filter_df_l2_9",
+      "parameters": [
+        {
+          "name": "dataset_name",
+          "label": "MMBench_TEST_EN",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "fields",
+          "label": "MMBench_TEST_EN CheckBoxes",
+          "type": "List[Literal['Overall', 'CP', 'FP-S', 'FP-C', 'AR', 'LR', 'RR']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_name",
+          "label": "Model Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "model_size",
+          "label": "Model Size",
+          "type": "List[Literal['<4B', '4B-10B', '10B-20B', '20B-40B', '>40B', 'Unknown']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_type",
+          "label": "Model Type",
+          "type": "List[Literal['API', 'OpenSource']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_47",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/filter_df_l2_10",
+      "parameters": [
+        {
+          "name": "dataset_name",
+          "label": "MMBench_TEST_EN",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "fields",
+          "label": "MMBench_TEST_EN CheckBoxes",
+          "type": "List[Literal['Overall', 'CP', 'FP-S', 'FP-C', 'AR', 'LR', 'RR']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_name",
+          "label": "Model Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "model_size",
+          "label": "Model Size",
+          "type": "List[Literal['<4B', '4B-10B', '10B-20B', '20B-40B', '>40B', 'Unknown']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_type",
+          "label": "Model Type",
+          "type": "List[Literal['API', 'OpenSource']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_47",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/filter_df_l2_11",
+      "parameters": [
+        {
+          "name": "dataset_name",
+          "label": "MMBench_TEST_EN",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "fields",
+          "label": "MMBench_TEST_EN CheckBoxes",
+          "type": "List[Literal['Overall', 'CP', 'FP-S', 'FP-C', 'AR', 'LR', 'RR']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_name",
+          "label": "Model Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "model_size",
+          "label": "Model Size",
+          "type": "List[Literal['<4B', '4B-10B', '10B-20B', '20B-40B', '>40B', 'Unknown']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_type",
+          "label": "Model Type",
+          "type": "List[Literal['API', 'OpenSource']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_47",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/filter_df_l2_12",
+      "parameters": [
+        {
+          "name": "dataset_name",
+          "label": "MMBench_TEST_CN",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "fields",
+          "label": "MMBench_TEST_CN CheckBoxes",
+          "type": "List[Literal['Overall', 'CP', 'FP-S', 'FP-C', 'AR', 'LR', 'RR']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_name",
+          "label": "Model Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "model_size",
+          "label": "Model Size",
+          "type": "List[Literal['<4B', '4B-10B', '10B-20B', '20B-40B', '>40B', 'Unknown']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_type",
+          "label": "Model Type",
+          "type": "List[Literal['API', 'OpenSource']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_59",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/filter_df_l2_13",
+      "parameters": [
+        {
+          "name": "dataset_name",
+          "label": "MMBench_TEST_CN",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "fields",
+          "label": "MMBench_TEST_CN CheckBoxes",
+          "type": "List[Literal['Overall', 'CP', 'FP-S', 'FP-C', 'AR', 'LR', 'RR']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_name",
+          "label": "Model Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "model_size",
+          "label": "Model Size",
+          "type": "List[Literal['<4B', '4B-10B', '10B-20B', '20B-40B', '>40B', 'Unknown']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_type",
+          "label": "Model Type",
+          "type": "List[Literal['API', 'OpenSource']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_59",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/filter_df_l2_14",
+      "parameters": [
+        {
+          "name": "dataset_name",
+          "label": "MMBench_TEST_CN",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "fields",
+          "label": "MMBench_TEST_CN CheckBoxes",
+          "type": "List[Literal['Overall', 'CP', 'FP-S', 'FP-C', 'AR', 'LR', 'RR']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_name",
+          "label": "Model Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "model_size",
+          "label": "Model Size",
+          "type": "List[Literal['<4B', '4B-10B', '10B-20B', '20B-40B', '>40B', 'Unknown']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_type",
+          "label": "Model Type",
+          "type": "List[Literal['API', 'OpenSource']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_59",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/filter_df_l2_15",
+      "parameters": [
+        {
+          "name": "dataset_name",
+          "label": "MMBench_TEST_CN",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "fields",
+          "label": "MMBench_TEST_CN CheckBoxes",
+          "type": "List[Literal['Overall', 'CP', 'FP-S', 'FP-C', 'AR', 'LR', 'RR']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_name",
+          "label": "Model Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "model_size",
+          "label": "Model Size",
+          "type": "List[Literal['<4B', '4B-10B', '10B-20B', '20B-40B', '>40B', 'Unknown']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_type",
+          "label": "Model Type",
+          "type": "List[Literal['API', 'OpenSource']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_59",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/filter_df_l2_16",
+      "parameters": [
+        {
+          "name": "dataset_name",
+          "label": "MMBench_TEST_EN_V11",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "fields",
+          "label": "MMBench_TEST_EN_V11 CheckBoxes",
+          "type": "List[Literal['Overall', 'AR', 'CP', 'FP-C', 'FP-S', 'LR', 'RR', 'Action Recognition', 'Attribute Comparison', 'Attribute Recognition', 'Celebrity Recognition', 'Function Reasoning', 'Future Prediction",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_name",
+          "label": "Model Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "model_size",
+          "label": "Model Size",
+          "type": "List[Literal['<4B', '4B-10B', '10B-20B', '20B-40B', '>40B', 'Unknown']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_type",
+          "label": "Model Type",
+          "type": "List[Literal['API', 'OpenSource']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_70",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/filter_df_l2_17",
+      "parameters": [
+        {
+          "name": "dataset_name",
+          "label": "MMBench_TEST_EN_V11",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "fields",
+          "label": "MMBench_TEST_EN_V11 CheckBoxes",
+          "type": "List[Literal['Overall', 'AR', 'CP', 'FP-C', 'FP-S', 'LR', 'RR', 'Action Recognition', 'Attribute Comparison', 'Attribute Recognition', 'Celebrity Recognition', 'Function Reasoning', 'Future Prediction",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_name",
+          "label": "Model Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "model_size",
+          "label": "Model Size",
+          "type": "List[Literal['<4B', '4B-10B', '10B-20B', '20B-40B', '>40B', 'Unknown']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_type",
+          "label": "Model Type",
+          "type": "List[Literal['API', 'OpenSource']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_70",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/filter_df_l2_18",
+      "parameters": [
+        {
+          "name": "dataset_name",
+          "label": "MMBench_TEST_EN_V11",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "fields",
+          "label": "MMBench_TEST_EN_V11 CheckBoxes",
+          "type": "List[Literal['Overall', 'AR', 'CP', 'FP-C', 'FP-S', 'LR', 'RR', 'Action Recognition', 'Attribute Comparison', 'Attribute Recognition', 'Celebrity Recognition', 'Function Reasoning', 'Future Prediction",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_name",
+          "label": "Model Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "model_size",
+          "label": "Model Size",
+          "type": "List[Literal['<4B', '4B-10B', '10B-20B', '20B-40B', '>40B', 'Unknown']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_type",
+          "label": "Model Type",
+          "type": "List[Literal['API', 'OpenSource']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_70",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/filter_df_l2_19",
+      "parameters": [
+        {
+          "name": "dataset_name",
+          "label": "MMBench_TEST_EN_V11",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "fields",
+          "label": "MMBench_TEST_EN_V11 CheckBoxes",
+          "type": "List[Literal['Overall', 'AR', 'CP', 'FP-C', 'FP-S', 'LR', 'RR', 'Action Recognition', 'Attribute Comparison', 'Attribute Recognition', 'Celebrity Recognition', 'Function Reasoning', 'Future Prediction",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_name",
+          "label": "Model Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "model_size",
+          "label": "Model Size",
+          "type": "List[Literal['<4B', '4B-10B', '10B-20B', '20B-40B', '>40B', 'Unknown']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_type",
+          "label": "Model Type",
+          "type": "List[Literal['API', 'OpenSource']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_70",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/filter_df_l2_20",
+      "parameters": [
+        {
+          "name": "dataset_name",
+          "label": "MMBench_TEST_CN_V11",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "fields",
+          "label": "MMBench_TEST_CN_V11 CheckBoxes",
+          "type": "List[Literal['Overall', 'AR', 'CP', 'FP-C', 'FP-S', 'LR', 'RR', 'Action Recognition', 'Attribute Comparison', 'Attribute Recognition', 'Celebrity Recognition', 'Function Reasoning', 'Future Prediction",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_name",
+          "label": "Model Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "model_size",
+          "label": "Model Size",
+          "type": "List[Literal['<4B', '4B-10B', '10B-20B', '20B-40B', '>40B', 'Unknown']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_type",
+          "label": "Model Type",
+          "type": "List[Literal['API', 'OpenSource']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_81",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/filter_df_l2_21",
+      "parameters": [
+        {
+          "name": "dataset_name",
+          "label": "MMBench_TEST_CN_V11",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "fields",
+          "label": "MMBench_TEST_CN_V11 CheckBoxes",
+          "type": "List[Literal['Overall', 'AR', 'CP', 'FP-C', 'FP-S', 'LR', 'RR', 'Action Recognition', 'Attribute Comparison', 'Attribute Recognition', 'Celebrity Recognition', 'Function Reasoning', 'Future Prediction",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_name",
+          "label": "Model Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "model_size",
+          "label": "Model Size",
+          "type": "List[Literal['<4B', '4B-10B', '10B-20B', '20B-40B', '>40B', 'Unknown']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_type",
+          "label": "Model Type",
+          "type": "List[Literal['API', 'OpenSource']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_81",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/filter_df_l2_22",
+      "parameters": [
+        {
+          "name": "dataset_name",
+          "label": "MMBench_TEST_CN_V11",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "fields",
+          "label": "MMBench_TEST_CN_V11 CheckBoxes",
+          "type": "List[Literal['Overall', 'AR', 'CP', 'FP-C', 'FP-S', 'LR', 'RR', 'Action Recognition', 'Attribute Comparison', 'Attribute Recognition', 'Celebrity Recognition', 'Function Reasoning', 'Future Prediction",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_name",
+          "label": "Model Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "model_size",
+          "label": "Model Size",
+          "type": "List[Literal['<4B', '4B-10B', '10B-20B', '20B-40B', '>40B', 'Unknown']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_type",
+          "label": "Model Type",
+          "type": "List[Literal['API', 'OpenSource']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_81",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/filter_df_l2_23",
+      "parameters": [
+        {
+          "name": "dataset_name",
+          "label": "MMBench_TEST_CN_V11",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "fields",
+          "label": "MMBench_TEST_CN_V11 CheckBoxes",
+          "type": "List[Literal['Overall', 'AR', 'CP', 'FP-C', 'FP-S', 'LR', 'RR', 'Action Recognition', 'Attribute Comparison', 'Attribute Recognition', 'Celebrity Recognition', 'Function Reasoning', 'Future Prediction",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_name",
+          "label": "Model Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "model_size",
+          "label": "Model Size",
+          "type": "List[Literal['<4B', '4B-10B', '10B-20B', '20B-40B', '>40B', 'Unknown']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_type",
+          "label": "Model Type",
+          "type": "List[Literal['API', 'OpenSource']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_81",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/filter_df_l2_24",
+      "parameters": [
+        {
+          "name": "dataset_name",
+          "label": "MME",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "fields",
+          "label": "MME CheckBoxes",
+          "type": "List[Literal['Overall', 'Perception', 'Cognition', 'OCR', 'Artwork', 'Celebrity', 'Code Reasoning', 'Color', 'Commonsense Reasoning', 'Count', 'Existence', 'Landmark', 'Numerical Calculation', 'Positi",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_name",
+          "label": "Model Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "model_size",
+          "label": "Model Size",
+          "type": "List[Literal['<4B', '4B-10B', '10B-20B', '20B-40B', '>40B', 'Unknown']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_type",
+          "label": "Model Type",
+          "type": "List[Literal['API', 'OpenSource']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_92",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/filter_df_l2_25",
+      "parameters": [
+        {
+          "name": "dataset_name",
+          "label": "MME",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "fields",
+          "label": "MME CheckBoxes",
+          "type": "List[Literal['Overall', 'Perception', 'Cognition', 'OCR', 'Artwork', 'Celebrity', 'Code Reasoning', 'Color', 'Commonsense Reasoning', 'Count', 'Existence', 'Landmark', 'Numerical Calculation', 'Positi",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_name",
+          "label": "Model Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "model_size",
+          "label": "Model Size",
+          "type": "List[Literal['<4B', '4B-10B', '10B-20B', '20B-40B', '>40B', 'Unknown']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_type",
+          "label": "Model Type",
+          "type": "List[Literal['API', 'OpenSource']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_92",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/filter_df_l2_26",
+      "parameters": [
+        {
+          "name": "dataset_name",
+          "label": "MME",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "fields",
+          "label": "MME CheckBoxes",
+          "type": "List[Literal['Overall', 'Perception', 'Cognition', 'OCR', 'Artwork', 'Celebrity', 'Code Reasoning', 'Color', 'Commonsense Reasoning', 'Count', 'Existence', 'Landmark', 'Numerical Calculation', 'Positi",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_name",
+          "label": "Model Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "model_size",
+          "label": "Model Size",
+          "type": "List[Literal['<4B', '4B-10B', '10B-20B', '20B-40B', '>40B', 'Unknown']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_type",
+          "label": "Model Type",
+          "type": "List[Literal['API', 'OpenSource']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_92",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/filter_df_l2_27",
+      "parameters": [
+        {
+          "name": "dataset_name",
+          "label": "MME",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "fields",
+          "label": "MME CheckBoxes",
+          "type": "List[Literal['Overall', 'Perception', 'Cognition', 'OCR', 'Artwork', 'Celebrity', 'Code Reasoning', 'Color', 'Commonsense Reasoning', 'Count', 'Existence', 'Landmark', 'Numerical Calculation', 'Positi",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_name",
+          "label": "Model Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "model_size",
+          "label": "Model Size",
+          "type": "List[Literal['<4B', '4B-10B', '10B-20B', '20B-40B', '>40B', 'Unknown']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_type",
+          "label": "Model Type",
+          "type": "List[Literal['API', 'OpenSource']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_92",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/filter_df_l2_28",
+      "parameters": [
+        {
+          "name": "dataset_name",
+          "label": "MMVet",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "fields",
+          "label": "MMVet CheckBoxes",
+          "type": "List[Literal['Overall', 'Overall (official)', 'Rec', 'Ocr', 'Know', 'Gen', 'Spat', 'Math']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_name",
+          "label": "Model Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "model_size",
+          "label": "Model Size",
+          "type": "List[Literal['<4B', '4B-10B', '10B-20B', '20B-40B', '>40B', 'Unknown']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_type",
+          "label": "Model Type",
+          "type": "List[Literal['API', 'OpenSource']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_104",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/filter_df_l2_29",
+      "parameters": [
+        {
+          "name": "dataset_name",
+          "label": "MMVet",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "fields",
+          "label": "MMVet CheckBoxes",
+          "type": "List[Literal['Overall', 'Overall (official)', 'Rec', 'Ocr', 'Know', 'Gen', 'Spat', 'Math']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_name",
+          "label": "Model Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "model_size",
+          "label": "Model Size",
+          "type": "List[Literal['<4B', '4B-10B', '10B-20B', '20B-40B', '>40B', 'Unknown']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_type",
+          "label": "Model Type",
+          "type": "List[Literal['API', 'OpenSource']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_104",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/filter_df_l2_30",
+      "parameters": [
+        {
+          "name": "dataset_name",
+          "label": "MMVet",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "fields",
+          "label": "MMVet CheckBoxes",
+          "type": "List[Literal['Overall', 'Overall (official)', 'Rec', 'Ocr', 'Know', 'Gen', 'Spat', 'Math']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_name",
+          "label": "Model Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "model_size",
+          "label": "Model Size",
+          "type": "List[Literal['<4B', '4B-10B', '10B-20B', '20B-40B', '>40B', 'Unknown']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_type",
+          "label": "Model Type",
+          "type": "List[Literal['API', 'OpenSource']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_104",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/filter_df_l2_31",
+      "parameters": [
+        {
+          "name": "dataset_name",
+          "label": "MMVet",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "fields",
+          "label": "MMVet CheckBoxes",
+          "type": "List[Literal['Overall', 'Overall (official)', 'Rec', 'Ocr', 'Know', 'Gen', 'Spat', 'Math']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_name",
+          "label": "Model Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "model_size",
+          "label": "Model Size",
+          "type": "List[Literal['<4B', '4B-10B', '10B-20B', '20B-40B', '>40B', 'Unknown']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_type",
+          "label": "Model Type",
+          "type": "List[Literal['API', 'OpenSource']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_104",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/filter_df_l2_32",
+      "parameters": [
+        {
+          "name": "dataset_name",
+          "label": "MMMU_VAL",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "fields",
+          "label": "MMMU_VAL CheckBoxes",
+          "type": "List[Literal['Overall', 'Art & Design', 'Business', 'Science', 'Health & Medicine', 'Humanities & Social Science', 'Tech & Engineering', 'FG-Accounting', 'FG-Agriculture', 'FG-Architecture_and_Enginee",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_name",
+          "label": "Model Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "model_size",
+          "label": "Model Size",
+          "type": "List[Literal['<4B', '4B-10B', '10B-20B', '20B-40B', '>40B', 'Unknown']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_type",
+          "label": "Model Type",
+          "type": "List[Literal['API', 'OpenSource']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_116",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/filter_df_l2_33",
+      "parameters": [
+        {
+          "name": "dataset_name",
+          "label": "MMMU_VAL",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "fields",
+          "label": "MMMU_VAL CheckBoxes",
+          "type": "List[Literal['Overall', 'Art & Design', 'Business', 'Science', 'Health & Medicine', 'Humanities & Social Science', 'Tech & Engineering', 'FG-Accounting', 'FG-Agriculture', 'FG-Architecture_and_Enginee",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_name",
+          "label": "Model Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "model_size",
+          "label": "Model Size",
+          "type": "List[Literal['<4B', '4B-10B', '10B-20B', '20B-40B', '>40B', 'Unknown']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_type",
+          "label": "Model Type",
+          "type": "List[Literal['API', 'OpenSource']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_116",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/filter_df_l2_34",
+      "parameters": [
+        {
+          "name": "dataset_name",
+          "label": "MMMU_VAL",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "fields",
+          "label": "MMMU_VAL CheckBoxes",
+          "type": "List[Literal['Overall', 'Art & Design', 'Business', 'Science', 'Health & Medicine', 'Humanities & Social Science', 'Tech & Engineering', 'FG-Accounting', 'FG-Agriculture', 'FG-Architecture_and_Enginee",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_name",
+          "label": "Model Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "model_size",
+          "label": "Model Size",
+          "type": "List[Literal['<4B', '4B-10B', '10B-20B', '20B-40B', '>40B', 'Unknown']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_type",
+          "label": "Model Type",
+          "type": "List[Literal['API', 'OpenSource']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_116",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/filter_df_l2_35",
+      "parameters": [
+        {
+          "name": "dataset_name",
+          "label": "MMMU_VAL",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "fields",
+          "label": "MMMU_VAL CheckBoxes",
+          "type": "List[Literal['Overall', 'Art & Design', 'Business', 'Science', 'Health & Medicine', 'Humanities & Social Science', 'Tech & Engineering', 'FG-Accounting', 'FG-Agriculture', 'FG-Architecture_and_Enginee",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_name",
+          "label": "Model Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "model_size",
+          "label": "Model Size",
+          "type": "List[Literal['<4B', '4B-10B', '10B-20B', '20B-40B', '>40B', 'Unknown']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_type",
+          "label": "Model Type",
+          "type": "List[Literal['API', 'OpenSource']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_116",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/filter_df_l2_36",
+      "parameters": [
+        {
+          "name": "dataset_name",
+          "label": "MathVista",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "fields",
+          "label": "MathVista CheckBoxes",
+          "type": "List[Literal['Overall', 'SCI', 'TQA', 'NUM', 'ARI', 'VQA', 'GEO', 'ALG', 'GPS', 'MWP', 'LOG', 'FQA', 'STA']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_name",
+          "label": "Model Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "model_size",
+          "label": "Model Size",
+          "type": "List[Literal['<4B', '4B-10B', '10B-20B', '20B-40B', '>40B', 'Unknown']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_type",
+          "label": "Model Type",
+          "type": "List[Literal['API', 'OpenSource']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_128",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/filter_df_l2_37",
+      "parameters": [
+        {
+          "name": "dataset_name",
+          "label": "MathVista",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "fields",
+          "label": "MathVista CheckBoxes",
+          "type": "List[Literal['Overall', 'SCI', 'TQA', 'NUM', 'ARI', 'VQA', 'GEO', 'ALG', 'GPS', 'MWP', 'LOG', 'FQA', 'STA']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_name",
+          "label": "Model Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "model_size",
+          "label": "Model Size",
+          "type": "List[Literal['<4B', '4B-10B', '10B-20B', '20B-40B', '>40B', 'Unknown']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_type",
+          "label": "Model Type",
+          "type": "List[Literal['API', 'OpenSource']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_128",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/filter_df_l2_38",
+      "parameters": [
+        {
+          "name": "dataset_name",
+          "label": "MathVista",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "fields",
+          "label": "MathVista CheckBoxes",
+          "type": "List[Literal['Overall', 'SCI', 'TQA', 'NUM', 'ARI', 'VQA', 'GEO', 'ALG', 'GPS', 'MWP', 'LOG', 'FQA', 'STA']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_name",
+          "label": "Model Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "model_size",
+          "label": "Model Size",
+          "type": "List[Literal['<4B', '4B-10B', '10B-20B', '20B-40B', '>40B', 'Unknown']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_type",
+          "label": "Model Type",
+          "type": "List[Literal['API', 'OpenSource']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_128",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/filter_df_l2_39",
+      "parameters": [
+        {
+          "name": "dataset_name",
+          "label": "MathVista",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "fields",
+          "label": "MathVista CheckBoxes",
+          "type": "List[Literal['Overall', 'SCI', 'TQA', 'NUM', 'ARI', 'VQA', 'GEO', 'ALG', 'GPS', 'MWP', 'LOG', 'FQA', 'STA']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_name",
+          "label": "Model Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "model_size",
+          "label": "Model Size",
+          "type": "List[Literal['<4B', '4B-10B', '10B-20B', '20B-40B', '>40B', 'Unknown']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_type",
+          "label": "Model Type",
+          "type": "List[Literal['API', 'OpenSource']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_128",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/filter_df_l2_40",
+      "parameters": [
+        {
+          "name": "dataset_name",
+          "label": "HallusionBench",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "fields",
+          "label": "HallusionBench CheckBoxes",
+          "type": "List[Literal['Overall', 'aAcc', 'fAcc', 'qAcc']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_name",
+          "label": "Model Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "model_size",
+          "label": "Model Size",
+          "type": "List[Literal['<4B', '4B-10B', '10B-20B', '20B-40B', '>40B', 'Unknown']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_type",
+          "label": "Model Type",
+          "type": "List[Literal['API', 'OpenSource']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_140",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/filter_df_l2_41",
+      "parameters": [
+        {
+          "name": "dataset_name",
+          "label": "HallusionBench",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "fields",
+          "label": "HallusionBench CheckBoxes",
+          "type": "List[Literal['Overall', 'aAcc', 'fAcc', 'qAcc']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_name",
+          "label": "Model Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "model_size",
+          "label": "Model Size",
+          "type": "List[Literal['<4B', '4B-10B', '10B-20B', '20B-40B', '>40B', 'Unknown']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_type",
+          "label": "Model Type",
+          "type": "List[Literal['API', 'OpenSource']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_140",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/filter_df_l2_42",
+      "parameters": [
+        {
+          "name": "dataset_name",
+          "label": "HallusionBench",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "fields",
+          "label": "HallusionBench CheckBoxes",
+          "type": "List[Literal['Overall', 'aAcc', 'fAcc', 'qAcc']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_name",
+          "label": "Model Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "model_size",
+          "label": "Model Size",
+          "type": "List[Literal['<4B', '4B-10B', '10B-20B', '20B-40B', '>40B', 'Unknown']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_type",
+          "label": "Model Type",
+          "type": "List[Literal['API', 'OpenSource']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_140",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/filter_df_l2_43",
+      "parameters": [
+        {
+          "name": "dataset_name",
+          "label": "HallusionBench",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "fields",
+          "label": "HallusionBench CheckBoxes",
+          "type": "List[Literal['Overall', 'aAcc', 'fAcc', 'qAcc']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_name",
+          "label": "Model Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "model_size",
+          "label": "Model Size",
+          "type": "List[Literal['<4B', '4B-10B', '10B-20B', '20B-40B', '>40B', 'Unknown']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_type",
+          "label": "Model Type",
+          "type": "List[Literal['API', 'OpenSource']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_140",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/filter_df_l2_44",
+      "parameters": [
+        {
+          "name": "dataset_name",
+          "label": "LLaVABench",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "fields",
+          "label": "LLaVABench CheckBoxes",
+          "type": "List[Literal['Overall', 'Overall (official)', 'Conv', 'Complex', 'Detail']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_name",
+          "label": "Model Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "model_size",
+          "label": "Model Size",
+          "type": "List[Literal['<4B', '4B-10B', '10B-20B', '20B-40B', '>40B', 'Unknown']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_type",
+          "label": "Model Type",
+          "type": "List[Literal['API', 'OpenSource']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_152",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/filter_df_l2_45",
+      "parameters": [
+        {
+          "name": "dataset_name",
+          "label": "LLaVABench",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "fields",
+          "label": "LLaVABench CheckBoxes",
+          "type": "List[Literal['Overall', 'Overall (official)', 'Conv', 'Complex', 'Detail']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_name",
+          "label": "Model Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "model_size",
+          "label": "Model Size",
+          "type": "List[Literal['<4B', '4B-10B', '10B-20B', '20B-40B', '>40B', 'Unknown']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_type",
+          "label": "Model Type",
+          "type": "List[Literal['API', 'OpenSource']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_152",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/filter_df_l2_46",
+      "parameters": [
+        {
+          "name": "dataset_name",
+          "label": "LLaVABench",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "fields",
+          "label": "LLaVABench CheckBoxes",
+          "type": "List[Literal['Overall', 'Overall (official)', 'Conv', 'Complex', 'Detail']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_name",
+          "label": "Model Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "model_size",
+          "label": "Model Size",
+          "type": "List[Literal['<4B', '4B-10B', '10B-20B', '20B-40B', '>40B', 'Unknown']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_type",
+          "label": "Model Type",
+          "type": "List[Literal['API', 'OpenSource']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_152",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/filter_df_l2_47",
+      "parameters": [
+        {
+          "name": "dataset_name",
+          "label": "LLaVABench",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "fields",
+          "label": "LLaVABench CheckBoxes",
+          "type": "List[Literal['Overall', 'Overall (official)', 'Conv', 'Complex', 'Detail']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_name",
+          "label": "Model Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "model_size",
+          "label": "Model Size",
+          "type": "List[Literal['<4B', '4B-10B', '10B-20B', '20B-40B', '>40B', 'Unknown']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_type",
+          "label": "Model Type",
+          "type": "List[Literal['API', 'OpenSource']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_152",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/filter_df_l2_48",
+      "parameters": [
+        {
+          "name": "dataset_name",
+          "label": "AI2D",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "fields",
+          "label": "AI2D CheckBoxes",
+          "type": "List[Literal['Overall', 'atomStructure', 'eclipses', 'faultsEarthquakes', 'foodChainsWebs', 'lifeCycles', 'moonPhaseEquinox', 'partsOfA', 'partsOfTheEarth', 'photosynthesisRespiration', 'rockCycle', '",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_name",
+          "label": "Model Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "model_size",
+          "label": "Model Size",
+          "type": "List[Literal['<4B', '4B-10B', '10B-20B', '20B-40B', '>40B', 'Unknown']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_type",
+          "label": "Model Type",
+          "type": "List[Literal['API', 'OpenSource']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_163",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/filter_df_l2_49",
+      "parameters": [
+        {
+          "name": "dataset_name",
+          "label": "AI2D",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "fields",
+          "label": "AI2D CheckBoxes",
+          "type": "List[Literal['Overall', 'atomStructure', 'eclipses', 'faultsEarthquakes', 'foodChainsWebs', 'lifeCycles', 'moonPhaseEquinox', 'partsOfA', 'partsOfTheEarth', 'photosynthesisRespiration', 'rockCycle', '",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_name",
+          "label": "Model Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "model_size",
+          "label": "Model Size",
+          "type": "List[Literal['<4B', '4B-10B', '10B-20B', '20B-40B', '>40B', 'Unknown']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_type",
+          "label": "Model Type",
+          "type": "List[Literal['API', 'OpenSource']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_163",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/filter_df_l2_50",
+      "parameters": [
+        {
+          "name": "dataset_name",
+          "label": "AI2D",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "fields",
+          "label": "AI2D CheckBoxes",
+          "type": "List[Literal['Overall', 'atomStructure', 'eclipses', 'faultsEarthquakes', 'foodChainsWebs', 'lifeCycles', 'moonPhaseEquinox', 'partsOfA', 'partsOfTheEarth', 'photosynthesisRespiration', 'rockCycle', '",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_name",
+          "label": "Model Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "model_size",
+          "label": "Model Size",
+          "type": "List[Literal['<4B', '4B-10B', '10B-20B', '20B-40B', '>40B', 'Unknown']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_type",
+          "label": "Model Type",
+          "type": "List[Literal['API', 'OpenSource']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_163",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/filter_df_l2_51",
+      "parameters": [
+        {
+          "name": "dataset_name",
+          "label": "AI2D",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "fields",
+          "label": "AI2D CheckBoxes",
+          "type": "List[Literal['Overall', 'atomStructure', 'eclipses', 'faultsEarthquakes', 'foodChainsWebs', 'lifeCycles', 'moonPhaseEquinox', 'partsOfA', 'partsOfTheEarth', 'photosynthesisRespiration', 'rockCycle', '",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_name",
+          "label": "Model Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "model_size",
+          "label": "Model Size",
+          "type": "List[Literal['<4B', '4B-10B', '10B-20B', '20B-40B', '>40B', 'Unknown']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_type",
+          "label": "Model Type",
+          "type": "List[Literal['API', 'OpenSource']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_163",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/filter_df_l2_52",
+      "parameters": [
+        {
+          "name": "dataset_name",
+          "label": "COCO_VAL",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "fields",
+          "label": "COCO_VAL CheckBoxes",
+          "type": "List[Literal['BLEU-1', 'BLEU-4', 'ROUGE-L', 'CIDEr']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_name",
+          "label": "Model Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "model_size",
+          "label": "Model Size",
+          "type": "List[Literal['<4B', '4B-10B', '10B-20B', '20B-40B', '>40B', 'Unknown']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_type",
+          "label": "Model Type",
+          "type": "List[Literal['API', 'OpenSource']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_175",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/filter_df_l2_53",
+      "parameters": [
+        {
+          "name": "dataset_name",
+          "label": "COCO_VAL",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "fields",
+          "label": "COCO_VAL CheckBoxes",
+          "type": "List[Literal['BLEU-1', 'BLEU-4', 'ROUGE-L', 'CIDEr']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_name",
+          "label": "Model Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "model_size",
+          "label": "Model Size",
+          "type": "List[Literal['<4B', '4B-10B', '10B-20B', '20B-40B', '>40B', 'Unknown']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_type",
+          "label": "Model Type",
+          "type": "List[Literal['API', 'OpenSource']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_175",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/filter_df_l2_54",
+      "parameters": [
+        {
+          "name": "dataset_name",
+          "label": "COCO_VAL",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "fields",
+          "label": "COCO_VAL CheckBoxes",
+          "type": "List[Literal['BLEU-1', 'BLEU-4', 'ROUGE-L', 'CIDEr']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_name",
+          "label": "Model Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "model_size",
+          "label": "Model Size",
+          "type": "List[Literal['<4B', '4B-10B', '10B-20B', '20B-40B', '>40B', 'Unknown']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_type",
+          "label": "Model Type",
+          "type": "List[Literal['API', 'OpenSource']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_175",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/filter_df_l2_55",
+      "parameters": [
+        {
+          "name": "dataset_name",
+          "label": "COCO_VAL",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "fields",
+          "label": "COCO_VAL CheckBoxes",
+          "type": "List[Literal['BLEU-1', 'BLEU-4', 'ROUGE-L', 'CIDEr']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_name",
+          "label": "Model Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "model_size",
+          "label": "Model Size",
+          "type": "List[Literal['<4B', '4B-10B', '10B-20B', '20B-40B', '>40B', 'Unknown']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_type",
+          "label": "Model Type",
+          "type": "List[Literal['API', 'OpenSource']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_175",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/filter_df_l2_56",
+      "parameters": [
+        {
+          "name": "dataset_name",
+          "label": "ScienceQA_VAL",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "fields",
+          "label": "ScienceQA_VAL CheckBoxes",
+          "type": "List[Literal['Overall', 'Adaptations', 'Adaptations and natural selection', 'Age of Exploration', 'Ancient Egypt and Kush', 'Ancient Mesopotamia', 'Animals', 'Astronomy', 'Atoms and molecules', 'Basic",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_name",
+          "label": "Model Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "model_size",
+          "label": "Model Size",
+          "type": "List[Literal['<4B', '4B-10B', '10B-20B', '20B-40B', '>40B', 'Unknown']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_type",
+          "label": "Model Type",
+          "type": "List[Literal['API', 'OpenSource']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_187",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/filter_df_l2_57",
+      "parameters": [
+        {
+          "name": "dataset_name",
+          "label": "ScienceQA_VAL",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "fields",
+          "label": "ScienceQA_VAL CheckBoxes",
+          "type": "List[Literal['Overall', 'Adaptations', 'Adaptations and natural selection', 'Age of Exploration', 'Ancient Egypt and Kush', 'Ancient Mesopotamia', 'Animals', 'Astronomy', 'Atoms and molecules', 'Basic",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_name",
+          "label": "Model Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "model_size",
+          "label": "Model Size",
+          "type": "List[Literal['<4B', '4B-10B', '10B-20B', '20B-40B', '>40B', 'Unknown']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_type",
+          "label": "Model Type",
+          "type": "List[Literal['API', 'OpenSource']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_187",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/filter_df_l2_58",
+      "parameters": [
+        {
+          "name": "dataset_name",
+          "label": "ScienceQA_VAL",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "fields",
+          "label": "ScienceQA_VAL CheckBoxes",
+          "type": "List[Literal['Overall', 'Adaptations', 'Adaptations and natural selection', 'Age of Exploration', 'Ancient Egypt and Kush', 'Ancient Mesopotamia', 'Animals', 'Astronomy', 'Atoms and molecules', 'Basic",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_name",
+          "label": "Model Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "model_size",
+          "label": "Model Size",
+          "type": "List[Literal['<4B', '4B-10B', '10B-20B', '20B-40B', '>40B', 'Unknown']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_type",
+          "label": "Model Type",
+          "type": "List[Literal['API', 'OpenSource']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_187",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/filter_df_l2_59",
+      "parameters": [
+        {
+          "name": "dataset_name",
+          "label": "ScienceQA_VAL",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "fields",
+          "label": "ScienceQA_VAL CheckBoxes",
+          "type": "List[Literal['Overall', 'Adaptations', 'Adaptations and natural selection', 'Age of Exploration', 'Ancient Egypt and Kush', 'Ancient Mesopotamia', 'Animals', 'Astronomy', 'Atoms and molecules', 'Basic",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_name",
+          "label": "Model Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "model_size",
+          "label": "Model Size",
+          "type": "List[Literal['<4B', '4B-10B', '10B-20B', '20B-40B', '>40B', 'Unknown']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_type",
+          "label": "Model Type",
+          "type": "List[Literal['API', 'OpenSource']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_187",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/filter_df_l2_60",
+      "parameters": [
+        {
+          "name": "dataset_name",
+          "label": "ScienceQA_TEST",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "fields",
+          "label": "ScienceQA_TEST CheckBoxes",
+          "type": "List[Literal['Overall', 'Adaptations', 'Ancient Egypt and Kush', 'Ancient Mesopotamia', 'Animals', 'Astronomy', 'Atoms and molecules', 'Basic economic principles', 'Cells', 'Chemical reactions', 'Citi",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_name",
+          "label": "Model Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "model_size",
+          "label": "Model Size",
+          "type": "List[Literal['<4B', '4B-10B', '10B-20B', '20B-40B', '>40B', 'Unknown']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_type",
+          "label": "Model Type",
+          "type": "List[Literal['API', 'OpenSource']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_199",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/filter_df_l2_61",
+      "parameters": [
+        {
+          "name": "dataset_name",
+          "label": "ScienceQA_TEST",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "fields",
+          "label": "ScienceQA_TEST CheckBoxes",
+          "type": "List[Literal['Overall', 'Adaptations', 'Ancient Egypt and Kush', 'Ancient Mesopotamia', 'Animals', 'Astronomy', 'Atoms and molecules', 'Basic economic principles', 'Cells', 'Chemical reactions', 'Citi",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_name",
+          "label": "Model Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "model_size",
+          "label": "Model Size",
+          "type": "List[Literal['<4B', '4B-10B', '10B-20B', '20B-40B', '>40B', 'Unknown']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_type",
+          "label": "Model Type",
+          "type": "List[Literal['API', 'OpenSource']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_199",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/filter_df_l2_62",
+      "parameters": [
+        {
+          "name": "dataset_name",
+          "label": "ScienceQA_TEST",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "fields",
+          "label": "ScienceQA_TEST CheckBoxes",
+          "type": "List[Literal['Overall', 'Adaptations', 'Ancient Egypt and Kush', 'Ancient Mesopotamia', 'Animals', 'Astronomy', 'Atoms and molecules', 'Basic economic principles', 'Cells', 'Chemical reactions', 'Citi",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_name",
+          "label": "Model Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "model_size",
+          "label": "Model Size",
+          "type": "List[Literal['<4B', '4B-10B', '10B-20B', '20B-40B', '>40B', 'Unknown']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_type",
+          "label": "Model Type",
+          "type": "List[Literal['API', 'OpenSource']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_199",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/filter_df_l2_63",
+      "parameters": [
+        {
+          "name": "dataset_name",
+          "label": "ScienceQA_TEST",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "fields",
+          "label": "ScienceQA_TEST CheckBoxes",
+          "type": "List[Literal['Overall', 'Adaptations', 'Ancient Egypt and Kush', 'Ancient Mesopotamia', 'Animals', 'Astronomy', 'Atoms and molecules', 'Basic economic principles', 'Cells', 'Chemical reactions', 'Citi",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_name",
+          "label": "Model Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "model_size",
+          "label": "Model Size",
+          "type": "List[Literal['<4B', '4B-10B', '10B-20B', '20B-40B', '>40B', 'Unknown']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_type",
+          "label": "Model Type",
+          "type": "List[Literal['API', 'OpenSource']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_199",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/filter_df_l2_64",
+      "parameters": [
+        {
+          "name": "dataset_name",
+          "label": "OCRBench",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "fields",
+          "label": "OCRBench CheckBoxes",
+          "type": "List[Literal['Final Score', 'Text Recognition', 'Scene Text-centric VQA', 'Doc-oriented VQA', 'Key Information Extraction', 'Handwritten Mathematical Expression Recognition']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_name",
+          "label": "Model Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "model_size",
+          "label": "Model Size",
+          "type": "List[Literal['<4B', '4B-10B', '10B-20B', '20B-40B', '>40B', 'Unknown']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_type",
+          "label": "Model Type",
+          "type": "List[Literal['API', 'OpenSource']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_211",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/filter_df_l2_65",
+      "parameters": [
+        {
+          "name": "dataset_name",
+          "label": "OCRBench",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "fields",
+          "label": "OCRBench CheckBoxes",
+          "type": "List[Literal['Final Score', 'Text Recognition', 'Scene Text-centric VQA', 'Doc-oriented VQA', 'Key Information Extraction', 'Handwritten Mathematical Expression Recognition']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_name",
+          "label": "Model Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "model_size",
+          "label": "Model Size",
+          "type": "List[Literal['<4B', '4B-10B', '10B-20B', '20B-40B', '>40B', 'Unknown']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_type",
+          "label": "Model Type",
+          "type": "List[Literal['API', 'OpenSource']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_211",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/filter_df_l2_66",
+      "parameters": [
+        {
+          "name": "dataset_name",
+          "label": "OCRBench",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "fields",
+          "label": "OCRBench CheckBoxes",
+          "type": "List[Literal['Final Score', 'Text Recognition', 'Scene Text-centric VQA', 'Doc-oriented VQA', 'Key Information Extraction', 'Handwritten Mathematical Expression Recognition']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_name",
+          "label": "Model Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "model_size",
+          "label": "Model Size",
+          "type": "List[Literal['<4B', '4B-10B', '10B-20B', '20B-40B', '>40B', 'Unknown']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_type",
+          "label": "Model Type",
+          "type": "List[Literal['API', 'OpenSource']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_211",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/filter_df_l2_67",
+      "parameters": [
+        {
+          "name": "dataset_name",
+          "label": "OCRBench",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "fields",
+          "label": "OCRBench CheckBoxes",
+          "type": "List[Literal['Final Score', 'Text Recognition', 'Scene Text-centric VQA', 'Doc-oriented VQA', 'Key Information Extraction', 'Handwritten Mathematical Expression Recognition']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_name",
+          "label": "Model Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "model_size",
+          "label": "Model Size",
+          "type": "List[Literal['<4B', '4B-10B', '10B-20B', '20B-40B', '>40B', 'Unknown']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_type",
+          "label": "Model Type",
+          "type": "List[Literal['API', 'OpenSource']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_211",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/filter_df_l2_68",
+      "parameters": [
+        {
+          "name": "dataset_name",
+          "label": "MMStar",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "fields",
+          "label": "MMStar CheckBoxes",
+          "type": "List[Literal['Overall', 'coarse perception', 'fine-grained perception', 'instance reasoning', 'logical reasoning', 'math', 'science & technology']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_name",
+          "label": "Model Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "model_size",
+          "label": "Model Size",
+          "type": "List[Literal['<4B', '4B-10B', '10B-20B', '20B-40B', '>40B', 'Unknown']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_type",
+          "label": "Model Type",
+          "type": "List[Literal['API', 'OpenSource']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_223",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/filter_df_l2_69",
+      "parameters": [
+        {
+          "name": "dataset_name",
+          "label": "MMStar",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "fields",
+          "label": "MMStar CheckBoxes",
+          "type": "List[Literal['Overall', 'coarse perception', 'fine-grained perception', 'instance reasoning', 'logical reasoning', 'math', 'science & technology']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_name",
+          "label": "Model Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "model_size",
+          "label": "Model Size",
+          "type": "List[Literal['<4B', '4B-10B', '10B-20B', '20B-40B', '>40B', 'Unknown']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_type",
+          "label": "Model Type",
+          "type": "List[Literal['API', 'OpenSource']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_223",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/filter_df_l2_70",
+      "parameters": [
+        {
+          "name": "dataset_name",
+          "label": "MMStar",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "fields",
+          "label": "MMStar CheckBoxes",
+          "type": "List[Literal['Overall', 'coarse perception', 'fine-grained perception', 'instance reasoning', 'logical reasoning', 'math', 'science & technology']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_name",
+          "label": "Model Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "model_size",
+          "label": "Model Size",
+          "type": "List[Literal['<4B', '4B-10B', '10B-20B', '20B-40B', '>40B', 'Unknown']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_type",
+          "label": "Model Type",
+          "type": "List[Literal['API', 'OpenSource']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_223",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/filter_df_l2_71",
+      "parameters": [
+        {
+          "name": "dataset_name",
+          "label": "MMStar",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "fields",
+          "label": "MMStar CheckBoxes",
+          "type": "List[Literal['Overall', 'coarse perception', 'fine-grained perception', 'instance reasoning', 'logical reasoning', 'math', 'science & technology']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_name",
+          "label": "Model Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "model_size",
+          "label": "Model Size",
+          "type": "List[Literal['<4B', '4B-10B', '10B-20B', '20B-40B', '>40B', 'Unknown']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_type",
+          "label": "Model Type",
+          "type": "List[Literal['API', 'OpenSource']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_223",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/filter_df_l2_72",
+      "parameters": [
+        {
+          "name": "dataset_name",
+          "label": "RealWorldQA",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "fields",
+          "label": "RealWorldQA CheckBoxes",
+          "type": "List[Literal['Overall']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_name",
+          "label": "Model Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "model_size",
+          "label": "Model Size",
+          "type": "List[Literal['<4B', '4B-10B', '10B-20B', '20B-40B', '>40B', 'Unknown']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_type",
+          "label": "Model Type",
+          "type": "List[Literal['API', 'OpenSource']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_235",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/filter_df_l2_73",
+      "parameters": [
+        {
+          "name": "dataset_name",
+          "label": "RealWorldQA",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "fields",
+          "label": "RealWorldQA CheckBoxes",
+          "type": "List[Literal['Overall']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_name",
+          "label": "Model Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "model_size",
+          "label": "Model Size",
+          "type": "List[Literal['<4B', '4B-10B', '10B-20B', '20B-40B', '>40B', 'Unknown']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_type",
+          "label": "Model Type",
+          "type": "List[Literal['API', 'OpenSource']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_235",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/filter_df_l2_74",
+      "parameters": [
+        {
+          "name": "dataset_name",
+          "label": "RealWorldQA",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "fields",
+          "label": "RealWorldQA CheckBoxes",
+          "type": "List[Literal['Overall']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_name",
+          "label": "Model Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "model_size",
+          "label": "Model Size",
+          "type": "List[Literal['<4B', '4B-10B', '10B-20B', '20B-40B', '>40B', 'Unknown']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_type",
+          "label": "Model Type",
+          "type": "List[Literal['API', 'OpenSource']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_235",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/filter_df_l2_75",
+      "parameters": [
+        {
+          "name": "dataset_name",
+          "label": "RealWorldQA",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "fields",
+          "label": "RealWorldQA CheckBoxes",
+          "type": "List[Literal['Overall']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_name",
+          "label": "Model Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "model_size",
+          "label": "Model Size",
+          "type": "List[Literal['<4B', '4B-10B', '10B-20B', '20B-40B', '>40B', 'Unknown']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_type",
+          "label": "Model Type",
+          "type": "List[Literal['API', 'OpenSource']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_235",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/filter_df_l2_76",
+      "parameters": [
+        {
+          "name": "dataset_name",
+          "label": "TextVQA_VAL",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "fields",
+          "label": "TextVQA_VAL CheckBoxes",
+          "type": "List[Literal['Overall']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_name",
+          "label": "Model Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "model_size",
+          "label": "Model Size",
+          "type": "List[Literal['<4B', '4B-10B', '10B-20B', '20B-40B', '>40B', 'Unknown']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_type",
+          "label": "Model Type",
+          "type": "List[Literal['API', 'OpenSource']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_247",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/filter_df_l2_77",
+      "parameters": [
+        {
+          "name": "dataset_name",
+          "label": "TextVQA_VAL",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "fields",
+          "label": "TextVQA_VAL CheckBoxes",
+          "type": "List[Literal['Overall']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_name",
+          "label": "Model Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "model_size",
+          "label": "Model Size",
+          "type": "List[Literal['<4B', '4B-10B', '10B-20B', '20B-40B', '>40B', 'Unknown']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_type",
+          "label": "Model Type",
+          "type": "List[Literal['API', 'OpenSource']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_247",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/filter_df_l2_78",
+      "parameters": [
+        {
+          "name": "dataset_name",
+          "label": "TextVQA_VAL",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "fields",
+          "label": "TextVQA_VAL CheckBoxes",
+          "type": "List[Literal['Overall']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_name",
+          "label": "Model Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "model_size",
+          "label": "Model Size",
+          "type": "List[Literal['<4B', '4B-10B', '10B-20B', '20B-40B', '>40B', 'Unknown']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_type",
+          "label": "Model Type",
+          "type": "List[Literal['API', 'OpenSource']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_247",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/filter_df_l2_79",
+      "parameters": [
+        {
+          "name": "dataset_name",
+          "label": "TextVQA_VAL",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "fields",
+          "label": "TextVQA_VAL CheckBoxes",
+          "type": "List[Literal['Overall']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_name",
+          "label": "Model Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "model_size",
+          "label": "Model Size",
+          "type": "List[Literal['<4B', '4B-10B', '10B-20B', '20B-40B', '>40B', 'Unknown']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_type",
+          "label": "Model Type",
+          "type": "List[Literal['API', 'OpenSource']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_247",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/filter_df_l2_80",
+      "parameters": [
+        {
+          "name": "dataset_name",
+          "label": "ChartQA_TEST",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "fields",
+          "label": "ChartQA_TEST CheckBoxes",
+          "type": "List[Literal['Overall', 'test_augmented', 'test_human']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_name",
+          "label": "Model Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "model_size",
+          "label": "Model Size",
+          "type": "List[Literal['<4B', '4B-10B', '10B-20B', '20B-40B', '>40B', 'Unknown']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_type",
+          "label": "Model Type",
+          "type": "List[Literal['API', 'OpenSource']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_259",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/filter_df_l2_81",
+      "parameters": [
+        {
+          "name": "dataset_name",
+          "label": "ChartQA_TEST",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "fields",
+          "label": "ChartQA_TEST CheckBoxes",
+          "type": "List[Literal['Overall', 'test_augmented', 'test_human']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_name",
+          "label": "Model Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "model_size",
+          "label": "Model Size",
+          "type": "List[Literal['<4B', '4B-10B', '10B-20B', '20B-40B', '>40B', 'Unknown']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_type",
+          "label": "Model Type",
+          "type": "List[Literal['API', 'OpenSource']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_259",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/filter_df_l2_82",
+      "parameters": [
+        {
+          "name": "dataset_name",
+          "label": "ChartQA_TEST",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "fields",
+          "label": "ChartQA_TEST CheckBoxes",
+          "type": "List[Literal['Overall', 'test_augmented', 'test_human']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_name",
+          "label": "Model Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "model_size",
+          "label": "Model Size",
+          "type": "List[Literal['<4B', '4B-10B', '10B-20B', '20B-40B', '>40B', 'Unknown']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_type",
+          "label": "Model Type",
+          "type": "List[Literal['API', 'OpenSource']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_259",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/filter_df_l2_83",
+      "parameters": [
+        {
+          "name": "dataset_name",
+          "label": "ChartQA_TEST",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "fields",
+          "label": "ChartQA_TEST CheckBoxes",
+          "type": "List[Literal['Overall', 'test_augmented', 'test_human']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_name",
+          "label": "Model Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "model_size",
+          "label": "Model Size",
+          "type": "List[Literal['<4B', '4B-10B', '10B-20B', '20B-40B', '>40B', 'Unknown']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_type",
+          "label": "Model Type",
+          "type": "List[Literal['API', 'OpenSource']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_259",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/filter_df_l2_84",
+      "parameters": [
+        {
+          "name": "dataset_name",
+          "label": "OCRVQA_TESTCORE",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "fields",
+          "label": "OCRVQA_TESTCORE CheckBoxes",
+          "type": "List[Literal['Overall', 'Arts & Photography', 'Biographies & Memoirs', 'Business & Money', 'Calendars', 'Children's Books', 'Christian Books & Bibles', 'Comics & Graphic Novels', 'Computers & Technolo",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_name",
+          "label": "Model Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "model_size",
+          "label": "Model Size",
+          "type": "List[Literal['<4B', '4B-10B', '10B-20B', '20B-40B', '>40B', 'Unknown']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_type",
+          "label": "Model Type",
+          "type": "List[Literal['API', 'OpenSource']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_271",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/filter_df_l2_85",
+      "parameters": [
+        {
+          "name": "dataset_name",
+          "label": "OCRVQA_TESTCORE",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "fields",
+          "label": "OCRVQA_TESTCORE CheckBoxes",
+          "type": "List[Literal['Overall', 'Arts & Photography', 'Biographies & Memoirs', 'Business & Money', 'Calendars', 'Children's Books', 'Christian Books & Bibles', 'Comics & Graphic Novels', 'Computers & Technolo",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_name",
+          "label": "Model Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "model_size",
+          "label": "Model Size",
+          "type": "List[Literal['<4B', '4B-10B', '10B-20B', '20B-40B', '>40B', 'Unknown']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_type",
+          "label": "Model Type",
+          "type": "List[Literal['API', 'OpenSource']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_271",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/filter_df_l2_86",
+      "parameters": [
+        {
+          "name": "dataset_name",
+          "label": "OCRVQA_TESTCORE",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "fields",
+          "label": "OCRVQA_TESTCORE CheckBoxes",
+          "type": "List[Literal['Overall', 'Arts & Photography', 'Biographies & Memoirs', 'Business & Money', 'Calendars', 'Children's Books', 'Christian Books & Bibles', 'Comics & Graphic Novels', 'Computers & Technolo",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_name",
+          "label": "Model Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "model_size",
+          "label": "Model Size",
+          "type": "List[Literal['<4B', '4B-10B', '10B-20B', '20B-40B', '>40B', 'Unknown']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_type",
+          "label": "Model Type",
+          "type": "List[Literal['API', 'OpenSource']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_271",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/filter_df_l2_87",
+      "parameters": [
+        {
+          "name": "dataset_name",
+          "label": "OCRVQA_TESTCORE",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "fields",
+          "label": "OCRVQA_TESTCORE CheckBoxes",
+          "type": "List[Literal['Overall', 'Arts & Photography', 'Biographies & Memoirs', 'Business & Money', 'Calendars', 'Children's Books', 'Christian Books & Bibles', 'Comics & Graphic Novels', 'Computers & Technolo",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_name",
+          "label": "Model Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "model_size",
+          "label": "Model Size",
+          "type": "List[Literal['<4B', '4B-10B', '10B-20B', '20B-40B', '>40B', 'Unknown']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_type",
+          "label": "Model Type",
+          "type": "List[Literal['API', 'OpenSource']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_271",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/filter_df_l2_88",
+      "parameters": [
+        {
+          "name": "dataset_name",
+          "label": "POPE",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "fields",
+          "label": "POPE CheckBoxes",
+          "type": "List[Literal['Overall', 'acc', 'precision', 'recall']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_name",
+          "label": "Model Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "model_size",
+          "label": "Model Size",
+          "type": "List[Literal['<4B', '4B-10B', '10B-20B', '20B-40B', '>40B', 'Unknown']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_type",
+          "label": "Model Type",
+          "type": "List[Literal['API', 'OpenSource']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_283",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/filter_df_l2_89",
+      "parameters": [
+        {
+          "name": "dataset_name",
+          "label": "POPE",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "fields",
+          "label": "POPE CheckBoxes",
+          "type": "List[Literal['Overall', 'acc', 'precision', 'recall']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_name",
+          "label": "Model Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "model_size",
+          "label": "Model Size",
+          "type": "List[Literal['<4B', '4B-10B', '10B-20B', '20B-40B', '>40B', 'Unknown']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_type",
+          "label": "Model Type",
+          "type": "List[Literal['API', 'OpenSource']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_283",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/filter_df_l2_90",
+      "parameters": [
+        {
+          "name": "dataset_name",
+          "label": "POPE",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "fields",
+          "label": "POPE CheckBoxes",
+          "type": "List[Literal['Overall', 'acc', 'precision', 'recall']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_name",
+          "label": "Model Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "model_size",
+          "label": "Model Size",
+          "type": "List[Literal['<4B', '4B-10B', '10B-20B', '20B-40B', '>40B', 'Unknown']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_type",
+          "label": "Model Type",
+          "type": "List[Literal['API', 'OpenSource']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_283",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/filter_df_l2_91",
+      "parameters": [
+        {
+          "name": "dataset_name",
+          "label": "POPE",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "fields",
+          "label": "POPE CheckBoxes",
+          "type": "List[Literal['Overall', 'acc', 'precision', 'recall']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_name",
+          "label": "Model Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "model_size",
+          "label": "Model Size",
+          "type": "List[Literal['<4B', '4B-10B', '10B-20B', '20B-40B', '>40B', 'Unknown']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_type",
+          "label": "Model Type",
+          "type": "List[Literal['API', 'OpenSource']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_283",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/filter_df_l2_92",
+      "parameters": [
+        {
+          "name": "dataset_name",
+          "label": "SEEDBench2",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "fields",
+          "label": "SEEDBench2 CheckBoxes",
+          "type": "List[Literal['Overall']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_name",
+          "label": "Model Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "model_size",
+          "label": "Model Size",
+          "type": "List[Literal['<4B', '4B-10B', '10B-20B', '20B-40B', '>40B', 'Unknown']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_type",
+          "label": "Model Type",
+          "type": "List[Literal['API', 'OpenSource']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_295",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/filter_df_l2_93",
+      "parameters": [
+        {
+          "name": "dataset_name",
+          "label": "SEEDBench2",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "fields",
+          "label": "SEEDBench2 CheckBoxes",
+          "type": "List[Literal['Overall']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_name",
+          "label": "Model Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "model_size",
+          "label": "Model Size",
+          "type": "List[Literal['<4B', '4B-10B', '10B-20B', '20B-40B', '>40B', 'Unknown']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_type",
+          "label": "Model Type",
+          "type": "List[Literal['API', 'OpenSource']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_295",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/filter_df_l2_94",
+      "parameters": [
+        {
+          "name": "dataset_name",
+          "label": "SEEDBench2",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "fields",
+          "label": "SEEDBench2 CheckBoxes",
+          "type": "List[Literal['Overall']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_name",
+          "label": "Model Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "model_size",
+          "label": "Model Size",
+          "type": "List[Literal['<4B', '4B-10B', '10B-20B', '20B-40B', '>40B', 'Unknown']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_type",
+          "label": "Model Type",
+          "type": "List[Literal['API', 'OpenSource']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_295",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/filter_df_l2_95",
+      "parameters": [
+        {
+          "name": "dataset_name",
+          "label": "SEEDBench2",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "fields",
+          "label": "SEEDBench2 CheckBoxes",
+          "type": "List[Literal['Overall']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_name",
+          "label": "Model Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "model_size",
+          "label": "Model Size",
+          "type": "List[Literal['<4B', '4B-10B', '10B-20B', '20B-40B', '>40B', 'Unknown']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_type",
+          "label": "Model Type",
+          "type": "List[Literal['API', 'OpenSource']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_295",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/filter_df_l2_96",
+      "parameters": [
+        {
+          "name": "dataset_name",
+          "label": "SEEDBench2_Plus",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "fields",
+          "label": "SEEDBench2_Plus CheckBoxes",
+          "type": "List[Literal['Overall', 'chart', 'map', 'web']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_name",
+          "label": "Model Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "model_size",
+          "label": "Model Size",
+          "type": "List[Literal['<4B', '4B-10B', '10B-20B', '20B-40B', '>40B', 'Unknown']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_type",
+          "label": "Model Type",
+          "type": "List[Literal['API', 'OpenSource']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_307",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/filter_df_l2_97",
+      "parameters": [
+        {
+          "name": "dataset_name",
+          "label": "SEEDBench2_Plus",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "fields",
+          "label": "SEEDBench2_Plus CheckBoxes",
+          "type": "List[Literal['Overall', 'chart', 'map', 'web']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_name",
+          "label": "Model Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "model_size",
+          "label": "Model Size",
+          "type": "List[Literal['<4B', '4B-10B', '10B-20B', '20B-40B', '>40B', 'Unknown']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_type",
+          "label": "Model Type",
+          "type": "List[Literal['API', 'OpenSource']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_307",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/filter_df_l2_98",
+      "parameters": [
+        {
+          "name": "dataset_name",
+          "label": "SEEDBench2_Plus",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "fields",
+          "label": "SEEDBench2_Plus CheckBoxes",
+          "type": "List[Literal['Overall', 'chart', 'map', 'web']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_name",
+          "label": "Model Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "model_size",
+          "label": "Model Size",
+          "type": "List[Literal['<4B', '4B-10B', '10B-20B', '20B-40B', '>40B', 'Unknown']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_type",
+          "label": "Model Type",
+          "type": "List[Literal['API', 'OpenSource']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_307",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/filter_df_l2_99",
+      "parameters": [
+        {
+          "name": "dataset_name",
+          "label": "SEEDBench2_Plus",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "fields",
+          "label": "SEEDBench2_Plus CheckBoxes",
+          "type": "List[Literal['Overall', 'chart', 'map', 'web']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_name",
+          "label": "Model Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "model_size",
+          "label": "Model Size",
+          "type": "List[Literal['<4B', '4B-10B', '10B-20B', '20B-40B', '>40B', 'Unknown']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_type",
+          "label": "Model Type",
+          "type": "List[Literal['API', 'OpenSource']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_307",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/filter_df_l2_100",
+      "parameters": [
+        {
+          "name": "dataset_name",
+          "label": "MMT-Bench_VAL",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "fields",
+          "label": "MMT-Bench_VAL CheckBoxes",
+          "type": "List[Literal['Overall', 'VR', 'Loc', 'OCR', 'Count', 'HLN', 'IR', '3D', 'VC', 'VG', 'DU', 'AR', 'PLP', 'I2IT', 'RR', 'IQT', 'Emo', 'VI', 'MemU', 'VPU', 'AND', 'KD', 'VCR', 'IEJ', 'MIA', 'CIM', 'TU', '",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_name",
+          "label": "Model Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "model_size",
+          "label": "Model Size",
+          "type": "List[Literal['<4B', '4B-10B', '10B-20B', '20B-40B', '>40B', 'Unknown']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_type",
+          "label": "Model Type",
+          "type": "List[Literal['API', 'OpenSource']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_319",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/filter_df_l2_101",
+      "parameters": [
+        {
+          "name": "dataset_name",
+          "label": "MMT-Bench_VAL",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "fields",
+          "label": "MMT-Bench_VAL CheckBoxes",
+          "type": "List[Literal['Overall', 'VR', 'Loc', 'OCR', 'Count', 'HLN', 'IR', '3D', 'VC', 'VG', 'DU', 'AR', 'PLP', 'I2IT', 'RR', 'IQT', 'Emo', 'VI', 'MemU', 'VPU', 'AND', 'KD', 'VCR', 'IEJ', 'MIA', 'CIM', 'TU', '",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_name",
+          "label": "Model Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "model_size",
+          "label": "Model Size",
+          "type": "List[Literal['<4B', '4B-10B', '10B-20B', '20B-40B', '>40B', 'Unknown']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_type",
+          "label": "Model Type",
+          "type": "List[Literal['API', 'OpenSource']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_319",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/filter_df_l2_102",
+      "parameters": [
+        {
+          "name": "dataset_name",
+          "label": "MMT-Bench_VAL",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "fields",
+          "label": "MMT-Bench_VAL CheckBoxes",
+          "type": "List[Literal['Overall', 'VR', 'Loc', 'OCR', 'Count', 'HLN', 'IR', '3D', 'VC', 'VG', 'DU', 'AR', 'PLP', 'I2IT', 'RR', 'IQT', 'Emo', 'VI', 'MemU', 'VPU', 'AND', 'KD', 'VCR', 'IEJ', 'MIA', 'CIM', 'TU', '",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_name",
+          "label": "Model Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "model_size",
+          "label": "Model Size",
+          "type": "List[Literal['<4B', '4B-10B', '10B-20B', '20B-40B', '>40B', 'Unknown']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_type",
+          "label": "Model Type",
+          "type": "List[Literal['API', 'OpenSource']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_319",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/filter_df_l2_103",
+      "parameters": [
+        {
+          "name": "dataset_name",
+          "label": "MMT-Bench_VAL",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "fields",
+          "label": "MMT-Bench_VAL CheckBoxes",
+          "type": "List[Literal['Overall', 'VR', 'Loc', 'OCR', 'Count', 'HLN', 'IR', '3D', 'VC', 'VG', 'DU', 'AR', 'PLP', 'I2IT', 'RR', 'IQT', 'Emo', 'VI', 'MemU', 'VPU', 'AND', 'KD', 'VCR', 'IEJ', 'MIA', 'CIM', 'TU', '",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_name",
+          "label": "Model Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "model_size",
+          "label": "Model Size",
+          "type": "List[Literal['<4B', '4B-10B', '10B-20B', '20B-40B', '>40B', 'Unknown']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_type",
+          "label": "Model Type",
+          "type": "List[Literal['API', 'OpenSource']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_319",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/filter_df_l2_104",
+      "parameters": [
+        {
+          "name": "dataset_name",
+          "label": "BLINK",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "fields",
+          "label": "BLINK CheckBoxes",
+          "type": "List[Literal['Overall', 'Art_Style', 'Counting', 'Forensic_Detection', 'Functional_Correspondence', 'IQ_Test', 'Jigsaw', 'Multi-view_Reasoning', 'Object_Localization', 'Relative_Depth', 'Relative_Refl",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_name",
+          "label": "Model Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "model_size",
+          "label": "Model Size",
+          "type": "List[Literal['<4B', '4B-10B', '10B-20B', '20B-40B', '>40B', 'Unknown']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_type",
+          "label": "Model Type",
+          "type": "List[Literal['API', 'OpenSource']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_331",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/filter_df_l2_105",
+      "parameters": [
+        {
+          "name": "dataset_name",
+          "label": "BLINK",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "fields",
+          "label": "BLINK CheckBoxes",
+          "type": "List[Literal['Overall', 'Art_Style', 'Counting', 'Forensic_Detection', 'Functional_Correspondence', 'IQ_Test', 'Jigsaw', 'Multi-view_Reasoning', 'Object_Localization', 'Relative_Depth', 'Relative_Refl",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_name",
+          "label": "Model Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "model_size",
+          "label": "Model Size",
+          "type": "List[Literal['<4B', '4B-10B', '10B-20B', '20B-40B', '>40B', 'Unknown']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_type",
+          "label": "Model Type",
+          "type": "List[Literal['API', 'OpenSource']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_331",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/filter_df_l2_106",
+      "parameters": [
+        {
+          "name": "dataset_name",
+          "label": "BLINK",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "fields",
+          "label": "BLINK CheckBoxes",
+          "type": "List[Literal['Overall', 'Art_Style', 'Counting', 'Forensic_Detection', 'Functional_Correspondence', 'IQ_Test', 'Jigsaw', 'Multi-view_Reasoning', 'Object_Localization', 'Relative_Depth', 'Relative_Refl",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_name",
+          "label": "Model Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "model_size",
+          "label": "Model Size",
+          "type": "List[Literal['<4B', '4B-10B', '10B-20B', '20B-40B', '>40B', 'Unknown']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_type",
+          "label": "Model Type",
+          "type": "List[Literal['API', 'OpenSource']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_331",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/filter_df_l2_107",
+      "parameters": [
+        {
+          "name": "dataset_name",
+          "label": "BLINK",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "fields",
+          "label": "BLINK CheckBoxes",
+          "type": "List[Literal['Overall', 'Art_Style', 'Counting', 'Forensic_Detection', 'Functional_Correspondence', 'IQ_Test', 'Jigsaw', 'Multi-view_Reasoning', 'Object_Localization', 'Relative_Depth', 'Relative_Refl",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_name",
+          "label": "Model Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "model_size",
+          "label": "Model Size",
+          "type": "List[Literal['<4B', '4B-10B', '10B-20B', '20B-40B', '>40B', 'Unknown']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_type",
+          "label": "Model Type",
+          "type": "List[Literal['API', 'OpenSource']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_331",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/filter_df_l2_108",
+      "parameters": [
+        {
+          "name": "dataset_name",
+          "label": "QBench",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "fields",
+          "label": "QBench CheckBoxes",
+          "type": "List[Literal['Overall', 'type_0_concern_0', 'type_0_concern_1', 'type_0_concern_2', 'type_0_concern_3', 'type_1_concern_0', 'type_1_concern_1', 'type_1_concern_2', 'type_1_concern_3', 'type_2_concern_",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_name",
+          "label": "Model Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "model_size",
+          "label": "Model Size",
+          "type": "List[Literal['<4B', '4B-10B', '10B-20B', '20B-40B', '>40B', 'Unknown']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_type",
+          "label": "Model Type",
+          "type": "List[Literal['API', 'OpenSource']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_342",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/filter_df_l2_109",
+      "parameters": [
+        {
+          "name": "dataset_name",
+          "label": "QBench",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "fields",
+          "label": "QBench CheckBoxes",
+          "type": "List[Literal['Overall', 'type_0_concern_0', 'type_0_concern_1', 'type_0_concern_2', 'type_0_concern_3', 'type_1_concern_0', 'type_1_concern_1', 'type_1_concern_2', 'type_1_concern_3', 'type_2_concern_",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_name",
+          "label": "Model Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "model_size",
+          "label": "Model Size",
+          "type": "List[Literal['<4B', '4B-10B', '10B-20B', '20B-40B', '>40B', 'Unknown']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_type",
+          "label": "Model Type",
+          "type": "List[Literal['API', 'OpenSource']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_342",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/filter_df_l2_110",
+      "parameters": [
+        {
+          "name": "dataset_name",
+          "label": "QBench",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "fields",
+          "label": "QBench CheckBoxes",
+          "type": "List[Literal['Overall', 'type_0_concern_0', 'type_0_concern_1', 'type_0_concern_2', 'type_0_concern_3', 'type_1_concern_0', 'type_1_concern_1', 'type_1_concern_2', 'type_1_concern_3', 'type_2_concern_",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_name",
+          "label": "Model Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "model_size",
+          "label": "Model Size",
+          "type": "List[Literal['<4B', '4B-10B', '10B-20B', '20B-40B', '>40B', 'Unknown']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_type",
+          "label": "Model Type",
+          "type": "List[Literal['API', 'OpenSource']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_342",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/filter_df_l2_111",
+      "parameters": [
+        {
+          "name": "dataset_name",
+          "label": "QBench",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "fields",
+          "label": "QBench CheckBoxes",
+          "type": "List[Literal['Overall', 'type_0_concern_0', 'type_0_concern_1', 'type_0_concern_2', 'type_0_concern_3', 'type_1_concern_0', 'type_1_concern_1', 'type_1_concern_2', 'type_1_concern_3', 'type_2_concern_",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_name",
+          "label": "Model Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "model_size",
+          "label": "Model Size",
+          "type": "List[Literal['<4B', '4B-10B', '10B-20B', '20B-40B', '>40B', 'Unknown']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_type",
+          "label": "Model Type",
+          "type": "List[Literal['API', 'OpenSource']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_342",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/filter_df_l2_112",
+      "parameters": [
+        {
+          "name": "dataset_name",
+          "label": "ABench",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "fields",
+          "label": "ABench CheckBoxes",
+          "type": "List[Literal['Overall', 'part1 -> bag_of_words -> attribute', 'part1 -> bag_of_words -> composition -> arrangement', 'part1 -> bag_of_words -> composition -> occlusion', 'part1 -> bag_of_words -> comp",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_name",
+          "label": "Model Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "model_size",
+          "label": "Model Size",
+          "type": "List[Literal['<4B', '4B-10B', '10B-20B', '20B-40B', '>40B', 'Unknown']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_type",
+          "label": "Model Type",
+          "type": "List[Literal['API', 'OpenSource']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_353",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/filter_df_l2_113",
+      "parameters": [
+        {
+          "name": "dataset_name",
+          "label": "ABench",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "fields",
+          "label": "ABench CheckBoxes",
+          "type": "List[Literal['Overall', 'part1 -> bag_of_words -> attribute', 'part1 -> bag_of_words -> composition -> arrangement', 'part1 -> bag_of_words -> composition -> occlusion', 'part1 -> bag_of_words -> comp",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_name",
+          "label": "Model Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "model_size",
+          "label": "Model Size",
+          "type": "List[Literal['<4B', '4B-10B', '10B-20B', '20B-40B', '>40B', 'Unknown']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_type",
+          "label": "Model Type",
+          "type": "List[Literal['API', 'OpenSource']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_353",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/filter_df_l2_114",
+      "parameters": [
+        {
+          "name": "dataset_name",
+          "label": "ABench",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "fields",
+          "label": "ABench CheckBoxes",
+          "type": "List[Literal['Overall', 'part1 -> bag_of_words -> attribute', 'part1 -> bag_of_words -> composition -> arrangement', 'part1 -> bag_of_words -> composition -> occlusion', 'part1 -> bag_of_words -> comp",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_name",
+          "label": "Model Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "model_size",
+          "label": "Model Size",
+          "type": "List[Literal['<4B', '4B-10B', '10B-20B', '20B-40B', '>40B', 'Unknown']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_type",
+          "label": "Model Type",
+          "type": "List[Literal['API', 'OpenSource']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_353",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/filter_df_l2_115",
+      "parameters": [
+        {
+          "name": "dataset_name",
+          "label": "ABench",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "fields",
+          "label": "ABench CheckBoxes",
+          "type": "List[Literal['Overall', 'part1 -> bag_of_words -> attribute', 'part1 -> bag_of_words -> composition -> arrangement', 'part1 -> bag_of_words -> composition -> occlusion', 'part1 -> bag_of_words -> comp",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_name",
+          "label": "Model Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "model_size",
+          "label": "Model Size",
+          "type": "List[Literal['<4B', '4B-10B', '10B-20B', '20B-40B', '>40B', 'Unknown']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_type",
+          "label": "Model Type",
+          "type": "List[Literal['API', 'OpenSource']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_353",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/filter_df_l2_116",
+      "parameters": [
+        {
+          "name": "dataset_name",
+          "label": "MTVQA",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "fields",
+          "label": "MTVQA CheckBoxes",
+          "type": "List[Literal['Overall', 'AR', 'DE', 'FR', 'IT', 'JA', 'KR', 'RU', 'TH', 'VI']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_name",
+          "label": "Model Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "model_size",
+          "label": "Model Size",
+          "type": "List[Literal['<4B', '4B-10B', '10B-20B', '20B-40B', '>40B', 'Unknown']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_type",
+          "label": "Model Type",
+          "type": "List[Literal['API', 'OpenSource']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_364",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/filter_df_l2_117",
+      "parameters": [
+        {
+          "name": "dataset_name",
+          "label": "MTVQA",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "fields",
+          "label": "MTVQA CheckBoxes",
+          "type": "List[Literal['Overall', 'AR', 'DE', 'FR', 'IT', 'JA', 'KR', 'RU', 'TH', 'VI']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_name",
+          "label": "Model Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "model_size",
+          "label": "Model Size",
+          "type": "List[Literal['<4B', '4B-10B', '10B-20B', '20B-40B', '>40B', 'Unknown']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_type",
+          "label": "Model Type",
+          "type": "List[Literal['API', 'OpenSource']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_364",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/filter_df_l2_118",
+      "parameters": [
+        {
+          "name": "dataset_name",
+          "label": "MTVQA",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "fields",
+          "label": "MTVQA CheckBoxes",
+          "type": "List[Literal['Overall', 'AR', 'DE', 'FR', 'IT', 'JA', 'KR', 'RU', 'TH', 'VI']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_name",
+          "label": "Model Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "model_size",
+          "label": "Model Size",
+          "type": "List[Literal['<4B', '4B-10B', '10B-20B', '20B-40B', '>40B', 'Unknown']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_type",
+          "label": "Model Type",
+          "type": "List[Literal['API', 'OpenSource']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_364",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/filter_df_l2_119",
+      "parameters": [
+        {
+          "name": "dataset_name",
+          "label": "MTVQA",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "fields",
+          "label": "MTVQA CheckBoxes",
+          "type": "List[Literal['Overall', 'AR', 'DE', 'FR', 'IT', 'JA', 'KR', 'RU', 'TH', 'VI']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_name",
+          "label": "Model Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "model_size",
+          "label": "Model Size",
+          "type": "List[Literal['<4B', '4B-10B', '10B-20B', '20B-40B', '>40B', 'Unknown']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_type",
+          "label": "Model Type",
+          "type": "List[Literal['API', 'OpenSource']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_364",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/filter_df_l2_120",
+      "parameters": [
+        {
+          "name": "dataset_name",
+          "label": "VCR",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "fields",
+          "label": "VCR CheckBoxes",
+          "type": "List[Literal['Overall-Jaccard', 'Overall-EM', 'EN_EASY-Jaccard', 'EN_EASY-EM', 'EN_HARD-Jaccard', 'EN_HARD-EM', 'ZH_EASY-Jaccard', 'ZH_EASY-EM', 'ZH_HARD-Jaccard', 'ZH_HARD-EM']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_name",
+          "label": "Model Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "model_size",
+          "label": "Model Size",
+          "type": "List[Literal['<4B', '4B-10B', '10B-20B', '20B-40B', '>40B', 'Unknown']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_type",
+          "label": "Model Type",
+          "type": "List[Literal['API', 'OpenSource']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_376",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/filter_df_l2_121",
+      "parameters": [
+        {
+          "name": "dataset_name",
+          "label": "VCR",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "fields",
+          "label": "VCR CheckBoxes",
+          "type": "List[Literal['Overall-Jaccard', 'Overall-EM', 'EN_EASY-Jaccard', 'EN_EASY-EM', 'EN_HARD-Jaccard', 'EN_HARD-EM', 'ZH_EASY-Jaccard', 'ZH_EASY-EM', 'ZH_HARD-Jaccard', 'ZH_HARD-EM']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_name",
+          "label": "Model Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "model_size",
+          "label": "Model Size",
+          "type": "List[Literal['<4B', '4B-10B', '10B-20B', '20B-40B', '>40B', 'Unknown']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_type",
+          "label": "Model Type",
+          "type": "List[Literal['API', 'OpenSource']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_376",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/filter_df_l2_122",
+      "parameters": [
+        {
+          "name": "dataset_name",
+          "label": "VCR",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "fields",
+          "label": "VCR CheckBoxes",
+          "type": "List[Literal['Overall-Jaccard', 'Overall-EM', 'EN_EASY-Jaccard', 'EN_EASY-EM', 'EN_HARD-Jaccard', 'EN_HARD-EM', 'ZH_EASY-Jaccard', 'ZH_EASY-EM', 'ZH_HARD-Jaccard', 'ZH_HARD-EM']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_name",
+          "label": "Model Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "model_size",
+          "label": "Model Size",
+          "type": "List[Literal['<4B', '4B-10B', '10B-20B', '20B-40B', '>40B', 'Unknown']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_type",
+          "label": "Model Type",
+          "type": "List[Literal['API', 'OpenSource']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_376",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/filter_df_l2_123",
+      "parameters": [
+        {
+          "name": "dataset_name",
+          "label": "VCR",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "fields",
+          "label": "VCR CheckBoxes",
+          "type": "List[Literal['Overall-Jaccard', 'Overall-EM', 'EN_EASY-Jaccard', 'EN_EASY-EM', 'EN_HARD-Jaccard', 'EN_HARD-EM', 'ZH_EASY-Jaccard', 'ZH_EASY-EM', 'ZH_HARD-Jaccard', 'ZH_HARD-EM']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_name",
+          "label": "Model Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "model_size",
+          "label": "Model Size",
+          "type": "List[Literal['<4B', '4B-10B', '10B-20B', '20B-40B', '>40B', 'Unknown']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "model_type",
+          "label": "Model Type",
+          "type": "List[Literal['API', 'OpenSource']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_376",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/filter_df",
+  "_api_verified": true,
+  "estimated_latency_s": 6.06,
+  "speed_tier": "medium",
+  "_latency_source": "measured",
+  "_tags_enriched": true,
+  "measured_latency_s": 6.06,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:51:32.896983+00:00",
+  "_inference_attempt_status": "predict_failed",
+  "_inference_attempt_error": "The upstream Gradio app has raised an exception but has not enabled verbose error reporting. To enable, set show_error=True in launch()."
+}

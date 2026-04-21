@@ -1,0 +1,371 @@
+{
+  "space_id": "YLab-Open/BRIDGE-Medical-Leaderboard",
+  "title": "BRIDGE Medical Leaderboard",
+  "emoji": "\ud83d\udcc8",
+  "description": "Leaderboard for BRIDGE Benchmark",
+  "input_schema": {
+    "values": {
+      "type": "list[Literal['English', 'Spanish', 'Chinese', 'Norwegian', 'Russian', 'Portuguese', 'German', 'Japan",
+      "description": "Filter Task: Language",
+      "required": true,
+      "component": "Checkboxgroup"
+    }
+  },
+  "output_schema": {
+    "value_6": {
+      "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+      "description": "value_6",
+      "component": "Leaderboard"
+    }
+  },
+  "license": "mit",
+  "hardware": "5.25.2",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us",
+    "benchmark",
+    "leaderboard"
+  ],
+  "likes": 21,
+  "last_modified": "2026-04-08 19:45:53+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/lambda",
+      "parameters": [
+        {
+          "name": "values",
+          "label": "Filter Task: Language",
+          "type": "list[Literal['English', 'Spanish', 'Chinese', 'Norwegian', 'Russian', 'Portuguese', 'German', 'Japanese', 'French']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_6",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Leaderboard"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_1",
+      "parameters": [
+        {
+          "name": "values",
+          "label": "Filter Task: Task Type",
+          "type": "list[Literal['Question Answering', 'Text Classification', 'Named Entity Recognition', 'Normalization and Coding', 'Natural Language Inference', 'Summarization', 'Event Extraction', 'Semantic Similarit",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_6",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Leaderboard"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_2",
+      "parameters": [
+        {
+          "name": "values",
+          "label": "Filter Task: Clinical Context",
+          "type": "list[Literal['Neurology', 'Oncology', 'Radiology', 'Pulmonology', 'Cardiology', 'Dermatology', 'Critical Care', 'Nephrology', 'General', 'Endocrinology', 'Pediatrics', 'Pharmacology', 'Gastroenterolog",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_6",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Leaderboard"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_3",
+      "parameters": [
+        {
+          "name": "values",
+          "label": "Filter Task: Clinical Application",
+          "type": "list[Literal['Procudure information', 'Concept standarization', 'Specialist recommendation', 'Negation identification', 'Clinical trial matching', 'Consultation summarization', 'Semantic relation', 'P",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_6",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Leaderboard"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_4",
+      "parameters": [
+        {
+          "name": "values",
+          "label": "Filter Task: Clinical Stage",
+          "type": "list[Literal['Treatment and Intervention', 'Triage and Referral', 'Initial Assessment', 'Discharge and Administration', 'Research', 'Diagnosis and Prognosis']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_6",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Leaderboard"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_5",
+      "parameters": [
+        {
+          "name": "values",
+          "label": "Filter Task: Data Access",
+          "type": "list[Literal['Open Access', 'Regulated']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_6",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Leaderboard"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_6",
+      "parameters": [
+        {
+          "name": "values",
+          "label": "Filter Task: Language",
+          "type": "list[Literal['English', 'Spanish', 'Chinese', 'Norwegian', 'Russian', 'Portuguese', 'German', 'Japanese', 'French']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_15",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Leaderboard"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_7",
+      "parameters": [
+        {
+          "name": "values",
+          "label": "Filter Task: Task Type",
+          "type": "list[Literal['Question Answering', 'Text Classification', 'Named Entity Recognition', 'Normalization and Coding', 'Natural Language Inference', 'Summarization', 'Event Extraction', 'Semantic Similarit",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_15",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Leaderboard"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_8",
+      "parameters": [
+        {
+          "name": "values",
+          "label": "Filter Task: Clinical Context",
+          "type": "list[Literal['Neurology', 'Oncology', 'Radiology', 'Pulmonology', 'Cardiology', 'Dermatology', 'Critical Care', 'Nephrology', 'General', 'Endocrinology', 'Pediatrics', 'Pharmacology', 'Gastroenterolog",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_15",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Leaderboard"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_9",
+      "parameters": [
+        {
+          "name": "values",
+          "label": "Filter Task: Clinical Application",
+          "type": "list[Literal['Procudure information', 'Concept standarization', 'Specialist recommendation', 'Negation identification', 'Clinical trial matching', 'Consultation summarization', 'Semantic relation', 'P",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_15",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Leaderboard"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_10",
+      "parameters": [
+        {
+          "name": "values",
+          "label": "Filter Task: Clinical Stage",
+          "type": "list[Literal['Treatment and Intervention', 'Triage and Referral', 'Initial Assessment', 'Discharge and Administration', 'Research', 'Diagnosis and Prognosis']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_15",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Leaderboard"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_11",
+      "parameters": [
+        {
+          "name": "values",
+          "label": "Filter Task: Data Access",
+          "type": "list[Literal['Open Access', 'Regulated']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_15",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Leaderboard"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_12",
+      "parameters": [
+        {
+          "name": "values",
+          "label": "Filter Task: Language",
+          "type": "list[Literal['English', 'Spanish', 'Chinese', 'Norwegian', 'Russian', 'Portuguese', 'German', 'Japanese', 'French']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_24",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Leaderboard"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_13",
+      "parameters": [
+        {
+          "name": "values",
+          "label": "Filter Task: Task Type",
+          "type": "list[Literal['Question Answering', 'Text Classification', 'Named Entity Recognition', 'Normalization and Coding', 'Natural Language Inference', 'Summarization', 'Event Extraction', 'Semantic Similarit",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_24",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Leaderboard"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_14",
+      "parameters": [
+        {
+          "name": "values",
+          "label": "Filter Task: Clinical Context",
+          "type": "list[Literal['Neurology', 'Oncology', 'Radiology', 'Pulmonology', 'Cardiology', 'Dermatology', 'Critical Care', 'Nephrology', 'General', 'Endocrinology', 'Pediatrics', 'Pharmacology', 'Gastroenterolog",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_24",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Leaderboard"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_15",
+      "parameters": [
+        {
+          "name": "values",
+          "label": "Filter Task: Clinical Application",
+          "type": "list[Literal['Procudure information', 'Concept standarization', 'Specialist recommendation', 'Negation identification', 'Clinical trial matching', 'Consultation summarization', 'Semantic relation', 'P",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_24",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Leaderboard"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_16",
+      "parameters": [
+        {
+          "name": "values",
+          "label": "Filter Task: Clinical Stage",
+          "type": "list[Literal['Treatment and Intervention', 'Triage and Referral', 'Initial Assessment', 'Discharge and Administration', 'Research', 'Diagnosis and Prognosis']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_24",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Leaderboard"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_17",
+      "parameters": [
+        {
+          "name": "values",
+          "label": "Filter Task: Data Access",
+          "type": "list[Literal['Open Access', 'Regulated']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_24",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Leaderboard"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/lambda",
+  "_api_verified": true,
+  "estimated_latency_s": 4.02,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "_tags_enriched": true,
+  "measured_latency_s": 4.02,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:50:06.384194+00:00"
+}

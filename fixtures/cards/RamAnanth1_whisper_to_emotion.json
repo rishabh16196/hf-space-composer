@@ -1,0 +1,41 @@
+{
+  "space_id": "RamAnanth1/whisper_to_emotion",
+  "title": "Whisper To Emotion",
+  "emoji": "\ud83c\udfc3",
+  "description": "Identify emotion from multi-lingual audio",
+  "input_schema": {
+    "input": {
+      "type": "string",
+      "description": "Input",
+      "required": true
+    }
+  },
+  "output_schema": {
+    "output": {
+      "type": "string"
+    }
+  },
+  "license": "unknown",
+  "hardware": "3.38.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us",
+    "asr",
+    "audio",
+    "sentiment",
+    "text",
+    "transcription"
+  ],
+  "likes": 34,
+  "last_modified": "2024-03-06 20:08:51+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_tags_enriched": true,
+  "estimated_latency_s": 2.5,
+  "speed_tier": "fast",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "sleeping",
+  "_api_error": "Space is in RUNTIME_ERROR state"
+}

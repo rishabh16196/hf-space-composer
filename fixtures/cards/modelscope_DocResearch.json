@@ -1,0 +1,402 @@
+{
+  "space_id": "modelscope/DocResearch",
+  "title": "Doc Research",
+  "emoji": "\ud83d\udd2c",
+  "description": "Doc Research",
+  "input_schema": {},
+  "output_schema": {
+    "value_9": {
+      "type": "str",
+      "description": "value_9",
+      "component": "Html"
+    },
+    "\u7528\u6237\u63d0\u793a | User Prompt": {
+      "type": "str",
+      "description": "\u7528\u6237\u63d0\u793a | User Prompt",
+      "component": "Textbox"
+    },
+    "URLs\u8f93\u5165 | URLs Input": {
+      "type": "str",
+      "description": "URLs\u8f93\u5165 | URLs Input",
+      "component": "Textbox"
+    },
+    "\u6267\u884c\u7ed3\u679c | Execution Results": {
+      "type": "str",
+      "description": "\u6267\u884c\u7ed3\u679c | Execution Results",
+      "component": "Textbox"
+    },
+    "\u5de5\u4f5c\u76ee\u5f55 | Working Directory": {
+      "type": "str",
+      "description": "\u5de5\u4f5c\u76ee\u5f55 | Working Directory",
+      "component": "Textbox"
+    },
+    "value_46": {
+      "type": "str",
+      "description": "value_46",
+      "component": "Markdown"
+    },
+    "\u7814\u7a76\u62a5\u544a | Research Report": {
+      "type": "str",
+      "description": "\u7814\u7a76\u62a5\u544a | Research Report",
+      "component": "Html"
+    },
+    "\u8d44\u6e90\u6587\u4ef6\u4fe1\u606f | Resources Info": {
+      "type": "str",
+      "description": "\u8d44\u6e90\u6587\u4ef6\u4fe1\u606f | Resources Info",
+      "component": "Textbox"
+    },
+    "value_24": {
+      "type": "str",
+      "description": "value_24",
+      "component": "Html"
+    },
+    "value_10": {
+      "type": "str",
+      "description": "value_10",
+      "component": "Html"
+    }
+  },
+  "license": "unknown",
+  "hardware": "5.39.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 6,
+  "last_modified": "2025-08-14 14:51:27+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/initialize_page",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_9",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "\u7528\u6237\u63d0\u793a | User Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "URLs\u8f93\u5165 | URLs Input",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "\u6267\u884c\u7ed3\u679c | Execution Results",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "\u5de5\u4f5c\u76ee\u5f55 | Working Directory",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "value_46",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "\u7814\u7a76\u62a5\u544a | Research Report",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "\u8d44\u6e90\u6587\u4ef6\u4fe1\u606f | Resources Info",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "value_24",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "value_10",
+          "type": "str",
+          "component": "Html"
+        }
+      ]
+    },
+    {
+      "name": "/periodic_status_update",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_9",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "value_10",
+          "type": "str",
+          "component": "Html"
+        }
+      ]
+    },
+    {
+      "name": "/toggle_fullscreen",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_47",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_45",
+          "type": "str",
+          "component": "Html"
+        }
+      ]
+    },
+    {
+      "name": "/close_fullscreen",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_47",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_45",
+          "type": "str",
+          "component": "Html"
+        }
+      ]
+    },
+    {
+      "name": "/run_research_workflow_with_state",
+      "parameters": [
+        {
+          "name": "user_prompt_val",
+          "label": "\u7528\u6237\u63d0\u793a | User Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "uploaded_files_val",
+          "label": "\u4e0a\u4f20\u6587\u4ef6 | Upload Files",
+          "type": "list[filepath]",
+          "component": "File"
+        },
+        {
+          "name": "urls_text_val",
+          "label": "URLs\u8f93\u5165 | URLs Input",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "\u6267\u884c\u7ed3\u679c | Execution Results",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "\u5de5\u4f5c\u76ee\u5f55 | Working Directory",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "value_46",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "\u7814\u7a76\u62a5\u544a | Research Report",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "\u8d44\u6e90\u6587\u4ef6\u4fe1\u606f | Resources Info",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "value_24",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "value_10",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "value_9",
+          "type": "str",
+          "component": "Html"
+        }
+      ]
+    },
+    {
+      "name": "/restore_latest_results",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "\u6267\u884c\u7ed3\u679c | Execution Results",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "\u5de5\u4f5c\u76ee\u5f55 | Working Directory",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "value_46",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "\u7814\u7a76\u62a5\u544a | Research Report",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "\u8d44\u6e90\u6587\u4ef6\u4fe1\u606f | Resources Info",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "\u7528\u6237\u63d0\u793a | User Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "URLs\u8f93\u5165 | URLs Input",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "value_24",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "value_10",
+          "type": "str",
+          "component": "Html"
+        }
+      ]
+    },
+    {
+      "name": "/refresh_system_status",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_10",
+          "type": "str",
+          "component": "Html"
+        }
+      ]
+    },
+    {
+      "name": "/clear_workspace_keep_state",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "\u6267\u884c\u7ed3\u679c | Execution Results",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "value_46",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "\u8d44\u6e90\u6587\u4ef6\u4fe1\u606f | Resources Info",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "value_24",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "value_10",
+          "type": "str",
+          "component": "Html"
+        }
+      ]
+    },
+    {
+      "name": "/clear_all_inputs_and_state",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "\u7528\u6237\u63d0\u793a | User Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "\u4e0a\u4f20\u6587\u4ef6 | Upload Files",
+          "type": "list[filepath]",
+          "component": "File"
+        },
+        {
+          "label": "URLs\u8f93\u5165 | URLs Input",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "\u6267\u884c\u7ed3\u679c | Execution Results",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "\u5de5\u4f5c\u76ee\u5f55 | Working Directory",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "value_46",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "\u7814\u7a76\u62a5\u544a | Research Report",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "\u8d44\u6e90\u6587\u4ef6\u4fe1\u606f | Resources Info",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "value_24",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "value_10",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "value_9",
+          "type": "str",
+          "component": "Html"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/initialize_page",
+  "_api_verified": true
+}

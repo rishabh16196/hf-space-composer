@@ -1,0 +1,150 @@
+{
+  "space_id": "prithivMLmods/Qwen-Image-Edit-2509-LoRAs-Fast",
+  "title": "Qwen-Image-Edit-2509-LoRAs-Fast",
+  "emoji": "\u26a1",
+  "description": "Demo of the Collection of Qwen Image Edit LoRAs",
+  "input_schema": {
+    "input_image": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "Upload Image",
+      "required": true,
+      "component": "Image"
+    },
+    "prompt": {
+      "type": "str",
+      "description": "Edit Prompt",
+      "required": true,
+      "component": "Textbox"
+    },
+    "lora_adapter": {
+      "type": "Literal['Photo-to-Anime', 'Multiple-Angles', 'Light-Restoration', 'Relight', 'Multi-Angle-Lighting',",
+      "description": "Choose Editing Style",
+      "required": true,
+      "component": "Dropdown"
+    },
+    "seed": {
+      "type": "float",
+      "description": "Seed",
+      "required": true,
+      "component": "Slider"
+    },
+    "randomize_seed": {
+      "type": "bool",
+      "description": "Randomize Seed",
+      "required": true,
+      "component": "Checkbox"
+    },
+    "guidance_scale": {
+      "type": "float",
+      "description": "Guidance Scale",
+      "required": true,
+      "component": "Slider"
+    },
+    "steps": {
+      "type": "float",
+      "description": "Inference Steps",
+      "required": true,
+      "component": "Slider"
+    }
+  },
+  "output_schema": {
+    "Output Image": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "Output Image",
+      "component": "Image"
+    },
+    "Seed": {
+      "type": "float",
+      "description": "Seed",
+      "component": "Slider"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "6.8.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "mcp-server",
+    "region:us",
+    "image-generation",
+    "vision"
+  ],
+  "likes": 752,
+  "last_modified": "2026-03-23 09:01:04+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/infer",
+      "parameters": [
+        {
+          "name": "input_image",
+          "label": "Upload Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "prompt",
+          "label": "Edit Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "lora_adapter",
+          "label": "Choose Editing Style",
+          "type": "Literal['Photo-to-Anime', 'Multiple-Angles', 'Light-Restoration', 'Relight', 'Multi-Angle-Lighting', 'Edit-Skin', 'Next-Scene', 'Flat-Log', 'Upscale-Image', 'Upscale2K', 'Dotted-Illustration']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "seed",
+          "label": "Seed",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "randomize_seed",
+          "label": "Randomize Seed",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "guidance_scale",
+          "label": "Guidance Scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "steps",
+          "label": "Inference Steps",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "Seed",
+          "type": "float",
+          "component": "Slider"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/infer",
+  "_api_verified": true,
+  "estimated_latency_s": 3.59,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "_tags_enriched": true,
+  "measured_latency_s": 3.59,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:51:36.488107+00:00",
+  "_inference_attempt_status": "predict_failed",
+  "_inference_attempt_error": "Failed to download file. Status code: 404"
+}

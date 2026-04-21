@@ -1,0 +1,148 @@
+{
+  "space_id": "prithivMLmods/Qwen-Image-Edit-Object-Manipulator",
+  "title": "Qwen Image Edit Object Manipulator",
+  "emoji": "\ud83d\udd25",
+  "description": "Text-Guided Object Manipulation Using Qwen Image Edit + LoRA",
+  "input_schema": {
+    "images": {
+      "type": "list[dict(image: dict(path: str | None (Path to a local file), url: str | None (Publicly available u",
+      "description": "Upload Images",
+      "required": true,
+      "component": "Gallery"
+    },
+    "prompt": {
+      "type": "str",
+      "description": "Edit Prompt",
+      "required": true,
+      "component": "Textbox"
+    },
+    "lora_adapter": {
+      "type": "Literal['Qwen-Image-Edit-2511-Object-Adder', 'Qwen-Image-Edit-2511-Object-Remover', 'QIE-2511-Object",
+      "description": "Choose Manipulator",
+      "required": true,
+      "component": "Dropdown"
+    },
+    "seed": {
+      "type": "float",
+      "description": "Seed",
+      "required": true,
+      "component": "Slider"
+    },
+    "randomize_seed": {
+      "type": "bool",
+      "description": "Randomize Seed",
+      "required": true,
+      "component": "Checkbox"
+    },
+    "guidance_scale": {
+      "type": "float",
+      "description": "Guidance Scale",
+      "required": true,
+      "component": "Slider"
+    },
+    "steps": {
+      "type": "float",
+      "description": "Inference Steps",
+      "required": true,
+      "component": "Slider"
+    }
+  },
+  "output_schema": {
+    "Output Image": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "Output Image",
+      "component": "Image"
+    },
+    "Seed": {
+      "type": "float",
+      "description": "Seed",
+      "component": "Slider"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "6.3.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "mcp-server",
+    "region:us",
+    "image-generation",
+    "vision"
+  ],
+  "likes": 177,
+  "last_modified": "2026-03-23 09:00:23+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/infer",
+      "parameters": [
+        {
+          "name": "images",
+          "label": "Upload Images",
+          "type": "list[dict(image: dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Origi",
+          "component": "Gallery"
+        },
+        {
+          "name": "prompt",
+          "label": "Edit Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "lora_adapter",
+          "label": "Choose Manipulator",
+          "type": "Literal['Qwen-Image-Edit-2511-Object-Adder', 'Qwen-Image-Edit-2511-Object-Remover', 'QIE-2511-Object-Remover-v2', 'Zoom-Master', 'Extract-Outfit', 'Outfit-Design-Layout']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "seed",
+          "label": "Seed",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "randomize_seed",
+          "label": "Randomize Seed",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "guidance_scale",
+          "label": "Guidance Scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "steps",
+          "label": "Inference Steps",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "Seed",
+          "type": "float",
+          "component": "Slider"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/infer",
+  "_api_verified": true,
+  "estimated_latency_s": 4.51,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "_tags_enriched": true,
+  "measured_latency_s": 4.51,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:51:38.024966+00:00"
+}

@@ -1,0 +1,151 @@
+{
+  "space_id": "AiSudo/Qwen-Image-to-LoRA",
+  "title": "Qwen Image to LoRA",
+  "emoji": "\ud83d\ude2d",
+  "description": "Generate LoRA from a single image",
+  "input_schema": {
+    "input_images": {
+      "type": "list[dict(image: dict(path: str | None (Path to a local file), url: str | None (Publicly available u",
+      "description": "Input images",
+      "required": true,
+      "component": "Gallery"
+    }
+  },
+  "output_schema": {
+    "Generated LoRA path": {
+      "type": "str",
+      "description": "Generated LoRA path",
+      "component": "Textbox"
+    },
+    "Download LoRA": {
+      "type": "filepath",
+      "description": "Download LoRA",
+      "component": "Downloadbutton"
+    }
+  },
+  "license": "unknown",
+  "hardware": "6.1.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "mcp-server",
+    "region:us"
+  ],
+  "likes": 347,
+  "last_modified": "2026-02-01 14:25:44+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/generate_lora",
+      "parameters": [
+        {
+          "name": "input_images",
+          "label": "Input images",
+          "type": "list[dict(image: dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Origi",
+          "component": "Gallery"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Generated LoRA path",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Download LoRA",
+          "type": "filepath",
+          "component": "Downloadbutton"
+        }
+      ]
+    },
+    {
+      "name": "/generate_image",
+      "parameters": [
+        {
+          "name": "lora_name",
+          "label": "Generated LoRA path",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "prompt",
+          "label": "Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "negative_prompt",
+          "label": "Negative prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "width",
+          "label": "Width",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "height",
+          "label": "Height",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "seed",
+          "label": "Seed",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "randomize_seed",
+          "label": "Randomize seed",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "guidance_scale",
+          "label": "Guidance scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "lora_strength",
+          "label": "Lora Strength",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "num_inference_steps",
+          "label": "Steps",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Generated image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "Seed",
+          "type": "float",
+          "component": "Slider"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/generate_lora",
+  "_api_verified": true,
+  "estimated_latency_s": 3.06,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "_tags_enriched": true,
+  "measured_latency_s": 3.06,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:49:05.339170+00:00"
+}

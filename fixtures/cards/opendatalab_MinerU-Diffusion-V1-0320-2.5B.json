@@ -1,0 +1,124 @@
+{
+  "space_id": "opendatalab/MinerU-Diffusion-V1-0320-2.5B",
+  "title": "MinerU Diffusion V1 0320 2.5B",
+  "emoji": "\ud83e\udd80",
+  "description": "demo of MinerU-Diffusion",
+  "input_schema": {
+    "image_path": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "Input Image",
+      "required": true,
+      "component": "Image"
+    },
+    "prompt_type": {
+      "type": "Literal['text', 'table', 'formula', 'layout']",
+      "description": "OCR Type",
+      "required": true,
+      "component": "Radio"
+    }
+  },
+  "output_schema": {
+    "value_10": {
+      "type": "str",
+      "description": "value_10",
+      "component": "Html"
+    },
+    "value_13": {
+      "type": "str",
+      "description": "value_13",
+      "component": "Html"
+    }
+  },
+  "license": "unknown",
+  "hardware": "6.9.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 7,
+  "last_modified": "2026-03-24 13:18:45+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_tags_enriched": true,
+  "estimated_latency_s": 3.0,
+  "speed_tier": "fast",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/run_compare",
+      "parameters": [
+        {
+          "name": "image_path",
+          "label": "Input Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "prompt_type",
+          "label": "OCR Type",
+          "type": "Literal['text', 'table', 'formula', 'layout']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_10",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "value_13",
+          "type": "str",
+          "component": "Html"
+        }
+      ]
+    },
+    {
+      "name": "/update_start_button",
+      "parameters": [
+        {
+          "name": "image_path",
+          "label": "Input Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/log_prompt_change",
+      "parameters": [
+        {
+          "name": "prompt_type",
+          "label": "OCR Type",
+          "type": "Literal['text', 'table', 'formula', 'layout']",
+          "component": "Radio"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/use_sample_image_with_button",
+      "parameters": [
+        {
+          "name": "prompt_type",
+          "label": "OCR Type",
+          "type": "Literal['text', 'table', 'formula', 'layout']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Input Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/run_compare",
+  "_api_verified": true
+}

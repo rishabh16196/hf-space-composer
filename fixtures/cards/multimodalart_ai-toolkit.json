@@ -1,0 +1,36 @@
+{
+  "space_id": "multimodalart/ai-toolkit",
+  "title": "Ostris' AI Toolkit",
+  "emoji": "\ud83d\udcbb",
+  "description": "Train FLUX, Qwen and Wan LoRAs with Ostris Ai Toolkit",
+  "input_schema": {
+    "input": {
+      "type": "string",
+      "description": "Input",
+      "required": true
+    }
+  },
+  "output_schema": {
+    "output": {
+      "type": "string"
+    }
+  },
+  "license": "unknown",
+  "hardware": "",
+  "sdk": "docker",
+  "tags": [
+    "docker",
+    "region:us"
+  ],
+  "likes": 145,
+  "last_modified": "2025-12-17 12:12:50+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "error",
+  "_api_error": "Could not get Gradio config from: https://multimodalart-ai-toolkit.hf.space",
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_tags_enriched": true
+}

@@ -1,0 +1,38 @@
+{
+  "space_id": "ibm-research/vakra",
+  "title": "VAKRA Leaderboard",
+  "emoji": "\ud83c\udfc6",
+  "description": "VAKRA Leaderboard",
+  "input_schema": {
+    "input": {
+      "type": "string",
+      "description": "Input",
+      "required": true
+    }
+  },
+  "output_schema": {
+    "output": {
+      "type": "string"
+    }
+  },
+  "license": "unknown",
+  "hardware": "",
+  "sdk": "docker",
+  "tags": [
+    "docker",
+    "region:us",
+    "benchmark",
+    "leaderboard"
+  ],
+  "likes": 18,
+  "last_modified": "2026-03-25 11:43:00+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "error",
+  "_api_error": "Could not get Gradio config from: https://ibm-research-vakra.hf.space",
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_tags_enriched": true
+}

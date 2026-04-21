@@ -1,0 +1,1407 @@
+{
+  "space_id": "mohdelgaar/Clinical_Decisions",
+  "title": "Clinical Decisions",
+  "emoji": "\u2695\ufe0f",
+  "description": "Clinical Decisions",
+  "input_schema": {
+    "text": {
+      "type": "str",
+      "description": "Enter Text to Annotate",
+      "required": true,
+      "component": "Textbox"
+    }
+  },
+  "output_schema": {
+    "Annotated Text": {
+      "type": "str",
+      "description": "Annotated Text",
+      "component": "Html"
+    }
+  },
+  "license": "unknown",
+  "hardware": "5.29.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 3,
+  "last_modified": "2025-05-11 21:42:37+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/init_text",
+      "parameters": [
+        {
+          "name": "text",
+          "label": "Enter Text to Annotate",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Annotated Text",
+          "type": "str",
+          "component": "Html"
+        }
+      ]
+    },
+    {
+      "name": "/lambda",
+      "parameters": [
+        {
+          "name": "s",
+          "label": "parameter_97",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "e",
+          "label": "parameter_98",
+          "type": "float",
+          "component": "Number"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Annotated Text",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "Status Messages",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_1",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Enter Text to Annotate",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_2",
+      "parameters": [
+        {
+          "name": "s",
+          "label": "parameter_97",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "e",
+          "label": "parameter_98",
+          "type": "float",
+          "component": "Number"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Annotated Text",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "Status Messages",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_3",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Enter Text to Annotate",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_4",
+      "parameters": [
+        {
+          "name": "s",
+          "label": "parameter_97",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "e",
+          "label": "parameter_98",
+          "type": "float",
+          "component": "Number"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Annotated Text",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "Status Messages",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_5",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Enter Text to Annotate",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_6",
+      "parameters": [
+        {
+          "name": "s",
+          "label": "parameter_97",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "e",
+          "label": "parameter_98",
+          "type": "float",
+          "component": "Number"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Annotated Text",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "Status Messages",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_7",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Enter Text to Annotate",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_8",
+      "parameters": [
+        {
+          "name": "s",
+          "label": "parameter_97",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "e",
+          "label": "parameter_98",
+          "type": "float",
+          "component": "Number"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Annotated Text",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "Status Messages",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_9",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Enter Text to Annotate",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_10",
+      "parameters": [
+        {
+          "name": "s",
+          "label": "parameter_97",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "e",
+          "label": "parameter_98",
+          "type": "float",
+          "component": "Number"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Annotated Text",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "Status Messages",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_11",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Enter Text to Annotate",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_12",
+      "parameters": [
+        {
+          "name": "s",
+          "label": "parameter_97",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "e",
+          "label": "parameter_98",
+          "type": "float",
+          "component": "Number"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Annotated Text",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "Status Messages",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_13",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Enter Text to Annotate",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_14",
+      "parameters": [
+        {
+          "name": "s",
+          "label": "parameter_97",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "e",
+          "label": "parameter_98",
+          "type": "float",
+          "component": "Number"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Annotated Text",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "Status Messages",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_15",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Enter Text to Annotate",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_16",
+      "parameters": [
+        {
+          "name": "s",
+          "label": "parameter_97",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "e",
+          "label": "parameter_98",
+          "type": "float",
+          "component": "Number"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Annotated Text",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "Status Messages",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_17",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Enter Text to Annotate",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_18",
+      "parameters": [
+        {
+          "name": "s",
+          "label": "parameter_97",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "e",
+          "label": "parameter_98",
+          "type": "float",
+          "component": "Number"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Annotated Text",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "Status Messages",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_19",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Enter Text to Annotate",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/remove_entity",
+      "parameters": [
+        {
+          "name": "start",
+          "label": "parameter_97",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "end",
+          "label": "parameter_98",
+          "type": "float",
+          "component": "Number"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Annotated Text",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "Status Messages",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_20",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Enter Text to Annotate",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/undo",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Annotated Text",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "Status Messages",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_21",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Enter Text to Annotate",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/download_annotations",
+      "parameters": [
+        {
+          "name": "annotator_id",
+          "label": "Annotator ID",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "discharge_summary_id",
+          "label": "Discharge Summary ID",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Download",
+          "type": "filepath",
+          "component": "File"
+        }
+      ]
+    },
+    {
+      "name": "/refresh_annotations",
+      "parameters": [
+        {
+          "name": "annotator_id",
+          "label": "Annotator ID",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "discharge_summary_id",
+          "label": "Discharge Summary ID",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Annotations JSON",
+          "type": "str | float | bool | list | dict",
+          "component": "Json"
+        }
+      ]
+    },
+    {
+      "name": "/clear_annotations",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Enter Text to Annotate",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Annotated Text",
+          "type": "str",
+          "component": "Html"
+        }
+      ]
+    },
+    {
+      "name": "/apply_predictions",
+      "parameters": [
+        {
+          "name": "text",
+          "label": "Enter Text to Annotate",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Annotated Text",
+          "type": "str",
+          "component": "Html"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_22",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/process",
+      "parameters": [
+        {
+          "name": "text",
+          "label": "",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "",
+          "type": "list[dict(token: str, class_or_confidence: str | float | None)]",
+          "component": "Highlightedtext"
+        }
+      ]
+    },
+    {
+      "name": "/process_1",
+      "parameters": [
+        {
+          "name": "text",
+          "label": "",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "",
+          "type": "list[dict(token: str, class_or_confidence: str | float | None)]",
+          "component": "Highlightedtext"
+        }
+      ]
+    },
+    {
+      "name": "/show_legend",
+      "parameters": [
+        {
+          "name": "show_legend",
+          "label": "Show Legend",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "",
+          "type": "list[dict(token: str, class_or_confidence: str | float | None)]",
+          "component": "Highlightedtext"
+        }
+      ]
+    },
+    {
+      "name": "/update_inputs",
+      "parameters": [
+        {
+          "name": "inputs",
+          "label": "Upload clinical notes",
+          "type": "list[filepath]",
+          "component": "File"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Clinical Note 1",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Clinical Note 2",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Clinical Note 3",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Clinical Note 4",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Clinical Note 5",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Clinical Note 6",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Clinical Note 7",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Clinical Note 8",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Clinical Note 9",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Clinical Note 10",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Clinical Note 11",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Clinical Note 12",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Clinical Note 13",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Clinical Note 14",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Clinical Note 15",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Clinical Note 16",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Clinical Note 17",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Clinical Note 18",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Clinical Note 19",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Clinical Note 20",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/add_ex",
+      "parameters": [
+        {
+          "name": "param_0",
+          "label": "Clinical Note 1",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_1",
+          "label": "Clinical Note 2",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_2",
+          "label": "Clinical Note 3",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_3",
+          "label": "Clinical Note 4",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_4",
+          "label": "Clinical Note 5",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_5",
+          "label": "Clinical Note 6",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_6",
+          "label": "Clinical Note 7",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_7",
+          "label": "Clinical Note 8",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_8",
+          "label": "Clinical Note 9",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_9",
+          "label": "Clinical Note 10",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_10",
+          "label": "Clinical Note 11",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_11",
+          "label": "Clinical Note 12",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_12",
+          "label": "Clinical Note 13",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_13",
+          "label": "Clinical Note 14",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_14",
+          "label": "Clinical Note 15",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_15",
+          "label": "Clinical Note 16",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_16",
+          "label": "Clinical Note 17",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_17",
+          "label": "Clinical Note 18",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_18",
+          "label": "Clinical Note 19",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_19",
+          "label": "Clinical Note 20",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Clinical Note 1",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Clinical Note 2",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Clinical Note 3",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Clinical Note 4",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Clinical Note 5",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Clinical Note 6",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Clinical Note 7",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Clinical Note 8",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Clinical Note 9",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Clinical Note 10",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Clinical Note 11",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Clinical Note 12",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Clinical Note 13",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Clinical Note 14",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Clinical Note 15",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Clinical Note 16",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Clinical Note 17",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Clinical Note 18",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Clinical Note 19",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Clinical Note 20",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/sub_ex",
+      "parameters": [
+        {
+          "name": "param_0",
+          "label": "Clinical Note 1",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_1",
+          "label": "Clinical Note 2",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_2",
+          "label": "Clinical Note 3",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_3",
+          "label": "Clinical Note 4",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_4",
+          "label": "Clinical Note 5",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_5",
+          "label": "Clinical Note 6",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_6",
+          "label": "Clinical Note 7",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_7",
+          "label": "Clinical Note 8",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_8",
+          "label": "Clinical Note 9",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_9",
+          "label": "Clinical Note 10",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_10",
+          "label": "Clinical Note 11",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_11",
+          "label": "Clinical Note 12",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_12",
+          "label": "Clinical Note 13",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_13",
+          "label": "Clinical Note 14",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_14",
+          "label": "Clinical Note 15",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_15",
+          "label": "Clinical Note 16",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_16",
+          "label": "Clinical Note 17",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_17",
+          "label": "Clinical Note 18",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_18",
+          "label": "Clinical Note 19",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_19",
+          "label": "Clinical Note 20",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Clinical Note 1",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Clinical Note 2",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Clinical Note 3",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Clinical Note 4",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Clinical Note 5",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Clinical Note 6",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Clinical Note 7",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Clinical Note 8",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Clinical Note 9",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Clinical Note 10",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Clinical Note 11",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Clinical Note 12",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Clinical Note 13",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Clinical Note 14",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Clinical Note 15",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Clinical Note 16",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Clinical Note 17",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Clinical Note 18",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Clinical Note 19",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Clinical Note 20",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/filter_timeline",
+      "parameters": [
+        {
+          "name": "decision_types",
+          "label": "Decision Type",
+          "type": "list[Literal['All', 'Contact related', 'Gathering additional information', 'Defining problem', 'Treatment goal', 'Drug related', 'Therapeutic procedure related', 'Evaluating test result', 'Deferment',",
+          "component": "Dropdown"
+        },
+        {
+          "name": "start_date",
+          "label": "Start Date (MM/DD/YYYY)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "end_date",
+          "label": "End Date (MM/DD/YYYY)",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_54",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        }
+      ]
+    },
+    {
+      "name": "/generate_summary",
+      "parameters": [
+        {
+          "name": "param_0",
+          "label": "Clinical Note 1",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_1",
+          "label": "Clinical Note 2",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_2",
+          "label": "Clinical Note 3",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_3",
+          "label": "Clinical Note 4",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_4",
+          "label": "Clinical Note 5",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_5",
+          "label": "Clinical Note 6",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_6",
+          "label": "Clinical Note 7",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_7",
+          "label": "Clinical Note 8",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_8",
+          "label": "Clinical Note 9",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_9",
+          "label": "Clinical Note 10",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_10",
+          "label": "Clinical Note 11",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_11",
+          "label": "Clinical Note 12",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_12",
+          "label": "Clinical Note 13",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_13",
+          "label": "Clinical Note 14",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_14",
+          "label": "Clinical Note 15",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_15",
+          "label": "Clinical Note 16",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_16",
+          "label": "Clinical Note 17",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_17",
+          "label": "Clinical Note 18",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_18",
+          "label": "Clinical Note 19",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_19",
+          "label": "Clinical Note 20",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_57",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_54",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/init_text",
+  "_api_verified": true
+}

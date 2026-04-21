@@ -1,0 +1,62 @@
+{
+  "space_id": "ysharma/text-behind-image",
+  "title": "Text Behind Image",
+  "emoji": "\ud83e\udd80",
+  "description": "dummy test bg remover",
+  "input_schema": {
+    "image_path": {
+      "type": "filepath",
+      "description": "1st",
+      "required": true,
+      "component": "Api"
+    }
+  },
+  "output_schema": {
+    "1st": {
+      "type": "filepath",
+      "description": "1st",
+      "component": "Api"
+    }
+  },
+  "license": "mit",
+  "hardware": "6.10.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 9,
+  "last_modified": "2026-04-06 18:21:48+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/remove_background",
+      "parameters": [
+        {
+          "name": "image_path",
+          "label": "1st",
+          "type": "filepath",
+          "component": "Api"
+        }
+      ],
+      "returns": [
+        {
+          "label": "1st",
+          "type": "filepath",
+          "component": "Api"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/remove_background",
+  "_api_verified": true,
+  "estimated_latency_s": 4.11,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 4.11,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:52:06.253826+00:00"
+}

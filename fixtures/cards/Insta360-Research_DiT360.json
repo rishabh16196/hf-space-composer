@@ -1,0 +1,79 @@
+{
+  "space_id": "Insta360-Research/DiT360",
+  "title": "DiT360",
+  "emoji": "\ud83d\uddbc",
+  "description": "DiT360: A High-Fidelity Panoramic Image Generation Framework",
+  "input_schema": {},
+  "output_schema": {
+    "Seed": {
+      "type": "float",
+      "description": "Seed",
+      "component": "Number"
+    }
+  },
+  "license": "mit",
+  "hardware": "5.44.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 62,
+  "last_modified": "2025-10-14 03:45:02+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/generate_seed",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Seed",
+          "type": "float",
+          "component": "Number"
+        }
+      ]
+    },
+    {
+      "name": "/infer",
+      "parameters": [
+        {
+          "name": "prompt",
+          "label": "parameter_6",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "seed",
+          "label": "Seed",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "num_inference_steps",
+          "label": "Inference Steps",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Generated Panorama",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/generate_seed",
+  "_api_verified": true,
+  "estimated_latency_s": 2.7,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "_tags_enriched": true,
+  "measured_latency_s": 2.7,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:49:27.271952+00:00"
+}

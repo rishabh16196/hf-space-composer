@@ -1,0 +1,339 @@
+{
+  "space_id": "anzorq/openai_whisper_stt",
+  "title": "OpenAI's Whisper Real-time Demo",
+  "emoji": "\ud83c\udf99\ufe0f",
+  "description": "OpenAI's Whisper Real-time Demo",
+  "input_schema": {
+    "audio": {
+      "type": "str | Dict(name: str (name of file), data: str (base64 representation of file), size: int (size of i",
+      "description": "audio",
+      "required": true,
+      "component": "Audio"
+    },
+    "Model size": {
+      "type": "Any",
+      "description": "Model size",
+      "required": true,
+      "component": "Dropdown"
+    },
+    "Rate of transcription": {
+      "type": "int | float",
+      "description": "Rate of transcription",
+      "required": true,
+      "component": "Slider"
+    },
+    "Language": {
+      "type": "Any",
+      "description": "Language",
+      "required": true,
+      "component": "Dropdown"
+    },
+    "Translate to English": {
+      "type": "bool",
+      "description": "Translate to English",
+      "required": true,
+      "component": "Checkbox"
+    }
+  },
+  "output_schema": {
+    "Transcription": {
+      "type": "str",
+      "description": "Transcription",
+      "component": "Textbox"
+    },
+    "Translation": {
+      "type": "str",
+      "description": "Translation",
+      "component": "Textbox"
+    },
+    "Detected Language": {
+      "type": "str",
+      "description": "Detected Language",
+      "component": "Html"
+    }
+  },
+  "license": "mit",
+  "hardware": "3.3.1",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us",
+    "asr",
+    "audio",
+    "transcription"
+  ],
+  "likes": 30,
+  "last_modified": "2022-10-28 06:14:52+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_tags_enriched": true,
+  "estimated_latency_s": 5.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/predict",
+      "parameters": [
+        {
+          "name": "audio",
+          "label": "audio",
+          "type": "str | Dict(name: str (name of file), data: str (base64 representation of file), size: int (size of image in bytes), is_file: bool (true if the file has been uploaded to the server), orig_name: str (or",
+          "component": "Audio"
+        },
+        {
+          "name": "Model size",
+          "label": "Model size",
+          "type": "Any",
+          "component": "Dropdown"
+        },
+        {
+          "name": "Rate of transcription",
+          "label": "Rate of transcription",
+          "type": "int | float",
+          "component": "Slider"
+        },
+        {
+          "name": "Language",
+          "label": "Language",
+          "type": "Any",
+          "component": "Dropdown"
+        },
+        {
+          "name": "Translate to English",
+          "label": "Translate to English",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Transcription",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Translation",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Detected Language",
+          "type": "str",
+          "component": "Html"
+        }
+      ]
+    },
+    {
+      "name": "/predict_1",
+      "parameters": [
+        {
+          "name": "audio",
+          "label": "audio",
+          "type": "str | Dict(name: str (name of file), data: str (base64 representation of file), size: int (size of image in bytes), is_file: bool (true if the file has been uploaded to the server), orig_name: str (or",
+          "component": "Audio"
+        },
+        {
+          "name": "Model size",
+          "label": "Model size",
+          "type": "Any",
+          "component": "Dropdown"
+        },
+        {
+          "name": "Rate of transcription",
+          "label": "Rate of transcription",
+          "type": "int | float",
+          "component": "Slider"
+        },
+        {
+          "name": "Language",
+          "label": "Language",
+          "type": "Any",
+          "component": "Dropdown"
+        },
+        {
+          "name": "Translate to English",
+          "label": "Translate to English",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Transcription",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Translation",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Detected Language",
+          "type": "str",
+          "component": "Html"
+        }
+      ]
+    },
+    {
+      "name": "/predict_2",
+      "parameters": [
+        {
+          "name": "audio",
+          "label": "audio",
+          "type": "str | Dict(name: str (name of file), data: str (base64 representation of file), size: int (size of image in bytes), is_file: bool (true if the file has been uploaded to the server), orig_name: str (or",
+          "component": "Audio"
+        },
+        {
+          "name": "Model size",
+          "label": "Model size",
+          "type": "Any",
+          "component": "Dropdown"
+        },
+        {
+          "name": "Rate of transcription",
+          "label": "Rate of transcription",
+          "type": "int | float",
+          "component": "Slider"
+        },
+        {
+          "name": "Language",
+          "label": "Language",
+          "type": "Any",
+          "component": "Dropdown"
+        },
+        {
+          "name": "Translate to English",
+          "label": "Translate to English",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Transcription",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Translation",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Detected Language",
+          "type": "str",
+          "component": "Html"
+        }
+      ]
+    },
+    {
+      "name": "/predict_3",
+      "parameters": [
+        {
+          "name": "audio",
+          "label": "audio",
+          "type": "str | Dict(name: str (name of file), data: str (base64 representation of file), size: int (size of image in bytes), is_file: bool (true if the file has been uploaded to the server), orig_name: str (or",
+          "component": "Audio"
+        },
+        {
+          "name": "Model size",
+          "label": "Model size",
+          "type": "Any",
+          "component": "Dropdown"
+        },
+        {
+          "name": "Rate of transcription",
+          "label": "Rate of transcription",
+          "type": "int | float",
+          "component": "Slider"
+        },
+        {
+          "name": "Language",
+          "label": "Language",
+          "type": "Any",
+          "component": "Dropdown"
+        },
+        {
+          "name": "Translate to English",
+          "label": "Translate to English",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Transcription",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Translation",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Detected Language",
+          "type": "str",
+          "component": "Html"
+        }
+      ]
+    },
+    {
+      "name": "/predict_4",
+      "parameters": [
+        {
+          "name": "audio",
+          "label": "audio",
+          "type": "str | Dict(name: str (name of file), data: str (base64 representation of file), size: int (size of image in bytes), is_file: bool (true if the file has been uploaded to the server), orig_name: str (or",
+          "component": "Audio"
+        },
+        {
+          "name": "Model size",
+          "label": "Model size",
+          "type": "Any",
+          "component": "Dropdown"
+        },
+        {
+          "name": "Rate of transcription",
+          "label": "Rate of transcription",
+          "type": "int | float",
+          "component": "Slider"
+        },
+        {
+          "name": "Language",
+          "label": "Language",
+          "type": "Any",
+          "component": "Dropdown"
+        },
+        {
+          "name": "Translate to English",
+          "label": "Translate to English",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Transcription",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Translation",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Detected Language",
+          "type": "str",
+          "component": "Html"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/predict",
+  "_api_verified": true
+}

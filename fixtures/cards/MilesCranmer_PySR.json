@@ -1,0 +1,428 @@
+{
+  "space_id": "MilesCranmer/PySR",
+  "title": "PySR",
+  "emoji": "\ud83c\udf0d",
+  "description": "PySR",
+  "input_schema": {
+    "test_equation": {
+      "type": "Literal['sin(2*x)/x + 0.1*x']",
+      "description": "Test Equation",
+      "required": true,
+      "component": "Radio"
+    },
+    "num_points": {
+      "type": "float",
+      "description": "Number of Data Points",
+      "required": true,
+      "component": "Slider"
+    },
+    "noise_level": {
+      "type": "float",
+      "description": "Noise Level",
+      "required": true,
+      "component": "Slider"
+    },
+    "data_seed": {
+      "type": "float",
+      "description": "Random Seed",
+      "required": true,
+      "component": "Number"
+    }
+  },
+  "output_schema": {
+    "value_6": {
+      "type": "Dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+      "description": "value_6",
+      "component": "Plot"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "",
+  "sdk": "docker",
+  "tags": [
+    "docker",
+    "region:us"
+  ],
+  "likes": 6,
+  "last_modified": "2024-07-15 21:36:54+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/plot_example_data",
+      "parameters": [
+        {
+          "name": "test_equation",
+          "label": "Test Equation",
+          "type": "Literal['sin(2*x)/x + 0.1*x']",
+          "component": "Radio"
+        },
+        {
+          "name": "num_points",
+          "label": "Number of Data Points",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "noise_level",
+          "label": "Noise Level",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "data_seed",
+          "label": "Random Seed",
+          "type": "float",
+          "component": "Number"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_6",
+          "type": "Dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        }
+      ]
+    },
+    {
+      "name": "/plot_example_data_1",
+      "parameters": [
+        {
+          "name": "test_equation",
+          "label": "Test Equation",
+          "type": "Literal['sin(2*x)/x + 0.1*x']",
+          "component": "Radio"
+        },
+        {
+          "name": "num_points",
+          "label": "Number of Data Points",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "noise_level",
+          "label": "Noise Level",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "data_seed",
+          "label": "Random Seed",
+          "type": "float",
+          "component": "Number"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_6",
+          "type": "Dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        }
+      ]
+    },
+    {
+      "name": "/plot_example_data_2",
+      "parameters": [
+        {
+          "name": "test_equation",
+          "label": "Test Equation",
+          "type": "Literal['sin(2*x)/x + 0.1*x']",
+          "component": "Radio"
+        },
+        {
+          "name": "num_points",
+          "label": "Number of Data Points",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "noise_level",
+          "label": "Noise Level",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "data_seed",
+          "label": "Random Seed",
+          "type": "float",
+          "component": "Number"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_6",
+          "type": "Dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        }
+      ]
+    },
+    {
+      "name": "/plot_example_data_3",
+      "parameters": [
+        {
+          "name": "test_equation",
+          "label": "Test Equation",
+          "type": "Literal['sin(2*x)/x + 0.1*x']",
+          "component": "Radio"
+        },
+        {
+          "name": "num_points",
+          "label": "Number of Data Points",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "noise_level",
+          "label": "Noise Level",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "data_seed",
+          "label": "Random Seed",
+          "type": "float",
+          "component": "Number"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_6",
+          "type": "Dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        }
+      ]
+    },
+    {
+      "name": "/plot_example_data_4",
+      "parameters": [
+        {
+          "name": "test_equation",
+          "label": "Test Equation",
+          "type": "Literal['sin(2*x)/x + 0.1*x']",
+          "component": "Radio"
+        },
+        {
+          "name": "num_points",
+          "label": "Number of Data Points",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "noise_level",
+          "label": "Noise Level",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "data_seed",
+          "label": "Random Seed",
+          "type": "float",
+          "component": "Number"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_6",
+          "type": "Dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        }
+      ]
+    },
+    {
+      "name": "/plot_pareto_curve",
+      "parameters": [
+        {
+          "name": "df",
+          "label": "parameter_46",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "name": "maxsize",
+          "label": "Maximum Complexity",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_43",
+          "type": "Dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        }
+      ]
+    },
+    {
+      "name": "/f",
+      "parameters": [
+        {
+          "name": "param_0",
+          "label": "parameter_6",
+          "type": "Dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "name": "param_1",
+          "label": "Test Equation",
+          "type": "Literal['sin(2*x)/x + 0.1*x']",
+          "component": "Radio"
+        },
+        {
+          "name": "param_2",
+          "label": "Number of Data Points",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_3",
+          "label": "Noise Level",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_4",
+          "label": "Random Seed",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "param_5",
+          "label": "Upload a CSV File",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "name": "param_6",
+          "label": "parameter_15",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "name": "param_7",
+          "label": "Binary Operators",
+          "type": "List[Literal['+', '-', '*', '/', '^', 'max', 'min', 'mod', 'cond']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "param_8",
+          "label": "Unary Operators",
+          "type": "List[Literal['sin', 'cos', 'tan', 'exp', 'log', 'square', 'cube', 'sqrt', 'abs', 'erf', 'relu', 'round', 'sign']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "param_9",
+          "label": "Number of Iterations",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_10",
+          "label": "Maximum Complexity",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_11",
+          "label": "Parsimony Coefficient",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "param_12",
+          "label": "Number of Populations",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_13",
+          "label": "Population Size",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_14",
+          "label": "Cycles per Iteration",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "param_15",
+          "label": "Loss Function",
+          "type": "Literal['L2DistLoss()', 'L1DistLoss()', 'LogitDistLoss()', 'HuberLoss()']",
+          "component": "Radio"
+        },
+        {
+          "name": "param_16",
+          "label": "Adaptive Parsimony Scaling",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "param_17",
+          "label": "Optimizer Algorithm",
+          "type": "Literal['BFGS', 'NelderMead']",
+          "component": "Radio"
+        },
+        {
+          "name": "param_18",
+          "label": "Optimizer Iterations",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_19",
+          "label": "Batching",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_20",
+          "label": "Batch Size",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_21",
+          "label": "Plot Update Delay",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_22",
+          "label": "Ignore Warnings",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_46",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_45",
+          "type": "Dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "Messages",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/stop",
+      "parameters": [],
+      "returns": []
+    }
+  ],
+  "endpoint": "/plot_example_data",
+  "_api_verified": true
+}

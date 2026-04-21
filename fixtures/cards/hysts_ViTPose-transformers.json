@@ -1,0 +1,146 @@
+{
+  "space_id": "hysts/ViTPose-transformers",
+  "title": "ViTPose Transformers",
+  "emoji": "\u26a1",
+  "description": "ViTPose Transformers",
+  "input_schema": {
+    "image": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "Input Image",
+      "required": true,
+      "component": "Image"
+    },
+    "threshold": {
+      "type": "float",
+      "description": "Keypoint Score Threshold",
+      "required": true,
+      "component": "Slider"
+    },
+    "enable_labels_annotator": {
+      "type": "bool",
+      "description": "Enable Labels",
+      "required": true,
+      "component": "Checkbox"
+    },
+    "enable_vertices_annotator": {
+      "type": "bool",
+      "description": "Enable Vertices",
+      "required": true,
+      "component": "Checkbox"
+    }
+  },
+  "output_schema": {
+    "Output Image": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "Output Image",
+      "component": "Image"
+    },
+    "Output JSON": {
+      "type": "str | float | bool | list | dict",
+      "description": "Output JSON",
+      "component": "Json"
+    }
+  },
+  "license": "unknown",
+  "hardware": "5.39.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "mcp-server",
+    "region:us"
+  ],
+  "likes": 223,
+  "last_modified": "2025-08-04 06:40:23+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/detect_pose_image",
+      "parameters": [
+        {
+          "name": "image",
+          "label": "Input Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "threshold",
+          "label": "Keypoint Score Threshold",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "enable_labels_annotator",
+          "label": "Enable Labels",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "enable_vertices_annotator",
+          "label": "Enable Vertices",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "Output JSON",
+          "type": "str | float | bool | list | dict",
+          "component": "Json"
+        }
+      ]
+    },
+    {
+      "name": "/detect_pose_video",
+      "parameters": [
+        {
+          "name": "video_path",
+          "label": "Input Video",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        },
+        {
+          "name": "threshold",
+          "label": "Keypoint Score Threshold",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "enable_labels_annotator",
+          "label": "Enable Labels",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "enable_vertices_annotator",
+          "label": "Enable Vertices",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output Video",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/detect_pose_image",
+  "_api_verified": true,
+  "estimated_latency_s": 3.84,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "_tags_enriched": true,
+  "measured_latency_s": 3.84,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:50:51.886648+00:00"
+}

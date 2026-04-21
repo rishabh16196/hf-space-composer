@@ -1,0 +1,685 @@
+{
+  "space_id": "Pendrokar/TTS-Spaces-Arena",
+  "title": "TTS Spaces Arena",
+  "emoji": "\ud83e\udd17\ud83c\udfc6",
+  "description": "Blind vote on HF TTS models!",
+  "input_schema": {},
+  "output_schema": {
+    "value_10": {
+      "type": "str",
+      "description": "value_10",
+      "component": "Textbox"
+    }
+  },
+  "license": "zlib",
+  "hardware": "6.5.1",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "arena",
+    "region:us",
+    "audio",
+    "benchmark",
+    "leaderboard",
+    "speech-synthesis",
+    "tts"
+  ],
+  "likes": 481,
+  "last_modified": "2026-03-10 20:11:52+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/randomsent",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_10",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/disable",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/synthandreturn",
+      "parameters": [
+        {
+          "name": "text",
+          "label": "parameter_10",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "autoplay",
+          "label": "Autoplay audio",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_10",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "value_13",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "value_14",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "value_18",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "value_23",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "value_20",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "value_25",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "value_2",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "value_3",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ]
+    },
+    {
+      "name": "/failed",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/enable",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/clear_stuff",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_10",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "value_13",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "value_14",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "value_18",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "value_23",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "value_20",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "value_25",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "value_2",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "value_3",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ]
+    },
+    {
+      "name": "/disable_1",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/give_cached_sample",
+      "parameters": [
+        {
+          "name": "session_hash",
+          "label": "parameter_1",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "autoplay",
+          "label": "Autoplay audio",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_10",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "value_13",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "value_14",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "value_18",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "value_23",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "value_20",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "value_25",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "value_2",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "value_3",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ]
+    },
+    {
+      "name": "/failed_1",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/enable_1",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/disable_2",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/give_cached_sample_1",
+      "parameters": [
+        {
+          "name": "session_hash",
+          "label": "parameter_1",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "autoplay",
+          "label": "Autoplay audio",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_10",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "value_13",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "value_14",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "value_18",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "value_23",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "value_20",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "value_25",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "value_2",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "value_3",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ]
+    },
+    {
+      "name": "/failed_2",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/enable_2",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/unlock_vote",
+      "parameters": [
+        {
+          "name": "autoplay",
+          "label": "Autoplay audio",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "aplayed",
+          "label": "parameter_2",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "bplayed",
+          "label": "parameter_3",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_2",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "value_3",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ]
+    },
+    {
+      "name": "/unlock_vote_1",
+      "parameters": [
+        {
+          "name": "autoplay",
+          "label": "Autoplay audio",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "aplayed",
+          "label": "parameter_2",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "bplayed",
+          "label": "parameter_3",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_2",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "value_3",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ]
+    },
+    {
+      "name": "/a_is_better",
+      "parameters": [
+        {
+          "name": "model1",
+          "label": "parameter_13",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "model2",
+          "label": "parameter_14",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "text",
+          "label": "parameter_10",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_20",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "value_25",
+          "type": "str",
+          "component": "Html"
+        }
+      ]
+    },
+    {
+      "name": "/failed_3",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/voted_on_cached",
+      "parameters": [
+        {
+          "name": "modelName1",
+          "label": "parameter_13",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "modelName2",
+          "label": "parameter_14",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "transcript",
+          "label": "parameter_10",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "session_hash",
+          "label": "parameter_1",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/hidetips",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/b_is_better",
+      "parameters": [
+        {
+          "name": "model1",
+          "label": "parameter_13",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "model2",
+          "label": "parameter_14",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "text",
+          "label": "parameter_10",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_20",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "value_25",
+          "type": "str",
+          "component": "Html"
+        }
+      ]
+    },
+    {
+      "name": "/failed_4",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/voted_on_cached_1",
+      "parameters": [
+        {
+          "name": "modelName1",
+          "label": "parameter_13",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "modelName2",
+          "label": "parameter_14",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "transcript",
+          "label": "parameter_10",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "session_hash",
+          "label": "parameter_1",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/hidetips_1",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/give_cached_sample_2",
+      "parameters": [
+        {
+          "name": "session_hash",
+          "label": "parameter_1",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "autoplay",
+          "label": "Autoplay audio",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_10",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "value_13",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "value_14",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "value_18",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "value_23",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "value_20",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "value_25",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "value_2",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "value_3",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ]
+    },
+    {
+      "name": "/get_leaderboard",
+      "parameters": [
+        {
+          "name": "reveal_prelim",
+          "label": "Reveal preliminary results",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_51",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/get_leaderboard_1",
+      "parameters": [
+        {
+          "name": "reveal_prelim",
+          "label": "Reveal preliminary results",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_51",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/get_leaderboard_2",
+      "parameters": [
+        {
+          "name": "reveal_prelim",
+          "label": "Reveal preliminary results",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_51",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/randomsent",
+  "_api_verified": true,
+  "estimated_latency_s": 29.52,
+  "speed_tier": "slow",
+  "_latency_source": "measured_inference",
+  "_tags_enriched": true,
+  "measured_latency_s": 29.52,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:49:47.497140+00:00",
+  "measured_inference_s": 29.52,
+  "measured_inference_timestamp": "2026-04-20T07:59:55.752722+00:00",
+  "measured_inference_method": "auto_predict",
+  "measured_inference_api": "/synthandreturn"
+}

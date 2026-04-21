@@ -1,0 +1,134 @@
+{
+  "space_id": "PixelSmile/PixelSmile-Demo",
+  "title": "PixelSmile Demo",
+  "emoji": "\ud83d\udcbb",
+  "description": "PixelSmile Demo [\ud83d\udd28Developing]",
+  "input_schema": {
+    "image": {
+      "type": "filepath",
+      "description": "Input Image",
+      "required": true,
+      "component": "Image"
+    },
+    "expression": {
+      "type": "Literal['angry', 'confused', 'contempt', 'confident', 'disgust', 'fear', 'happy', 'sad', 'shy', 'sle",
+      "description": "Target Expression",
+      "required": true,
+      "component": "Dropdown"
+    },
+    "scale": {
+      "type": "float",
+      "description": "Expression Strength",
+      "required": true,
+      "component": "Slider"
+    },
+    "data_type": {
+      "type": "Literal['human']",
+      "description": "Data Type",
+      "required": true,
+      "component": "Dropdown"
+    },
+    "seed": {
+      "type": "int",
+      "description": "Seed",
+      "required": true,
+      "component": "Number"
+    },
+    "weight_version": {
+      "type": "Literal['preview']",
+      "description": "PixelSmile Weight Version",
+      "required": true,
+      "component": "Dropdown"
+    },
+    "num_inference_steps": {
+      "type": "int",
+      "description": "Inference Steps",
+      "required": true,
+      "component": "Number"
+    }
+  },
+  "output_schema": {
+    "Edited Image": {
+      "type": "filepath",
+      "description": "Edited Image",
+      "component": "Image"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "6.10.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 22,
+  "last_modified": "2026-03-26 17:15:39+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/run_demo",
+      "parameters": [
+        {
+          "name": "image",
+          "label": "Input Image",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "name": "expression",
+          "label": "Target Expression",
+          "type": "Literal['angry', 'confused', 'contempt', 'confident', 'disgust', 'fear', 'happy', 'sad', 'shy', 'sleepy', 'surprised', 'anxious']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "scale",
+          "label": "Expression Strength",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "data_type",
+          "label": "Data Type",
+          "type": "Literal['human']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "seed",
+          "label": "Seed",
+          "type": "int",
+          "component": "Number"
+        },
+        {
+          "name": "weight_version",
+          "label": "PixelSmile Weight Version",
+          "type": "Literal['preview']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "num_inference_steps",
+          "label": "Inference Steps",
+          "type": "int",
+          "component": "Number"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Edited Image",
+          "type": "filepath",
+          "component": "Image"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/run_demo",
+  "_api_verified": true,
+  "estimated_latency_s": 3.83,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 3.83,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:49:48.003085+00:00"
+}

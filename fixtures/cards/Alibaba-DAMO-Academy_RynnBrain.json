@@ -1,0 +1,267 @@
+{
+  "space_id": "Alibaba-DAMO-Academy/RynnBrain",
+  "title": "RynnBrain",
+  "emoji": "\ud83d\udcc9",
+  "description": "RynnBrain",
+  "input_schema": {
+    "image": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "Upload Image",
+      "required": true,
+      "component": "Image"
+    }
+  },
+  "output_schema": {
+    "Frame Index": {
+      "type": "float",
+      "description": "Frame Index",
+      "component": "Slider"
+    },
+    "Upload Image": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "Upload Image",
+      "component": "Image"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "6.3.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 9,
+  "last_modified": "2026-02-10 06:15:53+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/on_image_upload",
+      "parameters": [
+        {
+          "name": "image",
+          "label": "Upload Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Frame Index",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Upload Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/on_image_select",
+      "parameters": [
+        {
+          "name": "frame_idx",
+          "label": "Frame Index",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "prompt_type",
+          "label": "Prompt Type",
+          "type": "Literal['object', 'area']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Upload Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/on_video_upload",
+      "parameters": [
+        {
+          "name": "video",
+          "label": "Upload Video",
+          "type": "filepath",
+          "component": "Video"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Frame Index",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Upload Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/on_frame_idx_change",
+      "parameters": [
+        {
+          "name": "frame_idx",
+          "label": "Frame Index",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Upload Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/on_prompt_type_change",
+      "parameters": [
+        {
+          "name": "frame_idx",
+          "label": "Frame Index",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "prompt_type",
+          "label": "Prompt Type",
+          "type": "Literal['object', 'area']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Upload Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/add_point",
+      "parameters": [
+        {
+          "name": "frame_idx",
+          "label": "Frame Index",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "prompt_type",
+          "label": "Prompt Type",
+          "type": "Literal['object', 'area']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Upload Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/add_point_prompt",
+      "parameters": [
+        {
+          "name": "frame_idx",
+          "label": "Frame Index",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "prompt_type",
+          "label": "Prompt Type",
+          "type": "Literal['object', 'area']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "text",
+          "label": "Text Prompt",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Upload Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "Text Prompt",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/submit",
+      "parameters": [
+        {
+          "name": "text",
+          "label": "Text Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "temperature",
+          "label": "Temperature",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "top_p",
+          "label": "Top-p",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "top_k",
+          "label": "Top-k",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "chatbot",
+          "label": "parameter_4",
+          "type": "list[dict(role: str, metadata: dict(title: str, id: int | str, parent_id: int | str, log: str, duration: float, status: Literal['pending', 'done']) | None, content: list[dict(text: str, type: Literal[",
+          "component": "Chatbot"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_4",
+          "type": "list[dict(role: str, metadata: dict(title: str, id: int | str, parent_id: int | str, log: str, duration: float, status: Literal['pending', 'done']) | None, content: list[dict(text: str, type: Literal[",
+          "component": "Chatbot"
+        },
+        {
+          "label": "Text Prompt",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/on_image_upload",
+  "_api_verified": true,
+  "estimated_latency_s": 3.42,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 3.42,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:49:06.405064+00:00"
+}

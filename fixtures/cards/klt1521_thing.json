@@ -1,0 +1,110 @@
+{
+  "space_id": "klt1521/thing",
+  "title": "Nsfw Img2img",
+  "emoji": "\ud83d\uddbc",
+  "description": "Nsfw Img2img",
+  "input_schema": {
+    "image": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "Upload Face Photo",
+      "required": true,
+      "component": "Image"
+    },
+    "prompt": {
+      "type": "str",
+      "description": "Prompt",
+      "required": true,
+      "component": "Textbox"
+    },
+    "negative_prompt": {
+      "type": "str",
+      "description": "Negative",
+      "required": true,
+      "component": "Textbox"
+    },
+    "steps": {
+      "type": "float",
+      "description": "Steps (\u06a9\u0645 = \u0633\u0631\u06cc\u0639\u200c\u062a\u0631)",
+      "required": true,
+      "component": "Slider"
+    },
+    "strength": {
+      "type": "float",
+      "description": "Strength",
+      "required": true,
+      "component": "Slider"
+    }
+  },
+  "output_schema": {
+    "Result": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "Result",
+      "component": "Image"
+    }
+  },
+  "license": "unknown",
+  "hardware": "5.44.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 20,
+  "last_modified": "2026-02-07 05:14:03+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/generate",
+      "parameters": [
+        {
+          "name": "image",
+          "label": "Upload Face Photo",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "prompt",
+          "label": "Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "negative_prompt",
+          "label": "Negative",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "steps",
+          "label": "Steps (\u06a9\u0645 = \u0633\u0631\u06cc\u0639\u200c\u062a\u0631)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "strength",
+          "label": "Strength",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Result",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/generate",
+  "_api_verified": true,
+  "estimated_latency_s": 3.5,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 3.5,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:51:03.863981+00:00"
+}

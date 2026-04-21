@@ -1,0 +1,221 @@
+{
+  "space_id": "Zengyf-CVer/Gradio-YOLOv8-Det",
+  "title": "Gradio YOLOv8 Det",
+  "emoji": "\ud83d\ude80",
+  "description": "Gradio YOLOv8 Det",
+  "input_schema": {
+    "\u539f\u59cb\u56fe\u7247": {
+      "type": "filepath",
+      "description": "\u539f\u59cb\u56fe\u7247",
+      "required": true,
+      "component": "Image"
+    },
+    "\u6a21\u578b": {
+      "type": "Literal['yolov8n', 'yolov8s', 'yolov8m', 'yolov8l', 'yolov8x', 'yolov8n-seg', 'yolov8s-seg', 'yolov8",
+      "description": "\u6a21\u578b",
+      "required": true,
+      "component": "Dropdown"
+    },
+    "\u8bbe\u5907": {
+      "type": "Literal['cpu', '0', '1', '2', '3']",
+      "description": "\u8bbe\u5907",
+      "required": true,
+      "component": "Radio"
+    },
+    "\u63a8\u7406\u5c3a\u5bf8": {
+      "type": "float",
+      "description": "\u63a8\u7406\u5c3a\u5bf8",
+      "required": true,
+      "component": "Slider"
+    },
+    "\u7f6e\u4fe1\u5ea6\u9608\u503c": {
+      "type": "float",
+      "description": "\u7f6e\u4fe1\u5ea6\u9608\u503c",
+      "required": true,
+      "component": "Slider"
+    },
+    "IoU \u9608\u503c": {
+      "type": "float",
+      "description": "IoU \u9608\u503c",
+      "required": true,
+      "component": "Slider"
+    },
+    "\u6700\u5927\u68c0\u6d4b\u6570": {
+      "type": "float",
+      "description": "\u6700\u5927\u68c0\u6d4b\u6570",
+      "required": true,
+      "component": "Slider"
+    },
+    "\u7c7b\u522b\u9009\u62e9": {
+      "type": "List[Literal['\u4eba', '\u81ea\u884c\u8f66', '\u6c7d\u8f66', '\u6469\u6258\u8f66', '\u98de\u673a', '\u516c\u4ea4\u8f66', '\u706b\u8f66', '\u5361\u8f66', '\u8239', '\u7ea2\u7eff\u706f', '\u6d88\u9632\u6813', '\u505c\u6b62\u6807\u5fd7', '\u505c\u8f66\u6536\u8d39\u8868', '",
+      "description": "\u7c7b\u522b\u9009\u62e9",
+      "required": true,
+      "component": "Dropdown"
+    },
+    "\u76ee\u6807\u5c3a\u5bf8": {
+      "type": "Literal['\u6240\u6709\u5c3a\u5bf8', '\u5c0f\u76ee\u6807', '\u4e2d\u76ee\u6807', '\u5927\u76ee\u6807']",
+      "description": "\u76ee\u6807\u5c3a\u5bf8",
+      "required": true,
+      "component": "Radio"
+    }
+  },
+  "output_schema": {
+    "\u68c0\u6d4b\u56fe\u7247": {
+      "type": "Tuple[filepath | None, filepath | None] | None",
+      "description": "\u68c0\u6d4b\u56fe\u7247",
+      "component": "Imageslider"
+    },
+    "\u56fe\u7247\u4e0b\u8f7d": {
+      "type": "List[filepath]",
+      "description": "\u56fe\u7247\u4e0b\u8f7d",
+      "component": "File"
+    },
+    "\u76ee\u6807\u5c3a\u5bf8\u5360\u6bd4\u7edf\u8ba1": {
+      "type": "Dict(label: str | int | float | None, confidences: List[Dict(label: str | int | float | None, confid",
+      "description": "\u76ee\u6807\u5c3a\u5bf8\u5360\u6bd4\u7edf\u8ba1",
+      "component": "Label"
+    },
+    "\u7c7b\u522b\u68c0\u6d4b\u5360\u6bd4\u7edf\u8ba1": {
+      "type": "Dict(label: str | int | float | None, confidences: List[Dict(label: str | int | float | None, confid",
+      "description": "\u7c7b\u522b\u68c0\u6d4b\u5360\u6bd4\u7edf\u8ba1",
+      "component": "Label"
+    }
+  },
+  "license": "gpl-3.0",
+  "hardware": "4.12.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 18,
+  "last_modified": "2024-01-12 09:58:35+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_tags_enriched": true,
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/yolo_det_img",
+      "parameters": [
+        {
+          "name": "\u539f\u59cb\u56fe\u7247",
+          "label": "\u539f\u59cb\u56fe\u7247",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "name": "\u6a21\u578b",
+          "label": "\u6a21\u578b",
+          "type": "Literal['yolov8n', 'yolov8s', 'yolov8m', 'yolov8l', 'yolov8x', 'yolov8n-seg', 'yolov8s-seg', 'yolov8m-seg', 'yolov8l-seg', 'yolov8x-seg']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "\u8bbe\u5907",
+          "label": "\u8bbe\u5907",
+          "type": "Literal['cpu', '0', '1', '2', '3']",
+          "component": "Radio"
+        },
+        {
+          "name": "\u63a8\u7406\u5c3a\u5bf8",
+          "label": "\u63a8\u7406\u5c3a\u5bf8",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "\u7f6e\u4fe1\u5ea6\u9608\u503c",
+          "label": "\u7f6e\u4fe1\u5ea6\u9608\u503c",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "IoU \u9608\u503c",
+          "label": "IoU \u9608\u503c",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "\u6700\u5927\u68c0\u6d4b\u6570",
+          "label": "\u6700\u5927\u68c0\u6d4b\u6570",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "\u7c7b\u522b\u9009\u62e9",
+          "label": "\u7c7b\u522b\u9009\u62e9",
+          "type": "List[Literal['\u4eba', '\u81ea\u884c\u8f66', '\u6c7d\u8f66', '\u6469\u6258\u8f66', '\u98de\u673a', '\u516c\u4ea4\u8f66', '\u706b\u8f66', '\u5361\u8f66', '\u8239', '\u7ea2\u7eff\u706f', '\u6d88\u9632\u6813', '\u505c\u6b62\u6807\u5fd7', '\u505c\u8f66\u6536\u8d39\u8868', '\u957f\u51f3', '\u9e1f', '\u732b', '\u72d7', '\u9a6c', '\u7f8a', '\u725b', '\u8c61', '\u718a', '\u6591\u9a6c', '\u957f\u9888\u9e7f', '\u80cc\u5305', '\u96e8\u4f1e', '\u624b\u63d0\u5305', '\u9886\u5e26', '\u624b\u63d0\u7bb1', '\u98de\u76d8', '\u6ed1\u96ea\u677f",
+          "component": "Dropdown"
+        },
+        {
+          "name": "\u76ee\u6807\u5c3a\u5bf8",
+          "label": "\u76ee\u6807\u5c3a\u5bf8",
+          "type": "Literal['\u6240\u6709\u5c3a\u5bf8', '\u5c0f\u76ee\u6807', '\u4e2d\u76ee\u6807', '\u5927\u76ee\u6807']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "\u68c0\u6d4b\u56fe\u7247",
+          "type": "Tuple[filepath | None, filepath | None] | None",
+          "component": "Imageslider"
+        },
+        {
+          "label": "\u56fe\u7247\u4e0b\u8f7d",
+          "type": "List[filepath]",
+          "component": "File"
+        },
+        {
+          "label": "\u76ee\u6807\u5c3a\u5bf8\u5360\u6bd4\u7edf\u8ba1",
+          "type": "Dict(label: str | int | float | None, confidences: List[Dict(label: str | int | float | None, confidence: float | None)] | None)",
+          "component": "Label"
+        },
+        {
+          "label": "\u7c7b\u522b\u68c0\u6d4b\u5360\u6bd4\u7edf\u8ba1",
+          "type": "Dict(label: str | int | float | None, confidences: List[Dict(label: str | int | float | None, confidence: float | None)] | None)",
+          "component": "Label"
+        }
+      ]
+    },
+    {
+      "name": "/yolo_cls_img",
+      "parameters": [
+        {
+          "name": "\u539f\u59cb\u56fe\u7247",
+          "label": "\u539f\u59cb\u56fe\u7247",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "name": "\u8bbe\u5907",
+          "label": "\u8bbe\u5907",
+          "type": "Literal['cpu', '0', '1', '2', '3']",
+          "component": "Radio"
+        },
+        {
+          "name": "\u6a21\u578b",
+          "label": "\u6a21\u578b",
+          "type": "Literal['yolov8n-cls', 'yolov8s-cls', 'yolov8l-cls', 'yolov8m-cls', 'yolov8x-cls']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "\u68c0\u6d4b\u56fe\u7247",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "\u56fe\u50cf\u5206\u7c7b\u7ed3\u679c",
+          "type": "Dict(label: str | int | float | None, confidences: List[Dict(label: str | int | float | None, confidence: float | None)] | None)",
+          "component": "Label"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/yolo_det_img",
+  "_api_verified": true
+}

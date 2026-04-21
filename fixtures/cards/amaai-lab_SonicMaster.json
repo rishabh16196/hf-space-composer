@@ -1,0 +1,87 @@
+{
+  "space_id": "amaai-lab/SonicMaster",
+  "title": "SonicMaster \u2013 Text-Guided Music Restoration & Mastering",
+  "emoji": "\ud83c\udfa7",
+  "description": "SonicMaster \u2013 Text-Guided Music Restoration & Mastering",
+  "input_schema": {
+    "audio_path": {
+      "type": "filepath",
+      "description": "Input Audio",
+      "required": true,
+      "component": "Audio"
+    },
+    "prompt": {
+      "type": "str",
+      "description": "Text Prompt",
+      "required": true,
+      "component": "Textbox"
+    }
+  },
+  "output_schema": {
+    "Enhanced Audio (output)": {
+      "type": "filepath",
+      "description": "Enhanced Audio (output)",
+      "component": "Audio"
+    },
+    "Status / Messages": {
+      "type": "str",
+      "description": "Status / Messages",
+      "component": "Textbox"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "5.43.1",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us",
+    "audio",
+    "music"
+  ],
+  "likes": 30,
+  "last_modified": "2026-01-14 19:35:52+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/enhance_audio_ui",
+      "parameters": [
+        {
+          "name": "audio_path",
+          "label": "Input Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "name": "prompt",
+          "label": "Text Prompt",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Enhanced Audio (output)",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Status / Messages",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/enhance_audio_ui",
+  "_api_verified": true,
+  "estimated_latency_s": 3.36,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "_tags_enriched": true,
+  "measured_latency_s": 3.36,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:50:14.827712+00:00"
+}

@@ -1,0 +1,63 @@
+{
+  "space_id": "gokaygokay/SD3-Long-Captioner",
+  "title": "SD3 Long Captioner",
+  "emoji": "\ud83c\udfc3",
+  "description": "SD3 Long Captioner",
+  "input_schema": {
+    "image": {
+      "type": "filepath",
+      "description": "Input Picture",
+      "required": true,
+      "component": "Image"
+    }
+  },
+  "output_schema": {
+    "Caption": {
+      "type": "str",
+      "description": "Caption",
+      "component": "Textbox"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "4.36.1",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 259,
+  "last_modified": "2024-09-20 21:51:18+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/create_captions_rich",
+      "parameters": [
+        {
+          "name": "image",
+          "label": "Input Picture",
+          "type": "filepath",
+          "component": "Image"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Caption",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/create_captions_rich",
+  "_api_verified": true,
+  "estimated_latency_s": 2.73,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "_tags_enriched": true,
+  "measured_latency_s": 2.73,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:50:40.884369+00:00"
+}

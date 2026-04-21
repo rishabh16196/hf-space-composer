@@ -1,0 +1,62 @@
+{
+  "space_id": "Kodiks/turkish-news-classification",
+  "title": "Turkish News Classification",
+  "emoji": "\ud83d\udcf0",
+  "description": "Turkish News Classification",
+  "input_schema": {
+    "Paste some news here": {
+      "type": "str",
+      "description": "Paste some news here",
+      "required": true,
+      "component": "Textbox"
+    }
+  },
+  "output_schema": {
+    "News categories probabilities": {
+      "type": "Dict[Any, Any]",
+      "description": "News categories probabilities",
+      "component": "Label"
+    }
+  },
+  "license": "unknown",
+  "hardware": "",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 12,
+  "last_modified": "2021-11-08 21:08:46+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/predict",
+      "parameters": [
+        {
+          "name": "Paste some news here",
+          "label": "Paste some news here",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "News categories probabilities",
+          "type": "Dict[Any, Any]",
+          "component": "Label"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/predict",
+  "_api_verified": true,
+  "estimated_latency_s": 2.6,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 2.6,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:49:31.641439+00:00"
+}

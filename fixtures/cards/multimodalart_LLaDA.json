@@ -1,0 +1,322 @@
+{
+  "space_id": "multimodalart/LLaDA",
+  "title": "LLaDA",
+  "emoji": "\ud83d\ude80",
+  "description": "Large Language Diffusion Models",
+  "input_schema": {},
+  "output_schema": {
+    "Conversation": {
+      "type": "tuple[str | dict(file: filepath, alt_text: str | None) | dict(component: str, value: Any, constructo",
+      "description": "Conversation",
+      "component": "Chatbot"
+    },
+    "Current Response": {
+      "type": "str",
+      "description": "Current Response",
+      "component": "Textbox"
+    },
+    "Denoising Process Visualization": {
+      "type": "list[dict(token: str, class_or_confidence: str | float | None)]",
+      "description": "Denoising Process Visualization",
+      "component": "Highlightedtext"
+    }
+  },
+  "license": "mit",
+  "hardware": "5.18.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 182,
+  "last_modified": "2025-03-05 21:11:59+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/clear_conversation",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Conversation",
+          "type": "tuple[str | dict(file: filepath, alt_text: str | None) | dict(component: str, value: Any, constructor_args: dict(), props: dict()) | None, str | dict(file: filepath, alt_text: str | None) | dict(compo",
+          "component": "Chatbot"
+        },
+        {
+          "label": "Current Response",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Denoising Process Visualization",
+          "type": "list[dict(token: str, class_or_confidence: str | float | None)]",
+          "component": "Highlightedtext"
+        }
+      ]
+    },
+    {
+      "name": "/user_message_submitted",
+      "parameters": [
+        {
+          "name": "message",
+          "label": "Your Message",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "gen_length",
+          "label": "Generation Length",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "steps",
+          "label": "Denoising Steps",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "constraints",
+          "label": "Word Constraints",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "delay",
+          "label": "Visualization Delay (seconds)",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Conversation",
+          "type": "tuple[str | dict(file: filepath, alt_text: str | None) | dict(component: str, value: Any, constructor_args: dict(), props: dict()) | None, str | dict(file: filepath, alt_text: str | None) | dict(compo",
+          "component": "Chatbot"
+        },
+        {
+          "label": "Your Message",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Denoising Process Visualization",
+          "type": "list[dict(token: str, class_or_confidence: str | float | None)]",
+          "component": "Highlightedtext"
+        },
+        {
+          "label": "Current Response",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/user_message_submitted_1",
+      "parameters": [
+        {
+          "name": "message",
+          "label": "Your Message",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "gen_length",
+          "label": "Generation Length",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "steps",
+          "label": "Denoising Steps",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "constraints",
+          "label": "Word Constraints",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "delay",
+          "label": "Visualization Delay (seconds)",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Conversation",
+          "type": "tuple[str | dict(file: filepath, alt_text: str | None) | dict(component: str, value: Any, constructor_args: dict(), props: dict()) | None, str | dict(file: filepath, alt_text: str | None) | dict(compo",
+          "component": "Chatbot"
+        },
+        {
+          "label": "Your Message",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Denoising Process Visualization",
+          "type": "list[dict(token: str, class_or_confidence: str | float | None)]",
+          "component": "Highlightedtext"
+        },
+        {
+          "label": "Current Response",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/bot_response",
+      "parameters": [
+        {
+          "name": "gen_length",
+          "label": "Generation Length",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "steps",
+          "label": "Denoising Steps",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "constraints",
+          "label": "Word Constraints",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "delay",
+          "label": "Visualization Delay (seconds)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "temperature",
+          "label": "Temperature",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "cfg_scale",
+          "label": "CFG Scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "block_length",
+          "label": "Block Length",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "remasking",
+          "label": "Remasking Strategy",
+          "type": "Literal['low_confidence', 'random']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Conversation",
+          "type": "tuple[str | dict(file: filepath, alt_text: str | None) | dict(component: str, value: Any, constructor_args: dict(), props: dict()) | None, str | dict(file: filepath, alt_text: str | None) | dict(compo",
+          "component": "Chatbot"
+        },
+        {
+          "label": "Denoising Process Visualization",
+          "type": "list[dict(token: str, class_or_confidence: str | float | None)]",
+          "component": "Highlightedtext"
+        },
+        {
+          "label": "Current Response",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/bot_response_1",
+      "parameters": [
+        {
+          "name": "gen_length",
+          "label": "Generation Length",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "steps",
+          "label": "Denoising Steps",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "constraints",
+          "label": "Word Constraints",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "delay",
+          "label": "Visualization Delay (seconds)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "temperature",
+          "label": "Temperature",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "cfg_scale",
+          "label": "CFG Scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "block_length",
+          "label": "Block Length",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "remasking",
+          "label": "Remasking Strategy",
+          "type": "Literal['low_confidence', 'random']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Conversation",
+          "type": "tuple[str | dict(file: filepath, alt_text: str | None) | dict(component: str, value: Any, constructor_args: dict(), props: dict()) | None, str | dict(file: filepath, alt_text: str | None) | dict(compo",
+          "component": "Chatbot"
+        },
+        {
+          "label": "Denoising Process Visualization",
+          "type": "list[dict(token: str, class_or_confidence: str | float | None)]",
+          "component": "Highlightedtext"
+        },
+        {
+          "label": "Current Response",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/clear_conversation",
+  "_api_verified": true,
+  "estimated_latency_s": 3.92,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 3.92,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:51:18.768111+00:00"
+}

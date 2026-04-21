@@ -1,0 +1,122 @@
+{
+  "space_id": "kornia/kornia-image-enhancement",
+  "title": "Kornia Image Enhancement",
+  "emoji": "\ud83e\ude84",
+  "description": "Kornia Image Enhancement",
+  "input_schema": {
+    "image": {
+      "type": "filepath",
+      "description": "image",
+      "required": true,
+      "component": "Image"
+    },
+    "brightness": {
+      "type": "float",
+      "description": "Brightness",
+      "required": true,
+      "component": "Slider"
+    },
+    "contrast": {
+      "type": "float",
+      "description": "Contrast",
+      "required": true,
+      "component": "Slider"
+    },
+    "saturation": {
+      "type": "float",
+      "description": "Saturation",
+      "required": true,
+      "component": "Slider"
+    },
+    "gamma": {
+      "type": "float",
+      "description": "Gamma",
+      "required": true,
+      "component": "Slider"
+    },
+    "hue": {
+      "type": "float",
+      "description": "Hue",
+      "required": true,
+      "component": "Slider"
+    }
+  },
+  "output_schema": {
+    "output": {
+      "type": "filepath",
+      "description": "output",
+      "component": "Image"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "6.10.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 27,
+  "last_modified": "2026-03-25 17:35:06+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/enhance",
+      "parameters": [
+        {
+          "name": "image",
+          "label": "image",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "name": "brightness",
+          "label": "Brightness",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "contrast",
+          "label": "Contrast",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "saturation",
+          "label": "Saturation",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "gamma",
+          "label": "Gamma",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "hue",
+          "label": "Hue",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "output",
+          "type": "filepath",
+          "component": "Image"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/enhance",
+  "_api_verified": true,
+  "estimated_latency_s": 3.76,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 3.76,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:51:05.457434+00:00"
+}

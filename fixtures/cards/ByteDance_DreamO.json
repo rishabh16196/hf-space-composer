@@ -1,0 +1,276 @@
+{
+  "space_id": "ByteDance/DreamO",
+  "title": "DreamO",
+  "emoji": "\ud83d\udc28",
+  "description": "A Unified Framework for Image Customization",
+  "input_schema": {
+    "ref_image1": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "ref image 1",
+      "required": true,
+      "component": "Image"
+    },
+    "ref_image2": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "ref image 2",
+      "required": true,
+      "component": "Image"
+    },
+    "ref_task1": {
+      "type": "Literal['ip', 'id', 'style']",
+      "description": "task for ref image 1",
+      "required": true,
+      "component": "Dropdown"
+    },
+    "ref_task2": {
+      "type": "Literal['ip', 'id', 'style']",
+      "description": "task for ref image 2",
+      "required": true,
+      "component": "Dropdown"
+    },
+    "prompt": {
+      "type": "str",
+      "description": "Prompt",
+      "required": true,
+      "component": "Textbox"
+    },
+    "seed": {
+      "type": "str",
+      "description": "Seed (-1 for random)",
+      "required": true,
+      "component": "Textbox"
+    },
+    "width": {
+      "type": "float",
+      "description": "Width",
+      "required": true,
+      "component": "Slider"
+    },
+    "height": {
+      "type": "float",
+      "description": "Height",
+      "required": true,
+      "component": "Slider"
+    },
+    "ref_res": {
+      "type": "float",
+      "description": "resolution for ref image, increase it if necessary",
+      "required": true,
+      "component": "Slider"
+    },
+    "num_steps": {
+      "type": "float",
+      "description": "Number of steps",
+      "required": true,
+      "component": "Slider"
+    },
+    "guidance": {
+      "type": "float",
+      "description": "Guidance",
+      "required": true,
+      "component": "Slider"
+    },
+    "true_cfg": {
+      "type": "float",
+      "description": "true cfg",
+      "required": true,
+      "component": "Slider"
+    },
+    "cfg_start_step": {
+      "type": "float",
+      "description": "cfg start step",
+      "required": true,
+      "component": "Slider"
+    },
+    "cfg_end_step": {
+      "type": "float",
+      "description": "cfg end step",
+      "required": true,
+      "component": "Slider"
+    },
+    "neg_prompt": {
+      "type": "str",
+      "description": "Neg Prompt",
+      "required": true,
+      "component": "Textbox"
+    },
+    "neg_guidance": {
+      "type": "float",
+      "description": "Neg Guidance",
+      "required": true,
+      "component": "Slider"
+    },
+    "first_step_guidance": {
+      "type": "float",
+      "description": "first step guidance",
+      "required": true,
+      "component": "Slider"
+    }
+  },
+  "output_schema": {
+    "Generated Image": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "Generated Image",
+      "component": "Image"
+    },
+    "Preprocessing output (including possible face crop and background remove)": {
+      "type": "list[dict(image: dict(path: str | None (Path to a local file), url: str | None (Publicly available u",
+      "description": "Preprocessing output (including possible face crop and background remove)",
+      "component": "Gallery"
+    },
+    "Used Seed": {
+      "type": "str",
+      "description": "Used Seed",
+      "component": "Textbox"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "5.29.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 598,
+  "last_modified": "2025-06-24 13:55:02+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/generate_image",
+      "parameters": [
+        {
+          "name": "ref_image1",
+          "label": "ref image 1",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "ref_image2",
+          "label": "ref image 2",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "ref_task1",
+          "label": "task for ref image 1",
+          "type": "Literal['ip', 'id', 'style']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "ref_task2",
+          "label": "task for ref image 2",
+          "type": "Literal['ip', 'id', 'style']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "prompt",
+          "label": "Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "seed",
+          "label": "Seed (-1 for random)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "width",
+          "label": "Width",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "height",
+          "label": "Height",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "ref_res",
+          "label": "resolution for ref image, increase it if necessary",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "num_steps",
+          "label": "Number of steps",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "guidance",
+          "label": "Guidance",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "true_cfg",
+          "label": "true cfg",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "cfg_start_step",
+          "label": "cfg start step",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "cfg_end_step",
+          "label": "cfg end step",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "neg_prompt",
+          "label": "Neg Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "neg_guidance",
+          "label": "Neg Guidance",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "first_step_guidance",
+          "label": "first step guidance",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Generated Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "Preprocessing output (including possible face crop and background remove)",
+          "type": "list[dict(image: dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Origi",
+          "component": "Gallery"
+        },
+        {
+          "label": "Used Seed",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/generate_image",
+  "_api_verified": true,
+  "estimated_latency_s": 3.25,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 3.25,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:49:12.435720+00:00",
+  "_inference_attempt_status": "predict_failed",
+  "_inference_attempt_error": "The upstream Gradio app has raised an exception but has not enabled verbose error reporting. To enable, set show_error=True in launch()."
+}

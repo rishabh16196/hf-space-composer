@@ -1,0 +1,59 @@
+{
+  "space_id": "Grooty889/Mychatbox",
+  "title": "Mychatbox",
+  "emoji": "\ud83d\udcac",
+  "description": "Good",
+  "input_schema": {
+    "message": {
+      "type": "str",
+      "description": "Message",
+      "required": true,
+      "component": "Textbox"
+    }
+  },
+  "output_schema": {
+    "Response": {
+      "type": "str",
+      "description": "Response",
+      "component": "Textbox"
+    }
+  },
+  "license": "unknown",
+  "hardware": "5.0.1",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 2,
+  "last_modified": "2025-03-18 16:05:47+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/chat",
+      "parameters": [
+        {
+          "name": "message",
+          "label": "Message",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Response",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/chat",
+  "_api_verified": true
+}

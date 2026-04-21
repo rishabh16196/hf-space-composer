@@ -1,0 +1,62 @@
+{
+  "space_id": "Nischay103/captcha_recognition",
+  "title": "Captcha Recognition",
+  "emoji": "\ud83c\udfc6",
+  "description": "Captcha Recognition",
+  "input_schema": {
+    "input": {
+      "type": "filepath",
+      "description": "captcha image",
+      "required": true,
+      "component": "Image"
+    }
+  },
+  "output_schema": {
+    "recognized character sequence": {
+      "type": "str",
+      "description": "recognized character sequence",
+      "component": "Textbox"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "4.36.1",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 23,
+  "last_modified": "2024-06-12 15:32:33+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/predict",
+      "parameters": [
+        {
+          "name": "input",
+          "label": "captcha image",
+          "type": "filepath",
+          "component": "Image"
+        }
+      ],
+      "returns": [
+        {
+          "label": "recognized character sequence",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/predict",
+  "_api_verified": true,
+  "estimated_latency_s": 3.12,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 3.12,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:49:41.431644+00:00"
+}

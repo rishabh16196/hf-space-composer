@@ -1,0 +1,127 @@
+{
+  "space_id": "espnet/svs",
+  "title": "Svs",
+  "emoji": "\ud83d\udcbb",
+  "description": "Svs",
+  "input_schema": {
+    "model_name": {
+      "type": "Literal['Model\u2460(Chinese)-zh', 'Model\u2461(Multilingual)-zh', 'Model\u2461(Multilingual)-jp']",
+      "description": "Model-Language",
+      "required": true,
+      "component": "Radio"
+    },
+    "spk": {
+      "type": "Literal['singer1 (male)', 'singer2 (female)', 'singer3 (male)', 'singer4 (female)', 'singer5 (male)'",
+      "description": "Singer",
+      "required": true,
+      "component": "Dropdown"
+    },
+    "texts": {
+      "type": "str",
+      "description": "Lyrics",
+      "required": true,
+      "component": "Textbox"
+    },
+    "durs": {
+      "type": "str",
+      "description": "Duration",
+      "required": true,
+      "component": "Textbox"
+    },
+    "pitchs": {
+      "type": "str",
+      "description": "Pitch",
+      "required": true,
+      "component": "Textbox"
+    }
+  },
+  "output_schema": {
+    "Generated Song": {
+      "type": "filepath",
+      "description": "Generated Song",
+      "component": "Audio"
+    },
+    "Running Status": {
+      "type": "str",
+      "description": "Running Status",
+      "component": "Textbox"
+    },
+    " Pseudo MOS": {
+      "type": "str",
+      "description": " Pseudo MOS",
+      "component": "Textbox"
+    }
+  },
+  "license": "cc-by-sa-4.0",
+  "hardware": "5.4.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 2,
+  "last_modified": "2024-10-29 07:49:28+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/gen_song",
+      "parameters": [
+        {
+          "name": "model_name",
+          "label": "Model-Language",
+          "type": "Literal['Model\u2460(Chinese)-zh', 'Model\u2461(Multilingual)-zh', 'Model\u2461(Multilingual)-jp']",
+          "component": "Radio"
+        },
+        {
+          "name": "spk",
+          "label": "Singer",
+          "type": "Literal['singer1 (male)', 'singer2 (female)', 'singer3 (male)', 'singer4 (female)', 'singer5 (male)', 'singer6 (female)', 'singer7 (male)', 'singer8 (female)', 'singer9 (male)', 'singer10 (female)']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "texts",
+          "label": "Lyrics",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "durs",
+          "label": "Duration",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "pitchs",
+          "label": "Pitch",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Generated Song",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Running Status",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": " Pseudo MOS",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/gen_song",
+  "_api_verified": true
+}

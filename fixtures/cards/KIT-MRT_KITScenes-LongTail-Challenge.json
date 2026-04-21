@@ -1,0 +1,151 @@
+{
+  "space_id": "KIT-MRT/KITScenes-LongTail-Challenge",
+  "title": "KITScenes LongTail Challenge",
+  "emoji": "\ud83d\ude97",
+  "description": "KITScenes Longtail Challenge",
+  "input_schema": {},
+  "output_schema": {
+    "value_5": {
+      "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+      "description": "value_5",
+      "component": "Dataframe"
+    }
+  },
+  "license": "mit",
+  "hardware": "6.10.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 6,
+  "last_modified": "2026-04-05 22:44:05+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/refresh_leaderboard",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_5",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/refresh_leaderboard_1",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_5",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/toggle_submit_button",
+      "parameters": [
+        {
+          "name": "terms_acknowledged",
+          "label": "Acknowledge Challenge Rules",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/submit_and_reset_form",
+      "parameters": [
+        {
+          "name": "submitter_name",
+          "label": "Team Members",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "team_name",
+          "label": "Team Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "affiliations",
+          "label": "Affiliation(s)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "method_name",
+          "label": "Method Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "predictions_file",
+          "label": "Predictions File",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "name": "terms_acknowledged",
+          "label": "Acknowledge Challenge Rules",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_18",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "Team Members",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Team Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Affiliation(s)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Method Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Predictions File",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "label": "Acknowledge Challenge Rules",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ]
+    },
+    {
+      "name": "/_check_login_status",
+      "parameters": [],
+      "returns": []
+    }
+  ],
+  "endpoint": "/refresh_leaderboard",
+  "_api_verified": true
+}

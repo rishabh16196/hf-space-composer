@@ -1,0 +1,39 @@
+{
+  "space_id": "facebook/nllb-200-v2",
+  "description": "NLLB-200 v2 \u2014 successor to nllb-200, with improved low-resource pairs and updated input schema.",
+  "input_schema": {
+    "text": {
+      "type": "string",
+      "description": "Text to translate",
+      "required": true
+    },
+    "src": {
+      "type": "string",
+      "description": "Source language code",
+      "required": true
+    },
+    "tgt": {
+      "type": "string",
+      "description": "Target language code",
+      "required": true
+    }
+  },
+  "output_schema": {
+    "text": {
+      "type": "string",
+      "description": "Translated text"
+    }
+  },
+  "license": "cc-by-nc-4.0",
+  "sdk": "gradio",
+  "tags": [
+    "multilingual",
+    "translation",
+    "nlp",
+    "text"
+  ],
+  "estimated_latency_s": 3.0,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "_tags_enriched": true
+}

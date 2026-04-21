@@ -1,0 +1,122 @@
+{
+  "space_id": "maxidl/openreviewer",
+  "title": "OpenReviewer",
+  "emoji": "\ud83d\udcda",
+  "description": "Generate Paper Reviews",
+  "input_schema": {
+    "file": {
+      "type": "filepath",
+      "description": "parameter_3",
+      "required": true,
+      "component": "File"
+    }
+  },
+  "output_schema": {
+    "Paper Text": {
+      "type": "str",
+      "description": "Paper Text",
+      "component": "Textbox"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "5.49.1",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "paper",
+    "review",
+    "reviewer",
+    "generation",
+    "automatic",
+    "llm",
+    "llama",
+    "openreview",
+    "peer",
+    "conference",
+    "article",
+    "manuscript",
+    "feedback",
+    "region:us"
+  ],
+  "likes": 22,
+  "last_modified": "2026-02-10 19:34:12+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/process_file",
+      "parameters": [
+        {
+          "name": "file",
+          "label": "parameter_3",
+          "type": "filepath",
+          "component": "File"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Paper Text",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/lambda",
+      "parameters": [
+        {
+          "name": "text",
+          "label": "Paper Text",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/lambda_1",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/generate",
+      "parameters": [
+        {
+          "name": "paper_text",
+          "label": "Paper Text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "review_template",
+          "label": " ",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Review",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_2",
+      "parameters": [],
+      "returns": []
+    }
+  ],
+  "endpoint": "/process_file",
+  "_api_verified": true,
+  "estimated_latency_s": 4.07,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "_tags_enriched": true,
+  "measured_latency_s": 4.07,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:51:11.727496+00:00"
+}

@@ -1,0 +1,2724 @@
+{
+  "space_id": "Aratako/T5Gemma-TTS-Demo",
+  "title": "T5Gemma-TTS Demo",
+  "emoji": "\ud83d\ude80",
+  "description": "TTS demo for T5Gemma-TTS model",
+  "input_schema": {
+    "reference_speech": {
+      "type": "filepath",
+      "description": "Reference Speech (optional)",
+      "required": true,
+      "component": "Audio"
+    },
+    "reference_text": {
+      "type": "str",
+      "description": "Reference Text (optional, leave blank to auto-transcribe)",
+      "required": true,
+      "component": "Textbox"
+    },
+    "target_text": {
+      "type": "str",
+      "description": "Target Text",
+      "required": true,
+      "component": "Textbox"
+    },
+    "target_duration": {
+      "type": "str",
+      "description": "Target Duration (seconds, optional)",
+      "required": true,
+      "component": "Textbox"
+    },
+    "top_k": {
+      "type": "float",
+      "description": "top_k",
+      "required": true,
+      "component": "Slider"
+    },
+    "top_p": {
+      "type": "float",
+      "description": "top_p",
+      "required": true,
+      "component": "Slider"
+    },
+    "min_p": {
+      "type": "float",
+      "description": "min_p (0 = disabled)",
+      "required": true,
+      "component": "Slider"
+    },
+    "temperature": {
+      "type": "float",
+      "description": "temperature",
+      "required": true,
+      "component": "Slider"
+    },
+    "seed": {
+      "type": "str",
+      "description": "Random Seed (optional)",
+      "required": true,
+      "component": "Textbox"
+    },
+    "num_samples": {
+      "type": "float",
+      "description": "Number of Samples (batch generation)",
+      "required": true,
+      "component": "Slider"
+    }
+  },
+  "output_schema": {
+    "#1": {
+      "type": "filepath",
+      "description": "#1",
+      "component": "Audio"
+    },
+    "#2": {
+      "type": "filepath",
+      "description": "#2",
+      "component": "Audio"
+    },
+    "#3": {
+      "type": "filepath",
+      "description": "#3",
+      "component": "Audio"
+    },
+    "#4": {
+      "type": "filepath",
+      "description": "#4",
+      "component": "Audio"
+    },
+    "#5": {
+      "type": "filepath",
+      "description": "#5",
+      "component": "Audio"
+    },
+    "#6": {
+      "type": "filepath",
+      "description": "#6",
+      "component": "Audio"
+    },
+    "#7": {
+      "type": "filepath",
+      "description": "#7",
+      "component": "Audio"
+    },
+    "#8": {
+      "type": "filepath",
+      "description": "#8",
+      "component": "Audio"
+    },
+    "#9": {
+      "type": "filepath",
+      "description": "#9",
+      "component": "Audio"
+    },
+    "#10": {
+      "type": "filepath",
+      "description": "#10",
+      "component": "Audio"
+    },
+    "#11": {
+      "type": "filepath",
+      "description": "#11",
+      "component": "Audio"
+    },
+    "#12": {
+      "type": "filepath",
+      "description": "#12",
+      "component": "Audio"
+    },
+    "#13": {
+      "type": "filepath",
+      "description": "#13",
+      "component": "Audio"
+    },
+    "#14": {
+      "type": "filepath",
+      "description": "#14",
+      "component": "Audio"
+    },
+    "#15": {
+      "type": "filepath",
+      "description": "#15",
+      "component": "Audio"
+    },
+    "#16": {
+      "type": "filepath",
+      "description": "#16",
+      "component": "Audio"
+    },
+    "#17": {
+      "type": "filepath",
+      "description": "#17",
+      "component": "Audio"
+    },
+    "#18": {
+      "type": "filepath",
+      "description": "#18",
+      "component": "Audio"
+    },
+    "#19": {
+      "type": "filepath",
+      "description": "#19",
+      "component": "Audio"
+    },
+    "#20": {
+      "type": "filepath",
+      "description": "#20",
+      "component": "Audio"
+    },
+    "#21": {
+      "type": "filepath",
+      "description": "#21",
+      "component": "Audio"
+    },
+    "#22": {
+      "type": "filepath",
+      "description": "#22",
+      "component": "Audio"
+    },
+    "#23": {
+      "type": "filepath",
+      "description": "#23",
+      "component": "Audio"
+    },
+    "#24": {
+      "type": "filepath",
+      "description": "#24",
+      "component": "Audio"
+    },
+    "#25": {
+      "type": "filepath",
+      "description": "#25",
+      "component": "Audio"
+    },
+    "#26": {
+      "type": "filepath",
+      "description": "#26",
+      "component": "Audio"
+    },
+    "#27": {
+      "type": "filepath",
+      "description": "#27",
+      "component": "Audio"
+    },
+    "#28": {
+      "type": "filepath",
+      "description": "#28",
+      "component": "Audio"
+    },
+    "#29": {
+      "type": "filepath",
+      "description": "#29",
+      "component": "Audio"
+    },
+    "#30": {
+      "type": "filepath",
+      "description": "#30",
+      "component": "Audio"
+    },
+    "#31": {
+      "type": "filepath",
+      "description": "#31",
+      "component": "Audio"
+    },
+    "#32": {
+      "type": "filepath",
+      "description": "#32",
+      "component": "Audio"
+    },
+    "#33": {
+      "type": "filepath",
+      "description": "#33",
+      "component": "Audio"
+    },
+    "#34": {
+      "type": "filepath",
+      "description": "#34",
+      "component": "Audio"
+    },
+    "#35": {
+      "type": "filepath",
+      "description": "#35",
+      "component": "Audio"
+    },
+    "#36": {
+      "type": "filepath",
+      "description": "#36",
+      "component": "Audio"
+    },
+    "#37": {
+      "type": "filepath",
+      "description": "#37",
+      "component": "Audio"
+    },
+    "#38": {
+      "type": "filepath",
+      "description": "#38",
+      "component": "Audio"
+    },
+    "#39": {
+      "type": "filepath",
+      "description": "#39",
+      "component": "Audio"
+    },
+    "#40": {
+      "type": "filepath",
+      "description": "#40",
+      "component": "Audio"
+    },
+    "#41": {
+      "type": "filepath",
+      "description": "#41",
+      "component": "Audio"
+    },
+    "#42": {
+      "type": "filepath",
+      "description": "#42",
+      "component": "Audio"
+    },
+    "#43": {
+      "type": "filepath",
+      "description": "#43",
+      "component": "Audio"
+    },
+    "#44": {
+      "type": "filepath",
+      "description": "#44",
+      "component": "Audio"
+    },
+    "#45": {
+      "type": "filepath",
+      "description": "#45",
+      "component": "Audio"
+    },
+    "#46": {
+      "type": "filepath",
+      "description": "#46",
+      "component": "Audio"
+    },
+    "#47": {
+      "type": "filepath",
+      "description": "#47",
+      "component": "Audio"
+    },
+    "#48": {
+      "type": "filepath",
+      "description": "#48",
+      "component": "Audio"
+    },
+    "#49": {
+      "type": "filepath",
+      "description": "#49",
+      "component": "Audio"
+    },
+    "#50": {
+      "type": "filepath",
+      "description": "#50",
+      "component": "Audio"
+    },
+    "#51": {
+      "type": "filepath",
+      "description": "#51",
+      "component": "Audio"
+    },
+    "#52": {
+      "type": "filepath",
+      "description": "#52",
+      "component": "Audio"
+    },
+    "#53": {
+      "type": "filepath",
+      "description": "#53",
+      "component": "Audio"
+    },
+    "#54": {
+      "type": "filepath",
+      "description": "#54",
+      "component": "Audio"
+    },
+    "#55": {
+      "type": "filepath",
+      "description": "#55",
+      "component": "Audio"
+    },
+    "#56": {
+      "type": "filepath",
+      "description": "#56",
+      "component": "Audio"
+    },
+    "#57": {
+      "type": "filepath",
+      "description": "#57",
+      "component": "Audio"
+    },
+    "#58": {
+      "type": "filepath",
+      "description": "#58",
+      "component": "Audio"
+    },
+    "#59": {
+      "type": "filepath",
+      "description": "#59",
+      "component": "Audio"
+    },
+    "#60": {
+      "type": "filepath",
+      "description": "#60",
+      "component": "Audio"
+    },
+    "#61": {
+      "type": "filepath",
+      "description": "#61",
+      "component": "Audio"
+    },
+    "#62": {
+      "type": "filepath",
+      "description": "#62",
+      "component": "Audio"
+    },
+    "#63": {
+      "type": "filepath",
+      "description": "#63",
+      "component": "Audio"
+    },
+    "#64": {
+      "type": "filepath",
+      "description": "#64",
+      "component": "Audio"
+    },
+    "#65": {
+      "type": "filepath",
+      "description": "#65",
+      "component": "Audio"
+    },
+    "#66": {
+      "type": "filepath",
+      "description": "#66",
+      "component": "Audio"
+    },
+    "#67": {
+      "type": "filepath",
+      "description": "#67",
+      "component": "Audio"
+    },
+    "#68": {
+      "type": "filepath",
+      "description": "#68",
+      "component": "Audio"
+    },
+    "#69": {
+      "type": "filepath",
+      "description": "#69",
+      "component": "Audio"
+    },
+    "#70": {
+      "type": "filepath",
+      "description": "#70",
+      "component": "Audio"
+    },
+    "#71": {
+      "type": "filepath",
+      "description": "#71",
+      "component": "Audio"
+    },
+    "#72": {
+      "type": "filepath",
+      "description": "#72",
+      "component": "Audio"
+    },
+    "#73": {
+      "type": "filepath",
+      "description": "#73",
+      "component": "Audio"
+    },
+    "#74": {
+      "type": "filepath",
+      "description": "#74",
+      "component": "Audio"
+    },
+    "#75": {
+      "type": "filepath",
+      "description": "#75",
+      "component": "Audio"
+    },
+    "#76": {
+      "type": "filepath",
+      "description": "#76",
+      "component": "Audio"
+    },
+    "#77": {
+      "type": "filepath",
+      "description": "#77",
+      "component": "Audio"
+    },
+    "#78": {
+      "type": "filepath",
+      "description": "#78",
+      "component": "Audio"
+    },
+    "#79": {
+      "type": "filepath",
+      "description": "#79",
+      "component": "Audio"
+    },
+    "#80": {
+      "type": "filepath",
+      "description": "#80",
+      "component": "Audio"
+    },
+    "#81": {
+      "type": "filepath",
+      "description": "#81",
+      "component": "Audio"
+    },
+    "#82": {
+      "type": "filepath",
+      "description": "#82",
+      "component": "Audio"
+    },
+    "#83": {
+      "type": "filepath",
+      "description": "#83",
+      "component": "Audio"
+    },
+    "#84": {
+      "type": "filepath",
+      "description": "#84",
+      "component": "Audio"
+    },
+    "#85": {
+      "type": "filepath",
+      "description": "#85",
+      "component": "Audio"
+    },
+    "#86": {
+      "type": "filepath",
+      "description": "#86",
+      "component": "Audio"
+    },
+    "#87": {
+      "type": "filepath",
+      "description": "#87",
+      "component": "Audio"
+    },
+    "#88": {
+      "type": "filepath",
+      "description": "#88",
+      "component": "Audio"
+    },
+    "#89": {
+      "type": "filepath",
+      "description": "#89",
+      "component": "Audio"
+    },
+    "#90": {
+      "type": "filepath",
+      "description": "#90",
+      "component": "Audio"
+    },
+    "#91": {
+      "type": "filepath",
+      "description": "#91",
+      "component": "Audio"
+    },
+    "#92": {
+      "type": "filepath",
+      "description": "#92",
+      "component": "Audio"
+    },
+    "#93": {
+      "type": "filepath",
+      "description": "#93",
+      "component": "Audio"
+    },
+    "#94": {
+      "type": "filepath",
+      "description": "#94",
+      "component": "Audio"
+    },
+    "#95": {
+      "type": "filepath",
+      "description": "#95",
+      "component": "Audio"
+    },
+    "#96": {
+      "type": "filepath",
+      "description": "#96",
+      "component": "Audio"
+    },
+    "#97": {
+      "type": "filepath",
+      "description": "#97",
+      "component": "Audio"
+    },
+    "#98": {
+      "type": "filepath",
+      "description": "#98",
+      "component": "Audio"
+    },
+    "#99": {
+      "type": "filepath",
+      "description": "#99",
+      "component": "Audio"
+    },
+    "#100": {
+      "type": "filepath",
+      "description": "#100",
+      "component": "Audio"
+    },
+    "#101": {
+      "type": "filepath",
+      "description": "#101",
+      "component": "Audio"
+    },
+    "#102": {
+      "type": "filepath",
+      "description": "#102",
+      "component": "Audio"
+    },
+    "#103": {
+      "type": "filepath",
+      "description": "#103",
+      "component": "Audio"
+    },
+    "#104": {
+      "type": "filepath",
+      "description": "#104",
+      "component": "Audio"
+    },
+    "#105": {
+      "type": "filepath",
+      "description": "#105",
+      "component": "Audio"
+    },
+    "#106": {
+      "type": "filepath",
+      "description": "#106",
+      "component": "Audio"
+    },
+    "#107": {
+      "type": "filepath",
+      "description": "#107",
+      "component": "Audio"
+    },
+    "#108": {
+      "type": "filepath",
+      "description": "#108",
+      "component": "Audio"
+    },
+    "#109": {
+      "type": "filepath",
+      "description": "#109",
+      "component": "Audio"
+    },
+    "#110": {
+      "type": "filepath",
+      "description": "#110",
+      "component": "Audio"
+    },
+    "#111": {
+      "type": "filepath",
+      "description": "#111",
+      "component": "Audio"
+    },
+    "#112": {
+      "type": "filepath",
+      "description": "#112",
+      "component": "Audio"
+    },
+    "#113": {
+      "type": "filepath",
+      "description": "#113",
+      "component": "Audio"
+    },
+    "#114": {
+      "type": "filepath",
+      "description": "#114",
+      "component": "Audio"
+    },
+    "#115": {
+      "type": "filepath",
+      "description": "#115",
+      "component": "Audio"
+    },
+    "#116": {
+      "type": "filepath",
+      "description": "#116",
+      "component": "Audio"
+    },
+    "#117": {
+      "type": "filepath",
+      "description": "#117",
+      "component": "Audio"
+    },
+    "#118": {
+      "type": "filepath",
+      "description": "#118",
+      "component": "Audio"
+    },
+    "#119": {
+      "type": "filepath",
+      "description": "#119",
+      "component": "Audio"
+    },
+    "#120": {
+      "type": "filepath",
+      "description": "#120",
+      "component": "Audio"
+    },
+    "#121": {
+      "type": "filepath",
+      "description": "#121",
+      "component": "Audio"
+    },
+    "#122": {
+      "type": "filepath",
+      "description": "#122",
+      "component": "Audio"
+    },
+    "#123": {
+      "type": "filepath",
+      "description": "#123",
+      "component": "Audio"
+    },
+    "#124": {
+      "type": "filepath",
+      "description": "#124",
+      "component": "Audio"
+    },
+    "#125": {
+      "type": "filepath",
+      "description": "#125",
+      "component": "Audio"
+    },
+    "#126": {
+      "type": "filepath",
+      "description": "#126",
+      "component": "Audio"
+    },
+    "#127": {
+      "type": "filepath",
+      "description": "#127",
+      "component": "Audio"
+    },
+    "#128": {
+      "type": "filepath",
+      "description": "#128",
+      "component": "Audio"
+    },
+    "#129": {
+      "type": "filepath",
+      "description": "#129",
+      "component": "Audio"
+    },
+    "#130": {
+      "type": "filepath",
+      "description": "#130",
+      "component": "Audio"
+    },
+    "#131": {
+      "type": "filepath",
+      "description": "#131",
+      "component": "Audio"
+    },
+    "#132": {
+      "type": "filepath",
+      "description": "#132",
+      "component": "Audio"
+    },
+    "#133": {
+      "type": "filepath",
+      "description": "#133",
+      "component": "Audio"
+    },
+    "#134": {
+      "type": "filepath",
+      "description": "#134",
+      "component": "Audio"
+    },
+    "#135": {
+      "type": "filepath",
+      "description": "#135",
+      "component": "Audio"
+    },
+    "#136": {
+      "type": "filepath",
+      "description": "#136",
+      "component": "Audio"
+    },
+    "#137": {
+      "type": "filepath",
+      "description": "#137",
+      "component": "Audio"
+    },
+    "#138": {
+      "type": "filepath",
+      "description": "#138",
+      "component": "Audio"
+    },
+    "#139": {
+      "type": "filepath",
+      "description": "#139",
+      "component": "Audio"
+    },
+    "#140": {
+      "type": "filepath",
+      "description": "#140",
+      "component": "Audio"
+    },
+    "#141": {
+      "type": "filepath",
+      "description": "#141",
+      "component": "Audio"
+    },
+    "#142": {
+      "type": "filepath",
+      "description": "#142",
+      "component": "Audio"
+    },
+    "#143": {
+      "type": "filepath",
+      "description": "#143",
+      "component": "Audio"
+    },
+    "#144": {
+      "type": "filepath",
+      "description": "#144",
+      "component": "Audio"
+    },
+    "#145": {
+      "type": "filepath",
+      "description": "#145",
+      "component": "Audio"
+    },
+    "#146": {
+      "type": "filepath",
+      "description": "#146",
+      "component": "Audio"
+    },
+    "#147": {
+      "type": "filepath",
+      "description": "#147",
+      "component": "Audio"
+    },
+    "#148": {
+      "type": "filepath",
+      "description": "#148",
+      "component": "Audio"
+    },
+    "#149": {
+      "type": "filepath",
+      "description": "#149",
+      "component": "Audio"
+    },
+    "#150": {
+      "type": "filepath",
+      "description": "#150",
+      "component": "Audio"
+    },
+    "#151": {
+      "type": "filepath",
+      "description": "#151",
+      "component": "Audio"
+    },
+    "#152": {
+      "type": "filepath",
+      "description": "#152",
+      "component": "Audio"
+    },
+    "#153": {
+      "type": "filepath",
+      "description": "#153",
+      "component": "Audio"
+    },
+    "#154": {
+      "type": "filepath",
+      "description": "#154",
+      "component": "Audio"
+    },
+    "#155": {
+      "type": "filepath",
+      "description": "#155",
+      "component": "Audio"
+    },
+    "#156": {
+      "type": "filepath",
+      "description": "#156",
+      "component": "Audio"
+    },
+    "#157": {
+      "type": "filepath",
+      "description": "#157",
+      "component": "Audio"
+    },
+    "#158": {
+      "type": "filepath",
+      "description": "#158",
+      "component": "Audio"
+    },
+    "#159": {
+      "type": "filepath",
+      "description": "#159",
+      "component": "Audio"
+    },
+    "#160": {
+      "type": "filepath",
+      "description": "#160",
+      "component": "Audio"
+    },
+    "#161": {
+      "type": "filepath",
+      "description": "#161",
+      "component": "Audio"
+    },
+    "#162": {
+      "type": "filepath",
+      "description": "#162",
+      "component": "Audio"
+    },
+    "#163": {
+      "type": "filepath",
+      "description": "#163",
+      "component": "Audio"
+    },
+    "#164": {
+      "type": "filepath",
+      "description": "#164",
+      "component": "Audio"
+    },
+    "#165": {
+      "type": "filepath",
+      "description": "#165",
+      "component": "Audio"
+    },
+    "#166": {
+      "type": "filepath",
+      "description": "#166",
+      "component": "Audio"
+    },
+    "#167": {
+      "type": "filepath",
+      "description": "#167",
+      "component": "Audio"
+    },
+    "#168": {
+      "type": "filepath",
+      "description": "#168",
+      "component": "Audio"
+    },
+    "#169": {
+      "type": "filepath",
+      "description": "#169",
+      "component": "Audio"
+    },
+    "#170": {
+      "type": "filepath",
+      "description": "#170",
+      "component": "Audio"
+    },
+    "#171": {
+      "type": "filepath",
+      "description": "#171",
+      "component": "Audio"
+    },
+    "#172": {
+      "type": "filepath",
+      "description": "#172",
+      "component": "Audio"
+    },
+    "#173": {
+      "type": "filepath",
+      "description": "#173",
+      "component": "Audio"
+    },
+    "#174": {
+      "type": "filepath",
+      "description": "#174",
+      "component": "Audio"
+    },
+    "#175": {
+      "type": "filepath",
+      "description": "#175",
+      "component": "Audio"
+    },
+    "#176": {
+      "type": "filepath",
+      "description": "#176",
+      "component": "Audio"
+    },
+    "#177": {
+      "type": "filepath",
+      "description": "#177",
+      "component": "Audio"
+    },
+    "#178": {
+      "type": "filepath",
+      "description": "#178",
+      "component": "Audio"
+    },
+    "#179": {
+      "type": "filepath",
+      "description": "#179",
+      "component": "Audio"
+    },
+    "#180": {
+      "type": "filepath",
+      "description": "#180",
+      "component": "Audio"
+    },
+    "#181": {
+      "type": "filepath",
+      "description": "#181",
+      "component": "Audio"
+    },
+    "#182": {
+      "type": "filepath",
+      "description": "#182",
+      "component": "Audio"
+    },
+    "#183": {
+      "type": "filepath",
+      "description": "#183",
+      "component": "Audio"
+    },
+    "#184": {
+      "type": "filepath",
+      "description": "#184",
+      "component": "Audio"
+    },
+    "#185": {
+      "type": "filepath",
+      "description": "#185",
+      "component": "Audio"
+    },
+    "#186": {
+      "type": "filepath",
+      "description": "#186",
+      "component": "Audio"
+    },
+    "#187": {
+      "type": "filepath",
+      "description": "#187",
+      "component": "Audio"
+    },
+    "#188": {
+      "type": "filepath",
+      "description": "#188",
+      "component": "Audio"
+    },
+    "#189": {
+      "type": "filepath",
+      "description": "#189",
+      "component": "Audio"
+    },
+    "#190": {
+      "type": "filepath",
+      "description": "#190",
+      "component": "Audio"
+    },
+    "#191": {
+      "type": "filepath",
+      "description": "#191",
+      "component": "Audio"
+    },
+    "#192": {
+      "type": "filepath",
+      "description": "#192",
+      "component": "Audio"
+    },
+    "#193": {
+      "type": "filepath",
+      "description": "#193",
+      "component": "Audio"
+    },
+    "#194": {
+      "type": "filepath",
+      "description": "#194",
+      "component": "Audio"
+    },
+    "#195": {
+      "type": "filepath",
+      "description": "#195",
+      "component": "Audio"
+    },
+    "#196": {
+      "type": "filepath",
+      "description": "#196",
+      "component": "Audio"
+    },
+    "#197": {
+      "type": "filepath",
+      "description": "#197",
+      "component": "Audio"
+    },
+    "#198": {
+      "type": "filepath",
+      "description": "#198",
+      "component": "Audio"
+    },
+    "#199": {
+      "type": "filepath",
+      "description": "#199",
+      "component": "Audio"
+    },
+    "#200": {
+      "type": "filepath",
+      "description": "#200",
+      "component": "Audio"
+    },
+    "#201": {
+      "type": "filepath",
+      "description": "#201",
+      "component": "Audio"
+    },
+    "#202": {
+      "type": "filepath",
+      "description": "#202",
+      "component": "Audio"
+    },
+    "#203": {
+      "type": "filepath",
+      "description": "#203",
+      "component": "Audio"
+    },
+    "#204": {
+      "type": "filepath",
+      "description": "#204",
+      "component": "Audio"
+    },
+    "#205": {
+      "type": "filepath",
+      "description": "#205",
+      "component": "Audio"
+    },
+    "#206": {
+      "type": "filepath",
+      "description": "#206",
+      "component": "Audio"
+    },
+    "#207": {
+      "type": "filepath",
+      "description": "#207",
+      "component": "Audio"
+    },
+    "#208": {
+      "type": "filepath",
+      "description": "#208",
+      "component": "Audio"
+    },
+    "#209": {
+      "type": "filepath",
+      "description": "#209",
+      "component": "Audio"
+    },
+    "#210": {
+      "type": "filepath",
+      "description": "#210",
+      "component": "Audio"
+    },
+    "#211": {
+      "type": "filepath",
+      "description": "#211",
+      "component": "Audio"
+    },
+    "#212": {
+      "type": "filepath",
+      "description": "#212",
+      "component": "Audio"
+    },
+    "#213": {
+      "type": "filepath",
+      "description": "#213",
+      "component": "Audio"
+    },
+    "#214": {
+      "type": "filepath",
+      "description": "#214",
+      "component": "Audio"
+    },
+    "#215": {
+      "type": "filepath",
+      "description": "#215",
+      "component": "Audio"
+    },
+    "#216": {
+      "type": "filepath",
+      "description": "#216",
+      "component": "Audio"
+    },
+    "#217": {
+      "type": "filepath",
+      "description": "#217",
+      "component": "Audio"
+    },
+    "#218": {
+      "type": "filepath",
+      "description": "#218",
+      "component": "Audio"
+    },
+    "#219": {
+      "type": "filepath",
+      "description": "#219",
+      "component": "Audio"
+    },
+    "#220": {
+      "type": "filepath",
+      "description": "#220",
+      "component": "Audio"
+    },
+    "#221": {
+      "type": "filepath",
+      "description": "#221",
+      "component": "Audio"
+    },
+    "#222": {
+      "type": "filepath",
+      "description": "#222",
+      "component": "Audio"
+    },
+    "#223": {
+      "type": "filepath",
+      "description": "#223",
+      "component": "Audio"
+    },
+    "#224": {
+      "type": "filepath",
+      "description": "#224",
+      "component": "Audio"
+    },
+    "#225": {
+      "type": "filepath",
+      "description": "#225",
+      "component": "Audio"
+    },
+    "#226": {
+      "type": "filepath",
+      "description": "#226",
+      "component": "Audio"
+    },
+    "#227": {
+      "type": "filepath",
+      "description": "#227",
+      "component": "Audio"
+    },
+    "#228": {
+      "type": "filepath",
+      "description": "#228",
+      "component": "Audio"
+    },
+    "#229": {
+      "type": "filepath",
+      "description": "#229",
+      "component": "Audio"
+    },
+    "#230": {
+      "type": "filepath",
+      "description": "#230",
+      "component": "Audio"
+    },
+    "#231": {
+      "type": "filepath",
+      "description": "#231",
+      "component": "Audio"
+    },
+    "#232": {
+      "type": "filepath",
+      "description": "#232",
+      "component": "Audio"
+    },
+    "#233": {
+      "type": "filepath",
+      "description": "#233",
+      "component": "Audio"
+    },
+    "#234": {
+      "type": "filepath",
+      "description": "#234",
+      "component": "Audio"
+    },
+    "#235": {
+      "type": "filepath",
+      "description": "#235",
+      "component": "Audio"
+    },
+    "#236": {
+      "type": "filepath",
+      "description": "#236",
+      "component": "Audio"
+    },
+    "#237": {
+      "type": "filepath",
+      "description": "#237",
+      "component": "Audio"
+    },
+    "#238": {
+      "type": "filepath",
+      "description": "#238",
+      "component": "Audio"
+    },
+    "#239": {
+      "type": "filepath",
+      "description": "#239",
+      "component": "Audio"
+    },
+    "#240": {
+      "type": "filepath",
+      "description": "#240",
+      "component": "Audio"
+    },
+    "#241": {
+      "type": "filepath",
+      "description": "#241",
+      "component": "Audio"
+    },
+    "#242": {
+      "type": "filepath",
+      "description": "#242",
+      "component": "Audio"
+    },
+    "#243": {
+      "type": "filepath",
+      "description": "#243",
+      "component": "Audio"
+    },
+    "#244": {
+      "type": "filepath",
+      "description": "#244",
+      "component": "Audio"
+    },
+    "#245": {
+      "type": "filepath",
+      "description": "#245",
+      "component": "Audio"
+    },
+    "#246": {
+      "type": "filepath",
+      "description": "#246",
+      "component": "Audio"
+    },
+    "#247": {
+      "type": "filepath",
+      "description": "#247",
+      "component": "Audio"
+    },
+    "#248": {
+      "type": "filepath",
+      "description": "#248",
+      "component": "Audio"
+    },
+    "#249": {
+      "type": "filepath",
+      "description": "#249",
+      "component": "Audio"
+    },
+    "#250": {
+      "type": "filepath",
+      "description": "#250",
+      "component": "Audio"
+    },
+    "#251": {
+      "type": "filepath",
+      "description": "#251",
+      "component": "Audio"
+    },
+    "#252": {
+      "type": "filepath",
+      "description": "#252",
+      "component": "Audio"
+    },
+    "#253": {
+      "type": "filepath",
+      "description": "#253",
+      "component": "Audio"
+    },
+    "#254": {
+      "type": "filepath",
+      "description": "#254",
+      "component": "Audio"
+    },
+    "#255": {
+      "type": "filepath",
+      "description": "#255",
+      "component": "Audio"
+    },
+    "#256": {
+      "type": "filepath",
+      "description": "#256",
+      "component": "Audio"
+    }
+  },
+  "license": "mit",
+  "hardware": "6.1.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us",
+    "audio",
+    "speech-synthesis",
+    "tts"
+  ],
+  "likes": 43,
+  "last_modified": "2025-12-17 14:11:17+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/gradio_inference",
+      "parameters": [
+        {
+          "name": "reference_speech",
+          "label": "Reference Speech (optional)",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "name": "reference_text",
+          "label": "Reference Text (optional, leave blank to auto-transcribe)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "target_text",
+          "label": "Target Text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "target_duration",
+          "label": "Target Duration (seconds, optional)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "top_k",
+          "label": "top_k",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "top_p",
+          "label": "top_p",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "min_p",
+          "label": "min_p (0 = disabled)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "temperature",
+          "label": "temperature",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "seed",
+          "label": "Random Seed (optional)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "num_samples",
+          "label": "Number of Samples (batch generation)",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "#1",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#2",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#3",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#4",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#5",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#6",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#7",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#8",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#9",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#10",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#11",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#12",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#13",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#14",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#15",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#16",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#17",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#18",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#19",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#20",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#21",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#22",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#23",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#24",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#25",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#26",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#27",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#28",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#29",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#30",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#31",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#32",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#33",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#34",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#35",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#36",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#37",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#38",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#39",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#40",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#41",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#42",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#43",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#44",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#45",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#46",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#47",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#48",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#49",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#50",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#51",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#52",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#53",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#54",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#55",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#56",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#57",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#58",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#59",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#60",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#61",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#62",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#63",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#64",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#65",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#66",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#67",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#68",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#69",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#70",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#71",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#72",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#73",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#74",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#75",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#76",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#77",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#78",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#79",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#80",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#81",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#82",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#83",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#84",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#85",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#86",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#87",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#88",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#89",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#90",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#91",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#92",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#93",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#94",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#95",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#96",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#97",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#98",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#99",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#100",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#101",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#102",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#103",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#104",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#105",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#106",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#107",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#108",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#109",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#110",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#111",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#112",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#113",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#114",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#115",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#116",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#117",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#118",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#119",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#120",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#121",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#122",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#123",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#124",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#125",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#126",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#127",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#128",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#129",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#130",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#131",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#132",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#133",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#134",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#135",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#136",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#137",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#138",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#139",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#140",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#141",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#142",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#143",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#144",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#145",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#146",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#147",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#148",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#149",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#150",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#151",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#152",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#153",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#154",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#155",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#156",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#157",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#158",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#159",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#160",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#161",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#162",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#163",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#164",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#165",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#166",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#167",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#168",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#169",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#170",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#171",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#172",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#173",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#174",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#175",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#176",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#177",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#178",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#179",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#180",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#181",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#182",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#183",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#184",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#185",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#186",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#187",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#188",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#189",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#190",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#191",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#192",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#193",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#194",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#195",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#196",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#197",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#198",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#199",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#200",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#201",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#202",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#203",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#204",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#205",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#206",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#207",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#208",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#209",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#210",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#211",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#212",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#213",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#214",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#215",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#216",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#217",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#218",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#219",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#220",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#221",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#222",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#223",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#224",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#225",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#226",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#227",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#228",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#229",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#230",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#231",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#232",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#233",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#234",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#235",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#236",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#237",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#238",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#239",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#240",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#241",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#242",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#243",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#244",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#245",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#246",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#247",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#248",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#249",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#250",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#251",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#252",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#253",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#254",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#255",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "#256",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/gradio_inference",
+  "_api_verified": true,
+  "estimated_latency_s": 8.48,
+  "speed_tier": "medium",
+  "_latency_source": "measured",
+  "_tags_enriched": true,
+  "measured_latency_s": 8.48,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:49:13.991080+00:00"
+}

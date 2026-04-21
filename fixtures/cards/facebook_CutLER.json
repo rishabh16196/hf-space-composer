@@ -1,0 +1,71 @@
+{
+  "space_id": "facebook/CutLER",
+  "title": "CutLER",
+  "emoji": "\ud83c\udf16",
+  "description": "CutLER",
+  "input_schema": {
+    "Input image": {
+      "type": "str",
+      "description": "Input image",
+      "required": true,
+      "component": "Image"
+    },
+    "Score threshold": {
+      "type": "int | float",
+      "description": "Score threshold",
+      "required": true,
+      "component": "Slider"
+    }
+  },
+  "output_schema": {
+    "Result": {
+      "type": "str",
+      "description": "Result",
+      "component": "Image"
+    }
+  },
+  "license": "mit",
+  "hardware": "",
+  "sdk": "docker",
+  "tags": [
+    "docker",
+    "region:us"
+  ],
+  "likes": 35,
+  "last_modified": "2023-07-08 01:56:46+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/run",
+      "parameters": [
+        {
+          "name": "Input image",
+          "label": "Input image",
+          "type": "str",
+          "component": "Image"
+        },
+        {
+          "name": "Score threshold",
+          "label": "Score threshold",
+          "type": "int | float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Result",
+          "type": "str",
+          "component": "Image"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/run",
+  "_api_verified": true
+}

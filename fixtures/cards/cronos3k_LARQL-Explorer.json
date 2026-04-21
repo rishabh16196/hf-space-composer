@@ -1,0 +1,399 @@
+{
+  "space_id": "cronos3k/LARQL-Explorer",
+  "title": "LARQL Explorer",
+  "emoji": "\ud83e\udde0",
+  "description": "Query neural network weights like a knowledge graph",
+  "input_schema": {},
+  "output_schema": {
+    "Active vindex": {
+      "type": "Literal['/app/models/qwen2.5-0.5b-instruct.vindex']",
+      "description": "Active vindex",
+      "component": "Dropdown"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "",
+  "sdk": "docker",
+  "tags": [
+    "docker",
+    "region:us"
+  ],
+  "likes": 2,
+  "last_modified": "2026-04-14 11:38:00+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/refresh_vindex_list",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Active vindex",
+          "type": "Literal['/app/models/qwen2.5-0.5b-instruct.vindex']",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/do_walk",
+      "parameters": [
+        {
+          "name": "vindex_path",
+          "label": "Active vindex",
+          "type": "Literal['/app/models/qwen2.5-0.5b-instruct.vindex']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "prompt",
+          "label": "Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "layer_from",
+          "label": "Layer from",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "layer_to",
+          "label": "Layer to",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "top_k",
+          "label": "Top-K features per layer",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_21",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "value_19",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/do_walk_1",
+      "parameters": [
+        {
+          "name": "vindex_path",
+          "label": "Active vindex",
+          "type": "Literal['/app/models/qwen2.5-0.5b-instruct.vindex']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "prompt",
+          "label": "Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "layer_from",
+          "label": "Layer from",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "layer_to",
+          "label": "Layer to",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "top_k",
+          "label": "Top-K features per layer",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_21",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "value_19",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/update_layer_max",
+      "parameters": [
+        {
+          "name": "vindex_path",
+          "label": "Active vindex",
+          "type": "Literal['/app/models/qwen2.5-0.5b-instruct.vindex']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Layer to",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Layer from",
+          "type": "float",
+          "component": "Slider"
+        }
+      ]
+    },
+    {
+      "name": "/do_probe",
+      "parameters": [
+        {
+          "name": "vindex_path",
+          "label": "Active vindex",
+          "type": "Literal['/app/models/qwen2.5-0.5b-instruct.vindex']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "prompt1",
+          "label": "Prompt A",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "prompt2",
+          "label": "Prompt B",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "prompt3",
+          "label": "Prompt C",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "layer",
+          "label": "Layer to inspect",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "top_k",
+          "label": "Top-K features",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Result A",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "Result B",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "Result C",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/do_lql",
+      "parameters": [
+        {
+          "name": "vindex_path",
+          "label": "Active vindex",
+          "type": "Literal['/app/models/qwen2.5-0.5b-instruct.vindex']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "statement",
+          "label": "LQL statement",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output",
+          "type": "str",
+          "component": "Code"
+        }
+      ]
+    },
+    {
+      "name": "/do_lql_1",
+      "parameters": [
+        {
+          "name": "vindex_path",
+          "label": "Active vindex",
+          "type": "Literal['/app/models/qwen2.5-0.5b-instruct.vindex']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "statement",
+          "label": "LQL statement",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output",
+          "type": "str",
+          "component": "Code"
+        }
+      ]
+    },
+    {
+      "name": "/lambda",
+      "parameters": [
+        {
+          "name": "vp",
+          "label": "Active vindex",
+          "type": "Literal['/app/models/qwen2.5-0.5b-instruct.vindex']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "LQL statement",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_1",
+      "parameters": [
+        {
+          "name": "vp",
+          "label": "Active vindex",
+          "type": "Literal['/app/models/qwen2.5-0.5b-instruct.vindex']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "LQL statement",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_2",
+      "parameters": [
+        {
+          "name": "vp",
+          "label": "Active vindex",
+          "type": "Literal['/app/models/qwen2.5-0.5b-instruct.vindex']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "LQL statement",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_3",
+      "parameters": [
+        {
+          "name": "vp",
+          "label": "Active vindex",
+          "type": "Literal['/app/models/qwen2.5-0.5b-instruct.vindex']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "LQL statement",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/do_vindex_info",
+      "parameters": [
+        {
+          "name": "vindex_path",
+          "label": "Active vindex",
+          "type": "Literal['/app/models/qwen2.5-0.5b-instruct.vindex']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_56",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_57",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/do_extract",
+      "parameters": [
+        {
+          "name": "model_id",
+          "label": "HuggingFace model ID",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "output_name",
+          "label": "Output vindex name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "level",
+          "label": "Extraction level",
+          "type": "Literal['Browse (smallest, ~0.5 GB)', 'Inference (~1 GB)', 'All (~2 GB)']",
+          "component": "Radio"
+        },
+        {
+          "name": "hf_token",
+          "label": "HuggingFace token (required for gated models)",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_71",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/refresh_vindex_list",
+  "_api_verified": true
+}

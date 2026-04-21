@@ -1,0 +1,134 @@
+{
+  "space_id": "Roboflow/RF-DETR",
+  "title": "RF-DETR",
+  "emoji": "\ud83d\udd25",
+  "description": "SOTA real-time object detection model ",
+  "input_schema": {
+    "input_image": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "Upload image",
+      "required": true,
+      "component": "Image"
+    },
+    "confidence": {
+      "type": "float",
+      "description": "Confidence",
+      "required": true,
+      "component": "Slider"
+    },
+    "resolution": {
+      "type": "float",
+      "description": "Inference resolution",
+      "required": true,
+      "component": "Slider"
+    },
+    "checkpoint": {
+      "type": "Literal['nano (object detection)', 'small (object detection)', 'medium (object detection)', 'segment",
+      "description": "Checkpoint",
+      "required": true,
+      "component": "Dropdown"
+    }
+  },
+  "output_schema": {
+    "Output image": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "Output image",
+      "component": "Image"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "5.22.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 132,
+  "last_modified": "2025-10-03 09:42:43+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/image_processing_inference",
+      "parameters": [
+        {
+          "name": "input_image",
+          "label": "Upload image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "confidence",
+          "label": "Confidence",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "resolution",
+          "label": "Inference resolution",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "checkpoint",
+          "label": "Checkpoint",
+          "type": "Literal['nano (object detection)', 'small (object detection)', 'medium (object detection)', 'segmentation preview']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/video_processing_inference",
+      "parameters": [
+        {
+          "name": "input_video",
+          "label": "Upload video",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        },
+        {
+          "name": "confidence",
+          "label": "Confidence",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "resolution",
+          "label": "Inference resolution",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "checkpoint",
+          "label": "Checkpoint",
+          "type": "Literal['nano (object detection)', 'small (object detection)', 'medium (object detection)', 'segmentation preview']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output video",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/image_processing_inference",
+  "_api_verified": true,
+  "estimated_latency_s": 3.0,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 3.0,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:49:52.863054+00:00"
+}

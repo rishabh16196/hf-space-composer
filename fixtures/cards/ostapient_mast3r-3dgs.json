@@ -1,0 +1,304 @@
+{
+  "space_id": "ostapient/mast3r-3dgs",
+  "title": "MASt3r+3DGS",
+  "emoji": "\ud83d\ude3b",
+  "description": "MASt3r+3DGS",
+  "input_schema": {
+    "snapshot": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "parameter_9",
+      "required": true,
+      "component": "Image"
+    },
+    "min_conf_thr": {
+      "type": "float",
+      "description": "min_conf_thr",
+      "required": true,
+      "component": "Slider"
+    },
+    "matching_conf_thr": {
+      "type": "float",
+      "description": "Matching Confidence Thr",
+      "required": true,
+      "component": "Slider"
+    },
+    "as_pointcloud": {
+      "type": "bool",
+      "description": "As pointcloud",
+      "required": true,
+      "component": "Checkbox"
+    },
+    "cam_size": {
+      "type": "float",
+      "description": "cam_size",
+      "required": true,
+      "component": "Slider"
+    },
+    "shared_intrinsics": {
+      "type": "bool",
+      "description": "Shared intrinsics",
+      "required": true,
+      "component": "Checkbox"
+    },
+    "clean_depth": {
+      "type": "bool",
+      "description": "Clean depth",
+      "required": true,
+      "component": "Checkbox"
+    },
+    "filelist": {
+      "type": "list[filepath]",
+      "description": "parameter_8",
+      "required": true,
+      "component": "File"
+    },
+    "example_name": {
+      "type": "str",
+      "description": "parameter_11",
+      "required": true,
+      "component": "Textbox"
+    }
+  },
+  "output_schema": {
+    "value_23": {
+      "type": "filepath",
+      "description": "value_23",
+      "component": "Model3d"
+    }
+  },
+  "license": "unknown",
+  "hardware": "5.35.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 18,
+  "last_modified": "2025-07-04 14:47:41+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/get_reconstructed_scene",
+      "parameters": [
+        {
+          "name": "snapshot",
+          "label": "parameter_9",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "min_conf_thr",
+          "label": "min_conf_thr",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "matching_conf_thr",
+          "label": "Matching Confidence Thr",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "as_pointcloud",
+          "label": "As pointcloud",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "cam_size",
+          "label": "cam_size",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "shared_intrinsics",
+          "label": "Shared intrinsics",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "clean_depth",
+          "label": "Clean depth",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "filelist",
+          "label": "parameter_8",
+          "type": "list[filepath]",
+          "component": "File"
+        },
+        {
+          "name": "example_name",
+          "label": "parameter_11",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_23",
+          "type": "filepath",
+          "component": "Model3d"
+        }
+      ]
+    },
+    {
+      "name": "/update_dataset_dropdown",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Select Dataset",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/handle_training_complete",
+      "parameters": [
+        {
+          "name": "selected_folder",
+          "label": "Select Dataset",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_1",
+          "label": "Iterations",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_2",
+          "label": "Position LR Init",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "param_3",
+          "label": "Position LR Final",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "param_4",
+          "label": "Position LR Delay Mult",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "param_5",
+          "label": "Position LR Max Steps",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "param_6",
+          "label": "Feature LR",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "param_7",
+          "label": "Opacity LR",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "param_8",
+          "label": "Scaling LR",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "param_9",
+          "label": "Rotation LR",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "param_10",
+          "label": "Percent Dense",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "param_11",
+          "label": "Lambda DSSIM",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "param_12",
+          "label": "Densification Interval",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "param_13",
+          "label": "Opacity Reset Interval",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "param_14",
+          "label": "Densify From Iter",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "param_15",
+          "label": "Densify Until Iter",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "param_16",
+          "label": "Densify Grad Threshold",
+          "type": "float",
+          "component": "Number"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Training Progress",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        },
+        {
+          "label": "3D Model Output",
+          "type": "filepath",
+          "component": "Model3d"
+        }
+      ]
+    },
+    {
+      "name": "/load_model",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "3D Model Output",
+          "type": "filepath",
+          "component": "Model3d"
+        }
+      ]
+    },
+    {
+      "name": "/start_session",
+      "parameters": [],
+      "returns": []
+    }
+  ],
+  "endpoint": "/get_reconstructed_scene",
+  "_api_verified": true,
+  "estimated_latency_s": 4.87,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 4.87,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:51:32.458518+00:00"
+}

@@ -1,0 +1,120 @@
+{
+  "space_id": "akhooli/poetry",
+  "title": "Arabic Poetry Generator",
+  "emoji": "\ud83d\udc20",
+  "description": "Arabic Poetry Generator",
+  "input_schema": {
+    "prompt": {
+      "type": "str",
+      "description": "Enter short prompt or select from examples:",
+      "required": true,
+      "component": "Textbox"
+    },
+    "temp": {
+      "type": "float",
+      "description": "temperature (higher is more creative)",
+      "required": true,
+      "component": "Slider"
+    },
+    "topk": {
+      "type": "float",
+      "description": "top k sampling",
+      "required": true,
+      "component": "Slider"
+    },
+    "topp": {
+      "type": "float",
+      "description": "top p probabilities",
+      "required": true,
+      "component": "Slider"
+    },
+    "penalty": {
+      "type": "float",
+      "description": "repetition penalty",
+      "required": true,
+      "component": "Slider"
+    },
+    "seed": {
+      "type": "float",
+      "description": "random seed",
+      "required": true,
+      "component": "Number"
+    }
+  },
+  "output_schema": {
+    "Generated Poetry:": {
+      "type": "str",
+      "description": "Generated Poetry:",
+      "component": "Textbox"
+    }
+  },
+  "license": "cc-by-nc-4.0",
+  "hardware": "4.40.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 29,
+  "last_modified": "2024-08-07 13:47:31+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_tags_enriched": true,
+  "estimated_latency_s": 3.0,
+  "speed_tier": "fast",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/predict",
+      "parameters": [
+        {
+          "name": "prompt",
+          "label": "Enter short prompt or select from examples:",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "temp",
+          "label": "temperature (higher is more creative)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "topk",
+          "label": "top k sampling",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "topp",
+          "label": "top p probabilities",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "penalty",
+          "label": "repetition penalty",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "seed",
+          "label": "random seed",
+          "type": "float",
+          "component": "Number"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Generated Poetry:",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/predict",
+  "_api_verified": true
+}

@@ -1,0 +1,62 @@
+{
+  "space_id": "Detomo/Japanese_OCR",
+  "title": "Japanese OCR",
+  "emoji": "\u26e9",
+  "description": "Japanese OCR",
+  "input_schema": {
+    "Input": {
+      "type": "str",
+      "description": "Input",
+      "required": true,
+      "component": "Image"
+    }
+  },
+  "output_schema": {
+    "output": {
+      "type": "str",
+      "description": "output",
+      "component": "Textbox"
+    }
+  },
+  "license": "unknown",
+  "hardware": "",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 64,
+  "last_modified": "2023-02-10 05:58:06+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/predict",
+      "parameters": [
+        {
+          "name": "Input",
+          "label": "Input",
+          "type": "str",
+          "component": "Image"
+        }
+      ],
+      "returns": [
+        {
+          "label": "output",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/predict",
+  "_api_verified": true,
+  "estimated_latency_s": 2.61,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 2.61,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:49:15.324344+00:00"
+}

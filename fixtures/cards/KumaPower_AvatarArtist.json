@@ -1,0 +1,156 @@
+{
+  "space_id": "KumaPower/AvatarArtist",
+  "title": "AvatarArtist",
+  "emoji": "\ud83c\udfa8",
+  "description": "Open-Domain 4D Avatarization",
+  "input_schema": {
+    "user_image": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "Upload Source Image",
+      "required": true,
+      "component": "Image"
+    }
+  },
+  "output_schema": {},
+  "license": "apache-2.0",
+  "hardware": "5.23.1",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 16,
+  "last_modified": "2025-11-26 14:58:34+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/mark_as_custom",
+      "parameters": [
+        {
+          "name": "user_image",
+          "label": "Upload Source Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/mark_as_example",
+      "parameters": [
+        {
+          "name": "example_image",
+          "label": "Upload Source Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/prepare_working_dir",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/process_image_and_enable_style",
+      "parameters": [
+        {
+          "name": "input_image",
+          "label": "Upload Source Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Processed Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/apply_style_and_mark",
+      "parameters": [
+        {
+          "name": "processed_image",
+          "label": "Processed Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "style_choice",
+          "label": "Choose Style",
+          "type": "Literal['Ghibli', 'Pixar', 'Lego', 'Greek Statue', 'Elf', 'Zombie', 'Tekken', 'Devil', 'Steampunk', 'Mario', 'Orc', 'Masque', 'Skeleton', 'Peking Opera', 'Yoda', 'Hobbit', 'Stained Glass', 'Graffiti',",
+          "component": "Dropdown"
+        },
+        {
+          "name": "cfg",
+          "label": "CFG Scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "strength",
+          "label": "SDEdit Strength",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Style Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/avatar_generation",
+      "parameters": [
+        {
+          "name": "items",
+          "label": "Processed Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "video_path_input",
+          "label": "Select Target Motion",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        },
+        {
+          "name": "styled_img",
+          "label": "Style Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Generated Animation Input Video View",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        },
+        {
+          "label": "Generated Animation Rotate View Depth",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/mark_as_custom",
+  "_api_verified": true,
+  "estimated_latency_s": 3.8,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 3.8,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:49:32.966620+00:00"
+}

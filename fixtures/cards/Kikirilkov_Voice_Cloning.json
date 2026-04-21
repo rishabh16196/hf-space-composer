@@ -1,0 +1,86 @@
+{
+  "space_id": "Kikirilkov/Voice_Cloning",
+  "title": "Voice Cloning",
+  "emoji": "\ud83c\udfc3",
+  "description": "Voice Cloning",
+  "input_schema": {
+    "Text": {
+      "type": "str",
+      "description": "Text",
+      "required": true,
+      "component": "Textbox"
+    },
+    "Voice spectrogram": {
+      "type": "filepath",
+      "description": "Voice spectrogram",
+      "required": true,
+      "component": "Audio"
+    },
+    "language": {
+      "type": "Literal[en, zh-cn, ja, de, fr, it, pt, pl, tr, ko, nl, cs, ar, es, hu, ru]",
+      "description": "language",
+      "required": true,
+      "component": "Radio"
+    }
+  },
+  "output_schema": {
+    "Synthesised spectrogram": {
+      "type": "filepath",
+      "description": "Synthesised spectrogram",
+      "component": "Audio"
+    }
+  },
+  "license": "mit",
+  "hardware": "4.5.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 78,
+  "last_modified": "2024-02-10 00:47:11+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/predict",
+      "parameters": [
+        {
+          "name": "Text",
+          "label": "Text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "Voice spectrogram",
+          "label": "Voice spectrogram",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "name": "language",
+          "label": "language",
+          "type": "Literal[en, zh-cn, ja, de, fr, it, pt, pl, tr, ko, nl, cs, ar, es, hu, ru]",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Synthesised spectrogram",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/predict",
+  "_api_verified": true,
+  "estimated_latency_s": 2.5,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 2.5,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:49:31.387071+00:00"
+}

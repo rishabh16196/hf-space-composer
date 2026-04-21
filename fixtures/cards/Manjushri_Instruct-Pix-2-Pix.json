@@ -1,0 +1,133 @@
+{
+  "space_id": "Manjushri/Instruct-Pix-2-Pix",
+  "title": "Instruct Pix 2 Pix",
+  "emoji": "\ud83d\udc41",
+  "description": "Instruct Pix 2 Pix",
+  "input_schema": {
+    "source_img": {
+      "type": "Dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "Raw Image. Must Be .png",
+      "required": true,
+      "component": "Image"
+    },
+    "instructions": {
+      "type": "str",
+      "description": "Input Instructions. 77 Token (Keyword or Symbol) Maximum",
+      "required": true,
+      "component": "Textbox"
+    },
+    "guide": {
+      "type": "float",
+      "description": "Instructions Strength:",
+      "required": true,
+      "component": "Slider"
+    },
+    "steps": {
+      "type": "float",
+      "description": "Number of Iterations: More take longer, but aren't always better",
+      "required": true,
+      "component": "Slider"
+    },
+    "seed": {
+      "type": "float",
+      "description": "Seed",
+      "required": true,
+      "component": "Slider"
+    },
+    "Strength": {
+      "type": "float",
+      "description": "Original Image Strength:",
+      "required": true,
+      "component": "Slider"
+    }
+  },
+  "output_schema": {
+    "output": {
+      "type": "Dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "output",
+      "component": "Image"
+    }
+  },
+  "license": "mit",
+  "hardware": "5.6.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 25,
+  "last_modified": "2025-03-01 01:05:24+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/predict",
+      "parameters": [
+        {
+          "name": "source_img",
+          "label": "Raw Image. Must Be .png",
+          "type": "Dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "instructions",
+          "label": "Input Instructions. 77 Token (Keyword or Symbol) Maximum",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "guide",
+          "label": "Instructions Strength:",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "steps",
+          "label": "Number of Iterations: More take longer, but aren't always better",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "seed",
+          "label": "Seed",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "Strength",
+          "label": "Original Image Strength:",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "output",
+          "type": "Dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/get_random_value",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Seed",
+          "type": "float",
+          "component": "Slider"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/predict",
+  "_api_verified": true,
+  "estimated_latency_s": 3.28,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 3.28,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:49:35.277298+00:00"
+}

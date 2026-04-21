@@ -1,0 +1,173 @@
+{
+  "space_id": "society-ethics/DiffusionBiasExplorer",
+  "title": "StableDiffusionBiasExplorer",
+  "emoji": "\ud83d\udcca",
+  "description": "StableDiffusionBiasExplorer",
+  "input_schema": {
+    "model": {
+      "type": "Literal['Stable Diffusion 1.4', 'Dall-E 2', 'Stable Diffusion 2']",
+      "description": "Choose a model to compare results",
+      "required": true,
+      "component": "Dropdown"
+    },
+    "adj": {
+      "type": "Literal['', 'ambitious', 'assertive', 'committed', 'compassionate', 'confident', 'considerate', 'dec",
+      "description": "Choose a first adjective (or leave this blank!)",
+      "required": true,
+      "component": "Dropdown"
+    },
+    "group": {
+      "type": "Literal['accountant', 'aerospace engineer', 'aide', 'air conditioning installer', 'architect', 'arti",
+      "description": "Choose a first group",
+      "required": true,
+      "component": "Dropdown"
+    }
+  },
+  "output_schema": {
+    "Images": {
+      "type": "list[dict(image: dict(path: str | None (Path to a local file), url: str | None (Publicly available u",
+      "description": "Images",
+      "component": "Gallery"
+    }
+  },
+  "license": "cc-by-sa-4.0",
+  "hardware": "5.47.2",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 60,
+  "last_modified": "2025-10-01 20:43:31+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/open_ims",
+      "parameters": [
+        {
+          "name": "model",
+          "label": "Choose a model to compare results",
+          "type": "Literal['Stable Diffusion 1.4', 'Dall-E 2', 'Stable Diffusion 2']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "adj",
+          "label": "Choose a first adjective (or leave this blank!)",
+          "type": "Literal['', 'ambitious', 'assertive', 'committed', 'compassionate', 'confident', 'considerate', 'decisive', 'determined', 'emotional', 'gentle', 'honest', 'intellectual', 'modest', 'outspoken', 'pleas",
+          "component": "Dropdown"
+        },
+        {
+          "name": "group",
+          "label": "Choose a first group",
+          "type": "Literal['accountant', 'aerospace engineer', 'aide', 'air conditioning installer', 'architect', 'artist', 'author', 'baker', 'bartender', 'bus driver', 'butcher', 'career counselor', 'carpenter', 'carp",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Images",
+          "type": "list[dict(image: dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Origi",
+          "component": "Gallery"
+        }
+      ]
+    },
+    {
+      "name": "/open_ims_1",
+      "parameters": [
+        {
+          "name": "model",
+          "label": "Choose a model to compare results",
+          "type": "Literal['Stable Diffusion 1.4', 'Dall-E 2', 'Stable Diffusion 2']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "adj",
+          "label": "Choose a second adjective (or leave this blank!)",
+          "type": "Literal['', 'ambitious', 'assertive', 'committed', 'compassionate', 'confident', 'considerate', 'decisive', 'determined', 'emotional', 'gentle', 'honest', 'intellectual', 'modest', 'outspoken', 'pleas",
+          "component": "Dropdown"
+        },
+        {
+          "name": "group",
+          "label": "Choose a second group",
+          "type": "Literal['accountant', 'aerospace engineer', 'aide', 'air conditioning installer', 'architect', 'artist', 'author', 'baker', 'bartender', 'bus driver', 'butcher', 'career counselor', 'carpenter', 'carp",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Images",
+          "type": "list[dict(image: dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Origi",
+          "component": "Gallery"
+        }
+      ]
+    },
+    {
+      "name": "/open_ims_2",
+      "parameters": [
+        {
+          "name": "model",
+          "label": "Choose a model to compare results",
+          "type": "Literal['Stable Diffusion 1.4', 'Dall-E 2', 'Stable Diffusion 2']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "adj",
+          "label": "Choose a first adjective (or leave this blank!)",
+          "type": "Literal['', 'ambitious', 'assertive', 'committed', 'compassionate', 'confident', 'considerate', 'decisive', 'determined', 'emotional', 'gentle', 'honest', 'intellectual', 'modest', 'outspoken', 'pleas",
+          "component": "Dropdown"
+        },
+        {
+          "name": "group",
+          "label": "Choose a first group",
+          "type": "Literal['accountant', 'aerospace engineer', 'aide', 'air conditioning installer', 'architect', 'artist', 'author', 'baker', 'bartender', 'bus driver', 'butcher', 'career counselor', 'carpenter', 'carp",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Images",
+          "type": "list[dict(image: dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Origi",
+          "component": "Gallery"
+        }
+      ]
+    },
+    {
+      "name": "/open_ims_3",
+      "parameters": [
+        {
+          "name": "model",
+          "label": "Choose a model to compare results",
+          "type": "Literal['Stable Diffusion 1.4', 'Dall-E 2', 'Stable Diffusion 2']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "adj",
+          "label": "Choose a second adjective (or leave this blank!)",
+          "type": "Literal['', 'ambitious', 'assertive', 'committed', 'compassionate', 'confident', 'considerate', 'decisive', 'determined', 'emotional', 'gentle', 'honest', 'intellectual', 'modest', 'outspoken', 'pleas",
+          "component": "Dropdown"
+        },
+        {
+          "name": "group",
+          "label": "Choose a second group",
+          "type": "Literal['accountant', 'aerospace engineer', 'aide', 'air conditioning installer', 'architect', 'artist', 'author', 'baker', 'bartender', 'bus driver', 'butcher', 'career counselor', 'carpenter', 'carp",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Images",
+          "type": "list[dict(image: dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Origi",
+          "component": "Gallery"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/open_ims",
+  "_api_verified": true
+}

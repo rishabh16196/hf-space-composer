@@ -1,0 +1,115 @@
+{
+  "space_id": "innoai/Edge-TTS-Text-to-Speech",
+  "title": "Edge TTS Text To Speech",
+  "emoji": "\ud83d\udc41",
+  "description": "Edge TTS Text To Speech",
+  "input_schema": {
+    "text": {
+      "type": "str",
+      "description": "Input Text",
+      "required": true,
+      "component": "Textbox"
+    },
+    "voice": {
+      "type": "Literal['', 'af-ZA-AdriNeural - af-ZA (Female)', 'af-ZA-WillemNeural - af-ZA (Male)', 'sq-AL-AnilaNe",
+      "description": "Select Voice",
+      "required": true,
+      "component": "Dropdown"
+    },
+    "rate": {
+      "type": "float",
+      "description": "Speech Rate Adjustment (%)",
+      "required": true,
+      "component": "Slider"
+    },
+    "pitch": {
+      "type": "float",
+      "description": "Pitch Adjustment (Hz)",
+      "required": true,
+      "component": "Slider"
+    }
+  },
+  "output_schema": {
+    "Generated Audio": {
+      "type": "filepath",
+      "description": "Generated Audio",
+      "component": "Audio"
+    },
+    "Warning": {
+      "type": "str",
+      "description": "Warning",
+      "component": "Markdown"
+    }
+  },
+  "license": "gpl-2.0",
+  "hardware": "5.25.2",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us",
+    "audio",
+    "speech-synthesis",
+    "tts"
+  ],
+  "likes": 1138,
+  "last_modified": "2026-03-28 01:45:11+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "endpoint": "/tts_interface",
+  "_verified_live": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/tts_interface",
+      "parameters": [
+        {
+          "name": "text",
+          "label": "Input Text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "voice",
+          "label": "Select Voice",
+          "type": "Literal['', 'af-ZA-AdriNeural - af-ZA (Female)', 'af-ZA-WillemNeural - af-ZA (Male)', 'sq-AL-AnilaNeural - sq-AL (Female)', 'sq-AL-IlirNeural - sq-AL (Male)', 'am-ET-AmehaNeural - am-ET (Male)', 'am-E",
+          "component": "Dropdown"
+        },
+        {
+          "name": "rate",
+          "label": "Speech Rate Adjustment (%)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "pitch",
+          "label": "Pitch Adjustment (Hz)",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Generated Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Warning",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    }
+  ],
+  "_api_verified": true,
+  "estimated_latency_s": 2.45,
+  "speed_tier": "fast",
+  "_latency_source": "measured_inference",
+  "_tags_enriched": true,
+  "measured_latency_s": 2.45,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:50:57.885182+00:00",
+  "measured_inference_s": 2.45,
+  "measured_inference_timestamp": "2026-04-20T07:55:10Z"
+}

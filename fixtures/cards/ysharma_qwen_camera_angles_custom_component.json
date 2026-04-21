@@ -1,0 +1,179 @@
+{
+  "space_id": "ysharma/qwen_camera_angles_custom_component",
+  "title": "Qwen Camera Angles Rethink",
+  "emoji": "\ud83d\udcca",
+  "description": "dummy",
+  "input_schema": {
+    "img": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "Source Image",
+      "required": true,
+      "component": "Image"
+    },
+    "current_view": {
+      "type": "str",
+      "description": "parameter_17",
+      "required": true,
+      "component": "Html"
+    }
+  },
+  "output_schema": {
+    "value_17": {
+      "type": "str",
+      "description": "value_17",
+      "component": "Html"
+    },
+    "Width (px)": {
+      "type": "float",
+      "description": "Width (px)",
+      "component": "Slider"
+    },
+    "Height (px)": {
+      "type": "float",
+      "description": "Height (px)",
+      "component": "Slider"
+    },
+    "Status": {
+      "type": "str",
+      "description": "Status",
+      "component": "Textbox"
+    }
+  },
+  "license": "mit",
+  "hardware": "6.6.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 17,
+  "last_modified": "2026-03-06 12:34:10+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/on_image_upload",
+      "parameters": [
+        {
+          "name": "img",
+          "label": "Source Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "current_view",
+          "label": "parameter_17",
+          "type": "str",
+          "component": "Html"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_17",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "Width (px)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Height (px)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Status",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/on_camera_submit",
+      "parameters": [
+        {
+          "name": "current_view",
+          "label": "parameter_17",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "name": "src_img",
+          "label": "Source Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "seed_val",
+          "label": "Seed",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "rand_seed",
+          "label": "Randomise seed each generation",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "guidance",
+          "label": "Guidance Scale (keep \u22641 for Lightning LoRA)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "steps",
+          "label": "Inference Steps",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "h",
+          "label": "Height (px)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "w",
+          "label": "Width (px)",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_17",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "Active Camera Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Status",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "",
+          "type": "list[dict(image: dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Origi",
+          "component": "Gallery"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/on_image_upload",
+  "_api_verified": true,
+  "estimated_latency_s": 4.3,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 4.3,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:52:06.091354+00:00"
+}

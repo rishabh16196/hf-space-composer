@@ -1,0 +1,83 @@
+{
+  "space_id": "kornia/line-segment-matching",
+  "title": "Line Segment Matching",
+  "emoji": "\ud83d\udcc8",
+  "description": "Line Segment Matching",
+  "input_schema": {
+    "img1": {
+      "type": "str",
+      "description": "img1",
+      "required": true,
+      "component": "Image"
+    },
+    "img2": {
+      "type": "str",
+      "description": "img2",
+      "required": true,
+      "component": "Image"
+    },
+    "Options": {
+      "type": "Any",
+      "description": "Options",
+      "required": true,
+      "component": "Dropdown"
+    }
+  },
+  "output_schema": {
+    "output": {
+      "type": "Dict[Any, Any]",
+      "description": "output",
+      "component": "Plot"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "3.3",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 8,
+  "last_modified": "2024-07-12 12:23:21+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/predict",
+      "parameters": [
+        {
+          "name": "img1",
+          "label": "img1",
+          "type": "str",
+          "component": "Image"
+        },
+        {
+          "name": "img2",
+          "label": "img2",
+          "type": "str",
+          "component": "Image"
+        },
+        {
+          "name": "Options",
+          "label": "Options",
+          "type": "Any",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "output",
+          "type": "Dict[Any, Any]",
+          "component": "Plot"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/predict",
+  "_api_verified": true
+}

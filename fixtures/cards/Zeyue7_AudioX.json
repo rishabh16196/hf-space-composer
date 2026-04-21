@@ -1,0 +1,852 @@
+{
+  "space_id": "Zeyue7/AudioX",
+  "title": "AudioX",
+  "emoji": "\ud83d\udc40",
+  "description": "AudioX",
+  "input_schema": {
+    "prompt": {
+      "type": "str",
+      "description": "parameter_5",
+      "required": true,
+      "component": "Textbox"
+    },
+    "negative_prompt": {
+      "type": "str",
+      "description": "parameter_6",
+      "required": true,
+      "component": "Textbox"
+    },
+    "video_file": {
+      "type": "filepath",
+      "description": "Upload Video File",
+      "required": true,
+      "component": "File"
+    },
+    "audio_prompt_file": {
+      "type": "filepath",
+      "description": "Upload Audio Prompt File",
+      "required": true,
+      "component": "File"
+    },
+    "audio_prompt_path": {
+      "type": "str",
+      "description": "Audio Prompt Path",
+      "required": true,
+      "component": "Textbox"
+    },
+    "seconds_start": {
+      "type": "float",
+      "description": "Video Seconds Start",
+      "required": true,
+      "component": "Slider"
+    },
+    "seconds_total": {
+      "type": "float",
+      "description": "Seconds Total",
+      "required": true,
+      "component": "Slider"
+    },
+    "cfg_scale": {
+      "type": "float",
+      "description": "CFG Scale",
+      "required": true,
+      "component": "Slider"
+    },
+    "steps": {
+      "type": "float",
+      "description": "Steps",
+      "required": true,
+      "component": "Slider"
+    },
+    "preview_every": {
+      "type": "float",
+      "description": "Preview Every",
+      "required": true,
+      "component": "Slider"
+    },
+    "seed": {
+      "type": "str",
+      "description": "Seed (set to -1 for random seed)",
+      "required": true,
+      "component": "Textbox"
+    },
+    "sampler_type": {
+      "type": "Literal['dpmpp-2m-sde', 'dpmpp-3m-sde', 'k-heun', 'k-lms', 'k-dpmpp-2s-ancestral', 'k-dpm-2', 'k-dpm",
+      "description": "Sampler Type",
+      "required": true,
+      "component": "Dropdown"
+    },
+    "sigma_min": {
+      "type": "float",
+      "description": "Sigma Min",
+      "required": true,
+      "component": "Slider"
+    },
+    "sigma_max": {
+      "type": "float",
+      "description": "Sigma Max",
+      "required": true,
+      "component": "Slider"
+    },
+    "cfg_rescale": {
+      "type": "float",
+      "description": "CFG Rescale Amount",
+      "required": true,
+      "component": "Slider"
+    },
+    "use_init": {
+      "type": "bool",
+      "description": "Use Init Audio",
+      "required": true,
+      "component": "Checkbox"
+    },
+    "init_audio": {
+      "type": "filepath",
+      "description": "Init Audio",
+      "required": true,
+      "component": "Audio"
+    },
+    "init_noise_level": {
+      "type": "float",
+      "description": "Init Noise Level",
+      "required": true,
+      "component": "Slider"
+    }
+  },
+  "output_schema": {
+    "Output Video": {
+      "type": "dict(video: filepath, subtitles: filepath | None)",
+      "description": "Output Video",
+      "component": "Video"
+    },
+    "Output Audio": {
+      "type": "filepath",
+      "description": "Output Audio",
+      "component": "Audio"
+    }
+  },
+  "license": "cc-by-nc-4.0",
+  "hardware": "5.25.2",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 168,
+  "last_modified": "2025-04-16 21:49:38+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/generate_cond",
+      "parameters": [
+        {
+          "name": "prompt",
+          "label": "parameter_5",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "negative_prompt",
+          "label": "parameter_6",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "video_file",
+          "label": "Upload Video File",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "name": "audio_prompt_file",
+          "label": "Upload Audio Prompt File",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "name": "audio_prompt_path",
+          "label": "Audio Prompt Path",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "seconds_start",
+          "label": "Video Seconds Start",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "seconds_total",
+          "label": "Seconds Total",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "cfg_scale",
+          "label": "CFG Scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "steps",
+          "label": "Steps",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "preview_every",
+          "label": "Preview Every",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "seed",
+          "label": "Seed (set to -1 for random seed)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "sampler_type",
+          "label": "Sampler Type",
+          "type": "Literal['dpmpp-2m-sde', 'dpmpp-3m-sde', 'k-heun', 'k-lms', 'k-dpmpp-2s-ancestral', 'k-dpm-2', 'k-dpm-fast']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "sigma_min",
+          "label": "Sigma Min",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "sigma_max",
+          "label": "Sigma Max",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "cfg_rescale",
+          "label": "CFG Rescale Amount",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "use_init",
+          "label": "Use Init Audio",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "init_audio",
+          "label": "Init Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "name": "init_noise_level",
+          "label": "Init Noise Level",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output Video",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        },
+        {
+          "label": "Output Audio",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ]
+    },
+    {
+      "name": "/lambda",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_5",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "value_6",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Upload Video File",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "label": "Upload Audio Prompt File",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "label": "Audio Prompt Path",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Video Seconds Start",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Seconds Total",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "CFG Scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Steps",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Preview Every",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Seed (set to -1 for random seed)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Sampler Type",
+          "type": "Literal['dpmpp-2m-sde', 'dpmpp-3m-sde', 'k-heun', 'k-lms', 'k-dpmpp-2s-ancestral', 'k-dpm-2', 'k-dpm-fast']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Sigma Min",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Sigma Max",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "CFG Rescale Amount",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Use Init Audio",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Init Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Init Noise Level",
+          "type": "float",
+          "component": "Slider"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_1",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_5",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "value_6",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Upload Video File",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "label": "Upload Audio Prompt File",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "label": "Audio Prompt Path",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Video Seconds Start",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Seconds Total",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "CFG Scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Steps",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Preview Every",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Seed (set to -1 for random seed)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Sampler Type",
+          "type": "Literal['dpmpp-2m-sde', 'dpmpp-3m-sde', 'k-heun', 'k-lms', 'k-dpmpp-2s-ancestral', 'k-dpm-2', 'k-dpm-fast']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Sigma Min",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Sigma Max",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "CFG Rescale Amount",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Use Init Audio",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Init Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Init Noise Level",
+          "type": "float",
+          "component": "Slider"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_2",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_5",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "value_6",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Upload Video File",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "label": "Upload Audio Prompt File",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "label": "Audio Prompt Path",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Video Seconds Start",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Seconds Total",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "CFG Scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Steps",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Preview Every",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Seed (set to -1 for random seed)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Sampler Type",
+          "type": "Literal['dpmpp-2m-sde', 'dpmpp-3m-sde', 'k-heun', 'k-lms', 'k-dpmpp-2s-ancestral', 'k-dpm-2', 'k-dpm-fast']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Sigma Min",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Sigma Max",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "CFG Rescale Amount",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Use Init Audio",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Init Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Init Noise Level",
+          "type": "float",
+          "component": "Slider"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_3",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_5",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "value_6",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Upload Video File",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "label": "Upload Audio Prompt File",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "label": "Audio Prompt Path",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Video Seconds Start",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Seconds Total",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "CFG Scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Steps",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Preview Every",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Seed (set to -1 for random seed)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Sampler Type",
+          "type": "Literal['dpmpp-2m-sde', 'dpmpp-3m-sde', 'k-heun', 'k-lms', 'k-dpmpp-2s-ancestral', 'k-dpm-2', 'k-dpm-fast']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Sigma Min",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Sigma Max",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "CFG Rescale Amount",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Use Init Audio",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Init Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Init Noise Level",
+          "type": "float",
+          "component": "Slider"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_4",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_5",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "value_6",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Upload Video File",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "label": "Upload Audio Prompt File",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "label": "Audio Prompt Path",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Video Seconds Start",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Seconds Total",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "CFG Scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Steps",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Preview Every",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Seed (set to -1 for random seed)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Sampler Type",
+          "type": "Literal['dpmpp-2m-sde', 'dpmpp-3m-sde', 'k-heun', 'k-lms', 'k-dpmpp-2s-ancestral', 'k-dpm-2', 'k-dpm-fast']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Sigma Min",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Sigma Max",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "CFG Rescale Amount",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Use Init Audio",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Init Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Init Noise Level",
+          "type": "float",
+          "component": "Slider"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_5",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_5",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "value_6",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Upload Video File",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "label": "Upload Audio Prompt File",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "label": "Audio Prompt Path",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Video Seconds Start",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Seconds Total",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "CFG Scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Steps",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Preview Every",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Seed (set to -1 for random seed)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Sampler Type",
+          "type": "Literal['dpmpp-2m-sde', 'dpmpp-3m-sde', 'k-heun', 'k-lms', 'k-dpmpp-2s-ancestral', 'k-dpm-2', 'k-dpm-fast']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Sigma Min",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Sigma Max",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "CFG Rescale Amount",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Use Init Audio",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Init Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Init Noise Level",
+          "type": "float",
+          "component": "Slider"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/generate_cond",
+  "_api_verified": true,
+  "estimated_latency_s": 3.81,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 3.81,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:50:06.392479+00:00"
+}

@@ -1,0 +1,110 @@
+{
+  "space_id": "jukofyork/merge-lora",
+  "title": "Merge Lora",
+  "emoji": "\ud83d\udcca",
+  "description": "This space lets you merge LoRAs using free \"CPU basic\" tier.",
+  "input_schema": {
+    "hf_token": {
+      "type": "str",
+      "description": "Hugging Face Token",
+      "required": true,
+      "component": "Textbox"
+    },
+    "base_model_name": {
+      "type": "str",
+      "description": "Base Model Repository",
+      "required": true,
+      "component": "Textbox"
+    },
+    "lora_model_name": {
+      "type": "str",
+      "description": "LoRA Adapter Repository",
+      "required": true,
+      "component": "Textbox"
+    },
+    "output_repo_name": {
+      "type": "str",
+      "description": "Output Repository Name",
+      "required": true,
+      "component": "Textbox"
+    },
+    "scale_factor": {
+      "type": "float",
+      "description": "Scale Factor",
+      "required": true,
+      "component": "Slider"
+    }
+  },
+  "output_schema": {
+    "Merge Progress & Results": {
+      "type": "str",
+      "description": "Merge Progress & Results",
+      "component": "Textbox"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "5.32.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 14,
+  "last_modified": "2025-09-19 11:07:55+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/merge_lora_efficient",
+      "parameters": [
+        {
+          "name": "hf_token",
+          "label": "Hugging Face Token",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "base_model_name",
+          "label": "Base Model Repository",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "lora_model_name",
+          "label": "LoRA Adapter Repository",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "output_repo_name",
+          "label": "Output Repository Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "scale_factor",
+          "label": "Scale Factor",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Merge Progress & Results",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/merge_lora_efficient",
+  "_api_verified": true,
+  "estimated_latency_s": 3.81,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 3.81,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:51:01.695826+00:00"
+}

@@ -1,0 +1,59 @@
+{
+  "space_id": "ianpan/diabetic-retinopathy",
+  "title": "Diabetic Retinopathy",
+  "emoji": "\ud83d\udc20",
+  "description": "Diabetic Retinopathy",
+  "input_schema": {
+    "Image": {
+      "type": "str",
+      "description": "Image",
+      "required": true,
+      "component": "Image"
+    }
+  },
+  "output_schema": {
+    "Grade": {
+      "type": "Dict[Any, Any]",
+      "description": "Grade",
+      "component": "Label"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "3.9.1",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 9,
+  "last_modified": "2022-11-12 21:20:20+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/predict",
+      "parameters": [
+        {
+          "name": "Image",
+          "label": "Image",
+          "type": "str",
+          "component": "Image"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Grade",
+          "type": "Dict[Any, Any]",
+          "component": "Label"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/predict",
+  "_api_verified": true
+}

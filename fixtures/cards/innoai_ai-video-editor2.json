@@ -1,0 +1,120 @@
+{
+  "space_id": "innoai/ai-video-editor2",
+  "title": "AI Video Editor",
+  "emoji": "\ud83c\udfde",
+  "description": "Create videos with FFMPEG + Qwen2.5-Coder",
+  "input_schema": {
+    "files": {
+      "type": "list[filepath]",
+      "description": "Media files",
+      "required": true,
+      "component": "File"
+    },
+    "prompt": {
+      "type": "str",
+      "description": "Instructions",
+      "required": true,
+      "component": "Textbox"
+    },
+    "top_p": {
+      "type": "float",
+      "description": "Top-p (nucleus sampling)",
+      "required": true,
+      "component": "Slider"
+    },
+    "temperature": {
+      "type": "float",
+      "description": "Temperature",
+      "required": true,
+      "component": "Slider"
+    },
+    "model_choice": {
+      "type": "Literal['deepseek-ai/DeepSeek-V3', 'Qwen/Qwen2.5-Coder-32B-Instruct']",
+      "description": "Model",
+      "required": true,
+      "component": "Radio"
+    }
+  },
+  "output_schema": {
+    "Generated Video": {
+      "type": "dict(video: filepath, subtitles: filepath | None)",
+      "description": "Generated Video",
+      "component": "Video"
+    },
+    "value_17": {
+      "type": "str",
+      "description": "value_17",
+      "component": "Markdown"
+    }
+  },
+  "license": "unknown",
+  "hardware": "5.22.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us",
+    "code",
+    "code-generation"
+  ],
+  "likes": 6,
+  "last_modified": "2025-03-23 13:53:02+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_tags_enriched": true,
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/update",
+      "parameters": [
+        {
+          "name": "files",
+          "label": "Media files",
+          "type": "list[filepath]",
+          "component": "File"
+        },
+        {
+          "name": "prompt",
+          "label": "Instructions",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "top_p",
+          "label": "Top-p (nucleus sampling)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "temperature",
+          "label": "Temperature",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "model_choice",
+          "label": "Model",
+          "type": "Literal['deepseek-ai/DeepSeek-V3', 'Qwen/Qwen2.5-Coder-32B-Instruct']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Generated Video",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        },
+        {
+          "label": "value_17",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/update",
+  "_api_verified": true
+}

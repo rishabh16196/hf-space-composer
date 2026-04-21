@@ -1,0 +1,493 @@
+{
+  "space_id": "onyx-dot-app/IndustryRAG-Bench-Leaderboard",
+  "title": "IndustryRAG Bench Leaderboard",
+  "emoji": "\ud83e\udd47",
+  "description": "IndustryRAG Bench Leaderboard",
+  "input_schema": {
+    "search_text": {
+      "type": "str",
+      "description": "Search",
+      "required": true,
+      "component": "Textbox"
+    }
+  },
+  "output_schema": {
+    "value_9": {
+      "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+      "description": "value_9",
+      "component": "Dataframe"
+    }
+  },
+  "license": "mit",
+  "hardware": "",
+  "sdk": "docker",
+  "tags": [
+    "docker",
+    "region:us",
+    "benchmark",
+    "leaderboard"
+  ],
+  "likes": 10,
+  "last_modified": "2026-04-20 19:24:22+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_tags_enriched": true,
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/update_display_no_cat",
+      "parameters": [
+        {
+          "name": "search_text",
+          "label": "Search",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_9",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/_load_one_shot",
+      "parameters": [
+        {
+          "name": "search_text",
+          "label": "Search",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_15",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/fetch",
+      "parameters": [
+        {
+          "name": "system",
+          "label": "Select RAG System",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_21",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_23",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/fetch_1",
+      "parameters": [
+        {
+          "name": "task_disp",
+          "label": "Select Question",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_28",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_29",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/fetch_2",
+      "parameters": [
+        {
+          "name": "system",
+          "label": "Select RAG System",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "task_disp",
+          "label": "Select Question",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_38",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "value_37",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_39",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_40",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_41",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/fetch_3",
+      "parameters": [
+        {
+          "name": "system",
+          "label": "Select RAG System",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "task_disp",
+          "label": "Select Question",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_38",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "value_37",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_39",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_40",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_41",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/fetch_side_by_side_data",
+      "parameters": [
+        {
+          "name": "selected_task_display",
+          "label": "Select Question",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "model_a_name",
+          "label": "Select RAG System A",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "model_b_name",
+          "label": "Select RAG System B",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_51",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_59",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "value_61",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "value_54",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_56",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/fetch_side_by_side_data_1",
+      "parameters": [
+        {
+          "name": "selected_task_display",
+          "label": "Select Question",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "model_a_name",
+          "label": "Select RAG System A",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "model_b_name",
+          "label": "Select RAG System B",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_51",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_59",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "value_61",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "value_54",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_56",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/fetch_side_by_side_data_2",
+      "parameters": [
+        {
+          "name": "selected_task_display",
+          "label": "Select Question",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "model_a_name",
+          "label": "Select RAG System A",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "model_b_name",
+          "label": "Select RAG System B",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_51",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_59",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "value_61",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "value_54",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_56",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/on_load",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Select RAG System",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "value_21",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_23",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/on_load_1",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Select Question",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "value_28",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_29",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/on_load_2",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Select RAG System",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Select Question",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "value_38",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "value_37",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_39",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_40",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_41",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/on_load_3",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Select Question",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Select RAG System A",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Select RAG System B",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "value_51",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_59",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "value_61",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "value_54",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_56",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/update_display_no_cat",
+  "_api_verified": true
+}

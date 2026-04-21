@@ -1,0 +1,65 @@
+{
+  "space_id": "elmresearchcenter/open_universal_arabic_asr_leaderboard",
+  "title": "Open Universal Arabic Asr Leaderboard",
+  "emoji": "\ud83e\udd47",
+  "description": "A benchmark for open-source multi-dialect Arabic ASR models",
+  "input_schema": {
+    "model_text": {
+      "type": "str",
+      "description": "Model name (user_name/model_name)",
+      "required": true,
+      "component": "Textbox"
+    }
+  },
+  "output_schema": {
+    "value_12": {
+      "type": "str",
+      "description": "value_12",
+      "component": "Markdown"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "5.49.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "leaderboard",
+    "region:us",
+    "benchmark"
+  ],
+  "likes": 74,
+  "last_modified": "2026-04-16 15:49:10+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/request_model",
+      "parameters": [
+        {
+          "name": "model_text",
+          "label": "Model name (user_name/model_name)",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_12",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/request_model",
+  "_api_verified": true,
+  "estimated_latency_s": 3.14,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "_tags_enriched": true,
+  "measured_latency_s": 3.14,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:50:31.471239+00:00"
+}

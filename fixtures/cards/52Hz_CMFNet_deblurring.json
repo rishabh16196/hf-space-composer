@@ -1,0 +1,62 @@
+{
+  "space_id": "52Hz/CMFNet_deblurring",
+  "title": "CMFNet_deblurring",
+  "emoji": "\ud83c\udf7b",
+  "description": "CMFNet_deblurring",
+  "input_schema": {
+    "img": {
+      "type": "filepath",
+      "description": "Input",
+      "required": true,
+      "component": "Image"
+    }
+  },
+  "output_schema": {
+    "Output": {
+      "type": "filepath",
+      "description": "Output",
+      "component": "Image"
+    }
+  },
+  "license": "unknown",
+  "hardware": "",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 28,
+  "last_modified": "2024-05-28 11:25:33+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/predict",
+      "parameters": [
+        {
+          "name": "img",
+          "label": "Input",
+          "type": "filepath",
+          "component": "Image"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output",
+          "type": "filepath",
+          "component": "Image"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/predict",
+  "_api_verified": true,
+  "estimated_latency_s": 3.33,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 3.33,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:49:02.023335+00:00"
+}

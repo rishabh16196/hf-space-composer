@@ -1,0 +1,518 @@
+{
+  "space_id": "multimodalart/flux-fill-outpaint",
+  "title": "Flux Fill Outpainting",
+  "emoji": "\ud83d\udc48\ud83d\uddbc\ufe0f\ud83d\udc49",
+  "description": "Flux Fill Outpainting",
+  "input_schema": {
+    "output_image": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "Generated Image",
+      "required": true,
+      "component": "Image"
+    }
+  },
+  "output_schema": {
+    "Input Image": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "Input Image",
+      "component": "Image"
+    }
+  },
+  "license": "unknown",
+  "hardware": "5.43.1",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us",
+    "diffusion",
+    "image-generation",
+    "text-to-image",
+    "vision"
+  ],
+  "likes": 770,
+  "last_modified": "2025-08-25 22:28:21+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/use_output_as_input",
+      "parameters": [
+        {
+          "name": "output_image",
+          "label": "Generated Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Input Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/preload_presets",
+      "parameters": [
+        {
+          "name": "target_ratio",
+          "label": "Image Ratio",
+          "type": "Literal['9:16', '16:9', '1:1', 'Custom']",
+          "component": "Radio"
+        },
+        {
+          "name": "ui_width",
+          "label": "Target Width",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "ui_height",
+          "label": "Target Height",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Target Width",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Target Height",
+          "type": "float",
+          "component": "Slider"
+        }
+      ]
+    },
+    {
+      "name": "/select_the_right_preset",
+      "parameters": [
+        {
+          "name": "user_width",
+          "label": "Target Width",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "user_height",
+          "label": "Target Height",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Image Ratio",
+          "type": "Literal['9:16', '16:9', '1:1', 'Custom']",
+          "component": "Radio"
+        }
+      ]
+    },
+    {
+      "name": "/select_the_right_preset_1",
+      "parameters": [
+        {
+          "name": "user_width",
+          "label": "Target Width",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "user_height",
+          "label": "Target Height",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Image Ratio",
+          "type": "Literal['9:16', '16:9', '1:1', 'Custom']",
+          "component": "Radio"
+        }
+      ]
+    },
+    {
+      "name": "/toggle_custom_resize_slider",
+      "parameters": [
+        {
+          "name": "resize_option",
+          "label": "Resize input image",
+          "type": "Literal['Full', '75%', '50%', '33%', '25%', 'Custom']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Custom resize (%)",
+          "type": "float",
+          "component": "Slider"
+        }
+      ]
+    },
+    {
+      "name": "/clear_result",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Generated Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/inpaint",
+      "parameters": [
+        {
+          "name": "image",
+          "label": "Input Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "width",
+          "label": "Target Width",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "height",
+          "label": "Target Height",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "overlap_percentage",
+          "label": "Mask overlap (%)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "num_inference_steps",
+          "label": "Steps",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "resize_option",
+          "label": "Resize input image",
+          "type": "Literal['Full', '75%', '50%', '33%', '25%', 'Custom']",
+          "component": "Radio"
+        },
+        {
+          "name": "custom_resize_percentage",
+          "label": "Custom resize (%)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "prompt_input",
+          "label": "Prompt (Optional)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "alignment",
+          "label": "Alignment",
+          "type": "Literal['Middle', 'Left', 'Right', 'Top', 'Bottom']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "overlap_left",
+          "label": "Overlap Left",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "overlap_right",
+          "label": "Overlap Right",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "overlap_top",
+          "label": "Overlap Top",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "overlap_bottom",
+          "label": "Overlap Bottom",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Generated Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "Mask preview",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/lambda",
+      "parameters": [
+        {
+          "name": "x",
+          "label": "Generated Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "history",
+          "label": "History",
+          "type": "list[dict(image: dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Origi",
+          "component": "Gallery"
+        }
+      ],
+      "returns": [
+        {
+          "label": "History",
+          "type": "list[dict(image: dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Origi",
+          "component": "Gallery"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_1",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/clear_result_1",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Generated Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/inpaint_1",
+      "parameters": [
+        {
+          "name": "image",
+          "label": "Input Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "width",
+          "label": "Target Width",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "height",
+          "label": "Target Height",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "overlap_percentage",
+          "label": "Mask overlap (%)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "num_inference_steps",
+          "label": "Steps",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "resize_option",
+          "label": "Resize input image",
+          "type": "Literal['Full', '75%', '50%', '33%', '25%', 'Custom']",
+          "component": "Radio"
+        },
+        {
+          "name": "custom_resize_percentage",
+          "label": "Custom resize (%)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "prompt_input",
+          "label": "Prompt (Optional)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "alignment",
+          "label": "Alignment",
+          "type": "Literal['Middle', 'Left', 'Right', 'Top', 'Bottom']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "overlap_left",
+          "label": "Overlap Left",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "overlap_right",
+          "label": "Overlap Right",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "overlap_top",
+          "label": "Overlap Top",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "overlap_bottom",
+          "label": "Overlap Bottom",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Generated Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "Mask preview",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_2",
+      "parameters": [
+        {
+          "name": "x",
+          "label": "Generated Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "history",
+          "label": "History",
+          "type": "list[dict(image: dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Origi",
+          "component": "Gallery"
+        }
+      ],
+      "returns": [
+        {
+          "label": "History",
+          "type": "list[dict(image: dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Origi",
+          "component": "Gallery"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_3",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/preview_image_and_mask",
+      "parameters": [
+        {
+          "name": "image",
+          "label": "Input Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "width",
+          "label": "Target Width",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "height",
+          "label": "Target Height",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "overlap_percentage",
+          "label": "Mask overlap (%)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "resize_option",
+          "label": "Resize input image",
+          "type": "Literal['Full', '75%', '50%', '33%', '25%', 'Custom']",
+          "component": "Radio"
+        },
+        {
+          "name": "custom_resize_percentage",
+          "label": "Custom resize (%)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "alignment",
+          "label": "Alignment",
+          "type": "Literal['Middle', 'Left', 'Right', 'Top', 'Bottom']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "overlap_left",
+          "label": "Overlap Left",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "overlap_right",
+          "label": "Overlap Right",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "overlap_top",
+          "label": "Overlap Top",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "overlap_bottom",
+          "label": "Overlap Bottom",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Mask preview",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/use_output_as_input",
+  "_api_verified": true,
+  "estimated_latency_s": 4.19,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "_tags_enriched": true,
+  "measured_latency_s": 4.19,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:51:19.698142+00:00",
+  "_inference_attempt_status": "predict_failed",
+  "_inference_attempt_error": "The upstream Gradio app has raised an exception but has not enabled verbose error reporting. To enable, set show_error=True in launch()."
+}

@@ -1,0 +1,259 @@
+{
+  "space_id": "Stable-X/ReconViaGen",
+  "title": "ReconViaGen",
+  "emoji": "\ud83d\udda5\ufe0f",
+  "description": "High-fidelity 3D Geometry Generation from multi-view images",
+  "input_schema": {},
+  "output_schema": {},
+  "license": "mit",
+  "hardware": "5.34.2",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 174,
+  "last_modified": "2026-01-22 22:08:29+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/start_session",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/preprocess_videos",
+      "parameters": [
+        {
+          "name": "video",
+          "label": "Upload Video",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Image Prompt",
+          "type": "list[dict(image: dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Origi",
+          "component": "Gallery"
+        }
+      ]
+    },
+    {
+      "name": "/lambda",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Upload Video",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        },
+        {
+          "label": "Image Prompt",
+          "type": "list[dict(image: dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Origi",
+          "component": "Gallery"
+        }
+      ]
+    },
+    {
+      "name": "/preprocess_images",
+      "parameters": [
+        {
+          "name": "images",
+          "label": "Image Prompt",
+          "type": "list[dict(image: dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Origi",
+          "component": "Gallery"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Image Prompt",
+          "type": "list[dict(image: dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Origi",
+          "component": "Gallery"
+        }
+      ]
+    },
+    {
+      "name": "/get_seed",
+      "parameters": [
+        {
+          "name": "randomize_seed",
+          "label": "Randomize Seed",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "seed",
+          "label": "Seed",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Seed",
+          "type": "float",
+          "component": "Slider"
+        }
+      ]
+    },
+    {
+      "name": "/generate_and_extract_glb",
+      "parameters": [
+        {
+          "name": "multiimages",
+          "label": "Image Prompt",
+          "type": "list[dict(image: dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Origi",
+          "component": "Gallery"
+        },
+        {
+          "name": "seed",
+          "label": "Seed",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "ss_guidance_strength",
+          "label": "Guidance Strength",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "ss_sampling_steps",
+          "label": "Sampling Steps",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "slat_guidance_strength",
+          "label": "Guidance Strength",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "slat_sampling_steps",
+          "label": "Sampling Steps",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "multiimage_algo",
+          "label": "Multi-image Algorithm",
+          "type": "Literal['stochastic', 'multidiffusion']",
+          "component": "Radio"
+        },
+        {
+          "name": "mesh_simplify",
+          "label": "Simplify",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "texture_size",
+          "label": "Texture Size",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Generated 3D Asset",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        },
+        {
+          "label": "Extracted GLB/Gaussian",
+          "type": "filepath",
+          "component": "Litmodel3d"
+        },
+        {
+          "label": "Download GLB",
+          "type": "filepath",
+          "component": "Downloadbutton"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_1",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Download GLB",
+          "type": "filepath",
+          "component": "Downloadbutton"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_2",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Download GLB",
+          "type": "filepath",
+          "component": "Downloadbutton"
+        },
+        {
+          "label": "Download Gaussian",
+          "type": "filepath",
+          "component": "Downloadbutton"
+        }
+      ]
+    },
+    {
+      "name": "/extract_gaussian",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Extracted GLB/Gaussian",
+          "type": "filepath",
+          "component": "Litmodel3d"
+        },
+        {
+          "label": "Download Gaussian",
+          "type": "filepath",
+          "component": "Downloadbutton"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_3",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Download Gaussian",
+          "type": "filepath",
+          "component": "Downloadbutton"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_4",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Download GLB",
+          "type": "filepath",
+          "component": "Downloadbutton"
+        },
+        {
+          "label": "Download Gaussian",
+          "type": "filepath",
+          "component": "Downloadbutton"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/start_session",
+  "_api_verified": true,
+  "estimated_latency_s": 3.97,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "_tags_enriched": true,
+  "measured_latency_s": 3.97,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:49:58.001643+00:00"
+}

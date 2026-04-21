@@ -1,0 +1,117 @@
+{
+  "space_id": "sarulab-speech/DialogueSidon-demo",
+  "title": "DialogueSidon Demo",
+  "emoji": "\ud83d\udd25",
+  "description": "DialogueSidon Demo",
+  "input_schema": {
+    "input_audio": {
+      "type": "filepath",
+      "description": "Input mixture (mono or stereo, any sample rate)",
+      "required": true,
+      "component": "Audio"
+    },
+    "num_steps": {
+      "type": "float",
+      "description": "Diffusion steps (more = slower but potentially better)",
+      "required": true,
+      "component": "Slider"
+    }
+  },
+  "output_schema": {
+    "Speaker 1": {
+      "type": "filepath",
+      "description": "Speaker 1",
+      "component": "Audio"
+    },
+    "Speaker 2": {
+      "type": "filepath",
+      "description": "Speaker 2",
+      "component": "Audio"
+    }
+  },
+  "license": "unknown",
+  "hardware": "6.11.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us",
+    "audio"
+  ],
+  "likes": 8,
+  "last_modified": "2026-04-05 19:44:24+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_tags_enriched": true,
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/run_separation_audio",
+      "parameters": [
+        {
+          "name": "input_audio",
+          "label": "Input mixture (mono or stereo, any sample rate)",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "name": "num_steps",
+          "label": "Diffusion steps (more = slower but potentially better)",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Speaker 1",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Speaker 2",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ]
+    },
+    {
+      "name": "/run_separation_video",
+      "parameters": [
+        {
+          "name": "video_path",
+          "label": "Input video (audio will be extracted and separated)",
+          "type": "filepath",
+          "component": "Video"
+        },
+        {
+          "name": "num_steps",
+          "label": "Diffusion steps (more = slower but potentially better)",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output video (Speaker 1 = Left, Speaker 2 = Right)",
+          "type": "filepath",
+          "component": "Video"
+        },
+        {
+          "label": "Speaker 1 (audio only)",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Speaker 2 (audio only)",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/run_separation_audio",
+  "_api_verified": true
+}

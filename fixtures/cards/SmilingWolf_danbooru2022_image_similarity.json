@@ -1,0 +1,107 @@
+{
+  "space_id": "SmilingWolf/danbooru2022_image_similarity",
+  "title": "Danbooru2023 Image Similarity",
+  "emoji": "\ud83d\udcbb",
+  "description": "Danbooru2023 Image Similarity",
+  "input_schema": {
+    "img_input": {
+      "type": "filepath",
+      "description": "Input",
+      "required": true,
+      "component": "Image"
+    },
+    "selected_ratings": {
+      "type": "list[Literal['General', 'Sensitive', 'Questionable', 'Explicit']]",
+      "description": "Ratings",
+      "required": true,
+      "component": "Checkboxgroup"
+    },
+    "n_neighbours": {
+      "type": "float",
+      "description": "# of images",
+      "required": true,
+      "component": "Slider"
+    },
+    "api_username": {
+      "type": "str",
+      "description": "Danbooru API Username",
+      "required": true,
+      "component": "Textbox"
+    },
+    "api_key": {
+      "type": "str",
+      "description": "Danbooru API Key",
+      "required": true,
+      "component": "Textbox"
+    }
+  },
+  "output_schema": {
+    "Similar images": {
+      "type": "list[dict(image: filepath, caption: str | None) | dict(video: filepath, caption: str | None)]",
+      "description": "Similar images",
+      "component": "Gallery"
+    }
+  },
+  "license": "unknown",
+  "hardware": "6.10.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 56,
+  "last_modified": "2026-03-26 17:44:53+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/predict",
+      "parameters": [
+        {
+          "name": "img_input",
+          "label": "Input",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "name": "selected_ratings",
+          "label": "Ratings",
+          "type": "list[Literal['General', 'Sensitive', 'Questionable', 'Explicit']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "n_neighbours",
+          "label": "# of images",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "api_username",
+          "label": "Danbooru API Username",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "api_key",
+          "label": "Danbooru API Key",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Similar images",
+          "type": "list[dict(image: filepath, caption: str | None) | dict(video: filepath, caption: str | None)]",
+          "component": "Gallery"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/predict",
+  "_api_verified": true
+}

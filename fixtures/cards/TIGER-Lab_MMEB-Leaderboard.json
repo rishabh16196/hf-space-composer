@@ -1,0 +1,160 @@
+{
+  "space_id": "TIGER-Lab/MMEB-Leaderboard",
+  "title": "MMEB Leaderboard",
+  "emoji": "\ud83d\udcca",
+  "description": "The massive multimodal embedding benchmark",
+  "input_schema": {
+    "param_0": {
+      "type": "str",
+      "description": "parameter_10",
+      "required": true,
+      "component": "Textbox"
+    },
+    "param_1": {
+      "type": "float",
+      "description": "Minimum number of parameters (B)",
+      "required": true,
+      "component": "Slider"
+    },
+    "param_2": {
+      "type": "float",
+      "description": "Maximum number of parameters (B)",
+      "required": true,
+      "component": "Slider"
+    }
+  },
+  "output_schema": {
+    "value_16": {
+      "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+      "description": "value_16",
+      "component": "Dataframe"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "5.9.1",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us",
+    "benchmark",
+    "leaderboard"
+  ],
+  "likes": 109,
+  "last_modified": "2026-04-14 03:31:50+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/update_with_tasks_v2",
+      "parameters": [
+        {
+          "name": "param_0",
+          "label": "parameter_10",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_1",
+          "label": "Minimum number of parameters (B)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_2",
+          "label": "Maximum number of parameters (B)",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_16",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/update_with_tasks_v2_1",
+      "parameters": [
+        {
+          "name": "param_0",
+          "label": "parameter_10",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_1",
+          "label": "Minimum number of parameters (B)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_2",
+          "label": "Maximum number of parameters (B)",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_16",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/update_with_tasks_v2_2",
+      "parameters": [
+        {
+          "name": "param_0",
+          "label": "parameter_10",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_1",
+          "label": "Minimum number of parameters (B)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_2",
+          "label": "Maximum number of parameters (B)",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_16",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/refresh_data",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_16",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/update_with_tasks_v2",
+  "_api_verified": true,
+  "estimated_latency_s": 3.5,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "_tags_enriched": true,
+  "measured_latency_s": 3.5,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:49:57.784332+00:00"
+}

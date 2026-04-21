@@ -1,0 +1,169 @@
+{
+  "space_id": "Nick088/Minecraft_Skin_Generator",
+  "title": "Minecraft Skin Generator",
+  "emoji": "\ud83d\ude80\ud83c\udfa8\ud83d\udc68\u200d\ud83d\udcbc",
+  "description": "Stable Diffusion Finetuned Version",
+  "input_schema": {
+    "prompt": {
+      "type": "str",
+      "description": "Your Prompt",
+      "required": true,
+      "component": "Textbox"
+    },
+    "stable_diffusion_model": {
+      "type": "Literal['2', 'xl']",
+      "description": "Stable Diffusion Model",
+      "required": true,
+      "component": "Dropdown"
+    },
+    "num_inference_steps": {
+      "type": "float",
+      "description": "Number of Inference Steps",
+      "required": true,
+      "component": "Slider"
+    },
+    "guidance_scale": {
+      "type": "float",
+      "description": "Guidance Scale",
+      "required": true,
+      "component": "Slider"
+    },
+    "model_precision_type": {
+      "type": "Literal['fp16', 'fp32']",
+      "description": "Model Precision Type",
+      "required": true,
+      "component": "Dropdown"
+    },
+    "seed": {
+      "type": "float",
+      "description": "Seed",
+      "required": true,
+      "component": "Slider"
+    },
+    "filename": {
+      "type": "str",
+      "description": "Output Image Name",
+      "required": true,
+      "component": "Textbox"
+    },
+    "model_3d": {
+      "type": "bool",
+      "description": "See as 3D Model too",
+      "required": true,
+      "component": "Checkbox"
+    },
+    "verbose": {
+      "type": "bool",
+      "description": "Verbose Output",
+      "required": true,
+      "component": "Checkbox"
+    }
+  },
+  "output_schema": {
+    "Generated Minecraft Skin Image Asset": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "Generated Minecraft Skin Image Asset",
+      "component": "Image"
+    },
+    "3D Model View of the Skin": {
+      "type": "filepath",
+      "description": "3D Model View of the Skin",
+      "component": "Model3d"
+    }
+  },
+  "license": "gpl-3.0",
+  "hardware": "5.29.1",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 182,
+  "last_modified": "2025-10-05 21:45:19+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/predict",
+      "parameters": [
+        {
+          "name": "prompt",
+          "label": "Your Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "stable_diffusion_model",
+          "label": "Stable Diffusion Model",
+          "type": "Literal['2', 'xl']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "num_inference_steps",
+          "label": "Number of Inference Steps",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "guidance_scale",
+          "label": "Guidance Scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "model_precision_type",
+          "label": "Model Precision Type",
+          "type": "Literal['fp16', 'fp32']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "seed",
+          "label": "Seed",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "filename",
+          "label": "Output Image Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "model_3d",
+          "label": "See as 3D Model too",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "verbose",
+          "label": "Verbose Output",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Generated Minecraft Skin Image Asset",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "3D Model View of the Skin",
+          "type": "filepath",
+          "component": "Model3d"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/predict",
+  "_api_verified": true,
+  "estimated_latency_s": 3.39,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "_tags_enriched": true,
+  "measured_latency_s": 3.39,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:49:41.255088+00:00"
+}

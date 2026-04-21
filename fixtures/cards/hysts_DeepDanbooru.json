@@ -1,0 +1,130 @@
+{
+  "space_id": "hysts/DeepDanbooru",
+  "title": "DeepDanbooru",
+  "emoji": "\ud83c\udfc3",
+  "description": "DeepDanbooru",
+  "input_schema": {
+    "image": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "Input",
+      "required": true,
+      "component": "Image"
+    },
+    "score_threshold": {
+      "type": "float",
+      "description": "Score threshold",
+      "required": true,
+      "component": "Slider"
+    }
+  },
+  "output_schema": {
+    "Output": {
+      "type": "dict(label: str | int | float | None, confidences: list[dict(label: str | int | float | None, confid",
+      "description": "Output",
+      "component": "Label"
+    },
+    "JSON output": {
+      "type": "str | float | bool | list | dict",
+      "description": "JSON output",
+      "component": "Json"
+    },
+    "Text output": {
+      "type": "str",
+      "description": "Text output",
+      "component": "Textbox"
+    }
+  },
+  "license": "unknown",
+  "hardware": "5.30.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 407,
+  "last_modified": "2025-05-22 08:44:53+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/predict",
+      "parameters": [
+        {
+          "name": "image",
+          "label": "Input",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "score_threshold",
+          "label": "Score threshold",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output",
+          "type": "dict(label: str | int | float | None, confidences: list[dict(label: str | int | float | None, confidence: float | None)] | None)",
+          "component": "Label"
+        },
+        {
+          "label": "JSON output",
+          "type": "str | float | bool | list | dict",
+          "component": "Json"
+        },
+        {
+          "label": "Text output",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/predict_1",
+      "parameters": [
+        {
+          "name": "image",
+          "label": "Input",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "score_threshold",
+          "label": "Score threshold",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output",
+          "type": "dict(label: str | int | float | None, confidences: list[dict(label: str | int | float | None, confidence: float | None)] | None)",
+          "component": "Label"
+        },
+        {
+          "label": "JSON output",
+          "type": "str | float | bool | list | dict",
+          "component": "Json"
+        },
+        {
+          "label": "Text output",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/predict",
+  "_api_verified": true,
+  "estimated_latency_s": 3.73,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 3.73,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:50:48.795993+00:00",
+  "_inference_attempt_status": "predict_failed",
+  "_inference_attempt_error": "The upstream Gradio app has raised an exception but has not enabled verbose error reporting. To enable, set show_error=True in launch()."
+}

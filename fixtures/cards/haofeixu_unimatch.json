@@ -1,0 +1,83 @@
+{
+  "space_id": "haofeixu/unimatch",
+  "title": "UniMatch",
+  "emoji": "\ud83d\udd17",
+  "description": "UniMatch",
+  "input_schema": {
+    "image1": {
+      "type": "Dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "Image1",
+      "required": true,
+      "component": "Image"
+    },
+    "image2": {
+      "type": "Dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "Image2",
+      "required": true,
+      "component": "Image"
+    },
+    "task": {
+      "type": "Literal['flow', 'stereo']",
+      "description": "Task",
+      "required": true,
+      "component": "Radio"
+    }
+  },
+  "output_schema": {
+    "flow/disparity": {
+      "type": "Dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "flow/disparity",
+      "component": "Image"
+    }
+  },
+  "license": "mit",
+  "hardware": "5.1.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 54,
+  "last_modified": "2024-10-20 19:28:11+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/predict",
+      "parameters": [
+        {
+          "name": "image1",
+          "label": "Image1",
+          "type": "Dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "image2",
+          "label": "Image2",
+          "type": "Dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "task",
+          "label": "Task",
+          "type": "Literal['flow', 'stereo']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "flow/disparity",
+          "type": "Dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/predict",
+  "_api_verified": true
+}

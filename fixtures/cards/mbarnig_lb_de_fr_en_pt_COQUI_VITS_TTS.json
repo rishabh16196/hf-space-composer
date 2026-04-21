@@ -1,0 +1,90 @@
+{
+  "space_id": "mbarnig/lb_de_fr_en_pt_COQUI_VITS_TTS",
+  "title": "lb-de-fr-en-pt-COQUI-VITS-TTS",
+  "emoji": "\u2328\ufe0f \ud83c\uddf1\ud83c\uddfa \ud83d\udd08",
+  "description": "Multilingual Text to Speech Demo",
+  "input_schema": {
+    "text": {
+      "type": "str",
+      "description": "Input Text",
+      "required": true,
+      "component": "Textbox"
+    },
+    "speaker_idx": {
+      "type": "Literal['Bernard', 'Bunny', 'Ed', 'Guy', 'Judith', 'Kerstin', 'Linda', 'Thorsten']",
+      "description": "Speaker",
+      "required": true,
+      "component": "Radio"
+    },
+    "language_idx": {
+      "type": "Literal['Deutsch', 'English', 'Fran\u00e7ais', 'L\u00ebtzebuergesch', 'Portugu\u00eas']",
+      "description": "Language",
+      "required": true,
+      "component": "Radio"
+    }
+  },
+  "output_schema": {
+    "Output Audio": {
+      "type": "filepath",
+      "description": "Output Audio",
+      "component": "Audio"
+    }
+  },
+  "license": "cc-by-nc-sa-4.0",
+  "hardware": "4.42.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us",
+    "audio",
+    "speech-synthesis",
+    "tts"
+  ],
+  "likes": 13,
+  "last_modified": "2024-09-03 14:51:18+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/predict",
+      "parameters": [
+        {
+          "name": "text",
+          "label": "Input Text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "speaker_idx",
+          "label": "Speaker",
+          "type": "Literal['Bernard', 'Bunny', 'Ed', 'Guy', 'Judith', 'Kerstin', 'Linda', 'Thorsten']",
+          "component": "Radio"
+        },
+        {
+          "name": "language_idx",
+          "label": "Language",
+          "type": "Literal['Deutsch', 'English', 'Fran\u00e7ais', 'L\u00ebtzebuergesch', 'Portugu\u00eas']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output Audio",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/predict",
+  "_api_verified": true,
+  "estimated_latency_s": 2.96,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "_tags_enriched": true,
+  "measured_latency_s": 2.96,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:51:12.177570+00:00"
+}

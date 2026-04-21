@@ -1,0 +1,122 @@
+{
+  "space_id": "hshr/DeepFilterNet2",
+  "title": "DeepFilterNet2",
+  "emoji": "\ud83d\udca9",
+  "description": "DeepFilterNet2",
+  "input_schema": {
+    "Input": {
+      "type": "str | Dict(name: str (name of file), data: str (base64 representation of file), size: int (size of i",
+      "description": "Input",
+      "required": true,
+      "component": "Audio"
+    },
+    "Add background noise": {
+      "type": "Any",
+      "description": "Add background noise",
+      "required": true,
+      "component": "Dropdown"
+    },
+    "Noise Level (SNR)": {
+      "type": "Any",
+      "description": "Noise Level (SNR)",
+      "required": true,
+      "component": "Dropdown"
+    }
+  },
+  "output_schema": {
+    "Noisy audio": {
+      "type": "str | Dict(name: str (name of file), data: str (base64 representation of file), size: int (size of i",
+      "description": "Noisy audio",
+      "component": "Audio"
+    },
+    "Noisy spectrogram": {
+      "type": "str",
+      "description": "Noisy spectrogram",
+      "component": "Image"
+    },
+    "Enhanced audio": {
+      "type": "str | Dict(name: str (name of file), data: str (base64 representation of file), size: int (size of i",
+      "description": "Enhanced audio",
+      "component": "Audio"
+    },
+    "Enhanced spectrogram": {
+      "type": "str",
+      "description": "Enhanced spectrogram",
+      "component": "Image"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "3.17.1",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 167,
+  "last_modified": "2024-05-02 07:31:06+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/denoise",
+      "parameters": [
+        {
+          "name": "Input",
+          "label": "Input",
+          "type": "str | Dict(name: str (name of file), data: str (base64 representation of file), size: int (size of image in bytes), is_file: bool (true if the file has been uploaded to the server), orig_name: str (or",
+          "component": "Audio"
+        },
+        {
+          "name": "Add background noise",
+          "label": "Add background noise",
+          "type": "Any",
+          "component": "Dropdown"
+        },
+        {
+          "name": "Noise Level (SNR)",
+          "label": "Noise Level (SNR)",
+          "type": "Any",
+          "component": "Dropdown"
+        },
+        {
+          "name": "Input",
+          "label": "Input",
+          "type": "str | Dict(name: str (name of file), data: str (base64 representation of file), size: int (size of image in bytes), is_file: bool (true if the file has been uploaded to the server), orig_name: str (or",
+          "component": "Audio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Noisy audio",
+          "type": "str | Dict(name: str (name of file), data: str (base64 representation of file), size: int (size of image in bytes), is_file: bool (true if the file has been uploaded to the server), orig_name: str (or",
+          "component": "Audio"
+        },
+        {
+          "label": "Noisy spectrogram",
+          "type": "str",
+          "component": "Image"
+        },
+        {
+          "label": "Enhanced audio",
+          "type": "str | Dict(name: str (name of file), data: str (base64 representation of file), size: int (size of image in bytes), is_file: bool (true if the file has been uploaded to the server), orig_name: str (or",
+          "component": "Audio"
+        },
+        {
+          "label": "Enhanced spectrogram",
+          "type": "str",
+          "component": "Image"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/denoise",
+  "_api_verified": true,
+  "estimated_latency_s": 3.32,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 3.32,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:50:44.961215+00:00"
+}

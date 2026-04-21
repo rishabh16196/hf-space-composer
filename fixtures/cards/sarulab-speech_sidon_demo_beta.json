@@ -1,0 +1,64 @@
+{
+  "space_id": "sarulab-speech/sidon_demo_beta",
+  "title": "sidon_demo_beta",
+  "emoji": "\ud83d\udc0b",
+  "description": "Speech restoration demo of Sidon.",
+  "input_schema": {
+    "audio": {
+      "type": "filepath",
+      "description": "Noisy Speech",
+      "required": true,
+      "component": "Audio"
+    }
+  },
+  "output_schema": {
+    "Restored Speech": {
+      "type": "filepath",
+      "description": "Restored Speech",
+      "component": "Audio"
+    }
+  },
+  "license": "mit",
+  "hardware": "5.38.2",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us",
+    "audio"
+  ],
+  "likes": 28,
+  "last_modified": "2025-11-26 06:42:41+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/predict",
+      "parameters": [
+        {
+          "name": "audio",
+          "label": "Noisy Speech",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Restored Speech",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/predict",
+  "_api_verified": true,
+  "estimated_latency_s": 4.5,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "_tags_enriched": true,
+  "measured_latency_s": 4.5,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:51:47.873449+00:00"
+}

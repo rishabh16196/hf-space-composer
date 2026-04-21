@@ -1,0 +1,431 @@
+{
+  "space_id": "Navid-AI/The-Arabic-IR-Leaderboard",
+  "title": "The Arabic Information Retrieval (AIR) Leaderboard",
+  "emoji": "\ud83d\udcca",
+  "description": "Evaluating No, Full & Late Interaction Models \ud83e\udd20",
+  "input_schema": {
+    "model_name": {
+      "type": "str",
+      "description": "Search (You can also press Enter to search)",
+      "required": true,
+      "component": "Textbox"
+    },
+    "columns_to_show": {
+      "type": "list[Literal['Rank', 'Model', 'Precision', 'Average Score', 'Context Length', 'Embedding Dimension',",
+      "description": "Columns to Show",
+      "required": true,
+      "component": "Checkboxgroup"
+    }
+  },
+  "output_schema": {
+    "value_13": {
+      "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+      "description": "value_13",
+      "component": "Dataframe"
+    }
+  },
+  "license": "unknown",
+  "hardware": "5.34.2",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us",
+    "benchmark",
+    "leaderboard"
+  ],
+  "likes": 35,
+  "last_modified": "2026-04-12 13:40:17+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/retrieval_search_leaderboard",
+      "parameters": [
+        {
+          "name": "model_name",
+          "label": "Search (You can also press Enter to search)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "columns_to_show",
+          "label": "Columns to Show",
+          "type": "list[Literal['Rank', 'Model', 'Precision', 'Average Score', 'Context Length', 'Embedding Dimension', 'Model Size (MB)', 'Number of Parameters (Billions)', 'Web Search Dataset', 'Islamic Knowledge Data",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_13",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/update_retrieval_columns_to_show",
+      "parameters": [
+        {
+          "name": "columns_to_show",
+          "label": "Columns to Show",
+          "type": "list[Literal['Rank', 'Model', 'Precision', 'Average Score', 'Context Length', 'Embedding Dimension', 'Model Size (MB)', 'Number of Parameters (Billions)', 'Web Search Dataset', 'Islamic Knowledge Data",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_13",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/retrieval_search_leaderboard_1",
+      "parameters": [
+        {
+          "name": "model_name",
+          "label": "Search (You can also press Enter to search)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "columns_to_show",
+          "label": "Columns to Show",
+          "type": "list[Literal['Rank', 'Model', 'Precision', 'Average Score', 'Context Length', 'Embedding Dimension', 'Model Size (MB)', 'Number of Parameters (Billions)', 'Web Search Dataset', 'Islamic Knowledge Data",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_13",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/fetch_model_information",
+      "parameters": [
+        {
+          "name": "model_id",
+          "label": "Model",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Precision",
+          "type": "Literal['F16', 'F32', 'BF16', 'I8', 'U8', 'I16']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "License",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Params (in Millions)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Number of Downloads",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Number of Likes",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/fetch_model_information_1",
+      "parameters": [
+        {
+          "name": "model_id",
+          "label": "Model",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Precision",
+          "type": "Literal['F16', 'F32', 'BF16', 'I8', 'U8', 'I16']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "License",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Params (in Millions)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Number of Downloads",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Number of Likes",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/submit_model",
+      "parameters": [
+        {
+          "name": "model_name",
+          "label": "Model",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "revision",
+          "label": "Revision",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "precision",
+          "label": "Precision",
+          "type": "Literal['F16', 'F32', 'BF16', 'I8', 'U8', 'I16']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "params",
+          "label": "Params (in Millions)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "license",
+          "label": "License",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Submission Result",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "value_35",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/reranking_search_leaderboard",
+      "parameters": [
+        {
+          "name": "model_name",
+          "label": "Search (You can also press Enter to search)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "columns_to_show",
+          "label": "Columns to Show",
+          "type": "list[Literal['Rank', 'Model', 'Precision', 'Average Score', 'Context Length', 'Embedding Dimension', 'Model Size (MB)', 'Number of Parameters (Billions)', 'Namaa Global Knowledge', 'Namaa Tourism', 'N",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_53",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/update_reranker_columns_to_show",
+      "parameters": [
+        {
+          "name": "columns_to_show",
+          "label": "Columns to Show",
+          "type": "list[Literal['Rank', 'Model', 'Precision', 'Average Score', 'Context Length', 'Embedding Dimension', 'Model Size (MB)', 'Number of Parameters (Billions)', 'Namaa Global Knowledge', 'Namaa Tourism', 'N",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_53",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/reranking_search_leaderboard_1",
+      "parameters": [
+        {
+          "name": "model_name",
+          "label": "Search (You can also press Enter to search)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "columns_to_show",
+          "label": "Columns to Show",
+          "type": "list[Literal['Rank', 'Model', 'Precision', 'Average Score', 'Context Length', 'Embedding Dimension', 'Model Size (MB)', 'Number of Parameters (Billions)', 'Namaa Global Knowledge', 'Namaa Tourism', 'N",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_53",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/fetch_model_information_2",
+      "parameters": [
+        {
+          "name": "model_id",
+          "label": "Model",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Precision",
+          "type": "Literal['F16', 'F32', 'BF16', 'I8', 'U8', 'I16']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "License",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Params (in Millions)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Number of Downloads",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Number of Likes",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/fetch_model_information_3",
+      "parameters": [
+        {
+          "name": "model_id",
+          "label": "Model",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Precision",
+          "type": "Literal['F16', 'F32', 'BF16', 'I8', 'U8', 'I16']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "License",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Params (in Millions)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Number of Downloads",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Number of Likes",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/submit_model_1",
+      "parameters": [
+        {
+          "name": "model_name",
+          "label": "Model",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "revision",
+          "label": "Revision",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "precision",
+          "label": "Precision",
+          "type": "Literal['F16', 'F32', 'BF16', 'I8', 'U8', 'I16']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "params",
+          "label": "Params (in Millions)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "license",
+          "label": "License",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Submission Result",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "value_75",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/retrieval_search_leaderboard",
+  "_api_verified": true,
+  "estimated_latency_s": 3.58,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "_tags_enriched": true,
+  "measured_latency_s": 3.58,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:49:40.096406+00:00"
+}

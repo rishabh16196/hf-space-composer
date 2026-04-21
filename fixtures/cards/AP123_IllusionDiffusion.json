@@ -1,0 +1,320 @@
+{
+  "space_id": "AP123/IllusionDiffusion",
+  "title": "IllusionDiffusion",
+  "emoji": "\ud83d\udc41",
+  "description": "Generate stunning high quality illusion artwork",
+  "input_schema": {
+    "prompt": {
+      "type": "str",
+      "description": "Prompt",
+      "required": true,
+      "component": "Textbox"
+    },
+    "control_image": {
+      "type": "filepath",
+      "description": "Input Illusion",
+      "required": true,
+      "component": "Image"
+    }
+  },
+  "output_schema": {},
+  "license": "openrail",
+  "hardware": "4.36.1",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us",
+    "diffusion",
+    "image-generation",
+    "text-to-image",
+    "vision"
+  ],
+  "likes": 5398,
+  "last_modified": "2024-06-12 16:32:25+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/check_inputs",
+      "parameters": [
+        {
+          "name": "prompt",
+          "label": "Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "control_image",
+          "label": "Input Illusion",
+          "type": "filepath",
+          "component": "Image"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/inference",
+      "parameters": [
+        {
+          "name": "control_image",
+          "label": "Input Illusion",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "name": "prompt",
+          "label": "Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "negative_prompt",
+          "label": "Negative Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "guidance_scale",
+          "label": "Guidance Scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "controlnet_conditioning_scale",
+          "label": "Illusion strength",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "control_guidance_start",
+          "label": "Start of ControlNet",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "control_guidance_end",
+          "label": "End of ControlNet",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "upscaler_strength",
+          "label": "Strength of the upscaler",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "seed",
+          "label": "Seed",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "sampler",
+          "label": "parameter_13",
+          "type": "Literal['DPM++ Karras SDE', 'Euler']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Illusion Diffusion Output",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "Illusion Diffusion Output",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "Last seed used",
+          "type": "float",
+          "component": "Number"
+        }
+      ]
+    },
+    {
+      "name": "/check_inputs_1",
+      "parameters": [
+        {
+          "name": "prompt",
+          "label": "Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "control_image",
+          "label": "Input Illusion",
+          "type": "filepath",
+          "component": "Image"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/inference_1",
+      "parameters": [
+        {
+          "name": "control_image",
+          "label": "Input Illusion",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "name": "prompt",
+          "label": "Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "negative_prompt",
+          "label": "Negative Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "guidance_scale",
+          "label": "Guidance Scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "controlnet_conditioning_scale",
+          "label": "Illusion strength",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "control_guidance_start",
+          "label": "Start of ControlNet",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "control_guidance_end",
+          "label": "End of ControlNet",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "upscaler_strength",
+          "label": "Strength of the upscaler",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "seed",
+          "label": "Seed",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "sampler",
+          "label": "parameter_13",
+          "type": "Literal['DPM++ Karras SDE', 'Euler']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Illusion Diffusion Output",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "Illusion Diffusion Output",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "Last seed used",
+          "type": "float",
+          "component": "Number"
+        }
+      ]
+    },
+    {
+      "name": "/_fetch_user_history",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Past images",
+          "type": "List[Dict(image: filepath, caption: str | None)]",
+          "component": "Gallery"
+        }
+      ]
+    },
+    {
+      "name": "/_export_user_history",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Exported history",
+          "type": "filepath",
+          "component": "File"
+        }
+      ]
+    },
+    {
+      "name": "/lambda",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/lambda_1",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/_delete_user_history",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/lambda_2",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/_check_login_status",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/_fetch_user_history_1",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Past images",
+          "type": "List[Dict(image: filepath, caption: str | None)]",
+          "component": "Gallery"
+        }
+      ]
+    },
+    {
+      "name": "/_inner",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_46",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/check_inputs",
+  "_api_verified": true,
+  "estimated_latency_s": 3.58,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "_tags_enriched": true,
+  "measured_latency_s": 3.58,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:49:02.279149+00:00",
+  "_inference_attempt_status": "predict_failed",
+  "_inference_attempt_error": "The upstream Gradio app has raised an exception but has not enabled verbose error reporting. To enable, set show_error=True in launch()."
+}

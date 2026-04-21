@@ -1,0 +1,393 @@
+{
+  "space_id": "LPX55/FLUX.MF-Lightning-Fast-Upscaler",
+  "title": "FLUX.MF | Lightning Fast 8-Step Upscaler",
+  "emoji": "\u26a1",
+  "description": "Lightning fast guided upscaling with FLUX.MF + More",
+  "input_schema": {
+    "control_image": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "Control Image",
+      "required": true,
+      "component": "Image"
+    },
+    "user_prompt": {
+      "type": "str",
+      "description": "Image Description",
+      "required": true,
+      "component": "Textbox"
+    },
+    "system_prompt": {
+      "type": "str",
+      "description": "System Prompt for Captioning",
+      "required": true,
+      "component": "Textbox"
+    },
+    "scale": {
+      "type": "float",
+      "description": "Scale (Upscale Factor)",
+      "required": true,
+      "component": "Slider"
+    },
+    "steps": {
+      "type": "float",
+      "description": "Steps",
+      "required": true,
+      "component": "Slider"
+    },
+    "controlnet_conditioning_scale": {
+      "type": "float",
+      "description": "ControlNet Scale",
+      "required": true,
+      "component": "Slider"
+    },
+    "guidance_scale": {
+      "type": "float",
+      "description": "Guidance Scale",
+      "required": true,
+      "component": "Slider"
+    },
+    "seed": {
+      "type": "float",
+      "description": "Seed",
+      "required": true,
+      "component": "Slider"
+    },
+    "guidance_start": {
+      "type": "float",
+      "description": "Guidance End",
+      "required": true,
+      "component": "Slider"
+    },
+    "guidance_end": {
+      "type": "float",
+      "description": "Guidance End",
+      "required": true,
+      "component": "Slider"
+    },
+    "temperature": {
+      "type": "float",
+      "description": "Temperature",
+      "required": true,
+      "component": "Slider"
+    },
+    "max_new_tokens": {
+      "type": "float",
+      "description": "Max New Tokens",
+      "required": true,
+      "component": "Slider"
+    },
+    "log_prompt": {
+      "type": "bool",
+      "description": "Log",
+      "required": true,
+      "component": "Checkbox"
+    }
+  },
+  "output_schema": {
+    "Generated Image": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "Generated Image",
+      "component": "Image"
+    },
+    "Image Description": {
+      "type": "str",
+      "description": "Image Description",
+      "component": "Textbox"
+    }
+  },
+  "license": "other",
+  "hardware": "5.49.1",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "upscaler",
+    "super-resolution",
+    "controlnet",
+    "flux.1-dev",
+    "flux.1-schnell",
+    "flux.1-merged",
+    "region:us"
+  ],
+  "likes": 33,
+  "last_modified": "2025-11-08 02:14:47+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/process_image",
+      "parameters": [
+        {
+          "name": "control_image",
+          "label": "Control Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "user_prompt",
+          "label": "Image Description",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "system_prompt",
+          "label": "System Prompt for Captioning",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "scale",
+          "label": "Scale (Upscale Factor)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "steps",
+          "label": "Steps",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "controlnet_conditioning_scale",
+          "label": "ControlNet Scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "guidance_scale",
+          "label": "Guidance Scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "seed",
+          "label": "Seed",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "guidance_start",
+          "label": "Guidance End",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "guidance_end",
+          "label": "Guidance End",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "temperature",
+          "label": "Temperature",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "max_new_tokens",
+          "label": "Max New Tokens",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "log_prompt",
+          "label": "Log",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Generated Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "Image Description",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/generate_caption",
+      "parameters": [
+        {
+          "name": "control_image",
+          "label": "Control Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_26",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/generate_focus",
+      "parameters": [
+        {
+          "name": "control_image",
+          "label": "Control Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "focus_list",
+          "label": "Area(s) of Focus",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_26",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/combine_caption_focus",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Image Description",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/generate_caption_1",
+      "parameters": [
+        {
+          "name": "control_image",
+          "label": "Control Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Image Description",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "value_26",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/generate_focus_1",
+      "parameters": [
+        {
+          "name": "control_image",
+          "label": "Control Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "focus_list",
+          "label": "Area(s) of Focus",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_26",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/combine_caption_focus_1",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Image Description",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/update_parameters",
+      "parameters": [
+        {
+          "name": "preset",
+          "label": "Select Preset",
+          "type": "Literal['Default', 'Strict Upscale', 'Creative Upscale', 'Redux']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Scale (Upscale Factor)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Steps",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "ControlNet Scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Guidance Scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Guidance End",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Guidance End",
+          "type": "float",
+          "component": "Slider"
+        }
+      ]
+    },
+    {
+      "name": "/hello",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_38",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/_check_login_status",
+      "parameters": [],
+      "returns": []
+    }
+  ],
+  "endpoint": "/process_image",
+  "_api_verified": true,
+  "estimated_latency_s": 3.02,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "_tags_enriched": true,
+  "measured_latency_s": 3.02,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:49:33.195051+00:00"
+}

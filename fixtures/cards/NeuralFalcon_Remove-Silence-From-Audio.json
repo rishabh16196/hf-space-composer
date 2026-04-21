@@ -1,0 +1,94 @@
+{
+  "space_id": "NeuralFalcon/Remove-Silence-From-Audio",
+  "title": "Remove Silence From Audio",
+  "emoji": "\ud83e\udd80",
+  "description": "Remove Silence From Audio",
+  "input_schema": {
+    "audio_file": {
+      "type": "filepath",
+      "description": "Upload Audio",
+      "required": true,
+      "component": "Audio"
+    },
+    "seconds": {
+      "type": "float",
+      "description": "Keep Silence Upto (In seconds)",
+      "required": true,
+      "component": "Number"
+    }
+  },
+  "output_schema": {
+    "Play Audio": {
+      "type": "filepath",
+      "description": "Play Audio",
+      "component": "Audio"
+    },
+    "Download Audio File": {
+      "type": "filepath",
+      "description": "Download Audio File",
+      "component": "File"
+    },
+    "Duration": {
+      "type": "str",
+      "description": "Duration",
+      "component": "Textbox"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "5.25.1",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 255,
+  "last_modified": "2026-03-31 14:14:24+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/process_audio",
+      "parameters": [
+        {
+          "name": "audio_file",
+          "label": "Upload Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "name": "seconds",
+          "label": "Keep Silence Upto (In seconds)",
+          "type": "float",
+          "component": "Number"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Play Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Download Audio File",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "label": "Duration",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/process_audio",
+  "_api_verified": true,
+  "estimated_latency_s": 3.55,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 3.55,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:49:40.929693+00:00"
+}

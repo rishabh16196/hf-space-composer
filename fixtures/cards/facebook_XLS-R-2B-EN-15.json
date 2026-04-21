@@ -1,0 +1,35 @@
+{
+  "space_id": "facebook/XLS-R-2B-EN-15",
+  "title": "XLS-R EN-to-All 2B",
+  "emoji": "\ud83c\udf99\ufe0f",
+  "description": "XLS-R EN-to-All 2B",
+  "input_schema": {
+    "input": {
+      "type": "string",
+      "description": "Input",
+      "required": true
+    }
+  },
+  "output_schema": {
+    "output": {
+      "type": "string"
+    }
+  },
+  "license": "unknown",
+  "hardware": "",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 4,
+  "last_modified": "2022-02-10 16:57:55+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "error",
+  "_api_error": "(Request ID: Root=1-69e77bc9-055f0e2d0d7468dd55895e43;cfa1d10e-c202-4090-a6aa-f6f7e4bb0c5a)\n\n429 Too Many Requests: you have reached your 'api' rate limit.\nRetry after 21 seconds (0/2500 requests rema"
+}

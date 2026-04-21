@@ -1,0 +1,208 @@
+{
+  "space_id": "innova-ai/video-background-removal",
+  "title": "Video Background Removal",
+  "emoji": "\ud83d\udcfd\ufe0f",
+  "description": "Remove/Change background of video.",
+  "input_schema": {
+    "bg_type": {
+      "type": "Literal['Color', 'Image', 'Video']",
+      "description": "Background Type",
+      "required": true,
+      "component": "Radio"
+    }
+  },
+  "output_schema": {
+    "Background Color": {
+      "type": "str",
+      "description": "Background Color",
+      "component": "Colorpicker"
+    },
+    "Background Image": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "Background Image",
+      "component": "Image"
+    },
+    "Background Video": {
+      "type": "dict(video: filepath, subtitles: filepath | None)",
+      "description": "Background Video",
+      "component": "Video"
+    }
+  },
+  "license": "mit",
+  "hardware": "5.26.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 610,
+  "last_modified": "2025-04-25 04:01:03+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/update_visibility",
+      "parameters": [
+        {
+          "name": "bg_type",
+          "label": "Background Type",
+          "type": "Literal['Color', 'Image', 'Video']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Background Color",
+          "type": "str",
+          "component": "Colorpicker"
+        },
+        {
+          "label": "Background Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "Background Video",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        }
+      ]
+    },
+    {
+      "name": "/fn",
+      "parameters": [
+        {
+          "name": "vid",
+          "label": "Input Video",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        },
+        {
+          "name": "bg_type",
+          "label": "Background Type",
+          "type": "Literal['Color', 'Image', 'Video']",
+          "component": "Radio"
+        },
+        {
+          "name": "bg_image",
+          "label": "Background Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "bg_video",
+          "label": "Background Video",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        },
+        {
+          "name": "color",
+          "label": "Background Color",
+          "type": "str",
+          "component": "Colorpicker"
+        },
+        {
+          "name": "fps",
+          "label": "Output FPS (0 will inherit the original fps value)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "video_handling",
+          "label": "Video Handling",
+          "type": "Literal['slow_down', 'loop']",
+          "component": "Radio"
+        },
+        {
+          "name": "fast_mode",
+          "label": "Fast Mode (Use BiRefNet_lite)",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "max_workers",
+          "label": "Max Workers",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Streaming Output",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "Final Output Video",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        },
+        {
+          "label": "Time Elapsed",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/get_final_item",
+      "parameters": [
+        {
+          "name": "param_0",
+          "label": "Input Video",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        },
+        {
+          "name": "param_1",
+          "label": "Background Type",
+          "type": "Literal['Color', 'Image', 'Video']",
+          "component": "Radio"
+        },
+        {
+          "name": "param_2",
+          "label": "Background Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "param_3",
+          "label": "Background Video",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Streaming Output",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "Final Output Video",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        },
+        {
+          "label": "Time Elapsed",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/update_visibility",
+  "_api_verified": true,
+  "estimated_latency_s": 2.13,
+  "speed_tier": "fast",
+  "_latency_source": "measured_inference",
+  "measured_latency_s": 2.13,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:50:58.113406+00:00",
+  "measured_inference_s": 2.13,
+  "measured_inference_timestamp": "2026-04-20T07:59:14.302782+00:00",
+  "measured_inference_method": "auto_predict",
+  "measured_inference_api": "/update_visibility"
+}

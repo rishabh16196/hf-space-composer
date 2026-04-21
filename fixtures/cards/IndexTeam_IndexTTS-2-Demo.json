@@ -1,0 +1,287 @@
+{
+  "space_id": "IndexTeam/IndexTTS-2-Demo",
+  "title": "IndexTTS 2 Demo",
+  "emoji": "\ud83c\udfe2",
+  "description": "IndexTTS 2 Demo",
+  "input_schema": {
+    "emo_control_method": {
+      "type": "Literal['Same as the voice reference', 'Use emotion reference audio', 'Use emotion vectors']",
+      "description": "Emotion control method",
+      "required": true,
+      "component": "Radio"
+    }
+  },
+  "output_schema": {},
+  "license": "apache-2.0",
+  "hardware": "5.34.1",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 785,
+  "last_modified": "2026-03-13 15:58:35+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/on_method_select",
+      "parameters": [
+        {
+          "name": "emo_control_method",
+          "label": "Emotion control method",
+          "type": "Literal['Same as the voice reference', 'Use emotion reference audio', 'Use emotion vectors']",
+          "component": "Radio"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/on_input_text_change",
+      "parameters": [
+        {
+          "name": "text",
+          "label": "Text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "max_text_tokens_per_segment",
+          "label": "Max tokens per generation segment",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_67",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/on_experimental_change",
+      "parameters": [
+        {
+          "name": "is_exp",
+          "label": "Show experimental features",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Emotion control method",
+          "type": "Literal['Same as the voice reference', 'Use emotion reference audio', 'Use emotion vectors']",
+          "component": "Radio"
+        },
+        {
+          "label": "value_68",
+          "type": "int",
+          "component": "Dataset"
+        }
+      ]
+    },
+    {
+      "name": "/on_input_text_change_1",
+      "parameters": [
+        {
+          "name": "text",
+          "label": "Text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "max_text_tokens_per_segment",
+          "label": "Max tokens per generation segment",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_67",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/update_prompt_audio",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/gen_single",
+      "parameters": [
+        {
+          "name": "emo_control_method",
+          "label": "Emotion control method",
+          "type": "Literal['Same as the voice reference', 'Use emotion reference audio', 'Use emotion vectors']",
+          "component": "Radio"
+        },
+        {
+          "name": "prompt",
+          "label": "Voice Reference",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "name": "text",
+          "label": "Text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "emo_ref_path",
+          "label": "Upload emotion reference audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "name": "emo_weight",
+          "label": "Emotion control weight",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "vec1",
+          "label": "Happy",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "vec2",
+          "label": "Angry",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "vec3",
+          "label": "Sad",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "vec4",
+          "label": "Afraid",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "vec5",
+          "label": "Disgusted",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "vec6",
+          "label": "Melancholic",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "vec7",
+          "label": "Surprised",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "vec8",
+          "label": "Calm",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "emo_text",
+          "label": "Emotion description",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "emo_random",
+          "label": "Randomize emotion sampling",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "max_text_tokens_per_segment",
+          "label": "Max tokens per generation segment",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_16",
+          "label": "do_sample",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_17",
+          "label": "top_p",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_18",
+          "label": "top_k",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_19",
+          "label": "temperature",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_20",
+          "label": "length_penalty",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "param_21",
+          "label": "num_beams",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_22",
+          "label": "repetition_penalty",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "param_23",
+          "label": "max_mel_tokens",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Synthesis Result",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/on_method_select",
+  "_api_verified": true,
+  "estimated_latency_s": 2.09,
+  "speed_tier": "fast",
+  "_latency_source": "measured_inference",
+  "_tags_enriched": true,
+  "measured_latency_s": 2.09,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:49:27.346870+00:00",
+  "measured_inference_s": 2.09,
+  "measured_inference_timestamp": "2026-04-20T07:59:02.989419+00:00",
+  "measured_inference_method": "auto_predict",
+  "measured_inference_api": "/on_method_select"
+}

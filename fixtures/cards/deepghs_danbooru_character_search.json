@@ -1,0 +1,96 @@
+{
+  "space_id": "deepghs/danbooru_character_search",
+  "title": "Danbooru Character Search",
+  "emoji": "\ud83c\udf0d",
+  "description": "Danbooru Character Search",
+  "input_schema": {
+    "image": {
+      "type": "filepath",
+      "description": "Original Image",
+      "required": true,
+      "component": "Image"
+    },
+    "count": {
+      "type": "float",
+      "description": "Max Query Count",
+      "required": true,
+      "component": "Slider"
+    },
+    "threshold": {
+      "type": "float",
+      "description": "Threshold",
+      "required": true,
+      "component": "Slider"
+    }
+  },
+  "output_schema": {
+    "Gallery": {
+      "type": "List[Dict(image: filepath, caption: str | None)]",
+      "description": "Gallery",
+      "component": "Gallery"
+    },
+    "Information": {
+      "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+      "description": "Information",
+      "component": "Dataframe"
+    }
+  },
+  "license": "mit",
+  "hardware": "4.29.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 24,
+  "last_modified": "2024-11-20 14:48:38+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/_fn",
+      "parameters": [
+        {
+          "name": "image",
+          "label": "Original Image",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "name": "count",
+          "label": "Max Query Count",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "threshold",
+          "label": "Threshold",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Gallery",
+          "type": "List[Dict(image: filepath, caption: str | None)]",
+          "component": "Gallery"
+        },
+        {
+          "label": "Information",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/_fn",
+  "_api_verified": true,
+  "estimated_latency_s": 3.24,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 3.24,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:50:28.329569+00:00"
+}

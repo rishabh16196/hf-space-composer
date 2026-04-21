@@ -1,0 +1,178 @@
+{
+  "space_id": "levihsu/OOTDiffusion",
+  "title": "OOTDiffusion",
+  "emoji": "\ud83e\udd7c\ud83d\udc56\ud83d\udc57",
+  "description": "High-quality virtual try-on ~ Your cyber fitting room",
+  "input_schema": {
+    "vton_img": {
+      "type": "filepath",
+      "description": "Model",
+      "required": true,
+      "component": "Image"
+    },
+    "garm_img": {
+      "type": "filepath",
+      "description": "Garment",
+      "required": true,
+      "component": "Image"
+    },
+    "n_samples": {
+      "type": "float",
+      "description": "Images",
+      "required": true,
+      "component": "Slider"
+    },
+    "n_steps": {
+      "type": "float",
+      "description": "Steps",
+      "required": true,
+      "component": "Slider"
+    },
+    "image_scale": {
+      "type": "float",
+      "description": "Guidance scale",
+      "required": true,
+      "component": "Slider"
+    },
+    "seed": {
+      "type": "float",
+      "description": "Seed",
+      "required": true,
+      "component": "Slider"
+    }
+  },
+  "output_schema": {
+    "Output": {
+      "type": "List[Dict(image: filepath, caption: str | None)]",
+      "description": "Output",
+      "component": "Gallery"
+    }
+  },
+  "license": "cc-by-nc-sa-4.0",
+  "hardware": "4.36.1",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 1122,
+  "last_modified": "2025-09-02 09:54:58+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/process_hd",
+      "parameters": [
+        {
+          "name": "vton_img",
+          "label": "Model",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "name": "garm_img",
+          "label": "Garment",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "name": "n_samples",
+          "label": "Images",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "n_steps",
+          "label": "Steps",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "image_scale",
+          "label": "Guidance scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "seed",
+          "label": "Seed",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output",
+          "type": "List[Dict(image: filepath, caption: str | None)]",
+          "component": "Gallery"
+        }
+      ]
+    },
+    {
+      "name": "/process_dc",
+      "parameters": [
+        {
+          "name": "vton_img",
+          "label": "Model",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "name": "garm_img",
+          "label": "Garment",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "name": "category",
+          "label": "Garment category (important option!!!)",
+          "type": "Literal['Upper-body', 'Lower-body', 'Dress']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "n_samples",
+          "label": "Images",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "n_steps",
+          "label": "Steps",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "image_scale",
+          "label": "Guidance scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "seed",
+          "label": "Seed",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output",
+          "type": "List[Dict(image: filepath, caption: str | None)]",
+          "component": "Gallery"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/process_hd",
+  "_api_verified": true,
+  "estimated_latency_s": 3.54,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 3.54,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:51:05.986873+00:00",
+  "_inference_attempt_status": "predict_failed",
+  "_inference_attempt_error": "The upstream Gradio app has raised an exception but has not enabled verbose error reporting. To enable, set show_error=True in launch()."
+}

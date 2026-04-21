@@ -1,0 +1,258 @@
+{
+  "space_id": "prithivMLmods/SAM3-Plus-Qwen3.5",
+  "title": "SAM3 + Qwen3.5",
+  "emoji": "\ud83d\udc38",
+  "description": "Multi-object tracking",
+  "input_schema": {
+    "image": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "Upload Image",
+      "required": true,
+      "component": "Image"
+    },
+    "prompt": {
+      "type": "str",
+      "description": "Detection Prompt",
+      "required": true,
+      "component": "Textbox"
+    },
+    "conf_thresh": {
+      "type": "float",
+      "description": "SAM3 Confidence Threshold",
+      "required": true,
+      "component": "Slider"
+    }
+  },
+  "output_schema": {
+    "SAM3 Result": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "SAM3 Result",
+      "component": "Image"
+    },
+    "SAM3 + Qwen Result": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "SAM3 + Qwen Result",
+      "component": "Image"
+    },
+    "Detection JSON": {
+      "type": "str",
+      "description": "Detection JSON",
+      "component": "Textbox"
+    },
+    "System Status": {
+      "type": "str",
+      "description": "System Status",
+      "component": "Textbox"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "6.6.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "mcp-server",
+    "region:us"
+  ],
+  "likes": 13,
+  "last_modified": "2026-04-02 18:46:16+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/run_sam3_qwen_detection",
+      "parameters": [
+        {
+          "name": "image",
+          "label": "Upload Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "prompt",
+          "label": "Detection Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "conf_thresh",
+          "label": "SAM3 Confidence Threshold",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "SAM3 Result",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "SAM3 + Qwen Result",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "Detection JSON",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "System Status",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/explain_detection",
+      "parameters": [
+        {
+          "name": "image",
+          "label": "Upload Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "prompt",
+          "label": "Detection Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "detection_json_text",
+          "label": "Detection JSON",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Explanation",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/run_video_segmentation_mask",
+      "parameters": [
+        {
+          "name": "video_path",
+          "label": "Upload Video",
+          "type": "filepath",
+          "component": "Video"
+        },
+        {
+          "name": "prompt",
+          "label": "Segmentation Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "frame_limit",
+          "label": "Max Frames",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "time_limit",
+          "label": "Timeout (seconds)",
+          "type": "Literal['60', '120', '180']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Masked Video",
+          "type": "filepath",
+          "component": "Video"
+        },
+        {
+          "label": "System Status",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/run_video_segmentation",
+      "parameters": [
+        {
+          "name": "video_path",
+          "label": "Upload Video",
+          "type": "filepath",
+          "component": "Video"
+        },
+        {
+          "name": "prompt",
+          "label": "Segmentation Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "frame_limit",
+          "label": "Max Frames",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "time_limit",
+          "label": "Timeout (seconds)",
+          "type": "Literal['60', '120', '180']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Segmented Video",
+          "type": "filepath",
+          "component": "Video"
+        },
+        {
+          "label": "System Status",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/image_click_handler",
+      "parameters": [
+        {
+          "name": "image",
+          "label": "Upload Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Segmented Preview",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/lambda",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Segmented Preview",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/run_sam3_qwen_detection",
+  "_api_verified": true,
+  "estimated_latency_s": 5.22,
+  "speed_tier": "medium",
+  "_latency_source": "measured",
+  "measured_latency_s": 5.22,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:51:39.334429+00:00"
+}

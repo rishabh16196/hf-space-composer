@@ -1,0 +1,206 @@
+{
+  "space_id": "lj1995/GPT-SoVITS-ProPlus",
+  "title": "GPT SoVITS V2 Pro Plus",
+  "emoji": "\ud83e\udd17",
+  "description": "GPT SoVITS V2 Pro Plus",
+  "input_schema": {
+    "ref_wav_path": {
+      "type": "filepath",
+      "description": "\u8bf7\u4e0a\u4f203~10\u79d2\u5185\u53c2\u8003\u97f3\u9891\uff0c\u8d85\u8fc7\u4f1a\u62a5\u9519\uff01",
+      "required": true,
+      "component": "Audio"
+    },
+    "prompt_text": {
+      "type": "str",
+      "description": "\u53c2\u8003\u97f3\u9891\u7684\u6587\u672c",
+      "required": true,
+      "component": "Textbox"
+    },
+    "prompt_language": {
+      "type": "Literal['\u4e2d\u6587', '\u82f1\u6587', '\u65e5\u6587', '\u7ca4\u8bed', '\u97e9\u6587', '\u4e2d\u82f1\u6df7\u5408', '\u65e5\u82f1\u6df7\u5408', '\u7ca4\u82f1\u6df7\u5408', '\u97e9\u82f1\u6df7\u5408', '\u591a\u8bed\u79cd\u6df7\u5408', '\u591a\u8bed\u79cd\u6df7\u5408(\u7ca4\u8bed)']",
+      "description": "\u53c2\u8003\u97f3\u9891\u7684\u8bed\u79cd",
+      "required": true,
+      "component": "Dropdown"
+    },
+    "text": {
+      "type": "str",
+      "description": "\u9700\u8981\u5408\u6210\u7684\u6587\u672c",
+      "required": true,
+      "component": "Textbox"
+    },
+    "text_language": {
+      "type": "Literal['\u4e2d\u6587', '\u82f1\u6587', '\u65e5\u6587', '\u7ca4\u8bed', '\u97e9\u6587', '\u4e2d\u82f1\u6df7\u5408', '\u65e5\u82f1\u6df7\u5408', '\u7ca4\u82f1\u6df7\u5408', '\u97e9\u82f1\u6df7\u5408', '\u591a\u8bed\u79cd\u6df7\u5408', '\u591a\u8bed\u79cd\u6df7\u5408(\u7ca4\u8bed)']",
+      "description": "\u9700\u8981\u5408\u6210\u7684\u8bed\u79cd\u3002\u9650\u5236\u8303\u56f4\u8d8a\u5c0f\u5224\u522b\u6548\u679c\u8d8a\u597d\u3002",
+      "required": true,
+      "component": "Dropdown"
+    },
+    "how_to_cut": {
+      "type": "Literal['\u4e0d\u5207', '\u51d1\u56db\u53e5\u4e00\u5207', '\u51d150\u5b57\u4e00\u5207', '\u6309\u4e2d\u6587\u53e5\u53f7\u3002\u5207', '\u6309\u82f1\u6587\u53e5\u53f7.\u5207', '\u6309\u6807\u70b9\u7b26\u53f7\u5207']",
+      "description": "\u600e\u4e48\u5207",
+      "required": true,
+      "component": "Dropdown"
+    },
+    "top_k": {
+      "type": "float",
+      "description": "top_k",
+      "required": true,
+      "component": "Slider"
+    },
+    "top_p": {
+      "type": "float",
+      "description": "top_p",
+      "required": true,
+      "component": "Slider"
+    },
+    "temperature": {
+      "type": "float",
+      "description": "temperature",
+      "required": true,
+      "component": "Slider"
+    },
+    "ref_free": {
+      "type": "bool",
+      "description": "\u5f00\u542f\u65e0\u53c2\u8003\u6587\u672c\u6a21\u5f0f\u3002\u4e0d\u586b\u53c2\u8003\u6587\u672c\u4ea6\u76f8\u5f53\u4e8e\u5f00\u542f\u3002",
+      "required": true,
+      "component": "Checkbox"
+    },
+    "speed": {
+      "type": "float",
+      "description": "\u8bed\u901f",
+      "required": true,
+      "component": "Slider"
+    },
+    "if_freeze": {
+      "type": "bool",
+      "description": "\u662f\u5426\u76f4\u63a5\u5bf9\u4e0a\u6b21\u5408\u6210\u7ed3\u679c\u8c03\u6574\u8bed\u901f\u548c\u97f3\u8272\u3002\u9632\u6b62\u968f\u673a\u6027\u3002",
+      "required": true,
+      "component": "Checkbox"
+    },
+    "inp_refs": {
+      "type": "list[filepath]",
+      "description": "\u53ef\u9009\u9879\uff1a\u901a\u8fc7\u62d6\u62fd\u591a\u4e2a\u6587\u4ef6\u4e0a\u4f20\u591a\u4e2a\u53c2\u8003\u97f3\u9891\uff08\u5efa\u8bae\u540c\u6027\uff09\uff0c\u5e73\u5747\u878d\u5408\u4ed6\u4eec\u7684\u97f3\u8272\u3002\u5982\u4e0d\u586b\u5199\u6b64\u9879\uff0c\u97f3\u8272\u7531\u5de6\u4fa7\u5355\u4e2a\u53c2\u8003\u97f3\u9891\u63a7\u5236\u3002",
+      "required": true,
+      "component": "File"
+    }
+  },
+  "output_schema": {
+    "\u8f93\u51fa\u7684\u8bed\u97f3": {
+      "type": "filepath",
+      "description": "\u8f93\u51fa\u7684\u8bed\u97f3",
+      "component": "Audio"
+    }
+  },
+  "license": "mit",
+  "hardware": "5.34.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 231,
+  "last_modified": "2025-09-06 16:49:57+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/get_tts_wav",
+      "parameters": [
+        {
+          "name": "ref_wav_path",
+          "label": "\u8bf7\u4e0a\u4f203~10\u79d2\u5185\u53c2\u8003\u97f3\u9891\uff0c\u8d85\u8fc7\u4f1a\u62a5\u9519\uff01",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "name": "prompt_text",
+          "label": "\u53c2\u8003\u97f3\u9891\u7684\u6587\u672c",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "prompt_language",
+          "label": "\u53c2\u8003\u97f3\u9891\u7684\u8bed\u79cd",
+          "type": "Literal['\u4e2d\u6587', '\u82f1\u6587', '\u65e5\u6587', '\u7ca4\u8bed', '\u97e9\u6587', '\u4e2d\u82f1\u6df7\u5408', '\u65e5\u82f1\u6df7\u5408', '\u7ca4\u82f1\u6df7\u5408', '\u97e9\u82f1\u6df7\u5408', '\u591a\u8bed\u79cd\u6df7\u5408', '\u591a\u8bed\u79cd\u6df7\u5408(\u7ca4\u8bed)']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "text",
+          "label": "\u9700\u8981\u5408\u6210\u7684\u6587\u672c",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "text_language",
+          "label": "\u9700\u8981\u5408\u6210\u7684\u8bed\u79cd\u3002\u9650\u5236\u8303\u56f4\u8d8a\u5c0f\u5224\u522b\u6548\u679c\u8d8a\u597d\u3002",
+          "type": "Literal['\u4e2d\u6587', '\u82f1\u6587', '\u65e5\u6587', '\u7ca4\u8bed', '\u97e9\u6587', '\u4e2d\u82f1\u6df7\u5408', '\u65e5\u82f1\u6df7\u5408', '\u7ca4\u82f1\u6df7\u5408', '\u97e9\u82f1\u6df7\u5408', '\u591a\u8bed\u79cd\u6df7\u5408', '\u591a\u8bed\u79cd\u6df7\u5408(\u7ca4\u8bed)']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "how_to_cut",
+          "label": "\u600e\u4e48\u5207",
+          "type": "Literal['\u4e0d\u5207', '\u51d1\u56db\u53e5\u4e00\u5207', '\u51d150\u5b57\u4e00\u5207', '\u6309\u4e2d\u6587\u53e5\u53f7\u3002\u5207', '\u6309\u82f1\u6587\u53e5\u53f7.\u5207', '\u6309\u6807\u70b9\u7b26\u53f7\u5207']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "top_k",
+          "label": "top_k",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "top_p",
+          "label": "top_p",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "temperature",
+          "label": "temperature",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "ref_free",
+          "label": "\u5f00\u542f\u65e0\u53c2\u8003\u6587\u672c\u6a21\u5f0f\u3002\u4e0d\u586b\u53c2\u8003\u6587\u672c\u4ea6\u76f8\u5f53\u4e8e\u5f00\u542f\u3002",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "speed",
+          "label": "\u8bed\u901f",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "if_freeze",
+          "label": "\u662f\u5426\u76f4\u63a5\u5bf9\u4e0a\u6b21\u5408\u6210\u7ed3\u679c\u8c03\u6574\u8bed\u901f\u548c\u97f3\u8272\u3002\u9632\u6b62\u968f\u673a\u6027\u3002",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "inp_refs",
+          "label": "\u53ef\u9009\u9879\uff1a\u901a\u8fc7\u62d6\u62fd\u591a\u4e2a\u6587\u4ef6\u4e0a\u4f20\u591a\u4e2a\u53c2\u8003\u97f3\u9891\uff08\u5efa\u8bae\u540c\u6027\uff09\uff0c\u5e73\u5747\u878d\u5408\u4ed6\u4eec\u7684\u97f3\u8272\u3002\u5982\u4e0d\u586b\u5199\u6b64\u9879\uff0c\u97f3\u8272\u7531\u5de6\u4fa7\u5355\u4e2a\u53c2\u8003\u97f3\u9891\u63a7\u5236\u3002",
+          "type": "list[filepath]",
+          "component": "File"
+        }
+      ],
+      "returns": [
+        {
+          "label": "\u8f93\u51fa\u7684\u8bed\u97f3",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/get_tts_wav",
+  "_api_verified": true,
+  "estimated_latency_s": 3.99,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 3.99,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:51:09.978115+00:00"
+}

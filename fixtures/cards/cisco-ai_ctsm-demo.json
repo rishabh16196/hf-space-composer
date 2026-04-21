@@ -1,0 +1,88 @@
+{
+  "space_id": "cisco-ai/ctsm-demo",
+  "title": "Cisco Time Series Model Demo",
+  "emoji": "\ud83d\udcc8",
+  "description": "Upload a time series to get accurate forecasts",
+  "input_schema": {
+    "example_key": {
+      "type": "Literal['Sine Wave', 'Hourly Trend', 'Periodic']",
+      "description": "Examples",
+      "required": true,
+      "component": "Dropdown"
+    }
+  },
+  "output_schema": {
+    "Time series input": {
+      "type": "str",
+      "description": "Time series input",
+      "component": "Textbox"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "6.1.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 2,
+  "last_modified": "2026-03-05 20:23:12+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/load_example",
+      "parameters": [
+        {
+          "name": "example_key",
+          "label": "Examples",
+          "type": "Literal['Sine Wave', 'Hourly Trend', 'Periodic']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Time series input",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/predict",
+      "parameters": [
+        {
+          "name": "series_text",
+          "label": "Time series input",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "horizon_len",
+          "label": "Horizon (fine-resolution steps)",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Mean & Quantile forecasts",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "value_22",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/load_example",
+  "_api_verified": true
+}

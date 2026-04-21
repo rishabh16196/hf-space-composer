@@ -1,0 +1,184 @@
+{
+  "space_id": "DraconicDragon/Kaloscope-artist-style-classifier",
+  "title": "Kaloscope Artist Style Classifier",
+  "emoji": "\ud83d\udcbb",
+  "description": "Danbooru artist tag classification",
+  "input_schema": {
+    "image": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "Upload Image",
+      "required": true,
+      "component": "Image"
+    },
+    "model_selection": {
+      "type": "Literal['Kaloscope v2.0 ONNX', 'Kaloscope v2.0', 'Kaloscope v1.1 ONNX', 'Kaloscope v1.1', 'Kaloscope",
+      "description": "Select Model",
+      "required": true,
+      "component": "Dropdown"
+    },
+    "top_k": {
+      "type": "float",
+      "description": "Top K",
+      "required": true,
+      "component": "Slider"
+    },
+    "threshold": {
+      "type": "float",
+      "description": "Threshold",
+      "required": true,
+      "component": "Slider"
+    }
+  },
+  "output_schema": {
+    "Predicted Tags": {
+      "type": "str",
+      "description": "Predicted Tags",
+      "component": "Textbox"
+    },
+    "value_12": {
+      "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+      "description": "value_12",
+      "component": "Dataframe"
+    },
+    "value_22": {
+      "type": "str",
+      "description": "value_22",
+      "component": "Code"
+    },
+    "value_19": {
+      "type": "str",
+      "description": "value_19",
+      "component": "Markdown"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "5.44.1",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 35,
+  "last_modified": "2026-02-01 09:02:09+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/predict",
+      "parameters": [
+        {
+          "name": "image",
+          "label": "Upload Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "model_selection",
+          "label": "Select Model",
+          "type": "Literal['Kaloscope v2.0 ONNX', 'Kaloscope v2.0', 'Kaloscope v1.1 ONNX', 'Kaloscope v1.1', 'Kaloscope v1.0 ONNX', 'Kaloscope v1.0', 'Kaloscope v1.0 ema']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "top_k",
+          "label": "Top K",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "threshold",
+          "label": "Threshold",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Predicted Tags",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "value_12",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_22",
+          "type": "str",
+          "component": "Code"
+        },
+        {
+          "label": "value_19",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/predict_from_url",
+      "parameters": [
+        {
+          "name": "url",
+          "label": "Enter Image URL (not all may work) or upload an image below",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "model_selection",
+          "label": "Select Model",
+          "type": "Literal['Kaloscope v2.0 ONNX', 'Kaloscope v2.0', 'Kaloscope v1.1 ONNX', 'Kaloscope v1.1', 'Kaloscope v1.0 ONNX', 'Kaloscope v1.0', 'Kaloscope v1.0 ema']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "top_k",
+          "label": "Top K",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "threshold",
+          "label": "Threshold",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Upload Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "Predicted Tags",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "value_12",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_22",
+          "type": "str",
+          "component": "Code"
+        },
+        {
+          "label": "value_19",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/predict",
+  "_api_verified": true,
+  "estimated_latency_s": 2.77,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 2.77,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:49:15.531951+00:00"
+}

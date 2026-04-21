@@ -1,0 +1,152 @@
+{
+  "space_id": "awacke1/Sentence2Paragraph",
+  "title": "\ud83d\udcd7MindfulStoryGen",
+  "emoji": "\ud83d\udc69\u200d\u2695\ufe0f",
+  "description": "\ud83d\udcd7MindfulStoryGen",
+  "input_schema": {
+    "prompt": {
+      "type": "str",
+      "description": "Your Story Prompt \ud83d\udc47",
+      "required": true,
+      "component": "Textbox"
+    }
+  },
+  "output_schema": {
+    "Story Outline 1": {
+      "type": "str",
+      "description": "Story Outline 1",
+      "component": "Markdown"
+    },
+    "Story Outline 2": {
+      "type": "str",
+      "description": "Story Outline 2",
+      "component": "Markdown"
+    },
+    "Story Outline 3": {
+      "type": "str",
+      "description": "Story Outline 3",
+      "component": "Markdown"
+    },
+    "Story Outline 4": {
+      "type": "str",
+      "description": "Story Outline 4",
+      "component": "Markdown"
+    },
+    "Story Outline 5": {
+      "type": "str",
+      "description": "Story Outline 5",
+      "component": "Markdown"
+    },
+    "Story Outline 6": {
+      "type": "str",
+      "description": "Story Outline 6",
+      "component": "Markdown"
+    },
+    "Story Outline 7": {
+      "type": "str",
+      "description": "Story Outline 7",
+      "component": "Markdown"
+    },
+    "Story Outline 8": {
+      "type": "str",
+      "description": "Story Outline 8",
+      "component": "Markdown"
+    },
+    "Story Outline 9": {
+      "type": "str",
+      "description": "Story Outline 9",
+      "component": "Markdown"
+    },
+    "Story Outline 10": {
+      "type": "str",
+      "description": "Story Outline 10",
+      "component": "Markdown"
+    }
+  },
+  "license": "mit",
+  "hardware": "",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 21,
+  "last_modified": "2025-08-04 12:10:26+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/generate",
+      "parameters": [
+        {
+          "name": "prompt",
+          "label": "Your Story Prompt \ud83d\udc47",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Story Outline 1",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "Story Outline 2",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "Story Outline 3",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "Story Outline 4",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "Story Outline 5",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "Story Outline 6",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "Story Outline 7",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "Story Outline 8",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "Story Outline 9",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "Story Outline 10",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/generate",
+  "_api_verified": true,
+  "estimated_latency_s": 3.06,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 3.06,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:50:20.602076+00:00"
+}

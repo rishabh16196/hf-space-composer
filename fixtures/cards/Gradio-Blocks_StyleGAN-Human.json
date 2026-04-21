@@ -1,0 +1,140 @@
+{
+  "space_id": "Gradio-Blocks/StyleGAN-Human",
+  "title": "StyleGAN-Human",
+  "emoji": "\ud83c\udf0d",
+  "description": "StyleGAN-Human",
+  "input_schema": {
+    "seed": {
+      "type": "float",
+      "description": "Seed 1",
+      "required": true,
+      "component": "Number"
+    },
+    "truncation_psi": {
+      "type": "float",
+      "description": "Truncation psi 1",
+      "required": true,
+      "component": "Slider"
+    }
+  },
+  "output_schema": {
+    "Generated Image 1": {
+      "type": "filepath",
+      "description": "Generated Image 1",
+      "component": "Image"
+    }
+  },
+  "license": "unknown",
+  "hardware": "4.36.1",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 23,
+  "last_modified": "2024-06-10 06:05:13+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/generate_single_image",
+      "parameters": [
+        {
+          "name": "seed",
+          "label": "Seed 1",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "truncation_psi",
+          "label": "Truncation psi 1",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Generated Image 1",
+          "type": "filepath",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/generate_single_image_1",
+      "parameters": [
+        {
+          "name": "seed",
+          "label": "Seed 2",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "truncation_psi",
+          "label": "Truncation psi 2",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Generated Image 2",
+          "type": "filepath",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/generate_interpolated_images",
+      "parameters": [
+        {
+          "name": "seed0",
+          "label": "Seed 1",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "psi0",
+          "label": "Truncation psi 1",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "seed1",
+          "label": "Seed 2",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "psi1",
+          "label": "Truncation psi 2",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "num_intermediate",
+          "label": "Number of Intermediate Frames",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output Images",
+          "type": "List[Dict(image: filepath, caption: str | None)]",
+          "component": "Gallery"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/generate_single_image",
+  "_api_verified": true,
+  "estimated_latency_s": 2.73,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 2.73,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:49:20.839087+00:00"
+}

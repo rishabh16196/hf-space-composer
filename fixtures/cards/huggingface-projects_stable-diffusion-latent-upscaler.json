@@ -1,0 +1,202 @@
+{
+  "space_id": "huggingface-projects/stable-diffusion-latent-upscaler",
+  "title": "Stable Diffusion Latent Upscaler",
+  "emoji": "\u2795",
+  "description": "Stable Diffusion Latent Upscaler",
+  "input_schema": {
+    "prompt": {
+      "type": "str",
+      "description": "Enter your prompt",
+      "required": true,
+      "component": "Textbox"
+    },
+    "neg_prompt": {
+      "type": "str",
+      "description": "Enter your negative prompt",
+      "required": true,
+      "component": "Textbox"
+    },
+    "guidance": {
+      "type": "float",
+      "description": "Guidance scale",
+      "required": true,
+      "component": "Slider"
+    },
+    "steps": {
+      "type": "float",
+      "description": "Steps",
+      "required": true,
+      "component": "Slider"
+    },
+    "seed": {
+      "type": "float",
+      "description": "Seed (0 = random)",
+      "required": true,
+      "component": "Slider"
+    },
+    "model_name": {
+      "type": "Literal['anything-v4.0']",
+      "description": "Model",
+      "required": true,
+      "component": "Dropdown"
+    }
+  },
+  "output_schema": {
+    "Original 512px Image": {
+      "type": "filepath",
+      "description": "Original 512px Image",
+      "component": "Image"
+    },
+    "Upscaled 1024px Image": {
+      "type": "filepath",
+      "description": "Upscaled 1024px Image",
+      "component": "Image"
+    },
+    "value_25": {
+      "type": "str",
+      "description": "value_25",
+      "component": "Markdown"
+    }
+  },
+  "license": "mit",
+  "hardware": "4.24.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us",
+    "diffusion",
+    "image-generation",
+    "text-to-image",
+    "vision"
+  ],
+  "likes": 182,
+  "last_modified": "2024-04-08 18:49:06+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_tags_enriched": true,
+  "estimated_latency_s": 40.0,
+  "speed_tier": "slow",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/inference",
+      "parameters": [
+        {
+          "name": "prompt",
+          "label": "Enter your prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "neg_prompt",
+          "label": "Enter your negative prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "guidance",
+          "label": "Guidance scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "steps",
+          "label": "Steps",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "seed",
+          "label": "Seed (0 = random)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "model_name",
+          "label": "Model",
+          "type": "Literal['anything-v4.0']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Original 512px Image",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "Upscaled 1024px Image",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "value_25",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/inference_1",
+      "parameters": [
+        {
+          "name": "prompt",
+          "label": "Enter your prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "neg_prompt",
+          "label": "Enter your negative prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "guidance",
+          "label": "Guidance scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "steps",
+          "label": "Steps",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "seed",
+          "label": "Seed (0 = random)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "model_name",
+          "label": "Model",
+          "type": "Literal['anything-v4.0']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Original 512px Image",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "Upscaled 1024px Image",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "value_25",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/inference",
+  "_api_verified": true
+}

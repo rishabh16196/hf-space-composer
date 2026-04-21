@@ -1,0 +1,407 @@
+{
+  "space_id": "keras-io/Credit_Card_Fraud_Detection",
+  "title": "Credit Card Fraud Detection",
+  "emoji": "\ud83d\udcb3",
+  "description": "Credit Card Fraud Detection",
+  "input_schema": {
+    "Time": {
+      "type": "int | float",
+      "description": "Time",
+      "required": true,
+      "component": "Slider"
+    },
+    "V1": {
+      "type": "int | float",
+      "description": "V1",
+      "required": true,
+      "component": "Slider"
+    },
+    "V2": {
+      "type": "int | float",
+      "description": "V2",
+      "required": true,
+      "component": "Slider"
+    },
+    "V3": {
+      "type": "int | float",
+      "description": "V3",
+      "required": true,
+      "component": "Slider"
+    },
+    "V4": {
+      "type": "int | float",
+      "description": "V4",
+      "required": true,
+      "component": "Slider"
+    },
+    "V5": {
+      "type": "int | float",
+      "description": "V5",
+      "required": true,
+      "component": "Slider"
+    },
+    "V6": {
+      "type": "int | float",
+      "description": "V6",
+      "required": true,
+      "component": "Slider"
+    },
+    "V7": {
+      "type": "int | float",
+      "description": "V7",
+      "required": true,
+      "component": "Slider"
+    },
+    "V8": {
+      "type": "int | float",
+      "description": "V8",
+      "required": true,
+      "component": "Slider"
+    },
+    "V9": {
+      "type": "int | float",
+      "description": "V9",
+      "required": true,
+      "component": "Slider"
+    },
+    "V10": {
+      "type": "int | float",
+      "description": "V10",
+      "required": true,
+      "component": "Slider"
+    },
+    "V11": {
+      "type": "int | float",
+      "description": "V11",
+      "required": true,
+      "component": "Slider"
+    },
+    "V12": {
+      "type": "int | float",
+      "description": "V12",
+      "required": true,
+      "component": "Slider"
+    },
+    "V13": {
+      "type": "int | float",
+      "description": "V13",
+      "required": true,
+      "component": "Slider"
+    },
+    "V14": {
+      "type": "int | float",
+      "description": "V14",
+      "required": true,
+      "component": "Slider"
+    },
+    "V15": {
+      "type": "int | float",
+      "description": "V15",
+      "required": true,
+      "component": "Slider"
+    },
+    "V16": {
+      "type": "int | float",
+      "description": "V16",
+      "required": true,
+      "component": "Slider"
+    },
+    "V17": {
+      "type": "int | float",
+      "description": "V17",
+      "required": true,
+      "component": "Slider"
+    },
+    "V18": {
+      "type": "int | float",
+      "description": "V18",
+      "required": true,
+      "component": "Slider"
+    },
+    "V19": {
+      "type": "int | float",
+      "description": "V19",
+      "required": true,
+      "component": "Slider"
+    },
+    "V20": {
+      "type": "int | float",
+      "description": "V20",
+      "required": true,
+      "component": "Slider"
+    },
+    "V21": {
+      "type": "int | float",
+      "description": "V21",
+      "required": true,
+      "component": "Slider"
+    },
+    "V22": {
+      "type": "int | float",
+      "description": "V22",
+      "required": true,
+      "component": "Slider"
+    },
+    "V23": {
+      "type": "int | float",
+      "description": "V23",
+      "required": true,
+      "component": "Slider"
+    },
+    "V24": {
+      "type": "int | float",
+      "description": "V24",
+      "required": true,
+      "component": "Slider"
+    },
+    "V25": {
+      "type": "int | float",
+      "description": "V25",
+      "required": true,
+      "component": "Slider"
+    },
+    "V26": {
+      "type": "int | float",
+      "description": "V26",
+      "required": true,
+      "component": "Slider"
+    },
+    "V27": {
+      "type": "int | float",
+      "description": "V27",
+      "required": true,
+      "component": "Slider"
+    },
+    "V28": {
+      "type": "int | float",
+      "description": "V28",
+      "required": true,
+      "component": "Slider"
+    },
+    "Amount": {
+      "type": "int | float",
+      "description": "Amount",
+      "required": true,
+      "component": "Slider"
+    }
+  },
+  "output_schema": {
+    "output_0": {
+      "type": "str",
+      "description": "",
+      "component": "Textbox"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "3.0.15",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 7,
+  "last_modified": "2022-06-14 00:00:45+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/predict",
+      "parameters": [
+        {
+          "name": "Time",
+          "label": "Time",
+          "type": "int | float",
+          "component": "Slider"
+        },
+        {
+          "name": "V1",
+          "label": "V1",
+          "type": "int | float",
+          "component": "Slider"
+        },
+        {
+          "name": "V2",
+          "label": "V2",
+          "type": "int | float",
+          "component": "Slider"
+        },
+        {
+          "name": "V3",
+          "label": "V3",
+          "type": "int | float",
+          "component": "Slider"
+        },
+        {
+          "name": "V4",
+          "label": "V4",
+          "type": "int | float",
+          "component": "Slider"
+        },
+        {
+          "name": "V5",
+          "label": "V5",
+          "type": "int | float",
+          "component": "Slider"
+        },
+        {
+          "name": "V6",
+          "label": "V6",
+          "type": "int | float",
+          "component": "Slider"
+        },
+        {
+          "name": "V7",
+          "label": "V7",
+          "type": "int | float",
+          "component": "Slider"
+        },
+        {
+          "name": "V8",
+          "label": "V8",
+          "type": "int | float",
+          "component": "Slider"
+        },
+        {
+          "name": "V9",
+          "label": "V9",
+          "type": "int | float",
+          "component": "Slider"
+        },
+        {
+          "name": "V10",
+          "label": "V10",
+          "type": "int | float",
+          "component": "Slider"
+        },
+        {
+          "name": "V11",
+          "label": "V11",
+          "type": "int | float",
+          "component": "Slider"
+        },
+        {
+          "name": "V12",
+          "label": "V12",
+          "type": "int | float",
+          "component": "Slider"
+        },
+        {
+          "name": "V13",
+          "label": "V13",
+          "type": "int | float",
+          "component": "Slider"
+        },
+        {
+          "name": "V14",
+          "label": "V14",
+          "type": "int | float",
+          "component": "Slider"
+        },
+        {
+          "name": "V15",
+          "label": "V15",
+          "type": "int | float",
+          "component": "Slider"
+        },
+        {
+          "name": "V16",
+          "label": "V16",
+          "type": "int | float",
+          "component": "Slider"
+        },
+        {
+          "name": "V17",
+          "label": "V17",
+          "type": "int | float",
+          "component": "Slider"
+        },
+        {
+          "name": "V18",
+          "label": "V18",
+          "type": "int | float",
+          "component": "Slider"
+        },
+        {
+          "name": "V19",
+          "label": "V19",
+          "type": "int | float",
+          "component": "Slider"
+        },
+        {
+          "name": "V20",
+          "label": "V20",
+          "type": "int | float",
+          "component": "Slider"
+        },
+        {
+          "name": "V21",
+          "label": "V21",
+          "type": "int | float",
+          "component": "Slider"
+        },
+        {
+          "name": "V22",
+          "label": "V22",
+          "type": "int | float",
+          "component": "Slider"
+        },
+        {
+          "name": "V23",
+          "label": "V23",
+          "type": "int | float",
+          "component": "Slider"
+        },
+        {
+          "name": "V24",
+          "label": "V24",
+          "type": "int | float",
+          "component": "Slider"
+        },
+        {
+          "name": "V25",
+          "label": "V25",
+          "type": "int | float",
+          "component": "Slider"
+        },
+        {
+          "name": "V26",
+          "label": "V26",
+          "type": "int | float",
+          "component": "Slider"
+        },
+        {
+          "name": "V27",
+          "label": "V27",
+          "type": "int | float",
+          "component": "Slider"
+        },
+        {
+          "name": "V28",
+          "label": "V28",
+          "type": "int | float",
+          "component": "Slider"
+        },
+        {
+          "name": "Amount",
+          "label": "Amount",
+          "type": "int | float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/predict",
+  "_api_verified": true
+}

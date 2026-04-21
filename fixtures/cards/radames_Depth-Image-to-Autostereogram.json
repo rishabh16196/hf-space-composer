@@ -1,0 +1,85 @@
+{
+  "space_id": "radames/Depth-Image-to-Autostereogram",
+  "title": "Depth Image to Autostereogram (Magic Eye)",
+  "emoji": "\ud83d\udc40\u00a0\ud83d\ude35\u200d\ud83d\udcab\u00a0\ud83d\udc40",
+  "description": "Depth Image to Autostereogram (Magic Eye)",
+  "input_schema": {
+    "image_path": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "Input Image",
+      "required": true,
+      "component": "Image"
+    }
+  },
+  "output_schema": {
+    "Predicted Depth": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "Predicted Depth",
+      "component": "Image"
+    },
+    "Autostereogram": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "Autostereogram",
+      "component": "Image"
+    },
+    "Download Image": {
+      "type": "filepath",
+      "description": "Download Image",
+      "component": "File"
+    }
+  },
+  "license": "unknown",
+  "hardware": "5.26.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us",
+    "depth-estimation",
+    "vision"
+  ],
+  "likes": 45,
+  "last_modified": "2025-04-24 05:52:09+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/process_image",
+      "parameters": [
+        {
+          "name": "image_path",
+          "label": "Input Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Predicted Depth",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "Autostereogram",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "Download Image",
+          "type": "filepath",
+          "component": "File"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/process_image",
+  "_api_verified": true,
+  "estimated_latency_s": 3.55,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "_tags_enriched": true,
+  "measured_latency_s": 3.55,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:51:43.110448+00:00"
+}

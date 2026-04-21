@@ -1,0 +1,94 @@
+{
+  "space_id": "aaronespasa/deepfake-detection",
+  "title": "Deepfake Detection",
+  "emoji": "\ud83d\udcda",
+  "description": "Deepfake Detection",
+  "input_schema": {
+    "Input Image": {
+      "type": "str",
+      "description": "Input Image",
+      "required": true,
+      "component": "Image"
+    },
+    "Your Text Input": {
+      "type": "str",
+      "description": "Your Text Input",
+      "required": true,
+      "component": "Textbox"
+    }
+  },
+  "output_schema": {
+    "Class": {
+      "type": "Dict[Any, Any]",
+      "description": "Class",
+      "component": "Label"
+    },
+    "Your Text Output": {
+      "type": "str",
+      "description": "Your Text Output",
+      "component": "Textbox"
+    },
+    "Face with Explainability": {
+      "type": "str",
+      "description": "Face with Explainability",
+      "component": "Image"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "3.14.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 34,
+  "last_modified": "2024-02-05 18:14:27+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/predict",
+      "parameters": [
+        {
+          "name": "Input Image",
+          "label": "Input Image",
+          "type": "str",
+          "component": "Image"
+        },
+        {
+          "name": "Your Text Input",
+          "label": "Your Text Input",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Class",
+          "type": "Dict[Any, Any]",
+          "component": "Label"
+        },
+        {
+          "label": "Your Text Output",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Face with Explainability",
+          "type": "str",
+          "component": "Image"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/predict",
+  "_api_verified": true,
+  "estimated_latency_s": 2.79,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 2.79,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:50:05.686528+00:00"
+}

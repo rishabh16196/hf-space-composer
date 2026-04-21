@@ -1,0 +1,83 @@
+{
+  "space_id": "TeusSLR/ia-empreendedora",
+  "title": "Ia Empreendedora",
+  "emoji": "\ud83c\udfc3",
+  "description": "Ia Empreendedora",
+  "input_schema": {
+    "produto_ou_servico": {
+      "type": "Literal['produto', 'servi\u00e7o']",
+      "description": "Voc\u00ea quer vender um produto ou oferecer um servi\u00e7o?",
+      "required": true,
+      "component": "Radio"
+    },
+    "formato": {
+      "type": "Literal['online', 'presencial']",
+      "description": "Prefere que seja online ou presencial?",
+      "required": true,
+      "component": "Radio"
+    },
+    "area": {
+      "type": "Literal['comida', 'games', 'educa\u00e7\u00e3o', 'tecnologia', 'beleza', 'sustentabilidade', 'finan\u00e7as', 'roup",
+      "description": "Escolha uma \u00e1rea de interesse",
+      "required": true,
+      "component": "Dropdown"
+    }
+  },
+  "output_schema": {
+    "output": {
+      "type": "str",
+      "description": "output",
+      "component": "Textbox"
+    }
+  },
+  "license": "mit",
+  "hardware": "5.34.1",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 2,
+  "last_modified": "2025-06-19 02:57:48+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/predict",
+      "parameters": [
+        {
+          "name": "produto_ou_servico",
+          "label": "Voc\u00ea quer vender um produto ou oferecer um servi\u00e7o?",
+          "type": "Literal['produto', 'servi\u00e7o']",
+          "component": "Radio"
+        },
+        {
+          "name": "formato",
+          "label": "Prefere que seja online ou presencial?",
+          "type": "Literal['online', 'presencial']",
+          "component": "Radio"
+        },
+        {
+          "name": "area",
+          "label": "Escolha uma \u00e1rea de interesse",
+          "type": "Literal['comida', 'games', 'educa\u00e7\u00e3o', 'tecnologia', 'beleza', 'sustentabilidade', 'finan\u00e7as', 'roupa', 'esportes', 'animais']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "output",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/predict",
+  "_api_verified": true
+}

@@ -1,0 +1,262 @@
+{
+  "space_id": "FINAL-Bench/Darwin-31B-Opus",
+  "title": "Darwin-31B-Opus",
+  "emoji": "\ud83d\udc40",
+  "description": "gemma-4-31B-it + gemma-4-31B-it-Claude-Opus-Distill",
+  "input_schema": {
+    "k": {
+      "type": "Literal['general', 'code', 'math', 'creative', 'translate', 'research']",
+      "description": "Preset",
+      "required": true,
+      "component": "Dropdown"
+    }
+  },
+  "output_schema": {
+    "System Prompt": {
+      "type": "str",
+      "description": "System Prompt",
+      "component": "Textbox"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "6.10.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "darwin-v6",
+    "evolutionary-merge",
+    "mri-guided",
+    "dare-ties",
+    "gemma4",
+    "reasoning",
+    "thinking",
+    "proto-agi",
+    "vidraft",
+    "region:us"
+  ],
+  "likes": 15,
+  "last_modified": "2026-04-08 00:15:19+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/lambda",
+      "parameters": [
+        {
+          "name": "k",
+          "label": "Preset",
+          "type": "Literal['general', 'code', 'math', 'creative', 'translate', 'research']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "System Prompt",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/user_msg",
+      "parameters": [
+        {
+          "name": "msg",
+          "label": "parameter_22",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "hist",
+          "label": "parameter_20",
+          "type": "list[dict(role: str, metadata: dict(title: str, id: int | str, parent_id: int | str, log: str, duration: float, status: Literal['pending', 'done']) | None, content: list[dict(text: str, type: Literal[",
+          "component": "Chatbot"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_22",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "value_20",
+          "type": "list[dict(role: str, metadata: dict(title: str, id: int | str, parent_id: int | str, log: str, duration: float, status: Literal['pending', 'done']) | None, content: list[dict(text: str, type: Literal[",
+          "component": "Chatbot"
+        }
+      ]
+    },
+    {
+      "name": "/bot_reply",
+      "parameters": [
+        {
+          "name": "hist",
+          "label": "parameter_20",
+          "type": "list[dict(role: str, metadata: dict(title: str, id: int | str, parent_id: int | str, log: str, duration: float, status: Literal['pending', 'done']) | None, content: list[dict(text: str, type: Literal[",
+          "component": "Chatbot"
+        },
+        {
+          "name": "think",
+          "label": "Mode",
+          "type": "Literal['\u26a1 Fast', '\ud83e\udde0 Thinking']",
+          "component": "Radio"
+        },
+        {
+          "name": "img",
+          "label": "\ud83d\udc41\ufe0f Image (Vision)",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "name": "sysp",
+          "label": "System Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "maxt",
+          "label": "Max Tokens",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "tmp",
+          "label": "Temperature",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "tp",
+          "label": "Top-P",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "model",
+          "label": "parameter_25",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_20",
+          "type": "list[dict(role: str, metadata: dict(title: str, id: int | str, parent_id: int | str, log: str, duration: float, status: Literal['pending', 'done']) | None, content: list[dict(text: str, type: Literal[",
+          "component": "Chatbot"
+        }
+      ]
+    },
+    {
+      "name": "/user_msg_1",
+      "parameters": [
+        {
+          "name": "msg",
+          "label": "parameter_22",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "hist",
+          "label": "parameter_20",
+          "type": "list[dict(role: str, metadata: dict(title: str, id: int | str, parent_id: int | str, log: str, duration: float, status: Literal['pending', 'done']) | None, content: list[dict(text: str, type: Literal[",
+          "component": "Chatbot"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_22",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "value_20",
+          "type": "list[dict(role: str, metadata: dict(title: str, id: int | str, parent_id: int | str, log: str, duration: float, status: Literal['pending', 'done']) | None, content: list[dict(text: str, type: Literal[",
+          "component": "Chatbot"
+        }
+      ]
+    },
+    {
+      "name": "/bot_reply_1",
+      "parameters": [
+        {
+          "name": "hist",
+          "label": "parameter_20",
+          "type": "list[dict(role: str, metadata: dict(title: str, id: int | str, parent_id: int | str, log: str, duration: float, status: Literal['pending', 'done']) | None, content: list[dict(text: str, type: Literal[",
+          "component": "Chatbot"
+        },
+        {
+          "name": "think",
+          "label": "Mode",
+          "type": "Literal['\u26a1 Fast', '\ud83e\udde0 Thinking']",
+          "component": "Radio"
+        },
+        {
+          "name": "img",
+          "label": "\ud83d\udc41\ufe0f Image (Vision)",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "name": "sysp",
+          "label": "System Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "maxt",
+          "label": "Max Tokens",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "tmp",
+          "label": "Temperature",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "tp",
+          "label": "Top-P",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "model",
+          "label": "parameter_25",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_20",
+          "type": "list[dict(role: str, metadata: dict(title: str, id: int | str, parent_id: int | str, log: str, duration: float, status: Literal['pending', 'done']) | None, content: list[dict(text: str, type: Literal[",
+          "component": "Chatbot"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_1",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_20",
+          "type": "list[dict(role: str, metadata: dict(title: str, id: int | str, parent_id: int | str, log: str, duration: float, status: Literal['pending', 'done']) | None, content: list[dict(text: str, type: Literal[",
+          "component": "Chatbot"
+        }
+      ]
+    },
+    {
+      "name": "/_check_login_status",
+      "parameters": [],
+      "returns": []
+    }
+  ],
+  "endpoint": "/lambda",
+  "_api_verified": true
+}

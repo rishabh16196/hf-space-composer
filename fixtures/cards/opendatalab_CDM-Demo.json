@@ -1,0 +1,165 @@
+{
+  "space_id": "opendatalab/CDM-Demo",
+  "title": "CDM",
+  "emoji": "\ud83d\udcc8",
+  "description": "CDM",
+  "input_schema": {},
+  "output_schema": {
+    "gt": {
+      "type": "str",
+      "description": "gt",
+      "component": "Textbox"
+    },
+    "pred": {
+      "type": "str",
+      "description": "pred",
+      "component": "Textbox"
+    }
+  },
+  "license": "mit",
+  "hardware": "",
+  "sdk": "docker",
+  "tags": [
+    "docker",
+    "region:us"
+  ],
+  "likes": 10,
+  "last_modified": "2025-09-28 10:23:35+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/select_example1",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "gt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "pred",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/select_example2",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "gt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "pred",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/select_example3",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "gt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "pred",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/gradio_reset_single",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "gt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "pred",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "F1 Score",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "label": "Recall",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "label": "Precision",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "label": " ",
+          "type": "filepath",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/calculate_metric_single",
+      "parameters": [
+        {
+          "name": "groundtruth",
+          "label": "gt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "prediction",
+          "label": "pred",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "F1 Score",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "label": "Recall",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "label": "Precision",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "label": " ",
+          "type": "filepath",
+          "component": "Image"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/select_example1",
+  "_api_verified": true,
+  "estimated_latency_s": 3.77,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 3.77,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:51:30.884393+00:00"
+}

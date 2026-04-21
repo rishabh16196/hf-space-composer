@@ -1,0 +1,260 @@
+{
+  "space_id": "prithivMLmods/HY-World-2.0-Demo",
+  "title": "HY World 2.0 Demo",
+  "emoji": "\ud83e\udd17",
+  "description": "A Multi-Modal World Model for Reconstruction",
+  "input_schema": {
+    "files": {
+      "type": "list[filepath]",
+      "description": "Upload Images or Video",
+      "required": true,
+      "component": "File"
+    },
+    "time_interval": {
+      "type": "float",
+      "description": "Video Interval (secs)",
+      "required": true,
+      "component": "Slider"
+    }
+  },
+  "output_schema": {
+    "Input Frames Preview": {
+      "type": "list[dict(image: dict(path: str | None (Path to a local file), url: str | None (Publicly available u",
+      "description": "Input Frames Preview",
+      "component": "Gallery"
+    },
+    "Frame Selector": {
+      "type": "Literal['All']",
+      "description": "Frame Selector",
+      "component": "Dropdown"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "5.49.1",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "mcp-server",
+    "region:us"
+  ],
+  "likes": 8,
+  "last_modified": "2026-04-18 08:18:57+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/on_files_uploaded",
+      "parameters": [
+        {
+          "name": "files",
+          "label": "Upload Images or Video",
+          "type": "list[filepath]",
+          "component": "File"
+        },
+        {
+          "name": "time_interval",
+          "label": "Video Interval (secs)",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Input Frames Preview",
+          "type": "list[dict(image: dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Origi",
+          "component": "Gallery"
+        },
+        {
+          "label": "Frame Selector",
+          "type": "Literal['All']",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/on_files_uploaded_1",
+      "parameters": [
+        {
+          "name": "files",
+          "label": "Upload Images or Video",
+          "type": "list[filepath]",
+          "component": "File"
+        },
+        {
+          "name": "time_interval",
+          "label": "Video Interval (secs)",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Input Frames Preview",
+          "type": "list[dict(image: dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Origi",
+          "component": "Gallery"
+        },
+        {
+          "label": "Frame Selector",
+          "type": "Literal['All']",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/reconstruct",
+      "parameters": [
+        {
+          "name": "frame_selector",
+          "label": "Frame Selector",
+          "type": "Literal['All']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "show_camera",
+          "label": "Show Camera Frustums",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "filter_sky_bg",
+          "label": "Filter Sky Background",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "show_mesh",
+          "label": "Show as Mesh (vs Point Cloud)",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "filter_ambiguous",
+          "label": "Filter Low Confidence / Edges",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "3D Reconstruction \u2014 Rerun Viewer",
+          "type": "list[filepath | str | str] | None",
+          "component": "Rerun"
+        },
+        {
+          "label": "Gaussian Splats \u2014 Rerun Viewer",
+          "type": "list[filepath | str | str] | None",
+          "component": "Rerun"
+        },
+        {
+          "label": "Depth Map",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "Frame",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Normal Map",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "Frame",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Status",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Download GLB Mesh",
+          "type": "filepath",
+          "component": "Downloadbutton"
+        },
+        {
+          "label": "Download Gaussian PLY",
+          "type": "filepath",
+          "component": "Downloadbutton"
+        }
+      ]
+    },
+    {
+      "name": "/depth_prev",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Depth Map",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "Frame",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/depth_next",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Depth Map",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "Frame",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/normal_prev",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Normal Map",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "Frame",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/normal_next",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Normal Map",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "Frame",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/on_files_uploaded",
+  "_api_verified": true,
+  "estimated_latency_s": 4.27,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 4.27,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:51:36.207278+00:00"
+}

@@ -1,0 +1,253 @@
+{
+  "space_id": "r3gm/rvc_zero",
+  "title": "RVC\u26a1ZERO",
+  "emoji": "\u26a1",
+  "description": "Voice conversion framework based on VITS",
+  "input_schema": {
+    "value_active": {
+      "type": "bool",
+      "description": "TTS",
+      "required": true,
+      "component": "Checkbox"
+    }
+  },
+  "output_schema": {
+    "tts voice": {
+      "type": "Literal['af-ZA-AdriNeural-Female', 'af-ZA-WillemNeural-Male', 'sq-AL-AnilaNeural-Female', 'sq-AL-Ili",
+      "description": "tts voice",
+      "component": "Dropdown"
+    },
+    "Text": {
+      "type": "str",
+      "description": "Text",
+      "component": "Textbox"
+    },
+    "Play": {
+      "type": "bool",
+      "description": "Play",
+      "component": "Checkbox"
+    }
+  },
+  "license": "mit",
+  "hardware": "5.43.1",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 273,
+  "last_modified": "2026-02-22 02:01:46+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/show_components_tts",
+      "parameters": [
+        {
+          "name": "value_active",
+          "label": "TTS",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "tts voice",
+          "type": "Literal['af-ZA-AdriNeural-Female', 'af-ZA-WillemNeural-Male', 'sq-AL-AnilaNeural-Female', 'sq-AL-IlirNeural-Male', 'am-ET-AmehaNeural-Male', 'am-ET-MekdesNeural-Female', 'ar-DZ-AminaNeural-Female', 'a",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Play",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ]
+    },
+    {
+      "name": "/infer_tts_audio",
+      "parameters": [
+        {
+          "name": "tts_voice",
+          "label": "tts voice",
+          "type": "Literal['af-ZA-AdriNeural-Female', 'af-ZA-WillemNeural-Male', 'sq-AL-AnilaNeural-Female', 'sq-AL-IlirNeural-Male', 'am-ET-AmehaNeural-Male', 'am-ET-MekdesNeural-Female', 'ar-DZ-AminaNeural-Female', 'a",
+          "component": "Dropdown"
+        },
+        {
+          "name": "tts_text",
+          "label": "Text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "play_tts",
+          "label": "Play",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Audio files",
+          "type": "list[filepath]",
+          "component": "File"
+        },
+        {
+          "label": "value_16",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ]
+    },
+    {
+      "name": "/show_components_down",
+      "parameters": [
+        {
+          "name": "value_active",
+          "label": "URL-to-Model",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_19",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "Enter URL",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/get_my_model",
+      "parameters": [
+        {
+          "name": "url_data",
+          "label": "Enter URL",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Model file",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "label": "Index file",
+          "type": "filepath",
+          "component": "File"
+        }
+      ]
+    },
+    {
+      "name": "/run",
+      "parameters": [
+        {
+          "name": "audio_files",
+          "label": "Audio files",
+          "type": "list[filepath]",
+          "component": "File"
+        },
+        {
+          "name": "file_m",
+          "label": "Model file",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "name": "pitch_alg",
+          "label": "Pitch algorithm",
+          "type": "Literal['pm', 'harvest', 'crepe', 'rmvpe', 'rmvpe+']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "pitch_lvl",
+          "label": "Pitch level",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "file_index",
+          "label": "Index file",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "name": "index_inf",
+          "label": "Index influence",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "r_m_f",
+          "label": "Respiration median filtering",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "e_r",
+          "label": "Envelope ratio",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "c_b_p",
+          "label": "Consonant breath protection",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "active_noise_reduce",
+          "label": "Denoise",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "audio_effects",
+          "label": "Reverb",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "type_output",
+          "label": "Format output:",
+          "type": "Literal['wav', 'mp3', 'flac']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "steps",
+          "label": "Steps",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Result",
+          "type": "list[filepath]",
+          "component": "File"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/show_components_tts",
+  "_api_verified": true,
+  "estimated_latency_s": 5.06,
+  "speed_tier": "medium",
+  "_latency_source": "measured",
+  "measured_latency_s": 5.06,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:51:43.088040+00:00"
+}

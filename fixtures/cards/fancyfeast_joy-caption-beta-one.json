@@ -1,0 +1,262 @@
+{
+  "space_id": "fancyfeast/joy-caption-beta-one",
+  "title": "Joy Caption Beta One",
+  "emoji": "\ud83d\uddbc\ufe0f\ud83d\udcac",
+  "description": "Joy Caption Beta One",
+  "input_schema": {
+    "selected_options": {
+      "type": "list[Literal['If there is a person/character in the image you must refer to them as {name}.', 'Do NO",
+      "description": "Select one or more",
+      "required": true,
+      "component": "Checkboxgroup"
+    }
+  },
+  "output_schema": {
+    "Person / Character Name": {
+      "type": "str",
+      "description": "Person / Character Name",
+      "component": "Textbox"
+    }
+  },
+  "license": "unknown",
+  "hardware": "5.29.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us",
+    "captioning",
+    "image-to-text",
+    "vision"
+  ],
+  "likes": 1011,
+  "last_modified": "2025-05-12 19:26:12+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/toggle_name_box",
+      "parameters": [
+        {
+          "name": "selected_options",
+          "label": "Select one or more",
+          "type": "list[Literal['If there is a person/character in the image you must refer to them as {name}.', 'Do NOT include information about people/characters that cannot be changed (like ethnicity, gender, etc), ",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Person / Character Name",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/build_prompt",
+      "parameters": [
+        {
+          "name": "caption_type",
+          "label": "Caption Type",
+          "type": "Literal['Descriptive', 'Descriptive (Casual)', 'Straightforward', 'Stable Diffusion Prompt', 'MidJourney', 'Danbooru tag list', 'e621 tag list', 'Rule34 tag list', 'Booru-like tag list', 'Art Critic',",
+          "component": "Dropdown"
+        },
+        {
+          "name": "caption_length",
+          "label": "Caption Length",
+          "type": "Literal['any', 'very short', 'short', 'medium-length', 'long', 'very long', '20', '30', '40', '50', '60', '70', '80', '90', '100', '110', '120', '130', '140', '150', '160', '170', '180', '190', '200',",
+          "component": "Dropdown"
+        },
+        {
+          "name": "extra_options",
+          "label": "Select one or more",
+          "type": "list[Literal['If there is a person/character in the image you must refer to them as {name}.', 'Do NOT include information about people/characters that cannot be changed (like ethnicity, gender, etc), ",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "name_input",
+          "label": "Person / Character Name",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Prompt",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/build_prompt_1",
+      "parameters": [
+        {
+          "name": "caption_type",
+          "label": "Caption Type",
+          "type": "Literal['Descriptive', 'Descriptive (Casual)', 'Straightforward', 'Stable Diffusion Prompt', 'MidJourney', 'Danbooru tag list', 'e621 tag list', 'Rule34 tag list', 'Booru-like tag list', 'Art Critic',",
+          "component": "Dropdown"
+        },
+        {
+          "name": "caption_length",
+          "label": "Caption Length",
+          "type": "Literal['any', 'very short', 'short', 'medium-length', 'long', 'very long', '20', '30', '40', '50', '60', '70', '80', '90', '100', '110', '120', '130', '140', '150', '160', '170', '180', '190', '200',",
+          "component": "Dropdown"
+        },
+        {
+          "name": "extra_options",
+          "label": "Select one or more",
+          "type": "list[Literal['If there is a person/character in the image you must refer to them as {name}.', 'Do NOT include information about people/characters that cannot be changed (like ethnicity, gender, etc), ",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "name_input",
+          "label": "Person / Character Name",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Prompt",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/build_prompt_2",
+      "parameters": [
+        {
+          "name": "caption_type",
+          "label": "Caption Type",
+          "type": "Literal['Descriptive', 'Descriptive (Casual)', 'Straightforward', 'Stable Diffusion Prompt', 'MidJourney', 'Danbooru tag list', 'e621 tag list', 'Rule34 tag list', 'Booru-like tag list', 'Art Critic',",
+          "component": "Dropdown"
+        },
+        {
+          "name": "caption_length",
+          "label": "Caption Length",
+          "type": "Literal['any', 'very short', 'short', 'medium-length', 'long', 'very long', '20', '30', '40', '50', '60', '70', '80', '90', '100', '110', '120', '130', '140', '150', '160', '170', '180', '190', '200',",
+          "component": "Dropdown"
+        },
+        {
+          "name": "extra_options",
+          "label": "Select one or more",
+          "type": "list[Literal['If there is a person/character in the image you must refer to them as {name}.', 'Do NOT include information about people/characters that cannot be changed (like ethnicity, gender, etc), ",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "name_input",
+          "label": "Person / Character Name",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Prompt",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/build_prompt_3",
+      "parameters": [
+        {
+          "name": "caption_type",
+          "label": "Caption Type",
+          "type": "Literal['Descriptive', 'Descriptive (Casual)', 'Straightforward', 'Stable Diffusion Prompt', 'MidJourney', 'Danbooru tag list', 'e621 tag list', 'Rule34 tag list', 'Booru-like tag list', 'Art Critic',",
+          "component": "Dropdown"
+        },
+        {
+          "name": "caption_length",
+          "label": "Caption Length",
+          "type": "Literal['any', 'very short', 'short', 'medium-length', 'long', 'very long', '20', '30', '40', '50', '60', '70', '80', '90', '100', '110', '120', '130', '140', '150', '160', '170', '180', '190', '200',",
+          "component": "Dropdown"
+        },
+        {
+          "name": "extra_options",
+          "label": "Select one or more",
+          "type": "list[Literal['If there is a person/character in the image you must refer to them as {name}.', 'Do NOT include information about people/characters that cannot be changed (like ethnicity, gender, etc), ",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "name_input",
+          "label": "Person / Character Name",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Prompt",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/chat_joycaption",
+      "parameters": [
+        {
+          "name": "input_image",
+          "label": "Input Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "prompt",
+          "label": "Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "temperature",
+          "label": "Temperature",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "top_p",
+          "label": "Top-p",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "max_new_tokens",
+          "label": "Max New Tokens",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "log_prompt",
+          "label": "Help improve JoyCaption by logging your text query",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Caption",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/toggle_name_box",
+  "_api_verified": true,
+  "estimated_latency_s": 3.17,
+  "speed_tier": "fast",
+  "_latency_source": "measured_inference",
+  "_tags_enriched": true,
+  "measured_latency_s": 3.17,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:50:34.968736+00:00",
+  "measured_inference_s": 3.17,
+  "measured_inference_timestamp": "2026-04-20T07:58:54.592521+00:00",
+  "measured_inference_method": "auto_predict",
+  "measured_inference_api": "/toggle_name_box"
+}

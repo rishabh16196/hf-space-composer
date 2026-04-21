@@ -1,0 +1,109 @@
+{
+  "space_id": "fffiloni/text-guided-image-colorization",
+  "title": "Text Guided Image Colorization",
+  "emoji": "\ud83d\uddbc\ufe0f",
+  "description": "Text Guided Image Colorization",
+  "input_schema": {
+    "image_path": {
+      "type": "filepath",
+      "description": "Upload Image",
+      "required": true,
+      "component": "Image"
+    },
+    "positive_prompt": {
+      "type": "str",
+      "description": "Positive Prompt",
+      "required": true,
+      "component": "Textbox"
+    },
+    "negative_prompt": {
+      "type": "str",
+      "description": "Negative Prompt",
+      "required": true,
+      "component": "Textbox"
+    },
+    "seed": {
+      "type": "float",
+      "description": "Seed",
+      "required": true,
+      "component": "Slider"
+    }
+  },
+  "output_schema": {
+    "Colorized Image": {
+      "type": "filepath",
+      "description": "Colorized Image",
+      "component": "Image"
+    },
+    "Caption": {
+      "type": "str",
+      "description": "Caption",
+      "component": "Textbox"
+    }
+  },
+  "license": "unknown",
+  "hardware": "6.12.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "mcp-server",
+    "region:us"
+  ],
+  "likes": 201,
+  "last_modified": "2026-04-16 09:16:23+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/process_image",
+      "parameters": [
+        {
+          "name": "image_path",
+          "label": "Upload Image",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "name": "positive_prompt",
+          "label": "Positive Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "negative_prompt",
+          "label": "Negative Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "seed",
+          "label": "Seed",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Colorized Image",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "Caption",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/process_image",
+  "_api_verified": true,
+  "estimated_latency_s": 3.52,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 3.52,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:50:38.176389+00:00"
+}

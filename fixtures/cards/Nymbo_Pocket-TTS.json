@@ -1,0 +1,169 @@
+{
+  "space_id": "Nymbo/Pocket-TTS",
+  "title": "Pocket-TTS 100M",
+  "emoji": "\ud83d\udd0a",
+  "description": "High quality, efficient voice cloning. Just 100M parameters.",
+  "input_schema": {},
+  "output_schema": {
+    "value_2": {
+      "type": "str",
+      "description": "value_2",
+      "component": "Markdown"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "6.2.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us",
+    "audio",
+    "speech-synthesis",
+    "tts"
+  ],
+  "likes": 2,
+  "last_modified": "2026-01-19 22:38:23+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_tags_enriched": true,
+  "estimated_latency_s": 4.0,
+  "speed_tier": "fast",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/update_device_info",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_2",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/generate_speech",
+      "parameters": [
+        {
+          "name": "text",
+          "label": "Input Text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "voice",
+          "label": "Preset Voice",
+          "type": "Literal['af_alloy', 'af_aoede', 'af_bella', 'af_heart', 'af_jessica', 'af_kore', 'af_nicole', 'af_nova', 'af_river', 'af_sarah', 'af_sky', 'am_adam', 'am_echo', 'am_eric', 'am_fenrir', 'am_liam', 'am_",
+          "component": "Dropdown"
+        },
+        {
+          "name": "custom_audio",
+          "label": "Custom Voice (WAV)",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "name": "temperature",
+          "label": "Temperature",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "lsd_decode_steps",
+          "label": "LSD Decode Steps",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "noise_clamp",
+          "label": "Noise Clamp",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "eos_threshold",
+          "label": "EOS Threshold",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "frames_after_eos",
+          "label": "Frames After EOS",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Generated Speech",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ]
+    },
+    {
+      "name": "/generate_speech_enter",
+      "parameters": [
+        {
+          "name": "text",
+          "label": "Input Text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "voice",
+          "label": "Preset Voice",
+          "type": "Literal['af_alloy', 'af_aoede', 'af_bella', 'af_heart', 'af_jessica', 'af_kore', 'af_nicole', 'af_nova', 'af_river', 'af_sarah', 'af_sky', 'am_adam', 'am_echo', 'am_eric', 'am_fenrir', 'am_liam', 'am_",
+          "component": "Dropdown"
+        },
+        {
+          "name": "custom_audio",
+          "label": "Custom Voice (WAV)",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "name": "temperature",
+          "label": "Temperature",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "lsd_decode_steps",
+          "label": "LSD Decode Steps",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "noise_clamp",
+          "label": "Noise Clamp",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "eos_threshold",
+          "label": "EOS Threshold",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "frames_after_eos",
+          "label": "Frames After EOS",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Generated Speech",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/update_device_info",
+  "_api_verified": true
+}

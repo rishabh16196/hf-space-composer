@@ -1,0 +1,203 @@
+{
+  "space_id": "Onise/FLUX.2-Klein-LoRA-Studio",
+  "title": "FLUX.2 Klein LoRA Studio",
+  "emoji": "\ud83e\udd5a",
+  "description": "Demo of a Collection of FLUX.2-Klein Model LoRAs",
+  "input_schema": {
+    "repo_id": {
+      "type": "str",
+      "description": "HuggingFace Repo ID",
+      "required": true,
+      "component": "Textbox"
+    },
+    "weight_name": {
+      "type": "str",
+      "description": "Weight File Name (Optional)",
+      "required": true,
+      "component": "Textbox"
+    },
+    "adapter_name": {
+      "type": "str",
+      "description": "Adapter Name (Optional)",
+      "required": true,
+      "component": "Textbox"
+    }
+  },
+  "output_schema": {
+    "Status": {
+      "type": "str",
+      "description": "Status",
+      "component": "Textbox"
+    },
+    "Edit Style Gallery": {
+      "type": "list[dict(image: dict(path: str | None (Path to a local file), url: str | None (Publicly available u",
+      "description": "Edit Style Gallery",
+      "component": "Gallery"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "6.6.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "mcp-server",
+    "region:us"
+  ],
+  "likes": 10,
+  "last_modified": "2026-04-15 11:12:10+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/on_add_lora_click",
+      "parameters": [
+        {
+          "name": "repo_id",
+          "label": "HuggingFace Repo ID",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "weight_name",
+          "label": "Weight File Name (Optional)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "adapter_name",
+          "label": "Adapter Name (Optional)",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Status",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Edit Style Gallery",
+          "type": "list[dict(image: dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Origi",
+          "component": "Gallery"
+        }
+      ]
+    },
+    {
+      "name": "/get_image_count_info",
+      "parameters": [
+        {
+          "name": "images",
+          "label": "Upload Images",
+          "type": "list[dict(image: dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Origi",
+          "component": "Gallery"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/update_style_selection",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Selected Style Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Edit Prompt",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/update_style_info",
+      "parameters": [
+        {
+          "name": "style_name",
+          "label": "Selected Style Name",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_22",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/infer",
+      "parameters": [
+        {
+          "name": "input_images",
+          "label": "Upload Images",
+          "type": "list[dict(image: dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Origi",
+          "component": "Gallery"
+        },
+        {
+          "name": "prompt",
+          "label": "Edit Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "style_name",
+          "label": "Selected Style Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "seed",
+          "label": "Seed",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "randomize_seed",
+          "label": "Randomize seed",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "guidance_scale",
+          "label": "Guidance Scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "steps",
+          "label": "Steps",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "Used Seed",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/on_add_lora_click",
+  "_api_verified": true,
+  "estimated_latency_s": 3.53,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "_tags_enriched": true,
+  "measured_latency_s": 3.53,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:49:43.573564+00:00"
+}

@@ -1,0 +1,183 @@
+{
+  "space_id": "innoai/LivePortrait",
+  "title": "Live Portrait",
+  "emoji": "\ud83e\udd2a",
+  "description": "Apply the motion of a video on a portrait",
+  "input_schema": {
+    "param_0": {
+      "type": "float",
+      "description": "target eyes-open ratio",
+      "required": true,
+      "component": "Slider"
+    },
+    "param_1": {
+      "type": "float",
+      "description": "target lip-open ratio",
+      "required": true,
+      "component": "Slider"
+    }
+  },
+  "output_schema": {
+    "value_3": {
+      "type": "filepath",
+      "description": "value_3",
+      "component": "Image"
+    },
+    "value_4": {
+      "type": "filepath",
+      "description": "value_4",
+      "component": "Image"
+    }
+  },
+  "license": "unknown",
+  "hardware": "4.37.2",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "Multimodal",
+    "Motion control",
+    "Image-to-Video",
+    "Video-to-Video",
+    "language models",
+    "LLMs",
+    "region:us"
+  ],
+  "likes": 50,
+  "last_modified": "2024-12-21 16:42:50+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/gpu_wrapped_execute_image",
+      "parameters": [
+        {
+          "name": "param_0",
+          "label": "target eyes-open ratio",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_1",
+          "label": "target lip-open ratio",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_3",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "value_4",
+          "type": "filepath",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/gpu_wrapped_execute_video",
+      "parameters": [
+        {
+          "name": "param_0",
+          "label": "parameter_12",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "name": "param_1",
+          "label": "parameter_15",
+          "type": "Dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        },
+        {
+          "name": "param_2",
+          "label": "relative motion",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_3",
+          "label": "do crop",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_4",
+          "label": "paste-back",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_5",
+          "type": "Dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        },
+        {
+          "label": "value_6",
+          "type": "Dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        }
+      ]
+    },
+    {
+      "name": "/prepare_retargeting",
+      "parameters": [
+        {
+          "name": "input_image_path",
+          "label": "parameter_12",
+          "type": "filepath",
+          "component": "Image"
+        }
+      ],
+      "returns": [
+        {
+          "label": "target eyes-open ratio",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "target lip-open ratio",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "value_2",
+          "type": "filepath",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/is_square_video",
+      "parameters": [
+        {
+          "name": "video_path",
+          "label": "parameter_15",
+          "type": "Dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_15",
+          "type": "Dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/gpu_wrapped_execute_image",
+  "_api_verified": true,
+  "estimated_latency_s": 4.37,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 4.37,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:50:58.021234+00:00"
+}

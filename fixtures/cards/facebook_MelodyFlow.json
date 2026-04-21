@@ -1,0 +1,177 @@
+{
+  "space_id": "facebook/MelodyFlow",
+  "title": "MelodyFlow",
+  "emoji": "\ud83c\udfb5",
+  "description": "MelodyFlow",
+  "input_schema": {},
+  "output_schema": {},
+  "license": "cc-by-nc-4.0",
+  "hardware": "4.44.1",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "music generation",
+    "music editing",
+    "flow matching",
+    "region:us"
+  ],
+  "likes": 161,
+  "last_modified": "2025-01-04 23:23:59+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/interrupt",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/predict",
+      "parameters": [
+        {
+          "name": "model",
+          "label": "Model",
+          "type": "Literal['facebook/melodyflow-t24-30secs']",
+          "component": "Radio"
+        },
+        {
+          "name": "text",
+          "label": "Input Text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "solver",
+          "label": "ODE Solver",
+          "type": "Literal['euler', 'midpoint']",
+          "component": "Radio"
+        },
+        {
+          "name": "steps",
+          "label": "Inference steps",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "target_flowstep",
+          "label": "Target Flow step",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "regularize",
+          "label": "Regularize",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "regularization_strength",
+          "label": "Regularization Strength",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "duration",
+          "label": "Duration",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "melody",
+          "label": "File or Microphone",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Generated Audio - variation 1",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Generated Audio - variation 2",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Generated Audio - variation 3",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ]
+    },
+    {
+      "name": "/toggle_melody",
+      "parameters": [
+        {
+          "name": "melody",
+          "label": "File or Microphone",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "ODE Solver",
+          "type": "Literal['euler', 'midpoint']",
+          "component": "Radio"
+        }
+      ]
+    },
+    {
+      "name": "/toggle_solver",
+      "parameters": [
+        {
+          "name": "solver",
+          "label": "ODE Solver",
+          "type": "Literal['euler', 'midpoint']",
+          "component": "Radio"
+        },
+        {
+          "name": "melody",
+          "label": "File or Microphone",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Inference steps",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Target Flow step",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Regularize",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Regularization Strength",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Duration",
+          "type": "float",
+          "component": "Slider"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/interrupt",
+  "_api_verified": true,
+  "estimated_latency_s": 3.53,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 3.53,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:50:32.696566+00:00"
+}

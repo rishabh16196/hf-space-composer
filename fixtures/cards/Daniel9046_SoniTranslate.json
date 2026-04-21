@@ -1,0 +1,2083 @@
+{
+  "space_id": "Daniel9046/SoniTranslate",
+  "title": "Video Dubbing (SoniTranslate)",
+  "emoji": "\ud83c\udf0d",
+  "description": "Video Dubbing with Open Source Projects",
+  "input_schema": {
+    "data_type": {
+      "type": "Literal['SUBMIT VIDEO', 'URL', 'Find Video Path']",
+      "description": "Choose Video Source",
+      "required": true,
+      "component": "Dropdown"
+    }
+  },
+  "output_schema": {
+    "VIDEO": {
+      "type": "List[filepath]",
+      "description": "VIDEO",
+      "component": "File"
+    },
+    "Media link.": {
+      "type": "str",
+      "description": "Media link.",
+      "component": "Textbox"
+    },
+    "Video Path.": {
+      "type": "str",
+      "description": "Video Path.",
+      "component": "Textbox"
+    }
+  },
+  "license": "mit",
+  "hardware": "4.31.3",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 60,
+  "last_modified": "2024-12-28 15:09:39+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/swap_visibility",
+      "parameters": [
+        {
+          "name": "data_type",
+          "label": "Choose Video Source",
+          "type": "Literal['SUBMIT VIDEO', 'URL', 'Find Video Path']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "VIDEO",
+          "type": "List[filepath]",
+          "component": "File"
+        },
+        {
+          "label": "Media link.",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Video Path.",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/submit",
+      "parameters": [
+        {
+          "name": "value",
+          "label": "Max speakers",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "TTS Speaker 1",
+          "type": "Literal['>alloy HD OpenAI-TTS', '>alloy OpenAI-TTS', '>echo HD OpenAI-TTS', '>echo OpenAI-TTS', '>fable HD OpenAI-TTS', '>fable OpenAI-TTS', '>nova HD OpenAI-TTS', '>nova OpenAI-TTS', '>onyx HD OpenAI",
+          "component": "Dropdown"
+        },
+        {
+          "label": "TTS Speaker 2",
+          "type": "Literal['>alloy HD OpenAI-TTS', '>alloy OpenAI-TTS', '>echo HD OpenAI-TTS', '>echo OpenAI-TTS', '>fable HD OpenAI-TTS', '>fable OpenAI-TTS', '>nova HD OpenAI-TTS', '>nova OpenAI-TTS', '>onyx HD OpenAI",
+          "component": "Dropdown"
+        },
+        {
+          "label": "TTS Speaker 3",
+          "type": "Literal['>alloy HD OpenAI-TTS', '>alloy OpenAI-TTS', '>echo HD OpenAI-TTS', '>echo OpenAI-TTS', '>fable HD OpenAI-TTS', '>fable OpenAI-TTS', '>nova HD OpenAI-TTS', '>nova OpenAI-TTS', '>onyx HD OpenAI",
+          "component": "Dropdown"
+        },
+        {
+          "label": "TTS Speaker 4",
+          "type": "Literal['>alloy HD OpenAI-TTS', '>alloy OpenAI-TTS', '>echo HD OpenAI-TTS', '>echo OpenAI-TTS', '>fable HD OpenAI-TTS', '>fable OpenAI-TTS', '>nova HD OpenAI-TTS', '>nova OpenAI-TTS', '>onyx HD OpenAI",
+          "component": "Dropdown"
+        },
+        {
+          "label": "TTS Speaker 4",
+          "type": "Literal['>alloy HD OpenAI-TTS', '>alloy OpenAI-TTS', '>echo HD OpenAI-TTS', '>echo OpenAI-TTS', '>fable HD OpenAI-TTS', '>fable OpenAI-TTS', '>nova HD OpenAI-TTS', '>nova OpenAI-TTS', '>onyx HD OpenAI",
+          "component": "Dropdown"
+        },
+        {
+          "label": "TTS Speaker 6",
+          "type": "Literal['>alloy HD OpenAI-TTS', '>alloy OpenAI-TTS', '>echo HD OpenAI-TTS', '>echo OpenAI-TTS', '>fable HD OpenAI-TTS', '>fable OpenAI-TTS', '>nova HD OpenAI-TTS', '>nova OpenAI-TTS', '>onyx HD OpenAI",
+          "component": "Dropdown"
+        },
+        {
+          "label": "TTS Speaker 7",
+          "type": "Literal['>alloy HD OpenAI-TTS', '>alloy OpenAI-TTS', '>echo HD OpenAI-TTS', '>echo OpenAI-TTS', '>fable HD OpenAI-TTS', '>fable OpenAI-TTS', '>nova HD OpenAI-TTS', '>nova OpenAI-TTS', '>onyx HD OpenAI",
+          "component": "Dropdown"
+        },
+        {
+          "label": "TTS Speaker 8",
+          "type": "Literal['>alloy HD OpenAI-TTS', '>alloy OpenAI-TTS', '>echo HD OpenAI-TTS', '>echo OpenAI-TTS', '>fable HD OpenAI-TTS', '>fable OpenAI-TTS', '>nova HD OpenAI-TTS', '>nova OpenAI-TTS', '>onyx HD OpenAI",
+          "component": "Dropdown"
+        },
+        {
+          "label": "TTS Speaker 9",
+          "type": "Literal['>alloy HD OpenAI-TTS', '>alloy OpenAI-TTS', '>echo HD OpenAI-TTS', '>echo OpenAI-TTS', '>fable HD OpenAI-TTS', '>fable OpenAI-TTS', '>nova HD OpenAI-TTS', '>nova OpenAI-TTS', '>onyx HD OpenAI",
+          "component": "Dropdown"
+        },
+        {
+          "label": "TTS Speaker 10",
+          "type": "Literal['>alloy HD OpenAI-TTS', '>alloy OpenAI-TTS', '>echo HD OpenAI-TTS', '>echo OpenAI-TTS', '>fable HD OpenAI-TTS', '>fable OpenAI-TTS', '>nova HD OpenAI-TTS', '>nova OpenAI-TTS', '>onyx HD OpenAI",
+          "component": "Dropdown"
+        },
+        {
+          "label": "TTS Speaker 11",
+          "type": "Literal['>alloy HD OpenAI-TTS', '>alloy OpenAI-TTS', '>echo HD OpenAI-TTS', '>echo OpenAI-TTS', '>fable HD OpenAI-TTS', '>fable OpenAI-TTS', '>nova HD OpenAI-TTS', '>nova OpenAI-TTS', '>onyx HD OpenAI",
+          "component": "Dropdown"
+        },
+        {
+          "label": "TTS Speaker 12",
+          "type": "Literal['>alloy HD OpenAI-TTS', '>alloy OpenAI-TTS', '>echo HD OpenAI-TTS', '>echo OpenAI-TTS', '>fable HD OpenAI-TTS', '>fable OpenAI-TTS', '>nova HD OpenAI-TTS', '>nova OpenAI-TTS', '>onyx HD OpenAI",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/visible_component_subs",
+      "parameters": [
+        {
+          "name": "input_bool",
+          "label": "Edit generated subtitles",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Generated subtitles",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/swap_visibility_1",
+      "parameters": [
+        {
+          "name": "data_type",
+          "label": "Choose Document Source",
+          "type": "Literal['WRITE TEXT', 'SUBMIT DOCUMENT', 'Find Document Path']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Document",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "label": "Document Path",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/apply_conf",
+      "parameters": [
+        {
+          "name": "tag",
+          "label": "parameter_161",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "file_model",
+          "label": "Model",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "pitch_algo",
+          "label": "Pitch algorithm",
+          "type": "Literal['pm', 'harvest', 'crepe', 'rmvpe', 'rmvpe+']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "pitch_lvl",
+          "label": "Pitch level",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "file_index",
+          "label": "Index",
+          "type": "Literal['None']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "index_influence",
+          "label": "Index influence",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "respiration_median_filtering",
+          "label": "Respiration median filtering",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "envelope_ratio",
+          "label": "Envelope ratio",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "consonant_breath_protection",
+          "label": "Consonant breath protection",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_172",
+          "type": "str",
+          "component": "Html"
+        }
+      ]
+    },
+    {
+      "name": "/apply_conf_1",
+      "parameters": [
+        {
+          "name": "tag",
+          "label": "parameter_177",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "file_model",
+          "label": "Model",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "pitch_algo",
+          "label": "Pitch algorithm",
+          "type": "Literal['pm', 'harvest', 'crepe', 'rmvpe', 'rmvpe+']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "pitch_lvl",
+          "label": "Pitch level",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "file_index",
+          "label": "Index",
+          "type": "Literal['None']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "index_influence",
+          "label": "Index influence",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "respiration_median_filtering",
+          "label": "Respiration median filtering",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "envelope_ratio",
+          "label": "Envelope ratio",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "consonant_breath_protection",
+          "label": "Consonant breath protection",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_188",
+          "type": "str",
+          "component": "Html"
+        }
+      ]
+    },
+    {
+      "name": "/apply_conf_2",
+      "parameters": [
+        {
+          "name": "tag",
+          "label": "parameter_193",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "file_model",
+          "label": "Model",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "pitch_algo",
+          "label": "Pitch algorithm",
+          "type": "Literal['pm', 'harvest', 'crepe', 'rmvpe', 'rmvpe+']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "pitch_lvl",
+          "label": "Pitch level",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "file_index",
+          "label": "Index",
+          "type": "Literal['None']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "index_influence",
+          "label": "Index influence",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "respiration_median_filtering",
+          "label": "Respiration median filtering",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "envelope_ratio",
+          "label": "Envelope ratio",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "consonant_breath_protection",
+          "label": "Consonant breath protection",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_204",
+          "type": "str",
+          "component": "Html"
+        }
+      ]
+    },
+    {
+      "name": "/apply_conf_3",
+      "parameters": [
+        {
+          "name": "tag",
+          "label": "parameter_209",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "file_model",
+          "label": "Model",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "pitch_algo",
+          "label": "Pitch algorithm",
+          "type": "Literal['pm', 'harvest', 'crepe', 'rmvpe', 'rmvpe+']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "pitch_lvl",
+          "label": "Pitch level",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "file_index",
+          "label": "Index",
+          "type": "Literal['None']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "index_influence",
+          "label": "Index influence",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "respiration_median_filtering",
+          "label": "Respiration median filtering",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "envelope_ratio",
+          "label": "Envelope ratio",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "consonant_breath_protection",
+          "label": "Consonant breath protection",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_220",
+          "type": "str",
+          "component": "Html"
+        }
+      ]
+    },
+    {
+      "name": "/apply_conf_4",
+      "parameters": [
+        {
+          "name": "tag",
+          "label": "parameter_225",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "file_model",
+          "label": "Model",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "pitch_algo",
+          "label": "Pitch algorithm",
+          "type": "Literal['pm', 'harvest', 'crepe', 'rmvpe', 'rmvpe+']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "pitch_lvl",
+          "label": "Pitch level",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "file_index",
+          "label": "Index",
+          "type": "Literal['None']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "index_influence",
+          "label": "Index influence",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "respiration_median_filtering",
+          "label": "Respiration median filtering",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "envelope_ratio",
+          "label": "Envelope ratio",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "consonant_breath_protection",
+          "label": "Consonant breath protection",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_236",
+          "type": "str",
+          "component": "Html"
+        }
+      ]
+    },
+    {
+      "name": "/apply_conf_5",
+      "parameters": [
+        {
+          "name": "tag",
+          "label": "parameter_241",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "file_model",
+          "label": "Model",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "pitch_algo",
+          "label": "Pitch algorithm",
+          "type": "Literal['pm', 'harvest', 'crepe', 'rmvpe', 'rmvpe+']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "pitch_lvl",
+          "label": "Pitch level",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "file_index",
+          "label": "Index",
+          "type": "Literal['None']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "index_influence",
+          "label": "Index influence",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "respiration_median_filtering",
+          "label": "Respiration median filtering",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "envelope_ratio",
+          "label": "Envelope ratio",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "consonant_breath_protection",
+          "label": "Consonant breath protection",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_252",
+          "type": "str",
+          "component": "Html"
+        }
+      ]
+    },
+    {
+      "name": "/apply_conf_6",
+      "parameters": [
+        {
+          "name": "tag",
+          "label": "parameter_257",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "file_model",
+          "label": "Model",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "pitch_algo",
+          "label": "Pitch algorithm",
+          "type": "Literal['pm', 'harvest', 'crepe', 'rmvpe', 'rmvpe+']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "pitch_lvl",
+          "label": "Pitch level",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "file_index",
+          "label": "Index",
+          "type": "Literal['None']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "index_influence",
+          "label": "Index influence",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "respiration_median_filtering",
+          "label": "Respiration median filtering",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "envelope_ratio",
+          "label": "Envelope ratio",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "consonant_breath_protection",
+          "label": "Consonant breath protection",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_268",
+          "type": "str",
+          "component": "Html"
+        }
+      ]
+    },
+    {
+      "name": "/apply_conf_7",
+      "parameters": [
+        {
+          "name": "tag",
+          "label": "parameter_273",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "file_model",
+          "label": "Model",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "pitch_algo",
+          "label": "Pitch algorithm",
+          "type": "Literal['pm', 'harvest', 'crepe', 'rmvpe', 'rmvpe+']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "pitch_lvl",
+          "label": "Pitch level",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "file_index",
+          "label": "Index",
+          "type": "Literal['None']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "index_influence",
+          "label": "Index influence",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "respiration_median_filtering",
+          "label": "Respiration median filtering",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "envelope_ratio",
+          "label": "Envelope ratio",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "consonant_breath_protection",
+          "label": "Consonant breath protection",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_284",
+          "type": "str",
+          "component": "Html"
+        }
+      ]
+    },
+    {
+      "name": "/apply_conf_8",
+      "parameters": [
+        {
+          "name": "tag",
+          "label": "parameter_289",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "file_model",
+          "label": "Model",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "pitch_algo",
+          "label": "Pitch algorithm",
+          "type": "Literal['pm', 'harvest', 'crepe', 'rmvpe', 'rmvpe+']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "pitch_lvl",
+          "label": "Pitch level",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "file_index",
+          "label": "Index",
+          "type": "Literal['None']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "index_influence",
+          "label": "Index influence",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "respiration_median_filtering",
+          "label": "Respiration median filtering",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "envelope_ratio",
+          "label": "Envelope ratio",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "consonant_breath_protection",
+          "label": "Consonant breath protection",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_300",
+          "type": "str",
+          "component": "Html"
+        }
+      ]
+    },
+    {
+      "name": "/apply_conf_9",
+      "parameters": [
+        {
+          "name": "tag",
+          "label": "parameter_305",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "file_model",
+          "label": "Model",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "pitch_algo",
+          "label": "Pitch algorithm",
+          "type": "Literal['pm', 'harvest', 'crepe', 'rmvpe', 'rmvpe+']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "pitch_lvl",
+          "label": "Pitch level",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "file_index",
+          "label": "Index",
+          "type": "Literal['None']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "index_influence",
+          "label": "Index influence",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "respiration_median_filtering",
+          "label": "Respiration median filtering",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "envelope_ratio",
+          "label": "Envelope ratio",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "consonant_breath_protection",
+          "label": "Consonant breath protection",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_316",
+          "type": "str",
+          "component": "Html"
+        }
+      ]
+    },
+    {
+      "name": "/apply_conf_10",
+      "parameters": [
+        {
+          "name": "tag",
+          "label": "parameter_321",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "file_model",
+          "label": "Model",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "pitch_algo",
+          "label": "Pitch algorithm",
+          "type": "Literal['pm', 'harvest', 'crepe', 'rmvpe', 'rmvpe+']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "pitch_lvl",
+          "label": "Pitch level",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "file_index",
+          "label": "Index",
+          "type": "Literal['None']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "index_influence",
+          "label": "Index influence",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "respiration_median_filtering",
+          "label": "Respiration median filtering",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "envelope_ratio",
+          "label": "Envelope ratio",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "consonant_breath_protection",
+          "label": "Consonant breath protection",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_332",
+          "type": "str",
+          "component": "Html"
+        }
+      ]
+    },
+    {
+      "name": "/apply_conf_11",
+      "parameters": [
+        {
+          "name": "tag",
+          "label": "parameter_337",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "file_model",
+          "label": "Model",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "pitch_algo",
+          "label": "Pitch algorithm",
+          "type": "Literal['pm', 'harvest', 'crepe', 'rmvpe', 'rmvpe+']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "pitch_lvl",
+          "label": "Pitch level",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "file_index",
+          "label": "Index",
+          "type": "Literal['None']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "index_influence",
+          "label": "Index influence",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "respiration_median_filtering",
+          "label": "Respiration median filtering",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "envelope_ratio",
+          "label": "Envelope ratio",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "consonant_breath_protection",
+          "label": "Consonant breath protection",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_348",
+          "type": "str",
+          "component": "Html"
+        }
+      ]
+    },
+    {
+      "name": "/make_test",
+      "parameters": [
+        {
+          "name": "tts_text",
+          "label": "Text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "tts_voice",
+          "label": "TTS",
+          "type": "Literal['af-ZA-AdriNeural-Female', 'af-ZA-WillemNeural-Male', 'am-ET-AmehaNeural-Male', 'am-ET-MekdesNeural-Female', 'ar-AE-FatimaNeural-Female', 'ar-AE-HamdanNeural-Male', 'ar-BH-AliNeural-Male', 'ar",
+          "component": "Dropdown"
+        },
+        {
+          "name": "model_path",
+          "label": "Model",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "index_path",
+          "label": "Index",
+          "type": "Literal['None']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "transpose",
+          "label": "Pitch level",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "f0_method",
+          "label": "Pitch algorithm",
+          "type": "Literal['pm', 'harvest', 'crepe', 'rmvpe', 'rmvpe+']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_367",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "value_366",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ]
+    },
+    {
+      "name": "/download_list",
+      "parameters": [
+        {
+          "name": "text_downloads",
+          "label": "URLs",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_146",
+          "type": "str",
+          "component": "Html"
+        }
+      ]
+    },
+    {
+      "name": "/update_models",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Model",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Model",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Model",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Model",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Model",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Model",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Model",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Model",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Model",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Model",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Model",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Model",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Model",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Index",
+          "type": "Literal['None']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Index",
+          "type": "Literal['None']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Index",
+          "type": "Literal['None']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Index",
+          "type": "Literal['None']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Index",
+          "type": "Literal['None']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Index",
+          "type": "Literal['None']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Index",
+          "type": "Literal['None']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Index",
+          "type": "Literal['None']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Index",
+          "type": "Literal['None']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Index",
+          "type": "Literal['None']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Index",
+          "type": "Literal['None']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Index",
+          "type": "Literal['None']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Index",
+          "type": "Literal['None']",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/batch_multilingual_media_conversion",
+      "parameters": [
+        {
+          "name": "param_0",
+          "label": "VIDEO",
+          "type": "List[filepath]",
+          "component": "File"
+        },
+        {
+          "name": "param_1",
+          "label": "Media link.",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_2",
+          "label": "Video Path.",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_3",
+          "label": "HF Token",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_4",
+          "label": "Preview",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_5",
+          "label": "Whisper ASR model",
+          "type": "Literal['tiny', 'base', 'small', 'medium', 'large', 'large-v1', 'large-v2', 'large-v3', 'distil-large-v2', 'Systran/faster-distil-whisper-large-v3', 'tiny.en', 'base.en', 'small.en', 'medium.en', 'dis",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_6",
+          "label": "Batch size",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_7",
+          "label": "Compute type",
+          "type": "Literal['default', 'auto', 'int8', 'int8_float32', 'int16', 'float32']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_8",
+          "label": "Source language",
+          "type": "Literal['Automatic detection', 'Afrikaans (af)', 'Akan (ak)', 'Albanian (sq)', 'Amharic (am)', 'Arabic (ar)', 'Armenian (hy)', 'Assamese (as)', 'Aymara (ay)', 'Azerbaijani (az)', 'Bambara (bm)', 'Basq",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_9",
+          "label": "Translate audio to",
+          "type": "Literal['Afrikaans (af)', 'Akan (ak)', 'Albanian (sq)', 'Amharic (am)', 'Arabic (ar)', 'Armenian (hy)', 'Assamese (as)', 'Aymara (ay)', 'Azerbaijani (az)', 'Bambara (bm)', 'Basque (eu)', 'Bengali (bn)",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_10",
+          "label": "Min speakers",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_11",
+          "label": "Max speakers",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_12",
+          "label": "TTS Speaker 1",
+          "type": "Literal['>alloy HD OpenAI-TTS', '>alloy OpenAI-TTS', '>echo HD OpenAI-TTS', '>echo OpenAI-TTS', '>fable HD OpenAI-TTS', '>fable OpenAI-TTS', '>nova HD OpenAI-TTS', '>nova OpenAI-TTS', '>onyx HD OpenAI",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_13",
+          "label": "TTS Speaker 2",
+          "type": "Literal['>alloy HD OpenAI-TTS', '>alloy OpenAI-TTS', '>echo HD OpenAI-TTS', '>echo OpenAI-TTS', '>fable HD OpenAI-TTS', '>fable OpenAI-TTS', '>nova HD OpenAI-TTS', '>nova OpenAI-TTS', '>onyx HD OpenAI",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_14",
+          "label": "TTS Speaker 3",
+          "type": "Literal['>alloy HD OpenAI-TTS', '>alloy OpenAI-TTS', '>echo HD OpenAI-TTS', '>echo OpenAI-TTS', '>fable HD OpenAI-TTS', '>fable OpenAI-TTS', '>nova HD OpenAI-TTS', '>nova OpenAI-TTS', '>onyx HD OpenAI",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_15",
+          "label": "TTS Speaker 4",
+          "type": "Literal['>alloy HD OpenAI-TTS', '>alloy OpenAI-TTS', '>echo HD OpenAI-TTS', '>echo OpenAI-TTS', '>fable HD OpenAI-TTS', '>fable OpenAI-TTS', '>nova HD OpenAI-TTS', '>nova OpenAI-TTS', '>onyx HD OpenAI",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_16",
+          "label": "TTS Speaker 4",
+          "type": "Literal['>alloy HD OpenAI-TTS', '>alloy OpenAI-TTS', '>echo HD OpenAI-TTS', '>echo OpenAI-TTS', '>fable HD OpenAI-TTS', '>fable OpenAI-TTS', '>nova HD OpenAI-TTS', '>nova OpenAI-TTS', '>onyx HD OpenAI",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_17",
+          "label": "TTS Speaker 6",
+          "type": "Literal['>alloy HD OpenAI-TTS', '>alloy OpenAI-TTS', '>echo HD OpenAI-TTS', '>echo OpenAI-TTS', '>fable HD OpenAI-TTS', '>fable OpenAI-TTS', '>nova HD OpenAI-TTS', '>nova OpenAI-TTS', '>onyx HD OpenAI",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_18",
+          "label": "TTS Speaker 7",
+          "type": "Literal['>alloy HD OpenAI-TTS', '>alloy OpenAI-TTS', '>echo HD OpenAI-TTS', '>echo OpenAI-TTS', '>fable HD OpenAI-TTS', '>fable OpenAI-TTS', '>nova HD OpenAI-TTS', '>nova OpenAI-TTS', '>onyx HD OpenAI",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_19",
+          "label": "TTS Speaker 8",
+          "type": "Literal['>alloy HD OpenAI-TTS', '>alloy OpenAI-TTS', '>echo HD OpenAI-TTS', '>echo OpenAI-TTS', '>fable HD OpenAI-TTS', '>fable OpenAI-TTS', '>nova HD OpenAI-TTS', '>nova OpenAI-TTS', '>onyx HD OpenAI",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_20",
+          "label": "TTS Speaker 9",
+          "type": "Literal['>alloy HD OpenAI-TTS', '>alloy OpenAI-TTS', '>echo HD OpenAI-TTS', '>echo OpenAI-TTS', '>fable HD OpenAI-TTS', '>fable OpenAI-TTS', '>nova HD OpenAI-TTS', '>nova OpenAI-TTS', '>onyx HD OpenAI",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_21",
+          "label": "TTS Speaker 10",
+          "type": "Literal['>alloy HD OpenAI-TTS', '>alloy OpenAI-TTS', '>echo HD OpenAI-TTS', '>echo OpenAI-TTS', '>fable HD OpenAI-TTS', '>fable OpenAI-TTS', '>nova HD OpenAI-TTS', '>nova OpenAI-TTS', '>onyx HD OpenAI",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_22",
+          "label": "TTS Speaker 11",
+          "type": "Literal['>alloy HD OpenAI-TTS', '>alloy OpenAI-TTS', '>echo HD OpenAI-TTS', '>echo OpenAI-TTS', '>fable HD OpenAI-TTS', '>fable OpenAI-TTS', '>nova HD OpenAI-TTS', '>nova OpenAI-TTS', '>onyx HD OpenAI",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_23",
+          "label": "TTS Speaker 12",
+          "type": "Literal['>alloy HD OpenAI-TTS', '>alloy OpenAI-TTS', '>echo HD OpenAI-TTS', '>echo OpenAI-TTS', '>fable HD OpenAI-TTS', '>fable OpenAI-TTS', '>nova HD OpenAI-TTS', '>nova OpenAI-TTS', '>onyx HD OpenAI",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_24",
+          "label": "File name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_25",
+          "label": "Audio Mixing Method",
+          "type": "Literal['Mixing audio with sidechain compression', 'Adjusting volumes and mixing audio']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_26",
+          "label": "Max Audio acceleration",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_27",
+          "label": "Acceleration Rate Regulation",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_28",
+          "label": "Volume original audio",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_29",
+          "label": "Volume translated audio",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_30",
+          "label": "Subtitle type",
+          "type": "Literal['disable', 'srt', 'vtt', 'ass', 'txt', 'tsv', 'json', 'aud']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_31",
+          "label": "Edit generated subtitles",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_32",
+          "label": "parameter_91",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_33",
+          "label": "Generated subtitles",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_34",
+          "label": "Overlap Reduction",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_35",
+          "label": "Sound Cleanup",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_36",
+          "label": "Literalize Numbers",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_37",
+          "label": "Segment Duration Limit",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_38",
+          "label": "Diarization model",
+          "type": "Literal['pyannote_3.1', 'pyannote_2.1', 'disable']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_39",
+          "label": "Translation process",
+          "type": "Literal['google_translator_batch', 'google_translator', 'gpt-3.5-turbo-0125_batch', 'gpt-3.5-turbo-0125', 'gpt-4-turbo-preview_batch', 'gpt-4-turbo-preview', 'disable_translation']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_40",
+          "label": "Upload an SRT subtitle file (will be used instead of the transcription of Whisper)",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "name": "param_41",
+          "label": "Output type",
+          "type": "Literal['video (mp4)', 'video (mkv)', 'audio (mp3)', 'audio (ogg)', 'audio (wav)', 'subtitle', 'subtitle [by speaker]', 'video [subtitled] (mp4)', 'video [subtitled] (mkv)', 'audio [original vocal sou",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_42",
+          "label": "Voiceless Track",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_43",
+          "label": "Active Voice Imitation",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_44",
+          "label": "Max samples",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_45",
+          "label": "Dereverb",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_46",
+          "label": "Remove previous samples",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_47",
+          "label": "Method",
+          "type": "Literal['openvoice', 'openvoice_v2']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_48",
+          "label": "Dereverb audio",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_49",
+          "label": "Text Segmentation Scale",
+          "type": "Literal['sentence', 'word', 'character']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_50",
+          "label": "Redivide text segments by:",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_51",
+          "label": "Soft Subtitles",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_52",
+          "label": "Burn Subtitles",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_53",
+          "label": "Retrieve Progress",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_54",
+          "label": "ENABLE",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_55",
+          "label": "workers",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "param_56",
+          "label": "parameter_75",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Generated subtitles",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/play_sound_alert",
+      "parameters": [
+        {
+          "name": "play_sound",
+          "label": "Task Status Sound",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_371",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ]
+    },
+    {
+      "name": "/batch_multilingual_media_conversion_1",
+      "parameters": [
+        {
+          "name": "param_0",
+          "label": "VIDEO",
+          "type": "List[filepath]",
+          "component": "File"
+        },
+        {
+          "name": "param_1",
+          "label": "Media link.",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_2",
+          "label": "Video Path.",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_3",
+          "label": "HF Token",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_4",
+          "label": "Preview",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_5",
+          "label": "Whisper ASR model",
+          "type": "Literal['tiny', 'base', 'small', 'medium', 'large', 'large-v1', 'large-v2', 'large-v3', 'distil-large-v2', 'Systran/faster-distil-whisper-large-v3', 'tiny.en', 'base.en', 'small.en', 'medium.en', 'dis",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_6",
+          "label": "Batch size",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_7",
+          "label": "Compute type",
+          "type": "Literal['default', 'auto', 'int8', 'int8_float32', 'int16', 'float32']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_8",
+          "label": "Source language",
+          "type": "Literal['Automatic detection', 'Afrikaans (af)', 'Akan (ak)', 'Albanian (sq)', 'Amharic (am)', 'Arabic (ar)', 'Armenian (hy)', 'Assamese (as)', 'Aymara (ay)', 'Azerbaijani (az)', 'Bambara (bm)', 'Basq",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_9",
+          "label": "Translate audio to",
+          "type": "Literal['Afrikaans (af)', 'Akan (ak)', 'Albanian (sq)', 'Amharic (am)', 'Arabic (ar)', 'Armenian (hy)', 'Assamese (as)', 'Aymara (ay)', 'Azerbaijani (az)', 'Bambara (bm)', 'Basque (eu)', 'Bengali (bn)",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_10",
+          "label": "Min speakers",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_11",
+          "label": "Max speakers",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_12",
+          "label": "TTS Speaker 1",
+          "type": "Literal['>alloy HD OpenAI-TTS', '>alloy OpenAI-TTS', '>echo HD OpenAI-TTS', '>echo OpenAI-TTS', '>fable HD OpenAI-TTS', '>fable OpenAI-TTS', '>nova HD OpenAI-TTS', '>nova OpenAI-TTS', '>onyx HD OpenAI",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_13",
+          "label": "TTS Speaker 2",
+          "type": "Literal['>alloy HD OpenAI-TTS', '>alloy OpenAI-TTS', '>echo HD OpenAI-TTS', '>echo OpenAI-TTS', '>fable HD OpenAI-TTS', '>fable OpenAI-TTS', '>nova HD OpenAI-TTS', '>nova OpenAI-TTS', '>onyx HD OpenAI",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_14",
+          "label": "TTS Speaker 3",
+          "type": "Literal['>alloy HD OpenAI-TTS', '>alloy OpenAI-TTS', '>echo HD OpenAI-TTS', '>echo OpenAI-TTS', '>fable HD OpenAI-TTS', '>fable OpenAI-TTS', '>nova HD OpenAI-TTS', '>nova OpenAI-TTS', '>onyx HD OpenAI",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_15",
+          "label": "TTS Speaker 4",
+          "type": "Literal['>alloy HD OpenAI-TTS', '>alloy OpenAI-TTS', '>echo HD OpenAI-TTS', '>echo OpenAI-TTS', '>fable HD OpenAI-TTS', '>fable OpenAI-TTS', '>nova HD OpenAI-TTS', '>nova OpenAI-TTS', '>onyx HD OpenAI",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_16",
+          "label": "TTS Speaker 4",
+          "type": "Literal['>alloy HD OpenAI-TTS', '>alloy OpenAI-TTS', '>echo HD OpenAI-TTS', '>echo OpenAI-TTS', '>fable HD OpenAI-TTS', '>fable OpenAI-TTS', '>nova HD OpenAI-TTS', '>nova OpenAI-TTS', '>onyx HD OpenAI",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_17",
+          "label": "TTS Speaker 6",
+          "type": "Literal['>alloy HD OpenAI-TTS', '>alloy OpenAI-TTS', '>echo HD OpenAI-TTS', '>echo OpenAI-TTS', '>fable HD OpenAI-TTS', '>fable OpenAI-TTS', '>nova HD OpenAI-TTS', '>nova OpenAI-TTS', '>onyx HD OpenAI",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_18",
+          "label": "TTS Speaker 7",
+          "type": "Literal['>alloy HD OpenAI-TTS', '>alloy OpenAI-TTS', '>echo HD OpenAI-TTS', '>echo OpenAI-TTS', '>fable HD OpenAI-TTS', '>fable OpenAI-TTS', '>nova HD OpenAI-TTS', '>nova OpenAI-TTS', '>onyx HD OpenAI",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_19",
+          "label": "TTS Speaker 8",
+          "type": "Literal['>alloy HD OpenAI-TTS', '>alloy OpenAI-TTS', '>echo HD OpenAI-TTS', '>echo OpenAI-TTS', '>fable HD OpenAI-TTS', '>fable OpenAI-TTS', '>nova HD OpenAI-TTS', '>nova OpenAI-TTS', '>onyx HD OpenAI",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_20",
+          "label": "TTS Speaker 9",
+          "type": "Literal['>alloy HD OpenAI-TTS', '>alloy OpenAI-TTS', '>echo HD OpenAI-TTS', '>echo OpenAI-TTS', '>fable HD OpenAI-TTS', '>fable OpenAI-TTS', '>nova HD OpenAI-TTS', '>nova OpenAI-TTS', '>onyx HD OpenAI",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_21",
+          "label": "TTS Speaker 10",
+          "type": "Literal['>alloy HD OpenAI-TTS', '>alloy OpenAI-TTS', '>echo HD OpenAI-TTS', '>echo OpenAI-TTS', '>fable HD OpenAI-TTS', '>fable OpenAI-TTS', '>nova HD OpenAI-TTS', '>nova OpenAI-TTS', '>onyx HD OpenAI",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_22",
+          "label": "TTS Speaker 11",
+          "type": "Literal['>alloy HD OpenAI-TTS', '>alloy OpenAI-TTS', '>echo HD OpenAI-TTS', '>echo OpenAI-TTS', '>fable HD OpenAI-TTS', '>fable OpenAI-TTS', '>nova HD OpenAI-TTS', '>nova OpenAI-TTS', '>onyx HD OpenAI",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_23",
+          "label": "TTS Speaker 12",
+          "type": "Literal['>alloy HD OpenAI-TTS', '>alloy OpenAI-TTS', '>echo HD OpenAI-TTS', '>echo OpenAI-TTS', '>fable HD OpenAI-TTS', '>fable OpenAI-TTS', '>nova HD OpenAI-TTS', '>nova OpenAI-TTS', '>onyx HD OpenAI",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_24",
+          "label": "File name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_25",
+          "label": "Audio Mixing Method",
+          "type": "Literal['Mixing audio with sidechain compression', 'Adjusting volumes and mixing audio']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_26",
+          "label": "Max Audio acceleration",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_27",
+          "label": "Acceleration Rate Regulation",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_28",
+          "label": "Volume original audio",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_29",
+          "label": "Volume translated audio",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_30",
+          "label": "Subtitle type",
+          "type": "Literal['disable', 'srt', 'vtt', 'ass', 'txt', 'tsv', 'json', 'aud']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_31",
+          "label": "parameter_91",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_32",
+          "label": "Edit generated subtitles",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_33",
+          "label": "Generated subtitles",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_34",
+          "label": "Overlap Reduction",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_35",
+          "label": "Sound Cleanup",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_36",
+          "label": "Literalize Numbers",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_37",
+          "label": "Segment Duration Limit",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_38",
+          "label": "Diarization model",
+          "type": "Literal['pyannote_3.1', 'pyannote_2.1', 'disable']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_39",
+          "label": "Translation process",
+          "type": "Literal['google_translator_batch', 'google_translator', 'gpt-3.5-turbo-0125_batch', 'gpt-3.5-turbo-0125', 'gpt-4-turbo-preview_batch', 'gpt-4-turbo-preview', 'disable_translation']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_40",
+          "label": "Upload an SRT subtitle file (will be used instead of the transcription of Whisper)",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "name": "param_41",
+          "label": "Output type",
+          "type": "Literal['video (mp4)', 'video (mkv)', 'audio (mp3)', 'audio (ogg)', 'audio (wav)', 'subtitle', 'subtitle [by speaker]', 'video [subtitled] (mp4)', 'video [subtitled] (mkv)', 'audio [original vocal sou",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_42",
+          "label": "Voiceless Track",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_43",
+          "label": "Active Voice Imitation",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_44",
+          "label": "Max samples",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_45",
+          "label": "Dereverb",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_46",
+          "label": "Remove previous samples",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_47",
+          "label": "Method",
+          "type": "Literal['openvoice', 'openvoice_v2']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_48",
+          "label": "Dereverb audio",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_49",
+          "label": "Text Segmentation Scale",
+          "type": "Literal['sentence', 'word', 'character']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_50",
+          "label": "Redivide text segments by:",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_51",
+          "label": "Soft Subtitles",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_52",
+          "label": "Burn Subtitles",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_53",
+          "label": "Retrieve Progress",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_54",
+          "label": "ENABLE",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_55",
+          "label": "workers",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "param_56",
+          "label": "parameter_75",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "DOWNLOAD TRANSLATED VIDEO",
+          "type": "List[filepath]",
+          "component": "File"
+        }
+      ]
+    },
+    {
+      "name": "/play_sound_alert_1",
+      "parameters": [
+        {
+          "name": "play_sound",
+          "label": "Task Status Sound",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_371",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ]
+    },
+    {
+      "name": "/multilingual_docs_conversion",
+      "parameters": [
+        {
+          "name": "string_text",
+          "label": "Text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "document",
+          "label": "Document",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "name": "directory_input",
+          "label": "Document Path",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "origin_language",
+          "label": "Source language",
+          "type": "Literal['Afrikaans (af)', 'Akan (ak)', 'Albanian (sq)', 'Amharic (am)', 'Arabic (ar)', 'Armenian (hy)', 'Assamese (as)', 'Aymara (ay)', 'Azerbaijani (az)', 'Bambara (bm)', 'Basque (eu)', 'Bengali (bn)",
+          "component": "Dropdown"
+        },
+        {
+          "name": "target_language",
+          "label": "Translate audio to",
+          "type": "Literal['Afrikaans (af)', 'Akan (ak)', 'Albanian (sq)', 'Amharic (am)', 'Arabic (ar)', 'Armenian (hy)', 'Assamese (as)', 'Aymara (ay)', 'Azerbaijani (az)', 'Bambara (bm)', 'Basque (eu)', 'Bengali (bn)",
+          "component": "Dropdown"
+        },
+        {
+          "name": "tts_voice00",
+          "label": "TTS",
+          "type": "Literal['>alloy HD OpenAI-TTS', '>alloy OpenAI-TTS', '>echo HD OpenAI-TTS', '>echo OpenAI-TTS', '>fable HD OpenAI-TTS', '>fable OpenAI-TTS', '>nova HD OpenAI-TTS', '>nova OpenAI-TTS', '>onyx HD OpenAI",
+          "component": "Dropdown"
+        },
+        {
+          "name": "name_final_file",
+          "label": "Final file name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "translate_process",
+          "label": "Translation process",
+          "type": "Literal['google_translator', 'gpt-3.5-turbo-0125', 'gpt-4-turbo-preview', 'disable_translation']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "output_type",
+          "label": "Output type",
+          "type": "Literal['videobook (mp4)', 'videobook (mkv)', 'audiobook (wav)', 'audiobook (mp3)', 'audiobook (ogg)', 'book (txt)']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "chunk_size",
+          "label": "Max number of characters that the TTS will process per segment",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "custom_voices",
+          "label": "ENABLE",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "custom_voices_workers",
+          "label": "workers",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "start_page",
+          "label": "Start page",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "end_page",
+          "label": "End page",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "width",
+          "label": "Width",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "height",
+          "label": "Height",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "bcolor",
+          "label": "Border color",
+          "type": "Literal['dynamic', 'black', 'white', 'red', 'green', 'blue', 'yellow', 'light_gray', 'light_blue', 'light_green', 'light_yellow', 'light_pink', 'lavender', 'peach', 'light_cyan', 'light_salmon', 'ligh",
+          "component": "Dropdown"
+        },
+        {
+          "name": "is_gui",
+          "label": "parameter_129",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Result",
+          "type": "filepath",
+          "component": "File"
+        }
+      ]
+    },
+    {
+      "name": "/play_sound_alert_2",
+      "parameters": [
+        {
+          "name": "play_sound",
+          "label": "Task Status Sound",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_371",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/swap_visibility",
+  "_api_verified": true,
+  "estimated_latency_s": 10.89,
+  "speed_tier": "medium",
+  "_latency_source": "measured",
+  "_tags_enriched": true,
+  "measured_latency_s": 10.89,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:49:23.408320+00:00"
+}

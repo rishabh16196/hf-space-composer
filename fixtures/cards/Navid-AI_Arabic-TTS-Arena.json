@@ -1,0 +1,233 @@
+{
+  "space_id": "Navid-AI/Arabic-TTS-Arena",
+  "title": "Arabic TTS Arena",
+  "emoji": "\ud83c\udf99\ufe0f",
+  "description": "Compare Arabic TTS models and vote for the best!",
+  "input_schema": {},
+  "output_schema": {
+    "value_14": {
+      "type": "str",
+      "description": "value_14",
+      "component": "Textbox"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "6.5.1",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us",
+    "audio",
+    "benchmark",
+    "leaderboard",
+    "speech-synthesis",
+    "tts"
+  ],
+  "likes": 39,
+  "last_modified": "2026-04-20 00:00:20+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/get_random_sentence",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_14",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/generate_comparison",
+      "parameters": [
+        {
+          "name": "text",
+          "label": "parameter_14",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_21",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "value_26",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "value_32",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "value_14",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "value_17",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "value_22",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_27",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/handler",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_32",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "value_22",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_27",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/handler_1",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_32",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "value_22",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_27",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/handler_2",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_32",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "value_22",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_27",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/handler_3",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_32",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "value_22",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_27",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/clear_for_next_round",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_21",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "value_26",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "value_32",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "value_22",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_27",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_14",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/refresh_leaderboard",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_36",
+          "type": "str",
+          "component": "Html"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/get_random_sentence",
+  "_api_verified": true,
+  "estimated_latency_s": 3.17,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "_tags_enriched": true,
+  "measured_latency_s": 3.17,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:49:39.417769+00:00"
+}

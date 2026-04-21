@@ -1,0 +1,83 @@
+{
+  "space_id": "ai4bharat/IndicF5",
+  "title": "INF5",
+  "emoji": "\ud83c\udf0d",
+  "description": "INF5",
+  "input_schema": {
+    "text": {
+      "type": "str",
+      "description": "Text to Synthesize",
+      "required": true,
+      "component": "Textbox"
+    },
+    "ref_audio": {
+      "type": "filepath",
+      "description": "Reference Prompt Audio",
+      "required": true,
+      "component": "Audio"
+    },
+    "ref_text": {
+      "type": "str",
+      "description": "Text in Reference Prompt Audio",
+      "required": true,
+      "component": "Textbox"
+    }
+  },
+  "output_schema": {
+    "Generated Speech": {
+      "type": "filepath",
+      "description": "Generated Speech",
+      "component": "Audio"
+    }
+  },
+  "license": "unknown",
+  "hardware": "5.20.1",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 42,
+  "last_modified": "2025-09-22 13:54:18+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/synthesize_speech",
+      "parameters": [
+        {
+          "name": "text",
+          "label": "Text to Synthesize",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "ref_audio",
+          "label": "Reference Prompt Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "name": "ref_text",
+          "label": "Text in Reference Prompt Audio",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Generated Speech",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/synthesize_speech",
+  "_api_verified": true
+}

@@ -1,0 +1,124 @@
+{
+  "space_id": "gokaygokay/Tile-Upscaler",
+  "title": "Tile Upscaler",
+  "emoji": "\ud83d\ude80",
+  "description": "Tile Upscaler",
+  "input_schema": {
+    "param_0": {
+      "type": "filepath",
+      "description": "Input Image",
+      "required": true,
+      "component": "Image"
+    },
+    "param_1": {
+      "type": "float",
+      "description": "Resolution",
+      "required": true,
+      "component": "Slider"
+    },
+    "param_2": {
+      "type": "float",
+      "description": "Number of Inference Steps",
+      "required": true,
+      "component": "Slider"
+    },
+    "param_3": {
+      "type": "float",
+      "description": "Strength",
+      "required": true,
+      "component": "Slider"
+    },
+    "param_4": {
+      "type": "float",
+      "description": "HDR Effect",
+      "required": true,
+      "component": "Slider"
+    },
+    "param_5": {
+      "type": "float",
+      "description": "Guidance Scale",
+      "required": true,
+      "component": "Slider"
+    }
+  },
+  "output_schema": {
+    "Before / After": {
+      "type": "Tuple[filepath | None, filepath | None] | None",
+      "description": "Before / After",
+      "component": "Imageslider"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "4.44.1",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 987,
+  "last_modified": "2026-01-11 20:28:47+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/wrapper",
+      "parameters": [
+        {
+          "name": "param_0",
+          "label": "Input Image",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "name": "param_1",
+          "label": "Resolution",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_2",
+          "label": "Number of Inference Steps",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_3",
+          "label": "Strength",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_4",
+          "label": "HDR Effect",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_5",
+          "label": "Guidance Scale",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Before / After",
+          "type": "Tuple[filepath | None, filepath | None] | None",
+          "component": "Imageslider"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/wrapper",
+  "_api_verified": true,
+  "estimated_latency_s": 3.46,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 3.46,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:50:41.636842+00:00",
+  "_inference_attempt_status": "predict_failed",
+  "_inference_attempt_error": "The upstream Gradio app has raised an exception but has not enabled verbose error reporting. To enable, set show_error=True in launch()."
+}

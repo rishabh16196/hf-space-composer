@@ -1,0 +1,293 @@
+{
+  "space_id": "r3gm/Audio_separator",
+  "title": "Audio\ud83d\udd39Separator",
+  "emoji": "\ud83c\udfc3",
+  "description": "Vocal and background audio separator",
+  "input_schema": {
+    "value_active": {
+      "type": "bool",
+      "description": "URL-to-Audio",
+      "required": true,
+      "component": "Checkbox"
+    }
+  },
+  "output_schema": {
+    "Enter URL": {
+      "type": "str",
+      "description": "Enter URL",
+      "component": "Textbox"
+    }
+  },
+  "license": "mit",
+  "hardware": "5.43.1",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 375,
+  "last_modified": "2025-08-28 02:14:05+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/show_components_downloader",
+      "parameters": [
+        {
+          "name": "value_active",
+          "label": "URL-to-Audio",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Enter URL",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/audio_downloader",
+      "parameters": [
+        {
+          "name": "url_media",
+          "label": "Enter URL",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Audio file",
+          "type": "filepath",
+          "component": "File"
+        }
+      ]
+    },
+    {
+      "name": "/show_vocal_components",
+      "parameters": [
+        {
+          "name": "value_name",
+          "label": "Stem",
+          "type": "list[Literal['vocal', 'background']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Main",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Dereverb",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Vocal Effects",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Background Effects",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ]
+    },
+    {
+      "name": "/sound_separate",
+      "parameters": [
+        {
+          "name": "media_file",
+          "label": "Audio file",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "name": "stem",
+          "label": "Stem",
+          "type": "list[Literal['vocal', 'background']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "main",
+          "label": "Main",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "dereverb",
+          "label": "Dereverb",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "vocal_effects",
+          "label": "Vocal Effects",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "background_effects",
+          "label": "Background Effects",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "vocal_reverb_room_size",
+          "label": "Vocal Reverb Room Size",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "vocal_reverb_damping",
+          "label": "Vocal Reverb Damping",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "vocal_reverb_dryness",
+          "label": "Vocal Reverb Dryness Level",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "vocal_reverb_wet_level",
+          "label": "Vocal Reverb Wet Level",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "vocal_delay_seconds",
+          "label": "Vocal Delay Seconds",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "vocal_delay_mix",
+          "label": "Vocal Delay Mix",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "vocal_compressor_threshold_db",
+          "label": "Vocal Compressor Threshold (dB)",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "vocal_compressor_ratio",
+          "label": "Vocal Compressor Ratio",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "vocal_compressor_attack_ms",
+          "label": "Vocal Compressor Attack (ms)",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "vocal_compressor_release_ms",
+          "label": "Vocal Compressor Release (ms)",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "vocal_gain_db",
+          "label": "Vocal Gain (dB)",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "background_highpass_freq",
+          "label": "Background Highpass Frequency (Hz)",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "background_lowpass_freq",
+          "label": "Background Lowpass Frequency (Hz)",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "background_reverb_room_size",
+          "label": "Background Reverb Room Size",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "background_reverb_damping",
+          "label": "Background Reverb Damping",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "background_reverb_wet_level",
+          "label": "Background Reverb Wet Level",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "background_compressor_threshold_db",
+          "label": "Background Compressor Threshold (dB)",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "background_compressor_ratio",
+          "label": "Background Compressor Ratio",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "background_compressor_attack_ms",
+          "label": "Background Compressor Attack (ms)",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "background_compressor_release_ms",
+          "label": "Background Compressor Release (ms)",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "background_gain_db",
+          "label": "Background Gain (dB)",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "target_format",
+          "label": "Format output:",
+          "type": "Literal['WAV', 'MP3', 'FLAC']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Result",
+          "type": "list[filepath]",
+          "component": "File"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/show_components_downloader",
+  "_api_verified": true,
+  "estimated_latency_s": 5.12,
+  "speed_tier": "medium",
+  "_latency_source": "measured",
+  "measured_latency_s": 5.12,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:51:41.326138+00:00"
+}

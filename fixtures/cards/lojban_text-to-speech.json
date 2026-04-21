@@ -1,0 +1,140 @@
+{
+  "space_id": "lojban/text-to-speech",
+  "title": "Lojban text-to-speech",
+  "emoji": "\ud83c\udf3c\u2699\ufe0f",
+  "description": "Lojban text-to-speech",
+  "input_schema": {
+    "voice": {
+      "type": "Literal['LJS', '0', '1', '2', '3', '4', 'Nix-Deterministic', 'Nix-Stochastic']",
+      "description": "Voice",
+      "required": true,
+      "component": "Radio"
+    }
+  },
+  "output_schema": {
+    "Noise scale": {
+      "type": "float",
+      "description": "Noise scale",
+      "component": "Slider"
+    },
+    "Noise scale W": {
+      "type": "float",
+      "description": "Noise scale W",
+      "component": "Slider"
+    },
+    "Slowness": {
+      "type": "float",
+      "description": "Slowness",
+      "component": "Slider"
+    }
+  },
+  "license": "mit",
+  "hardware": "4.36.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "audio",
+    "text-to-speech",
+    "region:us"
+  ],
+  "likes": 19,
+  "last_modified": "2024-06-09 08:44:04+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/conditionally_hide_widgets",
+      "parameters": [
+        {
+          "name": "voice",
+          "label": "Voice",
+          "type": "Literal['LJS', '0', '1', '2', '3', '4', 'Nix-Deterministic', 'Nix-Stochastic']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Noise scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Noise scale W",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Slowness",
+          "type": "float",
+          "component": "Slider"
+        }
+      ]
+    },
+    {
+      "name": "/cupra",
+      "parameters": [
+        {
+          "name": "text",
+          "label": "Input text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "language",
+          "label": "Language",
+          "type": "Literal['Lojban', 'English', 'Transcription']",
+          "component": "Radio"
+        },
+        {
+          "name": "noise_scale",
+          "label": "Noise scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "noise_scale_w",
+          "label": "Noise scale W",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "length_scale",
+          "label": "Slowness",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "voice",
+          "label": "Voice",
+          "type": "Literal['LJS', '0', '1', '2', '3', '4', 'Nix-Deterministic', 'Nix-Stochastic']",
+          "component": "Radio"
+        },
+        {
+          "name": "file_format",
+          "label": "File format",
+          "type": "Literal['wav', 'ogg']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "International Phonetic Alphabet",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Output audio",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/conditionally_hide_widgets",
+  "_api_verified": true
+}

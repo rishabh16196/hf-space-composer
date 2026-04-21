@@ -1,0 +1,78 @@
+{
+  "space_id": "srinivasbilla/llasa-3b-tts",
+  "title": "Llasa 3b Tts",
+  "emoji": "\ud83d\udd25",
+  "description": "Zero Shot voice cloning with llasa 3b (Unofficial Demo)",
+  "input_schema": {
+    "sample_audio_path": {
+      "type": "filepath",
+      "description": "Reference Audio",
+      "required": true,
+      "component": "Audio"
+    },
+    "target_text": {
+      "type": "str",
+      "description": "Text to Generate",
+      "required": true,
+      "component": "Textbox"
+    }
+  },
+  "output_schema": {
+    "Synthesized Audio": {
+      "type": "filepath",
+      "description": "Synthesized Audio",
+      "component": "Audio"
+    }
+  },
+  "license": "unknown",
+  "hardware": "5.12.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us",
+    "audio",
+    "speech-synthesis",
+    "tts"
+  ],
+  "likes": 314,
+  "last_modified": "2025-01-27 01:07:33+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/infer",
+      "parameters": [
+        {
+          "name": "sample_audio_path",
+          "label": "Reference Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "name": "target_text",
+          "label": "Text to Generate",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Synthesized Audio",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/infer",
+  "_api_verified": true,
+  "estimated_latency_s": 4.37,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "_tags_enriched": true,
+  "measured_latency_s": 4.37,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:51:54.620317+00:00"
+}

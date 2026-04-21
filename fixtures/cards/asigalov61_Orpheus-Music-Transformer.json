@@ -1,0 +1,350 @@
+{
+  "space_id": "asigalov61/Orpheus-Music-Transformer",
+  "title": "Orpheus Music Transformer",
+  "emoji": "\ud83c\udfba",
+  "description": "[2026] SOTA 8k music transformer trained on 2.31M+ HQ MIDIs",
+  "input_schema": {},
+  "output_schema": {},
+  "license": "apache-2.0",
+  "hardware": "6.12.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "sota",
+    "music",
+    "music ai",
+    "music transformer",
+    "MIDI",
+    "multi-instrumental music",
+    "orpheus",
+    "region:us",
+    "audio"
+  ],
+  "likes": 31,
+  "last_modified": "2026-04-19 08:21:43+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/reset",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/reset_1",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/update_state_from_dropdown",
+      "parameters": [
+        {
+          "name": "choice",
+          "label": "Model to use",
+          "type": "Literal['Medium Base Model', 'Large Base Model', 'Large Fine-Tuned Model']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/generate_music_and_state",
+      "parameters": [
+        {
+          "name": "input_midi",
+          "label": "Input MIDI",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "name": "prime_instruments",
+          "label": "Prime instruments (select up to 5)",
+          "type": "list[Literal['Acoustic Grand', 'Bright Acoustic', 'Electric Grand', 'Honky-Tonk', 'Electric Piano 1', 'Electric Piano 2', 'Harpsichord', 'Clav', 'Celesta', 'Glockenspiel', 'Music Box', 'Vibraphone', '",
+          "component": "Dropdown"
+        },
+        {
+          "name": "num_prime_tokens",
+          "label": "Number of prime tokens",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "num_gen_tokens",
+          "label": "Number of tokens to generate",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "model_temperature",
+          "label": "Model temperature",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "model_top_p",
+          "label": "Model sampling top p value",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "add_drums",
+          "label": "Add drums",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "add_outro",
+          "label": "Add an outro",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Batch # 0 MIDI Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Batch # 0 MIDI Plot",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "Batch # 0 MIDI File",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "label": "Batch # 1 MIDI Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Batch # 1 MIDI Plot",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "Batch # 1 MIDI File",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "label": "Batch # 2 MIDI Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Batch # 2 MIDI Plot",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "Batch # 2 MIDI File",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "label": "Batch # 3 MIDI Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Batch # 3 MIDI Plot",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "Batch # 3 MIDI File",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "label": "Batch # 4 MIDI Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Batch # 4 MIDI Plot",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "Batch # 4 MIDI File",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "label": "Batch # 5 MIDI Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Batch # 5 MIDI Plot",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "Batch # 5 MIDI File",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "label": "Batch # 6 MIDI Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Batch # 6 MIDI Plot",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "Batch # 6 MIDI File",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "label": "Batch # 7 MIDI Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Batch # 7 MIDI Plot",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "Batch # 7 MIDI File",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "label": "Batch # 8 MIDI Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Batch # 8 MIDI Plot",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "Batch # 8 MIDI File",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "label": "Batch # 9 MIDI Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Batch # 9 MIDI Plot",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "Batch # 9 MIDI File",
+          "type": "filepath",
+          "component": "File"
+        }
+      ]
+    },
+    {
+      "name": "/add_batch",
+      "parameters": [
+        {
+          "name": "batch_number",
+          "label": "Batch number to add/remove",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Final MIDI audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Final MIDI plot",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "Final MIDI file",
+          "type": "filepath",
+          "component": "File"
+        }
+      ]
+    },
+    {
+      "name": "/remove_batch",
+      "parameters": [
+        {
+          "name": "batch_number",
+          "label": "Batch number to add/remove",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "num_tokens",
+          "label": "Number of tokens to generate",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Final MIDI audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Final MIDI plot",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "Final MIDI file",
+          "type": "filepath",
+          "component": "File"
+        }
+      ]
+    },
+    {
+      "name": "/clear",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Final MIDI audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Final MIDI plot",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "Final MIDI file",
+          "type": "filepath",
+          "component": "File"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/reset",
+  "_api_verified": true,
+  "estimated_latency_s": 4.32,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "_tags_enriched": true,
+  "measured_latency_s": 4.32,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:50:19.083980+00:00"
+}

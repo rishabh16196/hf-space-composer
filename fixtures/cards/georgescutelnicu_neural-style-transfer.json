@@ -1,0 +1,71 @@
+{
+  "space_id": "georgescutelnicu/neural-style-transfer",
+  "title": "Neural Style Transfer",
+  "emoji": "\ud83d\udd25",
+  "description": "Neural Style Transfer",
+  "input_schema": {
+    "content_image": {
+      "type": "str",
+      "description": "content_image",
+      "required": true,
+      "component": "Image"
+    },
+    "style_image": {
+      "type": "str",
+      "description": "style_image",
+      "required": true,
+      "component": "Image"
+    }
+  },
+  "output_schema": {
+    "output": {
+      "type": "str",
+      "description": "output",
+      "component": "Image"
+    }
+  },
+  "license": "mit",
+  "hardware": "3.42.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 9,
+  "last_modified": "2023-10-04 18:18:45+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/predict",
+      "parameters": [
+        {
+          "name": "content_image",
+          "label": "content_image",
+          "type": "str",
+          "component": "Image"
+        },
+        {
+          "name": "style_image",
+          "label": "style_image",
+          "type": "str",
+          "component": "Image"
+        }
+      ],
+      "returns": [
+        {
+          "label": "output",
+          "type": "str",
+          "component": "Image"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/predict",
+  "_api_verified": true
+}

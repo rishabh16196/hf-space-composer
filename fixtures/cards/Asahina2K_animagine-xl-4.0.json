@@ -1,0 +1,149 @@
+{
+  "space_id": "Asahina2K/animagine-xl-4.0",
+  "title": "Animagine XL 4.0",
+  "emoji": "\ud83c\udf0d",
+  "description": "The Ultimate Anime-themed SDXL model",
+  "input_schema": {},
+  "output_schema": {},
+  "license": "mit",
+  "hardware": "4.44.1",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us",
+    "diffusion",
+    "image-generation",
+    "text-to-image",
+    "vision"
+  ],
+  "likes": 496,
+  "last_modified": "2025-05-11 06:46:19+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/lambda",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/generate",
+      "parameters": [
+        {
+          "name": "prompt",
+          "label": "Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "negative_prompt",
+          "label": "Negative Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "seed",
+          "label": "Seed",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "custom_width",
+          "label": "Width",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "custom_height",
+          "label": "Height",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "guidance_scale",
+          "label": "Guidance scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "num_inference_steps",
+          "label": "Number of inference steps",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "sampler",
+          "label": "Sampler",
+          "type": "Literal['DPM++ 2M Karras', 'DPM++ SDE Karras', 'DPM++ 2M SDE Karras', 'Euler', 'Euler a', 'DDIM']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "aspect_ratio_selector",
+          "label": "Aspect Ratio",
+          "type": "Literal['1024 x 1024', '1152 x 896', '896 x 1152', '1216 x 832', '832 x 1216', '1344 x 768', '768 x 1344', '1536 x 640', '640 x 1536', 'Custom']",
+          "component": "Radio"
+        },
+        {
+          "name": "style_selector",
+          "label": "Style Preset",
+          "type": "Literal['(None)', 'Anim4gine', 'Painting', 'Pixel art', '1980s', '1990s', '2000s', 'Toon', 'Lineart', 'Art Nouveau', 'Western Comics', '3D', 'Realistic', 'Neonpunk']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "use_upscaler",
+          "label": "Use Upscaler",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "upscaler_strength",
+          "label": "Strength",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "upscale_by",
+          "label": "Upscale by",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "add_quality_tags",
+          "label": "Quality Tags",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Generated Images",
+          "type": "List[Dict(image: filepath, caption: str | None)]",
+          "component": "Gallery"
+        },
+        {
+          "label": "Image Metadata",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_1",
+      "parameters": [],
+      "returns": []
+    }
+  ],
+  "endpoint": "/lambda",
+  "_api_verified": true,
+  "estimated_latency_s": 2.9,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "_tags_enriched": true,
+  "measured_latency_s": 2.9,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:49:08.687750+00:00",
+  "_inference_attempt_status": "predict_failed",
+  "_inference_attempt_error": "\"Generation failed: Cannot cast scalar from dtype('float64') to dtype('int64') according to the rule 'safe'\""
+}

@@ -1,0 +1,108 @@
+{
+  "space_id": "24yearsold/see-through-demo",
+  "title": "See-through: Layer Decomposition",
+  "emoji": "\ud83d\udd0d",
+  "description": "See-through: Layer Decomposition",
+  "input_schema": {
+    "image": {
+      "type": "filepath",
+      "description": "Upload image (non-square images will be padded)",
+      "required": true,
+      "component": "Image"
+    },
+    "resolution": {
+      "type": "float",
+      "description": "Resolution",
+      "required": true,
+      "component": "Slider"
+    },
+    "seed": {
+      "type": "float",
+      "description": "Seed",
+      "required": true,
+      "component": "Slider"
+    },
+    "tblr_split": {
+      "type": "bool",
+      "description": "Split left/right arms & legs",
+      "required": true,
+      "component": "Checkbox"
+    }
+  },
+  "output_schema": {
+    "Download layered PSD": {
+      "type": "filepath",
+      "description": "Download layered PSD",
+      "component": "File"
+    },
+    "Separated layers": {
+      "type": "list[dict(image: filepath, caption: str | None) | dict(video: filepath, caption: str | None)]",
+      "description": "Separated layers",
+      "component": "Gallery"
+    }
+  },
+  "license": "mit",
+  "hardware": "",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 91,
+  "last_modified": "2026-04-20 02:11:57+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/inference",
+      "parameters": [
+        {
+          "name": "image",
+          "label": "Upload image (non-square images will be padded)",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "name": "resolution",
+          "label": "Resolution",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "seed",
+          "label": "Seed",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "tblr_split",
+          "label": "Split left/right arms & legs",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Download layered PSD",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "label": "Separated layers",
+          "type": "list[dict(image: filepath, caption: str | None) | dict(video: filepath, caption: str | None)]",
+          "component": "Gallery"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/inference",
+  "_api_verified": true,
+  "estimated_latency_s": 4.11,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 4.11,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:49:02.801094+00:00"
+}

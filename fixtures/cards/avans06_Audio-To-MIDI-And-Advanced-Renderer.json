@@ -1,0 +1,3652 @@
+{
+  "space_id": "avans06/Audio-To-MIDI-And-Advanced-Renderer",
+  "title": "Audio To MIDI And Advanced Renderer",
+  "emoji": "\ud83c\udfb9",
+  "description": "Audio to MIDI Transcription and Advanced render",
+  "input_schema": {
+    "input_file": {
+      "type": "filepath",
+      "description": "Input Audio or MIDI File",
+      "required": true,
+      "component": "Audio"
+    },
+    "param_1": {
+      "type": "Literal['Custom', 'Auto-Recommend (Analyze MIDI)', 'Mario (Super Mario Bros / \u30b9\u30fc\u30d1\u30fc\u30de\u30ea\u30aa\u30d6\u30e9\u30b6\u30fc\u30ba)', 'Mega ",
+      "description": "Style Preset",
+      "required": true,
+      "component": "Dropdown"
+    },
+    "param_2": {
+      "type": "bool",
+      "description": "Enable Source Separation",
+      "required": true,
+      "component": "Checkbox"
+    },
+    "param_3": {
+      "type": "Literal['Demucs (4-stem)', 'BS-RoFormer (Vocals/Instrumental)', 'Mel-RoFormer (Vocals/Instrumental)'",
+      "description": "Separation Model",
+      "required": true,
+      "component": "Radio"
+    },
+    "param_4": {
+      "type": "bool",
+      "description": "Enable Advanced Stem Control (Demucs Only)",
+      "required": true,
+      "component": "Checkbox"
+    },
+    "param_5": {
+      "type": "bool",
+      "description": "Drums",
+      "required": true,
+      "component": "Checkbox"
+    },
+    "param_6": {
+      "type": "bool",
+      "description": "Bass",
+      "required": true,
+      "component": "Checkbox"
+    },
+    "param_7": {
+      "type": "bool",
+      "description": "Other",
+      "required": true,
+      "component": "Checkbox"
+    },
+    "param_8": {
+      "type": "bool",
+      "description": "Transcribe Vocals",
+      "required": true,
+      "component": "Checkbox"
+    },
+    "param_9": {
+      "type": "bool",
+      "description": "Transcribe Drums",
+      "required": true,
+      "component": "Checkbox"
+    },
+    "param_10": {
+      "type": "bool",
+      "description": "Transcribe Bass",
+      "required": true,
+      "component": "Checkbox"
+    },
+    "param_11": {
+      "type": "bool",
+      "description": "Transcribe Accompaniment",
+      "required": true,
+      "component": "Checkbox"
+    },
+    "param_12": {
+      "type": "bool",
+      "description": "Merge Vocals",
+      "required": true,
+      "component": "Checkbox"
+    },
+    "param_13": {
+      "type": "bool",
+      "description": "Merge Drums",
+      "required": true,
+      "component": "Checkbox"
+    },
+    "param_14": {
+      "type": "bool",
+      "description": "Merge Bass",
+      "required": true,
+      "component": "Checkbox"
+    },
+    "param_15": {
+      "type": "bool",
+      "description": "Merge Accompaniment",
+      "required": true,
+      "component": "Checkbox"
+    },
+    "param_16": {
+      "type": "bool",
+      "description": "Enable Stereo Transcription",
+      "required": true,
+      "component": "Checkbox"
+    },
+    "param_17": {
+      "type": "Literal['General Purpose', 'Piano-Specific']",
+      "description": "Audio Transcription Method",
+      "required": true,
+      "component": "Radio"
+    },
+    "param_18": {
+      "type": "Literal['Auto-Analyze Audio', 'Custom', 'Default (Balanced)', 'Anime / J-Pop', 'Solo Vocals', 'Solo ",
+      "description": "Transcription Profile Preset",
+      "required": true,
+      "component": "Dropdown"
+    },
+    "param_19": {
+      "type": "float",
+      "description": "On-set Threshold",
+      "required": true,
+      "component": "Slider"
+    },
+    "param_20": {
+      "type": "float",
+      "description": "Frame Threshold",
+      "required": true,
+      "component": "Slider"
+    },
+    "param_21": {
+      "type": "float",
+      "description": "Minimum Note Length (ms)",
+      "required": true,
+      "component": "Slider"
+    },
+    "param_22": {
+      "type": "float",
+      "description": "Minimum Frequency (Hz)",
+      "required": true,
+      "component": "Slider"
+    },
+    "param_23": {
+      "type": "float",
+      "description": "Maximum Frequency (Hz)",
+      "required": true,
+      "component": "Slider"
+    },
+    "param_24": {
+      "type": "bool",
+      "description": "Infer Onsets (Boost Onsets)",
+      "required": true,
+      "component": "Checkbox"
+    },
+    "param_25": {
+      "type": "bool",
+      "description": "Melodia Trick (Contour Optimization)",
+      "required": true,
+      "component": "Checkbox"
+    },
+    "param_26": {
+      "type": "bool",
+      "description": "Allow Multiple Pitch Bends",
+      "required": true,
+      "component": "Checkbox"
+    },
+    "param_27": {
+      "type": "Literal['Render as-is', 'Custom render', 'Extract melody', 'Flip', 'Reverse', 'Repair Durations', 'R",
+      "description": "MIDI Transformation Render Type",
+      "required": true,
+      "component": "Radio"
+    },
+    "param_28": {
+      "type": "Literal['None (8-bit Synthesizer)', 'SGM-v2.01-YamahaGrand-Guit-Bass-v2.7', 'Orpheus_18.06.2020', 'L",
+      "description": "SoundFont / Synthesizer",
+      "required": true,
+      "component": "Dropdown"
+    },
+    "param_29": {
+      "type": "Literal['16000', '32000', '44100']",
+      "description": "Audio Sample Rate",
+      "required": true,
+      "component": "Radio"
+    },
+    "param_30": {
+      "type": "bool",
+      "description": "Apply sustain pedal effects (if present)",
+      "required": true,
+      "component": "Checkbox"
+    },
+    "param_31": {
+      "type": "float",
+      "description": "Time to merge notes in ms (-1 to disable)",
+      "required": true,
+      "component": "Slider"
+    },
+    "param_32": {
+      "type": "float",
+      "description": "Force MIDI Patch (-1 to disable)",
+      "required": true,
+      "component": "Slider"
+    },
+    "param_33": {
+      "type": "Literal['Do not align', 'Start Times', 'Start Times and Durations', 'Start Times and Split Durations",
+      "description": "Align notes to musical bars",
+      "required": true,
+      "component": "Radio"
+    },
+    "param_34": {
+      "type": "float",
+      "description": "Transpose (semitones)",
+      "required": true,
+      "component": "Slider"
+    },
+    "param_35": {
+      "type": "bool",
+      "description": "Transpose entire score to center around C4",
+      "required": true,
+      "component": "Checkbox"
+    },
+    "param_36": {
+      "type": "bool",
+      "description": "Convert to Solo Piano (Grand Piano patch)",
+      "required": true,
+      "component": "Checkbox"
+    },
+    "param_37": {
+      "type": "bool",
+      "description": "Remove drum track",
+      "required": true,
+      "component": "Checkbox"
+    },
+    "param_38": {
+      "type": "bool",
+      "description": "Enable MIDI Correction Suite",
+      "required": true,
+      "component": "Checkbox"
+    },
+    "param_39": {
+      "type": "bool",
+      "description": "Filter Spurious (Noise) Notes",
+      "required": true,
+      "component": "Checkbox"
+    },
+    "param_40": {
+      "type": "float",
+      "description": "Max Duration (ms)",
+      "required": true,
+      "component": "Slider"
+    },
+    "param_41": {
+      "type": "float",
+      "description": "Max Velocity",
+      "required": true,
+      "component": "Slider"
+    },
+    "param_42": {
+      "type": "bool",
+      "description": "Stabilize Rhythm (for Pitch Bend)",
+      "required": true,
+      "component": "Checkbox"
+    },
+    "param_43": {
+      "type": "bool",
+      "description": "Enable Segmentation by Silence",
+      "required": true,
+      "component": "Checkbox"
+    },
+    "param_44": {
+      "type": "float",
+      "description": "Silence Threshold for Segmentation (seconds)",
+      "required": true,
+      "component": "Slider"
+    },
+    "param_45": {
+      "type": "Literal['None', 'Auto-Analyze Rhythm', '1/64', '1/32', '1/16', '1/8', '1/4', '1/24', '1/12']",
+      "description": "Quantize Rhythm",
+      "required": true,
+      "component": "Dropdown"
+    },
+    "param_46": {
+      "type": "Literal['None', 'Smooth', 'Compress']",
+      "description": "Process Velocity",
+      "required": true,
+      "component": "Dropdown"
+    },
+    "param_47": {
+      "type": "float",
+      "description": "Smoothing Factor",
+      "required": true,
+      "component": "Slider"
+    },
+    "param_48": {
+      "type": "float",
+      "description": "Target Min Velocity",
+      "required": true,
+      "component": "Slider"
+    },
+    "param_49": {
+      "type": "float",
+      "description": "Target Max Velocity",
+      "required": true,
+      "component": "Slider"
+    },
+    "param_50": {
+      "type": "Literal['None', '1/16', '1/12', '1/8', '1/4']",
+      "description": "Simplify Rhythm (Experimental)",
+      "required": true,
+      "component": "Dropdown"
+    },
+    "param_51": {
+      "type": "Literal['Square', 'Sawtooth', 'Triangle']",
+      "description": "Waveform Type",
+      "required": true,
+      "component": "Dropdown"
+    },
+    "param_52": {
+      "type": "float",
+      "description": "Pulse Width (Square Wave Only)",
+      "required": true,
+      "component": "Slider"
+    },
+    "param_53": {
+      "type": "Literal['Plucky (AD Envelope)', 'Sustained (Full Decay)']",
+      "description": "Envelope Type",
+      "required": true,
+      "component": "Dropdown"
+    },
+    "param_54": {
+      "type": "float",
+      "description": "Decay Time (s)",
+      "required": true,
+      "component": "Slider"
+    },
+    "param_55": {
+      "type": "float",
+      "description": "Vibrato Rate (Hz)",
+      "required": true,
+      "component": "Slider"
+    },
+    "param_56": {
+      "type": "float",
+      "description": "Vibrato Depth (Hz)",
+      "required": true,
+      "component": "Slider"
+    },
+    "param_57": {
+      "type": "float",
+      "description": "Bass Boost Level",
+      "required": true,
+      "component": "Slider"
+    },
+    "param_58": {
+      "type": "float",
+      "description": "Smooth Notes Level",
+      "required": true,
+      "component": "Slider"
+    },
+    "param_59": {
+      "type": "float",
+      "description": "Continuous Vibrato Level",
+      "required": true,
+      "component": "Slider"
+    },
+    "param_60": {
+      "type": "float",
+      "description": "Noise Level",
+      "required": true,
+      "component": "Slider"
+    },
+    "param_61": {
+      "type": "float",
+      "description": "Distortion Level",
+      "required": true,
+      "component": "Slider"
+    },
+    "param_62": {
+      "type": "float",
+      "description": "FM Depth",
+      "required": true,
+      "component": "Slider"
+    },
+    "param_63": {
+      "type": "float",
+      "description": "FM Rate",
+      "required": true,
+      "component": "Slider"
+    },
+    "param_64": {
+      "type": "bool",
+      "description": "Enable Adaptive Decay (Fix for Staccato)",
+      "required": true,
+      "component": "Checkbox"
+    },
+    "param_65": {
+      "type": "bool",
+      "description": "Enable Echo Sustain for Long Notes",
+      "required": true,
+      "component": "Checkbox"
+    },
+    "param_66": {
+      "type": "float",
+      "description": "Echo Rate (Hz)",
+      "required": true,
+      "component": "Slider"
+    },
+    "param_67": {
+      "type": "float",
+      "description": "Echo Decay Factor",
+      "required": true,
+      "component": "Slider"
+    },
+    "param_68": {
+      "type": "float",
+      "description": "Echo Trigger Threshold (x Decay Time)",
+      "required": true,
+      "component": "Slider"
+    },
+    "param_69": {
+      "type": "bool",
+      "description": "Enable All Audio Quality Enhancements",
+      "required": true,
+      "component": "Checkbox"
+    },
+    "param_70": {
+      "type": "bool",
+      "description": "Use Additive Synthesis (High Quality, High CPU)",
+      "required": true,
+      "component": "Checkbox"
+    },
+    "param_71": {
+      "type": "float",
+      "description": "Waveform Edge Smoothing (ms)",
+      "required": true,
+      "component": "Slider"
+    },
+    "param_72": {
+      "type": "float",
+      "description": "Noise Lowpass Filter (Hz)",
+      "required": true,
+      "component": "Slider"
+    },
+    "param_73": {
+      "type": "float",
+      "description": "Harmonic Lowpass Factor",
+      "required": true,
+      "component": "Slider"
+    },
+    "param_74": {
+      "type": "float",
+      "description": "Final Gain / Limiter Level",
+      "required": true,
+      "component": "Slider"
+    },
+    "param_75": {
+      "type": "float",
+      "description": "Bass Boost Cutoff (Hz)",
+      "required": true,
+      "component": "Slider"
+    },
+    "param_76": {
+      "type": "bool",
+      "description": "Enable MIDI Pre-processing (Anti-Harshness)",
+      "required": true,
+      "component": "Checkbox"
+    },
+    "param_77": {
+      "type": "float",
+      "description": "High Pitch Threshold (MIDI Note)",
+      "required": true,
+      "component": "Slider"
+    },
+    "param_78": {
+      "type": "float",
+      "description": "High Pitch Velocity Scale",
+      "required": true,
+      "component": "Slider"
+    },
+    "param_79": {
+      "type": "float",
+      "description": "Low Pitch Threshold (MIDI Note)",
+      "required": true,
+      "component": "Slider"
+    },
+    "param_80": {
+      "type": "float",
+      "description": "Low Pitch Velocity Scale",
+      "required": true,
+      "component": "Slider"
+    },
+    "param_81": {
+      "type": "float",
+      "description": "Chord Density Threshold",
+      "required": true,
+      "component": "Slider"
+    },
+    "param_82": {
+      "type": "float",
+      "description": "Chord Velocity Threshold",
+      "required": true,
+      "component": "Slider"
+    },
+    "param_83": {
+      "type": "float",
+      "description": "Chord Velocity Scale",
+      "required": true,
+      "component": "Slider"
+    },
+    "param_84": {
+      "type": "bool",
+      "description": "Enable Arpeggiator (to reduce stiffness)",
+      "required": true,
+      "component": "Checkbox"
+    },
+    "param_85": {
+      "type": "Literal['Accompaniment Only', 'Melody Only', 'Full Mix']",
+      "description": "Arpeggiation Target",
+      "required": true,
+      "component": "Dropdown"
+    },
+    "param_86": {
+      "type": "float",
+      "description": "Arpeggio Velocity Scale",
+      "required": true,
+      "component": "Slider"
+    },
+    "param_87": {
+      "type": "float",
+      "description": "Arpeggio Density Scale",
+      "required": true,
+      "component": "Slider"
+    },
+    "param_88": {
+      "type": "Literal['Continuous 16ths', 'Classic Upbeat (8th)', 'Pulsing 8ths', 'Triplet 8ths', 'Pulsing 4ths', ",
+      "description": "Arpeggio Rhythm Pattern",
+      "required": true,
+      "component": "Dropdown"
+    },
+    "param_89": {
+      "type": "Literal['Up', 'Down', 'UpDown']",
+      "description": "Arpeggio Pattern",
+      "required": true,
+      "component": "Dropdown"
+    },
+    "param_90": {
+      "type": "float",
+      "description": "Arpeggio Octave Range",
+      "required": true,
+      "component": "Slider"
+    },
+    "param_91": {
+      "type": "Literal['Stereo', 'Center', 'Left', 'Right']",
+      "description": "Arpeggio Layer Panning",
+      "required": true,
+      "component": "Dropdown"
+    },
+    "param_92": {
+      "type": "bool",
+      "description": "Enable Delay / Echo Effect",
+      "required": true,
+      "component": "Checkbox"
+    },
+    "param_93": {
+      "type": "bool",
+      "description": "Apply Delay to Melody Only",
+      "required": true,
+      "component": "Checkbox"
+    },
+    "param_94": {
+      "type": "Literal['Quarter Note', 'Dotted 8th Note', '8th Note', 'Triplet 8th Note', '16th Note']",
+      "description": "Delay Time (Tempo Synced)",
+      "required": true,
+      "component": "Dropdown"
+    },
+    "param_95": {
+      "type": "float",
+      "description": "Delay Feedback (Volume Decay)",
+      "required": true,
+      "component": "Slider"
+    },
+    "param_96": {
+      "type": "float",
+      "description": "Number of Repeats",
+      "required": true,
+      "component": "Slider"
+    },
+    "param_97": {
+      "type": "float",
+      "description": "Echo High-Pass Filter (Hz)",
+      "required": true,
+      "component": "Slider"
+    },
+    "param_98": {
+      "type": "float",
+      "description": "Echo Pitch Shift for Low Notes (Semitones)",
+      "required": true,
+      "component": "Slider"
+    },
+    "param_99": {
+      "type": "float",
+      "description": "Echo Low-Pass Filter (Hz)",
+      "required": true,
+      "component": "Slider"
+    },
+    "param_100": {
+      "type": "float",
+      "description": "Echo Pitch Shift for High Notes (Semitones)",
+      "required": true,
+      "component": "Slider"
+    }
+  },
+  "output_schema": {
+    "Output MIDI MD5 Hash": {
+      "type": "str",
+      "description": "Output MIDI MD5 Hash",
+      "component": "Textbox"
+    },
+    "MIDI Title": {
+      "type": "str",
+      "description": "MIDI Title",
+      "component": "Textbox"
+    },
+    "MIDI metadata summary": {
+      "type": "str",
+      "description": "MIDI metadata summary",
+      "component": "Textbox"
+    },
+    "Download Processed MIDI File": {
+      "type": "filepath",
+      "description": "Download Processed MIDI File",
+      "component": "File"
+    },
+    "Rendered Audio Output": {
+      "type": "filepath",
+      "description": "Rendered Audio Output",
+      "component": "Audio"
+    },
+    "MIDI Score Plot": {
+      "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+      "description": "MIDI Score Plot",
+      "component": "Plot"
+    },
+    "MIDI Description": {
+      "type": "str",
+      "description": "MIDI Description",
+      "component": "Textbox"
+    },
+    "Style Preset": {
+      "type": "Literal['Custom', 'Auto-Recommend (Analyze MIDI)', 'Mario (Super Mario Bros / \u30b9\u30fc\u30d1\u30fc\u30de\u30ea\u30aa\u30d6\u30e9\u30b6\u30fc\u30ba)', 'Mega ",
+      "description": "Style Preset",
+      "component": "Dropdown"
+    },
+    "Waveform Type": {
+      "type": "Literal['Square', 'Sawtooth', 'Triangle']",
+      "description": "Waveform Type",
+      "component": "Dropdown"
+    },
+    "Pulse Width (Square Wave Only)": {
+      "type": "float",
+      "description": "Pulse Width (Square Wave Only)",
+      "component": "Slider"
+    },
+    "Envelope Type": {
+      "type": "Literal['Plucky (AD Envelope)', 'Sustained (Full Decay)']",
+      "description": "Envelope Type",
+      "component": "Dropdown"
+    },
+    "Decay Time (s)": {
+      "type": "float",
+      "description": "Decay Time (s)",
+      "component": "Slider"
+    },
+    "Vibrato Rate (Hz)": {
+      "type": "float",
+      "description": "Vibrato Rate (Hz)",
+      "component": "Slider"
+    },
+    "Vibrato Depth (Hz)": {
+      "type": "float",
+      "description": "Vibrato Depth (Hz)",
+      "component": "Slider"
+    },
+    "Bass Boost Level": {
+      "type": "float",
+      "description": "Bass Boost Level",
+      "component": "Slider"
+    },
+    "Smooth Notes Level": {
+      "type": "float",
+      "description": "Smooth Notes Level",
+      "component": "Slider"
+    },
+    "Continuous Vibrato Level": {
+      "type": "float",
+      "description": "Continuous Vibrato Level",
+      "component": "Slider"
+    },
+    "Noise Level": {
+      "type": "float",
+      "description": "Noise Level",
+      "component": "Slider"
+    },
+    "Distortion Level": {
+      "type": "float",
+      "description": "Distortion Level",
+      "component": "Slider"
+    },
+    "FM Depth": {
+      "type": "float",
+      "description": "FM Depth",
+      "component": "Slider"
+    },
+    "FM Rate": {
+      "type": "float",
+      "description": "FM Rate",
+      "component": "Slider"
+    },
+    "Enable Adaptive Decay (Fix for Staccato)": {
+      "type": "bool",
+      "description": "Enable Adaptive Decay (Fix for Staccato)",
+      "component": "Checkbox"
+    },
+    "Enable Echo Sustain for Long Notes": {
+      "type": "bool",
+      "description": "Enable Echo Sustain for Long Notes",
+      "component": "Checkbox"
+    },
+    "Echo Rate (Hz)": {
+      "type": "float",
+      "description": "Echo Rate (Hz)",
+      "component": "Slider"
+    },
+    "Echo Decay Factor": {
+      "type": "float",
+      "description": "Echo Decay Factor",
+      "component": "Slider"
+    },
+    "Echo Trigger Threshold (x Decay Time)": {
+      "type": "float",
+      "description": "Echo Trigger Threshold (x Decay Time)",
+      "component": "Slider"
+    },
+    "Enable All Audio Quality Enhancements": {
+      "type": "bool",
+      "description": "Enable All Audio Quality Enhancements",
+      "component": "Checkbox"
+    },
+    "Use Additive Synthesis (High Quality, High CPU)": {
+      "type": "bool",
+      "description": "Use Additive Synthesis (High Quality, High CPU)",
+      "component": "Checkbox"
+    },
+    "Waveform Edge Smoothing (ms)": {
+      "type": "float",
+      "description": "Waveform Edge Smoothing (ms)",
+      "component": "Slider"
+    },
+    "Noise Lowpass Filter (Hz)": {
+      "type": "float",
+      "description": "Noise Lowpass Filter (Hz)",
+      "component": "Slider"
+    },
+    "Harmonic Lowpass Factor": {
+      "type": "float",
+      "description": "Harmonic Lowpass Factor",
+      "component": "Slider"
+    },
+    "Final Gain / Limiter Level": {
+      "type": "float",
+      "description": "Final Gain / Limiter Level",
+      "component": "Slider"
+    },
+    "Bass Boost Cutoff (Hz)": {
+      "type": "float",
+      "description": "Bass Boost Cutoff (Hz)",
+      "component": "Slider"
+    },
+    "Enable MIDI Pre-processing (Anti-Harshness)": {
+      "type": "bool",
+      "description": "Enable MIDI Pre-processing (Anti-Harshness)",
+      "component": "Checkbox"
+    },
+    "High Pitch Threshold (MIDI Note)": {
+      "type": "float",
+      "description": "High Pitch Threshold (MIDI Note)",
+      "component": "Slider"
+    },
+    "High Pitch Velocity Scale": {
+      "type": "float",
+      "description": "High Pitch Velocity Scale",
+      "component": "Slider"
+    },
+    "Low Pitch Threshold (MIDI Note)": {
+      "type": "float",
+      "description": "Low Pitch Threshold (MIDI Note)",
+      "component": "Slider"
+    },
+    "Low Pitch Velocity Scale": {
+      "type": "float",
+      "description": "Low Pitch Velocity Scale",
+      "component": "Slider"
+    },
+    "Chord Density Threshold": {
+      "type": "float",
+      "description": "Chord Density Threshold",
+      "component": "Slider"
+    },
+    "Chord Velocity Threshold": {
+      "type": "float",
+      "description": "Chord Velocity Threshold",
+      "component": "Slider"
+    },
+    "Chord Velocity Scale": {
+      "type": "float",
+      "description": "Chord Velocity Scale",
+      "component": "Slider"
+    },
+    "Enable Arpeggiator (to reduce stiffness)": {
+      "type": "bool",
+      "description": "Enable Arpeggiator (to reduce stiffness)",
+      "component": "Checkbox"
+    },
+    "Arpeggiation Target": {
+      "type": "Literal['Accompaniment Only', 'Melody Only', 'Full Mix']",
+      "description": "Arpeggiation Target",
+      "component": "Dropdown"
+    },
+    "Arpeggio Velocity Scale": {
+      "type": "float",
+      "description": "Arpeggio Velocity Scale",
+      "component": "Slider"
+    },
+    "Arpeggio Density Scale": {
+      "type": "float",
+      "description": "Arpeggio Density Scale",
+      "component": "Slider"
+    },
+    "Arpeggio Rhythm Pattern": {
+      "type": "Literal['Continuous 16ths', 'Classic Upbeat (8th)', 'Pulsing 8ths', 'Triplet 8ths', 'Pulsing 4ths', ",
+      "description": "Arpeggio Rhythm Pattern",
+      "component": "Dropdown"
+    },
+    "Arpeggio Pattern": {
+      "type": "Literal['Up', 'Down', 'UpDown']",
+      "description": "Arpeggio Pattern",
+      "component": "Dropdown"
+    },
+    "Arpeggio Octave Range": {
+      "type": "float",
+      "description": "Arpeggio Octave Range",
+      "component": "Slider"
+    },
+    "Arpeggio Layer Panning": {
+      "type": "Literal['Stereo', 'Center', 'Left', 'Right']",
+      "description": "Arpeggio Layer Panning",
+      "component": "Dropdown"
+    },
+    "Enable Delay / Echo Effect": {
+      "type": "bool",
+      "description": "Enable Delay / Echo Effect",
+      "component": "Checkbox"
+    },
+    "Apply Delay to Melody Only": {
+      "type": "bool",
+      "description": "Apply Delay to Melody Only",
+      "component": "Checkbox"
+    },
+    "Delay Time (Tempo Synced)": {
+      "type": "Literal['Quarter Note', 'Dotted 8th Note', '8th Note', 'Triplet 8th Note', '16th Note']",
+      "description": "Delay Time (Tempo Synced)",
+      "component": "Dropdown"
+    },
+    "Delay Feedback (Volume Decay)": {
+      "type": "float",
+      "description": "Delay Feedback (Volume Decay)",
+      "component": "Slider"
+    },
+    "Number of Repeats": {
+      "type": "float",
+      "description": "Number of Repeats",
+      "component": "Slider"
+    },
+    "Echo High-Pass Filter (Hz)": {
+      "type": "float",
+      "description": "Echo High-Pass Filter (Hz)",
+      "component": "Slider"
+    },
+    "Echo Pitch Shift for Low Notes (Semitones)": {
+      "type": "float",
+      "description": "Echo Pitch Shift for Low Notes (Semitones)",
+      "component": "Slider"
+    },
+    "Echo Low-Pass Filter (Hz)": {
+      "type": "float",
+      "description": "Echo Low-Pass Filter (Hz)",
+      "component": "Slider"
+    },
+    "Echo Pitch Shift for High Notes (Semitones)": {
+      "type": "float",
+      "description": "Echo Pitch Shift for High Notes (Semitones)",
+      "component": "Slider"
+    }
+  },
+  "license": "cc-by-nc-4.0",
+  "hardware": "5.42.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "MIDI",
+    "renderer",
+    "MIDI rendering",
+    "MIDI renderer",
+    "region:us"
+  ],
+  "likes": 20,
+  "last_modified": "2025-08-27 15:51:02+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/process_and_render_file",
+      "parameters": [
+        {
+          "name": "input_file",
+          "label": "Input Audio or MIDI File",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "name": "param_1",
+          "label": "Style Preset",
+          "type": "Literal['Custom', 'Auto-Recommend (Analyze MIDI)', 'Mario (Super Mario Bros / \u30b9\u30fc\u30d1\u30fc\u30de\u30ea\u30aa\u30d6\u30e9\u30b6\u30fc\u30ba)', 'Mega Man (Rockman / \u30ed\u30c3\u30af\u30de\u30f3)', 'Zelda (The Legend of Zelda / \u30bc\u30eb\u30c0\u306e\u4f1d\u8aac)', 'Kirby's Bubbly Melody (Hoshi no Kir",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_2",
+          "label": "Enable Source Separation",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_3",
+          "label": "Separation Model",
+          "type": "Literal['Demucs (4-stem)', 'BS-RoFormer (Vocals/Instrumental)', 'Mel-RoFormer (Vocals/Instrumental)']",
+          "component": "Radio"
+        },
+        {
+          "name": "param_4",
+          "label": "Enable Advanced Stem Control (Demucs Only)",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_5",
+          "label": "Drums",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_6",
+          "label": "Bass",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_7",
+          "label": "Other",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_8",
+          "label": "Transcribe Vocals",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_9",
+          "label": "Transcribe Drums",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_10",
+          "label": "Transcribe Bass",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_11",
+          "label": "Transcribe Accompaniment",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_12",
+          "label": "Merge Vocals",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_13",
+          "label": "Merge Drums",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_14",
+          "label": "Merge Bass",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_15",
+          "label": "Merge Accompaniment",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_16",
+          "label": "Enable Stereo Transcription",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_17",
+          "label": "Audio Transcription Method",
+          "type": "Literal['General Purpose', 'Piano-Specific']",
+          "component": "Radio"
+        },
+        {
+          "name": "param_18",
+          "label": "Transcription Profile Preset",
+          "type": "Literal['Auto-Analyze Audio', 'Custom', 'Default (Balanced)', 'Anime / J-Pop', 'Solo Vocals', 'Solo Piano', 'Acoustic Guitar', 'Bass Guitar', 'Percussion / Drums', 'Rock / Metal', 'Jazz (Multi-instrum",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_19",
+          "label": "On-set Threshold",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_20",
+          "label": "Frame Threshold",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_21",
+          "label": "Minimum Note Length (ms)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_22",
+          "label": "Minimum Frequency (Hz)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_23",
+          "label": "Maximum Frequency (Hz)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_24",
+          "label": "Infer Onsets (Boost Onsets)",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_25",
+          "label": "Melodia Trick (Contour Optimization)",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_26",
+          "label": "Allow Multiple Pitch Bends",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_27",
+          "label": "MIDI Transformation Render Type",
+          "type": "Literal['Render as-is', 'Custom render', 'Extract melody', 'Flip', 'Reverse', 'Repair Durations', 'Repair Chords', 'Remove Duplicate Pitches', 'Longest Repeating Phrase', 'Multi-Instrumental Summary',",
+          "component": "Radio"
+        },
+        {
+          "name": "param_28",
+          "label": "SoundFont / Synthesizer",
+          "type": "Literal['None (8-bit Synthesizer)', 'SGM-v2.01-YamahaGrand-Guit-Bass-v2.7', 'Orpheus_18.06.2020', 'Live HQ Natural SoundFont GM', 'Nice-Strings-PlusOrchestra-v1.6', 'KBH-Real-Choir-V2.5', 'SuperGameBo",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_29",
+          "label": "Audio Sample Rate",
+          "type": "Literal['16000', '32000', '44100']",
+          "component": "Radio"
+        },
+        {
+          "name": "param_30",
+          "label": "Apply sustain pedal effects (if present)",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_31",
+          "label": "Time to merge notes in ms (-1 to disable)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_32",
+          "label": "Force MIDI Patch (-1 to disable)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_33",
+          "label": "Align notes to musical bars",
+          "type": "Literal['Do not align', 'Start Times', 'Start Times and Durations', 'Start Times and Split Durations']",
+          "component": "Radio"
+        },
+        {
+          "name": "param_34",
+          "label": "Transpose (semitones)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_35",
+          "label": "Transpose entire score to center around C4",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_36",
+          "label": "Convert to Solo Piano (Grand Piano patch)",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_37",
+          "label": "Remove drum track",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_38",
+          "label": "Enable MIDI Correction Suite",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_39",
+          "label": "Filter Spurious (Noise) Notes",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_40",
+          "label": "Max Duration (ms)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_41",
+          "label": "Max Velocity",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_42",
+          "label": "Stabilize Rhythm (for Pitch Bend)",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_43",
+          "label": "Enable Segmentation by Silence",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_44",
+          "label": "Silence Threshold for Segmentation (seconds)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_45",
+          "label": "Quantize Rhythm",
+          "type": "Literal['None', 'Auto-Analyze Rhythm', '1/64', '1/32', '1/16', '1/8', '1/4', '1/24', '1/12']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_46",
+          "label": "Process Velocity",
+          "type": "Literal['None', 'Smooth', 'Compress']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_47",
+          "label": "Smoothing Factor",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_48",
+          "label": "Target Min Velocity",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_49",
+          "label": "Target Max Velocity",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_50",
+          "label": "Simplify Rhythm (Experimental)",
+          "type": "Literal['None', '1/16', '1/12', '1/8', '1/4']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_51",
+          "label": "Waveform Type",
+          "type": "Literal['Square', 'Sawtooth', 'Triangle']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_52",
+          "label": "Pulse Width (Square Wave Only)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_53",
+          "label": "Envelope Type",
+          "type": "Literal['Plucky (AD Envelope)', 'Sustained (Full Decay)']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_54",
+          "label": "Decay Time (s)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_55",
+          "label": "Vibrato Rate (Hz)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_56",
+          "label": "Vibrato Depth (Hz)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_57",
+          "label": "Bass Boost Level",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_58",
+          "label": "Smooth Notes Level",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_59",
+          "label": "Continuous Vibrato Level",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_60",
+          "label": "Noise Level",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_61",
+          "label": "Distortion Level",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_62",
+          "label": "FM Depth",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_63",
+          "label": "FM Rate",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_64",
+          "label": "Enable Adaptive Decay (Fix for Staccato)",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_65",
+          "label": "Enable Echo Sustain for Long Notes",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_66",
+          "label": "Echo Rate (Hz)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_67",
+          "label": "Echo Decay Factor",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_68",
+          "label": "Echo Trigger Threshold (x Decay Time)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_69",
+          "label": "Enable All Audio Quality Enhancements",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_70",
+          "label": "Use Additive Synthesis (High Quality, High CPU)",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_71",
+          "label": "Waveform Edge Smoothing (ms)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_72",
+          "label": "Noise Lowpass Filter (Hz)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_73",
+          "label": "Harmonic Lowpass Factor",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_74",
+          "label": "Final Gain / Limiter Level",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_75",
+          "label": "Bass Boost Cutoff (Hz)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_76",
+          "label": "Enable MIDI Pre-processing (Anti-Harshness)",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_77",
+          "label": "High Pitch Threshold (MIDI Note)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_78",
+          "label": "High Pitch Velocity Scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_79",
+          "label": "Low Pitch Threshold (MIDI Note)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_80",
+          "label": "Low Pitch Velocity Scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_81",
+          "label": "Chord Density Threshold",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_82",
+          "label": "Chord Velocity Threshold",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_83",
+          "label": "Chord Velocity Scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_84",
+          "label": "Enable Arpeggiator (to reduce stiffness)",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_85",
+          "label": "Arpeggiation Target",
+          "type": "Literal['Accompaniment Only', 'Melody Only', 'Full Mix']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_86",
+          "label": "Arpeggio Velocity Scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_87",
+          "label": "Arpeggio Density Scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_88",
+          "label": "Arpeggio Rhythm Pattern",
+          "type": "Literal['Continuous 16ths', 'Classic Upbeat (8th)', 'Pulsing 8ths', 'Triplet 8ths', 'Pulsing 4ths', 'Galloping', 'Simple Quarter Notes']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_89",
+          "label": "Arpeggio Pattern",
+          "type": "Literal['Up', 'Down', 'UpDown']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_90",
+          "label": "Arpeggio Octave Range",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_91",
+          "label": "Arpeggio Layer Panning",
+          "type": "Literal['Stereo', 'Center', 'Left', 'Right']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_92",
+          "label": "Enable Delay / Echo Effect",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_93",
+          "label": "Apply Delay to Melody Only",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_94",
+          "label": "Delay Time (Tempo Synced)",
+          "type": "Literal['Quarter Note', 'Dotted 8th Note', '8th Note', 'Triplet 8th Note', '16th Note']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_95",
+          "label": "Delay Feedback (Volume Decay)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_96",
+          "label": "Number of Repeats",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_97",
+          "label": "Echo High-Pass Filter (Hz)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_98",
+          "label": "Echo Pitch Shift for Low Notes (Semitones)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_99",
+          "label": "Echo Low-Pass Filter (Hz)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_100",
+          "label": "Echo Pitch Shift for High Notes (Semitones)",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output MIDI MD5 Hash",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "MIDI Title",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "MIDI metadata summary",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Download Processed MIDI File",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "label": "Rendered Audio Output",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "MIDI Score Plot",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "MIDI Description",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Style Preset",
+          "type": "Literal['Custom', 'Auto-Recommend (Analyze MIDI)', 'Mario (Super Mario Bros / \u30b9\u30fc\u30d1\u30fc\u30de\u30ea\u30aa\u30d6\u30e9\u30b6\u30fc\u30ba)', 'Mega Man (Rockman / \u30ed\u30c3\u30af\u30de\u30f3)', 'Zelda (The Legend of Zelda / \u30bc\u30eb\u30c0\u306e\u4f1d\u8aac)', 'Kirby's Bubbly Melody (Hoshi no Kir",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Waveform Type",
+          "type": "Literal['Square', 'Sawtooth', 'Triangle']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Pulse Width (Square Wave Only)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Envelope Type",
+          "type": "Literal['Plucky (AD Envelope)', 'Sustained (Full Decay)']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Decay Time (s)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Vibrato Rate (Hz)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Vibrato Depth (Hz)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Bass Boost Level",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Smooth Notes Level",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Continuous Vibrato Level",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Noise Level",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Distortion Level",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "FM Depth",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "FM Rate",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Enable Adaptive Decay (Fix for Staccato)",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Enable Echo Sustain for Long Notes",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Echo Rate (Hz)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Echo Decay Factor",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Echo Trigger Threshold (x Decay Time)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Enable All Audio Quality Enhancements",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Use Additive Synthesis (High Quality, High CPU)",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Waveform Edge Smoothing (ms)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Noise Lowpass Filter (Hz)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Harmonic Lowpass Factor",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Final Gain / Limiter Level",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Bass Boost Cutoff (Hz)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Enable MIDI Pre-processing (Anti-Harshness)",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "High Pitch Threshold (MIDI Note)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "High Pitch Velocity Scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Low Pitch Threshold (MIDI Note)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Low Pitch Velocity Scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Chord Density Threshold",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Chord Velocity Threshold",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Chord Velocity Scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Enable Arpeggiator (to reduce stiffness)",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Arpeggiation Target",
+          "type": "Literal['Accompaniment Only', 'Melody Only', 'Full Mix']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Arpeggio Velocity Scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Arpeggio Density Scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Arpeggio Rhythm Pattern",
+          "type": "Literal['Continuous 16ths', 'Classic Upbeat (8th)', 'Pulsing 8ths', 'Triplet 8ths', 'Pulsing 4ths', 'Galloping', 'Simple Quarter Notes']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Arpeggio Pattern",
+          "type": "Literal['Up', 'Down', 'UpDown']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Arpeggio Octave Range",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Arpeggio Layer Panning",
+          "type": "Literal['Stereo', 'Center', 'Left', 'Right']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Enable Delay / Echo Effect",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Apply Delay to Melody Only",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Delay Time (Tempo Synced)",
+          "type": "Literal['Quarter Note', 'Dotted 8th Note', '8th Note', 'Triplet 8th Note', '16th Note']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Delay Feedback (Volume Decay)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Number of Repeats",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Echo High-Pass Filter (Hz)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Echo Pitch Shift for Low Notes (Semitones)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Echo Low-Pass Filter (Hz)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Echo Pitch Shift for High Notes (Semitones)",
+          "type": "float",
+          "component": "Slider"
+        }
+      ]
+    },
+    {
+      "name": "/batch_process_files",
+      "parameters": [
+        {
+          "name": "input_files",
+          "label": "Upload Audio or MIDI Files",
+          "type": "list[filepath]",
+          "component": "File"
+        },
+        {
+          "name": "progress",
+          "label": "Style Preset",
+          "type": "Literal['Custom', 'Auto-Recommend (Analyze MIDI)', 'Mario (Super Mario Bros / \u30b9\u30fc\u30d1\u30fc\u30de\u30ea\u30aa\u30d6\u30e9\u30b6\u30fc\u30ba)', 'Mega Man (Rockman / \u30ed\u30c3\u30af\u30de\u30f3)', 'Zelda (The Legend of Zelda / \u30bc\u30eb\u30c0\u306e\u4f1d\u8aac)', 'Kirby's Bubbly Melody (Hoshi no Kir",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_2",
+          "label": "Enable Source Separation",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_3",
+          "label": "Separation Model",
+          "type": "Literal['Demucs (4-stem)', 'BS-RoFormer (Vocals/Instrumental)', 'Mel-RoFormer (Vocals/Instrumental)']",
+          "component": "Radio"
+        },
+        {
+          "name": "param_4",
+          "label": "Enable Advanced Stem Control (Demucs Only)",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_5",
+          "label": "Drums",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_6",
+          "label": "Bass",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_7",
+          "label": "Other",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_8",
+          "label": "Transcribe Vocals",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_9",
+          "label": "Transcribe Drums",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_10",
+          "label": "Transcribe Bass",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_11",
+          "label": "Transcribe Accompaniment",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_12",
+          "label": "Merge Vocals",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_13",
+          "label": "Merge Drums",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_14",
+          "label": "Merge Bass",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_15",
+          "label": "Merge Accompaniment",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_16",
+          "label": "Enable Stereo Transcription",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_17",
+          "label": "Audio Transcription Method",
+          "type": "Literal['General Purpose', 'Piano-Specific']",
+          "component": "Radio"
+        },
+        {
+          "name": "param_18",
+          "label": "Transcription Profile Preset",
+          "type": "Literal['Auto-Analyze Audio', 'Custom', 'Default (Balanced)', 'Anime / J-Pop', 'Solo Vocals', 'Solo Piano', 'Acoustic Guitar', 'Bass Guitar', 'Percussion / Drums', 'Rock / Metal', 'Jazz (Multi-instrum",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_19",
+          "label": "On-set Threshold",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_20",
+          "label": "Frame Threshold",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_21",
+          "label": "Minimum Note Length (ms)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_22",
+          "label": "Minimum Frequency (Hz)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_23",
+          "label": "Maximum Frequency (Hz)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_24",
+          "label": "Infer Onsets (Boost Onsets)",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_25",
+          "label": "Melodia Trick (Contour Optimization)",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_26",
+          "label": "Allow Multiple Pitch Bends",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_27",
+          "label": "MIDI Transformation Render Type",
+          "type": "Literal['Render as-is', 'Custom render', 'Extract melody', 'Flip', 'Reverse', 'Repair Durations', 'Repair Chords', 'Remove Duplicate Pitches', 'Longest Repeating Phrase', 'Multi-Instrumental Summary',",
+          "component": "Radio"
+        },
+        {
+          "name": "param_28",
+          "label": "SoundFont / Synthesizer",
+          "type": "Literal['None (8-bit Synthesizer)', 'SGM-v2.01-YamahaGrand-Guit-Bass-v2.7', 'Orpheus_18.06.2020', 'Live HQ Natural SoundFont GM', 'Nice-Strings-PlusOrchestra-v1.6', 'KBH-Real-Choir-V2.5', 'SuperGameBo",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_29",
+          "label": "Audio Sample Rate",
+          "type": "Literal['16000', '32000', '44100']",
+          "component": "Radio"
+        },
+        {
+          "name": "param_30",
+          "label": "Apply sustain pedal effects (if present)",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_31",
+          "label": "Time to merge notes in ms (-1 to disable)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_32",
+          "label": "Force MIDI Patch (-1 to disable)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_33",
+          "label": "Align notes to musical bars",
+          "type": "Literal['Do not align', 'Start Times', 'Start Times and Durations', 'Start Times and Split Durations']",
+          "component": "Radio"
+        },
+        {
+          "name": "param_34",
+          "label": "Transpose (semitones)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_35",
+          "label": "Transpose entire score to center around C4",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_36",
+          "label": "Convert to Solo Piano (Grand Piano patch)",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_37",
+          "label": "Remove drum track",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_38",
+          "label": "Enable MIDI Correction Suite",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_39",
+          "label": "Filter Spurious (Noise) Notes",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_40",
+          "label": "Max Duration (ms)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_41",
+          "label": "Max Velocity",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_42",
+          "label": "Stabilize Rhythm (for Pitch Bend)",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_43",
+          "label": "Enable Segmentation by Silence",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_44",
+          "label": "Silence Threshold for Segmentation (seconds)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_45",
+          "label": "Quantize Rhythm",
+          "type": "Literal['None', 'Auto-Analyze Rhythm', '1/64', '1/32', '1/16', '1/8', '1/4', '1/24', '1/12']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_46",
+          "label": "Process Velocity",
+          "type": "Literal['None', 'Smooth', 'Compress']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_47",
+          "label": "Smoothing Factor",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_48",
+          "label": "Target Min Velocity",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_49",
+          "label": "Target Max Velocity",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_50",
+          "label": "Simplify Rhythm (Experimental)",
+          "type": "Literal['None', '1/16', '1/12', '1/8', '1/4']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_51",
+          "label": "Waveform Type",
+          "type": "Literal['Square', 'Sawtooth', 'Triangle']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_52",
+          "label": "Pulse Width (Square Wave Only)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_53",
+          "label": "Envelope Type",
+          "type": "Literal['Plucky (AD Envelope)', 'Sustained (Full Decay)']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_54",
+          "label": "Decay Time (s)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_55",
+          "label": "Vibrato Rate (Hz)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_56",
+          "label": "Vibrato Depth (Hz)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_57",
+          "label": "Bass Boost Level",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_58",
+          "label": "Smooth Notes Level",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_59",
+          "label": "Continuous Vibrato Level",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_60",
+          "label": "Noise Level",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_61",
+          "label": "Distortion Level",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_62",
+          "label": "FM Depth",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_63",
+          "label": "FM Rate",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_64",
+          "label": "Enable Adaptive Decay (Fix for Staccato)",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_65",
+          "label": "Enable Echo Sustain for Long Notes",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_66",
+          "label": "Echo Rate (Hz)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_67",
+          "label": "Echo Decay Factor",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_68",
+          "label": "Echo Trigger Threshold (x Decay Time)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_69",
+          "label": "Enable All Audio Quality Enhancements",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_70",
+          "label": "Use Additive Synthesis (High Quality, High CPU)",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_71",
+          "label": "Waveform Edge Smoothing (ms)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_72",
+          "label": "Noise Lowpass Filter (Hz)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_73",
+          "label": "Harmonic Lowpass Factor",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_74",
+          "label": "Final Gain / Limiter Level",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_75",
+          "label": "Bass Boost Cutoff (Hz)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_76",
+          "label": "Enable MIDI Pre-processing (Anti-Harshness)",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_77",
+          "label": "High Pitch Threshold (MIDI Note)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_78",
+          "label": "High Pitch Velocity Scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_79",
+          "label": "Low Pitch Threshold (MIDI Note)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_80",
+          "label": "Low Pitch Velocity Scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_81",
+          "label": "Chord Density Threshold",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_82",
+          "label": "Chord Velocity Threshold",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_83",
+          "label": "Chord Velocity Scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_84",
+          "label": "Enable Arpeggiator (to reduce stiffness)",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_85",
+          "label": "Arpeggiation Target",
+          "type": "Literal['Accompaniment Only', 'Melody Only', 'Full Mix']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_86",
+          "label": "Arpeggio Velocity Scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_87",
+          "label": "Arpeggio Density Scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_88",
+          "label": "Arpeggio Rhythm Pattern",
+          "type": "Literal['Continuous 16ths', 'Classic Upbeat (8th)', 'Pulsing 8ths', 'Triplet 8ths', 'Pulsing 4ths', 'Galloping', 'Simple Quarter Notes']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_89",
+          "label": "Arpeggio Pattern",
+          "type": "Literal['Up', 'Down', 'UpDown']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_90",
+          "label": "Arpeggio Octave Range",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_91",
+          "label": "Arpeggio Layer Panning",
+          "type": "Literal['Stereo', 'Center', 'Left', 'Right']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_92",
+          "label": "Enable Delay / Echo Effect",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_93",
+          "label": "Apply Delay to Melody Only",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_94",
+          "label": "Delay Time (Tempo Synced)",
+          "type": "Literal['Quarter Note', 'Dotted 8th Note', '8th Note', 'Triplet 8th Note', '16th Note']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_95",
+          "label": "Delay Feedback (Volume Decay)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_96",
+          "label": "Number of Repeats",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_97",
+          "label": "Echo High-Pass Filter (Hz)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_98",
+          "label": "Echo Pitch Shift for Low Notes (Semitones)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_99",
+          "label": "Echo Low-Pass Filter (Hz)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_100",
+          "label": "Echo Pitch Shift for High Notes (Semitones)",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Download Rendered FLAC Files",
+          "type": "list[filepath]",
+          "component": "File"
+        },
+        {
+          "label": "Download Processed MIDI Files",
+          "type": "list[filepath]",
+          "component": "File"
+        }
+      ]
+    },
+    {
+      "name": "/lambda",
+      "parameters": [
+        {
+          "name": "x",
+          "label": "Enable Source Separation",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/on_separation_model_change",
+      "parameters": [
+        {
+          "name": "model_choice",
+          "label": "Separation Model",
+          "type": "Literal['Demucs (4-stem)', 'BS-RoFormer (Vocals/Instrumental)', 'Mel-RoFormer (Vocals/Instrumental)']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Enable Advanced Stem Control (Demucs Only)",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Transcribe Drums",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Transcribe Bass",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Transcribe Accompaniment",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Merge Drums",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Merge Bass",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Merge Accompaniment",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ]
+    },
+    {
+      "name": "/update_separation_mode_ui",
+      "parameters": [
+        {
+          "name": "is_advanced",
+          "label": "Enable Advanced Stem Control (Demucs Only)",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Transcribe Drums",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Transcribe Bass",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Transcribe Accompaniment",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Merge Drums",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Merge Bass",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Merge Accompaniment",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_1",
+      "parameters": [
+        {
+          "name": "x",
+          "label": "Audio Transcription Method",
+          "type": "Literal['General Purpose', 'Piano-Specific']",
+          "component": "Radio"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/lambda_2",
+      "parameters": [
+        {
+          "name": "x",
+          "label": "SoundFont / Synthesizer",
+          "type": "Literal['None (8-bit Synthesizer)', 'SGM-v2.01-YamahaGrand-Guit-Bass-v2.7', 'Orpheus_18.06.2020', 'Live HQ Natural SoundFont GM', 'Nice-Strings-PlusOrchestra-v1.6', 'KBH-Real-Choir-V2.5', 'SuperGameBo",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/apply_basic_pitch_preset",
+      "parameters": [
+        {
+          "name": "preset_name",
+          "label": "Transcription Profile Preset",
+          "type": "Literal['Auto-Analyze Audio', 'Custom', 'Default (Balanced)', 'Anime / J-Pop', 'Solo Vocals', 'Solo Piano', 'Acoustic Guitar', 'Bass Guitar', 'Percussion / Drums', 'Rock / Metal', 'Jazz (Multi-instrum",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "On-set Threshold",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Frame Threshold",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Minimum Note Length (ms)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Minimum Frequency (Hz)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Maximum Frequency (Hz)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Infer Onsets (Boost Onsets)",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Melodia Trick (Contour Optimization)",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Allow Multiple Pitch Bends",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ]
+    },
+    {
+      "name": "/apply_8bit_preset",
+      "parameters": [
+        {
+          "name": "preset_name",
+          "label": "Style Preset",
+          "type": "Literal['Custom', 'Auto-Recommend (Analyze MIDI)', 'Mario (Super Mario Bros / \u30b9\u30fc\u30d1\u30fc\u30de\u30ea\u30aa\u30d6\u30e9\u30b6\u30fc\u30ba)', 'Mega Man (Rockman / \u30ed\u30c3\u30af\u30de\u30f3)', 'Zelda (The Legend of Zelda / \u30bc\u30eb\u30c0\u306e\u4f1d\u8aac)', 'Kirby's Bubbly Melody (Hoshi no Kir",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Waveform Type",
+          "type": "Literal['Square', 'Sawtooth', 'Triangle']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Pulse Width (Square Wave Only)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Envelope Type",
+          "type": "Literal['Plucky (AD Envelope)', 'Sustained (Full Decay)']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Decay Time (s)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Vibrato Rate (Hz)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Vibrato Depth (Hz)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Bass Boost Level",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Smooth Notes Level",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Continuous Vibrato Level",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Noise Level",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Distortion Level",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "FM Depth",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "FM Rate",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Enable Adaptive Decay (Fix for Staccato)",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Enable Echo Sustain for Long Notes",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Echo Rate (Hz)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Echo Decay Factor",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Echo Trigger Threshold (x Decay Time)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Enable All Audio Quality Enhancements",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Use Additive Synthesis (High Quality, High CPU)",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Waveform Edge Smoothing (ms)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Noise Lowpass Filter (Hz)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Harmonic Lowpass Factor",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Final Gain / Limiter Level",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Bass Boost Cutoff (Hz)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Enable MIDI Pre-processing (Anti-Harshness)",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "High Pitch Threshold (MIDI Note)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "High Pitch Velocity Scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Low Pitch Threshold (MIDI Note)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Low Pitch Velocity Scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Chord Density Threshold",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Chord Velocity Threshold",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Chord Velocity Scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Enable Arpeggiator (to reduce stiffness)",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Arpeggiation Target",
+          "type": "Literal['Accompaniment Only', 'Melody Only', 'Full Mix']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Arpeggio Velocity Scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Arpeggio Density Scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Arpeggio Rhythm Pattern",
+          "type": "Literal['Continuous 16ths', 'Classic Upbeat (8th)', 'Pulsing 8ths', 'Triplet 8ths', 'Pulsing 4ths', 'Galloping', 'Simple Quarter Notes']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Arpeggio Pattern",
+          "type": "Literal['Up', 'Down', 'UpDown']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Arpeggio Octave Range",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Arpeggio Layer Panning",
+          "type": "Literal['Stereo', 'Center', 'Left', 'Right']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Enable Delay / Echo Effect",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Apply Delay to Melody Only",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Delay Time (Tempo Synced)",
+          "type": "Literal['Quarter Note', 'Dotted 8th Note', '8th Note', 'Triplet 8th Note', '16th Note']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Delay Feedback (Volume Decay)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Number of Repeats",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Echo High-Pass Filter (Hz)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Echo Pitch Shift for Low Notes (Semitones)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Echo Low-Pass Filter (Hz)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Echo Pitch Shift for High Notes (Semitones)",
+          "type": "float",
+          "component": "Slider"
+        }
+      ]
+    },
+    {
+      "name": "/update_advanced_midi_options_visibility",
+      "parameters": [
+        {
+          "name": "render_type_choice",
+          "label": "MIDI Transformation Render Type",
+          "type": "Literal['Render as-is', 'Custom render', 'Extract melody', 'Flip', 'Reverse', 'Repair Durations', 'Repair Chords', 'Remove Duplicate Pitches', 'Longest Repeating Phrase', 'Multi-Instrumental Summary',",
+          "component": "Radio"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/update_render_type_description",
+      "parameters": [
+        {
+          "name": "render_type_choice",
+          "label": "MIDI Transformation Render Type",
+          "type": "Literal['Render as-is', 'Custom render', 'Extract melody', 'Flip', 'Reverse', 'Repair Durations', 'Repair Chords', 'Remove Duplicate Pitches', 'Longest Repeating Phrase', 'Multi-Instrumental Summary',",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_85",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_3",
+      "parameters": [
+        {
+          "name": "x",
+          "label": "Enable Echo Sustain for Long Notes",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/preview_sound_source",
+      "parameters": [
+        {
+          "name": "sound_source_name",
+          "label": "SoundFont / Synthesizer",
+          "type": "Literal['None (8-bit Synthesizer)', 'SGM-v2.01-YamahaGrand-Guit-Bass-v2.7', 'Orpheus_18.06.2020', 'Live HQ Natural SoundFont GM', 'Nice-Strings-PlusOrchestra-v1.6', 'KBH-Real-Choir-V2.5', 'SuperGameBo",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_1",
+          "label": "Style Preset",
+          "type": "Literal['Custom', 'Auto-Recommend (Analyze MIDI)', 'Mario (Super Mario Bros / \u30b9\u30fc\u30d1\u30fc\u30de\u30ea\u30aa\u30d6\u30e9\u30b6\u30fc\u30ba)', 'Mega Man (Rockman / \u30ed\u30c3\u30af\u30de\u30f3)', 'Zelda (The Legend of Zelda / \u30bc\u30eb\u30c0\u306e\u4f1d\u8aac)', 'Kirby's Bubbly Melody (Hoshi no Kir",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_2",
+          "label": "Enable Source Separation",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_3",
+          "label": "Separation Model",
+          "type": "Literal['Demucs (4-stem)', 'BS-RoFormer (Vocals/Instrumental)', 'Mel-RoFormer (Vocals/Instrumental)']",
+          "component": "Radio"
+        },
+        {
+          "name": "param_4",
+          "label": "Enable Advanced Stem Control (Demucs Only)",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_5",
+          "label": "Drums",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_6",
+          "label": "Bass",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_7",
+          "label": "Other",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_8",
+          "label": "Transcribe Vocals",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_9",
+          "label": "Transcribe Drums",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_10",
+          "label": "Transcribe Bass",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_11",
+          "label": "Transcribe Accompaniment",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_12",
+          "label": "Merge Vocals",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_13",
+          "label": "Merge Drums",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_14",
+          "label": "Merge Bass",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_15",
+          "label": "Merge Accompaniment",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_16",
+          "label": "Enable Stereo Transcription",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_17",
+          "label": "Audio Transcription Method",
+          "type": "Literal['General Purpose', 'Piano-Specific']",
+          "component": "Radio"
+        },
+        {
+          "name": "param_18",
+          "label": "Transcription Profile Preset",
+          "type": "Literal['Auto-Analyze Audio', 'Custom', 'Default (Balanced)', 'Anime / J-Pop', 'Solo Vocals', 'Solo Piano', 'Acoustic Guitar', 'Bass Guitar', 'Percussion / Drums', 'Rock / Metal', 'Jazz (Multi-instrum",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_19",
+          "label": "On-set Threshold",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_20",
+          "label": "Frame Threshold",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_21",
+          "label": "Minimum Note Length (ms)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_22",
+          "label": "Minimum Frequency (Hz)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_23",
+          "label": "Maximum Frequency (Hz)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_24",
+          "label": "Infer Onsets (Boost Onsets)",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_25",
+          "label": "Melodia Trick (Contour Optimization)",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_26",
+          "label": "Allow Multiple Pitch Bends",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_27",
+          "label": "MIDI Transformation Render Type",
+          "type": "Literal['Render as-is', 'Custom render', 'Extract melody', 'Flip', 'Reverse', 'Repair Durations', 'Repair Chords', 'Remove Duplicate Pitches', 'Longest Repeating Phrase', 'Multi-Instrumental Summary',",
+          "component": "Radio"
+        },
+        {
+          "name": "param_28",
+          "label": "SoundFont / Synthesizer",
+          "type": "Literal['None (8-bit Synthesizer)', 'SGM-v2.01-YamahaGrand-Guit-Bass-v2.7', 'Orpheus_18.06.2020', 'Live HQ Natural SoundFont GM', 'Nice-Strings-PlusOrchestra-v1.6', 'KBH-Real-Choir-V2.5', 'SuperGameBo",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_29",
+          "label": "Audio Sample Rate",
+          "type": "Literal['16000', '32000', '44100']",
+          "component": "Radio"
+        },
+        {
+          "name": "param_30",
+          "label": "Apply sustain pedal effects (if present)",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_31",
+          "label": "Time to merge notes in ms (-1 to disable)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_32",
+          "label": "Force MIDI Patch (-1 to disable)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_33",
+          "label": "Align notes to musical bars",
+          "type": "Literal['Do not align', 'Start Times', 'Start Times and Durations', 'Start Times and Split Durations']",
+          "component": "Radio"
+        },
+        {
+          "name": "param_34",
+          "label": "Transpose (semitones)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_35",
+          "label": "Transpose entire score to center around C4",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_36",
+          "label": "Convert to Solo Piano (Grand Piano patch)",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_37",
+          "label": "Remove drum track",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_38",
+          "label": "Enable MIDI Correction Suite",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_39",
+          "label": "Filter Spurious (Noise) Notes",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_40",
+          "label": "Max Duration (ms)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_41",
+          "label": "Max Velocity",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_42",
+          "label": "Stabilize Rhythm (for Pitch Bend)",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_43",
+          "label": "Enable Segmentation by Silence",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_44",
+          "label": "Silence Threshold for Segmentation (seconds)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_45",
+          "label": "Quantize Rhythm",
+          "type": "Literal['None', 'Auto-Analyze Rhythm', '1/64', '1/32', '1/16', '1/8', '1/4', '1/24', '1/12']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_46",
+          "label": "Process Velocity",
+          "type": "Literal['None', 'Smooth', 'Compress']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_47",
+          "label": "Smoothing Factor",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_48",
+          "label": "Target Min Velocity",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_49",
+          "label": "Target Max Velocity",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_50",
+          "label": "Simplify Rhythm (Experimental)",
+          "type": "Literal['None', '1/16', '1/12', '1/8', '1/4']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_51",
+          "label": "Waveform Type",
+          "type": "Literal['Square', 'Sawtooth', 'Triangle']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_52",
+          "label": "Pulse Width (Square Wave Only)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_53",
+          "label": "Envelope Type",
+          "type": "Literal['Plucky (AD Envelope)', 'Sustained (Full Decay)']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_54",
+          "label": "Decay Time (s)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_55",
+          "label": "Vibrato Rate (Hz)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_56",
+          "label": "Vibrato Depth (Hz)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_57",
+          "label": "Bass Boost Level",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_58",
+          "label": "Smooth Notes Level",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_59",
+          "label": "Continuous Vibrato Level",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_60",
+          "label": "Noise Level",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_61",
+          "label": "Distortion Level",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_62",
+          "label": "FM Depth",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_63",
+          "label": "FM Rate",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_64",
+          "label": "Enable Adaptive Decay (Fix for Staccato)",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_65",
+          "label": "Enable Echo Sustain for Long Notes",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_66",
+          "label": "Echo Rate (Hz)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_67",
+          "label": "Echo Decay Factor",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_68",
+          "label": "Echo Trigger Threshold (x Decay Time)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_69",
+          "label": "Enable All Audio Quality Enhancements",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_70",
+          "label": "Use Additive Synthesis (High Quality, High CPU)",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_71",
+          "label": "Waveform Edge Smoothing (ms)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_72",
+          "label": "Noise Lowpass Filter (Hz)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_73",
+          "label": "Harmonic Lowpass Factor",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_74",
+          "label": "Final Gain / Limiter Level",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_75",
+          "label": "Bass Boost Cutoff (Hz)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_76",
+          "label": "Enable MIDI Pre-processing (Anti-Harshness)",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_77",
+          "label": "High Pitch Threshold (MIDI Note)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_78",
+          "label": "High Pitch Velocity Scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_79",
+          "label": "Low Pitch Threshold (MIDI Note)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_80",
+          "label": "Low Pitch Velocity Scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_81",
+          "label": "Chord Density Threshold",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_82",
+          "label": "Chord Velocity Threshold",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_83",
+          "label": "Chord Velocity Scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_84",
+          "label": "Enable Arpeggiator (to reduce stiffness)",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_85",
+          "label": "Arpeggiation Target",
+          "type": "Literal['Accompaniment Only', 'Melody Only', 'Full Mix']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_86",
+          "label": "Arpeggio Velocity Scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_87",
+          "label": "Arpeggio Density Scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_88",
+          "label": "Arpeggio Rhythm Pattern",
+          "type": "Literal['Continuous 16ths', 'Classic Upbeat (8th)', 'Pulsing 8ths', 'Triplet 8ths', 'Pulsing 4ths', 'Galloping', 'Simple Quarter Notes']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_89",
+          "label": "Arpeggio Pattern",
+          "type": "Literal['Up', 'Down', 'UpDown']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_90",
+          "label": "Arpeggio Octave Range",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_91",
+          "label": "Arpeggio Layer Panning",
+          "type": "Literal['Stereo', 'Center', 'Left', 'Right']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_92",
+          "label": "Enable Delay / Echo Effect",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_93",
+          "label": "Apply Delay to Melody Only",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_94",
+          "label": "Delay Time (Tempo Synced)",
+          "type": "Literal['Quarter Note', 'Dotted 8th Note', '8th Note', 'Triplet 8th Note', '16th Note']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_95",
+          "label": "Delay Feedback (Volume Decay)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_96",
+          "label": "Number of Repeats",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_97",
+          "label": "Echo High-Pass Filter (Hz)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_98",
+          "label": "Echo Pitch Shift for Low Notes (Semitones)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_99",
+          "label": "Echo Low-Pass Filter (Hz)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_100",
+          "label": "Echo Pitch Shift for High Notes (Semitones)",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "SoundFont Preview",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_4",
+      "parameters": [
+        {
+          "name": "x",
+          "label": "Enable All Audio Quality Enhancements",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/lambda_5",
+      "parameters": [
+        {
+          "name": "x",
+          "label": "Enable MIDI Pre-processing (Anti-Harshness)",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/lambda_6",
+      "parameters": [
+        {
+          "name": "x",
+          "label": "Enable Arpeggiator (to reduce stiffness)",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/lambda_7",
+      "parameters": [
+        {
+          "name": "x",
+          "label": "Enable Delay / Echo Effect",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/lambda_8",
+      "parameters": [
+        {
+          "name": "x",
+          "label": "Enable MIDI Correction Suite",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/lambda_9",
+      "parameters": [
+        {
+          "name": "x",
+          "label": "Stabilize Rhythm (for Pitch Bend)",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/update_velocity_options",
+      "parameters": [
+        {
+          "name": "mode",
+          "label": "Process Velocity",
+          "type": "Literal['None', 'Smooth', 'Compress']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Smoothing Factor",
+          "type": "float",
+          "component": "Slider"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/process_and_render_file",
+  "_api_verified": true,
+  "estimated_latency_s": 4.38,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 4.38,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:50:19.461247+00:00"
+}

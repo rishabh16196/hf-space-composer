@@ -1,0 +1,272 @@
+{
+  "space_id": "dwzhu/PaperBanana",
+  "title": "PaperBanana",
+  "emoji": "\ud83c\udf4c",
+  "description": "Automating Academic Illustration For AI Scientists",
+  "input_schema": {
+    "or_key": {
+      "type": "str",
+      "description": "OpenRouter API Key (optional)",
+      "required": true,
+      "component": "Textbox"
+    },
+    "g_key": {
+      "type": "str",
+      "description": "Google API Key (optional)",
+      "required": true,
+      "component": "Textbox"
+    }
+  },
+  "output_schema": {
+    "value_14": {
+      "type": "str",
+      "description": "value_14",
+      "component": "Textbox"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "6.8.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 17,
+  "last_modified": "2026-03-23 15:21:55+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/apply_keys",
+      "parameters": [
+        {
+          "name": "or_key",
+          "label": "OpenRouter API Key (optional)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "g_key",
+          "label": "Google API Key (optional)",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_14",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/lambda",
+      "parameters": [
+        {
+          "name": "m",
+          "label": "Pipeline Mode",
+          "type": "Literal['demo_planner_critic', 'demo_full']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Pipeline Description",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/load_method_example",
+      "parameters": [
+        {
+          "name": "choice",
+          "label": "Load Example (Method)",
+          "type": "Literal['None', 'PaperBanana Framework']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Method Content",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/load_caption_example",
+      "parameters": [
+        {
+          "name": "choice",
+          "label": "Load Example (Caption)",
+          "type": "Literal['None', 'PaperBanana Framework']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Figure Caption",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/run_generate",
+      "parameters": [
+        {
+          "name": "method_text",
+          "label": "Method Content",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "caption_text",
+          "label": "Figure Caption",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "pipe_mode",
+          "label": "Pipeline Mode",
+          "type": "Literal['demo_planner_critic', 'demo_full']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "ret_setting",
+          "label": "Retrieval Setting",
+          "type": "Literal['auto', 'manual', 'random', 'none']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "n_cands",
+          "label": "Number of Candidates",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "ar",
+          "label": "Aspect Ratio",
+          "type": "Literal['16:9', '21:9', '3:2']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "max_rounds",
+          "label": "Max Critic Rounds",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "m_model",
+          "label": "Model Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "img_model",
+          "label": "Image Generation Model",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "figure_size",
+          "label": "Figure Size",
+          "type": "Literal['1-3cm', '4-6cm', '7-9cm', '10-13cm', '14-17cm']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "save_results",
+          "label": "Save Results",
+          "type": "Literal['Yes', 'No']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Generated Candidates",
+          "type": "list[dict(image: dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Origi",
+          "component": "Gallery"
+        },
+        {
+          "label": "value_47",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "ZIP download",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "label": "Status",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/run_refine",
+      "parameters": [
+        {
+          "name": "pil_img",
+          "label": "Upload Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "prompt",
+          "label": "Edit Instructions",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "resolution",
+          "label": "Resolution",
+          "type": "Literal['2K', '4K']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "ar",
+          "label": "Aspect Ratio",
+          "type": "Literal['21:9', '16:9', '3:2']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Before",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "After",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "Download refined image",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "label": "Status",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/apply_keys",
+  "_api_verified": true,
+  "estimated_latency_s": 4.05,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 4.05,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:50:31.888948+00:00"
+}

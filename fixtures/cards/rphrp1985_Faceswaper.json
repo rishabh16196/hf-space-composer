@@ -1,0 +1,86 @@
+{
+  "space_id": "rphrp1985/Faceswaper",
+  "title": "FaceFusion",
+  "emoji": "\ud83d\ude3b",
+  "description": "FaceFusion",
+  "input_schema": {
+    "source_image_path": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "source_image_path",
+      "required": true,
+      "component": "Image"
+    },
+    "target_image_path": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "target_image_path",
+      "required": true,
+      "component": "Image"
+    },
+    "enhance_face": {
+      "type": "bool",
+      "description": "Enhance Face",
+      "required": true,
+      "component": "Checkbox"
+    }
+  },
+  "output_schema": {
+    "output": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "output",
+      "component": "Image"
+    }
+  },
+  "license": "mit",
+  "hardware": "5.9.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 14,
+  "last_modified": "2025-09-16 17:01:52+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/predict",
+      "parameters": [
+        {
+          "name": "source_image_path",
+          "label": "source_image_path",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "target_image_path",
+          "label": "target_image_path",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "enhance_face",
+          "label": "Enhance Face",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "output",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/predict",
+  "_api_verified": true,
+  "estimated_latency_s": 3.64,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 3.64,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:51:45.971374+00:00"
+}

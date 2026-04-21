@@ -1,0 +1,1248 @@
+{
+  "space_id": "OpenHands/openhands-index",
+  "title": "OpenHands Index",
+  "emoji": "\ud83e\udd16",
+  "description": "A Holistic Benchmark for Software Engineering",
+  "input_schema": {
+    "show_incomplete": {
+      "type": "bool",
+      "description": "Show incomplete entries (4 entries with fewer than 5 categories)",
+      "required": true,
+      "component": "Checkbox"
+    },
+    "show_open_only": {
+      "type": "bool",
+      "description": "Show only open models (14 open, 11 closed)",
+      "required": true,
+      "component": "Checkbox"
+    },
+    "mark_by": {
+      "type": "Literal['Company', 'Openness', 'Country']",
+      "description": "Mark systems by",
+      "required": true,
+      "component": "Dropdown"
+    }
+  },
+  "output_schema": {
+    "value_18": {
+      "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+      "description": "value_18",
+      "component": "Dataframe"
+    },
+    "value_14": {
+      "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+      "description": "value_14",
+      "component": "Plot"
+    },
+    "value_15": {
+      "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+      "description": "value_15",
+      "component": "Plot"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "",
+  "sdk": "docker",
+  "tags": [
+    "docker",
+    "region:us"
+  ],
+  "likes": 19,
+  "last_modified": "2026-04-16 11:29:11+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/update_display",
+      "parameters": [
+        {
+          "name": "show_incomplete",
+          "label": "Show incomplete entries (4 entries with fewer than 5 categories)",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "show_open_only",
+          "label": "Show only open models (14 open, 11 closed)",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "mark_by",
+          "label": "Mark systems by",
+          "type": "Literal['Company', 'Openness', 'Country']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_18",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_14",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "value_15",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        }
+      ]
+    },
+    {
+      "name": "/update_display_1",
+      "parameters": [
+        {
+          "name": "show_incomplete",
+          "label": "Show incomplete entries (4 entries with fewer than 5 categories)",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "show_open_only",
+          "label": "Show only open models (14 open, 11 closed)",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "mark_by",
+          "label": "Mark systems by",
+          "type": "Literal['Company', 'Openness', 'Country']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_18",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_14",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "value_15",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        }
+      ]
+    },
+    {
+      "name": "/update_display_2",
+      "parameters": [
+        {
+          "name": "show_incomplete",
+          "label": "Show incomplete entries (4 entries with fewer than 5 categories)",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "show_open_only",
+          "label": "Show only open models (14 open, 11 closed)",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "mark_by",
+          "label": "Mark systems by",
+          "type": "Literal['Company', 'Openness', 'Country']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_18",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_14",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "value_15",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        }
+      ]
+    },
+    {
+      "name": "/check_and_refresh_data",
+      "parameters": [
+        {
+          "name": "show_incomplete",
+          "label": "Show incomplete entries (4 entries with fewer than 5 categories)",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "show_open_only",
+          "label": "Show only open models (14 open, 11 closed)",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "mark_by",
+          "label": "Mark systems by",
+          "type": "Literal['Company', 'Openness', 'Country']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_18",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_14",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "value_15",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        }
+      ]
+    },
+    {
+      "name": "/update_extra_sections",
+      "parameters": [
+        {
+          "name": "show_incomplete",
+          "label": "Show incomplete entries (4 entries with fewer than 5 categories)",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "show_open_only",
+          "label": "Show only open models (14 open, 11 closed)",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "mark_by",
+          "label": "Mark systems by",
+          "type": "Literal['Company', 'Openness', 'Country']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_24",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "value_28",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "value_32",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        }
+      ]
+    },
+    {
+      "name": "/update_extra_sections_1",
+      "parameters": [
+        {
+          "name": "show_incomplete",
+          "label": "Show incomplete entries (4 entries with fewer than 5 categories)",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "show_open_only",
+          "label": "Show only open models (14 open, 11 closed)",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "mark_by",
+          "label": "Mark systems by",
+          "type": "Literal['Company', 'Openness', 'Country']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_24",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "value_28",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "value_32",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        }
+      ]
+    },
+    {
+      "name": "/update_extra_sections_2",
+      "parameters": [
+        {
+          "name": "show_incomplete",
+          "label": "Show incomplete entries (4 entries with fewer than 5 categories)",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "show_open_only",
+          "label": "Show only open models (14 open, 11 closed)",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "mark_by",
+          "label": "Mark systems by",
+          "type": "Literal['Company', 'Openness', 'Country']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_24",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "value_28",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "value_32",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        }
+      ]
+    },
+    {
+      "name": "/update_display_3",
+      "parameters": [
+        {
+          "name": "show_incomplete",
+          "label": "Show incomplete entries (0 entries with fewer than 5 categories)",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "show_open_only",
+          "label": "Show only open models (14 open, 11 closed)",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "mark_by",
+          "label": "Mark systems by",
+          "type": "Literal['Company', 'Openness', 'Country']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_51",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_47",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "value_48",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        }
+      ]
+    },
+    {
+      "name": "/update_display_4",
+      "parameters": [
+        {
+          "name": "show_incomplete",
+          "label": "Show incomplete entries (0 entries with fewer than 5 categories)",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "show_open_only",
+          "label": "Show only open models (14 open, 11 closed)",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "mark_by",
+          "label": "Mark systems by",
+          "type": "Literal['Company', 'Openness', 'Country']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_51",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_47",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "value_48",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        }
+      ]
+    },
+    {
+      "name": "/update_display_5",
+      "parameters": [
+        {
+          "name": "show_incomplete",
+          "label": "Show incomplete entries (0 entries with fewer than 5 categories)",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "show_open_only",
+          "label": "Show only open models (14 open, 11 closed)",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "mark_by",
+          "label": "Mark systems by",
+          "type": "Literal['Company', 'Openness', 'Country']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_51",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_47",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "value_48",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        }
+      ]
+    },
+    {
+      "name": "/check_and_refresh_data_1",
+      "parameters": [
+        {
+          "name": "show_incomplete",
+          "label": "Show incomplete entries (0 entries with fewer than 5 categories)",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "show_open_only",
+          "label": "Show only open models (14 open, 11 closed)",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "mark_by",
+          "label": "Mark systems by",
+          "type": "Literal['Company', 'Openness', 'Country']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_51",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_47",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "value_48",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        }
+      ]
+    },
+    {
+      "name": "/update_display_6",
+      "parameters": [
+        {
+          "name": "show_incomplete",
+          "label": "Show incomplete entries (0 entries with fewer than 5 categories)",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "show_open_only",
+          "label": "Show only open models (14 open, 11 closed)",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "mark_by",
+          "label": "Mark systems by",
+          "type": "Literal['Company', 'Openness', 'Country']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_72",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_68",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "value_69",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        }
+      ]
+    },
+    {
+      "name": "/update_display_7",
+      "parameters": [
+        {
+          "name": "show_incomplete",
+          "label": "Show incomplete entries (0 entries with fewer than 5 categories)",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "show_open_only",
+          "label": "Show only open models (14 open, 11 closed)",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "mark_by",
+          "label": "Mark systems by",
+          "type": "Literal['Company', 'Openness', 'Country']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_72",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_68",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "value_69",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        }
+      ]
+    },
+    {
+      "name": "/update_display_8",
+      "parameters": [
+        {
+          "name": "show_incomplete",
+          "label": "Show incomplete entries (0 entries with fewer than 5 categories)",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "show_open_only",
+          "label": "Show only open models (14 open, 11 closed)",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "mark_by",
+          "label": "Mark systems by",
+          "type": "Literal['Company', 'Openness', 'Country']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_72",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_68",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "value_69",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        }
+      ]
+    },
+    {
+      "name": "/check_and_refresh_data_2",
+      "parameters": [
+        {
+          "name": "show_incomplete",
+          "label": "Show incomplete entries (0 entries with fewer than 5 categories)",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "show_open_only",
+          "label": "Show only open models (14 open, 11 closed)",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "mark_by",
+          "label": "Mark systems by",
+          "type": "Literal['Company', 'Openness', 'Country']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_72",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_68",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "value_69",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        }
+      ]
+    },
+    {
+      "name": "/update_display_9",
+      "parameters": [
+        {
+          "name": "show_incomplete",
+          "label": "Show incomplete entries (0 entries with fewer than 5 categories)",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "show_open_only",
+          "label": "Show only open models (14 open, 11 closed)",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "mark_by",
+          "label": "Mark systems by",
+          "type": "Literal['Company', 'Openness', 'Country']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_93",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_89",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "value_90",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        }
+      ]
+    },
+    {
+      "name": "/update_display_10",
+      "parameters": [
+        {
+          "name": "show_incomplete",
+          "label": "Show incomplete entries (0 entries with fewer than 5 categories)",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "show_open_only",
+          "label": "Show only open models (14 open, 11 closed)",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "mark_by",
+          "label": "Mark systems by",
+          "type": "Literal['Company', 'Openness', 'Country']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_93",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_89",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "value_90",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        }
+      ]
+    },
+    {
+      "name": "/update_display_11",
+      "parameters": [
+        {
+          "name": "show_incomplete",
+          "label": "Show incomplete entries (0 entries with fewer than 5 categories)",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "show_open_only",
+          "label": "Show only open models (14 open, 11 closed)",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "mark_by",
+          "label": "Mark systems by",
+          "type": "Literal['Company', 'Openness', 'Country']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_93",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_89",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "value_90",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        }
+      ]
+    },
+    {
+      "name": "/check_and_refresh_data_3",
+      "parameters": [
+        {
+          "name": "show_incomplete",
+          "label": "Show incomplete entries (0 entries with fewer than 5 categories)",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "show_open_only",
+          "label": "Show only open models (14 open, 11 closed)",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "mark_by",
+          "label": "Mark systems by",
+          "type": "Literal['Company', 'Openness', 'Country']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_93",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_89",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "value_90",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        }
+      ]
+    },
+    {
+      "name": "/update_display_12",
+      "parameters": [
+        {
+          "name": "show_incomplete",
+          "label": "Show incomplete entries (0 entries with fewer than 5 categories)",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "show_open_only",
+          "label": "Show only open models (14 open, 11 closed)",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "mark_by",
+          "label": "Mark systems by",
+          "type": "Literal['Company', 'Openness', 'Country']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_114",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_110",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "value_111",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        }
+      ]
+    },
+    {
+      "name": "/update_display_13",
+      "parameters": [
+        {
+          "name": "show_incomplete",
+          "label": "Show incomplete entries (0 entries with fewer than 5 categories)",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "show_open_only",
+          "label": "Show only open models (14 open, 11 closed)",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "mark_by",
+          "label": "Mark systems by",
+          "type": "Literal['Company', 'Openness', 'Country']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_114",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_110",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "value_111",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        }
+      ]
+    },
+    {
+      "name": "/update_display_14",
+      "parameters": [
+        {
+          "name": "show_incomplete",
+          "label": "Show incomplete entries (0 entries with fewer than 5 categories)",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "show_open_only",
+          "label": "Show only open models (14 open, 11 closed)",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "mark_by",
+          "label": "Mark systems by",
+          "type": "Literal['Company', 'Openness', 'Country']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_114",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_110",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "value_111",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        }
+      ]
+    },
+    {
+      "name": "/check_and_refresh_data_4",
+      "parameters": [
+        {
+          "name": "show_incomplete",
+          "label": "Show incomplete entries (0 entries with fewer than 5 categories)",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "show_open_only",
+          "label": "Show only open models (14 open, 11 closed)",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "mark_by",
+          "label": "Mark systems by",
+          "type": "Literal['Company', 'Openness', 'Country']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_114",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_110",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "value_111",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        }
+      ]
+    },
+    {
+      "name": "/update_display_15",
+      "parameters": [
+        {
+          "name": "show_incomplete",
+          "label": "Show incomplete entries (0 entries with fewer than 5 categories)",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "show_open_only",
+          "label": "Show only open models (14 open, 11 closed)",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "mark_by",
+          "label": "Mark systems by",
+          "type": "Literal['Company', 'Openness', 'Country']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_135",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_131",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "value_132",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        }
+      ]
+    },
+    {
+      "name": "/update_display_16",
+      "parameters": [
+        {
+          "name": "show_incomplete",
+          "label": "Show incomplete entries (0 entries with fewer than 5 categories)",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "show_open_only",
+          "label": "Show only open models (14 open, 11 closed)",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "mark_by",
+          "label": "Mark systems by",
+          "type": "Literal['Company', 'Openness', 'Country']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_135",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_131",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "value_132",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        }
+      ]
+    },
+    {
+      "name": "/update_display_17",
+      "parameters": [
+        {
+          "name": "show_incomplete",
+          "label": "Show incomplete entries (0 entries with fewer than 5 categories)",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "show_open_only",
+          "label": "Show only open models (14 open, 11 closed)",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "mark_by",
+          "label": "Mark systems by",
+          "type": "Literal['Company', 'Openness', 'Country']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_135",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_131",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "value_132",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        }
+      ]
+    },
+    {
+      "name": "/check_and_refresh_data_5",
+      "parameters": [
+        {
+          "name": "show_incomplete",
+          "label": "Show incomplete entries (0 entries with fewer than 5 categories)",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "show_open_only",
+          "label": "Show only open models (14 open, 11 closed)",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "mark_by",
+          "label": "Mark systems by",
+          "type": "Literal['Company', 'Openness', 'Country']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_135",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_131",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "value_132",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        }
+      ]
+    },
+    {
+      "name": "/update_display_18",
+      "parameters": [
+        {
+          "name": "show_incomplete",
+          "label": "Show incomplete entries (0 entries with fewer than 5 categories)",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "mark_by",
+          "label": "Mark systems by",
+          "type": "Literal['Company', 'Openness', 'Country']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_152",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_148",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "value_149",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        }
+      ]
+    },
+    {
+      "name": "/update_display_19",
+      "parameters": [
+        {
+          "name": "show_incomplete",
+          "label": "Show incomplete entries (0 entries with fewer than 5 categories)",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "mark_by",
+          "label": "Mark systems by",
+          "type": "Literal['Company', 'Openness', 'Country']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_152",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_148",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "value_149",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        }
+      ]
+    },
+    {
+      "name": "/check_and_refresh_data_6",
+      "parameters": [
+        {
+          "name": "show_incomplete",
+          "label": "Show incomplete entries (0 entries with fewer than 5 categories)",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "show_open_only",
+          "label": "Mark systems by",
+          "type": "Literal['Company', 'Openness', 'Country']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_152",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_148",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "value_149",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/update_display",
+  "_api_verified": true,
+  "estimated_latency_s": 17.9,
+  "speed_tier": "medium",
+  "_latency_source": "measured",
+  "measured_latency_s": 17.9,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:49:57.999806+00:00"
+}

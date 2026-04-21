@@ -1,0 +1,275 @@
+{
+  "space_id": "avans06/wd-tagger-images",
+  "title": "WaifuDiffusion Tagger multiple images",
+  "emoji": "\ud83d\udcac",
+  "description": "WaifuDiffusion Tagger multiple images",
+  "input_schema": {
+    "gallery": {
+      "type": "list[dict(image: dict(path: str | None (Path to a local file), url: str | None (Publicly available u",
+      "description": "Image Gallery (Drag multiple images here)",
+      "required": true,
+      "component": "Gallery"
+    }
+  },
+  "output_schema": {
+    "Selected Image": {
+      "type": "str",
+      "description": "Selected Image",
+      "component": "Textbox"
+    },
+    "Output (string for last processed item)": {
+      "type": "str",
+      "description": "Output (string for last processed item)",
+      "component": "Textbox"
+    },
+    "Rating": {
+      "type": "dict(label: str | int | float | None, confidences: list[dict(label: str | int | float | None, confid",
+      "description": "Rating",
+      "component": "Label"
+    },
+    "Output (characters)": {
+      "type": "dict(label: str | int | float | None, confidences: list[dict(label: str | int | float | None, confid",
+      "description": "Output (characters)",
+      "component": "Label"
+    },
+    "Output (tags)": {
+      "type": "dict(label: str | int | float | None, confidences: list[dict(label: str | int | float | None, confid",
+      "description": "Output (tags)",
+      "component": "Label"
+    },
+    "Unclassified (tags)": {
+      "type": "str | float | bool | list | dict",
+      "description": "Unclassified (tags)",
+      "component": "Json"
+    }
+  },
+  "license": "unknown",
+  "hardware": "5.50.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 22,
+  "last_modified": "2025-11-27 13:54:36+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/get_selection_from_gallery",
+      "parameters": [
+        {
+          "name": "gallery",
+          "label": "Image Gallery (Drag multiple images here)",
+          "type": "list[dict(image: dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Origi",
+          "component": "Gallery"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Selected Image",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Output (string for last processed item)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Rating",
+          "type": "dict(label: str | int | float | None, confidences: list[dict(label: str | int | float | None, confidence: float | None)] | None)",
+          "component": "Label"
+        },
+        {
+          "label": "Output (characters)",
+          "type": "dict(label: str | int | float | None, confidences: list[dict(label: str | int | float | None, confidence: float | None)] | None)",
+          "component": "Label"
+        },
+        {
+          "label": "Output (tags)",
+          "type": "dict(label: str | int | float | None, confidences: list[dict(label: str | int | float | None, confidence: float | None)] | None)",
+          "component": "Label"
+        },
+        {
+          "label": "Unclassified (tags)",
+          "type": "str | float | bool | list | dict",
+          "component": "Json"
+        }
+      ]
+    },
+    {
+      "name": "/change_input_type",
+      "parameters": [
+        {
+          "name": "input_type",
+          "label": "Input Mode",
+          "type": "Literal['Image', 'Text file (.txt)']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Model (for Images)",
+          "type": "Literal['SmilingWolf/wd-eva02-large-tagger-v3', 'SmilingWolf/wd-swinv2-tagger-v3', 'SmilingWolf/wd-convnext-tagger-v3', 'SmilingWolf/wd-vit-tagger-v3', 'SmilingWolf/wd-vit-large-tagger-v3', 'SmilingWo",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Merge characters into the string output",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Rating",
+          "type": "dict(label: str | int | float | None, confidences: list[dict(label: str | int | float | None, confidence: float | None)] | None)",
+          "component": "Label"
+        },
+        {
+          "label": "Output (characters)",
+          "type": "dict(label: str | int | float | None, confidences: list[dict(label: str | int | float | None, confidence: float | None)] | None)",
+          "component": "Label"
+        },
+        {
+          "label": "Output (tags)",
+          "type": "dict(label: str | int | float | None, confidences: list[dict(label: str | int | float | None, confidence: float | None)] | None)",
+          "component": "Label"
+        },
+        {
+          "label": "Unclassified (tags)",
+          "type": "str | float | bool | list | dict",
+          "component": "Json"
+        }
+      ]
+    },
+    {
+      "name": "/run_prediction",
+      "parameters": [
+        {
+          "name": "input_type",
+          "label": "Input Mode",
+          "type": "Literal['Image', 'Text file (.txt)']",
+          "component": "Radio"
+        },
+        {
+          "name": "gallery",
+          "label": "Image Gallery (Drag multiple images here)",
+          "type": "list[dict(image: dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Origi",
+          "component": "Gallery"
+        },
+        {
+          "name": "text_files",
+          "label": "Upload .txt files",
+          "type": "list[filepath]",
+          "component": "File"
+        },
+        {
+          "name": "model_repo",
+          "label": "Model (for Images)",
+          "type": "Literal['SmilingWolf/wd-eva02-large-tagger-v3', 'SmilingWolf/wd-swinv2-tagger-v3', 'SmilingWolf/wd-convnext-tagger-v3', 'SmilingWolf/wd-vit-tagger-v3', 'SmilingWolf/wd-vit-large-tagger-v3', 'SmilingWo",
+          "component": "Dropdown"
+        },
+        {
+          "name": "general_thresh",
+          "label": "General Tags Threshold",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "general_mcut_enabled",
+          "label": "Use MCut threshold",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "character_thresh",
+          "label": "Character Tags Threshold",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "character_mcut_enabled",
+          "label": "Use MCut threshold",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "characters_merge_enabled",
+          "label": "Merge characters into the string output",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "llama3_reorganize_model_repo",
+          "label": "Use the Llama3 model to reorganize the article",
+          "type": "Literal['None', 'jncraton/Llama-3.2-3B-Instruct-ct2-int8', 'avans06/Meta-Llama-3.2-8B-Instruct-ct2-int8_float16']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "additional_tags_prepend",
+          "label": "Prepend Additional tags (comma split)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "additional_tags_append",
+          "label": "Append Additional tags (comma split)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "tags_to_remove",
+          "label": "Remove tags (comma split)",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output (Download)",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "label": "Output (string for last processed item)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Rating",
+          "type": "dict(label: str | int | float | None, confidences: list[dict(label: str | int | float | None, confidence: float | None)] | None)",
+          "component": "Label"
+        },
+        {
+          "label": "Output (characters)",
+          "type": "dict(label: str | int | float | None, confidences: list[dict(label: str | int | float | None, confidence: float | None)] | None)",
+          "component": "Label"
+        },
+        {
+          "label": "Output (tags)",
+          "type": "dict(label: str | int | float | None, confidences: list[dict(label: str | int | float | None, confidence: float | None)] | None)",
+          "component": "Label"
+        },
+        {
+          "label": "Unclassified (tags)",
+          "type": "str | float | bool | list | dict",
+          "component": "Json"
+        },
+        {
+          "label": "Statistics",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/get_selection_from_gallery",
+  "_api_verified": true,
+  "estimated_latency_s": 3.85,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 3.85,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:50:19.128002+00:00"
+}

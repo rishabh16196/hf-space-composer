@@ -1,0 +1,161 @@
+{
+  "space_id": "selfit-camera/OutfitAnyway",
+  "title": "OutfitAnyway",
+  "emoji": "\ud83d\udd25",
+  "description": "OutfitAnyway",
+  "input_schema": {
+    "cloth_image": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "choose a clothing",
+      "required": true,
+      "component": "Image"
+    },
+    "pose_image": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "choose/upload a photo",
+      "required": true,
+      "component": "Image"
+    },
+    "high_resolution": {
+      "type": "bool",
+      "description": "high resolution",
+      "required": true,
+      "component": "Checkbox"
+    }
+  },
+  "output_schema": {
+    "result image": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "result image",
+      "component": "Image"
+    },
+    "runtime information": {
+      "type": "str",
+      "description": "runtime information",
+      "component": "Textbox"
+    },
+    "value_21": {
+      "type": "str",
+      "description": "value_21",
+      "component": "Markdown"
+    },
+    "Source Image": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "Source Image",
+      "component": "Image"
+    }
+  },
+  "license": "mit",
+  "hardware": "5.35.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 18,
+  "last_modified": "2025-10-01 14:56:53+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/onClick",
+      "parameters": [
+        {
+          "name": "cloth_image",
+          "label": "choose a clothing",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "pose_image",
+          "label": "choose/upload a photo",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "high_resolution",
+          "label": "high resolution",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "result image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "runtime information",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "value_21",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "Source Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/onPoseChange",
+      "parameters": [
+        {
+          "name": "prompt_text",
+          "label": "Pose Change Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "source_image",
+          "label": "Source Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "token_input",
+          "label": "Access Token",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Processing Info",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Result 1",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "Result 2",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "Result 3",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/onClick",
+  "_api_verified": true,
+  "estimated_latency_s": 4.42,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 4.42,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:51:49.316503+00:00"
+}

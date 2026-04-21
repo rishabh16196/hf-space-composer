@@ -1,0 +1,330 @@
+{
+  "space_id": "hasanbasbunar/Voice-Cloning-XTTS-v2",
+  "title": "Voice Cloning Studio",
+  "emoji": "\ud83d\ude80",
+  "description": "This space offers an easy-to-use interface for voice cloning",
+  "input_schema": {
+    "text": {
+      "type": "str",
+      "description": "Text",
+      "required": true,
+      "component": "Textbox"
+    },
+    "reference_audio_url": {
+      "type": "str",
+      "description": "Reference Audio URL",
+      "required": true,
+      "component": "Textbox"
+    },
+    "example_audio_name": {
+      "type": "Literal['audio_1.wav', 'audio_2.wav', 'audio_3.wav', 'audio_4.wav', 'audio_5.wav', 'guzel_ses.wav', ",
+      "description": "Example Audio Name",
+      "required": true,
+      "component": "Dropdown"
+    },
+    "language": {
+      "type": "Literal['English', 'French', 'Spanish', 'German', 'Italian', 'Portuguese', 'Polish', 'Turkish', 'Rus",
+      "description": "Language",
+      "required": true,
+      "component": "Dropdown"
+    },
+    "temperature": {
+      "type": "float",
+      "description": "Temperature",
+      "required": true,
+      "component": "Slider"
+    },
+    "speed": {
+      "type": "float",
+      "description": "Speed",
+      "required": true,
+      "component": "Slider"
+    },
+    "do_sample": {
+      "type": "bool",
+      "description": "Do Sample",
+      "required": true,
+      "component": "Checkbox"
+    },
+    "repetition_penalty": {
+      "type": "float",
+      "description": "Repetition Penalty",
+      "required": true,
+      "component": "Slider"
+    },
+    "length_penalty": {
+      "type": "float",
+      "description": "Length Penalty",
+      "required": true,
+      "component": "Slider"
+    },
+    "gpt_cond_len": {
+      "type": "float",
+      "description": "GPT Cond Length",
+      "required": true,
+      "component": "Slider"
+    },
+    "top_k": {
+      "type": "float",
+      "description": "Top K",
+      "required": true,
+      "component": "Slider"
+    },
+    "top_p": {
+      "type": "float",
+      "description": "Top P",
+      "required": true,
+      "component": "Slider"
+    },
+    "remove_silence_enabled": {
+      "type": "bool",
+      "description": "Remove Silence",
+      "required": true,
+      "component": "Checkbox"
+    },
+    "silence_threshold": {
+      "type": "float",
+      "description": "Silence Threshold",
+      "required": true,
+      "component": "Slider"
+    },
+    "min_silence_len": {
+      "type": "float",
+      "description": "Min Silence Length",
+      "required": true,
+      "component": "Slider"
+    },
+    "keep_silence": {
+      "type": "float",
+      "description": "Keep Silence",
+      "required": true,
+      "component": "Slider"
+    },
+    "text_splitting_method": {
+      "type": "Literal['Native XTTS splitting', 'Custom splitting', 'No splitting']",
+      "description": "Splitting Method",
+      "required": true,
+      "component": "Radio"
+    },
+    "max_chars_per_segment": {
+      "type": "float",
+      "description": "Max Chars",
+      "required": true,
+      "component": "Slider"
+    },
+    "enable_preprocessing": {
+      "type": "bool",
+      "description": "Enable Preprocessing",
+      "required": true,
+      "component": "Checkbox"
+    }
+  },
+  "output_schema": {
+    "Generated Audio": {
+      "type": "filepath",
+      "description": "Generated Audio",
+      "component": "Audio"
+    }
+  },
+  "license": "other",
+  "hardware": "5.33.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us",
+    "audio",
+    "speech-synthesis",
+    "tts"
+  ],
+  "likes": 81,
+  "last_modified": "2025-12-28 12:48:02+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/voice_clone_synthesis",
+      "parameters": [
+        {
+          "name": "text",
+          "label": "Text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "reference_audio_url",
+          "label": "Reference Audio URL",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "example_audio_name",
+          "label": "Example Audio Name",
+          "type": "Literal['audio_1.wav', 'audio_2.wav', 'audio_3.wav', 'audio_4.wav', 'audio_5.wav', 'guzel_ses.wav', 'guzel_ses_rapide.wav']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "language",
+          "label": "Language",
+          "type": "Literal['English', 'French', 'Spanish', 'German', 'Italian', 'Portuguese', 'Polish', 'Turkish', 'Russian', 'Dutch', 'Czech', 'Arabic', 'Chinese', 'Japanese', 'Korean', 'Hungarian', 'Hindi']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "temperature",
+          "label": "Temperature",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "speed",
+          "label": "Speed",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "do_sample",
+          "label": "Do Sample",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "repetition_penalty",
+          "label": "Repetition Penalty",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "length_penalty",
+          "label": "Length Penalty",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "gpt_cond_len",
+          "label": "GPT Cond Length",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "top_k",
+          "label": "Top K",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "top_p",
+          "label": "Top P",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "remove_silence_enabled",
+          "label": "Remove Silence",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "silence_threshold",
+          "label": "Silence Threshold",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "min_silence_len",
+          "label": "Min Silence Length",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "keep_silence",
+          "label": "Keep Silence",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "text_splitting_method",
+          "label": "Splitting Method",
+          "type": "Literal['Native XTTS splitting', 'Custom splitting', 'No splitting']",
+          "component": "Radio"
+        },
+        {
+          "name": "max_chars_per_segment",
+          "label": "Max Chars",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "enable_preprocessing",
+          "label": "Enable Preprocessing",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Generated Audio",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ]
+    },
+    {
+      "name": "/analyze_text_for_speech",
+      "parameters": [
+        {
+          "name": "text",
+          "label": "Text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "language",
+          "label": "Language",
+          "type": "Literal['English', 'French', 'Spanish', 'German', 'Italian', 'Portuguese', 'Polish', 'Turkish', 'Russian', 'Dutch', 'Czech', 'Arabic', 'Chinese', 'Japanese', 'Korean', 'Hungarian', 'Hindi']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Analysis Result",
+          "type": "str | float | bool | list | dict",
+          "component": "Json"
+        }
+      ]
+    },
+    {
+      "name": "/preprocess_text_for_speech",
+      "parameters": [
+        {
+          "name": "text",
+          "label": "Text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "language",
+          "label": "Language",
+          "type": "Literal['English', 'French', 'Spanish', 'German', 'Italian', 'Portuguese', 'Polish', 'Turkish', 'Russian', 'Dutch', 'Czech', 'Arabic', 'Chinese', 'Japanese', 'Korean', 'Hungarian', 'Hindi']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Preprocessed Text",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/voice_clone_synthesis",
+  "_api_verified": true,
+  "estimated_latency_s": 3.46,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "_tags_enriched": true,
+  "measured_latency_s": 3.46,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:50:42.846003+00:00"
+}

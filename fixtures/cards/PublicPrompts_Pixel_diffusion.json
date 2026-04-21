@@ -1,0 +1,36 @@
+{
+  "space_id": "PublicPrompts/Pixel_diffusion",
+  "title": "Finetuned Diffusion",
+  "emoji": "\ud83e\ude84\ud83d\uddbc\ufe0f",
+  "description": "Finetuned Diffusion",
+  "input_schema": {
+    "input": {
+      "type": "string",
+      "description": "Input",
+      "required": true
+    }
+  },
+  "output_schema": {
+    "output": {
+      "type": "string"
+    }
+  },
+  "license": "mit",
+  "hardware": "3.6",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 2,
+  "last_modified": "2022-11-21 20:10:46+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_tags_enriched": true,
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "error",
+  "_api_error": "(Request ID: Root=1-69e77c47-0ddbcf294870049414d0d0f9;28c71bfa-0c7b-45dd-8be1-ff85befe5f1f)\n\n429 Too Many Requests: you have reached your 'api' rate limit.\nRetry after 195 seconds (0/2500 requests rem"
+}

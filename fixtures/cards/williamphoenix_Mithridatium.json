@@ -1,0 +1,169 @@
+{
+  "space_id": "williamphoenix/Mithridatium",
+  "title": "Mithridatium",
+  "emoji": "\ud83d\udee1\ufe0f",
+  "description": "Detect potential backdoors in image classification models.",
+  "input_schema": {
+    "model_path": {
+      "type": "str",
+      "description": "Local Model Path (.pth or .pt)",
+      "required": true,
+      "component": "Textbox"
+    },
+    "model_file": {
+      "type": "filepath",
+      "description": "Or Pick Model File (.pth or .pt)",
+      "required": true,
+      "component": "File"
+    },
+    "dataset": {
+      "type": "Literal['cifar10', 'cifar100', 'cifar10_for_imagenet', 'fake_imagenet', 'imagenet']",
+      "description": "Dataset",
+      "required": true,
+      "component": "Dropdown"
+    },
+    "defense": {
+      "type": "Literal['aeva', 'mmbd', 'strip']",
+      "description": "Defense",
+      "required": true,
+      "component": "Dropdown"
+    },
+    "save_report": {
+      "type": "bool",
+      "description": "Persist report to file",
+      "required": true,
+      "component": "Checkbox"
+    },
+    "report_out": {
+      "type": "str",
+      "description": "Report Path",
+      "required": true,
+      "component": "Textbox"
+    }
+  },
+  "output_schema": {
+    "Status": {
+      "type": "str",
+      "description": "Status",
+      "component": "Textbox"
+    },
+    "Verdict": {
+      "type": "str",
+      "description": "Verdict",
+      "component": "Textbox"
+    },
+    "Summary": {
+      "type": "str",
+      "description": "Summary",
+      "component": "Textbox"
+    },
+    "Report JSON": {
+      "type": "str | float | bool | list | dict",
+      "description": "Report JSON",
+      "component": "Json"
+    },
+    "Download JSON": {
+      "type": "filepath",
+      "description": "Download JSON",
+      "component": "File"
+    },
+    "Run Log": {
+      "type": "str",
+      "description": "Run Log",
+      "component": "Textbox"
+    }
+  },
+  "license": "unknown",
+  "hardware": "",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 2,
+  "last_modified": "2026-04-12 22:56:53+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/_run_detection_from_ui",
+      "parameters": [
+        {
+          "name": "model_path",
+          "label": "Local Model Path (.pth or .pt)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "model_file",
+          "label": "Or Pick Model File (.pth or .pt)",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "name": "dataset",
+          "label": "Dataset",
+          "type": "Literal['cifar10', 'cifar100', 'cifar10_for_imagenet', 'fake_imagenet', 'imagenet']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "defense",
+          "label": "Defense",
+          "type": "Literal['aeva', 'mmbd', 'strip']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "save_report",
+          "label": "Persist report to file",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "report_out",
+          "label": "Report Path",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Status",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Verdict",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Summary",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Report JSON",
+          "type": "str | float | bool | list | dict",
+          "component": "Json"
+        },
+        {
+          "label": "Download JSON",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "label": "Run Log",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/_run_detection_from_ui",
+  "_api_verified": true
+}

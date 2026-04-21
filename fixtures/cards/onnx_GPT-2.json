@@ -1,0 +1,35 @@
+{
+  "space_id": "onnx/GPT-2",
+  "title": "GPT 2",
+  "emoji": "\ud83d\udc20",
+  "description": "GPT 2",
+  "input_schema": {
+    "input": {
+      "type": "string",
+      "description": "Input",
+      "required": true
+    }
+  },
+  "output_schema": {
+    "output": {
+      "type": "string"
+    }
+  },
+  "license": "unknown",
+  "hardware": "2.8.11",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 3,
+  "last_modified": "2022-03-17 22:05:16+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "error",
+  "_api_error": "(Request ID: Root=1-69e77bdb-5556bc1b2a3ee1ad5d210da9;78007386-a9f5-4f3a-9794-6f48ecc755bc)\n\n429 Too Many Requests: you have reached your 'api' rate limit.\nRetry after 3 seconds (0/2500 requests remai"
+}

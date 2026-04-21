@@ -1,0 +1,207 @@
+{
+  "space_id": "allenai/reward-bench",
+  "title": "Reward Bench Leaderboard",
+  "emoji": "\ud83d\udcd0",
+  "description": "Reward Bench Leaderboard",
+  "input_schema": {
+    "subset": {
+      "type": "List[Literal['Factuality', 'Precise IF', 'Math', 'Safety', 'Focus', 'Ties']]",
+      "description": "Subset",
+      "required": true,
+      "component": "Dropdown"
+    }
+  },
+  "output_schema": {
+    "value_31": {
+      "type": "str",
+      "description": "value_31",
+      "component": "Markdown"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "4.36.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "leaderboard",
+    "region:us",
+    "benchmark"
+  ],
+  "likes": 428,
+  "last_modified": "2025-08-12 07:58:08+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/random_sample",
+      "parameters": [
+        {
+          "name": "subset",
+          "label": "Subset",
+          "type": "List[Literal['Factuality', 'Precise IF', 'Math', 'Safety', 'Focus', 'Ties']]",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_31",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/random_sample_v1",
+      "parameters": [
+        {
+          "name": "subset",
+          "label": "Subset",
+          "type": "List[Literal['alpacaeval-easy', 'alpacaeval-hard', 'alpacaeval-length', 'mt-bench-easy', 'mt-bench-med', 'mt-bench-hard', 'llmbar-natural', 'llmbar-adver-neighbor', 'llmbar-adver-GPTInst', 'llmbar-adv",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_55",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/regex_table",
+      "parameters": [
+        {
+          "name": "dataframe",
+          "label": "parameter_19",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "name": "regex",
+          "label": "Model Search (delimit with , )",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "filter_button",
+          "label": "parameter_15",
+          "type": "List[Literal['Seq. Classifiers', 'Custom Classifiers', 'Generative', 'RBv1']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_20",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/regex_table_1",
+      "parameters": [
+        {
+          "name": "dataframe",
+          "label": "parameter_43",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "name": "regex",
+          "label": "Model Search (delimit with , )",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "filter_button",
+          "label": "Model Types",
+          "type": "List[Literal['Seq. Classifiers', 'DPO', 'Custom Classifiers', 'Generative']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_44",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/regex_table_2",
+      "parameters": [
+        {
+          "name": "dataframe",
+          "label": "parameter_19",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "name": "regex",
+          "label": "Model Search (delimit with , )",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "filter_button",
+          "label": "parameter_15",
+          "type": "List[Literal['Seq. Classifiers', 'Custom Classifiers', 'Generative', 'RBv1']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_20",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/regex_table_3",
+      "parameters": [
+        {
+          "name": "dataframe",
+          "label": "parameter_43",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "name": "regex",
+          "label": "Model Search (delimit with , )",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "filter_button",
+          "label": "Model Types",
+          "type": "List[Literal['Seq. Classifiers', 'DPO', 'Custom Classifiers', 'Generative']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_44",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/random_sample",
+  "_api_verified": true,
+  "estimated_latency_s": 2.3,
+  "speed_tier": "fast",
+  "_latency_source": "measured_inference",
+  "_tags_enriched": true,
+  "measured_latency_s": 2.3,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:50:14.556413+00:00",
+  "measured_inference_s": 2.3,
+  "measured_inference_timestamp": "2026-04-20T07:59:36.895794+00:00",
+  "measured_inference_method": "auto_predict",
+  "measured_inference_api": "/random_sample"
+}

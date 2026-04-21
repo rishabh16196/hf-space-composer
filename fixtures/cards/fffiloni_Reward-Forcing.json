@@ -1,0 +1,108 @@
+{
+  "space_id": "fffiloni/Reward-Forcing",
+  "title": "Reward Forcing",
+  "emoji": "\ud83e\udd80",
+  "description": "Text-to-video with Reward Forcing",
+  "input_schema": {
+    "prompt": {
+      "type": "str",
+      "description": "Prompt",
+      "required": true,
+      "component": "Textbox"
+    },
+    "duration": {
+      "type": "Literal['5s (21 frames)', '30s (120 frames)']",
+      "description": "Duration",
+      "required": true,
+      "component": "Radio"
+    },
+    "use_ema": {
+      "type": "bool",
+      "description": "Use EMA weights (--use_ema)",
+      "required": true,
+      "component": "Checkbox"
+    },
+    "seed": {
+      "type": "int",
+      "description": "Seed (-1 = random)",
+      "required": true,
+      "component": "Number"
+    }
+  },
+  "output_schema": {
+    "Generated Video": {
+      "type": "filepath",
+      "description": "Generated Video",
+      "component": "Video"
+    },
+    "Logs": {
+      "type": "str",
+      "description": "Logs",
+      "component": "Textbox"
+    }
+  },
+  "license": "unknown",
+  "hardware": "6.12.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 23,
+  "last_modified": "2026-04-17 14:53:10+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/gradio_generate",
+      "parameters": [
+        {
+          "name": "prompt",
+          "label": "Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "duration",
+          "label": "Duration",
+          "type": "Literal['5s (21 frames)', '30s (120 frames)']",
+          "component": "Radio"
+        },
+        {
+          "name": "use_ema",
+          "label": "Use EMA weights (--use_ema)",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "seed",
+          "label": "Seed (-1 = random)",
+          "type": "int",
+          "component": "Number"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Generated Video",
+          "type": "filepath",
+          "component": "Video"
+        },
+        {
+          "label": "Logs",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/gradio_generate",
+  "_api_verified": true,
+  "estimated_latency_s": 2.92,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 2.92,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:50:36.763607+00:00"
+}

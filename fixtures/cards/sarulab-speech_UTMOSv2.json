@@ -1,0 +1,88 @@
+{
+  "space_id": "sarulab-speech/UTMOSv2",
+  "title": "UTMOSv2",
+  "emoji": "\ud83c\udf16",
+  "description": "UTMOSv2",
+  "input_schema": {
+    "audio_path": {
+      "type": "filepath",
+      "description": "Audio",
+      "required": true,
+      "component": "Audio"
+    },
+    "domain": {
+      "type": "Literal['sarulab', 'bvcc', 'somos', 'blizzard2008', 'blizzard2009', 'blizzard2010-EH1', 'blizzard201",
+      "description": "Data-domain ID for the MOS prediction",
+      "required": true,
+      "component": "Dropdown"
+    },
+    "quick": {
+      "type": "bool",
+      "description": "Quick prediction",
+      "required": true,
+      "component": "Checkbox"
+    }
+  },
+  "output_schema": {
+    "Predicted MOS": {
+      "type": "str",
+      "description": "Predicted MOS",
+      "component": "Textbox"
+    }
+  },
+  "license": "unknown",
+  "hardware": "4.38.1",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us",
+    "audio"
+  ],
+  "likes": 13,
+  "last_modified": "2024-08-01 12:15:11+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/predict_mos",
+      "parameters": [
+        {
+          "name": "audio_path",
+          "label": "Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "name": "domain",
+          "label": "Data-domain ID for the MOS prediction",
+          "type": "Literal['sarulab', 'bvcc', 'somos', 'blizzard2008', 'blizzard2009', 'blizzard2010-EH1', 'blizzard2010-EH2', 'blizzard2010-ES1', 'blizzard2010-ES3', 'blizzard2011']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "quick",
+          "label": "Quick prediction",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Predicted MOS",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/predict_mos",
+  "_api_verified": true,
+  "estimated_latency_s": 4.45,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "_tags_enriched": true,
+  "measured_latency_s": 4.45,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:51:47.707088+00:00"
+}

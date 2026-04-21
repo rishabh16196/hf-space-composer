@@ -1,0 +1,153 @@
+{
+  "space_id": "jallenjia/Change-Clothes-AI",
+  "title": "Change Clothes AI",
+  "emoji": "\ud83d\udc5a\ud83d\udc5a\ud83d\udc5a",
+  "description": "AI Clothes Changer Online",
+  "input_schema": {
+    "dict": {
+      "type": "Dict(background: filepath | None, layers: List[filepath], composite: filepath | None, id: str | None",
+      "description": "Human. Mask with pen or use auto-masking",
+      "required": true,
+      "component": "Imageeditor"
+    },
+    "garm_img": {
+      "type": "filepath",
+      "description": "Garment",
+      "required": true,
+      "component": "Image"
+    },
+    "garment_des": {
+      "type": "str",
+      "description": "Description of garment",
+      "required": true,
+      "component": "Textbox"
+    },
+    "is_checked": {
+      "type": "bool",
+      "description": "Yes",
+      "required": true,
+      "component": "Checkbox"
+    },
+    "is_checked_crop": {
+      "type": "bool",
+      "description": "Yes",
+      "required": true,
+      "component": "Checkbox"
+    },
+    "denoise_steps": {
+      "type": "float",
+      "description": "Denoising Steps",
+      "required": true,
+      "component": "Number"
+    },
+    "seed": {
+      "type": "float",
+      "description": "Seed",
+      "required": true,
+      "component": "Number"
+    },
+    "category": {
+      "type": "Literal['upper_body', 'lower_body', 'dresses']",
+      "description": "Category",
+      "required": true,
+      "component": "Dropdown"
+    }
+  },
+  "output_schema": {
+    "Output": {
+      "type": "filepath",
+      "description": "Output",
+      "component": "Image"
+    },
+    "Masked image output": {
+      "type": "filepath",
+      "description": "Masked image output",
+      "component": "Image"
+    }
+  },
+  "license": "cc-by-nc-sa-4.0",
+  "hardware": "4.36.1",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 333,
+  "last_modified": "2025-12-24 05:06:16+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/tryon",
+      "parameters": [
+        {
+          "name": "dict",
+          "label": "Human. Mask with pen or use auto-masking",
+          "type": "Dict(background: filepath | None, layers: List[filepath], composite: filepath | None, id: str | None)",
+          "component": "Imageeditor"
+        },
+        {
+          "name": "garm_img",
+          "label": "Garment",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "name": "garment_des",
+          "label": "Description of garment",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "is_checked",
+          "label": "Yes",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "is_checked_crop",
+          "label": "Yes",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "denoise_steps",
+          "label": "Denoising Steps",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "seed",
+          "label": "Seed",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "category",
+          "label": "Category",
+          "type": "Literal['upper_body', 'lower_body', 'dresses']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "Masked image output",
+          "type": "filepath",
+          "component": "Image"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/tryon",
+  "_api_verified": true
+}

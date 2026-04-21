@@ -1,0 +1,587 @@
+{
+  "space_id": "Aratako/Irodori-TTS-500M-Demo",
+  "title": "Irodori-TTS-500M Demo",
+  "emoji": "\ud83d\udc20",
+  "description": "TTS demo for Irodori-TTS-500M",
+  "input_schema": {
+    "text": {
+      "type": "str",
+      "description": "Text",
+      "required": true,
+      "component": "Textbox"
+    },
+    "uploaded_audio": {
+      "type": "filepath",
+      "description": "Reference Audio Upload (optional, blank = no-reference mode)",
+      "required": true,
+      "component": "Audio"
+    },
+    "num_steps": {
+      "type": "float",
+      "description": "Num Steps",
+      "required": true,
+      "component": "Slider"
+    },
+    "num_candidates": {
+      "type": "float",
+      "description": "Num Candidates",
+      "required": true,
+      "component": "Slider"
+    },
+    "seed_raw": {
+      "type": "str",
+      "description": "Seed (blank=random)",
+      "required": true,
+      "component": "Textbox"
+    },
+    "cfg_guidance_mode": {
+      "type": "Literal['independent', 'joint', 'alternating']",
+      "description": "CFG Guidance Mode",
+      "required": true,
+      "component": "Dropdown"
+    },
+    "cfg_scale_text": {
+      "type": "float",
+      "description": "CFG Scale Text",
+      "required": true,
+      "component": "Slider"
+    },
+    "cfg_scale_speaker": {
+      "type": "float",
+      "description": "CFG Scale Speaker",
+      "required": true,
+      "component": "Slider"
+    },
+    "cfg_scale_raw": {
+      "type": "str",
+      "description": "CFG Scale Override (optional)",
+      "required": true,
+      "component": "Textbox"
+    },
+    "cfg_min_t": {
+      "type": "float",
+      "description": "CFG Min t",
+      "required": true,
+      "component": "Number"
+    },
+    "cfg_max_t": {
+      "type": "float",
+      "description": "CFG Max t",
+      "required": true,
+      "component": "Number"
+    },
+    "context_kv_cache": {
+      "type": "bool",
+      "description": "Context KV Cache",
+      "required": true,
+      "component": "Checkbox"
+    },
+    "truncation_factor_raw": {
+      "type": "str",
+      "description": "Truncation Factor (optional)",
+      "required": true,
+      "component": "Textbox"
+    },
+    "rescale_k_raw": {
+      "type": "str",
+      "description": "Rescale k (optional)",
+      "required": true,
+      "component": "Textbox"
+    },
+    "rescale_sigma_raw": {
+      "type": "str",
+      "description": "Rescale sigma (optional)",
+      "required": true,
+      "component": "Textbox"
+    },
+    "speaker_kv_scale_raw": {
+      "type": "str",
+      "description": "Speaker KV Scale (optional)",
+      "required": true,
+      "component": "Textbox"
+    },
+    "speaker_kv_min_t_raw": {
+      "type": "str",
+      "description": "Speaker KV Min t (optional)",
+      "required": true,
+      "component": "Textbox"
+    },
+    "speaker_kv_max_layers_raw": {
+      "type": "str",
+      "description": "Speaker KV Max Layers (optional)",
+      "required": true,
+      "component": "Textbox"
+    }
+  },
+  "output_schema": {
+    "Generated Audio 1": {
+      "type": "filepath",
+      "description": "Generated Audio 1",
+      "component": "Audio"
+    },
+    "Generated Audio 2": {
+      "type": "filepath",
+      "description": "Generated Audio 2",
+      "component": "Audio"
+    },
+    "Generated Audio 3": {
+      "type": "filepath",
+      "description": "Generated Audio 3",
+      "component": "Audio"
+    },
+    "Generated Audio 4": {
+      "type": "filepath",
+      "description": "Generated Audio 4",
+      "component": "Audio"
+    },
+    "Generated Audio 5": {
+      "type": "filepath",
+      "description": "Generated Audio 5",
+      "component": "Audio"
+    },
+    "Generated Audio 6": {
+      "type": "filepath",
+      "description": "Generated Audio 6",
+      "component": "Audio"
+    },
+    "Generated Audio 7": {
+      "type": "filepath",
+      "description": "Generated Audio 7",
+      "component": "Audio"
+    },
+    "Generated Audio 8": {
+      "type": "filepath",
+      "description": "Generated Audio 8",
+      "component": "Audio"
+    },
+    "Generated Audio 9": {
+      "type": "filepath",
+      "description": "Generated Audio 9",
+      "component": "Audio"
+    },
+    "Generated Audio 10": {
+      "type": "filepath",
+      "description": "Generated Audio 10",
+      "component": "Audio"
+    },
+    "Generated Audio 11": {
+      "type": "filepath",
+      "description": "Generated Audio 11",
+      "component": "Audio"
+    },
+    "Generated Audio 12": {
+      "type": "filepath",
+      "description": "Generated Audio 12",
+      "component": "Audio"
+    },
+    "Generated Audio 13": {
+      "type": "filepath",
+      "description": "Generated Audio 13",
+      "component": "Audio"
+    },
+    "Generated Audio 14": {
+      "type": "filepath",
+      "description": "Generated Audio 14",
+      "component": "Audio"
+    },
+    "Generated Audio 15": {
+      "type": "filepath",
+      "description": "Generated Audio 15",
+      "component": "Audio"
+    },
+    "Generated Audio 16": {
+      "type": "filepath",
+      "description": "Generated Audio 16",
+      "component": "Audio"
+    },
+    "Generated Audio 17": {
+      "type": "filepath",
+      "description": "Generated Audio 17",
+      "component": "Audio"
+    },
+    "Generated Audio 18": {
+      "type": "filepath",
+      "description": "Generated Audio 18",
+      "component": "Audio"
+    },
+    "Generated Audio 19": {
+      "type": "filepath",
+      "description": "Generated Audio 19",
+      "component": "Audio"
+    },
+    "Generated Audio 20": {
+      "type": "filepath",
+      "description": "Generated Audio 20",
+      "component": "Audio"
+    },
+    "Generated Audio 21": {
+      "type": "filepath",
+      "description": "Generated Audio 21",
+      "component": "Audio"
+    },
+    "Generated Audio 22": {
+      "type": "filepath",
+      "description": "Generated Audio 22",
+      "component": "Audio"
+    },
+    "Generated Audio 23": {
+      "type": "filepath",
+      "description": "Generated Audio 23",
+      "component": "Audio"
+    },
+    "Generated Audio 24": {
+      "type": "filepath",
+      "description": "Generated Audio 24",
+      "component": "Audio"
+    },
+    "Generated Audio 25": {
+      "type": "filepath",
+      "description": "Generated Audio 25",
+      "component": "Audio"
+    },
+    "Generated Audio 26": {
+      "type": "filepath",
+      "description": "Generated Audio 26",
+      "component": "Audio"
+    },
+    "Generated Audio 27": {
+      "type": "filepath",
+      "description": "Generated Audio 27",
+      "component": "Audio"
+    },
+    "Generated Audio 28": {
+      "type": "filepath",
+      "description": "Generated Audio 28",
+      "component": "Audio"
+    },
+    "Generated Audio 29": {
+      "type": "filepath",
+      "description": "Generated Audio 29",
+      "component": "Audio"
+    },
+    "Generated Audio 30": {
+      "type": "filepath",
+      "description": "Generated Audio 30",
+      "component": "Audio"
+    },
+    "Generated Audio 31": {
+      "type": "filepath",
+      "description": "Generated Audio 31",
+      "component": "Audio"
+    },
+    "Generated Audio 32": {
+      "type": "filepath",
+      "description": "Generated Audio 32",
+      "component": "Audio"
+    },
+    "Run Log": {
+      "type": "str",
+      "description": "Run Log",
+      "component": "Textbox"
+    }
+  },
+  "license": "mit",
+  "hardware": "6.6.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us",
+    "audio",
+    "speech-synthesis",
+    "tts"
+  ],
+  "likes": 13,
+  "last_modified": "2026-02-26 02:36:48+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_tags_enriched": true,
+  "estimated_latency_s": 4.0,
+  "speed_tier": "fast",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/gradio_inference",
+      "parameters": [
+        {
+          "name": "text",
+          "label": "Text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "uploaded_audio",
+          "label": "Reference Audio Upload (optional, blank = no-reference mode)",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "name": "num_steps",
+          "label": "Num Steps",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "num_candidates",
+          "label": "Num Candidates",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "seed_raw",
+          "label": "Seed (blank=random)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "cfg_guidance_mode",
+          "label": "CFG Guidance Mode",
+          "type": "Literal['independent', 'joint', 'alternating']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "cfg_scale_text",
+          "label": "CFG Scale Text",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "cfg_scale_speaker",
+          "label": "CFG Scale Speaker",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "cfg_scale_raw",
+          "label": "CFG Scale Override (optional)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "cfg_min_t",
+          "label": "CFG Min t",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "cfg_max_t",
+          "label": "CFG Max t",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "context_kv_cache",
+          "label": "Context KV Cache",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "truncation_factor_raw",
+          "label": "Truncation Factor (optional)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "rescale_k_raw",
+          "label": "Rescale k (optional)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "rescale_sigma_raw",
+          "label": "Rescale sigma (optional)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "speaker_kv_scale_raw",
+          "label": "Speaker KV Scale (optional)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "speaker_kv_min_t_raw",
+          "label": "Speaker KV Min t (optional)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "speaker_kv_max_layers_raw",
+          "label": "Speaker KV Max Layers (optional)",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Generated Audio 1",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Generated Audio 2",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Generated Audio 3",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Generated Audio 4",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Generated Audio 5",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Generated Audio 6",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Generated Audio 7",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Generated Audio 8",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Generated Audio 9",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Generated Audio 10",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Generated Audio 11",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Generated Audio 12",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Generated Audio 13",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Generated Audio 14",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Generated Audio 15",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Generated Audio 16",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Generated Audio 17",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Generated Audio 18",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Generated Audio 19",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Generated Audio 20",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Generated Audio 21",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Generated Audio 22",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Generated Audio 23",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Generated Audio 24",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Generated Audio 25",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Generated Audio 26",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Generated Audio 27",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Generated Audio 28",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Generated Audio 29",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Generated Audio 30",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Generated Audio 31",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Generated Audio 32",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Run Log",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/gradio_inference",
+  "_api_verified": true
+}

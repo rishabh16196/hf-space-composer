@@ -1,0 +1,158 @@
+{
+  "space_id": "xu-song/kplug",
+  "title": "Kplug",
+  "emoji": "\ud83d\udc20",
+  "description": "Knowledge-injected Pre-trained Language Model",
+  "input_schema": {
+    "text": {
+      "type": "str",
+      "description": "\u5546\u54c1\u4fe1\u606f\uff08Product Info\uff09",
+      "required": true,
+      "component": "Textbox"
+    },
+    "prefix_text": {
+      "type": "str",
+      "description": "\u524d\u7f00\u8bcd\uff08Prefix Text\uff09",
+      "required": true,
+      "component": "Textbox"
+    },
+    "constrained_text": {
+      "type": "str",
+      "description": "\u9650\u5b9a\u8bcd\uff08Constrained Text\uff09",
+      "required": true,
+      "component": "Textbox"
+    },
+    "decoding_strategys": {
+      "type": "List[Literal['greedy', 'sampling', 'beam search', 'contrastive search', 'diverse beam search']]",
+      "description": "\u89e3\u7801\u7b56\u7565\uff08Decoding Strategy\uff09",
+      "required": true,
+      "component": "Checkboxgroup"
+    }
+  },
+  "output_schema": {
+    "\u6587\u672c\u6458\u8981\uff08Summarization\uff09": {
+      "type": "Dict[Any, Any]",
+      "description": "\u6587\u672c\u6458\u8981\uff08Summarization\uff09",
+      "component": "Json"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "4.38.1",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us",
+    "audio",
+    "music",
+    "song-generation"
+  ],
+  "likes": 2,
+  "last_modified": "2025-01-06 17:48:11+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_tags_enriched": true,
+  "estimated_latency_s": 60.0,
+  "speed_tier": "very_slow",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/predict",
+      "parameters": [
+        {
+          "name": "text",
+          "label": "\u5546\u54c1\u4fe1\u606f\uff08Product Info\uff09",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "prefix_text",
+          "label": "\u524d\u7f00\u8bcd\uff08Prefix Text\uff09",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "constrained_text",
+          "label": "\u9650\u5b9a\u8bcd\uff08Constrained Text\uff09",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "decoding_strategys",
+          "label": "\u89e3\u7801\u7b56\u7565\uff08Decoding Strategy\uff09",
+          "type": "List[Literal['greedy', 'sampling', 'beam search', 'contrastive search', 'diverse beam search']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "\u6587\u672c\u6458\u8981\uff08Summarization\uff09",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        }
+      ]
+    },
+    {
+      "name": "/predict_1",
+      "parameters": [
+        {
+          "name": "text",
+          "label": "\u8f93\u5165\u6587\u672c",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "\u586b\u8bcd",
+          "type": "Dict(label: str | int | float | None, confidences: List[Dict(label: str | int | float | None, confidence: float | None)] | None)",
+          "component": "Label"
+        }
+      ]
+    },
+    {
+      "name": "/predict_2",
+      "parameters": [
+        {
+          "name": "sent",
+          "label": "\u8f93\u5165\u6587\u672c",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "\u6587\u672c\u7ea0\u9519",
+          "type": "List[Dict(token: str, class_or_confidence: str | float | None)]",
+          "component": "Highlightedtext"
+        },
+        {
+          "label": "output 1",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        }
+      ]
+    },
+    {
+      "name": "/predict_3",
+      "parameters": [
+        {
+          "name": "input",
+          "label": "\u8f93\u5165\u6587\u672c",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "output 0",
+          "type": "Tuple[str | Dict(file: filepath, alt_text: str | None) | Dict(component: str, value: Any, constructor_args: Dict(), props: Dict()) | None, str | Dict(file: filepath, alt_text: str | None) | Dict(compo",
+          "component": "Chatbot"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/predict",
+  "_api_verified": true
+}

@@ -1,0 +1,247 @@
+{
+  "space_id": "Asahina2K/animagine-xl-3.1",
+  "title": "Animagine XL 3.1",
+  "emoji": "\ud83c\udf0d",
+  "description": "The most opinionated, anime-themed SDXL model",
+  "input_schema": {
+    "Prompt": {
+      "type": "str",
+      "description": "Prompt",
+      "required": true,
+      "component": "Textbox"
+    },
+    "Negative Prompt": {
+      "type": "str",
+      "description": "Negative Prompt",
+      "required": true,
+      "component": "Textbox"
+    },
+    "Seed": {
+      "type": "float",
+      "description": "Seed",
+      "required": true,
+      "component": "Slider"
+    },
+    "Width": {
+      "type": "float",
+      "description": "Width",
+      "required": true,
+      "component": "Slider"
+    },
+    "Height": {
+      "type": "float",
+      "description": "Height",
+      "required": true,
+      "component": "Slider"
+    },
+    "Guidance scale": {
+      "type": "float",
+      "description": "Guidance scale",
+      "required": true,
+      "component": "Slider"
+    },
+    "Number of inference steps": {
+      "type": "float",
+      "description": "Number of inference steps",
+      "required": true,
+      "component": "Slider"
+    },
+    "Sampler": {
+      "type": "Literal['DPM++ 2M Karras', 'DPM++ SDE Karras', 'DPM++ 2M SDE Karras', 'Euler', 'Euler a', 'DDIM']",
+      "description": "Sampler",
+      "required": true,
+      "component": "Dropdown"
+    },
+    "Aspect Ratio": {
+      "type": "Literal['1024 x 1024', '1152 x 896', '896 x 1152', '1216 x 832', '832 x 1216', '1344 x 768', '768 x ",
+      "description": "Aspect Ratio",
+      "required": true,
+      "component": "Radio"
+    },
+    "Style Preset": {
+      "type": "Literal['(None)', 'Cinematic', 'Photographic', 'Anime', 'Manga', 'Digital Art', 'Pixel art', 'Fantas",
+      "description": "Style Preset",
+      "required": true,
+      "component": "Radio"
+    },
+    "Quality Tags Presets": {
+      "type": "Literal['(None)', 'Standard v3.0', 'Standard v3.1', 'Light v3.1', 'Heavy v3.1']",
+      "description": "Quality Tags Presets",
+      "required": true,
+      "component": "Dropdown"
+    },
+    "Use Upscaler": {
+      "type": "bool",
+      "description": "Use Upscaler",
+      "required": true,
+      "component": "Checkbox"
+    },
+    "Strength": {
+      "type": "float",
+      "description": "Strength",
+      "required": true,
+      "component": "Slider"
+    },
+    "Upscale by": {
+      "type": "float",
+      "description": "Upscale by",
+      "required": true,
+      "component": "Slider"
+    },
+    "Add Quality Tags": {
+      "type": "bool",
+      "description": "Add Quality Tags",
+      "required": true,
+      "component": "Checkbox"
+    }
+  },
+  "output_schema": {
+    "Result": {
+      "type": "List[Dict(image: filepath, caption: str | None)]",
+      "description": "Result",
+      "component": "Gallery"
+    },
+    "metadata": {
+      "type": "Dict[Any, Any]",
+      "description": "metadata",
+      "component": "Json"
+    }
+  },
+  "license": "mit",
+  "hardware": "4.20.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us",
+    "diffusion",
+    "image-generation",
+    "text-to-image",
+    "vision"
+  ],
+  "likes": 1397,
+  "last_modified": "2025-08-10 07:16:37+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/run",
+      "parameters": [
+        {
+          "name": "Prompt",
+          "label": "Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "Negative Prompt",
+          "label": "Negative Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "Seed",
+          "label": "Seed",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "Width",
+          "label": "Width",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "Height",
+          "label": "Height",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "Guidance scale",
+          "label": "Guidance scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "Number of inference steps",
+          "label": "Number of inference steps",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "Sampler",
+          "label": "Sampler",
+          "type": "Literal['DPM++ 2M Karras', 'DPM++ SDE Karras', 'DPM++ 2M SDE Karras', 'Euler', 'Euler a', 'DDIM']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "Aspect Ratio",
+          "label": "Aspect Ratio",
+          "type": "Literal['1024 x 1024', '1152 x 896', '896 x 1152', '1216 x 832', '832 x 1216', '1344 x 768', '768 x 1344', '1536 x 640', '640 x 1536', 'Custom']",
+          "component": "Radio"
+        },
+        {
+          "name": "Style Preset",
+          "label": "Style Preset",
+          "type": "Literal['(None)', 'Cinematic', 'Photographic', 'Anime', 'Manga', 'Digital Art', 'Pixel art', 'Fantasy art', 'Neonpunk', '3D Model']",
+          "component": "Radio"
+        },
+        {
+          "name": "Quality Tags Presets",
+          "label": "Quality Tags Presets",
+          "type": "Literal['(None)', 'Standard v3.0', 'Standard v3.1', 'Light v3.1', 'Heavy v3.1']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "Use Upscaler",
+          "label": "Use Upscaler",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "Strength",
+          "label": "Strength",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "Upscale by",
+          "label": "Upscale by",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "Add Quality Tags",
+          "label": "Add Quality Tags",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Result",
+          "type": "List[Dict(image: filepath, caption: str | None)]",
+          "component": "Gallery"
+        },
+        {
+          "label": "metadata",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/run",
+  "_api_verified": true,
+  "estimated_latency_s": 3.12,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "_tags_enriched": true,
+  "measured_latency_s": 3.12,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:49:08.869319+00:00",
+  "_inference_attempt_status": "predict_failed",
+  "_inference_attempt_error": "'TypeError'"
+}

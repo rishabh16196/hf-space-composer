@@ -1,0 +1,356 @@
+{
+  "space_id": "Qwen/Qwen3-Omni-Demo",
+  "title": "Qwen3 Omni Demo",
+  "emoji": "\u26a1",
+  "description": "Qwen3 Omni Demo",
+  "input_schema": {
+    "audio": {
+      "type": "filepath",
+      "description": "Record Audio (\u5f55\u5236\u97f3\u9891)",
+      "required": true,
+      "component": "Audio"
+    },
+    "video": {
+      "type": "dict(video: filepath, subtitles: filepath | None)",
+      "description": "Record/Upload Video (\u5f55\u5236/\u4e0a\u4f20\u89c6\u9891)",
+      "required": true,
+      "component": "Video"
+    },
+    "history": {
+      "type": "list[dict(role: str, metadata: dict(title: str, id: int | str, parent_id: int | str, log: str, durat",
+      "description": "Chat History (\u5bf9\u8bdd\u5386\u53f2)",
+      "required": true,
+      "component": "Chatbot"
+    },
+    "system_prompt": {
+      "type": "str",
+      "description": "System Prompt",
+      "required": true,
+      "component": "Textbox"
+    },
+    "voice_choice": {
+      "type": "Literal['Cherry / \u828a\u60a6', 'Serena / \u82cf\u7476', 'Ethan / \u6668\u7166', 'Chelsie / \u5343\u96ea', 'Momo / \u8309\u5154', 'Vivian / \u5341\u4e09', 'Moo",
+      "description": "Voice Choice",
+      "required": true,
+      "component": "Dropdown"
+    },
+    "temperature": {
+      "type": "float",
+      "description": "Temperature",
+      "required": true,
+      "component": "Slider"
+    },
+    "top_p": {
+      "type": "float",
+      "description": "Top P",
+      "required": true,
+      "component": "Slider"
+    },
+    "top_k": {
+      "type": "float",
+      "description": "Top K",
+      "required": true,
+      "component": "Slider"
+    },
+    "return_audio": {
+      "type": "bool",
+      "description": "Return Audio \uff08\u8fd4\u56de\u8bed\u97f3\uff09",
+      "required": true,
+      "component": "Checkbox"
+    },
+    "enable_thinking": {
+      "type": "bool",
+      "description": "Enable Thinking \uff08\u542f\u7528\u601d\u7ef4\u94fe\uff09",
+      "required": true,
+      "component": "Checkbox"
+    }
+  },
+  "output_schema": {
+    "Record Audio (\u5f55\u5236\u97f3\u9891)": {
+      "type": "filepath",
+      "description": "Record Audio (\u5f55\u5236\u97f3\u9891)",
+      "component": "Audio"
+    },
+    "Record/Upload Video (\u5f55\u5236/\u4e0a\u4f20\u89c6\u9891)": {
+      "type": "dict(video: filepath, subtitles: filepath | None)",
+      "description": "Record/Upload Video (\u5f55\u5236/\u4e0a\u4f20\u89c6\u9891)",
+      "component": "Video"
+    },
+    "Chat History (\u5bf9\u8bdd\u5386\u53f2)": {
+      "type": "list[dict(role: str, metadata: dict(title: str, id: int | str, parent_id: int | str, log: str, durat",
+      "description": "Chat History (\u5bf9\u8bdd\u5386\u53f2)",
+      "component": "Chatbot"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "5.46.1",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 262,
+  "last_modified": "2025-12-05 14:56:36+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/media_predict",
+      "parameters": [
+        {
+          "name": "audio",
+          "label": "Record Audio (\u5f55\u5236\u97f3\u9891)",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "name": "video",
+          "label": "Record/Upload Video (\u5f55\u5236/\u4e0a\u4f20\u89c6\u9891)",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        },
+        {
+          "name": "history",
+          "label": "Chat History (\u5bf9\u8bdd\u5386\u53f2)",
+          "type": "list[dict(role: str, metadata: dict(title: str, id: int | str, parent_id: int | str, log: str, duration: float, status: Literal['pending', 'done']) | None, content: str | dict(file: filepath, alt_text",
+          "component": "Chatbot"
+        },
+        {
+          "name": "system_prompt",
+          "label": "System Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "voice_choice",
+          "label": "Voice Choice",
+          "type": "Literal['Cherry / \u828a\u60a6', 'Serena / \u82cf\u7476', 'Ethan / \u6668\u7166', 'Chelsie / \u5343\u96ea', 'Momo / \u8309\u5154', 'Vivian / \u5341\u4e09', 'Moon / \u6708\u767d', 'Maia / \u56db\u6708', 'Kai / \u51ef', 'Nofish / \u4e0d\u5403\u9c7c', 'Bella / \u840c\u5b9d', 'Jennifer / \u8a79\u59ae\u5f17', 'Ryan / \u751c\u8336', 'Kater",
+          "component": "Dropdown"
+        },
+        {
+          "name": "temperature",
+          "label": "Temperature",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "top_p",
+          "label": "Top P",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "top_k",
+          "label": "Top K",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "return_audio",
+          "label": "Return Audio \uff08\u8fd4\u56de\u8bed\u97f3\uff09",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "enable_thinking",
+          "label": "Enable Thinking \uff08\u542f\u7528\u601d\u7ef4\u94fe\uff09",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Record Audio (\u5f55\u5236\u97f3\u9891)",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Record/Upload Video (\u5f55\u5236/\u4e0a\u4f20\u89c6\u9891)",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        },
+        {
+          "label": "Chat History (\u5bf9\u8bdd\u5386\u53f2)",
+          "type": "list[dict(role: str, metadata: dict(title: str, id: int | str, parent_id: int | str, log: str, duration: float, status: Literal['pending', 'done']) | None, content: str | dict(file: filepath, alt_text",
+          "component": "Chatbot"
+        }
+      ]
+    },
+    {
+      "name": "/lambda",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/clear_history_online",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Chat History (\u5bf9\u8bdd\u5386\u53f2)",
+          "type": "list[dict(role: str, metadata: dict(title: str, id: int | str, parent_id: int | str, log: str, duration: float, status: Literal['pending', 'done']) | None, content: str | dict(file: filepath, alt_text",
+          "component": "Chatbot"
+        },
+        {
+          "label": "Record Audio (\u5f55\u5236\u97f3\u9891)",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Record/Upload Video (\u5f55\u5236/\u4e0a\u4f20\u89c6\u9891)",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        }
+      ]
+    },
+    {
+      "name": "/chat_predict",
+      "parameters": [
+        {
+          "name": "text",
+          "label": "parameter_37",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "audio",
+          "label": "Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "name": "image",
+          "label": "Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "video",
+          "label": "Video",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        },
+        {
+          "name": "history",
+          "label": "Chat History (\u5bf9\u8bdd\u5386\u53f2)",
+          "type": "list[dict(role: str, metadata: dict(title: str, id: int | str, parent_id: int | str, log: str, duration: float, status: Literal['pending', 'done']) | None, content: str | dict(file: filepath, alt_text",
+          "component": "Chatbot"
+        },
+        {
+          "name": "system_prompt",
+          "label": "System Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "voice_choice",
+          "label": "Voice Choice",
+          "type": "Literal['Cherry / \u828a\u60a6', 'Serena / \u82cf\u7476', 'Ethan / \u6668\u7166', 'Chelsie / \u5343\u96ea', 'Momo / \u8309\u5154', 'Vivian / \u5341\u4e09', 'Moon / \u6708\u767d', 'Maia / \u56db\u6708', 'Kai / \u51ef', 'Nofish / \u4e0d\u5403\u9c7c', 'Bella / \u840c\u5b9d', 'Jennifer / \u8a79\u59ae\u5f17', 'Ryan / \u751c\u8336', 'Kater",
+          "component": "Dropdown"
+        },
+        {
+          "name": "temperature",
+          "label": "Temperature",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "top_p",
+          "label": "Top P",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "top_k",
+          "label": "Top K",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "return_audio",
+          "label": "Return Audio \uff08\u8fd4\u56de\u8bed\u97f3\uff09",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "enable_thinking",
+          "label": "Enable Thinking \uff08\u542f\u7528\u601d\u7ef4\u94fe\uff09",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_37",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "Video",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        },
+        {
+          "label": "Chat History (\u5bf9\u8bdd\u5386\u53f2)",
+          "type": "list[dict(role: str, metadata: dict(title: str, id: int | str, parent_id: int | str, log: str, duration: float, status: Literal['pending', 'done']) | None, content: str | dict(file: filepath, alt_text",
+          "component": "Chatbot"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_1",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/clear_history_offline",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Chat History (\u5bf9\u8bdd\u5386\u53f2)",
+          "type": "list[dict(role: str, metadata: dict(title: str, id: int | str, parent_id: int | str, log: str, duration: float, status: Literal['pending', 'done']) | None, content: str | dict(file: filepath, alt_text",
+          "component": "Chatbot"
+        },
+        {
+          "label": "value_37",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "Video",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/media_predict",
+  "_api_verified": true,
+  "estimated_latency_s": 3.98,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 3.98,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:49:51.544916+00:00"
+}

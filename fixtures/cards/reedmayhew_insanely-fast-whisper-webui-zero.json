@@ -1,0 +1,182 @@
+{
+  "space_id": "reedmayhew/insanely-fast-whisper-webui-zero",
+  "title": "Insanelyfastwhisper",
+  "emoji": "\ud83d\udcbb",
+  "description": "Convert audio to subtitles",
+  "input_schema": {
+    "modelName": {
+      "type": "Literal['openai/whisper-tiny.en', 'openai/whisper-base.en', 'openai/whisper-small.en', 'distil-whisp",
+      "description": "Model",
+      "required": true,
+      "component": "Dropdown"
+    },
+    "languageName": {
+      "type": "Literal['English']",
+      "description": "Language",
+      "required": true,
+      "component": "Dropdown"
+    },
+    "urlData": {
+      "type": "str",
+      "description": "URL",
+      "required": true,
+      "component": "Textbox"
+    },
+    "multipleFiles": {
+      "type": "list[filepath]",
+      "description": "Upload Files",
+      "required": true,
+      "component": "File"
+    },
+    "microphoneData": {
+      "type": "filepath",
+      "description": "Input",
+      "required": true,
+      "component": "Audio"
+    },
+    "task": {
+      "type": "Literal['transcribe', 'translate']",
+      "description": "Task",
+      "required": true,
+      "component": "Dropdown"
+    },
+    "flash": {
+      "type": "bool",
+      "description": "Flash",
+      "required": true,
+      "component": "Checkbox"
+    },
+    "chunk_length_s": {
+      "type": "float",
+      "description": "chunk_length_s",
+      "required": true,
+      "component": "Number"
+    },
+    "batch_size": {
+      "type": "float",
+      "description": "batch_size",
+      "required": true,
+      "component": "Number"
+    }
+  },
+  "output_schema": {
+    "Download": {
+      "type": "filepath",
+      "description": "Download",
+      "component": "File"
+    },
+    "Transcription": {
+      "type": "str",
+      "description": "Transcription",
+      "component": "Textbox"
+    },
+    "Segments": {
+      "type": "str",
+      "description": "Segments",
+      "component": "Textbox"
+    }
+  },
+  "license": "mit",
+  "hardware": "6.12.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us",
+    "asr",
+    "audio",
+    "transcription"
+  ],
+  "likes": 11,
+  "last_modified": "2026-04-16 21:22:08+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/transcribe_webui_simple_progress",
+      "parameters": [
+        {
+          "name": "modelName",
+          "label": "Model",
+          "type": "Literal['openai/whisper-tiny.en', 'openai/whisper-base.en', 'openai/whisper-small.en', 'distil-whisper/distil-small.en', 'openai/whisper-medium.en', 'distil-whisper/distil-medium.en', 'openai/whisper-",
+          "component": "Dropdown"
+        },
+        {
+          "name": "languageName",
+          "label": "Language",
+          "type": "Literal['English']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "urlData",
+          "label": "URL",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "multipleFiles",
+          "label": "Upload Files",
+          "type": "list[filepath]",
+          "component": "File"
+        },
+        {
+          "name": "microphoneData",
+          "label": "Input",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "name": "task",
+          "label": "Task",
+          "type": "Literal['transcribe', 'translate']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "flash",
+          "label": "Flash",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "chunk_length_s",
+          "label": "chunk_length_s",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "batch_size",
+          "label": "batch_size",
+          "type": "float",
+          "component": "Number"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Download",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "label": "Transcription",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Segments",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/transcribe_webui_simple_progress",
+  "_api_verified": true,
+  "estimated_latency_s": 4.02,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "_tags_enriched": true,
+  "measured_latency_s": 4.02,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:51:44.895871+00:00"
+}

@@ -1,0 +1,174 @@
+{
+  "space_id": "Gradio-Blocks/Multilingual-Aspect-Based-Sentiment-Analysis",
+  "title": "PyABSA",
+  "emoji": "\ud83d\udc4b",
+  "description": "PyABSA",
+  "input_schema": {
+    "text": {
+      "type": "str",
+      "description": "Example:",
+      "required": true,
+      "component": "Textbox"
+    },
+    "dataset": {
+      "type": "Literal['Laptop14', 'Restaurant14', 'Restaurant15', 'Restaurant16']",
+      "description": "Datasets",
+      "required": true,
+      "component": "Radio"
+    },
+    "task": {
+      "type": "str",
+      "description": "parameter_10",
+      "required": true,
+      "component": "Textbox"
+    }
+  },
+  "output_schema": {
+    "Predicted Triplets:": {
+      "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+      "description": "Predicted Triplets:",
+      "component": "Dataframe"
+    },
+    "Example:": {
+      "type": "str",
+      "description": "Example:",
+      "component": "Textbox"
+    }
+  },
+  "license": "mit",
+  "hardware": "4.36.1",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us",
+    "sentiment",
+    "text"
+  ],
+  "likes": 23,
+  "last_modified": "2024-12-07 18:27:45+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/run_demo",
+      "parameters": [
+        {
+          "name": "text",
+          "label": "Example:",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "dataset",
+          "label": "Datasets",
+          "type": "Literal['Laptop14', 'Restaurant14', 'Restaurant15', 'Restaurant16']",
+          "component": "Radio"
+        },
+        {
+          "name": "task",
+          "label": "parameter_10",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Predicted Triplets:",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "Example:",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/run_demo_1",
+      "parameters": [
+        {
+          "name": "text",
+          "label": "Example:",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "dataset",
+          "label": "Datasets",
+          "type": "Literal['Laptop14', 'Restaurant14', 'Restaurant15', 'Restaurant16', 'SemEval', 'Chinese_Zhang']",
+          "component": "Radio"
+        },
+        {
+          "name": "task",
+          "label": "parameter_26",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Predicted Triplets:",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "Original Triplets:",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "Example:",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/run_demo_2",
+      "parameters": [
+        {
+          "name": "text",
+          "label": "Example:",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "dataset",
+          "label": "Datasets",
+          "type": "Literal['Laptop14', 'Restaurant14', 'ARTS_Laptop14', 'ARTS_Restaurant14', 'Restaurant15', 'Restaurant16', 'Twitter', 'MAMS', 'Television', 'TShirt', 'Yelp', 'Phone', 'Car', 'Notebook', 'Camera', 'Sham",
+          "component": "Radio"
+        },
+        {
+          "name": "task",
+          "label": "parameter_41",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Prediction Results:",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "Example:",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/run_demo",
+  "_api_verified": true,
+  "estimated_latency_s": 2.85,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "_tags_enriched": true,
+  "measured_latency_s": 2.85,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:49:20.334222+00:00"
+}

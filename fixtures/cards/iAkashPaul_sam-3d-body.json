@@ -1,0 +1,94 @@
+{
+  "space_id": "iAkashPaul/sam-3d-body",
+  "title": "Sam 3d Body",
+  "emoji": "\ud83d\udcc8",
+  "description": "Sam 3d Body",
+  "input_schema": {
+    "hf_token": {
+      "type": "str",
+      "description": "Hugging Face Token",
+      "required": true,
+      "component": "Textbox"
+    },
+    "model_choice": {
+      "type": "Literal['DINOv3 (Recommended)', 'ViT-H']",
+      "description": "Model Selection",
+      "required": true,
+      "component": "Radio"
+    }
+  },
+  "output_schema": {
+    "Setup Status": {
+      "type": "str",
+      "description": "Setup Status",
+      "component": "Textbox"
+    }
+  },
+  "license": "unknown",
+  "hardware": "6.0.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 2,
+  "last_modified": "2026-04-19 10:52:22+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/setup_model",
+      "parameters": [
+        {
+          "name": "hf_token",
+          "label": "Hugging Face Token",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "model_choice",
+          "label": "Model Selection",
+          "type": "Literal['DINOv3 (Recommended)', 'ViT-H']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Setup Status",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/process_uploaded_image",
+      "parameters": [
+        {
+          "name": "image",
+          "label": "Input Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ],
+      "returns": [
+        {
+          "label": "3D Body Estimation",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "Processing Status",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/setup_model",
+  "_api_verified": true
+}

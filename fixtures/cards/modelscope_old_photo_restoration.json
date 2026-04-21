@@ -1,0 +1,62 @@
+{
+  "space_id": "modelscope/old_photo_restoration",
+  "title": "Old Photo Restoration",
+  "emoji": "\ud83c\udf16",
+  "description": "Old Photo Restoration",
+  "input_schema": {
+    "image": {
+      "type": "filepath",
+      "description": "image",
+      "required": true,
+      "component": "Image"
+    }
+  },
+  "output_schema": {
+    "Colored image with slider-view": {
+      "type": "Tuple[filepath, filepath] | None",
+      "description": "Colored image with slider-view",
+      "component": "Imageslider"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "",
+  "sdk": "docker",
+  "tags": [
+    "docker",
+    "region:us"
+  ],
+  "likes": 344,
+  "last_modified": "2024-01-26 12:26:20+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/predict",
+      "parameters": [
+        {
+          "name": "image",
+          "label": "image",
+          "type": "filepath",
+          "component": "Image"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Colored image with slider-view",
+          "type": "Tuple[filepath, filepath] | None",
+          "component": "Imageslider"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/predict",
+  "_api_verified": true,
+  "estimated_latency_s": 3.78,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 3.78,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:51:15.505126+00:00"
+}

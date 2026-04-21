@@ -1,0 +1,136 @@
+{
+  "space_id": "sczhou/CodeFormer",
+  "title": "CodeFormer",
+  "emoji": "\ud83d\udc3c",
+  "description": "CodeFormer",
+  "input_schema": {
+    "image": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "Input",
+      "required": true,
+      "component": "Image"
+    },
+    "face_align": {
+      "type": "bool",
+      "description": "Pre_Face_Align",
+      "required": true,
+      "component": "Checkbox"
+    },
+    "background_enhance": {
+      "type": "bool",
+      "description": "Background_Enhance",
+      "required": true,
+      "component": "Checkbox"
+    },
+    "face_upsample": {
+      "type": "bool",
+      "description": "Face_Upsample",
+      "required": true,
+      "component": "Checkbox"
+    },
+    "upscale": {
+      "type": "float",
+      "description": "Rescaling_Factor (up to 4)",
+      "required": true,
+      "component": "Number"
+    },
+    "codeformer_fidelity": {
+      "type": "float",
+      "description": "Codeformer_Fidelity (0 for better quality, 1 for better identity)",
+      "required": true,
+      "component": "Slider"
+    }
+  },
+  "output_schema": {
+    "Output": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "Output",
+      "component": "Image"
+    },
+    "value_15": {
+      "type": "str",
+      "description": "value_15",
+      "component": "Markdown"
+    }
+  },
+  "license": "unknown",
+  "hardware": "6.1.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us",
+    "code"
+  ],
+  "likes": 2367,
+  "last_modified": "2025-12-19 18:43:32+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/inference",
+      "parameters": [
+        {
+          "name": "image",
+          "label": "Input",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "face_align",
+          "label": "Pre_Face_Align",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "background_enhance",
+          "label": "Background_Enhance",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "face_upsample",
+          "label": "Face_Upsample",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "upscale",
+          "label": "Rescaling_Factor (up to 4)",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "codeformer_fidelity",
+          "label": "Codeformer_Fidelity (0 for better quality, 1 for better identity)",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "value_15",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/inference",
+  "_api_verified": true,
+  "estimated_latency_s": 6.25,
+  "speed_tier": "medium",
+  "_latency_source": "measured",
+  "_tags_enriched": true,
+  "measured_latency_s": 6.25,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:51:50.855452+00:00",
+  "_inference_attempt_status": "predict_failed",
+  "_inference_attempt_error": "Queue is full! Please try again."
+}

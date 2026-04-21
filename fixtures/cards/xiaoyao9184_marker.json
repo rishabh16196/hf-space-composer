@@ -1,0 +1,209 @@
+{
+  "space_id": "xiaoyao9184/marker",
+  "title": "Marker",
+  "emoji": "\ud83c\udfe2",
+  "description": "Gradio implementation of the Marker pdf to markdown",
+  "input_schema": {
+    "filename": {
+      "type": "filepath",
+      "description": "PDF file:",
+      "required": true,
+      "component": "File"
+    },
+    "page_range": {
+      "type": "str",
+      "description": "Page range to parse, comma separated like 0,5-10,20",
+      "required": true,
+      "component": "Textbox"
+    },
+    "force_ocr": {
+      "type": "bool",
+      "description": "Force OCR",
+      "required": true,
+      "component": "Checkbox"
+    },
+    "output_format": {
+      "type": "Literal['markdown', 'json', 'html', 'chunks']",
+      "description": "Output format",
+      "required": true,
+      "component": "Dropdown"
+    },
+    "show_blocks": {
+      "type": "bool",
+      "description": "Show Blocks",
+      "required": true,
+      "component": "Checkbox"
+    },
+    "debug": {
+      "type": "bool",
+      "description": "Debug",
+      "required": true,
+      "component": "Checkbox"
+    },
+    "use_llm": {
+      "type": "bool",
+      "description": "Use LLM",
+      "required": true,
+      "component": "Checkbox"
+    },
+    "strip_existing_ocr": {
+      "type": "bool",
+      "description": "Strip existing OCR",
+      "required": true,
+      "component": "Checkbox"
+    },
+    "disable_ocr_math": {
+      "type": "bool",
+      "description": "Disable math",
+      "required": true,
+      "component": "Checkbox"
+    }
+  },
+  "output_schema": {
+    "Result markdown": {
+      "type": "str",
+      "description": "Result markdown",
+      "component": "Markdown"
+    },
+    "Result json": {
+      "type": "str | float | bool | list | dict",
+      "description": "Result json",
+      "component": "Json"
+    },
+    "Result html": {
+      "type": "str",
+      "description": "Result html",
+      "component": "Markdown"
+    },
+    "PDF debug image": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "PDF debug image",
+      "component": "Image"
+    },
+    "Layout debug image": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "Layout debug image",
+      "component": "Image"
+    },
+    "PDF file (preview)": {
+      "type": "dict(image: filepath, annotations: list[dict(image: filepath, label: str)])",
+      "description": "PDF file (preview)",
+      "component": "Annotatedimage"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "5.28.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "mcp-server",
+    "region:us"
+  ],
+  "likes": 10,
+  "last_modified": "2026-01-31 10:31:00+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/run_marker_img",
+      "parameters": [
+        {
+          "name": "filename",
+          "label": "PDF file:",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "name": "page_range",
+          "label": "Page range to parse, comma separated like 0,5-10,20",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "force_ocr",
+          "label": "Force OCR",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "output_format",
+          "label": "Output format",
+          "type": "Literal['markdown', 'json', 'html', 'chunks']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "show_blocks",
+          "label": "Show Blocks",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "debug",
+          "label": "Debug",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "use_llm",
+          "label": "Use LLM",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "strip_existing_ocr",
+          "label": "Strip existing OCR",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "disable_ocr_math",
+          "label": "Disable math",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Result markdown",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "Result json",
+          "type": "str | float | bool | list | dict",
+          "component": "Json"
+        },
+        {
+          "label": "Result html",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "PDF debug image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "Layout debug image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "PDF file (preview)",
+          "type": "dict(image: filepath, annotations: list[dict(image: filepath, label: str)])",
+          "component": "Annotatedimage"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/run_marker_img",
+  "_api_verified": true,
+  "estimated_latency_s": 4.59,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 4.59,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:52:05.519749+00:00"
+}

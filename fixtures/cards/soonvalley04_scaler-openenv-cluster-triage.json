@@ -1,0 +1,140 @@
+{
+  "space_id": "soonvalley04/scaler-openenv-cluster-triage",
+  "title": "OpenEnv Cluster Triage",
+  "emoji": "\ud83d\ude80",
+  "description": "OpenEnv Cluster Triage",
+  "input_schema": {
+    "x": {
+      "type": "Literal['Easy', 'Medium', 'Hard', 'Very_hard', 'Nightmare']",
+      "description": "Environment Scenarios",
+      "required": true,
+      "component": "Radio"
+    }
+  },
+  "output_schema": {
+    "value_15": {
+      "type": "str",
+      "description": "value_15",
+      "component": "Textbox"
+    }
+  },
+  "license": "mit",
+  "hardware": "",
+  "sdk": "docker",
+  "tags": [
+    "docker",
+    "rl-environment",
+    "region:us"
+  ],
+  "likes": 2,
+  "last_modified": "2026-04-07 21:19:22+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/lambda",
+      "parameters": [
+        {
+          "name": "x",
+          "label": "Environment Scenarios",
+          "type": "Literal['Easy', 'Medium', 'Hard', 'Very_hard', 'Nightmare']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_15",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/ui_reset",
+      "parameters": [
+        {
+          "name": "task_name",
+          "label": "Environment Scenarios",
+          "type": "Literal['Easy', 'Medium', 'Hard', 'Very_hard', 'Nightmare']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_25",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "value_21",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "value_17",
+          "type": "str",
+          "component": "Html"
+        }
+      ]
+    },
+    {
+      "name": "/ui_step",
+      "parameters": [
+        {
+          "name": "current_log",
+          "label": "parameter_25",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "task_name",
+          "label": "Environment Scenarios",
+          "type": "Literal['Easy', 'Medium', 'Hard', 'Very_hard', 'Nightmare']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_25",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "value_21",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "value_17",
+          "type": "str",
+          "component": "Html"
+        }
+      ]
+    },
+    {
+      "name": "/ui_get_state",
+      "parameters": [
+        {
+          "name": "current_log",
+          "label": "parameter_25",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_25",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/lambda",
+  "_api_verified": true
+}

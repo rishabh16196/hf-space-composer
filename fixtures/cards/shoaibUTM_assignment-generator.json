@@ -1,0 +1,194 @@
+{
+  "space_id": "shoaibUTM/assignment-generator",
+  "title": "Assignment Generator",
+  "emoji": "\ud83d\udcc9",
+  "description": "Assignment Generator",
+  "input_schema": {
+    "username": {
+      "type": "str",
+      "description": "Username",
+      "required": true,
+      "component": "Textbox"
+    },
+    "password": {
+      "type": "str",
+      "description": "Password",
+      "required": true,
+      "component": "Textbox"
+    }
+  },
+  "output_schema": {
+    "value_22": {
+      "type": "str",
+      "description": "value_22",
+      "component": "Markdown"
+    }
+  },
+  "license": "unknown",
+  "hardware": "6.12.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 2,
+  "last_modified": "2026-04-17 04:51:30+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_tags_enriched": true,
+  "estimated_latency_s": 3.0,
+  "speed_tier": "fast",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/handle_login",
+      "parameters": [
+        {
+          "name": "username",
+          "label": "Username",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "password",
+          "label": "Password",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_22",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/handle_signup",
+      "parameters": [
+        {
+          "name": "username",
+          "label": "Username",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "email",
+          "label": "Email",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "password",
+          "label": "Password",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_19",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/handle_logout",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/extract_and_store",
+      "parameters": [
+        {
+          "name": "pdf_file",
+          "label": "parameter_26",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "name": "title",
+          "label": "Assignment Title",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "description",
+          "label": "Assignment Description",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "tools",
+          "label": "Tools Required (comma separated)",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_33",
+          "type": "str | float | bool | list | dict",
+          "component": "Json"
+        }
+      ]
+    },
+    {
+      "name": "/lambda",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/generate_and_store_rubric",
+      "parameters": [
+        {
+          "name": "model_name",
+          "label": "Select Rubric Model",
+          "type": "Literal['Qwen', 'Yi', 'Olmo', 'Llama']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_39",
+          "type": "str | float | bool | list | dict",
+          "component": "Json"
+        }
+      ]
+    },
+    {
+      "name": "/rubric_json_to_table_and_excel",
+      "parameters": [
+        {
+          "name": "max_marks",
+          "label": "Maximum Marks for Assignment",
+          "type": "float",
+          "component": "Number"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_41",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_43",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_45",
+          "type": "filepath",
+          "component": "File"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/handle_login",
+  "_api_verified": true
+}

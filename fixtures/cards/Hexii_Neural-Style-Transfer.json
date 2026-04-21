@@ -1,0 +1,107 @@
+{
+  "space_id": "Hexii/Neural-Style-Transfer",
+  "title": "Neural Style Transfer",
+  "emoji": "\ud83d\udcda",
+  "description": "Neural Style Transfer",
+  "input_schema": {
+    "content_img": {
+      "type": "filepath",
+      "description": "Upload an image to which you want the style to be applied.",
+      "required": true,
+      "component": "Image"
+    },
+    "style_image": {
+      "type": "filepath",
+      "description": "Upload Style Image",
+      "required": true,
+      "component": "Image"
+    },
+    "style_weight": {
+      "type": "float",
+      "description": "Adjust Style Density",
+      "required": true,
+      "component": "Slider"
+    },
+    "content_weight": {
+      "type": "float",
+      "description": "Content Sharpness",
+      "required": true,
+      "component": "Slider"
+    },
+    "style_blur": {
+      "type": "bool",
+      "description": "Tune Style (experimental)",
+      "required": true,
+      "component": "Checkbox"
+    }
+  },
+  "output_schema": {
+    "output": {
+      "type": "filepath",
+      "description": "output",
+      "component": "Image"
+    }
+  },
+  "license": "mit",
+  "hardware": "4.41.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 29,
+  "last_modified": "2024-08-17 09:44:35+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/predict",
+      "parameters": [
+        {
+          "name": "content_img",
+          "label": "Upload an image to which you want the style to be applied.",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "name": "style_image",
+          "label": "Upload Style Image",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "name": "style_weight",
+          "label": "Adjust Style Density",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "content_weight",
+          "label": "Content Sharpness",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "style_blur",
+          "label": "Tune Style (experimental)",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "output",
+          "type": "filepath",
+          "component": "Image"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/predict",
+  "_api_verified": true
+}

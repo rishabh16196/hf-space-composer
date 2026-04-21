@@ -1,0 +1,386 @@
+{
+  "space_id": "phxdev/Creed-Thoughts",
+  "title": "Www.creedthoughts.gov.wwwcreedthoughts",
+  "emoji": "\ud83d\udcac",
+  "description": "Www.creedthoughts.gov.wwwcreedthoughts",
+  "input_schema": {
+    "message": {
+      "type": "str",
+      "description": "parameter_8",
+      "required": true,
+      "component": "Textbox"
+    },
+    "history": {
+      "type": "list[dict(role: str, metadata: dict(title: str, id: int | str, parent_id: int | str, log: str, durat",
+      "description": "parameter_5",
+      "required": true,
+      "component": "Chatbot"
+    }
+  },
+  "output_schema": {
+    "value_8": {
+      "type": "str",
+      "description": "value_8",
+      "component": "Textbox"
+    },
+    "value_5": {
+      "type": "list[dict(role: str, metadata: dict(title: str, id: int | str, parent_id: int | str, log: str, durat",
+      "description": "value_5",
+      "component": "Chatbot"
+    }
+  },
+  "license": "unknown",
+  "hardware": "5.34.2",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "mcp-server",
+    "region:us"
+  ],
+  "likes": 2,
+  "last_modified": "2025-06-23 14:28:14+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/handle_user_interaction",
+      "parameters": [
+        {
+          "name": "message",
+          "label": "parameter_8",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "history",
+          "label": "parameter_5",
+          "type": "list[dict(role: str, metadata: dict(title: str, id: int | str, parent_id: int | str, log: str, duration: float, status: Literal['pending', 'done']) | None, content: str | dict(file: filepath, alt_text",
+          "component": "Chatbot"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_8",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "value_5",
+          "type": "list[dict(role: str, metadata: dict(title: str, id: int | str, parent_id: int | str, log: str, duration: float, status: Literal['pending', 'done']) | None, content: str | dict(file: filepath, alt_text",
+          "component": "Chatbot"
+        }
+      ]
+    },
+    {
+      "name": "/handle_user_interaction_1",
+      "parameters": [
+        {
+          "name": "message",
+          "label": "parameter_8",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "history",
+          "label": "parameter_5",
+          "type": "list[dict(role: str, metadata: dict(title: str, id: int | str, parent_id: int | str, log: str, duration: float, status: Literal['pending', 'done']) | None, content: str | dict(file: filepath, alt_text",
+          "component": "Chatbot"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_8",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "value_5",
+          "type": "list[dict(role: str, metadata: dict(title: str, id: int | str, parent_id: int | str, log: str, duration: float, status: Literal['pending', 'done']) | None, content: str | dict(file: filepath, alt_text",
+          "component": "Chatbot"
+        }
+      ]
+    },
+    {
+      "name": "/lambda",
+      "parameters": [
+        {
+          "name": "name",
+          "label": "Character Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "system",
+          "label": "Target AI System",
+          "type": "Literal['OpenAI', 'Anthropic', 'Local Model', 'Custom AI']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Character Activation Protocol",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_1",
+      "parameters": [
+        {
+          "name": "name",
+          "label": "Character Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "facts",
+          "label": "Character Memory Facts",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Memory Management Protocol",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_2",
+      "parameters": [
+        {
+          "name": "name",
+          "label": "Character Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "intensity",
+          "label": "Character Intensity",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "context",
+          "label": "Context",
+          "type": "Literal['professional', 'technical', 'creative', 'customer_service']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "system",
+          "label": "Target AI System",
+          "type": "Literal['OpenAI', 'Anthropic', 'Local Model', 'Custom AI']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Intensity Control Protocol",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_3",
+      "parameters": [
+        {
+          "name": "reason",
+          "label": "Break Reason",
+          "type": "Literal['clarification', 'safety', 'technical', 'professional']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "system",
+          "label": "Target AI System",
+          "type": "Literal['OpenAI', 'Anthropic', 'Local Model', 'Custom AI']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Break Protocol",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_4",
+      "parameters": [
+        {
+          "name": "name",
+          "label": "Character Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "sample",
+          "label": "Speech Sample for Analysis",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "system",
+          "label": "Target AI System",
+          "type": "Literal['OpenAI', 'Anthropic', 'Local Model', 'Custom AI']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Speech Pattern Analysis",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_5",
+      "parameters": [
+        {
+          "name": "name",
+          "label": "Character Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "topic",
+          "label": "Knowledge Topic",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "system",
+          "label": "Target AI System",
+          "type": "Literal['OpenAI', 'Anthropic', 'Local Model', 'Custom AI']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Knowledge Mapping",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_6",
+      "parameters": [
+        {
+          "name": "name",
+          "label": "Character Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "text",
+          "label": "Response to Validate",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "system",
+          "label": "Target AI System",
+          "type": "Literal['OpenAI', 'Anthropic', 'Local Model', 'Custom AI']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Consistency Validation",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_7",
+      "parameters": [
+        {
+          "name": "trait",
+          "label": "Character Trait",
+          "type": "Literal['curious', 'skeptical', 'creative', 'methodical']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "capability",
+          "label": "AI Capability",
+          "type": "Literal['analysis', 'research', 'problem_solving', 'planning']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "system",
+          "label": "Target AI System",
+          "type": "Literal['OpenAI', 'Anthropic', 'Local Model', 'Custom AI']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Character-AI Adaptation",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_8",
+      "parameters": [
+        {
+          "name": "primary",
+          "label": "Primary Character",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "secondary",
+          "label": "Secondary Traits",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "ratio",
+          "label": "Primary/Secondary Ratio",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "system",
+          "label": "Target AI System",
+          "type": "Literal['OpenAI', 'Anthropic', 'Local Model', 'Custom AI']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Character Blending Protocol",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_9",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Character Analytics",
+          "type": "str | float | bool | list | dict",
+          "component": "Json"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/handle_user_interaction",
+  "_api_verified": true
+}

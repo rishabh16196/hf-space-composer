@@ -1,0 +1,93 @@
+{
+  "space_id": "z-uo/LETR",
+  "title": "LETR (Line Segment Detection)",
+  "emoji": "\ud83d\udc41",
+  "description": "LETR (Line Segment Detection)",
+  "input_schema": {
+    "inp": {
+      "type": "str",
+      "description": "inp",
+      "required": true,
+      "component": "Image"
+    },
+    "size": {
+      "type": "str",
+      "description": "size",
+      "required": true,
+      "component": "Radio"
+    },
+    "model_name": {
+      "type": "str",
+      "description": "model_name",
+      "required": true,
+      "component": "Radio"
+    }
+  },
+  "output_schema": {
+    "Image with Lines": {
+      "type": "str",
+      "description": "Image with Lines",
+      "component": "Image"
+    },
+    "Lines points List": {
+      "type": "str",
+      "description": "Lines points List",
+      "component": "Textbox"
+    }
+  },
+  "license": "unknown",
+  "hardware": "3.9.1",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 2,
+  "last_modified": "2024-01-20 21:51:27+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/predict",
+      "parameters": [
+        {
+          "name": "inp",
+          "label": "inp",
+          "type": "str",
+          "component": "Image"
+        },
+        {
+          "name": "size",
+          "label": "size",
+          "type": "str",
+          "component": "Radio"
+        },
+        {
+          "name": "model_name",
+          "label": "model_name",
+          "type": "str",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Image with Lines",
+          "type": "str",
+          "component": "Image"
+        },
+        {
+          "label": "Lines points List",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/predict",
+  "_api_verified": true
+}

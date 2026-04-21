@@ -1,0 +1,119 @@
+{
+  "space_id": "cpuai/LongCat-Video-Avatar",
+  "title": "LongCat Video Avatar",
+  "emoji": "\ud83c\udf16",
+  "description": "LongCat-Video-Avatar",
+  "input_schema": {},
+  "output_schema": {
+    "\u51c6\u5907\u72b6\u6001": {
+      "type": "str",
+      "description": "\u51c6\u5907\u72b6\u6001",
+      "component": "Textbox"
+    }
+  },
+  "license": "unknown",
+  "hardware": "6.1.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 24,
+  "last_modified": "2025-12-17 00:52:44+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/ui_prepare",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "\u51c6\u5907\u72b6\u6001",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/run",
+      "parameters": [
+        {
+          "name": "mode_v",
+          "label": "\u6a21\u5f0f",
+          "type": "Literal['at2v', 'ai2v']",
+          "component": "Radio"
+        },
+        {
+          "name": "audio_fp",
+          "label": "\u8f93\u5165\u97f3\u9891\uff08wav/mp3\u7b49\uff09",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "name": "prompt_v",
+          "label": "Prompt\uff08\u5efa\u8bae\u5305\u542b talking/speaking \u7b49\u52a8\u4f5c\u8bcd\uff09",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "img_fp",
+          "label": "\u53c2\u8003\u56fe\uff08\u4ec5 AI2V \u9700\u8981\uff09",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "seed_v",
+          "label": "Seed",
+          "type": "int",
+          "component": "Number"
+        },
+        {
+          "name": "res_v",
+          "label": "\u5206\u8fa8\u7387",
+          "type": "Literal['480P', '720P']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "seg_v",
+          "label": "num_segments\uff08>1 \u542f\u7528\u7eed\u5199\uff09",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "idx_v",
+          "label": "ref_img_index\uff08\u9ed8\u8ba4 10\uff09",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "mask_v",
+          "label": "mask_frame_range\uff08\u9ed8\u8ba4 3\uff09",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "\u8f93\u51fa\u89c6\u9891\uff08mp4\uff09",
+          "type": "filepath",
+          "component": "Video"
+        },
+        {
+          "label": "\u8fd0\u884c\u65e5\u5fd7",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/ui_prepare",
+  "_api_verified": true,
+  "estimated_latency_s": 2.88,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 2.88,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:50:27.282272+00:00"
+}

@@ -1,0 +1,457 @@
+{
+  "space_id": "AIEnergyScore/Leaderboard",
+  "title": "AI Energy Score Leaderboard",
+  "emoji": "\ud83c\udf1f",
+  "description": "AI Energy Score Leaderboard",
+  "input_schema": {
+    "selected_display": {
+      "type": "Literal['A (Single Consumer GPU) <20B parameters', 'B (Single Cloud GPU) 20-66B parameters', 'C (Mul",
+      "description": "Select Model Class",
+      "required": true,
+      "component": "Dropdown"
+    },
+    "sort_order": {
+      "type": "Literal['Low to High', 'High to Low']",
+      "description": "Sort",
+      "required": true,
+      "component": "Dropdown"
+    },
+    "selected_dates": {
+      "type": "list[Literal['Dec 25', 'Feb 25']]",
+      "description": "Test Date",
+      "required": true,
+      "component": "Dropdown"
+    }
+  },
+  "output_schema": {
+    "value_16": {
+      "type": "str",
+      "description": "value_16",
+      "component": "Html"
+    },
+    "value_17": {
+      "type": "str",
+      "description": "value_17",
+      "component": "Html"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "5.15.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us",
+    "benchmark",
+    "leaderboard"
+  ],
+  "likes": 78,
+  "last_modified": "2025-12-18 19:46:39+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/update_text_generation",
+      "parameters": [
+        {
+          "name": "selected_display",
+          "label": "Select Model Class",
+          "type": "Literal['A (Single Consumer GPU) <20B parameters', 'B (Single Cloud GPU) 20-66B parameters', 'C (Multiple Cloud GPUs) >66B parameters']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "sort_order",
+          "label": "Sort",
+          "type": "Literal['Low to High', 'High to Low']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "selected_dates",
+          "label": "Test Date",
+          "type": "list[Literal['Dec 25', 'Feb 25']]",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_16",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "value_17",
+          "type": "str",
+          "component": "Html"
+        }
+      ]
+    },
+    {
+      "name": "/update_text_generation_1",
+      "parameters": [
+        {
+          "name": "selected_display",
+          "label": "Select Model Class",
+          "type": "Literal['A (Single Consumer GPU) <20B parameters', 'B (Single Cloud GPU) 20-66B parameters', 'C (Multiple Cloud GPUs) >66B parameters']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "sort_order",
+          "label": "Sort",
+          "type": "Literal['Low to High', 'High to Low']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "selected_dates",
+          "label": "Test Date",
+          "type": "list[Literal['Dec 25', 'Feb 25']]",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_16",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "value_17",
+          "type": "str",
+          "component": "Html"
+        }
+      ]
+    },
+    {
+      "name": "/update_text_generation_2",
+      "parameters": [
+        {
+          "name": "selected_display",
+          "label": "Select Model Class",
+          "type": "Literal['A (Single Consumer GPU) <20B parameters', 'B (Single Cloud GPU) 20-66B parameters', 'C (Multiple Cloud GPUs) >66B parameters']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "sort_order",
+          "label": "Sort",
+          "type": "Literal['Low to High', 'High to Low']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "selected_dates",
+          "label": "Test Date",
+          "type": "list[Literal['Dec 25', 'Feb 25']]",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_16",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "value_17",
+          "type": "str",
+          "component": "Html"
+        }
+      ]
+    },
+    {
+      "name": "/update_reasoning",
+      "parameters": [
+        {
+          "name": "selected_display",
+          "label": "Select Model Class",
+          "type": "Literal['A (Single Consumer GPU) <20B parameters', 'B (Single Cloud GPU) 20-66B parameters', 'C (Multiple Cloud GPUs) >66B parameters']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "sort_order",
+          "label": "Sort",
+          "type": "Literal['Low to High', 'High to Low']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_27",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "value_28",
+          "type": "str",
+          "component": "Html"
+        }
+      ]
+    },
+    {
+      "name": "/update_reasoning_1",
+      "parameters": [
+        {
+          "name": "selected_display",
+          "label": "Select Model Class",
+          "type": "Literal['A (Single Consumer GPU) <20B parameters', 'B (Single Cloud GPU) 20-66B parameters', 'C (Multiple Cloud GPUs) >66B parameters']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "sort_order",
+          "label": "Sort",
+          "type": "Literal['Low to High', 'High to Low']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_27",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "value_28",
+          "type": "str",
+          "component": "Html"
+        }
+      ]
+    },
+    {
+      "name": "/update_image_generation",
+      "parameters": [
+        {
+          "name": "sort_order",
+          "label": "Sort",
+          "type": "Literal['Low to High', 'High to Low']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_35",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "value_36",
+          "type": "str",
+          "component": "Html"
+        }
+      ]
+    },
+    {
+      "name": "/update_text_classification",
+      "parameters": [
+        {
+          "name": "sort_order",
+          "label": "Sort",
+          "type": "Literal['Low to High', 'High to Low']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_43",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "value_44",
+          "type": "str",
+          "component": "Html"
+        }
+      ]
+    },
+    {
+      "name": "/update_image_classification",
+      "parameters": [
+        {
+          "name": "sort_order",
+          "label": "Sort",
+          "type": "Literal['Low to High', 'High to Low']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_51",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "value_52",
+          "type": "str",
+          "component": "Html"
+        }
+      ]
+    },
+    {
+      "name": "/update_image_captioning",
+      "parameters": [
+        {
+          "name": "sort_order",
+          "label": "Sort",
+          "type": "Literal['Low to High', 'High to Low']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_59",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "value_60",
+          "type": "str",
+          "component": "Html"
+        }
+      ]
+    },
+    {
+      "name": "/update_summarization",
+      "parameters": [
+        {
+          "name": "sort_order",
+          "label": "Sort",
+          "type": "Literal['Low to High', 'High to Low']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_67",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "value_68",
+          "type": "str",
+          "component": "Html"
+        }
+      ]
+    },
+    {
+      "name": "/update_asr",
+      "parameters": [
+        {
+          "name": "sort_order",
+          "label": "Sort",
+          "type": "Literal['Low to High', 'High to Low']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_75",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "value_76",
+          "type": "str",
+          "component": "Html"
+        }
+      ]
+    },
+    {
+      "name": "/update_object_detection",
+      "parameters": [
+        {
+          "name": "sort_order",
+          "label": "Sort",
+          "type": "Literal['Low to High', 'High to Low']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_83",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "value_84",
+          "type": "str",
+          "component": "Html"
+        }
+      ]
+    },
+    {
+      "name": "/update_sentence_similarity",
+      "parameters": [
+        {
+          "name": "sort_order",
+          "label": "Sort",
+          "type": "Literal['Low to High', 'High to Low']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_91",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "value_92",
+          "type": "str",
+          "component": "Html"
+        }
+      ]
+    },
+    {
+      "name": "/update_extractive_qa",
+      "parameters": [
+        {
+          "name": "sort_order",
+          "label": "Sort",
+          "type": "Literal['Low to High', 'High to Low']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_99",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "value_100",
+          "type": "str",
+          "component": "Html"
+        }
+      ]
+    },
+    {
+      "name": "/update_all_tasks",
+      "parameters": [
+        {
+          "name": "sort_order",
+          "label": "Sort",
+          "type": "Literal['Low to High', 'High to Low']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_107",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "value_108",
+          "type": "str",
+          "component": "Html"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/update_text_generation",
+  "_api_verified": true,
+  "estimated_latency_s": 5.11,
+  "speed_tier": "medium",
+  "_latency_source": "measured",
+  "_tags_enriched": true,
+  "measured_latency_s": 5.11,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:49:03.804678+00:00"
+}

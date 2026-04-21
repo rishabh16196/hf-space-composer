@@ -1,0 +1,38 @@
+{
+  "space_id": "jho/MonocularDepth",
+  "title": "Monocular Depth",
+  "emoji": "\ud83d\udd25",
+  "description": "Monocular Depth",
+  "input_schema": {
+    "input": {
+      "type": "string",
+      "description": "Input",
+      "required": true
+    }
+  },
+  "output_schema": {
+    "output": {
+      "type": "string"
+    }
+  },
+  "license": "unknown",
+  "hardware": "1.2.0",
+  "sdk": "streamlit",
+  "tags": [
+    "streamlit",
+    "region:us",
+    "depth-estimation",
+    "vision"
+  ],
+  "likes": 9,
+  "last_modified": "2023-03-01 04:38:55+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "sleeping",
+  "_api_error": "Space is in RUNTIME_ERROR state",
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_tags_enriched": true
+}

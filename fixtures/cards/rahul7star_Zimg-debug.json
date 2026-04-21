@@ -1,0 +1,157 @@
+{
+  "space_id": "rahul7star/Zimg-debug",
+  "title": "Zimage LORA",
+  "emoji": "\ud83d\udcca",
+  "description": "Lora1.py is base and 4 bit",
+  "input_schema": {
+    "repo": {
+      "type": "str",
+      "description": "LoRA Repository",
+      "required": true,
+      "component": "Textbox"
+    }
+  },
+  "output_schema": {
+    "LoRA File": {
+      "type": "Literal[]",
+      "description": "LoRA File",
+      "component": "Dropdown"
+    }
+  },
+  "license": "unknown",
+  "hardware": "6.1.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 6,
+  "last_modified": "2026-03-04 01:42:53+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/refresh_loras",
+      "parameters": [
+        {
+          "name": "repo",
+          "label": "LoRA Repository",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "LoRA File",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/select_lora",
+      "parameters": [
+        {
+          "name": "lora_file",
+          "label": "LoRA File",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "repo",
+          "label": "LoRA Repository",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Logs",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/clear_lora",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "LoRA File",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Logs",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/generate_image",
+      "parameters": [
+        {
+          "name": "prompt",
+          "label": "Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "height",
+          "label": "Height",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "width",
+          "label": "Width",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "steps",
+          "label": "Steps",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "seed",
+          "label": "Seed",
+          "type": "int",
+          "component": "Number"
+        },
+        {
+          "name": "guidance_scale",
+          "label": "Guidance",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Final Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "Generation Steps",
+          "type": "list[dict(image: dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Origi",
+          "component": "Gallery"
+        },
+        {
+          "label": "Logs",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/refresh_loras",
+  "_api_verified": true
+}

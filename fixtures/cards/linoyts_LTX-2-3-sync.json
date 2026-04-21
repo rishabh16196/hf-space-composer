@@ -1,0 +1,260 @@
+{
+  "space_id": "linoyts/LTX-2-3-sync",
+  "title": "LTX 2.3 Sync",
+  "emoji": "\ud83d\udd7a",
+  "description": "Portrait animation & lipsync with LTX 2.3",
+  "input_schema": {
+    "image": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "Character reference",
+      "required": true,
+      "component": "Image"
+    },
+    "video": {
+      "type": "filepath",
+      "description": "Motion & audio reference",
+      "required": true,
+      "component": "Video"
+    },
+    "high_res": {
+      "type": "bool",
+      "description": "High Resolution (2\u00d7)",
+      "required": true,
+      "component": "Checkbox"
+    }
+  },
+  "output_schema": {
+    "Width": {
+      "type": "int",
+      "description": "Width",
+      "component": "Number"
+    },
+    "Height": {
+      "type": "int",
+      "description": "Height",
+      "component": "Number"
+    }
+  },
+  "license": "unknown",
+  "hardware": "6.9.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 127,
+  "last_modified": "2026-04-17 14:07:23+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/on_image_upload",
+      "parameters": [
+        {
+          "name": "image",
+          "label": "Character reference",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "video",
+          "label": "Motion & audio reference",
+          "type": "filepath",
+          "component": "Video"
+        },
+        {
+          "name": "high_res",
+          "label": "High Resolution (2\u00d7)",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Width",
+          "type": "int",
+          "component": "Number"
+        },
+        {
+          "label": "Height",
+          "type": "int",
+          "component": "Number"
+        }
+      ]
+    },
+    {
+      "name": "/on_video_upload",
+      "parameters": [
+        {
+          "name": "video",
+          "label": "Motion & audio reference",
+          "type": "filepath",
+          "component": "Video"
+        },
+        {
+          "name": "image",
+          "label": "Character reference",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "high_res",
+          "label": "High Resolution (2\u00d7)",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Width",
+          "type": "int",
+          "component": "Number"
+        },
+        {
+          "label": "Height",
+          "type": "int",
+          "component": "Number"
+        },
+        {
+          "label": "Duration (s)",
+          "type": "float",
+          "component": "Slider"
+        }
+      ]
+    },
+    {
+      "name": "/on_highres_toggle",
+      "parameters": [
+        {
+          "name": "image",
+          "label": "Character reference",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "video",
+          "label": "Motion & audio reference",
+          "type": "filepath",
+          "component": "Video"
+        },
+        {
+          "name": "high_res",
+          "label": "High Resolution (2\u00d7)",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Width",
+          "type": "int",
+          "component": "Number"
+        },
+        {
+          "label": "Height",
+          "type": "int",
+          "component": "Number"
+        }
+      ]
+    },
+    {
+      "name": "/generate_video",
+      "parameters": [
+        {
+          "name": "input_image",
+          "label": "Character reference",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "input_video",
+          "label": "Motion & audio reference",
+          "type": "filepath",
+          "component": "Video"
+        },
+        {
+          "name": "prompt",
+          "label": "Prompt (optional)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "duration",
+          "label": "Duration (s)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "conditioning_strength",
+          "label": "V2V Conditioning Strength",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "enhance_prompt",
+          "label": "Enhance Prompt",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "use_video_audio",
+          "label": "Use Audio from Video",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "seed",
+          "label": "Seed",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "randomize_seed",
+          "label": "Randomize Seed",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "height",
+          "label": "Height",
+          "type": "int",
+          "component": "Number"
+        },
+        {
+          "name": "width",
+          "label": "Width",
+          "type": "int",
+          "component": "Number"
+        },
+        {
+          "name": "input_audio",
+          "label": "Override Audio (optional \u2014 replaces video audio)",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Result",
+          "type": "filepath",
+          "component": "Video"
+        },
+        {
+          "label": "Seed",
+          "type": "float",
+          "component": "Slider"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/on_image_upload",
+  "_api_verified": true,
+  "estimated_latency_s": 4.43,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 4.43,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:51:10.061252+00:00"
+}

@@ -1,0 +1,295 @@
+{
+  "space_id": "alexnasa/OmniAvatar",
+  "title": "OmniAvatar",
+  "emoji": "\ud83d\udc28",
+  "description": "Generate podcast and tiktok style video avatars",
+  "input_schema": {},
+  "output_schema": {},
+  "license": "unknown",
+  "hardware": "5.36.2",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 282,
+  "last_modified": "2025-12-24 12:37:48+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/start_session",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/infer_scene",
+      "parameters": [
+        {
+          "name": "image_path",
+          "label": "Reference Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Extendedimage"
+        },
+        {
+          "name": "audio_path",
+          "label": "Input Audio",
+          "type": "filepath",
+          "component": "Extendedaudio"
+        },
+        {
+          "name": "text",
+          "label": "parameter_18",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "num_steps",
+          "label": "Steps",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Avatar",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        }
+      ]
+    },
+    {
+      "name": "/speak_to_me",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Input Audio",
+          "type": "filepath",
+          "component": "Extendedaudio"
+        }
+      ]
+    },
+    {
+      "name": "/orientation_changed",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/preprocess_img",
+      "parameters": [
+        {
+          "name": "input_image_path",
+          "label": "Reference Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Extendedimage"
+        },
+        {
+          "name": "raw_image_path",
+          "label": "",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Reference Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Extendedimage"
+        },
+        {
+          "label": "",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/clear_raw_image",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/preprocess_img_1",
+      "parameters": [
+        {
+          "name": "input_image_path",
+          "label": "Reference Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Extendedimage"
+        },
+        {
+          "name": "raw_image_path",
+          "label": "",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Reference Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Extendedimage"
+        },
+        {
+          "label": "",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/update_generate_button",
+      "parameters": [
+        {
+          "name": "image_path",
+          "label": "Reference Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Extendedimage"
+        },
+        {
+          "name": "audio_path",
+          "label": "Input Audio",
+          "type": "filepath",
+          "component": "Extendedaudio"
+        },
+        {
+          "name": "text",
+          "label": "parameter_18",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "num_steps",
+          "label": "Steps",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_12",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/update_generate_button_1",
+      "parameters": [
+        {
+          "name": "image_path",
+          "label": "Reference Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Extendedimage"
+        },
+        {
+          "name": "audio_path",
+          "label": "Input Audio",
+          "type": "filepath",
+          "component": "Extendedaudio"
+        },
+        {
+          "name": "text",
+          "label": "parameter_18",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "num_steps",
+          "label": "Steps",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_12",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/slider_value_change",
+      "parameters": [
+        {
+          "name": "image_path",
+          "label": "Reference Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Extendedimage"
+        },
+        {
+          "name": "audio_path",
+          "label": "Input Audio",
+          "type": "filepath",
+          "component": "Extendedaudio"
+        },
+        {
+          "name": "text",
+          "label": "parameter_18",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "num_steps",
+          "label": "Steps",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "adaptive_text",
+          "label": "Adaptive Video Prompt",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_12",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "value_18",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/check_box_clicked",
+      "parameters": [
+        {
+          "name": "adapative_tick",
+          "label": "Adaptive Video Prompt",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_18",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/start_session",
+  "_api_verified": true,
+  "estimated_latency_s": 3.62,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "_tags_enriched": true,
+  "measured_latency_s": 3.62,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:50:11.878480+00:00"
+}

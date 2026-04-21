@@ -1,0 +1,38 @@
+[build-system]
+requires = ["setuptools>=45", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "openenv-spaces_pipeline_env"
+version = "0.1.0"
+description = "Spaces Pipeline Pro: RL environment for orchestrating HuggingFace Spaces under multi-actor oversight"
+requires-python = ">=3.10"
+dependencies = [
+    # Core OpenEnv runtime
+    "openenv-core[core]>=0.2.2",
+    # HuggingFace Hub for Space discovery + metadata
+    "huggingface_hub>=0.26.0",
+    # Gradio client for invoking live Spaces
+    "gradio_client>=1.4.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0.0",
+    "pytest-cov>=4.0.0",
+]
+training = [
+    "trl>=0.13.0",
+    "unsloth",
+    "transformers>=4.46.0",
+    "datasets>=3.0.0",
+    "torch>=2.4.0",
+]
+
+[project.scripts]
+server = "spaces_pipeline_env.server.app:main"
+
+[tool.setuptools]
+include-package-data = true
+packages = ["spaces_pipeline_env", "spaces_pipeline_env.server"]
+package-dir = { "spaces_pipeline_env" = ".", "spaces_pipeline_env.server" = "server" }

@@ -1,0 +1,97 @@
+{
+  "space_id": "tonyassi/deep-fake-video",
+  "title": "Deep Fake Video",
+  "emoji": "\ud83d\udc71\ud83c\udffb\u200d\u2640\ufe0f",
+  "description": "Deep Fake Video Generator",
+  "input_schema": {},
+  "output_schema": {},
+  "license": "unknown",
+  "hardware": "6.9.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 57,
+  "last_modified": "2026-04-17 02:01:48+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/open_side",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/generate",
+      "parameters": [
+        {
+          "name": "input_image",
+          "label": "Source Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "input_video",
+          "label": "Target Video",
+          "type": "filepath",
+          "component": "Video"
+        },
+        {
+          "name": "gender",
+          "label": "Gender",
+          "type": "Literal['all', 'female', 'male']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Result",
+          "type": "filepath",
+          "component": "Video"
+        }
+      ]
+    },
+    {
+      "name": "/generate_1",
+      "parameters": [
+        {
+          "name": "input_image",
+          "label": "Source Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "input_video",
+          "label": "Target Video",
+          "type": "filepath",
+          "component": "Video"
+        },
+        {
+          "name": "gender",
+          "label": "Gender",
+          "type": "Literal['all', 'female', 'male']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Result",
+          "type": "filepath",
+          "component": "Video"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/open_side",
+  "_api_verified": true,
+  "estimated_latency_s": 4.52,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "_tags_enriched": true,
+  "measured_latency_s": 4.52,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:51:58.197669+00:00"
+}

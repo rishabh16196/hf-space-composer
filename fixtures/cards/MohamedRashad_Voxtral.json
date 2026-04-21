@@ -1,0 +1,101 @@
+{
+  "space_id": "MohamedRashad/Voxtral",
+  "title": "Voxtral",
+  "emoji": "\ud83d\udde3\ufe0f",
+  "description": "Demo space for Mistral latest speech models",
+  "input_schema": {
+    "audio_path": {
+      "type": "filepath",
+      "description": "Upload Audio",
+      "required": true,
+      "component": "Audio"
+    },
+    "model_name": {
+      "type": "Literal['Voxtral Mini (3B)', 'Voxtral Small (24B)']",
+      "description": "Select Model",
+      "required": true,
+      "component": "Dropdown"
+    },
+    "lang_name": {
+      "type": "Literal['English', 'French', 'German', 'Spanish', 'Italian', 'Portuguese', 'Dutch', 'Russian', 'Chin",
+      "description": "Language",
+      "required": true,
+      "component": "Dropdown"
+    },
+    "max_tokens": {
+      "type": "float",
+      "description": "Max Output Tokens",
+      "required": true,
+      "component": "Slider"
+    }
+  },
+  "output_schema": {
+    "Generated Response": {
+      "type": "str",
+      "description": "Generated Response",
+      "component": "Textbox"
+    }
+  },
+  "license": "unknown",
+  "hardware": "5.38.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "mcp-server",
+    "region:us",
+    "audio"
+  ],
+  "likes": 52,
+  "last_modified": "2026-04-05 11:37:23+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/process_audio",
+      "parameters": [
+        {
+          "name": "audio_path",
+          "label": "Upload Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "name": "model_name",
+          "label": "Select Model",
+          "type": "Literal['Voxtral Mini (3B)', 'Voxtral Small (24B)']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "lang_name",
+          "label": "Language",
+          "type": "Literal['English', 'French', 'German', 'Spanish', 'Italian', 'Portuguese', 'Dutch', 'Russian', 'Chinese', 'Japanese', 'Arabic']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "max_tokens",
+          "label": "Max Output Tokens",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Generated Response",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/process_audio",
+  "_api_verified": true,
+  "estimated_latency_s": 2.92,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "_tags_enriched": true,
+  "measured_latency_s": 2.92,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:49:37.978282+00:00"
+}

@@ -1,0 +1,119 @@
+{
+  "space_id": "neuromod0/MeloTTS-English-v3",
+  "title": "MeloTTS",
+  "emoji": "\ud83d\udde3\ufe0f",
+  "description": "Fast, efficient, & multilingual text-to-speech",
+  "input_schema": {
+    "language": {
+      "type": "Literal['EN', 'ES', 'FR', 'ZH', 'JP', 'KR']",
+      "description": "Language",
+      "required": true,
+      "component": "Radio"
+    },
+    "text": {
+      "type": "str",
+      "description": "Text to speak",
+      "required": true,
+      "component": "Textbox"
+    }
+  },
+  "output_schema": {
+    "Speaker": {
+      "type": "Literal['EN-US', 'EN-BR', 'EN_INDIA', 'EN-AU', 'EN-Default']",
+      "description": "Speaker",
+      "component": "Dropdown"
+    },
+    "Text to speak": {
+      "type": "str",
+      "description": "Text to speak",
+      "component": "Textbox"
+    }
+  },
+  "license": "mit",
+  "hardware": "4.42.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us",
+    "audio"
+  ],
+  "likes": 6,
+  "last_modified": "2024-08-30 15:39:44+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_tags_enriched": true,
+  "estimated_latency_s": 4.0,
+  "speed_tier": "fast",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/load_speakers",
+      "parameters": [
+        {
+          "name": "language",
+          "label": "Language",
+          "type": "Literal['EN', 'ES', 'FR', 'ZH', 'JP', 'KR']",
+          "component": "Radio"
+        },
+        {
+          "name": "text",
+          "label": "Text to speak",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Speaker",
+          "type": "Literal['EN-US', 'EN-BR', 'EN_INDIA', 'EN-AU', 'EN-Default']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Text to speak",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/synthesize",
+      "parameters": [
+        {
+          "name": "text",
+          "label": "Text to speak",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "speaker",
+          "label": "Speaker",
+          "type": "Literal['EN-US', 'EN-BR', 'EN_INDIA', 'EN-AU', 'EN-Default']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "speed",
+          "label": "Speed",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "language",
+          "label": "Language",
+          "type": "Literal['EN', 'ES', 'FR', 'ZH', 'JP', 'KR']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_9",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/load_speakers",
+  "_api_verified": true
+}

@@ -1,0 +1,186 @@
+{
+  "space_id": "multimodalart/kugelaudio",
+  "title": "Kugel Audio",
+  "emoji": "\ud83d\udc40",
+  "description": "Kugel Audio",
+  "input_schema": {
+    "language": {
+      "type": "Literal['English \ud83c\uddfa\ud83c\uddf8', 'German \ud83c\udde9\ud83c\uddea', 'French \ud83c\uddeb\ud83c\uddf7', 'Spanish \ud83c\uddea\ud83c\uddf8', 'Italian \ud83c\uddee\ud83c\uddf9', 'Portuguese \ud83c\udde7\ud83c\uddf7\ud83c\uddf5\ud83c\uddf9', 'Dutc",
+      "description": "Language",
+      "required": true,
+      "component": "Dropdown"
+    }
+  },
+  "output_schema": {
+    "Text to Synthesize": {
+      "type": "str",
+      "description": "Text to Synthesize",
+      "component": "Textbox"
+    }
+  },
+  "license": "unknown",
+  "hardware": "6.5.1",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 90,
+  "last_modified": "2026-02-05 21:30:44+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/fill_example_text",
+      "parameters": [
+        {
+          "name": "language",
+          "label": "Language",
+          "type": "Literal['English \ud83c\uddfa\ud83c\uddf8', 'German \ud83c\udde9\ud83c\uddea', 'French \ud83c\uddeb\ud83c\uddf7', 'Spanish \ud83c\uddea\ud83c\uddf8', 'Italian \ud83c\uddee\ud83c\uddf9', 'Portuguese \ud83c\udde7\ud83c\uddf7\ud83c\uddf5\ud83c\uddf9', 'Dutch \ud83c\uddf3\ud83c\uddf1', 'Polish \ud83c\uddf5\ud83c\uddf1', 'Russian \ud83c\uddf7\ud83c\uddfa', 'Ukrainian \ud83c\uddfa\ud83c\udde6', 'Czech \ud83c\udde8\ud83c\uddff', 'Romanian \ud83c\uddf7\ud83c\uddf4', 'Hungarian \ud83c\udded\ud83c\uddfa', 'Swedis",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Text to Synthesize",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/fill_example_text_1",
+      "parameters": [
+        {
+          "name": "language",
+          "label": "Language",
+          "type": "Literal['English \ud83c\uddfa\ud83c\uddf8', 'German \ud83c\udde9\ud83c\uddea', 'French \ud83c\uddeb\ud83c\uddf7', 'Spanish \ud83c\uddea\ud83c\uddf8', 'Italian \ud83c\uddee\ud83c\uddf9', 'Portuguese \ud83c\udde7\ud83c\uddf7\ud83c\uddf5\ud83c\uddf9', 'Dutch \ud83c\uddf3\ud83c\uddf1', 'Polish \ud83c\uddf5\ud83c\uddf1', 'Russian \ud83c\uddf7\ud83c\uddfa', 'Ukrainian \ud83c\uddfa\ud83c\udde6', 'Czech \ud83c\udde8\ud83c\uddff', 'Romanian \ud83c\uddf7\ud83c\uddf4', 'Hungarian \ud83c\udded\ud83c\uddfa', 'Swedis",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Text to Synthesize",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/generate_speech",
+      "parameters": [
+        {
+          "name": "text",
+          "label": "Text to Synthesize",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "language",
+          "label": "Language",
+          "type": "Literal['English \ud83c\uddfa\ud83c\uddf8', 'German \ud83c\udde9\ud83c\uddea', 'French \ud83c\uddeb\ud83c\uddf7', 'Spanish \ud83c\uddea\ud83c\uddf8', 'Italian \ud83c\uddee\ud83c\uddf9', 'Portuguese \ud83c\udde7\ud83c\uddf7\ud83c\uddf5\ud83c\uddf9', 'Dutch \ud83c\uddf3\ud83c\uddf1', 'Polish \ud83c\uddf5\ud83c\uddf1', 'Russian \ud83c\uddf7\ud83c\uddfa', 'Ukrainian \ud83c\uddfa\ud83c\udde6', 'Czech \ud83c\udde8\ud83c\uddff', 'Romanian \ud83c\uddf7\ud83c\uddf4', 'Hungarian \ud83c\udded\ud83c\uddfa', 'Swedis",
+          "component": "Dropdown"
+        },
+        {
+          "name": "cfg_scale",
+          "label": "CFG Scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "max_tokens",
+          "label": "Max Tokens",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Generated Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "value_19",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/clone_voice",
+      "parameters": [
+        {
+          "name": "text",
+          "label": "Text to Synthesize",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "reference_audio",
+          "label": "Reference Voice",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "name": "language",
+          "label": "Language",
+          "type": "Literal['English \ud83c\uddfa\ud83c\uddf8', 'German \ud83c\udde9\ud83c\uddea', 'French \ud83c\uddeb\ud83c\uddf7', 'Spanish \ud83c\uddea\ud83c\uddf8', 'Italian \ud83c\uddee\ud83c\uddf9', 'Portuguese \ud83c\udde7\ud83c\uddf7\ud83c\uddf5\ud83c\uddf9', 'Dutch \ud83c\uddf3\ud83c\uddf1', 'Polish \ud83c\uddf5\ud83c\uddf1', 'Russian \ud83c\uddf7\ud83c\uddfa', 'Ukrainian \ud83c\uddfa\ud83c\udde6', 'Czech \ud83c\udde8\ud83c\uddff', 'Romanian \ud83c\uddf7\ud83c\uddf4', 'Hungarian \ud83c\udded\ud83c\uddfa', 'Swedis",
+          "component": "Dropdown"
+        },
+        {
+          "name": "cfg_scale",
+          "label": "CFG Scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "max_tokens",
+          "label": "Max Tokens",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Cloned Voice Output",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "value_35",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/verify_watermark",
+      "parameters": [
+        {
+          "name": "audio_file",
+          "label": "Audio to Verify",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_43",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/fill_example_text",
+  "_api_verified": true,
+  "estimated_latency_s": 3.92,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 3.92,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:51:20.363889+00:00"
+}

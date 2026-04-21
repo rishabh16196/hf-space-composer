@@ -1,0 +1,100 @@
+{
+  "space_id": "awacke1/AI-MovieMaker-Comedy",
+  "title": "AI Movie Maker \ud83c\udf9e\ufe0f\ud83c\udf7f\ud83c\udfac Comedy Gradio",
+  "emoji": "\ud83c\udf9e\ufe0fVid\ud83c\udf7f\ud83c\udfac",
+  "description": "AI Movie Maker \ud83c\udf9e\ufe0f\ud83c\udf7f\ud83c\udfac Comedy Gradio",
+  "input_schema": {},
+  "output_schema": {
+    "Story Concept": {
+      "type": "str",
+      "description": "Story Concept",
+      "component": "Textbox"
+    }
+  },
+  "license": "mit",
+  "hardware": "5.4.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 20,
+  "last_modified": "2024-10-31 10:48:58+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/update_prompt",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Story Concept",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/process_story_and_audio",
+      "parameters": [
+        {
+          "name": "prompt",
+          "label": "Story Concept",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "model_choice",
+          "label": "Model",
+          "type": "Literal['mistralai/Mixtral-8x7B-Instruct-v0.1', 'mistralai/Mistral-7B-Instruct-v0.2']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Generated Story",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Story Narration",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "value_24",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/play_gallery_audio",
+      "parameters": [
+        {
+          "name": "gallery_data",
+          "label": "parameter_24",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Story Narration",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/update_prompt",
+  "_api_verified": true,
+  "estimated_latency_s": 2.79,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 2.79,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:50:19.253765+00:00"
+}

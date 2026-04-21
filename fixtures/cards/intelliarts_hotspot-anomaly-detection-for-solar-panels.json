@@ -1,0 +1,59 @@
+{
+  "space_id": "intelliarts/hotspot-anomaly-detection-for-solar-panels",
+  "title": "Hotspot Anomaly Detection For Solar Panels",
+  "emoji": "\ud83c\udf0d",
+  "description": "Hotspot Anomaly Detection For Solar Panels",
+  "input_schema": {
+    "image": {
+      "type": "filepath",
+      "description": "image",
+      "required": true,
+      "component": "Image"
+    }
+  },
+  "output_schema": {
+    "output": {
+      "type": "filepath",
+      "description": "output",
+      "component": "Image"
+    }
+  },
+  "license": "unknown",
+  "hardware": "4.40.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 2,
+  "last_modified": "2024-08-08 15:23:01+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/predict",
+      "parameters": [
+        {
+          "name": "image",
+          "label": "image",
+          "type": "filepath",
+          "component": "Image"
+        }
+      ],
+      "returns": [
+        {
+          "label": "output",
+          "type": "filepath",
+          "component": "Image"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/predict",
+  "_api_verified": true
+}

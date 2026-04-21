@@ -1,0 +1,126 @@
+{
+  "space_id": "mrfakename/MeloTTS",
+  "title": "MeloTTS",
+  "emoji": "\ud83d\udde3\ufe0f",
+  "description": "Fast, efficient, & multilingual text-to-speech",
+  "input_schema": {
+    "language": {
+      "type": "Literal['EN', 'ES', 'FR', 'ZH', 'JP', 'KR']",
+      "description": "Language",
+      "required": true,
+      "component": "Radio"
+    },
+    "text": {
+      "type": "str",
+      "description": "Text to speak",
+      "required": true,
+      "component": "Textbox"
+    }
+  },
+  "output_schema": {
+    "Speaker": {
+      "type": "Literal['EN-US', 'EN-BR', 'EN_INDIA', 'EN-AU', 'EN-Default']",
+      "description": "Speaker",
+      "component": "Dropdown"
+    },
+    "Text to speak": {
+      "type": "str",
+      "description": "Text to speak",
+      "component": "Textbox"
+    }
+  },
+  "license": "mit",
+  "hardware": "6.1.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us",
+    "audio"
+  ],
+  "likes": 474,
+  "last_modified": "2025-12-19 18:20:40+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/load_speakers",
+      "parameters": [
+        {
+          "name": "language",
+          "label": "Language",
+          "type": "Literal['EN', 'ES', 'FR', 'ZH', 'JP', 'KR']",
+          "component": "Radio"
+        },
+        {
+          "name": "text",
+          "label": "Text to speak",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Speaker",
+          "type": "Literal['EN-US', 'EN-BR', 'EN_INDIA', 'EN-AU', 'EN-Default']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Text to speak",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/synthesize",
+      "parameters": [
+        {
+          "name": "text",
+          "label": "Text to speak",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "speaker",
+          "label": "Speaker",
+          "type": "Literal['EN-US', 'EN-BR', 'EN_INDIA', 'EN-AU', 'EN-Default']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "speed",
+          "label": "Speed",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "language",
+          "label": "Language",
+          "type": "Literal['EN', 'ES', 'FR', 'ZH', 'JP', 'KR']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_9",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/load_speakers",
+  "_api_verified": true,
+  "estimated_latency_s": 2.09,
+  "speed_tier": "fast",
+  "_latency_source": "measured_inference",
+  "_tags_enriched": true,
+  "measured_latency_s": 2.09,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:51:18.343031+00:00",
+  "measured_inference_s": 2.09,
+  "measured_inference_timestamp": "2026-04-20T07:59:29.876612+00:00",
+  "measured_inference_method": "auto_predict",
+  "measured_inference_api": "/load_speakers"
+}

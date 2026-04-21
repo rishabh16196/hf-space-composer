@@ -1,0 +1,39 @@
+{
+  "space_id": "h2oai/h2o_wave_whisper",
+  "title": "H2O Wave Whisper",
+  "emoji": "\ud83d\udcdd",
+  "description": "H2O Wave Whisper",
+  "input_schema": {
+    "input": {
+      "type": "string",
+      "description": "Input",
+      "required": true
+    }
+  },
+  "output_schema": {
+    "output": {
+      "type": "string"
+    }
+  },
+  "license": "unknown",
+  "hardware": "",
+  "sdk": "docker",
+  "tags": [
+    "docker",
+    "region:us",
+    "asr",
+    "audio",
+    "transcription"
+  ],
+  "likes": 10,
+  "last_modified": "2023-01-16 15:35:26+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_tags_enriched": true,
+  "estimated_latency_s": 5.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "sleeping",
+  "_api_error": "Space is in RUNTIME_ERROR state"
+}

@@ -1,0 +1,62 @@
+{
+  "space_id": "somosnlp-hackathon-2022/Spanish-Nahuatl-Translation",
+  "title": "Spanish to Nahuatl Translation",
+  "emoji": "\ud83c\udf3d",
+  "description": "Spanish to Nahuatl Translation",
+  "input_schema": {
+    "input": {
+      "type": "str",
+      "description": "Input Text in Spanish",
+      "required": true,
+      "component": "Textbox"
+    }
+  },
+  "output_schema": {
+    "Translated text in Nahuatl": {
+      "type": "str",
+      "description": "Translated text in Nahuatl",
+      "component": "Textbox"
+    }
+  },
+  "license": "mpl-2.0",
+  "hardware": "4.39.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 37,
+  "last_modified": "2024-07-29 15:07:20+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/predict",
+      "parameters": [
+        {
+          "name": "input",
+          "label": "Input Text in Spanish",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Translated text in Nahuatl",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/predict",
+  "_api_verified": true,
+  "estimated_latency_s": 4.36,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 4.36,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:51:54.188618+00:00"
+}

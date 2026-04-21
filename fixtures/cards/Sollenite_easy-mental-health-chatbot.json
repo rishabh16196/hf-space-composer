@@ -1,0 +1,59 @@
+{
+  "space_id": "Sollenite/easy-mental-health-chatbot",
+  "title": "Easy Mental Health Chatbot",
+  "emoji": "\ud83d\udc40",
+  "description": "a simple mental health chatbot made using DistilBERT",
+  "input_schema": {
+    "user_query": {
+      "type": "str",
+      "description": "Pertanyaan Anda",
+      "required": true,
+      "component": "Textbox"
+    }
+  },
+  "output_schema": {
+    "Jawaban DistilBERT": {
+      "type": "str",
+      "description": "Jawaban DistilBERT",
+      "component": "Textbox"
+    }
+  },
+  "license": "unknown",
+  "hardware": "6.10.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 2,
+  "last_modified": "2026-04-01 04:01:02+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/chatbot_response",
+      "parameters": [
+        {
+          "name": "user_query",
+          "label": "Pertanyaan Anda",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Jawaban DistilBERT",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/chatbot_response",
+  "_api_verified": true
+}

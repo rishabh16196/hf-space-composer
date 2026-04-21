@@ -1,0 +1,83 @@
+{
+  "space_id": "NoCrypt/pixelization",
+  "title": "Pixelization",
+  "emoji": "\ud83e\ude84",
+  "description": "Pixelization",
+  "input_schema": {
+    "in_img": {
+      "type": "Dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "Input",
+      "required": true,
+      "component": "Image"
+    },
+    "pixel_size": {
+      "type": "float",
+      "description": "Pixel Size",
+      "required": true,
+      "component": "Slider"
+    },
+    "upscale_after": {
+      "type": "bool",
+      "description": "Upscale after",
+      "required": true,
+      "component": "Checkbox"
+    }
+  },
+  "output_schema": {
+    "Output": {
+      "type": "Dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "Output",
+      "component": "Image"
+    }
+  },
+  "license": "unknown",
+  "hardware": "5.4.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 59,
+  "last_modified": "2024-10-27 06:27:55+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/predict",
+      "parameters": [
+        {
+          "name": "in_img",
+          "label": "Input",
+          "type": "Dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "pixel_size",
+          "label": "Pixel Size",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "upscale_after",
+          "label": "Upscale after",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output",
+          "type": "Dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/predict",
+  "_api_verified": true
+}

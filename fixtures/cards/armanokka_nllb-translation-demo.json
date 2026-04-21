@@ -1,0 +1,39 @@
+{
+  "space_id": "armanokka/nllb-translation-demo",
+  "title": "Nllb Translation Demo",
+  "emoji": "\ud83d\udc40",
+  "description": "Nllb Translation Demo",
+  "input_schema": {
+    "input": {
+      "type": "string",
+      "description": "Input",
+      "required": true
+    }
+  },
+  "output_schema": {
+    "output": {
+      "type": "string"
+    }
+  },
+  "license": "unknown",
+  "hardware": "3.0.26",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us",
+    "multilingual",
+    "text",
+    "translation"
+  ],
+  "likes": 4,
+  "last_modified": "2022-12-21 18:00:26+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_tags_enriched": true,
+  "estimated_latency_s": 3.0,
+  "speed_tier": "fast",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "error",
+  "_api_error": "(Request ID: Root=1-69e77bd4-1a0b324c63a39b50408d9d5d;6eb55d1a-4329-49ce-98cf-ebc39479e3ba)\n\n429 Too Many Requests: you have reached your 'api' rate limit.\nRetry after 10 seconds (0/2500 requests rema"
+}

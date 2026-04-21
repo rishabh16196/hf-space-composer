@@ -1,0 +1,460 @@
+{
+  "space_id": "Onise/Qwen-Image-Edit-2509-LoRAs-Fast",
+  "title": "Qwen Image Edit + Loras built-in",
+  "emoji": "\ud83d\udc40",
+  "description": "Qwen image edit with \ud83d\udd1e loras",
+  "input_schema": {
+    "input_image": {
+      "type": "filepath",
+      "description": "Input Image",
+      "required": true,
+      "component": "Image"
+    },
+    "prompt": {
+      "type": "str",
+      "description": "Edit Prompt",
+      "required": true,
+      "component": "Textbox"
+    },
+    "seed": {
+      "type": "float",
+      "description": "Seed",
+      "required": true,
+      "component": "Slider"
+    },
+    "randomize_seed": {
+      "type": "bool",
+      "description": "Randomize Seed",
+      "required": true,
+      "component": "Checkbox"
+    },
+    "guidance_scale": {
+      "type": "float",
+      "description": "CFG Scale",
+      "required": true,
+      "component": "Slider"
+    },
+    "steps": {
+      "type": "float",
+      "description": "Steps",
+      "required": true,
+      "component": "Slider"
+    },
+    "use_custom_size": {
+      "type": "bool",
+      "description": "Override output size",
+      "required": true,
+      "component": "Checkbox"
+    },
+    "out_width": {
+      "type": "float",
+      "description": "Width",
+      "required": true,
+      "component": "Slider"
+    },
+    "out_height": {
+      "type": "float",
+      "description": "Height",
+      "required": true,
+      "component": "Slider"
+    },
+    "param_9": {
+      "type": "Literal['None', 'CockQwen_v3', 'Facial_Cumshots_V1', 'HearmemanAI_V3_Breasts', 'HearmemanAI_V4_Breas",
+      "description": "LoRA 1",
+      "required": true,
+      "component": "Dropdown"
+    },
+    "param_10": {
+      "type": "float",
+      "description": "Strength",
+      "required": true,
+      "component": "Slider"
+    },
+    "param_11": {
+      "type": "Literal['None', 'CockQwen_v3', 'Facial_Cumshots_V1', 'HearmemanAI_V3_Breasts', 'HearmemanAI_V4_Breas",
+      "description": "LoRA 2",
+      "required": true,
+      "component": "Dropdown"
+    },
+    "param_12": {
+      "type": "float",
+      "description": "Strength",
+      "required": true,
+      "component": "Slider"
+    },
+    "param_13": {
+      "type": "Literal['None', 'CockQwen_v3', 'Facial_Cumshots_V1', 'HearmemanAI_V3_Breasts', 'HearmemanAI_V4_Breas",
+      "description": "LoRA 3",
+      "required": true,
+      "component": "Dropdown"
+    },
+    "param_14": {
+      "type": "float",
+      "description": "Strength",
+      "required": true,
+      "component": "Slider"
+    },
+    "param_15": {
+      "type": "Literal['None', 'CockQwen_v3', 'Facial_Cumshots_V1', 'HearmemanAI_V3_Breasts', 'HearmemanAI_V4_Breas",
+      "description": "LoRA 4",
+      "required": true,
+      "component": "Dropdown"
+    },
+    "param_16": {
+      "type": "float",
+      "description": "Strength",
+      "required": true,
+      "component": "Slider"
+    },
+    "param_17": {
+      "type": "Literal['None', 'CockQwen_v3', 'Facial_Cumshots_V1', 'HearmemanAI_V3_Breasts', 'HearmemanAI_V4_Breas",
+      "description": "LoRA 5",
+      "required": true,
+      "component": "Dropdown"
+    },
+    "param_18": {
+      "type": "float",
+      "description": "Strength",
+      "required": true,
+      "component": "Slider"
+    },
+    "param_19": {
+      "type": "Literal['None', 'CockQwen_v3', 'Facial_Cumshots_V1', 'HearmemanAI_V3_Breasts', 'HearmemanAI_V4_Breas",
+      "description": "LoRA 6",
+      "required": true,
+      "component": "Dropdown"
+    },
+    "param_20": {
+      "type": "float",
+      "description": "Strength",
+      "required": true,
+      "component": "Slider"
+    }
+  },
+  "output_schema": {
+    "Output": {
+      "type": "filepath",
+      "description": "Output",
+      "component": "Image"
+    },
+    "Seed": {
+      "type": "float",
+      "description": "Seed",
+      "component": "Slider"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "6.12.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "mcp-server",
+    "region:us",
+    "image-generation",
+    "vision"
+  ],
+  "likes": 40,
+  "last_modified": "2026-04-16 19:50:31+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/infer",
+      "parameters": [
+        {
+          "name": "input_image",
+          "label": "Input Image",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "name": "prompt",
+          "label": "Edit Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "seed",
+          "label": "Seed",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "randomize_seed",
+          "label": "Randomize Seed",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "guidance_scale",
+          "label": "CFG Scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "steps",
+          "label": "Steps",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "use_custom_size",
+          "label": "Override output size",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "out_width",
+          "label": "Width",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "out_height",
+          "label": "Height",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_9",
+          "label": "LoRA 1",
+          "type": "Literal['None', 'CockQwen_v3', 'Facial_Cumshots_V1', 'HearmemanAI_V3_Breasts', 'HearmemanAI_V4_Breasts', 'InniePussy', 'LumiNude01a', 'Meta4', 'PillowHump_2509', 'Qwen4Play_v2', 'QwenHentai_v3', 'Qwen",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_10",
+          "label": "Strength",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_11",
+          "label": "LoRA 2",
+          "type": "Literal['None', 'CockQwen_v3', 'Facial_Cumshots_V1', 'HearmemanAI_V3_Breasts', 'HearmemanAI_V4_Breasts', 'InniePussy', 'LumiNude01a', 'Meta4', 'PillowHump_2509', 'Qwen4Play_v2', 'QwenHentai_v3', 'Qwen",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_12",
+          "label": "Strength",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_13",
+          "label": "LoRA 3",
+          "type": "Literal['None', 'CockQwen_v3', 'Facial_Cumshots_V1', 'HearmemanAI_V3_Breasts', 'HearmemanAI_V4_Breasts', 'InniePussy', 'LumiNude01a', 'Meta4', 'PillowHump_2509', 'Qwen4Play_v2', 'QwenHentai_v3', 'Qwen",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_14",
+          "label": "Strength",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_15",
+          "label": "LoRA 4",
+          "type": "Literal['None', 'CockQwen_v3', 'Facial_Cumshots_V1', 'HearmemanAI_V3_Breasts', 'HearmemanAI_V4_Breasts', 'InniePussy', 'LumiNude01a', 'Meta4', 'PillowHump_2509', 'Qwen4Play_v2', 'QwenHentai_v3', 'Qwen",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_16",
+          "label": "Strength",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_17",
+          "label": "LoRA 5",
+          "type": "Literal['None', 'CockQwen_v3', 'Facial_Cumshots_V1', 'HearmemanAI_V3_Breasts', 'HearmemanAI_V4_Breasts', 'InniePussy', 'LumiNude01a', 'Meta4', 'PillowHump_2509', 'Qwen4Play_v2', 'QwenHentai_v3', 'Qwen",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_18",
+          "label": "Strength",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_19",
+          "label": "LoRA 6",
+          "type": "Literal['None', 'CockQwen_v3', 'Facial_Cumshots_V1', 'HearmemanAI_V3_Breasts', 'HearmemanAI_V4_Breasts', 'InniePussy', 'LumiNude01a', 'Meta4', 'PillowHump_2509', 'Qwen4Play_v2', 'QwenHentai_v3', 'Qwen",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_20",
+          "label": "Strength",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "Seed",
+          "type": "float",
+          "component": "Slider"
+        }
+      ]
+    },
+    {
+      "name": "/append_triggers",
+      "parameters": [
+        {
+          "name": "current_prompt",
+          "label": "Edit Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "lora_name",
+          "label": "LoRA 1",
+          "type": "Literal['None', 'CockQwen_v3', 'Facial_Cumshots_V1', 'HearmemanAI_V3_Breasts', 'HearmemanAI_V4_Breasts', 'InniePussy', 'LumiNude01a', 'Meta4', 'PillowHump_2509', 'Qwen4Play_v2', 'QwenHentai_v3', 'Qwen",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Edit Prompt",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/append_triggers_1",
+      "parameters": [
+        {
+          "name": "current_prompt",
+          "label": "Edit Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "lora_name",
+          "label": "LoRA 2",
+          "type": "Literal['None', 'CockQwen_v3', 'Facial_Cumshots_V1', 'HearmemanAI_V3_Breasts', 'HearmemanAI_V4_Breasts', 'InniePussy', 'LumiNude01a', 'Meta4', 'PillowHump_2509', 'Qwen4Play_v2', 'QwenHentai_v3', 'Qwen",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Edit Prompt",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/append_triggers_2",
+      "parameters": [
+        {
+          "name": "current_prompt",
+          "label": "Edit Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "lora_name",
+          "label": "LoRA 3",
+          "type": "Literal['None', 'CockQwen_v3', 'Facial_Cumshots_V1', 'HearmemanAI_V3_Breasts', 'HearmemanAI_V4_Breasts', 'InniePussy', 'LumiNude01a', 'Meta4', 'PillowHump_2509', 'Qwen4Play_v2', 'QwenHentai_v3', 'Qwen",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Edit Prompt",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/append_triggers_3",
+      "parameters": [
+        {
+          "name": "current_prompt",
+          "label": "Edit Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "lora_name",
+          "label": "LoRA 4",
+          "type": "Literal['None', 'CockQwen_v3', 'Facial_Cumshots_V1', 'HearmemanAI_V3_Breasts', 'HearmemanAI_V4_Breasts', 'InniePussy', 'LumiNude01a', 'Meta4', 'PillowHump_2509', 'Qwen4Play_v2', 'QwenHentai_v3', 'Qwen",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Edit Prompt",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/append_triggers_4",
+      "parameters": [
+        {
+          "name": "current_prompt",
+          "label": "Edit Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "lora_name",
+          "label": "LoRA 5",
+          "type": "Literal['None', 'CockQwen_v3', 'Facial_Cumshots_V1', 'HearmemanAI_V3_Breasts', 'HearmemanAI_V4_Breasts', 'InniePussy', 'LumiNude01a', 'Meta4', 'PillowHump_2509', 'Qwen4Play_v2', 'QwenHentai_v3', 'Qwen",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Edit Prompt",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/append_triggers_5",
+      "parameters": [
+        {
+          "name": "current_prompt",
+          "label": "Edit Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "lora_name",
+          "label": "LoRA 6",
+          "type": "Literal['None', 'CockQwen_v3', 'Facial_Cumshots_V1', 'HearmemanAI_V3_Breasts', 'HearmemanAI_V4_Breasts', 'InniePussy', 'LumiNude01a', 'Meta4', 'PillowHump_2509', 'Qwen4Play_v2', 'QwenHentai_v3', 'Qwen",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Edit Prompt",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/infer",
+  "_api_verified": true,
+  "estimated_latency_s": 3.56,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "_tags_enriched": true,
+  "measured_latency_s": 3.56,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:49:43.623831+00:00"
+}

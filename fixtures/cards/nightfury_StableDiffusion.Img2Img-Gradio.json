@@ -1,0 +1,35 @@
+{
+  "space_id": "nightfury/StableDiffusion.Img2Img-Gradio",
+  "title": "StableDiffusion.Img2Img Gradio",
+  "emoji": "\ud83d\udcbb",
+  "description": "StableDiffusion.Img2Img Gradio",
+  "input_schema": {
+    "input": {
+      "type": "string",
+      "description": "Input",
+      "required": true
+    }
+  },
+  "output_schema": {
+    "output": {
+      "type": "string"
+    }
+  },
+  "license": "creativeml-openrail-m",
+  "hardware": "3.4",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 4,
+  "last_modified": "2022-10-11 12:43:52+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "error",
+  "_api_error": "(Request ID: Root=1-69e77bd3-103713f4528f366133e196c5;1af21a71-59df-48c8-bb37-eb04e708e3fe)\n\n429 Too Many Requests: you have reached your 'api' rate limit.\nRetry after 11 seconds (0/2500 requests rema"
+}

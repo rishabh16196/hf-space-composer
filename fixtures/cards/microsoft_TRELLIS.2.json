@@ -1,0 +1,222 @@
+{
+  "space_id": "microsoft/TRELLIS.2",
+  "title": "TRELLIS.2",
+  "emoji": "\ud83c\udfe2",
+  "description": "High-fidelity 3D Generation from images",
+  "input_schema": {},
+  "output_schema": {},
+  "license": "mit",
+  "hardware": "6.1.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 1427,
+  "last_modified": "2025-12-17 06:32:54+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/start_session",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/preprocess_image",
+      "parameters": [
+        {
+          "name": "input",
+          "label": "Image Prompt",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Image Prompt",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/get_seed",
+      "parameters": [
+        {
+          "name": "randomize_seed",
+          "label": "Randomize Seed",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "seed",
+          "label": "Seed",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Seed",
+          "type": "float",
+          "component": "Slider"
+        }
+      ]
+    },
+    {
+      "name": "/lambda",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/image_to_3d",
+      "parameters": [
+        {
+          "name": "image",
+          "label": "Image Prompt",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "seed",
+          "label": "Seed",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "resolution",
+          "label": "Resolution",
+          "type": "Literal['512', '1024', '1536']",
+          "component": "Radio"
+        },
+        {
+          "name": "ss_guidance_strength",
+          "label": "Guidance Strength",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "ss_guidance_rescale",
+          "label": "Guidance Rescale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "ss_sampling_steps",
+          "label": "Sampling Steps",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "ss_rescale_t",
+          "label": "Rescale T",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "shape_slat_guidance_strength",
+          "label": "Guidance Strength",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "shape_slat_guidance_rescale",
+          "label": "Guidance Rescale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "shape_slat_sampling_steps",
+          "label": "Sampling Steps",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "shape_slat_rescale_t",
+          "label": "Rescale T",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "tex_slat_guidance_strength",
+          "label": "Guidance Strength",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "tex_slat_guidance_rescale",
+          "label": "Guidance Rescale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "tex_slat_sampling_steps",
+          "label": "Sampling Steps",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "tex_slat_rescale_t",
+          "label": "Rescale T",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "3D Asset Preview",
+          "type": "str",
+          "component": "Html"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_1",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/extract_glb",
+      "parameters": [
+        {
+          "name": "decimation_target",
+          "label": "Decimation Target",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "texture_size",
+          "label": "Texture Size",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Extracted GLB",
+          "type": "filepath",
+          "component": "Model3d"
+        },
+        {
+          "label": "Download GLB",
+          "type": "filepath",
+          "component": "Downloadbutton"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/start_session",
+  "_api_verified": true,
+  "estimated_latency_s": 4.35,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "_tags_enriched": true,
+  "measured_latency_s": 4.35,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:51:14.841573+00:00",
+  "_inference_attempt_status": "predict_failed",
+  "_inference_attempt_error": "The upstream Gradio app has raised an exception but has not enabled verbose error reporting. To enable, set show_error=True in launch()."
+}

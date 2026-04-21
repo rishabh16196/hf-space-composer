@@ -1,0 +1,132 @@
+{
+  "space_id": "hysts/StyleGAN-Human-Interpolation",
+  "title": "StyleGAN-Human Interpolation",
+  "emoji": "\ud83c\udfe2",
+  "description": "StyleGAN-Human Interpolation",
+  "input_schema": {
+    "seed0": {
+      "type": "float",
+      "description": "Seed 1",
+      "required": true,
+      "component": "Slider"
+    },
+    "psi0": {
+      "type": "float",
+      "description": "Truncation psi 1",
+      "required": true,
+      "component": "Slider"
+    },
+    "seed1": {
+      "type": "float",
+      "description": "Seed 2",
+      "required": true,
+      "component": "Slider"
+    },
+    "psi1": {
+      "type": "float",
+      "description": "Truncation psi 2",
+      "required": true,
+      "component": "Slider"
+    },
+    "num_intermediate": {
+      "type": "float",
+      "description": "Number of Intermediate Frames",
+      "required": true,
+      "component": "Slider"
+    }
+  },
+  "output_schema": {
+    "Output Images": {
+      "type": "List[Dict(image: filepath, caption: str | None)]",
+      "description": "Output Images",
+      "component": "Gallery"
+    }
+  },
+  "license": "unknown",
+  "hardware": "4.36.1",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 38,
+  "last_modified": "2024-06-10 06:04:40+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/predict",
+      "parameters": [
+        {
+          "name": "seed0",
+          "label": "Seed 1",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "psi0",
+          "label": "Truncation psi 1",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "seed1",
+          "label": "Seed 2",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "psi1",
+          "label": "Truncation psi 2",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "num_intermediate",
+          "label": "Number of Intermediate Frames",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output Images",
+          "type": "List[Dict(image: filepath, caption: str | None)]",
+          "component": "Gallery"
+        }
+      ]
+    },
+    {
+      "name": "/get_random_value",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Seed 1",
+          "type": "float",
+          "component": "Slider"
+        }
+      ]
+    },
+    {
+      "name": "/get_random_value_1",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Seed 2",
+          "type": "float",
+          "component": "Slider"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/predict",
+  "_api_verified": true,
+  "estimated_latency_s": 3.44,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 3.44,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:50:50.574256+00:00"
+}

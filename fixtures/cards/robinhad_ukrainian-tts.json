@@ -1,0 +1,88 @@
+{
+  "space_id": "robinhad/ukrainian-tts",
+  "title": "Ukrainian TTS",
+  "emoji": "\ud83d\udc0c",
+  "description": "Ukrainian TTS",
+  "input_schema": {
+    "text": {
+      "type": "str",
+      "description": "Input",
+      "required": true,
+      "component": "Textbox"
+    },
+    "voice": {
+      "type": "Literal['\u0422\u0435\u0442\u044f\u043d\u0430 (\u0436\u0456\u043d\u043e\u0447\u0438\u0439) \ud83d\udc69', '\u041c\u0438\u043a\u0438\u0442\u0430 (\u0447\u043e\u043b\u043e\u0432\u0456\u0447\u0438\u0439) \ud83d\udc68', '\u041b\u0430\u0434\u0430 (\u0436\u0456\u043d\u043e\u0447\u0438\u0439) \ud83d\udc69', '\u0414\u043c\u0438\u0442\u0440\u043e (\u0447\u043e\u043b\u043e\u0432\u0456\u0447\u0438\u0439) \ud83d\udc68', '\u041e",
+      "description": "\u0413\u043e\u043b\u043e\u0441",
+      "required": true,
+      "component": "Radio"
+    }
+  },
+  "output_schema": {
+    "Output": {
+      "type": "filepath",
+      "description": "Output",
+      "component": "Audio"
+    },
+    "\u041d\u0430\u0433\u043e\u043b\u043e\u0448\u0435\u043d\u0438\u0439 \u0442\u0435\u043a\u0441\u0442": {
+      "type": "str",
+      "description": "\u041d\u0430\u0433\u043e\u043b\u043e\u0448\u0435\u043d\u0438\u0439 \u0442\u0435\u043a\u0441\u0442",
+      "component": "Textbox"
+    }
+  },
+  "license": "unknown",
+  "hardware": "5.7.1",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us",
+    "audio",
+    "speech-synthesis",
+    "tts"
+  ],
+  "likes": 71,
+  "last_modified": "2025-03-07 11:47:23+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/predict",
+      "parameters": [
+        {
+          "name": "text",
+          "label": "Input",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "voice",
+          "label": "\u0413\u043e\u043b\u043e\u0441",
+          "type": "Literal['\u0422\u0435\u0442\u044f\u043d\u0430 (\u0436\u0456\u043d\u043e\u0447\u0438\u0439) \ud83d\udc69', '\u041c\u0438\u043a\u0438\u0442\u0430 (\u0447\u043e\u043b\u043e\u0432\u0456\u0447\u0438\u0439) \ud83d\udc68', '\u041b\u0430\u0434\u0430 (\u0436\u0456\u043d\u043e\u0447\u0438\u0439) \ud83d\udc69', '\u0414\u043c\u0438\u0442\u0440\u043e (\u0447\u043e\u043b\u043e\u0432\u0456\u0447\u0438\u0439) \ud83d\udc68', '\u041e\u043b\u0435\u043a\u0441\u0430 (\u0447\u043e\u043b\u043e\u0432\u0456\u0447\u0438\u0439) \ud83d\udc68']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "\u041d\u0430\u0433\u043e\u043b\u043e\u0448\u0435\u043d\u0438\u0439 \u0442\u0435\u043a\u0441\u0442",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/predict",
+  "_api_verified": true,
+  "estimated_latency_s": 4.15,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "_tags_enriched": true,
+  "measured_latency_s": 4.15,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:51:45.480167+00:00"
+}

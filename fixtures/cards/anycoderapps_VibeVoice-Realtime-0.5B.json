@@ -1,0 +1,97 @@
+{
+  "space_id": "anycoderapps/VibeVoice-Realtime-0.5B",
+  "title": "VibeVoice-Realtime-0.5B",
+  "emoji": "\ud83d\udc28",
+  "description": "VibeVoice-Realtime-0.5B",
+  "input_schema": {
+    "text": {
+      "type": "str",
+      "description": "Text to Convert",
+      "required": true,
+      "component": "Textbox"
+    },
+    "speaker_name": {
+      "type": "Literal['en-Carter_man', 'en-Davis_man', 'en-Emma_woman', 'en-Frank_man', 'en-Grace_woman', 'en-Mike",
+      "description": "Speaker Voice",
+      "required": true,
+      "component": "Dropdown"
+    },
+    "cfg_scale": {
+      "type": "float",
+      "description": "CFG Scale",
+      "required": true,
+      "component": "Slider"
+    }
+  },
+  "output_schema": {
+    "Generated Speech": {
+      "type": "filepath",
+      "description": "Generated Speech",
+      "component": "Audio"
+    },
+    "value_13": {
+      "type": "str",
+      "description": "value_13",
+      "component": "Markdown"
+    }
+  },
+  "license": "unknown",
+  "hardware": "6.0.2",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 184,
+  "last_modified": "2025-12-04 21:27:44+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/generate",
+      "parameters": [
+        {
+          "name": "text",
+          "label": "Text to Convert",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "speaker_name",
+          "label": "Speaker Voice",
+          "type": "Literal['en-Carter_man', 'en-Davis_man', 'en-Emma_woman', 'en-Frank_man', 'en-Grace_woman', 'en-Mike_man', 'in-Samuel_man']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "cfg_scale",
+          "label": "CFG Scale",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Generated Speech",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "value_13",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/generate",
+  "_api_verified": true,
+  "estimated_latency_s": 3.16,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "_tags_enriched": true,
+  "measured_latency_s": 3.16,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:50:15.281982+00:00"
+}

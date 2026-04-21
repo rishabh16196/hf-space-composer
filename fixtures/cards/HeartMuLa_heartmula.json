@@ -1,0 +1,38 @@
+{
+  "space_id": "HeartMuLa/heartmula",
+  "title": "HeartMuLa",
+  "emoji": "\ud83d\udc28",
+  "description": "HeartMuLa music generation demo for Hugging Face ZeroGPU",
+  "input_schema": {
+    "input": {
+      "type": "string",
+      "description": "Input",
+      "required": true
+    }
+  },
+  "output_schema": {
+    "output": {
+      "type": "string"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "6.11.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us",
+    "audio",
+    "music"
+  ],
+  "likes": 3,
+  "last_modified": "2026-04-08 07:35:41+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_tags_enriched": true,
+  "estimated_latency_s": 3.0,
+  "speed_tier": "fast",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "error",
+  "_api_error": "(Request ID: Root=1-69e77bd8-32a077b1152f08840a6e6a88;04db5c2c-1511-4f00-8c50-e00ddd9f9553)\n\n429 Too Many Requests: you have reached your 'api' rate limit.\nRetry after 6 seconds (0/2500 requests remai"
+}

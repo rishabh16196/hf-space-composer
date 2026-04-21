@@ -1,0 +1,136 @@
+{
+  "space_id": "hf-audio/whisper-large-v3-turbo",
+  "title": "Whisper Turbo",
+  "emoji": "\ud83e\udd2f",
+  "description": "Whisper Turbo",
+  "input_schema": {
+    "inputs": {
+      "type": "filepath",
+      "description": "parameter_1",
+      "required": true,
+      "component": "Audio"
+    },
+    "task": {
+      "type": "Literal['transcribe', 'translate']",
+      "description": "Task",
+      "required": true,
+      "component": "Radio"
+    }
+  },
+  "output_schema": {
+    "output": {
+      "type": "str",
+      "description": "output",
+      "component": "Textbox"
+    }
+  },
+  "license": "unknown",
+  "hardware": "5.0.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "whisper-event",
+    "region:us",
+    "asr",
+    "audio",
+    "transcription"
+  ],
+  "likes": 1015,
+  "last_modified": "2024-10-09 18:12:28+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/predict",
+      "parameters": [
+        {
+          "name": "inputs",
+          "label": "parameter_1",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "name": "task",
+          "label": "Task",
+          "type": "Literal['transcribe', 'translate']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "output",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/predict_1",
+      "parameters": [
+        {
+          "name": "inputs",
+          "label": "Audio file",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "name": "task",
+          "label": "Task",
+          "type": "Literal['transcribe', 'translate']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "output",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/predict_2",
+      "parameters": [
+        {
+          "name": "yt_url",
+          "label": "YouTube URL",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "task",
+          "label": "Task",
+          "type": "Literal['transcribe', 'translate']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "output 0",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "output 1",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/predict",
+  "_api_verified": true,
+  "estimated_latency_s": 2.46,
+  "speed_tier": "fast",
+  "_latency_source": "measured_inference",
+  "_tags_enriched": true,
+  "measured_latency_s": 2.46,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:50:44.374523+00:00",
+  "measured_inference_s": 2.46,
+  "measured_inference_timestamp": "2026-04-20T07:58:55.228502+00:00",
+  "measured_inference_method": "auto_predict",
+  "measured_inference_api": "/predict"
+}

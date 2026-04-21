@@ -1,0 +1,227 @@
+{
+  "space_id": "simonduerr/ProteinMPNNESM",
+  "title": "ProteinMPNN + ESM",
+  "emoji": "\u26a1",
+  "description": "ProteinMPNN + ESM",
+  "input_schema": {
+    "Input structure": {
+      "type": "str",
+      "description": "Input structure",
+      "required": true,
+      "component": "Textbox"
+    },
+    "parameter_6": {
+      "type": "str | Dict(name: str (name of file), data: str (base64 representation of file), size: int (size of i",
+      "description": "parameter_6",
+      "required": true,
+      "component": "File"
+    },
+    "Designed chain": {
+      "type": "str",
+      "description": "Designed chain",
+      "required": true,
+      "component": "Textbox"
+    },
+    "Fixed chain": {
+      "type": "str",
+      "description": "Fixed chain",
+      "required": true,
+      "component": "Textbox"
+    },
+    "Homomer?": {
+      "type": "bool",
+      "description": "Homomer?",
+      "required": true,
+      "component": "Checkbox"
+    },
+    "Number of sequences": {
+      "type": "int | float",
+      "description": "Number of sequences",
+      "required": true,
+      "component": "Slider"
+    },
+    "Sampling temperature": {
+      "type": "str",
+      "description": "Sampling temperature",
+      "required": true,
+      "component": "Radio"
+    },
+    "Model": {
+      "type": "str",
+      "description": "Model",
+      "required": true,
+      "component": "Dropdown"
+    },
+    "Backbone noise": {
+      "type": "str",
+      "description": "Backbone noise",
+      "required": true,
+      "component": "Dropdown"
+    },
+    "Fixed positions": {
+      "type": "str",
+      "description": "Fixed positions",
+      "required": true,
+      "component": "Textbox"
+    }
+  },
+  "output_schema": {
+    "Fasta Output": {
+      "type": "str",
+      "description": "Fasta Output",
+      "component": "Textbox"
+    },
+    "value_42": {
+      "type": "Dict[Any, Any]",
+      "description": "value_42",
+      "component": "Plot"
+    },
+    "value_46": {
+      "type": "Dict[Any, Any]",
+      "description": "value_46",
+      "component": "Plot"
+    },
+    "value_43": {
+      "type": "str | Dict(name: str (name of file), data: str (base64 representation of file), size: int (size of i",
+      "description": "value_43",
+      "component": "File"
+    },
+    "value_47": {
+      "type": "str | Dict(name: str (name of file), data: str (base64 representation of file), size: int (size of i",
+      "description": "value_47",
+      "component": "File"
+    },
+    "Select a sequence for validation": {
+      "type": "str",
+      "description": "Select a sequence for validation",
+      "component": "Dropdown"
+    },
+    "value_37": {
+      "type": "str",
+      "description": "value_37",
+      "component": "Html"
+    }
+  },
+  "license": "mit",
+  "hardware": "3.11.0",
+  "sdk": "docker",
+  "tags": [
+    "docker",
+    "region:us"
+  ],
+  "likes": 22,
+  "last_modified": "2025-07-10 08:11:56+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/proteinmpnn",
+      "parameters": [
+        {
+          "name": "Input structure",
+          "label": "Input structure",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "parameter_6",
+          "label": "parameter_6",
+          "type": "str | Dict(name: str (name of file), data: str (base64 representation of file), size: int (size of image in bytes), is_file: bool (true if the file has been uploaded to the server), orig_name: str (or",
+          "component": "File"
+        },
+        {
+          "name": "Designed chain",
+          "label": "Designed chain",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "Fixed chain",
+          "label": "Fixed chain",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "Homomer?",
+          "label": "Homomer?",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "Number of sequences",
+          "label": "Number of sequences",
+          "type": "int | float",
+          "component": "Slider"
+        },
+        {
+          "name": "Sampling temperature",
+          "label": "Sampling temperature",
+          "type": "str",
+          "component": "Radio"
+        },
+        {
+          "name": "Model",
+          "label": "Model",
+          "type": "str",
+          "component": "Dropdown"
+        },
+        {
+          "name": "Backbone noise",
+          "label": "Backbone noise",
+          "type": "str",
+          "component": "Dropdown"
+        },
+        {
+          "name": "Fixed positions",
+          "label": "Fixed positions",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Fasta Output",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "value_42",
+          "type": "Dict[Any, Any]",
+          "component": "Plot"
+        },
+        {
+          "label": "value_46",
+          "type": "Dict[Any, Any]",
+          "component": "Plot"
+        },
+        {
+          "label": "value_43",
+          "type": "str | Dict(name: str (name of file), data: str (base64 representation of file), size: int (size of image in bytes), is_file: bool (true if the file has been uploaded to the server), orig_name: str (or",
+          "component": "File"
+        },
+        {
+          "label": "value_47",
+          "type": "str | Dict(name: str (name of file), data: str (base64 representation of file), size: int (size of image in bytes), is_file: bool (true if the file has been uploaded to the server), orig_name: str (or",
+          "component": "File"
+        },
+        {
+          "label": "Select a sequence for validation",
+          "type": "str",
+          "component": "Dropdown"
+        },
+        {
+          "label": "value_37",
+          "type": "str",
+          "component": "Html"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/proteinmpnn",
+  "_api_verified": true
+}

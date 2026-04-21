@@ -1,0 +1,115 @@
+{
+  "space_id": "OpenMOSS-Team/MOSS-VoiceGenerator",
+  "title": "MOSS VoiceGenerator",
+  "emoji": "\ud83c\udfc6",
+  "description": "A gradio platform for demonstrating MOSS-VoiceGenerator",
+  "input_schema": {},
+  "output_schema": {
+    "Voice Instruction": {
+      "type": "str",
+      "description": "Voice Instruction",
+      "component": "Textbox"
+    },
+    "Text": {
+      "type": "str",
+      "description": "Text",
+      "component": "Textbox"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "6.5.1",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 7,
+  "last_modified": "2026-02-13 15:11:36+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_tags_enriched": true,
+  "estimated_latency_s": 3.0,
+  "speed_tier": "fast",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/apply_example_selection",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Voice Instruction",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Text",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/run_inference",
+      "parameters": [
+        {
+          "name": "text",
+          "label": "Text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "instruction",
+          "label": "Voice Instruction",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "temperature",
+          "label": "temperature",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "top_p",
+          "label": "top_p",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "top_k",
+          "label": "top_k",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "repetition_penalty",
+          "label": "repetition_penalty",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "max_new_tokens",
+          "label": "max_new_tokens",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Status",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/apply_example_selection",
+  "_api_verified": true
+}

@@ -1,0 +1,95 @@
+{
+  "space_id": "CohereLabs/cohere-transcribe-03-2026",
+  "title": "Cohere Multilingual ASR",
+  "emoji": "\ud83c\udf99\ufe0f",
+  "description": "Cohere Multilingual ASR",
+  "input_schema": {
+    "audio_path": {
+      "type": "filepath",
+      "description": "Audio clip",
+      "required": true,
+      "component": "Audio"
+    }
+  },
+  "output_schema": {},
+  "license": "unknown",
+  "hardware": "6.10.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 107,
+  "last_modified": "2026-03-27 09:20:14+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/update_transcribe_button",
+      "parameters": [
+        {
+          "name": "audio_path",
+          "label": "Audio clip",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/reset_ui",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Audio clip",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Language",
+          "type": "Literal['en', 'fr', 'de', 'es', 'pt', 'it', 'nl', 'pl', 'el', 'ar', 'ja', 'ko', 'zh', 'vi']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Transcript",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/transcribe",
+      "parameters": [
+        {
+          "name": "audio_path",
+          "label": "Audio clip",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "name": "language",
+          "label": "Language",
+          "type": "Literal['en', 'fr', 'de', 'es', 'pt', 'it', 'nl', 'pl', 'el', 'ar', 'ja', 'ko', 'zh', 'vi']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Transcript",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/update_transcribe_button",
+  "_api_verified": true,
+  "estimated_latency_s": 2.82,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 2.82,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:49:12.714487+00:00"
+}

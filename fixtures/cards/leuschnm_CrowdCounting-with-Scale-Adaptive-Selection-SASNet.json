@@ -1,0 +1,69 @@
+{
+  "space_id": "leuschnm/CrowdCounting-with-Scale-Adaptive-Selection-SASNet",
+  "title": "CrowdCounting-with-Scale-Adaptive-Selection-SASNet",
+  "emoji": "\ud83d\ude80",
+  "description": "Implementation of CrowdCounting with SASNet",
+  "input_schema": {
+    "img": {
+      "type": "filepath",
+      "description": "parameter_9",
+      "required": true,
+      "component": "Image"
+    }
+  },
+  "output_schema": {
+    "value_6": {
+      "type": "Dict(label: str | int | float | None, confidences: List[Dict(label: str | int | float | None, confid",
+      "description": "value_6",
+      "component": "Label"
+    },
+    "value_11": {
+      "type": "Dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+      "description": "value_11",
+      "component": "Plot"
+    }
+  },
+  "license": "mit",
+  "hardware": "4.37.2",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 11,
+  "last_modified": "2024-07-07 18:49:50+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/predict",
+      "parameters": [
+        {
+          "name": "img",
+          "label": "parameter_9",
+          "type": "filepath",
+          "component": "Image"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_6",
+          "type": "Dict(label: str | int | float | None, confidences: List[Dict(label: str | int | float | None, confidence: float | None)] | None)",
+          "component": "Label"
+        },
+        {
+          "label": "value_11",
+          "type": "Dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/predict",
+  "_api_verified": true
+}

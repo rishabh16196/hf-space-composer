@@ -1,0 +1,177 @@
+{
+  "space_id": "imageomics/bioclip-image-search-lite",
+  "title": "BioCLIP Image Search Lite",
+  "emoji": "\ud83e\udd8b",
+  "description": "BioCLIP Image Search Lite",
+  "input_schema": {
+    "img": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "Upload Image",
+      "required": true,
+      "component": "Image"
+    },
+    "rank": {
+      "type": "Literal['kingdom', 'phylum', 'class', 'order', 'family', 'genus', 'species']",
+      "description": "Taxonomic Rank",
+      "required": true,
+      "component": "Dropdown"
+    }
+  },
+  "output_schema": {
+    "value_21": {
+      "type": "str",
+      "description": "value_21",
+      "component": "Html"
+    }
+  },
+  "license": "mit",
+  "hardware": "6.5.1",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "biology",
+    "biodiversity",
+    "embeddings",
+    "faiss",
+    "bioclip",
+    "similarity-search",
+    "tree-of-life",
+    "imageomics",
+    "duckdb",
+    "image-based-search",
+    "evolutionary-biology",
+    "taxonomy",
+    "plants",
+    "animals",
+    "fungi",
+    "region:us"
+  ],
+  "likes": 2,
+  "last_modified": "2026-03-25 20:37:55+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/on_image_upload",
+      "parameters": [
+        {
+          "name": "img",
+          "label": "Upload Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "rank",
+          "label": "Taxonomic Rank",
+          "type": "Literal['kingdom', 'phylum', 'class', 'order', 'family', 'genus', 'species']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_21",
+          "type": "str",
+          "component": "Html"
+        }
+      ]
+    },
+    {
+      "name": "/search",
+      "parameters": [
+        {
+          "name": "img",
+          "label": "Upload Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "top_n",
+          "label": "Top N Results",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "nprobe",
+          "label": "Search Depth (nprobe)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "scope",
+          "label": "Image Source Scope",
+          "type": "Literal['All Sources', 'URL-Available Only', 'iNaturalist Only', 'BioCLIP 2 Training']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Results",
+          "type": "list[dict(image: dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Origi",
+          "component": "Gallery"
+        },
+        {
+          "label": "Taxonomy Tree",
+          "type": "str",
+          "component": "Code"
+        }
+      ]
+    },
+    {
+      "name": "/predict_on_rank_change",
+      "parameters": [
+        {
+          "name": "img",
+          "label": "Upload Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "rank",
+          "label": "Taxonomic Rank",
+          "type": "Literal['kingdom', 'phylum', 'class', 'order', 'family', 'genus', 'species']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_21",
+          "type": "str",
+          "component": "Html"
+        }
+      ]
+    },
+    {
+      "name": "/on_gallery_select",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Selected Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "value_27",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_30",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_32",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/on_image_upload",
+  "_api_verified": true
+}

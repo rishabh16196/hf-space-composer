@@ -1,0 +1,61 @@
+{
+  "space_id": "AlexWortega/t5_predict_activity",
+  "title": "T5 Predict Activity",
+  "emoji": "\ud83d\udc28",
+  "description": "T5 Predict Activity",
+  "input_schema": {
+    "question": {
+      "type": "str",
+      "description": "question",
+      "required": true,
+      "component": "Textbox"
+    }
+  },
+  "output_schema": {
+    "output": {
+      "type": "str",
+      "description": "output",
+      "component": "Textbox"
+    }
+  },
+  "license": "unknown",
+  "hardware": "3.0.24",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us",
+    "text"
+  ],
+  "likes": 2,
+  "last_modified": "2022-07-15 11:13:50+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_tags_enriched": true,
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/predict",
+      "parameters": [
+        {
+          "name": "question",
+          "label": "question",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "output",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/predict",
+  "_api_verified": true
+}

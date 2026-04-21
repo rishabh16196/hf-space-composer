@@ -1,0 +1,59 @@
+{
+  "space_id": "atlasia/MoulSot",
+  "title": "MoulSot",
+  "emoji": "\ud83d\udcbb",
+  "description": "MoulSot",
+  "input_schema": {
+    "audio": {
+      "type": "filepath",
+      "description": "\ud83c\udfa4 Record or Upload Audio (auto 16 kHz mono)",
+      "required": true,
+      "component": "Audio"
+    }
+  },
+  "output_schema": {
+    "\ud83d\udfe9 Transcription Output": {
+      "type": "str",
+      "description": "\ud83d\udfe9 Transcription Output",
+      "component": "Textbox"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "5.49.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 6,
+  "last_modified": "2025-12-24 18:10:46+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/transcribe",
+      "parameters": [
+        {
+          "name": "audio",
+          "label": "\ud83c\udfa4 Record or Upload Audio (auto 16 kHz mono)",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "\ud83d\udfe9 Transcription Output",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/transcribe",
+  "_api_verified": true
+}

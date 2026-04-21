@@ -1,0 +1,35 @@
+{
+  "space_id": "animetimm/e621v1-full-playground",
+  "title": "E621V1 Full Tagger Playground (e621v1-full)",
+  "emoji": "\ud83c\udff7\ufe0f",
+  "description": "Tag images using pretrained e621v1-full tagger models",
+  "input_schema": {
+    "input": {
+      "type": "string",
+      "description": "Input",
+      "required": true
+    }
+  },
+  "output_schema": {
+    "output": {
+      "type": "string"
+    }
+  },
+  "license": "unknown",
+  "hardware": "5.49.1",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 4,
+  "last_modified": "2025-11-09 16:34:12+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "error",
+  "_api_error": "(Request ID: Root=1-69e77bbe-5bb6d17b0f603ab7317c4808;11027c41-2626-45c8-9642-0abbeaf53f64)\n\n429 Too Many Requests: you have reached your 'api' rate limit.\nRetry after 32 seconds (0/2500 requests rema"
+}

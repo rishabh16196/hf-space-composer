@@ -1,0 +1,173 @@
+{
+  "space_id": "black-forest-labs/FLUX.2-klein-4B",
+  "title": "FLUX.2 [Klein] 4B",
+  "emoji": "\ud83d\udcbb",
+  "description": "FLUX.2 [Klein] 4B",
+  "input_schema": {
+    "image_list": {
+      "type": "list[dict(image: dict(path: str | None (Path to a local file), url: str | None (Publicly available u",
+      "description": "Input Image(s)",
+      "required": true,
+      "component": "Gallery"
+    }
+  },
+  "output_schema": {
+    "Width": {
+      "type": "float",
+      "description": "Width",
+      "component": "Slider"
+    },
+    "Height": {
+      "type": "float",
+      "description": "Height",
+      "component": "Slider"
+    }
+  },
+  "license": "unknown",
+  "hardware": "6.3.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 134,
+  "last_modified": "2026-02-09 09:28:25+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/update_dimensions_from_image",
+      "parameters": [
+        {
+          "name": "image_list",
+          "label": "Input Image(s)",
+          "type": "list[dict(image: dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Origi",
+          "component": "Gallery"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Width",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Height",
+          "type": "float",
+          "component": "Slider"
+        }
+      ]
+    },
+    {
+      "name": "/update_steps_from_mode",
+      "parameters": [
+        {
+          "name": "mode_choice",
+          "label": "Mode",
+          "type": "Literal['Distilled (4 steps)', 'Base (50 steps)']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Number of inference steps",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Guidance scale",
+          "type": "float",
+          "component": "Slider"
+        }
+      ]
+    },
+    {
+      "name": "/infer",
+      "parameters": [
+        {
+          "name": "prompt",
+          "label": "Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "input_images",
+          "label": "Input Image(s)",
+          "type": "list[dict(image: dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Origi",
+          "component": "Gallery"
+        },
+        {
+          "name": "mode_choice",
+          "label": "Mode",
+          "type": "Literal['Distilled (4 steps)', 'Base (50 steps)']",
+          "component": "Radio"
+        },
+        {
+          "name": "seed",
+          "label": "Seed",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "randomize_seed",
+          "label": "Randomize seed",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "width",
+          "label": "Width",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "height",
+          "label": "Height",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "num_inference_steps",
+          "label": "Number of inference steps",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "guidance_scale",
+          "label": "Guidance scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "prompt_upsampling",
+          "label": "Prompt Upsampling",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Result",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "Seed",
+          "type": "float",
+          "component": "Slider"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/update_dimensions_from_image",
+  "_api_verified": true,
+  "estimated_latency_s": 3.42,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "_tags_enriched": true,
+  "measured_latency_s": 3.42,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:50:24.498018+00:00"
+}

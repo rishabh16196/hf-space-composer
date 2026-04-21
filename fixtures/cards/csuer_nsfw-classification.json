@@ -1,0 +1,63 @@
+{
+  "space_id": "csuer/nsfw-classification",
+  "title": "Nsfw Classify",
+  "emoji": "\ud83d\ude80",
+  "description": "Nsfw Classify",
+  "input_schema": {},
+  "output_schema": {
+    "\ud83d\udce4 \u4e0a\u4f20\u56fe\u7247": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "\ud83d\udce4 \u4e0a\u4f20\u56fe\u7247",
+      "component": "Image"
+    }
+  },
+  "license": "unknown",
+  "hardware": "5.15.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 3,
+  "last_modified": "2025-02-09 09:57:29+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/lambda",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "\ud83d\udce4 \u4e0a\u4f20\u56fe\u7247",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/predict",
+      "parameters": [
+        {
+          "name": "image_path",
+          "label": "\ud83d\udce4 \u4e0a\u4f20\u56fe\u7247",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ],
+      "returns": [
+        {
+          "label": "\u5206\u7c7b\u6982\u7387\u5206\u5e03",
+          "type": "dict(label: str | int | float | None, confidences: list[dict(label: str | int | float | None, confidence: float | None)] | None)",
+          "component": "Label"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/lambda",
+  "_api_verified": true
+}

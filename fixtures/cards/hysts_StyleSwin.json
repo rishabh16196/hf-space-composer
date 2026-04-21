@@ -1,0 +1,92 @@
+{
+  "space_id": "hysts/StyleSwin",
+  "title": "StyleSwin",
+  "emoji": "\ud83d\udc41",
+  "description": "StyleSwin",
+  "input_schema": {
+    "model_name": {
+      "type": "Literal['CelebAHQ_256', 'FFHQ_256', 'LSUNChurch_256', 'CelebAHQ_1024', 'FFHQ_1024']",
+      "description": "Model",
+      "required": true,
+      "component": "Dropdown"
+    },
+    "seed": {
+      "type": "float",
+      "description": "Seed",
+      "required": true,
+      "component": "Slider"
+    }
+  },
+  "output_schema": {
+    "Result": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "Result",
+      "component": "Image"
+    }
+  },
+  "license": "unknown",
+  "hardware": "5.44.1",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 10,
+  "last_modified": "2025-09-05 08:27:55+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/run",
+      "parameters": [
+        {
+          "name": "model_name",
+          "label": "Model",
+          "type": "Literal['CelebAHQ_256', 'FFHQ_256', 'LSUNChurch_256', 'CelebAHQ_1024', 'FFHQ_1024']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "seed",
+          "label": "Seed",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Result",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/get_sample_image_markdown",
+      "parameters": [
+        {
+          "name": "name",
+          "label": "Model",
+          "type": "Literal['celeba-hq', 'ffhq', 'lsun-church']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_17",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/run",
+  "_api_verified": true,
+  "estimated_latency_s": 4.54,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 4.54,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:50:51.964365+00:00"
+}

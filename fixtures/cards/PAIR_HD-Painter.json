@@ -1,0 +1,270 @@
+{
+  "space_id": "PAIR/HD-Painter",
+  "title": "HD-Painter",
+  "emoji": "\ud83e\uddd1\u200d\ud83c\udfa8",
+  "description": "HD-Painter",
+  "input_schema": {
+    "Please select a model!": {
+      "type": "str",
+      "description": "Please select a model!",
+      "required": true,
+      "component": "Dropdown"
+    },
+    "Use RASG": {
+      "type": "bool",
+      "description": "Use RASG",
+      "required": true,
+      "component": "Checkbox"
+    },
+    "Use PAIntA": {
+      "type": "bool",
+      "description": "Use PAIntA",
+      "required": true,
+      "component": "Checkbox"
+    },
+    "Inpainting Prompt": {
+      "type": "str",
+      "description": "Inpainting Prompt",
+      "required": true,
+      "component": "Textbox"
+    },
+    "Input Image": {
+      "type": "str",
+      "description": "Input Image",
+      "required": true,
+      "component": "Image"
+    },
+    "parameter_15": {
+      "type": "str",
+      "description": "parameter_15",
+      "required": true,
+      "component": "Image"
+    },
+    "Seed": {
+      "type": "int | float",
+      "description": "Seed",
+      "required": true,
+      "component": "Number"
+    },
+    "eta": {
+      "type": "int | float",
+      "description": "eta",
+      "required": true,
+      "component": "Slider"
+    },
+    "Negative prompt": {
+      "type": "str",
+      "description": "Negative prompt",
+      "required": true,
+      "component": "Textbox"
+    },
+    "Positive prompt": {
+      "type": "str",
+      "description": "Positive prompt",
+      "required": true,
+      "component": "Textbox"
+    },
+    "Number of diffusion steps": {
+      "type": "int | float",
+      "description": "Number of diffusion steps",
+      "required": true,
+      "component": "Slider"
+    },
+    "Guidance Scale": {
+      "type": "int | float",
+      "description": "Guidance Scale",
+      "required": true,
+      "component": "Slider"
+    },
+    "Batch size": {
+      "type": "int | float",
+      "description": "Batch size",
+      "required": true,
+      "component": "Number"
+    },
+    "parameter_44": {
+      "type": "str",
+      "description": "parameter_44",
+      "required": true,
+      "component": "Textbox"
+    }
+  },
+  "output_schema": {
+    "value_32": {
+      "type": "Tuple[Dict(name: str (name of file), data: str (base64 representation of file), size: int (size of i",
+      "description": "value_32",
+      "component": "Gallery"
+    },
+    "value_44": {
+      "type": "str",
+      "description": "value_44",
+      "component": "Textbox"
+    }
+  },
+  "license": "unknown",
+  "hardware": "3.47.1",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 190,
+  "last_modified": "2024-01-28 16:02:05+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/inpaint",
+      "parameters": [
+        {
+          "name": "Please select a model!",
+          "label": "Please select a model!",
+          "type": "str",
+          "component": "Dropdown"
+        },
+        {
+          "name": "Use RASG",
+          "label": "Use RASG",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "Use PAIntA",
+          "label": "Use PAIntA",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "Inpainting Prompt",
+          "label": "Inpainting Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "Input Image",
+          "label": "Input Image",
+          "type": "str",
+          "component": "Image"
+        },
+        {
+          "name": "parameter_15",
+          "label": "parameter_15",
+          "type": "str",
+          "component": "Image"
+        },
+        {
+          "name": "Seed",
+          "label": "Seed",
+          "type": "int | float",
+          "component": "Number"
+        },
+        {
+          "name": "eta",
+          "label": "eta",
+          "type": "int | float",
+          "component": "Slider"
+        },
+        {
+          "name": "Negative prompt",
+          "label": "Negative prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "Positive prompt",
+          "label": "Positive prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "Number of diffusion steps",
+          "label": "Number of diffusion steps",
+          "type": "int | float",
+          "component": "Slider"
+        },
+        {
+          "name": "Guidance Scale",
+          "label": "Guidance Scale",
+          "type": "int | float",
+          "component": "Slider"
+        },
+        {
+          "name": "Batch size",
+          "label": "Batch size",
+          "type": "int | float",
+          "component": "Number"
+        },
+        {
+          "name": "parameter_44",
+          "label": "parameter_44",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_32",
+          "type": "Tuple[Dict(name: str (name of file), data: str (base64 representation of file), size: int (size of image in bytes), is_file: bool (true if the file has been uploaded to the server), orig_name: str (or",
+          "component": "Gallery"
+        },
+        {
+          "label": "value_44",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/upscale",
+      "parameters": [
+        {
+          "name": "Number of diffusion steps",
+          "label": "Number of diffusion steps",
+          "type": "int | float",
+          "component": "Slider"
+        },
+        {
+          "name": "Seed",
+          "label": "Seed",
+          "type": "int | float",
+          "component": "Number"
+        },
+        {
+          "name": "Use SAM mask for background preservation (for SR only, experimental feature)",
+          "label": "Use SAM mask for background preservation (for SR only, experimental feature)",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "parameter_44",
+          "label": "parameter_44",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "parameter_45",
+          "label": "parameter_45",
+          "type": "str",
+          "component": "Html"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Hi-res Image",
+          "type": "str",
+          "component": "Image"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/inpaint",
+  "_api_verified": true,
+  "estimated_latency_s": 3.55,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 3.55,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:49:46.690839+00:00"
+}

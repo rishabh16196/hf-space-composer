@@ -1,0 +1,36 @@
+{
+  "space_id": "cardiffnlp/twitter-roberta-sentiment",
+  "description": "Sentiment classifier (positive / negative / neutral) trained on social media text.",
+  "input_schema": {
+    "text": {
+      "type": "string",
+      "description": "Text to classify",
+      "required": true
+    }
+  },
+  "output_schema": {
+    "label": {
+      "type": "string",
+      "description": "positive | negative | neutral"
+    },
+    "score": {
+      "type": "number",
+      "description": "Confidence 0-1"
+    }
+  },
+  "license": "mit",
+  "sdk": "gradio",
+  "tags": [
+    "english",
+    "sentiment",
+    "nlp",
+    "text"
+  ],
+  "_api_scraped": true,
+  "_api_status": "not_found",
+  "_api_error": "404",
+  "estimated_latency_s": 2.5,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "_tags_enriched": true
+}

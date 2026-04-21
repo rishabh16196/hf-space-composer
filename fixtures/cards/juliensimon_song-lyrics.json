@@ -1,0 +1,66 @@
+{
+  "space_id": "juliensimon/song-lyrics",
+  "title": "Song Lyrics",
+  "emoji": "\ud83c\udfb5",
+  "description": "Song Lyrics",
+  "input_schema": {
+    "lyrics": {
+      "type": "str",
+      "description": "Song lyrics",
+      "required": true,
+      "component": "Textbox"
+    }
+  },
+  "output_schema": {
+    "Genre prediction": {
+      "type": "str",
+      "description": "Genre prediction",
+      "component": "Textbox"
+    }
+  },
+  "license": "unknown",
+  "hardware": "",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us",
+    "audio",
+    "music",
+    "song-generation"
+  ],
+  "likes": 12,
+  "last_modified": "2026-03-22 21:19:17+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/predict",
+      "parameters": [
+        {
+          "name": "lyrics",
+          "label": "Song lyrics",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Genre prediction",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/predict",
+  "_api_verified": true,
+  "estimated_latency_s": 3.77,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "_tags_enriched": true,
+  "measured_latency_s": 3.77,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:51:01.669737+00:00"
+}

@@ -1,0 +1,129 @@
+{
+  "space_id": "Jonny001/Face-Sawaper-VID",
+  "title": "Face Sawaper VID",
+  "emoji": "\ud83d\udc67",
+  "description": "Face Sawaper VID",
+  "input_schema": {
+    "source_file": {
+      "type": "filepath",
+      "description": "Upload Source Face",
+      "required": true,
+      "component": "Image"
+    },
+    "target_file": {
+      "type": "Dict(video: filepath, subtitles: filepath | None)",
+      "description": "Upload Target Video",
+      "required": true,
+      "component": "Video"
+    },
+    "doFaceEnhancer": {
+      "type": "bool",
+      "description": "Enable Face Enhancer",
+      "required": true,
+      "component": "Checkbox"
+    },
+    "video_quality_val": {
+      "type": "float",
+      "description": "Output Quality (0=Best, 100=Worst)",
+      "required": true,
+      "component": "Slider"
+    }
+  },
+  "output_schema": {
+    "Current Status": {
+      "type": "str",
+      "description": "Current Status",
+      "component": "Textbox"
+    },
+    "Swapped Result": {
+      "type": "Dict(video: filepath, subtitles: filepath | None)",
+      "description": "Swapped Result",
+      "component": "Video"
+    },
+    "Download Result": {
+      "type": "filepath",
+      "description": "Download Result",
+      "component": "File"
+    }
+  },
+  "license": "mit",
+  "hardware": "4.39.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 19,
+  "last_modified": "2025-09-18 19:58:05+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/process_swap",
+      "parameters": [
+        {
+          "name": "source_file",
+          "label": "Upload Source Face",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "name": "target_file",
+          "label": "Upload Target Video",
+          "type": "Dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        },
+        {
+          "name": "doFaceEnhancer",
+          "label": "Enable Face Enhancer",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "video_quality_val",
+          "label": "Output Quality (0=Best, 100=Worst)",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Current Status",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Swapped Result",
+          "type": "Dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        },
+        {
+          "label": "Download Result",
+          "type": "filepath",
+          "component": "File"
+        }
+      ]
+    },
+    {
+      "name": "/show_download",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Download Result",
+          "type": "filepath",
+          "component": "File"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/process_swap",
+  "_api_verified": true,
+  "estimated_latency_s": 3.32,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 3.32,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:49:30.788872+00:00"
+}

@@ -1,0 +1,43 @@
+{
+  "space_id": "ankandrew/fast-alpr",
+  "title": "FastALPR - Automatic License Plate Recognition - Demo",
+  "emoji": "\ud83d\udd0d",
+  "description": "A high-performance, customizable and simple (ALPR)",
+  "input_schema": {
+    "image_url": {
+      "type": "string",
+      "description": "Image with text",
+      "required": true
+    }
+  },
+  "output_schema": {
+    "extracted_text": {
+      "type": "string"
+    }
+  },
+  "license": "mit",
+  "hardware": "1.40.2",
+  "sdk": "streamlit",
+  "tags": [
+    "streamlit",
+    "computer-vision",
+    "license-plate",
+    "alpr",
+    "license-plate-recognition",
+    "license-plate-detection",
+    "yolo",
+    "onnx",
+    "real-time",
+    "region:us"
+  ],
+  "likes": 36,
+  "last_modified": "2026-04-19 22:35:08+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "error",
+  "_api_error": "Expecting value: line 1 column 1 (char 0)",
+  "estimated_latency_s": 5.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred"
+}

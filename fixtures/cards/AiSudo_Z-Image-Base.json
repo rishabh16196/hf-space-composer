@@ -1,0 +1,186 @@
+{
+  "space_id": "AiSudo/Z-Image-Base",
+  "title": "Z Image Base",
+  "emoji": "\ud83d\uddbc",
+  "description": "Generate image online with ZIB (Z-Image Base)",
+  "input_schema": {
+    "prompt": {
+      "type": "str",
+      "description": "Prompt",
+      "required": true,
+      "component": "Textbox"
+    },
+    "negative_prompt": {
+      "type": "str",
+      "description": "Negative Prompt (optional)",
+      "required": true,
+      "component": "Textbox"
+    },
+    "width": {
+      "type": "float",
+      "description": "Width",
+      "required": true,
+      "component": "Slider"
+    },
+    "height": {
+      "type": "float",
+      "description": "Height",
+      "required": true,
+      "component": "Slider"
+    },
+    "seed": {
+      "type": "int",
+      "description": "Seed",
+      "required": true,
+      "component": "Number"
+    },
+    "num_inference_steps": {
+      "type": "float",
+      "description": "Inference Steps",
+      "required": true,
+      "component": "Slider"
+    },
+    "guidance_scale": {
+      "type": "float",
+      "description": "Guidance Scale (CFG)",
+      "required": true,
+      "component": "Slider"
+    },
+    "cfg_normalization": {
+      "type": "bool",
+      "description": "CFG Normalization",
+      "required": true,
+      "component": "Checkbox"
+    },
+    "random_seed": {
+      "type": "bool",
+      "description": "Random Seed",
+      "required": true,
+      "component": "Checkbox"
+    },
+    "gallery_images": {
+      "type": "list[dict(image: dict(path: str | None (Path to a local file), url: str | None (Publicly available u",
+      "description": "Generated Images",
+      "required": true,
+      "component": "Gallery"
+    }
+  },
+  "output_schema": {
+    "Generated Images": {
+      "type": "list[dict(image: dict(path: str | None (Path to a local file), url: str | None (Publicly available u",
+      "description": "Generated Images",
+      "component": "Gallery"
+    },
+    "Seed": {
+      "type": "int",
+      "description": "Seed",
+      "component": "Number"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "6.1.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "mcp-server",
+    "region:us",
+    "diffusion",
+    "image-generation",
+    "text-to-image",
+    "vision"
+  ],
+  "likes": 15,
+  "last_modified": "2026-01-30 15:50:15+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/generate",
+      "parameters": [
+        {
+          "name": "prompt",
+          "label": "Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "negative_prompt",
+          "label": "Negative Prompt (optional)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "width",
+          "label": "Width",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "height",
+          "label": "Height",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "seed",
+          "label": "Seed",
+          "type": "int",
+          "component": "Number"
+        },
+        {
+          "name": "num_inference_steps",
+          "label": "Inference Steps",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "guidance_scale",
+          "label": "Guidance Scale (CFG)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "cfg_normalization",
+          "label": "CFG Normalization",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "random_seed",
+          "label": "Random Seed",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "gallery_images",
+          "label": "Generated Images",
+          "type": "list[dict(image: dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Origi",
+          "component": "Gallery"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Generated Images",
+          "type": "list[dict(image: dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Origi",
+          "component": "Gallery"
+        },
+        {
+          "label": "Seed",
+          "type": "int",
+          "component": "Number"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/generate",
+  "_api_verified": true,
+  "estimated_latency_s": 2.94,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "_tags_enriched": true,
+  "measured_latency_s": 2.94,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:49:05.745561+00:00"
+}

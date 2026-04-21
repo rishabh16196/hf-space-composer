@@ -1,0 +1,223 @@
+{
+  "space_id": "JammyMachina/the-jam-machine-app",
+  "title": "The Jam Machine",
+  "emoji": "\ud83c\udfb9",
+  "description": "The Jam Machine",
+  "input_schema": {
+    "t": {
+      "type": "Literal['0.1', '0.2', '0.3', '0.4', '0.5', '0.6', '0.7', '0.8', '0.9', '1']",
+      "description": "Creativity",
+      "required": true,
+      "component": "Dropdown"
+    },
+    "d": {
+      "type": "Literal['1', '2', '3']",
+      "description": "Note Density",
+      "required": true,
+      "component": "Dropdown"
+    },
+    "ins": {
+      "type": "Literal['Electric Piano 1', 'Ethnic', 'Percussive', 'Percussive Organ', 'Sound Effects', 'Synth Bass",
+      "description": "Instrument",
+      "required": true,
+      "component": "Dropdown"
+    }
+  },
+  "output_schema": {
+    "output": {
+      "type": "str",
+      "description": "output",
+      "component": "Textbox"
+    },
+    "TRACK Audio": {
+      "type": "filepath",
+      "description": "TRACK Audio",
+      "component": "Audio"
+    },
+    "Piano Roll": {
+      "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+      "description": "Piano Roll",
+      "component": "Plot"
+    },
+    "Mixed Audio": {
+      "type": "filepath",
+      "description": "Mixed Audio",
+      "component": "Audio"
+    },
+    "Download": {
+      "type": "filepath",
+      "description": "Download",
+      "component": "File"
+    }
+  },
+  "license": "mit",
+  "hardware": "",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 47,
+  "last_modified": "2026-04-01 15:57:25+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/lambda",
+      "parameters": [
+        {
+          "name": "t",
+          "label": "Creativity",
+          "type": "Literal['0.1', '0.2', '0.3', '0.4', '0.5', '0.6', '0.7', '0.8', '0.9', '1']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "d",
+          "label": "Note Density",
+          "type": "Literal['1', '2', '3']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "ins",
+          "label": "Instrument",
+          "type": "Literal['Electric Piano 1', 'Ethnic', 'Percussive', 'Percussive Organ', 'Sound Effects', 'Synth Bass 1', 'Synth Brass 1', 'Synth Brass 2', 'Synth Effects', 'Synth Lead Calliope', 'Synth Lead Sawtooth'",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "output",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "TRACK Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Piano Roll",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "Mixed Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Download",
+          "type": "filepath",
+          "component": "File"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_1",
+      "parameters": [
+        {
+          "name": "t",
+          "label": "Creativity",
+          "type": "Literal['0.1', '0.2', '0.3', '0.4', '0.5', '0.6', '0.7', '0.8', '0.9', '1']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "d",
+          "label": "Note Density",
+          "type": "Literal['1', '2', '3']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "ins",
+          "label": "Instrument",
+          "type": "Literal['Electric Piano 1', 'Ethnic', 'Percussive', 'Percussive Organ', 'Sound Effects', 'Synth Bass 1', 'Synth Brass 1', 'Synth Brass 2', 'Synth Effects', 'Synth Lead Calliope', 'Synth Lead Sawtooth'",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "output",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "TRACK Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Piano Roll",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "Mixed Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Download",
+          "type": "filepath",
+          "component": "File"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_2",
+      "parameters": [
+        {
+          "name": "t",
+          "label": "Creativity",
+          "type": "Literal['0.1', '0.2', '0.3', '0.4', '0.5', '0.6', '0.7', '0.8', '0.9', '1']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "d",
+          "label": "Note Density",
+          "type": "Literal['1', '2', '3']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "ins",
+          "label": "Instrument",
+          "type": "Literal['Electric Piano 1', 'Ethnic', 'Percussive', 'Percussive Organ', 'Sound Effects', 'Synth Bass 1', 'Synth Brass 1', 'Synth Brass 2', 'Synth Effects', 'Synth Lead Calliope', 'Synth Lead Sawtooth'",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "output",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "TRACK Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Piano Roll",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "Mixed Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Download",
+          "type": "filepath",
+          "component": "File"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/lambda",
+  "_api_verified": true
+}

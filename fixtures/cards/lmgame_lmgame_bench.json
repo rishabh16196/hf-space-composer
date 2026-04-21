@@ -1,0 +1,6774 @@
+{
+  "space_id": "lmgame/lmgame_bench",
+  "title": "Lmgame Bench",
+  "emoji": "\ud83e\udd47",
+  "description": "Evaluate AI Models on Gameplays",
+  "input_schema": {
+    "param_0": {
+      "type": "bool",
+      "description": "Super Mario Bros Score",
+      "required": true,
+      "component": "Checkbox"
+    },
+    "param_1": {
+      "type": "bool",
+      "description": "Super Mario Bros Details",
+      "required": true,
+      "component": "Checkbox"
+    },
+    "param_2": {
+      "type": "bool",
+      "description": "Sokoban Score",
+      "required": true,
+      "component": "Checkbox"
+    },
+    "param_3": {
+      "type": "bool",
+      "description": "Sokoban Details",
+      "required": true,
+      "component": "Checkbox"
+    },
+    "param_4": {
+      "type": "bool",
+      "description": "2048 Score",
+      "required": true,
+      "component": "Checkbox"
+    },
+    "param_5": {
+      "type": "bool",
+      "description": "2048 Details",
+      "required": true,
+      "component": "Checkbox"
+    },
+    "param_6": {
+      "type": "bool",
+      "description": "Candy Crush Score",
+      "required": true,
+      "component": "Checkbox"
+    },
+    "param_7": {
+      "type": "bool",
+      "description": "Candy Crush Details",
+      "required": true,
+      "component": "Checkbox"
+    },
+    "param_8": {
+      "type": "bool",
+      "description": "Tetris Score",
+      "required": true,
+      "component": "Checkbox"
+    },
+    "param_9": {
+      "type": "bool",
+      "description": "Tetris Details",
+      "required": true,
+      "component": "Checkbox"
+    },
+    "param_10": {
+      "type": "bool",
+      "description": "Ace Attorney Score",
+      "required": true,
+      "component": "Checkbox"
+    },
+    "param_11": {
+      "type": "bool",
+      "description": "Ace Attorney Details",
+      "required": true,
+      "component": "Checkbox"
+    }
+  },
+  "output_schema": {
+    "Performance Visualization": {
+      "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+      "description": "Performance Visualization",
+      "component": "Plot"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "5.19.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 42,
+  "last_modified": "2025-08-25 20:29:16+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/update_model_visualizations",
+      "parameters": [
+        {
+          "name": "param_0",
+          "label": "Super Mario Bros Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_1",
+          "label": "Super Mario Bros Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_2",
+          "label": "Sokoban Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_3",
+          "label": "Sokoban Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_4",
+          "label": "2048 Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_5",
+          "label": "2048 Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_6",
+          "label": "Candy Crush Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_7",
+          "label": "Candy Crush Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_8",
+          "label": "Tetris Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_9",
+          "label": "Tetris Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_10",
+          "label": "Ace Attorney Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_11",
+          "label": "Ace Attorney Details",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Performance Visualization",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        }
+      ]
+    },
+    {
+      "name": "/update_model_visualizations_1",
+      "parameters": [
+        {
+          "name": "param_0",
+          "label": "Super Mario Bros Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_1",
+          "label": "Super Mario Bros Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_2",
+          "label": "Sokoban Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_3",
+          "label": "Sokoban Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_4",
+          "label": "2048 Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_5",
+          "label": "2048 Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_6",
+          "label": "Candy Crush Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_7",
+          "label": "Candy Crush Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_8",
+          "label": "Tetris Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_9",
+          "label": "Tetris Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_10",
+          "label": "Ace Attorney Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_11",
+          "label": "Ace Attorney Details",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Performance Visualization",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        }
+      ]
+    },
+    {
+      "name": "/update_model_visualizations_2",
+      "parameters": [
+        {
+          "name": "param_0",
+          "label": "Super Mario Bros Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_1",
+          "label": "Super Mario Bros Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_2",
+          "label": "Sokoban Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_3",
+          "label": "Sokoban Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_4",
+          "label": "2048 Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_5",
+          "label": "2048 Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_6",
+          "label": "Candy Crush Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_7",
+          "label": "Candy Crush Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_8",
+          "label": "Tetris Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_9",
+          "label": "Tetris Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_10",
+          "label": "Ace Attorney Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_11",
+          "label": "Ace Attorney Details",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Performance Visualization",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        }
+      ]
+    },
+    {
+      "name": "/update_model_visualizations_3",
+      "parameters": [
+        {
+          "name": "param_0",
+          "label": "Super Mario Bros Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_1",
+          "label": "Super Mario Bros Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_2",
+          "label": "Sokoban Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_3",
+          "label": "Sokoban Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_4",
+          "label": "2048 Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_5",
+          "label": "2048 Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_6",
+          "label": "Candy Crush Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_7",
+          "label": "Candy Crush Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_8",
+          "label": "Tetris Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_9",
+          "label": "Tetris Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_10",
+          "label": "Ace Attorney Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_11",
+          "label": "Ace Attorney Details",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Performance Visualization",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        }
+      ]
+    },
+    {
+      "name": "/update_model_visualizations_4",
+      "parameters": [
+        {
+          "name": "param_0",
+          "label": "Super Mario Bros Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_1",
+          "label": "Super Mario Bros Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_2",
+          "label": "Sokoban Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_3",
+          "label": "Sokoban Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_4",
+          "label": "2048 Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_5",
+          "label": "2048 Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_6",
+          "label": "Candy Crush Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_7",
+          "label": "Candy Crush Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_8",
+          "label": "Tetris Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_9",
+          "label": "Tetris Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_10",
+          "label": "Ace Attorney Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_11",
+          "label": "Ace Attorney Details",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Performance Visualization",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        }
+      ]
+    },
+    {
+      "name": "/update_model_visualizations_5",
+      "parameters": [
+        {
+          "name": "param_0",
+          "label": "Super Mario Bros Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_1",
+          "label": "Super Mario Bros Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_2",
+          "label": "Sokoban Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_3",
+          "label": "Sokoban Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_4",
+          "label": "2048 Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_5",
+          "label": "2048 Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_6",
+          "label": "Candy Crush Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_7",
+          "label": "Candy Crush Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_8",
+          "label": "Tetris Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_9",
+          "label": "Tetris Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_10",
+          "label": "Ace Attorney Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_11",
+          "label": "Ace Attorney Details",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Performance Visualization",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        }
+      ]
+    },
+    {
+      "name": "/update_model_visualizations_6",
+      "parameters": [
+        {
+          "name": "param_0",
+          "label": "Super Mario Bros Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_1",
+          "label": "Super Mario Bros Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_2",
+          "label": "Sokoban Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_3",
+          "label": "Sokoban Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_4",
+          "label": "2048 Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_5",
+          "label": "2048 Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_6",
+          "label": "Candy Crush Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_7",
+          "label": "Candy Crush Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_8",
+          "label": "Tetris Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_9",
+          "label": "Tetris Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_10",
+          "label": "Ace Attorney Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_11",
+          "label": "Ace Attorney Details",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Performance Visualization",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        }
+      ]
+    },
+    {
+      "name": "/update_model_visualizations_7",
+      "parameters": [
+        {
+          "name": "param_0",
+          "label": "Super Mario Bros Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_1",
+          "label": "Super Mario Bros Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_2",
+          "label": "Sokoban Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_3",
+          "label": "Sokoban Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_4",
+          "label": "2048 Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_5",
+          "label": "2048 Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_6",
+          "label": "Candy Crush Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_7",
+          "label": "Candy Crush Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_8",
+          "label": "Tetris Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_9",
+          "label": "Tetris Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_10",
+          "label": "Ace Attorney Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_11",
+          "label": "Ace Attorney Details",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Performance Visualization",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        }
+      ]
+    },
+    {
+      "name": "/update_model_visualizations_8",
+      "parameters": [
+        {
+          "name": "param_0",
+          "label": "Super Mario Bros Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_1",
+          "label": "Super Mario Bros Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_2",
+          "label": "Sokoban Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_3",
+          "label": "Sokoban Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_4",
+          "label": "2048 Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_5",
+          "label": "2048 Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_6",
+          "label": "Candy Crush Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_7",
+          "label": "Candy Crush Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_8",
+          "label": "Tetris Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_9",
+          "label": "Tetris Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_10",
+          "label": "Ace Attorney Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_11",
+          "label": "Ace Attorney Details",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Performance Visualization",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        }
+      ]
+    },
+    {
+      "name": "/update_model_visualizations_9",
+      "parameters": [
+        {
+          "name": "param_0",
+          "label": "Super Mario Bros Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_1",
+          "label": "Super Mario Bros Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_2",
+          "label": "Sokoban Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_3",
+          "label": "Sokoban Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_4",
+          "label": "2048 Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_5",
+          "label": "2048 Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_6",
+          "label": "Candy Crush Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_7",
+          "label": "Candy Crush Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_8",
+          "label": "Tetris Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_9",
+          "label": "Tetris Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_10",
+          "label": "Ace Attorney Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_11",
+          "label": "Ace Attorney Details",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Performance Visualization",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        }
+      ]
+    },
+    {
+      "name": "/update_model_visualizations_10",
+      "parameters": [
+        {
+          "name": "param_0",
+          "label": "Super Mario Bros Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_1",
+          "label": "Super Mario Bros Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_2",
+          "label": "Sokoban Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_3",
+          "label": "Sokoban Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_4",
+          "label": "2048 Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_5",
+          "label": "2048 Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_6",
+          "label": "Candy Crush Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_7",
+          "label": "Candy Crush Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_8",
+          "label": "Tetris Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_9",
+          "label": "Tetris Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_10",
+          "label": "Ace Attorney Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_11",
+          "label": "Ace Attorney Details",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Performance Visualization",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        }
+      ]
+    },
+    {
+      "name": "/update_model_visualizations_11",
+      "parameters": [
+        {
+          "name": "param_0",
+          "label": "Super Mario Bros Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_1",
+          "label": "Super Mario Bros Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_2",
+          "label": "Sokoban Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_3",
+          "label": "Sokoban Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_4",
+          "label": "2048 Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_5",
+          "label": "2048 Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_6",
+          "label": "Candy Crush Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_7",
+          "label": "Candy Crush Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_8",
+          "label": "Tetris Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_9",
+          "label": "Tetris Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_10",
+          "label": "Ace Attorney Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_11",
+          "label": "Ace Attorney Details",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Performance Visualization",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        }
+      ]
+    },
+    {
+      "name": "/lambda",
+      "parameters": [
+        {
+          "name": "param_0",
+          "label": "Super Mario Bros Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_1",
+          "label": "Super Mario Bros Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_2",
+          "label": "Sokoban Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_3",
+          "label": "Sokoban Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_4",
+          "label": "2048 Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_5",
+          "label": "2048 Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_6",
+          "label": "Candy Crush Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_7",
+          "label": "Candy Crush Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_8",
+          "label": "Tetris Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_9",
+          "label": "Tetris Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_10",
+          "label": "Ace Attorney Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_11",
+          "label": "Ace Attorney Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_12",
+          "label": "Number of Top Models to Display in All Views (max: 24)",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_68",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "Performance Visualization",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "Comparative Analysis (Radar Chart)",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "Comparative Analysis (Group Bar Chart)",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "Super Mario Bros Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Super Mario Bros Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Sokoban Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Sokoban Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "2048 Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "2048 Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Candy Crush Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Candy Crush Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Tetris Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Tetris Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Ace Attorney Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Ace Attorney Details",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_1",
+      "parameters": [
+        {
+          "name": "param_0",
+          "label": "Super Mario Bros Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_1",
+          "label": "Super Mario Bros Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_2",
+          "label": "Sokoban Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_3",
+          "label": "Sokoban Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_4",
+          "label": "2048 Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_5",
+          "label": "2048 Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_6",
+          "label": "Candy Crush Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_7",
+          "label": "Candy Crush Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_8",
+          "label": "Tetris Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_9",
+          "label": "Tetris Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_10",
+          "label": "Ace Attorney Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_11",
+          "label": "Ace Attorney Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_12",
+          "label": "Number of Top Models to Display in All Views (max: 24)",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_68",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "Performance Visualization",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "Comparative Analysis (Radar Chart)",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "Comparative Analysis (Group Bar Chart)",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "Super Mario Bros Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Super Mario Bros Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Sokoban Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Sokoban Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "2048 Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "2048 Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Candy Crush Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Candy Crush Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Tetris Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Tetris Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Ace Attorney Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Ace Attorney Details",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_2",
+      "parameters": [
+        {
+          "name": "param_0",
+          "label": "Super Mario Bros Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_1",
+          "label": "Super Mario Bros Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_2",
+          "label": "Sokoban Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_3",
+          "label": "Sokoban Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_4",
+          "label": "2048 Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_5",
+          "label": "2048 Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_6",
+          "label": "Candy Crush Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_7",
+          "label": "Candy Crush Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_8",
+          "label": "Tetris Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_9",
+          "label": "Tetris Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_10",
+          "label": "Ace Attorney Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_11",
+          "label": "Ace Attorney Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_12",
+          "label": "Number of Top Models to Display in All Views (max: 24)",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_68",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "Performance Visualization",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "Comparative Analysis (Radar Chart)",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "Comparative Analysis (Group Bar Chart)",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "Super Mario Bros Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Super Mario Bros Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Sokoban Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Sokoban Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "2048 Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "2048 Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Candy Crush Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Candy Crush Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Tetris Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Tetris Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Ace Attorney Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Ace Attorney Details",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_3",
+      "parameters": [
+        {
+          "name": "param_0",
+          "label": "Super Mario Bros Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_1",
+          "label": "Super Mario Bros Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_2",
+          "label": "Sokoban Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_3",
+          "label": "Sokoban Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_4",
+          "label": "2048 Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_5",
+          "label": "2048 Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_6",
+          "label": "Candy Crush Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_7",
+          "label": "Candy Crush Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_8",
+          "label": "Tetris Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_9",
+          "label": "Tetris Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_10",
+          "label": "Ace Attorney Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_11",
+          "label": "Ace Attorney Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_12",
+          "label": "Number of Top Models to Display in All Views (max: 24)",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_68",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "Performance Visualization",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "Comparative Analysis (Radar Chart)",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "Comparative Analysis (Group Bar Chart)",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "Super Mario Bros Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Super Mario Bros Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Sokoban Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Sokoban Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "2048 Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "2048 Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Candy Crush Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Candy Crush Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Tetris Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Tetris Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Ace Attorney Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Ace Attorney Details",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_4",
+      "parameters": [
+        {
+          "name": "param_0",
+          "label": "Super Mario Bros Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_1",
+          "label": "Super Mario Bros Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_2",
+          "label": "Sokoban Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_3",
+          "label": "Sokoban Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_4",
+          "label": "2048 Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_5",
+          "label": "2048 Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_6",
+          "label": "Candy Crush Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_7",
+          "label": "Candy Crush Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_8",
+          "label": "Tetris Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_9",
+          "label": "Tetris Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_10",
+          "label": "Ace Attorney Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_11",
+          "label": "Ace Attorney Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_12",
+          "label": "Number of Top Models to Display in All Views (max: 24)",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_68",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "Performance Visualization",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "Comparative Analysis (Radar Chart)",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "Comparative Analysis (Group Bar Chart)",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "Super Mario Bros Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Super Mario Bros Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Sokoban Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Sokoban Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "2048 Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "2048 Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Candy Crush Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Candy Crush Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Tetris Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Tetris Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Ace Attorney Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Ace Attorney Details",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_5",
+      "parameters": [
+        {
+          "name": "param_0",
+          "label": "Super Mario Bros Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_1",
+          "label": "Super Mario Bros Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_2",
+          "label": "Sokoban Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_3",
+          "label": "Sokoban Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_4",
+          "label": "2048 Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_5",
+          "label": "2048 Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_6",
+          "label": "Candy Crush Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_7",
+          "label": "Candy Crush Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_8",
+          "label": "Tetris Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_9",
+          "label": "Tetris Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_10",
+          "label": "Ace Attorney Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_11",
+          "label": "Ace Attorney Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_12",
+          "label": "Number of Top Models to Display in All Views (max: 24)",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_68",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "Performance Visualization",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "Comparative Analysis (Radar Chart)",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "Comparative Analysis (Group Bar Chart)",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "Super Mario Bros Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Super Mario Bros Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Sokoban Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Sokoban Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "2048 Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "2048 Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Candy Crush Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Candy Crush Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Tetris Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Tetris Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Ace Attorney Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Ace Attorney Details",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_6",
+      "parameters": [
+        {
+          "name": "param_0",
+          "label": "Super Mario Bros Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_1",
+          "label": "Super Mario Bros Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_2",
+          "label": "Sokoban Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_3",
+          "label": "Sokoban Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_4",
+          "label": "2048 Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_5",
+          "label": "2048 Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_6",
+          "label": "Candy Crush Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_7",
+          "label": "Candy Crush Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_8",
+          "label": "Tetris Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_9",
+          "label": "Tetris Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_10",
+          "label": "Ace Attorney Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_11",
+          "label": "Ace Attorney Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_12",
+          "label": "Number of Top Models to Display in All Views (max: 24)",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_68",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "Performance Visualization",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "Comparative Analysis (Radar Chart)",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "Comparative Analysis (Group Bar Chart)",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "Super Mario Bros Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Super Mario Bros Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Sokoban Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Sokoban Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "2048 Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "2048 Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Candy Crush Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Candy Crush Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Tetris Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Tetris Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Ace Attorney Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Ace Attorney Details",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_7",
+      "parameters": [
+        {
+          "name": "param_0",
+          "label": "Super Mario Bros Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_1",
+          "label": "Super Mario Bros Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_2",
+          "label": "Sokoban Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_3",
+          "label": "Sokoban Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_4",
+          "label": "2048 Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_5",
+          "label": "2048 Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_6",
+          "label": "Candy Crush Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_7",
+          "label": "Candy Crush Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_8",
+          "label": "Tetris Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_9",
+          "label": "Tetris Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_10",
+          "label": "Ace Attorney Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_11",
+          "label": "Ace Attorney Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_12",
+          "label": "Number of Top Models to Display in All Views (max: 24)",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_68",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "Performance Visualization",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "Comparative Analysis (Radar Chart)",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "Comparative Analysis (Group Bar Chart)",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "Super Mario Bros Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Super Mario Bros Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Sokoban Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Sokoban Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "2048 Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "2048 Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Candy Crush Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Candy Crush Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Tetris Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Tetris Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Ace Attorney Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Ace Attorney Details",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_8",
+      "parameters": [
+        {
+          "name": "param_0",
+          "label": "Super Mario Bros Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_1",
+          "label": "Super Mario Bros Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_2",
+          "label": "Sokoban Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_3",
+          "label": "Sokoban Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_4",
+          "label": "2048 Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_5",
+          "label": "2048 Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_6",
+          "label": "Candy Crush Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_7",
+          "label": "Candy Crush Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_8",
+          "label": "Tetris Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_9",
+          "label": "Tetris Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_10",
+          "label": "Ace Attorney Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_11",
+          "label": "Ace Attorney Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_12",
+          "label": "Number of Top Models to Display in All Views (max: 24)",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_68",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "Performance Visualization",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "Comparative Analysis (Radar Chart)",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "Comparative Analysis (Group Bar Chart)",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "Super Mario Bros Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Super Mario Bros Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Sokoban Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Sokoban Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "2048 Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "2048 Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Candy Crush Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Candy Crush Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Tetris Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Tetris Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Ace Attorney Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Ace Attorney Details",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_9",
+      "parameters": [
+        {
+          "name": "param_0",
+          "label": "Super Mario Bros Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_1",
+          "label": "Super Mario Bros Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_2",
+          "label": "Sokoban Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_3",
+          "label": "Sokoban Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_4",
+          "label": "2048 Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_5",
+          "label": "2048 Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_6",
+          "label": "Candy Crush Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_7",
+          "label": "Candy Crush Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_8",
+          "label": "Tetris Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_9",
+          "label": "Tetris Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_10",
+          "label": "Ace Attorney Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_11",
+          "label": "Ace Attorney Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_12",
+          "label": "Number of Top Models to Display in All Views (max: 24)",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_68",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "Performance Visualization",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "Comparative Analysis (Radar Chart)",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "Comparative Analysis (Group Bar Chart)",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "Super Mario Bros Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Super Mario Bros Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Sokoban Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Sokoban Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "2048 Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "2048 Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Candy Crush Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Candy Crush Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Tetris Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Tetris Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Ace Attorney Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Ace Attorney Details",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_10",
+      "parameters": [
+        {
+          "name": "param_0",
+          "label": "Super Mario Bros Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_1",
+          "label": "Super Mario Bros Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_2",
+          "label": "Sokoban Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_3",
+          "label": "Sokoban Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_4",
+          "label": "2048 Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_5",
+          "label": "2048 Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_6",
+          "label": "Candy Crush Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_7",
+          "label": "Candy Crush Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_8",
+          "label": "Tetris Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_9",
+          "label": "Tetris Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_10",
+          "label": "Ace Attorney Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_11",
+          "label": "Ace Attorney Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_12",
+          "label": "Number of Top Models to Display in All Views (max: 24)",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_68",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "Performance Visualization",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "Comparative Analysis (Radar Chart)",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "Comparative Analysis (Group Bar Chart)",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "Super Mario Bros Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Super Mario Bros Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Sokoban Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Sokoban Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "2048 Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "2048 Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Candy Crush Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Candy Crush Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Tetris Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Tetris Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Ace Attorney Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Ace Attorney Details",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_11",
+      "parameters": [
+        {
+          "name": "param_0",
+          "label": "Super Mario Bros Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_1",
+          "label": "Super Mario Bros Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_2",
+          "label": "Sokoban Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_3",
+          "label": "Sokoban Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_4",
+          "label": "2048 Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_5",
+          "label": "2048 Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_6",
+          "label": "Candy Crush Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_7",
+          "label": "Candy Crush Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_8",
+          "label": "Tetris Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_9",
+          "label": "Tetris Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_10",
+          "label": "Ace Attorney Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_11",
+          "label": "Ace Attorney Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_12",
+          "label": "Number of Top Models to Display in All Views (max: 24)",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_68",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "Performance Visualization",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "Comparative Analysis (Radar Chart)",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "Comparative Analysis (Group Bar Chart)",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "Super Mario Bros Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Super Mario Bros Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Sokoban Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Sokoban Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "2048 Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "2048 Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Candy Crush Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Candy Crush Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Tetris Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Tetris Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Ace Attorney Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Ace Attorney Details",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_12",
+      "parameters": [
+        {
+          "name": "param_0",
+          "label": "Super Mario Bros Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_1",
+          "label": "Super Mario Bros Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_2",
+          "label": "Sokoban Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_3",
+          "label": "Sokoban Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_4",
+          "label": "2048 Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_5",
+          "label": "2048 Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_6",
+          "label": "Candy Crush Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_7",
+          "label": "Candy Crush Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_8",
+          "label": "Tetris Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_9",
+          "label": "Tetris Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_10",
+          "label": "Ace Attorney Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_11",
+          "label": "Ace Attorney Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_12",
+          "label": "Number of Top Models to Display in All Views (max: 24)",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_68",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "Performance Visualization",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "Comparative Analysis (Radar Chart)",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "Comparative Analysis (Group Bar Chart)",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "Super Mario Bros Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Super Mario Bros Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Sokoban Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Sokoban Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "2048 Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "2048 Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Candy Crush Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Candy Crush Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Tetris Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Tetris Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Ace Attorney Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Ace Attorney Details",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_13",
+      "parameters": [
+        {
+          "name": "param_0",
+          "label": "Number of Top Models to Display in All Views (max: 24)",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_68",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "Performance Visualization",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "Comparative Analysis (Radar Chart)",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "Comparative Analysis (Group Bar Chart)",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "Super Mario Bros Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Super Mario Bros Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Sokoban Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Sokoban Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "2048 Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "2048 Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Candy Crush Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Candy Crush Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Tetris Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Tetris Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Ace Attorney Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Ace Attorney Details",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_14",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_68",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "Performance Visualization",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "Comparative Analysis (Radar Chart)",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "Comparative Analysis (Group Bar Chart)",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "Super Mario Bros Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Super Mario Bros Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Sokoban Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Sokoban Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "2048 Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "2048 Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Candy Crush Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Candy Crush Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Tetris Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Tetris Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Ace Attorney Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Ace Attorney Details",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ]
+    },
+    {
+      "name": "/update_visualizations",
+      "parameters": [
+        {
+          "name": "param_0",
+          "label": "Super Mario Bros Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_1",
+          "label": "Super Mario Bros Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_2",
+          "label": "Sokoban Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_3",
+          "label": "Sokoban Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_4",
+          "label": "2048 Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_5",
+          "label": "2048 Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_6",
+          "label": "Candy Crush Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_7",
+          "label": "Candy Crush Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_8",
+          "label": "Tetris Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_9",
+          "label": "Tetris Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_10",
+          "label": "Ace Attorney Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_11",
+          "label": "Ace Attorney Details",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Performance Visualization",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        }
+      ]
+    },
+    {
+      "name": "/update_visualizations_1",
+      "parameters": [
+        {
+          "name": "param_0",
+          "label": "Super Mario Bros Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_1",
+          "label": "Super Mario Bros Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_2",
+          "label": "Sokoban Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_3",
+          "label": "Sokoban Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_4",
+          "label": "2048 Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_5",
+          "label": "2048 Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_6",
+          "label": "Candy Crush Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_7",
+          "label": "Candy Crush Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_8",
+          "label": "Tetris Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_9",
+          "label": "Tetris Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_10",
+          "label": "Ace Attorney Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_11",
+          "label": "Ace Attorney Details",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Performance Visualization",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        }
+      ]
+    },
+    {
+      "name": "/update_visualizations_2",
+      "parameters": [
+        {
+          "name": "param_0",
+          "label": "Super Mario Bros Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_1",
+          "label": "Super Mario Bros Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_2",
+          "label": "Sokoban Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_3",
+          "label": "Sokoban Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_4",
+          "label": "2048 Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_5",
+          "label": "2048 Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_6",
+          "label": "Candy Crush Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_7",
+          "label": "Candy Crush Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_8",
+          "label": "Tetris Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_9",
+          "label": "Tetris Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_10",
+          "label": "Ace Attorney Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_11",
+          "label": "Ace Attorney Details",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Performance Visualization",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        }
+      ]
+    },
+    {
+      "name": "/update_visualizations_3",
+      "parameters": [
+        {
+          "name": "param_0",
+          "label": "Super Mario Bros Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_1",
+          "label": "Super Mario Bros Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_2",
+          "label": "Sokoban Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_3",
+          "label": "Sokoban Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_4",
+          "label": "2048 Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_5",
+          "label": "2048 Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_6",
+          "label": "Candy Crush Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_7",
+          "label": "Candy Crush Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_8",
+          "label": "Tetris Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_9",
+          "label": "Tetris Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_10",
+          "label": "Ace Attorney Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_11",
+          "label": "Ace Attorney Details",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Performance Visualization",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        }
+      ]
+    },
+    {
+      "name": "/update_visualizations_4",
+      "parameters": [
+        {
+          "name": "param_0",
+          "label": "Super Mario Bros Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_1",
+          "label": "Super Mario Bros Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_2",
+          "label": "Sokoban Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_3",
+          "label": "Sokoban Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_4",
+          "label": "2048 Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_5",
+          "label": "2048 Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_6",
+          "label": "Candy Crush Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_7",
+          "label": "Candy Crush Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_8",
+          "label": "Tetris Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_9",
+          "label": "Tetris Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_10",
+          "label": "Ace Attorney Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_11",
+          "label": "Ace Attorney Details",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Performance Visualization",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        }
+      ]
+    },
+    {
+      "name": "/update_visualizations_5",
+      "parameters": [
+        {
+          "name": "param_0",
+          "label": "Super Mario Bros Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_1",
+          "label": "Super Mario Bros Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_2",
+          "label": "Sokoban Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_3",
+          "label": "Sokoban Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_4",
+          "label": "2048 Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_5",
+          "label": "2048 Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_6",
+          "label": "Candy Crush Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_7",
+          "label": "Candy Crush Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_8",
+          "label": "Tetris Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_9",
+          "label": "Tetris Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_10",
+          "label": "Ace Attorney Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_11",
+          "label": "Ace Attorney Details",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Performance Visualization",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        }
+      ]
+    },
+    {
+      "name": "/update_visualizations_6",
+      "parameters": [
+        {
+          "name": "param_0",
+          "label": "Super Mario Bros Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_1",
+          "label": "Super Mario Bros Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_2",
+          "label": "Sokoban Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_3",
+          "label": "Sokoban Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_4",
+          "label": "2048 Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_5",
+          "label": "2048 Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_6",
+          "label": "Candy Crush Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_7",
+          "label": "Candy Crush Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_8",
+          "label": "Tetris Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_9",
+          "label": "Tetris Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_10",
+          "label": "Ace Attorney Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_11",
+          "label": "Ace Attorney Details",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Performance Visualization",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        }
+      ]
+    },
+    {
+      "name": "/update_visualizations_7",
+      "parameters": [
+        {
+          "name": "param_0",
+          "label": "Super Mario Bros Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_1",
+          "label": "Super Mario Bros Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_2",
+          "label": "Sokoban Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_3",
+          "label": "Sokoban Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_4",
+          "label": "2048 Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_5",
+          "label": "2048 Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_6",
+          "label": "Candy Crush Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_7",
+          "label": "Candy Crush Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_8",
+          "label": "Tetris Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_9",
+          "label": "Tetris Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_10",
+          "label": "Ace Attorney Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_11",
+          "label": "Ace Attorney Details",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Performance Visualization",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        }
+      ]
+    },
+    {
+      "name": "/update_visualizations_8",
+      "parameters": [
+        {
+          "name": "param_0",
+          "label": "Super Mario Bros Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_1",
+          "label": "Super Mario Bros Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_2",
+          "label": "Sokoban Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_3",
+          "label": "Sokoban Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_4",
+          "label": "2048 Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_5",
+          "label": "2048 Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_6",
+          "label": "Candy Crush Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_7",
+          "label": "Candy Crush Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_8",
+          "label": "Tetris Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_9",
+          "label": "Tetris Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_10",
+          "label": "Ace Attorney Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_11",
+          "label": "Ace Attorney Details",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Performance Visualization",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        }
+      ]
+    },
+    {
+      "name": "/update_visualizations_9",
+      "parameters": [
+        {
+          "name": "param_0",
+          "label": "Super Mario Bros Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_1",
+          "label": "Super Mario Bros Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_2",
+          "label": "Sokoban Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_3",
+          "label": "Sokoban Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_4",
+          "label": "2048 Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_5",
+          "label": "2048 Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_6",
+          "label": "Candy Crush Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_7",
+          "label": "Candy Crush Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_8",
+          "label": "Tetris Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_9",
+          "label": "Tetris Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_10",
+          "label": "Ace Attorney Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_11",
+          "label": "Ace Attorney Details",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Performance Visualization",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        }
+      ]
+    },
+    {
+      "name": "/update_visualizations_10",
+      "parameters": [
+        {
+          "name": "param_0",
+          "label": "Super Mario Bros Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_1",
+          "label": "Super Mario Bros Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_2",
+          "label": "Sokoban Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_3",
+          "label": "Sokoban Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_4",
+          "label": "2048 Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_5",
+          "label": "2048 Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_6",
+          "label": "Candy Crush Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_7",
+          "label": "Candy Crush Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_8",
+          "label": "Tetris Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_9",
+          "label": "Tetris Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_10",
+          "label": "Ace Attorney Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_11",
+          "label": "Ace Attorney Details",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Performance Visualization",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        }
+      ]
+    },
+    {
+      "name": "/update_visualizations_11",
+      "parameters": [
+        {
+          "name": "param_0",
+          "label": "Super Mario Bros Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_1",
+          "label": "Super Mario Bros Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_2",
+          "label": "Sokoban Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_3",
+          "label": "Sokoban Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_4",
+          "label": "2048 Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_5",
+          "label": "2048 Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_6",
+          "label": "Candy Crush Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_7",
+          "label": "Candy Crush Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_8",
+          "label": "Tetris Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_9",
+          "label": "Tetris Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_10",
+          "label": "Ace Attorney Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_11",
+          "label": "Ace Attorney Details",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Performance Visualization",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_15",
+      "parameters": [
+        {
+          "name": "param_0",
+          "label": "Super Mario Bros Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_1",
+          "label": "Super Mario Bros Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_2",
+          "label": "Sokoban Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_3",
+          "label": "Sokoban Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_4",
+          "label": "2048 Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_5",
+          "label": "2048 Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_6",
+          "label": "Candy Crush Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_7",
+          "label": "Candy Crush Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_8",
+          "label": "Tetris Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_9",
+          "label": "Tetris Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_10",
+          "label": "Ace Attorney Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_11",
+          "label": "Ace Attorney Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_12",
+          "label": "Number of Top Models to Display in All Views (max: 25)",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_131",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "Performance Visualization",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "Comparative Analysis (Radar Chart)",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "Comparative Analysis (Group Bar Chart)",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "Super Mario Bros Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Super Mario Bros Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Sokoban Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Sokoban Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "2048 Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "2048 Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Candy Crush Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Candy Crush Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Tetris Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Tetris Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Ace Attorney Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Ace Attorney Details",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_16",
+      "parameters": [
+        {
+          "name": "param_0",
+          "label": "Super Mario Bros Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_1",
+          "label": "Super Mario Bros Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_2",
+          "label": "Sokoban Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_3",
+          "label": "Sokoban Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_4",
+          "label": "2048 Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_5",
+          "label": "2048 Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_6",
+          "label": "Candy Crush Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_7",
+          "label": "Candy Crush Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_8",
+          "label": "Tetris Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_9",
+          "label": "Tetris Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_10",
+          "label": "Ace Attorney Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_11",
+          "label": "Ace Attorney Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_12",
+          "label": "Number of Top Models to Display in All Views (max: 25)",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_131",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "Performance Visualization",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "Comparative Analysis (Radar Chart)",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "Comparative Analysis (Group Bar Chart)",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "Super Mario Bros Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Super Mario Bros Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Sokoban Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Sokoban Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "2048 Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "2048 Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Candy Crush Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Candy Crush Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Tetris Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Tetris Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Ace Attorney Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Ace Attorney Details",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_17",
+      "parameters": [
+        {
+          "name": "param_0",
+          "label": "Super Mario Bros Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_1",
+          "label": "Super Mario Bros Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_2",
+          "label": "Sokoban Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_3",
+          "label": "Sokoban Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_4",
+          "label": "2048 Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_5",
+          "label": "2048 Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_6",
+          "label": "Candy Crush Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_7",
+          "label": "Candy Crush Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_8",
+          "label": "Tetris Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_9",
+          "label": "Tetris Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_10",
+          "label": "Ace Attorney Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_11",
+          "label": "Ace Attorney Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_12",
+          "label": "Number of Top Models to Display in All Views (max: 25)",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_131",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "Performance Visualization",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "Comparative Analysis (Radar Chart)",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "Comparative Analysis (Group Bar Chart)",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "Super Mario Bros Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Super Mario Bros Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Sokoban Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Sokoban Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "2048 Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "2048 Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Candy Crush Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Candy Crush Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Tetris Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Tetris Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Ace Attorney Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Ace Attorney Details",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_18",
+      "parameters": [
+        {
+          "name": "param_0",
+          "label": "Super Mario Bros Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_1",
+          "label": "Super Mario Bros Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_2",
+          "label": "Sokoban Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_3",
+          "label": "Sokoban Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_4",
+          "label": "2048 Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_5",
+          "label": "2048 Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_6",
+          "label": "Candy Crush Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_7",
+          "label": "Candy Crush Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_8",
+          "label": "Tetris Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_9",
+          "label": "Tetris Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_10",
+          "label": "Ace Attorney Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_11",
+          "label": "Ace Attorney Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_12",
+          "label": "Number of Top Models to Display in All Views (max: 25)",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_131",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "Performance Visualization",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "Comparative Analysis (Radar Chart)",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "Comparative Analysis (Group Bar Chart)",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "Super Mario Bros Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Super Mario Bros Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Sokoban Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Sokoban Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "2048 Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "2048 Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Candy Crush Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Candy Crush Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Tetris Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Tetris Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Ace Attorney Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Ace Attorney Details",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_19",
+      "parameters": [
+        {
+          "name": "param_0",
+          "label": "Super Mario Bros Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_1",
+          "label": "Super Mario Bros Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_2",
+          "label": "Sokoban Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_3",
+          "label": "Sokoban Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_4",
+          "label": "2048 Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_5",
+          "label": "2048 Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_6",
+          "label": "Candy Crush Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_7",
+          "label": "Candy Crush Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_8",
+          "label": "Tetris Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_9",
+          "label": "Tetris Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_10",
+          "label": "Ace Attorney Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_11",
+          "label": "Ace Attorney Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_12",
+          "label": "Number of Top Models to Display in All Views (max: 25)",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_131",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "Performance Visualization",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "Comparative Analysis (Radar Chart)",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "Comparative Analysis (Group Bar Chart)",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "Super Mario Bros Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Super Mario Bros Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Sokoban Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Sokoban Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "2048 Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "2048 Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Candy Crush Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Candy Crush Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Tetris Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Tetris Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Ace Attorney Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Ace Attorney Details",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_20",
+      "parameters": [
+        {
+          "name": "param_0",
+          "label": "Super Mario Bros Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_1",
+          "label": "Super Mario Bros Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_2",
+          "label": "Sokoban Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_3",
+          "label": "Sokoban Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_4",
+          "label": "2048 Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_5",
+          "label": "2048 Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_6",
+          "label": "Candy Crush Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_7",
+          "label": "Candy Crush Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_8",
+          "label": "Tetris Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_9",
+          "label": "Tetris Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_10",
+          "label": "Ace Attorney Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_11",
+          "label": "Ace Attorney Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_12",
+          "label": "Number of Top Models to Display in All Views (max: 25)",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_131",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "Performance Visualization",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "Comparative Analysis (Radar Chart)",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "Comparative Analysis (Group Bar Chart)",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "Super Mario Bros Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Super Mario Bros Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Sokoban Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Sokoban Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "2048 Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "2048 Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Candy Crush Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Candy Crush Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Tetris Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Tetris Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Ace Attorney Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Ace Attorney Details",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_21",
+      "parameters": [
+        {
+          "name": "param_0",
+          "label": "Super Mario Bros Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_1",
+          "label": "Super Mario Bros Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_2",
+          "label": "Sokoban Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_3",
+          "label": "Sokoban Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_4",
+          "label": "2048 Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_5",
+          "label": "2048 Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_6",
+          "label": "Candy Crush Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_7",
+          "label": "Candy Crush Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_8",
+          "label": "Tetris Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_9",
+          "label": "Tetris Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_10",
+          "label": "Ace Attorney Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_11",
+          "label": "Ace Attorney Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_12",
+          "label": "Number of Top Models to Display in All Views (max: 25)",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_131",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "Performance Visualization",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "Comparative Analysis (Radar Chart)",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "Comparative Analysis (Group Bar Chart)",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "Super Mario Bros Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Super Mario Bros Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Sokoban Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Sokoban Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "2048 Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "2048 Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Candy Crush Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Candy Crush Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Tetris Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Tetris Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Ace Attorney Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Ace Attorney Details",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_22",
+      "parameters": [
+        {
+          "name": "param_0",
+          "label": "Super Mario Bros Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_1",
+          "label": "Super Mario Bros Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_2",
+          "label": "Sokoban Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_3",
+          "label": "Sokoban Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_4",
+          "label": "2048 Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_5",
+          "label": "2048 Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_6",
+          "label": "Candy Crush Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_7",
+          "label": "Candy Crush Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_8",
+          "label": "Tetris Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_9",
+          "label": "Tetris Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_10",
+          "label": "Ace Attorney Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_11",
+          "label": "Ace Attorney Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_12",
+          "label": "Number of Top Models to Display in All Views (max: 25)",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_131",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "Performance Visualization",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "Comparative Analysis (Radar Chart)",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "Comparative Analysis (Group Bar Chart)",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "Super Mario Bros Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Super Mario Bros Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Sokoban Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Sokoban Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "2048 Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "2048 Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Candy Crush Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Candy Crush Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Tetris Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Tetris Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Ace Attorney Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Ace Attorney Details",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_23",
+      "parameters": [
+        {
+          "name": "param_0",
+          "label": "Super Mario Bros Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_1",
+          "label": "Super Mario Bros Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_2",
+          "label": "Sokoban Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_3",
+          "label": "Sokoban Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_4",
+          "label": "2048 Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_5",
+          "label": "2048 Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_6",
+          "label": "Candy Crush Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_7",
+          "label": "Candy Crush Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_8",
+          "label": "Tetris Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_9",
+          "label": "Tetris Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_10",
+          "label": "Ace Attorney Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_11",
+          "label": "Ace Attorney Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_12",
+          "label": "Number of Top Models to Display in All Views (max: 25)",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_131",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "Performance Visualization",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "Comparative Analysis (Radar Chart)",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "Comparative Analysis (Group Bar Chart)",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "Super Mario Bros Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Super Mario Bros Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Sokoban Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Sokoban Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "2048 Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "2048 Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Candy Crush Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Candy Crush Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Tetris Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Tetris Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Ace Attorney Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Ace Attorney Details",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_24",
+      "parameters": [
+        {
+          "name": "param_0",
+          "label": "Super Mario Bros Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_1",
+          "label": "Super Mario Bros Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_2",
+          "label": "Sokoban Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_3",
+          "label": "Sokoban Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_4",
+          "label": "2048 Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_5",
+          "label": "2048 Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_6",
+          "label": "Candy Crush Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_7",
+          "label": "Candy Crush Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_8",
+          "label": "Tetris Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_9",
+          "label": "Tetris Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_10",
+          "label": "Ace Attorney Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_11",
+          "label": "Ace Attorney Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_12",
+          "label": "Number of Top Models to Display in All Views (max: 25)",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_131",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "Performance Visualization",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "Comparative Analysis (Radar Chart)",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "Comparative Analysis (Group Bar Chart)",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "Super Mario Bros Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Super Mario Bros Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Sokoban Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Sokoban Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "2048 Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "2048 Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Candy Crush Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Candy Crush Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Tetris Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Tetris Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Ace Attorney Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Ace Attorney Details",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_25",
+      "parameters": [
+        {
+          "name": "param_0",
+          "label": "Super Mario Bros Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_1",
+          "label": "Super Mario Bros Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_2",
+          "label": "Sokoban Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_3",
+          "label": "Sokoban Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_4",
+          "label": "2048 Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_5",
+          "label": "2048 Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_6",
+          "label": "Candy Crush Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_7",
+          "label": "Candy Crush Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_8",
+          "label": "Tetris Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_9",
+          "label": "Tetris Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_10",
+          "label": "Ace Attorney Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_11",
+          "label": "Ace Attorney Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_12",
+          "label": "Number of Top Models to Display in All Views (max: 25)",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_131",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "Performance Visualization",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "Comparative Analysis (Radar Chart)",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "Comparative Analysis (Group Bar Chart)",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "Super Mario Bros Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Super Mario Bros Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Sokoban Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Sokoban Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "2048 Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "2048 Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Candy Crush Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Candy Crush Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Tetris Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Tetris Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Ace Attorney Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Ace Attorney Details",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_26",
+      "parameters": [
+        {
+          "name": "param_0",
+          "label": "Super Mario Bros Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_1",
+          "label": "Super Mario Bros Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_2",
+          "label": "Sokoban Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_3",
+          "label": "Sokoban Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_4",
+          "label": "2048 Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_5",
+          "label": "2048 Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_6",
+          "label": "Candy Crush Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_7",
+          "label": "Candy Crush Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_8",
+          "label": "Tetris Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_9",
+          "label": "Tetris Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_10",
+          "label": "Ace Attorney Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_11",
+          "label": "Ace Attorney Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_12",
+          "label": "Number of Top Models to Display in All Views (max: 25)",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_131",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "Performance Visualization",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "Comparative Analysis (Radar Chart)",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "Comparative Analysis (Group Bar Chart)",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "Super Mario Bros Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Super Mario Bros Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Sokoban Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Sokoban Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "2048 Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "2048 Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Candy Crush Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Candy Crush Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Tetris Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Tetris Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Ace Attorney Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Ace Attorney Details",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_27",
+      "parameters": [
+        {
+          "name": "param_0",
+          "label": "Super Mario Bros Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_1",
+          "label": "Super Mario Bros Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_2",
+          "label": "Sokoban Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_3",
+          "label": "Sokoban Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_4",
+          "label": "2048 Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_5",
+          "label": "2048 Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_6",
+          "label": "Candy Crush Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_7",
+          "label": "Candy Crush Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_8",
+          "label": "Tetris Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_9",
+          "label": "Tetris Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_10",
+          "label": "Ace Attorney Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_11",
+          "label": "Ace Attorney Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_12",
+          "label": "Number of Top Models to Display in All Views (max: 25)",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_131",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "Performance Visualization",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "Comparative Analysis (Radar Chart)",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "Comparative Analysis (Group Bar Chart)",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "Super Mario Bros Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Super Mario Bros Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Sokoban Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Sokoban Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "2048 Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "2048 Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Candy Crush Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Candy Crush Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Tetris Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Tetris Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Ace Attorney Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Ace Attorney Details",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_28",
+      "parameters": [
+        {
+          "name": "param_0",
+          "label": "Number of Top Models to Display in All Views (max: 25)",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_131",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "Performance Visualization",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "Comparative Analysis (Radar Chart)",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "Comparative Analysis (Group Bar Chart)",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "Super Mario Bros Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Super Mario Bros Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Sokoban Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Sokoban Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "2048 Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "2048 Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Candy Crush Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Candy Crush Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Tetris Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Tetris Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Ace Attorney Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Ace Attorney Details",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_29",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_131",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "Performance Visualization",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "Comparative Analysis (Radar Chart)",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "Comparative Analysis (Group Bar Chart)",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "Super Mario Bros Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Super Mario Bros Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Sokoban Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Sokoban Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "2048 Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "2048 Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Candy Crush Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Candy Crush Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Tetris Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Tetris Details",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Ace Attorney Score",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Ace Attorney Details",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/update_model_visualizations",
+  "_api_verified": true,
+  "estimated_latency_s": 4.98,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 4.98,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:51:11.378645+00:00"
+}

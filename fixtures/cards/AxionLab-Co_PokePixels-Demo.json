@@ -1,0 +1,60 @@
+{
+  "space_id": "AxionLab-Co/PokePixels-Demo",
+  "title": "PokePixels Demo",
+  "emoji": "\ud83d\ude3b",
+  "description": "Generate fakemon images with an U-Net trained on CPU",
+  "input_schema": {
+    "num_images": {
+      "type": "float",
+      "description": "Fakemon Quantity",
+      "required": true,
+      "component": "Slider"
+    }
+  },
+  "output_schema": {
+    "Generated fakemons:": {
+      "type": "list[dict(image: filepath, caption: str | None) | dict(video: filepath, caption: str | None)]",
+      "description": "Generated fakemons:",
+      "component": "Gallery"
+    }
+  },
+  "license": "mit",
+  "hardware": "6.11.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 2,
+  "last_modified": "2026-04-11 15:43:13+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_tags_enriched": true,
+  "estimated_latency_s": 3.0,
+  "speed_tier": "fast",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/generate_fakemons",
+      "parameters": [
+        {
+          "name": "num_images",
+          "label": "Fakemon Quantity",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Generated fakemons:",
+          "type": "list[dict(image: filepath, caption: str | None) | dict(video: filepath, caption: str | None)]",
+          "component": "Gallery"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/generate_fakemons",
+  "_api_verified": true
+}

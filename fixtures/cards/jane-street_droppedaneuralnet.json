@@ -1,0 +1,80 @@
+{
+  "space_id": "jane-street/droppedaneuralnet",
+  "title": "droppedaneuralnet",
+  "emoji": "\ud83d\udc94",
+  "description": "droppedaneuralnet",
+  "input_schema": {
+    "permutation_str": {
+      "type": "str",
+      "description": "Your Solution (comma-separated indices)",
+      "required": true,
+      "component": "Textbox"
+    }
+  },
+  "output_schema": {
+    "Result": {
+      "type": "str",
+      "description": "Result",
+      "component": "Textbox"
+    }
+  },
+  "license": "mit",
+  "hardware": "5.20.1",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 81,
+  "last_modified": "2026-04-06 12:10:38+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/check_solution",
+      "parameters": [
+        {
+          "name": "permutation_str",
+          "label": "Your Solution (comma-separated indices)",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Result",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/check_solution_1",
+      "parameters": [
+        {
+          "name": "permutation_str",
+          "label": "Your Solution (comma-separated indices)",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Result",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/check_solution",
+  "_api_verified": true,
+  "estimated_latency_s": 3.5,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 3.5,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:50:59.282993+00:00"
+}

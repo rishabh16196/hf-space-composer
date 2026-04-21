@@ -1,0 +1,108 @@
+{
+  "space_id": "SkalskiP/segment-anything-model-2",
+  "title": "Segment Anything 2",
+  "emoji": "\ud83d\udd25",
+  "description": "Segment Anything 2",
+  "input_schema": {
+    "text": {
+      "type": "Literal['box prompt', 'mask generation']",
+      "description": "Mode",
+      "required": true,
+      "component": "Dropdown"
+    }
+  },
+  "output_schema": {
+    "Upload image": {
+      "type": "filepath",
+      "description": "Upload image",
+      "component": "Image"
+    },
+    "Image prompt": {
+      "type": "Dict(image: filepath, points: List[List[float]])",
+      "description": "Image prompt",
+      "component": "Imageprompter"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "4.39.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 142,
+  "last_modified": "2024-08-05 11:21:18+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/on_mode_dropdown_change",
+      "parameters": [
+        {
+          "name": "text",
+          "label": "Mode",
+          "type": "Literal['box prompt', 'mask generation']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Upload image",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "Image prompt",
+          "type": "Dict(image: filepath, points: List[List[float]])",
+          "component": "Imageprompter"
+        }
+      ]
+    },
+    {
+      "name": "/process_1",
+      "parameters": [
+        {
+          "name": "checkpoint_dropdown",
+          "label": "Checkpoint",
+          "type": "Literal['tiny', 'small', 'base_plus', 'large']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "mode_dropdown",
+          "label": "Mode",
+          "type": "Literal['box prompt', 'mask generation']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "image_input",
+          "label": "Upload image",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "name": "image_prompter_input",
+          "label": "Image prompt",
+          "type": "Dict(image: filepath, points: List[List[float]])",
+          "component": "Imageprompter"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Image Output",
+          "type": "filepath",
+          "component": "Image"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/on_mode_dropdown_change",
+  "_api_verified": true,
+  "estimated_latency_s": 2.9,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 2.9,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:49:55.812057+00:00"
+}

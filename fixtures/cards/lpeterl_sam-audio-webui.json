@@ -1,0 +1,178 @@
+{
+  "space_id": "lpeterl/sam-audio-webui",
+  "title": "Sam Audio Webui",
+  "emoji": "\ud83c\udfb5",
+  "description": "Sam Audio Webui",
+  "input_schema": {
+    "model_name": {
+      "type": "Literal['sam-audio-small', 'sam-audio-base', 'sam-audio-large', 'sam-audio-small-tv (Visual)', 'sam-",
+      "description": "Model",
+      "required": true,
+      "component": "Dropdown"
+    },
+    "audio_path": {
+      "type": "filepath",
+      "description": "Audio File",
+      "required": true,
+      "component": "Audio"
+    },
+    "video_path": {
+      "type": "filepath",
+      "description": "Video File",
+      "required": true,
+      "component": "Video"
+    },
+    "prompt": {
+      "type": "str",
+      "description": "Text Prompt",
+      "required": true,
+      "component": "Textbox"
+    },
+    "chunk_duration": {
+      "type": "float",
+      "description": "Chunk Duration (seconds)",
+      "required": true,
+      "component": "Slider"
+    }
+  },
+  "output_schema": {
+    "Isolated Sound (Target)": {
+      "type": "filepath",
+      "description": "Isolated Sound (Target)",
+      "component": "Audio"
+    },
+    "Background (Residual)": {
+      "type": "filepath",
+      "description": "Background (Residual)",
+      "component": "Audio"
+    },
+    "value_14": {
+      "type": "str",
+      "description": "value_14",
+      "component": "Markdown"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "6.2.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 22,
+  "last_modified": "2025-12-20 09:43:10+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/process",
+      "parameters": [
+        {
+          "name": "model_name",
+          "label": "Model",
+          "type": "Literal['sam-audio-small', 'sam-audio-base', 'sam-audio-large', 'sam-audio-small-tv (Visual)', 'sam-audio-base-tv (Visual)', 'sam-audio-large-tv (Visual)']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "audio_path",
+          "label": "Audio File",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "name": "video_path",
+          "label": "Video File",
+          "type": "filepath",
+          "component": "Video"
+        },
+        {
+          "name": "prompt",
+          "label": "Text Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "chunk_duration",
+          "label": "Chunk Duration (seconds)",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Isolated Sound (Target)",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Background (Residual)",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "value_14",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/lambda",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Video File",
+          "type": "filepath",
+          "component": "Video"
+        },
+        {
+          "label": "Text Prompt",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_1",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Video File",
+          "type": "filepath",
+          "component": "Video"
+        },
+        {
+          "label": "Text Prompt",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_2",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Video File",
+          "type": "filepath",
+          "component": "Video"
+        },
+        {
+          "label": "Text Prompt",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/process",
+  "_api_verified": true,
+  "estimated_latency_s": 3.41,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 3.41,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:51:10.947311+00:00"
+}

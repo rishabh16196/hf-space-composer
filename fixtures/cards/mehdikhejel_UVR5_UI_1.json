@@ -1,0 +1,1146 @@
+{
+  "space_id": "mehdikhejel/UVR5_UI_1",
+  "title": "UVR5 UI",
+  "emoji": "\u26a1",
+  "description": "UVR5 UI",
+  "input_schema": {
+    "url": {
+      "type": "str",
+      "description": "Link",
+      "required": true,
+      "component": "Textbox"
+    }
+  },
+  "output_schema": {
+    "Input audio": {
+      "type": "filepath",
+      "description": "Input audio",
+      "component": "Audio"
+    }
+  },
+  "license": "unknown",
+  "hardware": "5.23.1",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 27,
+  "last_modified": "2025-03-27 14:23:17+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/download_audio",
+      "parameters": [
+        {
+          "name": "url",
+          "label": "Link",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Input audio",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ]
+    },
+    {
+      "name": "/roformer_batch",
+      "parameters": [
+        {
+          "name": "path_input",
+          "label": "Input path",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "path_output",
+          "label": "Output path",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "model_key",
+          "label": "Select the model",
+          "type": "Literal['BS-Roformer-Viperx-1297', 'BS-Roformer-Viperx-1296', 'BS-Roformer-Viperx-1053', 'Mel-Roformer-Viperx-1143', 'BS-Roformer-De-Reverb', 'Mel-Roformer-Crowd-Aufr33-Viperx', 'Mel-Roformer-Denoise-",
+          "component": "Dropdown"
+        },
+        {
+          "name": "out_format",
+          "label": "Select the output format",
+          "type": "Literal['wav', 'flac', 'mp3', 'ogg', 'opus', 'm4a', 'aiff', 'ac3']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "segment_size",
+          "label": "Segment size",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "override_seg_size",
+          "label": "Override segment size",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "overlap",
+          "label": "Overlap",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "batch_size",
+          "label": "Batch size",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "norm_thresh",
+          "label": "Normalization threshold",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "amp_thresh",
+          "label": "Amplification threshold",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "single_stem",
+          "label": "Output only single stem",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output information",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/roformer_separator",
+      "parameters": [
+        {
+          "name": "audio",
+          "label": "Input audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "name": "model_key",
+          "label": "Select the model",
+          "type": "Literal['BS-Roformer-Viperx-1297', 'BS-Roformer-Viperx-1296', 'BS-Roformer-Viperx-1053', 'Mel-Roformer-Viperx-1143', 'BS-Roformer-De-Reverb', 'Mel-Roformer-Crowd-Aufr33-Viperx', 'Mel-Roformer-Denoise-",
+          "component": "Dropdown"
+        },
+        {
+          "name": "out_format",
+          "label": "Select the output format",
+          "type": "Literal['wav', 'flac', 'mp3', 'ogg', 'opus', 'm4a', 'aiff', 'ac3']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "segment_size",
+          "label": "Segment size",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "override_seg_size",
+          "label": "Override segment size",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "overlap",
+          "label": "Overlap",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "batch_size",
+          "label": "Batch size",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "norm_thresh",
+          "label": "Normalization threshold",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "amp_thresh",
+          "label": "Amplification threshold",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "single_stem",
+          "label": "Output only single stem",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Stem 1",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Stem 2",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ]
+    },
+    {
+      "name": "/download_audio_1",
+      "parameters": [
+        {
+          "name": "url",
+          "label": "Link",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Input audio",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ]
+    },
+    {
+      "name": "/mdx23c_batch",
+      "parameters": [
+        {
+          "name": "path_input",
+          "label": "Input path",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "path_output",
+          "label": "Output path",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "model",
+          "label": "Select the model",
+          "type": "Literal['MDX23C_D1581.ckpt', 'MDX23C-8KFFT-InstVoc_HQ.ckpt', 'MDX23C-8KFFT-InstVoc_HQ_2.ckpt', 'MDX23C-De-Reverb-aufr33-jarredou.ckpt', 'MDX23C-DrumSep-aufr33-jarredou.ckpt']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "out_format",
+          "label": "Select the output format",
+          "type": "Literal['wav', 'flac', 'mp3', 'ogg', 'opus', 'm4a', 'aiff', 'ac3']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "segment_size",
+          "label": "Segment size",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "override_seg_size",
+          "label": "Override segment size",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "overlap",
+          "label": "Overlap",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "batch_size",
+          "label": "Batch size",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "norm_thresh",
+          "label": "Normalization threshold",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "amp_thresh",
+          "label": "Amplification threshold",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "single_stem",
+          "label": "Output only single stem",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output information",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/mdxc_separator",
+      "parameters": [
+        {
+          "name": "audio",
+          "label": "Input audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "name": "model",
+          "label": "Select the model",
+          "type": "Literal['MDX23C_D1581.ckpt', 'MDX23C-8KFFT-InstVoc_HQ.ckpt', 'MDX23C-8KFFT-InstVoc_HQ_2.ckpt', 'MDX23C-De-Reverb-aufr33-jarredou.ckpt', 'MDX23C-DrumSep-aufr33-jarredou.ckpt']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "out_format",
+          "label": "Select the output format",
+          "type": "Literal['wav', 'flac', 'mp3', 'ogg', 'opus', 'm4a', 'aiff', 'ac3']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "segment_size",
+          "label": "Segment size",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "override_seg_size",
+          "label": "Override segment size",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "overlap",
+          "label": "Overlap",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "batch_size",
+          "label": "Batch size",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "norm_thresh",
+          "label": "Normalization threshold",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "amp_thresh",
+          "label": "Amplification threshold",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "single_stem",
+          "label": "Output only single stem",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Stem 1",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Stem 2",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ]
+    },
+    {
+      "name": "/download_audio_2",
+      "parameters": [
+        {
+          "name": "url",
+          "label": "Link",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Input audio",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ]
+    },
+    {
+      "name": "/mdxnet_batch",
+      "parameters": [
+        {
+          "name": "path_input",
+          "label": "Input path",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "path_output",
+          "label": "Output path",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "model",
+          "label": "Select the model",
+          "type": "Literal['UVR-MDX-NET-Inst_full_292.onnx', 'UVR-MDX-NET_Inst_187_beta.onnx', 'UVR-MDX-NET_Inst_82_beta.onnx', 'UVR-MDX-NET_Inst_90_beta.onnx', 'UVR-MDX-NET_Main_340.onnx', 'UVR-MDX-NET_Main_390.onnx', ",
+          "component": "Dropdown"
+        },
+        {
+          "name": "out_format",
+          "label": "Select the output format",
+          "type": "Literal['wav', 'flac', 'mp3', 'ogg', 'opus', 'm4a', 'aiff', 'ac3']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "hop_length",
+          "label": "Hop length",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "segment_size",
+          "label": "Segment size",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "denoise",
+          "label": "Denoise",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "overlap",
+          "label": "Overlap",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "batch_size",
+          "label": "Batch size",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "norm_thresh",
+          "label": "Normalization threshold",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "amp_thresh",
+          "label": "Amplification threshold",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "single_stem",
+          "label": "Output only single stem",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output information",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/mdxnet_separator",
+      "parameters": [
+        {
+          "name": "audio",
+          "label": "Input audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "name": "model",
+          "label": "Select the model",
+          "type": "Literal['UVR-MDX-NET-Inst_full_292.onnx', 'UVR-MDX-NET_Inst_187_beta.onnx', 'UVR-MDX-NET_Inst_82_beta.onnx', 'UVR-MDX-NET_Inst_90_beta.onnx', 'UVR-MDX-NET_Main_340.onnx', 'UVR-MDX-NET_Main_390.onnx', ",
+          "component": "Dropdown"
+        },
+        {
+          "name": "out_format",
+          "label": "Select the output format",
+          "type": "Literal['wav', 'flac', 'mp3', 'ogg', 'opus', 'm4a', 'aiff', 'ac3']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "hop_length",
+          "label": "Hop length",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "segment_size",
+          "label": "Segment size",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "denoise",
+          "label": "Denoise",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "overlap",
+          "label": "Overlap",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "batch_size",
+          "label": "Batch size",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "norm_thresh",
+          "label": "Normalization threshold",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "amp_thresh",
+          "label": "Amplification threshold",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "single_stem",
+          "label": "Output only single stem",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Stem 1",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Stem 2",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ]
+    },
+    {
+      "name": "/download_audio_3",
+      "parameters": [
+        {
+          "name": "url",
+          "label": "Link",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Input audio",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ]
+    },
+    {
+      "name": "/vrarch_batch",
+      "parameters": [
+        {
+          "name": "path_input",
+          "label": "Input path",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "path_output",
+          "label": "Output path",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "model",
+          "label": "Select the model",
+          "type": "Literal['1_HP-UVR.pth', '2_HP-UVR.pth', '3_HP-Vocal-UVR.pth', '4_HP-Vocal-UVR.pth', '5_HP-Karaoke-UVR.pth', '6_HP-Karaoke-UVR.pth', '7_HP2-UVR.pth', '8_HP2-UVR.pth', '9_HP2-UVR.pth', '10_SP-UVR-2B-320",
+          "component": "Dropdown"
+        },
+        {
+          "name": "out_format",
+          "label": "Select the output format",
+          "type": "Literal['wav', 'flac', 'mp3', 'ogg', 'opus', 'm4a', 'aiff', 'ac3']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "window_size",
+          "label": "Window size",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "aggression",
+          "label": "Agression",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "tta",
+          "label": "TTA",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "post_process",
+          "label": "Post process",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "post_process_threshold",
+          "label": "Post process threshold",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "high_end_process",
+          "label": "High end process",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "batch_size",
+          "label": "Batch size",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "norm_thresh",
+          "label": "Normalization threshold",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "amp_thresh",
+          "label": "Amplification threshold",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "single_stem",
+          "label": "Output only single stem",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output information",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/vrarch_separator",
+      "parameters": [
+        {
+          "name": "audio",
+          "label": "Input audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "name": "model",
+          "label": "Select the model",
+          "type": "Literal['1_HP-UVR.pth', '2_HP-UVR.pth', '3_HP-Vocal-UVR.pth', '4_HP-Vocal-UVR.pth', '5_HP-Karaoke-UVR.pth', '6_HP-Karaoke-UVR.pth', '7_HP2-UVR.pth', '8_HP2-UVR.pth', '9_HP2-UVR.pth', '10_SP-UVR-2B-320",
+          "component": "Dropdown"
+        },
+        {
+          "name": "out_format",
+          "label": "Select the output format",
+          "type": "Literal['wav', 'flac', 'mp3', 'ogg', 'opus', 'm4a', 'aiff', 'ac3']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "window_size",
+          "label": "Window size",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "aggression",
+          "label": "Agression",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "tta",
+          "label": "TTA",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "post_process",
+          "label": "Post process",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "post_process_threshold",
+          "label": "Post process threshold",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "high_end_process",
+          "label": "High end process",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "batch_size",
+          "label": "Batch size",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "norm_thresh",
+          "label": "Normalization threshold",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "amp_thresh",
+          "label": "Amplification threshold",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "single_stem",
+          "label": "Output only single stem",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Stem 1",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Stem 2",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ]
+    },
+    {
+      "name": "/download_audio_4",
+      "parameters": [
+        {
+          "name": "url",
+          "label": "Link",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Input audio",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ]
+    },
+    {
+      "name": "/demucs_batch",
+      "parameters": [
+        {
+          "name": "path_input",
+          "label": "Input path",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "path_output",
+          "label": "Output path",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "model",
+          "label": "Select the model",
+          "type": "Literal['htdemucs_ft.yaml', 'htdemucs_6s.yaml', 'htdemucs.yaml', 'hdemucs_mmi.yaml']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "out_format",
+          "label": "Select the output format",
+          "type": "Literal['wav', 'flac', 'mp3', 'ogg', 'opus', 'm4a', 'aiff', 'ac3']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "shifts",
+          "label": "Shifts",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "segment_size",
+          "label": "Segment size",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "segments_enabled",
+          "label": "Segment-wise processing",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "overlap",
+          "label": "Overlap",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "batch_size",
+          "label": "Batch size",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "norm_thresh",
+          "label": "Normalization threshold",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "amp_thresh",
+          "label": "Amplification threshold",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output information",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/update_stems",
+      "parameters": [
+        {
+          "name": "model",
+          "label": "Select the model",
+          "type": "Literal['htdemucs_ft.yaml', 'htdemucs_6s.yaml', 'htdemucs.yaml', 'hdemucs_mmi.yaml']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/demucs_separator",
+      "parameters": [
+        {
+          "name": "audio",
+          "label": "Input audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "name": "model",
+          "label": "Select the model",
+          "type": "Literal['htdemucs_ft.yaml', 'htdemucs_6s.yaml', 'htdemucs.yaml', 'hdemucs_mmi.yaml']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "out_format",
+          "label": "Select the output format",
+          "type": "Literal['wav', 'flac', 'mp3', 'ogg', 'opus', 'm4a', 'aiff', 'ac3']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "shifts",
+          "label": "Shifts",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "segment_size",
+          "label": "Segment size",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "segments_enabled",
+          "label": "Segment-wise processing",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "overlap",
+          "label": "Overlap",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "batch_size",
+          "label": "Batch size",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "norm_thresh",
+          "label": "Normalization threshold",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "amp_thresh",
+          "label": "Amplification threshold",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Stem 1",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Stem 2",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Stem 3",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Stem 4",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Stem 5",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Stem 6",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ]
+    },
+    {
+      "name": "/leaderboard",
+      "parameters": [
+        {
+          "name": "list_filter",
+          "label": "List filter",
+          "type": "Literal['vocals', 'instrumental', 'reverb', 'echo', 'noise', 'crowd', 'dry', 'aspiration', 'male', 'woodwinds', 'kick', 'drums', 'bass', 'guitar', 'piano', 'other']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Leaderboard",
+          "type": "str",
+          "component": "Html"
+        }
+      ]
+    },
+    {
+      "name": "/select_theme",
+      "parameters": [
+        {
+          "name": "name",
+          "label": "Theme",
+          "type": "Literal['SebastianBravo/simci_css', 'dawood/dracula_test', 'ParityError/LimeFace', 'gstaff/sketch', 'Ama434/def_barlow', 'Insuz/SimpleIndigo', 'xiaobaiyuan/theme_demo', 'Franklisi/darkmode', 'gradio/b",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_259",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/lambda",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Select the model",
+          "type": "Literal['BS-Roformer-Viperx-1297', 'BS-Roformer-Viperx-1296', 'BS-Roformer-Viperx-1053', 'Mel-Roformer-Viperx-1143', 'BS-Roformer-De-Reverb', 'Mel-Roformer-Crowd-Aufr33-Viperx', 'Mel-Roformer-Denoise-",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_1",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Select the output format",
+          "type": "Literal['wav', 'flac', 'mp3', 'ogg', 'opus', 'm4a', 'aiff', 'ac3']",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_2",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Select the model",
+          "type": "Literal['MDX23C_D1581.ckpt', 'MDX23C-8KFFT-InstVoc_HQ.ckpt', 'MDX23C-8KFFT-InstVoc_HQ_2.ckpt', 'MDX23C-De-Reverb-aufr33-jarredou.ckpt', 'MDX23C-DrumSep-aufr33-jarredou.ckpt']",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_3",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Select the output format",
+          "type": "Literal['wav', 'flac', 'mp3', 'ogg', 'opus', 'm4a', 'aiff', 'ac3']",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_4",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Select the model",
+          "type": "Literal['UVR-MDX-NET-Inst_full_292.onnx', 'UVR-MDX-NET_Inst_187_beta.onnx', 'UVR-MDX-NET_Inst_82_beta.onnx', 'UVR-MDX-NET_Inst_90_beta.onnx', 'UVR-MDX-NET_Main_340.onnx', 'UVR-MDX-NET_Main_390.onnx', ",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_5",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Select the output format",
+          "type": "Literal['wav', 'flac', 'mp3', 'ogg', 'opus', 'm4a', 'aiff', 'ac3']",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_6",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Select the model",
+          "type": "Literal['1_HP-UVR.pth', '2_HP-UVR.pth', '3_HP-Vocal-UVR.pth', '4_HP-Vocal-UVR.pth', '5_HP-Karaoke-UVR.pth', '6_HP-Karaoke-UVR.pth', '7_HP2-UVR.pth', '8_HP2-UVR.pth', '9_HP2-UVR.pth', '10_SP-UVR-2B-320",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_7",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Select the output format",
+          "type": "Literal['wav', 'flac', 'mp3', 'ogg', 'opus', 'm4a', 'aiff', 'ac3']",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_8",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Select the model",
+          "type": "Literal['htdemucs_ft.yaml', 'htdemucs_6s.yaml', 'htdemucs.yaml', 'hdemucs_mmi.yaml']",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_9",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Select the output format",
+          "type": "Literal['wav', 'flac', 'mp3', 'ogg', 'opus', 'm4a', 'aiff', 'ac3']",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_10",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "List filter",
+          "type": "Literal['vocals', 'instrumental', 'reverb', 'echo', 'noise', 'crowd', 'dry', 'aspiration', 'male', 'woodwinds', 'kick', 'drums', 'bass', 'guitar', 'piano', 'other']",
+          "component": "Dropdown"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/download_audio",
+  "_api_verified": true,
+  "estimated_latency_s": 5.18,
+  "speed_tier": "medium",
+  "_latency_source": "measured",
+  "measured_latency_s": 5.18,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:51:14.846405+00:00"
+}

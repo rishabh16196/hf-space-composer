@@ -1,0 +1,96 @@
+{
+  "space_id": "MohamedRashad/PersonaPlex",
+  "title": "PersonaPlex",
+  "emoji": "\ud83c\udf16",
+  "description": "Persona Plex Demo for the interested",
+  "input_schema": {
+    "audio_input": {
+      "type": "filepath",
+      "description": "\ud83c\udfa4 Record your message",
+      "required": true,
+      "component": "Audio"
+    },
+    "persona": {
+      "type": "str",
+      "description": "Persona Description",
+      "required": true,
+      "component": "Textbox"
+    },
+    "voice": {
+      "type": "Literal['NATF0', 'NATF1', 'NATF2', 'NATF3', 'NATM0', 'NATM1', 'NATM2', 'NATM3', 'VARF0', 'VARF1', 'V",
+      "description": "Voice",
+      "required": true,
+      "component": "Dropdown"
+    }
+  },
+  "output_schema": {
+    "\ud83d\udd0a PersonaPlex Response": {
+      "type": "filepath",
+      "description": "\ud83d\udd0a PersonaPlex Response",
+      "component": "Audio"
+    },
+    "\ud83d\udcdd Response Text": {
+      "type": "str",
+      "description": "\ud83d\udcdd Response Text",
+      "component": "Textbox"
+    }
+  },
+  "license": "unknown",
+  "hardware": "6.3.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 46,
+  "last_modified": "2026-01-20 08:32:01+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/generate_response",
+      "parameters": [
+        {
+          "name": "audio_input",
+          "label": "\ud83c\udfa4 Record your message",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "name": "persona",
+          "label": "Persona Description",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "voice",
+          "label": "Voice",
+          "type": "Literal['NATF0', 'NATF1', 'NATF2', 'NATF3', 'NATM0', 'NATM1', 'NATM2', 'NATM3', 'VARF0', 'VARF1', 'VARF2', 'VARF3', 'VARF4', 'VARM0', 'VARM1', 'VARM2', 'VARM3', 'VARM4']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "\ud83d\udd0a PersonaPlex Response",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "\ud83d\udcdd Response Text",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/generate_response",
+  "_api_verified": true,
+  "estimated_latency_s": 2.88,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 2.88,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:49:37.867021+00:00"
+}

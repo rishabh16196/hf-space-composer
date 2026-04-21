@@ -1,0 +1,179 @@
+{
+  "space_id": "ahk-d/Spleeter-HT-Demucs-Stem-Separation-2025",
+  "title": "HT-Demucs Spleeter Music Stem Separation - AI Audio Source Separation 2025",
+  "emoji": "\ud83c\udfb5",
+  "description": "HT-Demucs Spleeter Music Stem Separation - AI Audio Source Separation 2025",
+  "input_schema": {
+    "audio_path": {
+      "type": "filepath",
+      "description": "\ud83c\udfb5 Upload Your Song",
+      "required": true,
+      "component": "Audio"
+    },
+    "run_htdemucs": {
+      "type": "bool",
+      "description": "\ud83c\udfaf HT-Demucs",
+      "required": true,
+      "component": "Checkbox"
+    },
+    "run_spleeter": {
+      "type": "bool",
+      "description": "\ud83c\udfb5 Spleeter 2025 (5stems)",
+      "required": true,
+      "component": "Checkbox"
+    }
+  },
+  "output_schema": {
+    "\ud83e\udd41 Drums": {
+      "type": "filepath",
+      "description": "\ud83e\udd41 Drums",
+      "component": "Audio"
+    },
+    "\ud83c\udfb8 Bass": {
+      "type": "filepath",
+      "description": "\ud83c\udfb8 Bass",
+      "component": "Audio"
+    },
+    "\ud83c\udfbc Other": {
+      "type": "filepath",
+      "description": "\ud83c\udfbc Other",
+      "component": "Audio"
+    },
+    "\ud83c\udfa4 Vocals": {
+      "type": "filepath",
+      "description": "\ud83c\udfa4 Vocals",
+      "component": "Audio"
+    },
+    "\ud83c\udfa4 Vocals_4": {
+      "type": "filepath",
+      "description": "\ud83c\udfa4 Vocals",
+      "component": "Audio"
+    },
+    "\ud83e\udd41 Drums_5": {
+      "type": "filepath",
+      "description": "\ud83e\udd41 Drums",
+      "component": "Audio"
+    },
+    "\ud83c\udfb8 Bass_6": {
+      "type": "filepath",
+      "description": "\ud83c\udfb8 Bass",
+      "component": "Audio"
+    },
+    "\ud83c\udfbc Other_7": {
+      "type": "filepath",
+      "description": "\ud83c\udfbc Other",
+      "component": "Audio"
+    },
+    "\ud83c\udfb9 Piano": {
+      "type": "filepath",
+      "description": "\ud83c\udfb9 Piano",
+      "component": "Audio"
+    },
+    "\ud83d\udcca Status": {
+      "type": "str",
+      "description": "\ud83d\udcca Status",
+      "component": "Textbox"
+    }
+  },
+  "license": "unknown",
+  "hardware": "5.39.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us",
+    "audio",
+    "music"
+  ],
+  "likes": 36,
+  "last_modified": "2025-09-12 21:17:57+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/separate_selected_models",
+      "parameters": [
+        {
+          "name": "audio_path",
+          "label": "\ud83c\udfb5 Upload Your Song",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "name": "run_htdemucs",
+          "label": "\ud83c\udfaf HT-Demucs",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "run_spleeter",
+          "label": "\ud83c\udfb5 Spleeter 2025 (5stems)",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "\ud83e\udd41 Drums",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "\ud83c\udfb8 Bass",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "\ud83c\udfbc Other",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "\ud83c\udfa4 Vocals",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "\ud83c\udfa4 Vocals",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "\ud83e\udd41 Drums",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "\ud83c\udfb8 Bass",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "\ud83c\udfbc Other",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "\ud83c\udfb9 Piano",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "\ud83d\udcca Status",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/separate_selected_models",
+  "_api_verified": true,
+  "estimated_latency_s": 4.16,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "_tags_enriched": true,
+  "measured_latency_s": 4.16,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:50:09.850355+00:00"
+}

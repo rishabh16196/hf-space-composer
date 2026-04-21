@@ -1,0 +1,97 @@
+{
+  "space_id": "bofenghuang/speech-to-text",
+  "title": "Speech-to-Text in French",
+  "emoji": "\ud83d\udc42",
+  "description": "Speech-to-Text in French",
+  "input_schema": {
+    "audio_file": {
+      "type": "filepath",
+      "description": "Record or upload file",
+      "required": true,
+      "component": "Audio"
+    }
+  },
+  "output_schema": {
+    "Transcription": {
+      "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+      "description": "Transcription",
+      "component": "Dataframe"
+    }
+  },
+  "license": "unknown",
+  "hardware": "6.10.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us",
+    "audio"
+  ],
+  "likes": 9,
+  "last_modified": "2026-03-30 13:11:36+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_tags_enriched": true,
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/transcribe",
+      "parameters": [
+        {
+          "name": "audio_file",
+          "label": "Record or upload file",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Transcription",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/download_video_from_youtube",
+      "parameters": [
+        {
+          "name": "yt_url",
+          "label": "YouTube URL",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Video file",
+          "type": "filepath",
+          "component": "Video"
+        }
+      ]
+    },
+    {
+      "name": "/video_transcribe",
+      "parameters": [
+        {
+          "name": "video_file_path",
+          "label": "Video file",
+          "type": "filepath",
+          "component": "Video"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Transcription",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/transcribe",
+  "_api_verified": true
+}

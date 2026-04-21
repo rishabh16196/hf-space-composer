@@ -1,0 +1,284 @@
+{
+  "space_id": "D3vShoaib/pocket-tts",
+  "title": "Pocket TTS (CPU)",
+  "emoji": "\u26a1",
+  "description": "A 100M parameters text-to-speech (TTS) model by Kyutai-Labs",
+  "input_schema": {
+    "mode": {
+      "type": "Literal['Kyutai Voices', 'Voice Cloning']",
+      "description": "Voice Mode",
+      "required": true,
+      "component": "Radio"
+    }
+  },
+  "output_schema": {},
+  "license": "apache-2.0",
+  "hardware": "6.3.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us",
+    "audio",
+    "speech-synthesis",
+    "tts"
+  ],
+  "likes": 10,
+  "last_modified": "2026-01-15 13:39:08+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/update_voice_ui",
+      "parameters": [
+        {
+          "name": "mode",
+          "label": "Voice Mode",
+          "type": "Literal['Kyutai Voices', 'Voice Cloning']",
+          "component": "Radio"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/switch_to_generating_state",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/generate_speech",
+      "parameters": [
+        {
+          "name": "text",
+          "label": "Text to Speak",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "voice_mode",
+          "label": "Voice Mode",
+          "type": "Literal['Kyutai Voices', 'Voice Cloning']",
+          "component": "Radio"
+        },
+        {
+          "name": "voice_dropdown",
+          "label": "Select from Kyutai Voices",
+          "type": "Literal['alba', 'marius', 'javert', 'jean', 'fantine', 'cosette', 'eponine', 'azelma']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "voice_upload",
+          "label": "Upload Voice for Cloning (WAV/MP3)",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "name": "temperature",
+          "label": "Temperature",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "lsd_decode_steps",
+          "label": "LSD Decode Steps",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "noise_clamp",
+          "label": "Noise Clamp",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "eos_threshold",
+          "label": "End of Sequence Threshold",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "frames_after_eos",
+          "label": "Frames After EOS",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "enable_custom_frames",
+          "label": "Enable Custom Frames After EOS",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Audio Output",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ]
+    },
+    {
+      "name": "/switch_to_idle_state",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/switch_to_generating_state_1",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/generate_speech_1",
+      "parameters": [
+        {
+          "name": "text",
+          "label": "Text to Speak",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "voice_mode",
+          "label": "Voice Mode",
+          "type": "Literal['Kyutai Voices', 'Voice Cloning']",
+          "component": "Radio"
+        },
+        {
+          "name": "voice_dropdown",
+          "label": "Select from Kyutai Voices",
+          "type": "Literal['alba', 'marius', 'javert', 'jean', 'fantine', 'cosette', 'eponine', 'azelma']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "voice_upload",
+          "label": "Upload Voice for Cloning (WAV/MP3)",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "name": "temperature",
+          "label": "Temperature",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "lsd_decode_steps",
+          "label": "LSD Decode Steps",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "noise_clamp",
+          "label": "Noise Clamp",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "eos_threshold",
+          "label": "End of Sequence Threshold",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "frames_after_eos",
+          "label": "Frames After EOS",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "enable_custom_frames",
+          "label": "Enable Custom Frames After EOS",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Audio Output",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ]
+    },
+    {
+      "name": "/switch_to_idle_state_1",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/request_generation_stop",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/perform_clear_action",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Text to Speak",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Voice Mode",
+          "type": "Literal['Kyutai Voices', 'Voice Cloning']",
+          "component": "Radio"
+        },
+        {
+          "label": "Select from Kyutai Voices",
+          "type": "Literal['alba', 'marius', 'javert', 'jean', 'fantine', 'cosette', 'eponine', 'azelma']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Upload Voice for Cloning (WAV/MP3)",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Audio Output",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Temperature",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "LSD Decode Steps",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Noise Clamp",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "End of Sequence Threshold",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Frames After EOS",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Enable Custom Frames After EOS",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/update_voice_ui",
+  "_api_verified": true,
+  "estimated_latency_s": 3.25,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "_tags_enriched": true,
+  "measured_latency_s": 3.25,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:49:15.689340+00:00"
+}

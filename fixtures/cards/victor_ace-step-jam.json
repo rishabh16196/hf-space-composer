@@ -1,0 +1,173 @@
+{
+  "space_id": "victor/ace-step-jam",
+  "title": "ace-step-jam",
+  "emoji": "\ud83c\udfa7",
+  "description": "Describe any song \u2014 AI writes & produces it",
+  "input_schema": {
+    "description": {
+      "type": "str",
+      "description": "1st",
+      "required": true,
+      "component": "Api"
+    },
+    "audio_duration": {
+      "type": "float",
+      "description": "2nd",
+      "required": true,
+      "component": "Api"
+    },
+    "seed": {
+      "type": "int",
+      "description": "3rd",
+      "required": true,
+      "component": "Api"
+    },
+    "community": {
+      "type": "bool",
+      "description": "4th",
+      "required": true,
+      "component": "Api"
+    }
+  },
+  "output_schema": {
+    "1st": {
+      "type": "str",
+      "description": "1st",
+      "component": "Api"
+    }
+  },
+  "license": "mit",
+  "hardware": "6.12.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us",
+    "audio",
+    "music",
+    "song-generation"
+  ],
+  "likes": 54,
+  "last_modified": "2026-04-17 17:55:04+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/create",
+      "parameters": [
+        {
+          "name": "description",
+          "label": "1st",
+          "type": "str",
+          "component": "Api"
+        },
+        {
+          "name": "audio_duration",
+          "label": "2nd",
+          "type": "float",
+          "component": "Api"
+        },
+        {
+          "name": "seed",
+          "label": "3rd",
+          "type": "int",
+          "component": "Api"
+        },
+        {
+          "name": "community",
+          "label": "4th",
+          "type": "bool",
+          "component": "Api"
+        }
+      ],
+      "returns": [
+        {
+          "label": "1st",
+          "type": "str",
+          "component": "Api"
+        }
+      ]
+    },
+    {
+      "name": "/generate",
+      "parameters": [
+        {
+          "name": "prompt",
+          "label": "1st",
+          "type": "str",
+          "component": "Api"
+        },
+        {
+          "name": "lyrics",
+          "label": "2nd",
+          "type": "str",
+          "component": "Api"
+        },
+        {
+          "name": "audio_duration",
+          "label": "3rd",
+          "type": "float",
+          "component": "Api"
+        },
+        {
+          "name": "infer_step",
+          "label": "4th",
+          "type": "int",
+          "component": "Api"
+        },
+        {
+          "name": "guidance_scale",
+          "label": "5th",
+          "type": "float",
+          "component": "Api"
+        },
+        {
+          "name": "seed",
+          "label": "6th",
+          "type": "int",
+          "component": "Api"
+        },
+        {
+          "name": "lora_name_or_path",
+          "label": "7th",
+          "type": "str",
+          "component": "Api"
+        },
+        {
+          "name": "lora_weight",
+          "label": "8th",
+          "type": "float",
+          "component": "Api"
+        }
+      ],
+      "returns": [
+        {
+          "label": "1st",
+          "type": "str",
+          "component": "Api"
+        }
+      ]
+    },
+    {
+      "name": "/community",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "1st",
+          "type": "str",
+          "component": "Api"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/create",
+  "_api_verified": true,
+  "estimated_latency_s": 3.97,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "_tags_enriched": true,
+  "measured_latency_s": 3.97,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:52:01.017478+00:00"
+}

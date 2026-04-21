@@ -1,0 +1,87 @@
+{
+  "space_id": "Alibrown/Advanced-Face-Swaper",
+  "title": "Advanced-Face-Swaper",
+  "emoji": "\ud83d\udcc8",
+  "description": "Advanced-Face-Swaper",
+  "input_schema": {
+    "source_file": {
+      "type": "filepath",
+      "description": "source_file",
+      "required": true,
+      "component": "Image"
+    },
+    "target_file": {
+      "type": "filepath",
+      "description": "target_file",
+      "required": true,
+      "component": "Image"
+    },
+    "doFaceEnhancer": {
+      "type": "bool",
+      "description": "face_enhancer?",
+      "required": true,
+      "component": "Checkbox"
+    }
+  },
+  "output_schema": {
+    "output": {
+      "type": "filepath",
+      "description": "output",
+      "component": "Image"
+    }
+  },
+  "license": "agpl-3.0",
+  "hardware": "4.37.1",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 18,
+  "last_modified": "2024-11-22 19:41:31+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/predict",
+      "parameters": [
+        {
+          "name": "source_file",
+          "label": "source_file",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "name": "target_file",
+          "label": "target_file",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "name": "doFaceEnhancer",
+          "label": "face_enhancer?",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "output",
+          "type": "filepath",
+          "component": "Image"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/predict",
+  "_api_verified": true,
+  "estimated_latency_s": 2.49,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "_tags_enriched": true,
+  "measured_latency_s": 2.49,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:49:05.840709+00:00"
+}

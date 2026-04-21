@@ -1,0 +1,383 @@
+{
+  "space_id": "selfit-camera/Omni-Image-Editor",
+  "title": "Omni Image Editor",
+  "emoji": "\ud83d\uddbc\ufe0f",
+  "description": "Image edit, text to image, image upscale, remove watermark",
+  "input_schema": {},
+  "output_schema": {
+    "Prompt": {
+      "type": "str",
+      "description": "Prompt",
+      "component": "Textbox"
+    }
+  },
+  "license": "mit",
+  "hardware": "5.44.1",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 1473,
+  "last_modified": "2026-04-19 00:08:34+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/lambda",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Prompt",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_1",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Prompt",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_2",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Prompt",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_3",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Prompt",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_4",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Prompt",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/edit_image_interface",
+      "parameters": [
+        {
+          "name": "input_image",
+          "label": "Select image to edit",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "prompt",
+          "label": "Prompt",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output Image",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "Processing Status",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "value_20",
+          "type": "str",
+          "component": "Html"
+        }
+      ]
+    },
+    {
+      "name": "/use_result_as_input",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Select image to edit",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_5",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Prompt",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_6",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Prompt",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_7",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Prompt",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/multi_image_edit_interface",
+      "parameters": [
+        {
+          "name": "input_image1",
+          "label": "Image 1",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "input_image2",
+          "label": "Image 2",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "input_image3",
+          "label": "Image 3 (Optional)",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "prompt",
+          "label": "Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "aspect_ratio",
+          "label": "Select aspect ratio",
+          "type": "Literal['Auto', '16:9', '4:3', '1:1', '3:4', '9:16']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output Image",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "Processing Status",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "value_48",
+          "type": "str",
+          "component": "Html"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_8",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Prompt",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_9",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Prompt",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_10",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Prompt",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_11",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Prompt",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/text_to_image_interface",
+      "parameters": [
+        {
+          "name": "prompt",
+          "label": "Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "aspect_ratio",
+          "label": "Select aspect ratio",
+          "type": "Literal['16:9', '4:3', '1:1', '3:4', '9:16']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output Image",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "Processing Status",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "value_70",
+          "type": "str",
+          "component": "Html"
+        }
+      ]
+    },
+    {
+      "name": "/image_upscale_interface",
+      "parameters": [
+        {
+          "name": "input_image",
+          "label": "Select image to upscale",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output Image",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "Processing Status",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "value_88",
+          "type": "str",
+          "component": "Html"
+        }
+      ]
+    },
+    {
+      "name": "/watermark_removal_interface",
+      "parameters": [
+        {
+          "name": "input_image",
+          "label": "Select image to remove watermark",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "force_removal",
+          "label": "\ud83d\udcaa Force Removal",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Image without watermark",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "Processing status",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "value_103",
+          "type": "str",
+          "component": "Html"
+        }
+      ]
+    },
+    {
+      "name": "/watermark_use_result",
+      "parameters": [
+        {
+          "name": "output_html",
+          "label": "Image without watermark",
+          "type": "str",
+          "component": "Html"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Select image to remove watermark",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/lambda",
+  "_api_verified": true,
+  "estimated_latency_s": 4.14,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "_tags_enriched": true,
+  "measured_latency_s": 4.14,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:51:48.826405+00:00",
+  "_inference_attempt_status": "predict_failed",
+  "_inference_attempt_error": "Failed to download file. Status code: 404"
+}

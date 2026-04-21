@@ -1,0 +1,396 @@
+{
+  "space_id": "muset-ai/DeepResearch-Bench-Leaderboard",
+  "title": "DeepResearch Bench",
+  "emoji": "\ud83d\udd0d",
+  "description": "DeepResearch Bench",
+  "input_schema": {
+    "search_text": {
+      "type": "str",
+      "description": "Model Search",
+      "required": true,
+      "component": "Textbox"
+    },
+    "selected_categories": {
+      "type": "list[Literal['Deep Research Agent', 'LLM with Search']]",
+      "description": "Model Categories",
+      "required": true,
+      "component": "Checkboxgroup"
+    }
+  },
+  "output_schema": {
+    "value_12": {
+      "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+      "description": "value_12",
+      "component": "Dataframe"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "",
+  "sdk": "docker",
+  "tags": [
+    "docker",
+    "region:us",
+    "benchmark",
+    "leaderboard"
+  ],
+  "likes": 11,
+  "last_modified": "2026-04-18 13:37:39+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/update_display",
+      "parameters": [
+        {
+          "name": "search_text",
+          "label": "Model Search",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "selected_categories",
+          "label": "Model Categories",
+          "type": "list[Literal['Deep Research Agent', 'LLM with Search']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_12",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/update_display_1",
+      "parameters": [
+        {
+          "name": "search_text",
+          "label": "Model Search",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "selected_categories",
+          "label": "Model Categories",
+          "type": "list[Literal['Deep Research Agent', 'LLM with Search']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_12",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/fetch_side_by_side_data",
+      "parameters": [
+        {
+          "name": "selected_task_display",
+          "label": "Select Task",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "model_a_name",
+          "label": "Select Model A",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "model_b_name",
+          "label": "Select Model B",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_20",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_24",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_25",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "value_29",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_30",
+          "type": "str",
+          "component": "Html"
+        }
+      ]
+    },
+    {
+      "name": "/fetch_side_by_side_data_1",
+      "parameters": [
+        {
+          "name": "selected_task_display",
+          "label": "Select Task",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "model_a_name",
+          "label": "Select Model A",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "model_b_name",
+          "label": "Select Model B",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_20",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_24",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_25",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "value_29",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_30",
+          "type": "str",
+          "component": "Html"
+        }
+      ]
+    },
+    {
+      "name": "/fetch_side_by_side_data_2",
+      "parameters": [
+        {
+          "name": "selected_task_display",
+          "label": "Select Task",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "model_a_name",
+          "label": "Select Model A",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "model_b_name",
+          "label": "Select Model B",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_20",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_24",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_25",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "value_29",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_30",
+          "type": "str",
+          "component": "Html"
+        }
+      ]
+    },
+    {
+      "name": "/fetch",
+      "parameters": [
+        {
+          "name": "model",
+          "label": "Select Model",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "task_disp",
+          "label": "Select Task",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_38",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_39",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_40",
+          "type": "str",
+          "component": "Html"
+        }
+      ]
+    },
+    {
+      "name": "/fetch_1",
+      "parameters": [
+        {
+          "name": "model",
+          "label": "Select Model",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "task_disp",
+          "label": "Select Task",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_38",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_39",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_40",
+          "type": "str",
+          "component": "Html"
+        }
+      ]
+    },
+    {
+      "name": "/on_load",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Select Model",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Select Task",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "value_38",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_39",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_40",
+          "type": "str",
+          "component": "Html"
+        }
+      ]
+    },
+    {
+      "name": "/on_load_1",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Select Task",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Select Model A",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Select Model B",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "value_20",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_24",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_25",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "value_29",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_30",
+          "type": "str",
+          "component": "Html"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/update_display",
+  "_api_verified": true,
+  "estimated_latency_s": 4.17,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "_tags_enriched": true,
+  "measured_latency_s": 4.17,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:51:22.934663+00:00"
+}

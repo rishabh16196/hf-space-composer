@@ -1,0 +1,144 @@
+{
+  "space_id": "multimodalart/latentdiffusion",
+  "title": "Latent Diffusion",
+  "emoji": "\ud83d\udc41",
+  "description": "Latent Diffusion",
+  "input_schema": {
+    "prompt": {
+      "type": "str",
+      "description": "Prompt - try adding increments to your prompt such as 'oil on canvas', 'a painting', 'a book cover'",
+      "required": true,
+      "component": "Textbox"
+    },
+    "steps": {
+      "type": "float",
+      "description": "Steps - more steps can increase quality but will take longer to generate",
+      "required": true,
+      "component": "Slider"
+    },
+    "width": {
+      "type": "Literal['32', '64', '128', '256']",
+      "description": "Width",
+      "required": true,
+      "component": "Radio"
+    },
+    "height": {
+      "type": "Literal['32', '64', '128', '256']",
+      "description": "Height",
+      "required": true,
+      "component": "Radio"
+    },
+    "images": {
+      "type": "float",
+      "description": "Images - How many images you wish to generate",
+      "required": true,
+      "component": "Slider"
+    },
+    "scale": {
+      "type": "float",
+      "description": "Diversity scale - How different from one another you wish the images to be",
+      "required": true,
+      "component": "Slider"
+    }
+  },
+  "output_schema": {
+    "Individual images": {
+      "type": "list[dict(image: dict(path: str | None (Path to a local file), url: str | None (Publicly available u",
+      "description": "Individual images",
+      "component": "Gallery"
+    },
+    "Image Grid": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "Image Grid",
+      "component": "Image"
+    },
+    "Error": {
+      "type": "str",
+      "description": "Error",
+      "component": "Textbox"
+    }
+  },
+  "license": "mit",
+  "hardware": "5.38.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 512,
+  "last_modified": "2025-07-19 22:59:17+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/predict",
+      "parameters": [
+        {
+          "name": "prompt",
+          "label": "Prompt - try adding increments to your prompt such as 'oil on canvas', 'a painting', 'a book cover'",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "steps",
+          "label": "Steps - more steps can increase quality but will take longer to generate",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "width",
+          "label": "Width",
+          "type": "Literal['32', '64', '128', '256']",
+          "component": "Radio"
+        },
+        {
+          "name": "height",
+          "label": "Height",
+          "type": "Literal['32', '64', '128', '256']",
+          "component": "Radio"
+        },
+        {
+          "name": "images",
+          "label": "Images - How many images you wish to generate",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "scale",
+          "label": "Diversity scale - How different from one another you wish the images to be",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Individual images",
+          "type": "list[dict(image: dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Origi",
+          "component": "Gallery"
+        },
+        {
+          "label": "Image Grid",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "Error",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/predict",
+  "_api_verified": true,
+  "estimated_latency_s": 3.83,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 3.83,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:51:21.094510+00:00",
+  "_inference_attempt_status": "predict_failed",
+  "_inference_attempt_error": "Value: '32' (type: <class 'str'>) is not in the list of choices: [32, 64, 128, 256]"
+}

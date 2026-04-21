@@ -1,0 +1,74 @@
+{
+  "space_id": "CohereLabs/command-a-reasoning",
+  "title": "Command A Reasoning",
+  "emoji": "\u26a1",
+  "description": "Command A Reasoning",
+  "input_schema": {
+    "message": {
+      "type": "str",
+      "description": "Message",
+      "required": true,
+      "component": "Textbox"
+    },
+    "thinking_budget": {
+      "type": "float",
+      "description": "Thinking Budget",
+      "required": true,
+      "component": "Slider"
+    }
+  },
+  "output_schema": {
+    "Response": {
+      "type": "str | float | bool | list | dict",
+      "description": "Response",
+      "component": "Json"
+    }
+  },
+  "license": "unknown",
+  "hardware": "5.34.2",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 26,
+  "last_modified": "2025-08-20 20:01:47+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/chat",
+      "parameters": [
+        {
+          "name": "message",
+          "label": "Message",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "thinking_budget",
+          "label": "Thinking Budget",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Response",
+          "type": "str | float | bool | list | dict",
+          "component": "Json"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/chat",
+  "_api_verified": true,
+  "estimated_latency_s": 2.98,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 2.98,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:49:14.973411+00:00"
+}

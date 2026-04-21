@@ -1,0 +1,938 @@
+{
+  "space_id": "stevengrove/JoyAI-Image-Edit-Space",
+  "title": "JoyAI-Image-Edit-Space",
+  "emoji": "\ud83d\ude80",
+  "description": "JoyAI-Image-Edit-Space",
+  "input_schema": {
+    "uploaded_image": {
+      "type": "filepath",
+      "description": "Upload Image",
+      "required": true,
+      "component": "File"
+    }
+  },
+  "output_schema": {
+    "value_10": {
+      "type": "str",
+      "description": "value_10",
+      "component": "Boxselector"
+    },
+    "value_9": {
+      "type": "str",
+      "description": "value_9",
+      "component": "Textbox"
+    }
+  },
+  "license": "unknown",
+  "hardware": "6.5.1",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us",
+    "image-generation",
+    "vision"
+  ],
+  "likes": 13,
+  "last_modified": "2026-04-06 15:27:59+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/on_object_upload",
+      "parameters": [
+        {
+          "name": "uploaded_image",
+          "label": "Upload Image",
+          "type": "filepath",
+          "component": "File"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_10",
+          "type": "str",
+          "component": "Boxselector"
+        },
+        {
+          "label": "value_9",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/on_object_upload_1",
+      "parameters": [
+        {
+          "name": "uploaded_image",
+          "label": "Upload Image",
+          "type": "filepath",
+          "component": "File"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_10",
+          "type": "str",
+          "component": "Boxselector"
+        },
+        {
+          "label": "value_9",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/reset_object_upload",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_10",
+          "type": "str",
+          "component": "Boxselector"
+        },
+        {
+          "label": "value_9",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/update_boxed_image_state",
+      "parameters": [
+        {
+          "name": "box_json_value",
+          "label": "parameter_9",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/update_object_prompt_from_description",
+      "parameters": [
+        {
+          "name": "object_desc",
+          "label": "Object Description (describe the object you want to move)",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Editing Prompt",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/set_run_button_busy",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/infer_object_moving",
+      "parameters": [
+        {
+          "name": "object_desc",
+          "label": "Object Description (describe the object you want to move)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "prompt_text",
+          "label": "Editing Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "seed",
+          "label": "Seed",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "randomize_seed",
+          "label": "Randomize Seed",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "guidance_scale",
+          "label": "Guidance Scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "num_inference_steps",
+          "label": "Inference Steps",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/set_run_button_idle",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/on_rotation_upload",
+      "parameters": [
+        {
+          "name": "uploaded_image",
+          "label": "Upload Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_29",
+          "type": "str",
+          "component": "Objectrotationcontrol3d"
+        }
+      ]
+    },
+    {
+      "name": "/on_rotation_upload_1",
+      "parameters": [
+        {
+          "name": "uploaded_image",
+          "label": "Upload Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_29",
+          "type": "str",
+          "component": "Objectrotationcontrol3d"
+        }
+      ]
+    },
+    {
+      "name": "/reset_rotation_upload",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_29",
+          "type": "str",
+          "component": "Objectrotationcontrol3d"
+        }
+      ]
+    },
+    {
+      "name": "/update_rotation_prompt_from_controls",
+      "parameters": [
+        {
+          "name": "rotation_value",
+          "label": "parameter_29",
+          "type": "str",
+          "component": "Objectrotationcontrol3d"
+        },
+        {
+          "name": "object_desc",
+          "label": "Object Description (describe the object you want to rotate)",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Editing Prompt",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/update_rotation_prompt_from_controls_1",
+      "parameters": [
+        {
+          "name": "rotation_value",
+          "label": "parameter_29",
+          "type": "str",
+          "component": "Objectrotationcontrol3d"
+        },
+        {
+          "name": "object_desc",
+          "label": "Object Description (describe the object you want to rotate)",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Editing Prompt",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/set_run_button_busy_1",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/infer_object_rotation",
+      "parameters": [
+        {
+          "name": "rotation_value",
+          "label": "parameter_29",
+          "type": "str",
+          "component": "Objectrotationcontrol3d"
+        },
+        {
+          "name": "rotation_object_desc",
+          "label": "Object Description (describe the object you want to rotate)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "prompt_text",
+          "label": "Editing Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "seed",
+          "label": "Seed",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "randomize_seed",
+          "label": "Randomize Seed",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "guidance_scale",
+          "label": "Guidance Scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "num_inference_steps",
+          "label": "Inference Steps",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/set_run_button_idle_1",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/lambda",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_50",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "value_53",
+          "type": "str",
+          "component": "Cameracontrol3d"
+        },
+        {
+          "label": "Yaw",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Pitch",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Zoom Delta",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Display",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Editing Prompt",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_1",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_50",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "value_53",
+          "type": "str",
+          "component": "Cameracontrol3d"
+        },
+        {
+          "label": "Yaw",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Pitch",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Zoom Delta",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Display",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Editing Prompt",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_2",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_50",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "value_53",
+          "type": "str",
+          "component": "Cameracontrol3d"
+        },
+        {
+          "label": "Yaw",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Pitch",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Zoom Delta",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Display",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Editing Prompt",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_3",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_50",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "value_53",
+          "type": "str",
+          "component": "Cameracontrol3d"
+        },
+        {
+          "label": "Yaw",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Pitch",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Zoom Delta",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Display",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Editing Prompt",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/update_prompt_from_controls",
+      "parameters": [
+        {
+          "name": "yaw",
+          "label": "Yaw",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "pitch",
+          "label": "Pitch",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "zoom_delta",
+          "label": "Zoom Delta",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Display",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Editing Prompt",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/update_prompt_from_controls_1",
+      "parameters": [
+        {
+          "name": "yaw",
+          "label": "Yaw",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "pitch",
+          "label": "Pitch",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "zoom_delta",
+          "label": "Zoom Delta",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Display",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Editing Prompt",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/update_prompt_from_controls_2",
+      "parameters": [
+        {
+          "name": "yaw",
+          "label": "Yaw",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "pitch",
+          "label": "Pitch",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "zoom_delta",
+          "label": "Zoom Delta",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Display",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Editing Prompt",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/sync_3d_to_sliders",
+      "parameters": [
+        {
+          "name": "camera_value",
+          "label": "parameter_53",
+          "type": "str",
+          "component": "Cameracontrol3d"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Yaw",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Pitch",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Zoom Delta",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Display",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Editing Prompt",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/sync_sliders_to_3d",
+      "parameters": [
+        {
+          "name": "yaw",
+          "label": "Yaw",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "pitch",
+          "label": "Pitch",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "zoom_delta",
+          "label": "Zoom Delta",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_53",
+          "type": "str",
+          "component": "Cameracontrol3d"
+        }
+      ]
+    },
+    {
+      "name": "/sync_sliders_to_3d_1",
+      "parameters": [
+        {
+          "name": "yaw",
+          "label": "Yaw",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "pitch",
+          "label": "Pitch",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "zoom_delta",
+          "label": "Zoom Delta",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_53",
+          "type": "str",
+          "component": "Cameracontrol3d"
+        }
+      ]
+    },
+    {
+      "name": "/sync_sliders_to_3d_2",
+      "parameters": [
+        {
+          "name": "yaw",
+          "label": "Yaw",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "pitch",
+          "label": "Pitch",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "zoom_delta",
+          "label": "Zoom Delta",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_53",
+          "type": "str",
+          "component": "Cameracontrol3d"
+        }
+      ]
+    },
+    {
+      "name": "/on_camera_upload",
+      "parameters": [
+        {
+          "name": "uploaded_image",
+          "label": "Upload Image",
+          "type": "filepath",
+          "component": "File"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_50",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "value_53",
+          "type": "str",
+          "component": "Cameracontrol3d"
+        },
+        {
+          "label": "Yaw",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Pitch",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Zoom Delta",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Display",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Editing Prompt",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/reset_camera_upload",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_50",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "value_53",
+          "type": "str",
+          "component": "Cameracontrol3d"
+        },
+        {
+          "label": "Yaw",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Pitch",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Zoom Delta",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Display",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Editing Prompt",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_4",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Upload Image",
+          "type": "filepath",
+          "component": "File"
+        }
+      ]
+    },
+    {
+      "name": "/set_run_button_busy_2",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/infer_camera_only",
+      "parameters": [
+        {
+          "name": "yaw",
+          "label": "Yaw",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "pitch",
+          "label": "Pitch",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "zoom_delta",
+          "label": "Zoom Delta",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "prompt_text",
+          "label": "Editing Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "seed",
+          "label": "Seed",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "randomize_seed",
+          "label": "Randomize Seed",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "guidance_scale",
+          "label": "Guidance Scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "num_inference_steps",
+          "label": "Inference Steps",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "Seed",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Display",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/set_run_button_idle_2",
+      "parameters": [],
+      "returns": []
+    }
+  ],
+  "endpoint": "/on_object_upload",
+  "_api_verified": true,
+  "estimated_latency_s": 5.46,
+  "speed_tier": "medium",
+  "_latency_source": "measured",
+  "_tags_enriched": true,
+  "measured_latency_s": 5.46,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:51:56.283701+00:00"
+}

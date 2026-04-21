@@ -1,0 +1,66 @@
+{
+  "space_id": "discord-community/LevelBot",
+  "title": "LevelBot",
+  "emoji": "\ud83e\udd47",
+  "description": "LevelBot",
+  "input_schema": {},
+  "output_schema": {
+    "value_5": {
+      "type": "str",
+      "description": "value_5",
+      "component": "Markdown"
+    }
+  },
+  "license": "unknown",
+  "hardware": "5.33.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 488,
+  "last_modified": "2025-11-07 09:24:51+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/verify_button",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_5",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/check_login_wrapper",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_5",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/_check_login_status",
+      "parameters": [],
+      "returns": []
+    }
+  ],
+  "endpoint": "/verify_button",
+  "_api_verified": true,
+  "estimated_latency_s": 2.8,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 2.8,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:50:29.247447+00:00",
+  "_inference_attempt_status": "no_predictable_endpoint",
+  "_inference_attempt_error": ""
+}

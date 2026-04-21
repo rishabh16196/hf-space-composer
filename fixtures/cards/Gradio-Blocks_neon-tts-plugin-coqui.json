@@ -1,0 +1,43 @@
+{
+  "space_id": "Gradio-Blocks/neon-tts-plugin-coqui",
+  "title": "NeonAI Coqui AI TTS Plugin",
+  "emoji": "\ud83d\udc38",
+  "description": "NeonAI Coqui AI TTS Plugin",
+  "input_schema": {
+    "input": {
+      "type": "string",
+      "description": "Input",
+      "required": true
+    }
+  },
+  "output_schema": {
+    "output": {
+      "type": "string"
+    }
+  },
+  "license": "bsd-3-clause",
+  "hardware": "3.2",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us",
+    "audio",
+    "speech-synthesis",
+    "tts"
+  ],
+  "likes": 108,
+  "last_modified": "2022-10-07 15:10:40+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [],
+  "_api_verified": true,
+  "estimated_latency_s": 2.74,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "_tags_enriched": true,
+  "measured_latency_s": 2.74,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:49:21.059814+00:00"
+}

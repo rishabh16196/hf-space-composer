@@ -1,0 +1,107 @@
+{
+  "space_id": "gaia-benchmark/leaderboard",
+  "title": "GAIA Leaderboard",
+  "emoji": "\ud83e\uddbe",
+  "description": "GAIA Leaderboard",
+  "input_schema": {},
+  "output_schema": {
+    "value_8": {
+      "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+      "description": "value_8",
+      "component": "Dataframe"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "leaderboard",
+    "region:us",
+    "benchmark"
+  ],
+  "likes": 600,
+  "last_modified": "2025-05-28 15:12:18+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_tags_enriched": true,
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/refresh",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_8",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/add_new_eval",
+      "parameters": [
+        {
+          "name": "model",
+          "label": "Agent name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "model_family",
+          "label": "Model family",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "system_prompt",
+          "label": "System prompt example",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "url",
+          "label": "Url to model information",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "path_to_file",
+          "label": "parameter_23",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "name": "organisation",
+          "label": "Organisation",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "mail",
+          "label": "Contact email (will be stored privately, & used if there is an issue with your submission)",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_28",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/_check_login_status",
+      "parameters": [],
+      "returns": []
+    }
+  ],
+  "endpoint": "/refresh",
+  "_api_verified": true
+}

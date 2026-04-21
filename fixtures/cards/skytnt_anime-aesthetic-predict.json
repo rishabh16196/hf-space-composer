@@ -1,0 +1,59 @@
+{
+  "space_id": "skytnt/anime-aesthetic-predict",
+  "title": "Anime Aesthetic Predict",
+  "emoji": "\u2764\ufe0f\ud83d\uddbc\ufe0f",
+  "description": "Anime Aesthetic Predict",
+  "input_schema": {
+    "img": {
+      "type": "Dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "input image",
+      "required": true,
+      "component": "Image"
+    }
+  },
+  "output_schema": {
+    "score": {
+      "type": "float",
+      "description": "score",
+      "component": "Number"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "5.4.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 25,
+  "last_modified": "2024-11-04 15:26:22+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/predict",
+      "parameters": [
+        {
+          "name": "img",
+          "label": "input image",
+          "type": "Dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ],
+      "returns": [
+        {
+          "label": "score",
+          "type": "float",
+          "component": "Number"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/predict",
+  "_api_verified": true
+}

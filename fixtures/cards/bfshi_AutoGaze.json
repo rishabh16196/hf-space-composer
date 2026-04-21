@@ -1,0 +1,141 @@
+{
+  "space_id": "bfshi/AutoGaze",
+  "title": "AutoGaze",
+  "emoji": "\ud83d\udc40",
+  "description": "AutoGaze",
+  "input_schema": {},
+  "output_schema": {
+    "Upload Video or Image": {
+      "type": "filepath",
+      "description": "Upload Video or Image",
+      "component": "File"
+    }
+  },
+  "license": "unknown",
+  "hardware": "6.5.1",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 20,
+  "last_modified": "2026-03-20 22:03:07+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/load_example_video",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Upload Video or Image",
+          "type": "filepath",
+          "component": "File"
+        }
+      ]
+    },
+    {
+      "name": "/handle_file_upload",
+      "parameters": [
+        {
+          "name": "file",
+          "label": "Upload Video or Image",
+          "type": "filepath",
+          "component": "File"
+        }
+      ],
+      "returns": [
+        {
+          "label": "File Info",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Output FPS",
+          "type": "float",
+          "component": "Number"
+        }
+      ]
+    },
+    {
+      "name": "/_process_video_impl",
+      "parameters": [
+        {
+          "name": "gazing_ratio",
+          "label": "Gazing Ratio",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "task_loss_requirement",
+          "label": "Task Loss Requirement",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "output_fps",
+          "label": "Output FPS",
+          "type": "float",
+          "component": "Number"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Gazing %",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "# Gazed Patches",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Total Patches",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Original",
+          "type": "filepath",
+          "component": "Video"
+        },
+        {
+          "label": "Gazing Pattern (all scales)",
+          "type": "filepath",
+          "component": "Video"
+        },
+        {
+          "label": "Reconstruction",
+          "type": "filepath",
+          "component": "Video"
+        },
+        {
+          "label": "Gazing Pattern (individual scales)",
+          "type": "filepath",
+          "component": "Video"
+        },
+        {
+          "label": "value_28",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/cleanup_gpu",
+      "parameters": [],
+      "returns": []
+    }
+  ],
+  "endpoint": "/load_example_video",
+  "_api_verified": true,
+  "estimated_latency_s": 3.47,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 3.47,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:50:22.679450+00:00"
+}

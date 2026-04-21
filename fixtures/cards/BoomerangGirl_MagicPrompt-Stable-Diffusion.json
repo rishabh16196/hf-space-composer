@@ -1,0 +1,64 @@
+{
+  "space_id": "BoomerangGirl/MagicPrompt-Stable-Diffusion",
+  "title": "MagicPrompt Stable Diffusion",
+  "emoji": "\ud83d\ude3b",
+  "description": "MagicPrompt Stable Diffusion",
+  "input_schema": {
+    "Initial Text": {
+      "type": "str",
+      "description": "Initial Text",
+      "required": true,
+      "component": "Textbox"
+    }
+  },
+  "output_schema": {
+    "Generated Prompts": {
+      "type": "str",
+      "description": "Generated Prompts",
+      "component": "Textbox"
+    }
+  },
+  "license": "mit",
+  "hardware": "3.3.1",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us",
+    "diffusion",
+    "image-generation",
+    "text-to-image",
+    "vision"
+  ],
+  "likes": 19,
+  "last_modified": "2022-11-23 16:58:38+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_tags_enriched": true,
+  "estimated_latency_s": 40.0,
+  "speed_tier": "slow",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/predict",
+      "parameters": [
+        {
+          "name": "Initial Text",
+          "label": "Initial Text",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Generated Prompts",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/predict",
+  "_api_verified": true
+}

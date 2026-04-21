@@ -1,0 +1,110 @@
+{
+  "space_id": "issam9/sumy_space",
+  "title": "Sumy_space",
+  "emoji": "\ud83d\udc20",
+  "description": "Sumy_space",
+  "input_schema": {
+    "method": {
+      "type": "Literal['LSA', 'luhn', 'edmundson', 'text-rank', 'lex-rank', 'random', 'reduction', 'kl-sum']",
+      "description": "Summarization Method",
+      "required": true,
+      "component": "Dropdown"
+    },
+    "language": {
+      "type": "Literal['english', 'french', 'arabic', 'chinese', 'czech', 'german', 'italian', 'hebrew', 'japanese'",
+      "description": "Language",
+      "required": true,
+      "component": "Dropdown"
+    },
+    "sentence_count": {
+      "type": "float",
+      "description": "Number of Sentences",
+      "required": true,
+      "component": "Number"
+    },
+    "input_type": {
+      "type": "Literal['URL', 'text']",
+      "description": "Input Type",
+      "required": true,
+      "component": "Radio"
+    },
+    "input_": {
+      "type": "str",
+      "description": "Input Text/URL",
+      "required": true,
+      "component": "Textbox"
+    }
+  },
+  "output_schema": {
+    "Summary": {
+      "type": "str",
+      "description": "Summary",
+      "component": "Textbox"
+    }
+  },
+  "license": "unknown",
+  "hardware": "5.9.1",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 27,
+  "last_modified": "2025-08-30 12:00:24+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/predict",
+      "parameters": [
+        {
+          "name": "method",
+          "label": "Summarization Method",
+          "type": "Literal['LSA', 'luhn', 'edmundson', 'text-rank', 'lex-rank', 'random', 'reduction', 'kl-sum']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "language",
+          "label": "Language",
+          "type": "Literal['english', 'french', 'arabic', 'chinese', 'czech', 'german', 'italian', 'hebrew', 'japanese', 'portuguese', 'slovak', 'spanish', 'ukrainian', 'greek']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "sentence_count",
+          "label": "Number of Sentences",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "input_type",
+          "label": "Input Type",
+          "type": "Literal['URL', 'text']",
+          "component": "Radio"
+        },
+        {
+          "name": "input_",
+          "label": "Input Text/URL",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Summary",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/predict",
+  "_api_verified": true,
+  "estimated_latency_s": 3.82,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 3.82,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:50:59.408238+00:00"
+}

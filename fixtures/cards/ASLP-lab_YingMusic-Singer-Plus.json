@@ -1,0 +1,187 @@
+{
+  "space_id": "ASLP-lab/YingMusic-Singer-Plus",
+  "title": "YingMusic-Singer-Plus",
+  "emoji": "\ud83c\udfa4",
+  "description": "Edit lyrics, keep the melody",
+  "input_schema": {
+    "ref_audio": {
+      "type": "filepath",
+      "description": "\u53c2\u8003\u97f3\u9891 / Reference Audio\uff08\u63d0\u4f9b\u97f3\u8272 / Provides timbre\uff09",
+      "required": true,
+      "component": "Audio"
+    },
+    "melody_audio": {
+      "type": "filepath",
+      "description": "\u65cb\u5f8b\u97f3\u9891 / Melody Audio\uff08\u63d0\u4f9b\u65cb\u5f8b\u4e0e\u65f6\u957f / Provides melody & duration\uff09",
+      "required": true,
+      "component": "Audio"
+    },
+    "ref_text": {
+      "type": "str",
+      "description": "\u53c2\u8003\u97f3\u9891\u6b4c\u8bcd / Reference Lyrics",
+      "required": true,
+      "component": "Textbox"
+    },
+    "target_text": {
+      "type": "str",
+      "description": "\u76ee\u6807\u5408\u6210\u6b4c\u8bcd / Target Lyrics",
+      "required": true,
+      "component": "Textbox"
+    },
+    "separate_vocals_flag": {
+      "type": "bool",
+      "description": "\u5206\u79bb\u4eba\u58f0\u540e\u8fc7\u6a21\u578b / Separate vocals before synthesis",
+      "required": true,
+      "component": "Checkbox"
+    },
+    "mix_accompaniment_flag": {
+      "type": "bool",
+      "description": "\u8f93\u51fa\u65f6\u6df7\u5165\u4f34\u594f / Mix accompaniment into output",
+      "required": true,
+      "component": "Checkbox"
+    },
+    "sil_len_to_end": {
+      "type": "float",
+      "description": "\u672b\u5c3e\u9759\u97f3\u65f6\u957f\uff08\u79d2\uff09/ Silence Padding (s)",
+      "required": true,
+      "component": "Slider"
+    },
+    "t_shift": {
+      "type": "float",
+      "description": "\u91c7\u6837\u65f6\u95f4\u504f\u79fb / t\u2011shift",
+      "required": true,
+      "component": "Slider"
+    },
+    "nfe_step": {
+      "type": "float",
+      "description": "\u91c7\u6837\u6b65\u6570 / NFE Steps",
+      "required": true,
+      "component": "Slider"
+    },
+    "cfg_strength": {
+      "type": "float",
+      "description": "\u5f15\u5bfc\u5f3a\u5ea6 / CFG Strength",
+      "required": true,
+      "component": "Slider"
+    },
+    "seed": {
+      "type": "int",
+      "description": "\u968f\u673a\u79cd\u5b50 / Random Seed",
+      "required": true,
+      "component": "Number"
+    }
+  },
+  "output_schema": {
+    "\u5408\u6210\u7ed3\u679c / Generated Audio": {
+      "type": "filepath",
+      "description": "\u5408\u6210\u7ed3\u679c / Generated Audio",
+      "component": "Audio"
+    }
+  },
+  "license": "unknown",
+  "hardware": "",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "singing-voice-synthesis",
+    "lyric-editing",
+    "diffusion-model",
+    "reinforcement-learning",
+    "region:us"
+  ],
+  "likes": 9,
+  "last_modified": "2026-04-09 14:34:11+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/synthesize",
+      "parameters": [
+        {
+          "name": "ref_audio",
+          "label": "\u53c2\u8003\u97f3\u9891 / Reference Audio\uff08\u63d0\u4f9b\u97f3\u8272 / Provides timbre\uff09",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "name": "melody_audio",
+          "label": "\u65cb\u5f8b\u97f3\u9891 / Melody Audio\uff08\u63d0\u4f9b\u65cb\u5f8b\u4e0e\u65f6\u957f / Provides melody & duration\uff09",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "name": "ref_text",
+          "label": "\u53c2\u8003\u97f3\u9891\u6b4c\u8bcd / Reference Lyrics",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "target_text",
+          "label": "\u76ee\u6807\u5408\u6210\u6b4c\u8bcd / Target Lyrics",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "separate_vocals_flag",
+          "label": "\u5206\u79bb\u4eba\u58f0\u540e\u8fc7\u6a21\u578b / Separate vocals before synthesis",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "mix_accompaniment_flag",
+          "label": "\u8f93\u51fa\u65f6\u6df7\u5165\u4f34\u594f / Mix accompaniment into output",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "sil_len_to_end",
+          "label": "\u672b\u5c3e\u9759\u97f3\u65f6\u957f\uff08\u79d2\uff09/ Silence Padding (s)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "t_shift",
+          "label": "\u91c7\u6837\u65f6\u95f4\u504f\u79fb / t\u2011shift",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "nfe_step",
+          "label": "\u91c7\u6837\u6b65\u6570 / NFE Steps",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "cfg_strength",
+          "label": "\u5f15\u5bfc\u5f3a\u5ea6 / CFG Strength",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "seed",
+          "label": "\u968f\u673a\u79cd\u5b50 / Random Seed",
+          "type": "int",
+          "component": "Number"
+        }
+      ],
+      "returns": [
+        {
+          "label": "\u5408\u6210\u7ed3\u679c / Generated Audio",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/synthesize",
+  "_api_verified": true,
+  "estimated_latency_s": 3.48,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "_tags_enriched": true,
+  "measured_latency_s": 3.48,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:49:05.504588+00:00"
+}

@@ -1,0 +1,41 @@
+{
+  "space_id": "dslim/bert-ner",
+  "description": "BERT-based Named Entity Recognition. Extracts persons, organizations, locations, misc.",
+  "input_schema": {
+    "text": {
+      "type": "string",
+      "description": "Text to extract entities from",
+      "required": true
+    }
+  },
+  "output_schema": {
+    "persons": {
+      "type": "list",
+      "description": "List of person names"
+    },
+    "organizations": {
+      "type": "list",
+      "description": "List of org names"
+    },
+    "locations": {
+      "type": "list",
+      "description": "List of location names"
+    }
+  },
+  "license": "mit",
+  "sdk": "gradio",
+  "tags": [
+    "english",
+    "nlp",
+    "ner",
+    "entity-extraction",
+    "text"
+  ],
+  "_api_scraped": true,
+  "_api_status": "not_found",
+  "_api_error": "404",
+  "estimated_latency_s": 3.0,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "_tags_enriched": true
+}

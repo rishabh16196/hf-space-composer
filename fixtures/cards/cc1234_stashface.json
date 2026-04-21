@@ -1,0 +1,141 @@
+{
+  "space_id": "cc1234/stashface",
+  "title": "Stashface",
+  "emoji": "\ud83d\udc40",
+  "description": "Stashface",
+  "input_schema": {
+    "img": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "parameter_8",
+      "required": true,
+      "component": "Image"
+    },
+    "threshold": {
+      "type": "float",
+      "description": "threshold",
+      "required": true,
+      "component": "Slider"
+    },
+    "results": {
+      "type": "float",
+      "description": "results",
+      "required": true,
+      "component": "Slider"
+    }
+  },
+  "output_schema": {
+    "Performer Information": {
+      "type": "str",
+      "description": "Performer Information",
+      "component": "Html"
+    }
+  },
+  "license": "mit",
+  "hardware": "5.25.2",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "not-for-all-audiences",
+    "region:us"
+  ],
+  "likes": 29,
+  "last_modified": "2026-03-21 16:43:51+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/multiple_image_search_with_visual",
+      "parameters": [
+        {
+          "name": "img",
+          "label": "parameter_8",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "threshold",
+          "label": "threshold",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "results",
+          "label": "results",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Performer Information",
+          "type": "str",
+          "component": "Html"
+        }
+      ]
+    },
+    {
+      "name": "/multiple_image_search",
+      "parameters": [
+        {
+          "name": "img",
+          "label": "parameter_21",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "threshold",
+          "label": "threshold",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "results",
+          "label": "results",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "JSON Results",
+          "type": "str | float | bool | list | dict",
+          "component": "Json"
+        }
+      ]
+    },
+    {
+      "name": "/find_faces_in_sprite",
+      "parameters": [
+        {
+          "name": "image",
+          "label": "parameter_33",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "vtt_file",
+          "label": "VTT file",
+          "type": "filepath",
+          "component": "File"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Results",
+          "type": "str | float | bool | list | dict",
+          "component": "Json"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/multiple_image_search_with_visual",
+  "_api_verified": true,
+  "estimated_latency_s": 3.27,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 3.27,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:50:26.815600+00:00"
+}

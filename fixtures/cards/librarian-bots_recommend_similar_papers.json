@@ -1,0 +1,87 @@
+{
+  "space_id": "librarian-bots/recommend_similar_papers",
+  "title": "Recommend Similar Papers",
+  "emoji": "\ud83c\udf16",
+  "description": "Recommend Similar Papers",
+  "input_schema": {
+    "url": {
+      "type": "str",
+      "description": "url",
+      "required": true,
+      "component": "Textbox"
+    },
+    "comment_id": {
+      "type": "str",
+      "description": "Comment ID (only for API)",
+      "required": true,
+      "component": "Textbox"
+    },
+    "post_to_paper": {
+      "type": "bool",
+      "description": "Post recommendations to Paper page?",
+      "required": true,
+      "component": "Checkbox"
+    }
+  },
+  "output_schema": {
+    "output": {
+      "type": "str",
+      "description": "output",
+      "component": "Markdown"
+    }
+  },
+  "license": "mit",
+  "hardware": "6.1.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "mcp-server",
+    "region:us"
+  ],
+  "likes": 183,
+  "last_modified": "2025-12-17 17:46:38+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/return_recommendations",
+      "parameters": [
+        {
+          "name": "url",
+          "label": "url",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "comment_id",
+          "label": "Comment ID (only for API)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "post_to_paper",
+          "label": "Post recommendations to Paper page?",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "output",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/return_recommendations",
+  "_api_verified": true,
+  "estimated_latency_s": 3.27,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 3.27,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:51:05.779918+00:00"
+}

@@ -1,0 +1,35 @@
+{
+  "space_id": "mayerantoine/disaster-damage-classifier",
+  "title": "Disaster Damage Assessment",
+  "emoji": "\ud83d\udc40",
+  "description": "Disaster Damage Assessment",
+  "input_schema": {
+    "input": {
+      "type": "string",
+      "description": "Input",
+      "required": true
+    }
+  },
+  "output_schema": {
+    "output": {
+      "type": "string"
+    }
+  },
+  "license": "mit",
+  "hardware": "",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 4,
+  "last_modified": "2022-02-07 04:17:43+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "error",
+  "_api_error": "(Request ID: Root=1-69e77bca-3dc8ba577ef8ab9f13041bee;828717e9-9fee-4330-a91b-79bdd80a0b2f)\n\n429 Too Many Requests: you have reached your 'api' rate limit.\nRetry after 20 seconds (0/2500 requests rema"
+}

@@ -1,0 +1,35 @@
+{
+  "space_id": "tventurella/mr_chatterbox",
+  "title": "Mr. Chatterbox",
+  "emoji": "\ud83c\udfa9",
+  "description": "Mr. Chatterbox",
+  "input_schema": {
+    "input": {
+      "type": "string",
+      "description": "Input",
+      "required": true
+    }
+  },
+  "output_schema": {
+    "output": {
+      "type": "string"
+    }
+  },
+  "license": "unknown",
+  "hardware": "",
+  "sdk": "docker",
+  "tags": [
+    "docker",
+    "region:us"
+  ],
+  "likes": 59,
+  "last_modified": "2026-04-12 01:03:09+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "error",
+  "_api_error": "Could not get Gradio config from: https://tventurella-mr-chatterbox.hf.space",
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred"
+}

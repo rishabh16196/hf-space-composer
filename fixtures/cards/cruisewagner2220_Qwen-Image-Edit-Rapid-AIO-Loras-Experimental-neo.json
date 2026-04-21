@@ -1,0 +1,39 @@
+{
+  "space_id": "cruisewagner2220/Qwen-Image-Edit-Rapid-AIO-Loras-Experimental-neo",
+  "title": "QIE-2511 Rapid-AIO LoRAs Fast (Experimental)",
+  "emoji": "\u26a1",
+  "description": "Demo of the Collection of Qwen Image Edit LoRAs",
+  "input_schema": {
+    "input": {
+      "type": "string",
+      "description": "Input",
+      "required": true
+    }
+  },
+  "output_schema": {
+    "output": {
+      "type": "string"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "6.2.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "mcp-server",
+    "region:us",
+    "image-generation",
+    "vision"
+  ],
+  "likes": 4,
+  "last_modified": "2026-03-25 00:04:17+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_tags_enriched": true,
+  "estimated_latency_s": 3.0,
+  "speed_tier": "fast",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "error",
+  "_api_error": "(Request ID: Root=1-69e77bb7-0191067c743c37d5686a0e16;5312bf4c-a575-481e-a578-ea17aab6fecb)\n\n429 Too Many Requests: you have reached your 'api' rate limit.\nRetry after 39 seconds (0/2500 requests rema"
+}

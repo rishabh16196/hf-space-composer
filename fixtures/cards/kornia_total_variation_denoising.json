@@ -1,0 +1,81 @@
+{
+  "space_id": "kornia/total_variation_denoising",
+  "title": "Total Variation Denoising",
+  "emoji": "\ud83d\udcda",
+  "description": "Total Variation Denoising",
+  "input_schema": {
+    "file1": {
+      "type": "filepath",
+      "description": "Input Image",
+      "required": true,
+      "component": "Image"
+    },
+    "num_iters": {
+      "type": "float",
+      "description": "num_iters",
+      "required": true,
+      "component": "Slider"
+    }
+  },
+  "output_schema": {
+    "Noised Image": {
+      "type": "filepath",
+      "description": "Noised Image",
+      "component": "Image"
+    },
+    "Denoised Image": {
+      "type": "filepath",
+      "description": "Denoised Image",
+      "component": "Image"
+    }
+  },
+  "license": "unknown",
+  "hardware": "4.37.2",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 3,
+  "last_modified": "2024-07-10 12:04:00+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/predict",
+      "parameters": [
+        {
+          "name": "file1",
+          "label": "Input Image",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "name": "num_iters",
+          "label": "num_iters",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Noised Image",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "Denoised Image",
+          "type": "filepath",
+          "component": "Image"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/predict",
+  "_api_verified": true
+}

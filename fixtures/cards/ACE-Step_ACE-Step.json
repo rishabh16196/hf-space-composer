@@ -1,0 +1,977 @@
+{
+  "space_id": "ACE-Step/ACE-Step",
+  "title": "ACE Step",
+  "emoji": "\ud83d\ude3b",
+  "description": "A Step Towards Music Generation Foundation Model",
+  "input_schema": {
+    "is_checked": {
+      "type": "bool",
+      "description": "Enable Audio2Audio",
+      "required": true,
+      "component": "Checkbox"
+    }
+  },
+  "output_schema": {
+    "Reference Audio (for Audio2Audio)": {
+      "type": "filepath",
+      "description": "Reference Audio (for Audio2Audio)",
+      "component": "Audio"
+    },
+    "Refer audio strength": {
+      "type": "float",
+      "description": "Refer audio strength",
+      "component": "Slider"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "5.27.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us",
+    "audio",
+    "music"
+  ],
+  "likes": 659,
+  "last_modified": "2026-01-29 11:01:19+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/toggle_ref_audio_visibility",
+      "parameters": [
+        {
+          "name": "is_checked",
+          "label": "Enable Audio2Audio",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Reference Audio (for Audio2Audio)",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Refer audio strength",
+          "type": "float",
+          "component": "Slider"
+        }
+      ]
+    },
+    {
+      "name": "/update_tags_from_preset",
+      "parameters": [
+        {
+          "name": "preset_name",
+          "label": "Preset",
+          "type": "Literal['Custom', 'Modern Pop', 'Rock', 'Hip Hop', 'Country', 'EDM', 'Reggae', 'Classical', 'Jazz', 'Metal', 'R&B']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Tags",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/retake_process_func",
+      "parameters": [
+        {
+          "name": "json_data",
+          "label": "Text2Music Parameters",
+          "type": "str | float | bool | list | dict",
+          "component": "Json"
+        },
+        {
+          "name": "retake_variance",
+          "label": "variance",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "retake_seeds",
+          "label": "retake seeds (default None)",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Retake Generated Audio 1",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Retake Parameters",
+          "type": "str | float | bool | list | dict",
+          "component": "Json"
+        }
+      ]
+    },
+    {
+      "name": "/lambda",
+      "parameters": [
+        {
+          "name": "x",
+          "label": "Repaint Source",
+          "type": "Literal['text2music', 'last_repaint', 'upload']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Upload Audio",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ]
+    },
+    {
+      "name": "/repaint_process_func",
+      "parameters": [
+        {
+          "name": "text2music_json_data",
+          "label": "Text2Music Parameters",
+          "type": "str | float | bool | list | dict",
+          "component": "Json"
+        },
+        {
+          "name": "repaint_json_data",
+          "label": "Repaint Parameters",
+          "type": "str | float | bool | list | dict",
+          "component": "Json"
+        },
+        {
+          "name": "retake_variance",
+          "label": "variance",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "retake_seeds",
+          "label": "repaint seeds (default None)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "repaint_start",
+          "label": "Repaint Start Time",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "repaint_end",
+          "label": "Repaint End Time",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "repaint_source",
+          "label": "Repaint Source",
+          "type": "Literal['text2music', 'last_repaint', 'upload']",
+          "component": "Radio"
+        },
+        {
+          "name": "repaint_source_audio_upload",
+          "label": "Upload Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "name": "prompt",
+          "label": "Tags",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "lyrics",
+          "label": "Lyrics",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "infer_step",
+          "label": "Infer Steps",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "guidance_scale",
+          "label": "Guidance Scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "scheduler_type",
+          "label": "Scheduler Type",
+          "type": "Literal['euler', 'heun']",
+          "component": "Radio"
+        },
+        {
+          "name": "cfg_type",
+          "label": "CFG Type",
+          "type": "Literal['cfg', 'apg', 'cfg_star']",
+          "component": "Radio"
+        },
+        {
+          "name": "omega_scale",
+          "label": "Granularity Scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "manual_seeds",
+          "label": "manual seeds (default None)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "guidance_interval",
+          "label": "Guidance Interval",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "guidance_interval_decay",
+          "label": "Guidance Interval Decay",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "min_guidance_scale",
+          "label": "Min Guidance Scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "use_erg_tag",
+          "label": "use ERG for tag",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "use_erg_lyric",
+          "label": "use ERG for lyric",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "use_erg_diffusion",
+          "label": "use ERG for diffusion",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "oss_steps",
+          "label": "OSS Steps",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "guidance_scale_text",
+          "label": "Guidance Scale Text",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "guidance_scale_lyric",
+          "label": "Guidance Scale Lyric",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Repaint Generated Audio 1",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Repaint Parameters",
+          "type": "str | float | bool | list | dict",
+          "component": "Json"
+        }
+      ]
+    },
+    {
+      "name": "/edit_type_change_func",
+      "parameters": [
+        {
+          "name": "edit_type",
+          "label": "Edit Type",
+          "type": "Literal['only_lyrics', 'remix']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "edit_n_min",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "edit_n_max",
+          "type": "float",
+          "component": "Slider"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_1",
+      "parameters": [
+        {
+          "name": "x",
+          "label": "Edit Source",
+          "type": "Literal['text2music', 'last_edit', 'upload']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Upload Audio",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ]
+    },
+    {
+      "name": "/edit_process_func",
+      "parameters": [
+        {
+          "name": "text2music_json_data",
+          "label": "Text2Music Parameters",
+          "type": "str | float | bool | list | dict",
+          "component": "Json"
+        },
+        {
+          "name": "edit_input_params_json",
+          "label": "Edit Parameters",
+          "type": "str | float | bool | list | dict",
+          "component": "Json"
+        },
+        {
+          "name": "edit_source",
+          "label": "Edit Source",
+          "type": "Literal['text2music', 'last_edit', 'upload']",
+          "component": "Radio"
+        },
+        {
+          "name": "edit_source_audio_upload",
+          "label": "Upload Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "name": "prompt",
+          "label": "Tags",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "lyrics",
+          "label": "Lyrics",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "edit_prompt",
+          "label": "Edit Tags",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "edit_lyrics",
+          "label": "Edit Lyrics",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "edit_n_min",
+          "label": "edit_n_min",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "edit_n_max",
+          "label": "edit_n_max",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "infer_step",
+          "label": "Infer Steps",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "guidance_scale",
+          "label": "Guidance Scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "scheduler_type",
+          "label": "Scheduler Type",
+          "type": "Literal['euler', 'heun']",
+          "component": "Radio"
+        },
+        {
+          "name": "cfg_type",
+          "label": "CFG Type",
+          "type": "Literal['cfg', 'apg', 'cfg_star']",
+          "component": "Radio"
+        },
+        {
+          "name": "omega_scale",
+          "label": "Granularity Scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "manual_seeds",
+          "label": "manual seeds (default None)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "guidance_interval",
+          "label": "Guidance Interval",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "guidance_interval_decay",
+          "label": "Guidance Interval Decay",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "min_guidance_scale",
+          "label": "Min Guidance Scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "use_erg_tag",
+          "label": "use ERG for tag",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "use_erg_lyric",
+          "label": "use ERG for lyric",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "use_erg_diffusion",
+          "label": "use ERG for diffusion",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "oss_steps",
+          "label": "OSS Steps",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "guidance_scale_text",
+          "label": "Guidance Scale Text",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "guidance_scale_lyric",
+          "label": "Guidance Scale Lyric",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "retake_seeds",
+          "label": "edit seeds (default None)",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Edit Generated Audio 1",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Edit Parameters",
+          "type": "str | float | bool | list | dict",
+          "component": "Json"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_2",
+      "parameters": [
+        {
+          "name": "x",
+          "label": "Extend Source",
+          "type": "Literal['text2music', 'last_extend', 'upload']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Upload Audio",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ]
+    },
+    {
+      "name": "/extend_process_func",
+      "parameters": [
+        {
+          "name": "text2music_json_data",
+          "label": "Text2Music Parameters",
+          "type": "str | float | bool | list | dict",
+          "component": "Json"
+        },
+        {
+          "name": "extend_input_params_json",
+          "label": "Extend Parameters",
+          "type": "str | float | bool | list | dict",
+          "component": "Json"
+        },
+        {
+          "name": "extend_seeds",
+          "label": "extend seeds (default None)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "left_extend_length",
+          "label": "Left Extend Length",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "right_extend_length",
+          "label": "Right Extend Length",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "extend_source",
+          "label": "Extend Source",
+          "type": "Literal['text2music', 'last_extend', 'upload']",
+          "component": "Radio"
+        },
+        {
+          "name": "extend_source_audio_upload",
+          "label": "Upload Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "name": "prompt",
+          "label": "Tags",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "lyrics",
+          "label": "Lyrics",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "infer_step",
+          "label": "Infer Steps",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "guidance_scale",
+          "label": "Guidance Scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "scheduler_type",
+          "label": "Scheduler Type",
+          "type": "Literal['euler', 'heun']",
+          "component": "Radio"
+        },
+        {
+          "name": "cfg_type",
+          "label": "CFG Type",
+          "type": "Literal['cfg', 'apg', 'cfg_star']",
+          "component": "Radio"
+        },
+        {
+          "name": "omega_scale",
+          "label": "Granularity Scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "manual_seeds",
+          "label": "manual seeds (default None)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "guidance_interval",
+          "label": "Guidance Interval",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "guidance_interval_decay",
+          "label": "Guidance Interval Decay",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "min_guidance_scale",
+          "label": "Min Guidance Scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "use_erg_tag",
+          "label": "use ERG for tag",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "use_erg_lyric",
+          "label": "use ERG for lyric",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "use_erg_diffusion",
+          "label": "use ERG for diffusion",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "oss_steps",
+          "label": "OSS Steps",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "guidance_scale_text",
+          "label": "Guidance Scale Text",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "guidance_scale_lyric",
+          "label": "Guidance Scale Lyric",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Extend Generated Audio 1",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Extend Parameters",
+          "type": "str | float | bool | list | dict",
+          "component": "Json"
+        }
+      ]
+    },
+    {
+      "name": "/sample_data",
+      "parameters": [
+        {
+          "name": "lora_name_or_path_",
+          "label": "Lora Name or Path",
+          "type": "Literal['ACE-Step/ACE-Step-v1-chinese-rap-LoRA', 'none']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Audio Duration",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Tags",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Lyrics",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Infer Steps",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Guidance Scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Scheduler Type",
+          "type": "Literal['euler', 'heun']",
+          "component": "Radio"
+        },
+        {
+          "label": "CFG Type",
+          "type": "Literal['cfg', 'apg', 'cfg_star']",
+          "component": "Radio"
+        },
+        {
+          "label": "Granularity Scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "manual seeds (default None)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Guidance Interval",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Guidance Interval Decay",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Min Guidance Scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "use ERG for tag",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "use ERG for lyric",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "use ERG for diffusion",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "OSS Steps",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Guidance Scale Text",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Guidance Scale Lyric",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Enable Audio2Audio",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Refer audio strength",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Reference Audio (for Audio2Audio)",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ]
+    },
+    {
+      "name": "/__call__",
+      "parameters": [
+        {
+          "name": "audio_duration",
+          "label": "Audio Duration",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "prompt",
+          "label": "Tags",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "lyrics",
+          "label": "Lyrics",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "infer_step",
+          "label": "Infer Steps",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "guidance_scale",
+          "label": "Guidance Scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "scheduler_type",
+          "label": "Scheduler Type",
+          "type": "Literal['euler', 'heun']",
+          "component": "Radio"
+        },
+        {
+          "name": "cfg_type",
+          "label": "CFG Type",
+          "type": "Literal['cfg', 'apg', 'cfg_star']",
+          "component": "Radio"
+        },
+        {
+          "name": "omega_scale",
+          "label": "Granularity Scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "manual_seeds",
+          "label": "manual seeds (default None)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "guidance_interval",
+          "label": "Guidance Interval",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "guidance_interval_decay",
+          "label": "Guidance Interval Decay",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "min_guidance_scale",
+          "label": "Min Guidance Scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "use_erg_tag",
+          "label": "use ERG for tag",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "use_erg_lyric",
+          "label": "use ERG for lyric",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "use_erg_diffusion",
+          "label": "use ERG for diffusion",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "oss_steps",
+          "label": "OSS Steps",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "guidance_scale_text",
+          "label": "Guidance Scale Text",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "guidance_scale_lyric",
+          "label": "Guidance Scale Lyric",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "audio2audio_enable",
+          "label": "Enable Audio2Audio",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "ref_audio_strength",
+          "label": "Refer audio strength",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "ref_audio_input",
+          "label": "Reference Audio (for Audio2Audio)",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "name": "lora_name_or_path",
+          "label": "Lora Name or Path",
+          "type": "Literal['ACE-Step/ACE-Step-v1-chinese-rap-LoRA', 'none']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Text2Music Generated Audio 1",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Text2Music Parameters",
+          "type": "str | float | bool | list | dict",
+          "component": "Json"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/toggle_ref_audio_visibility",
+  "_api_verified": true,
+  "estimated_latency_s": 2.26,
+  "speed_tier": "fast",
+  "_latency_source": "measured_inference",
+  "_tags_enriched": true,
+  "measured_latency_s": 2.26,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:49:02.978701+00:00",
+  "measured_inference_s": 2.26,
+  "measured_inference_timestamp": "2026-04-20T07:59:13.491986+00:00",
+  "measured_inference_method": "auto_predict",
+  "measured_inference_api": "/toggle_ref_audio_visibility"
+}

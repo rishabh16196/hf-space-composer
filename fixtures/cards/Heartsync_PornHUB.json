@@ -1,0 +1,152 @@
+{
+  "space_id": "Heartsync/PornHUB",
+  "title": "PornHUB - Text to Image",
+  "emoji": "\ud83d\uddbc",
+  "description": "PornHUB - Text to Image",
+  "input_schema": {
+    "prompt": {
+      "type": "str",
+      "description": "\u270f\ufe0f Prompt",
+      "required": true,
+      "component": "Textbox"
+    },
+    "negative_prompt": {
+      "type": "str",
+      "description": "\ud83d\udeab Negative Prompt",
+      "required": true,
+      "component": "Textbox"
+    },
+    "seed": {
+      "type": "float",
+      "description": "\ud83c\udfb2 Seed",
+      "required": true,
+      "component": "Slider"
+    },
+    "randomize_seed": {
+      "type": "bool",
+      "description": "\ud83d\udd00 Randomize seed",
+      "required": true,
+      "component": "Checkbox"
+    },
+    "width": {
+      "type": "float",
+      "description": "\u2194\ufe0f Width",
+      "required": true,
+      "component": "Slider"
+    },
+    "height": {
+      "type": "float",
+      "description": "\u2195\ufe0f Height",
+      "required": true,
+      "component": "Slider"
+    },
+    "guidance_scale": {
+      "type": "float",
+      "description": "\ud83c\udfaf Guidance Scale",
+      "required": true,
+      "component": "Slider"
+    },
+    "num_inference_steps": {
+      "type": "float",
+      "description": "\ud83d\udd04 Inference Steps",
+      "required": true,
+      "component": "Slider"
+    }
+  },
+  "output_schema": {
+    "\ud83d\uddbc\ufe0f Generated Image": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "\ud83d\uddbc\ufe0f Generated Image",
+      "component": "Image"
+    }
+  },
+  "license": "mit",
+  "hardware": "5.39.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "not-for-all-audiences",
+    "region:us"
+  ],
+  "likes": 232,
+  "last_modified": "2026-03-07 14:29:07+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/infer",
+      "parameters": [
+        {
+          "name": "prompt",
+          "label": "\u270f\ufe0f Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "negative_prompt",
+          "label": "\ud83d\udeab Negative Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "seed",
+          "label": "\ud83c\udfb2 Seed",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "randomize_seed",
+          "label": "\ud83d\udd00 Randomize seed",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "width",
+          "label": "\u2194\ufe0f Width",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "height",
+          "label": "\u2195\ufe0f Height",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "guidance_scale",
+          "label": "\ud83c\udfaf Guidance Scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "num_inference_steps",
+          "label": "\ud83d\udd04 Inference Steps",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "\ud83d\uddbc\ufe0f Generated Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/_check_login_status",
+      "parameters": [],
+      "returns": []
+    }
+  ],
+  "endpoint": "/infer",
+  "_api_verified": true,
+  "estimated_latency_s": 2.88,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 2.88,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:49:23.944889+00:00"
+}

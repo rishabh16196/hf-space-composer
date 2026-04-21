@@ -1,0 +1,119 @@
+{
+  "space_id": "Nandu972/resapexquant-benchmark",
+  "title": "ResApexQuant \u2014 Live Benchmark",
+  "emoji": "\ud83d\udcc9",
+  "description": "KV cache quantization \u00d712 better than SOTA at 1-bit",
+  "input_schema": {
+    "d": {
+      "type": "float",
+      "description": "Vector dimension d",
+      "required": true,
+      "component": "Slider"
+    },
+    "bits_str": {
+      "type": "str",
+      "description": "Bit-widths to test",
+      "required": true,
+      "component": "Textbox"
+    },
+    "n_test": {
+      "type": "float",
+      "description": "Test vectors (n_test)",
+      "required": true,
+      "component": "Slider"
+    },
+    "n_q": {
+      "type": "float",
+      "description": "Query vectors (n_q)",
+      "required": true,
+      "component": "Slider"
+    }
+  },
+  "output_schema": {
+    "Benchmark Results": {
+      "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+      "description": "Benchmark Results",
+      "component": "Plot"
+    },
+    "Summary": {
+      "type": "str",
+      "description": "Summary",
+      "component": "Markdown"
+    },
+    "value_16": {
+      "type": "str",
+      "description": "value_16",
+      "component": "Markdown"
+    }
+  },
+  "license": "other",
+  "hardware": "6.12.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "quantization",
+    "llm",
+    "kv-cache",
+    "research",
+    "region:us"
+  ],
+  "likes": 2,
+  "last_modified": "2026-04-13 13:10:51+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/benchmark_fn",
+      "parameters": [
+        {
+          "name": "d",
+          "label": "Vector dimension d",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "bits_str",
+          "label": "Bit-widths to test",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "n_test",
+          "label": "Test vectors (n_test)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "n_q",
+          "label": "Query vectors (n_q)",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Benchmark Results",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "Summary",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_16",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/benchmark_fn",
+  "_api_verified": true
+}

@@ -1,0 +1,87 @@
+{
+  "space_id": "wukevin/foldingdiff",
+  "title": "foldingdiff",
+  "emoji": "\ud83e\udd16",
+  "description": "foldingdiff",
+  "input_schema": {
+    "Protein backbone length to generate": {
+      "type": "int | float",
+      "description": "Protein backbone length to generate",
+      "required": true,
+      "component": "Number"
+    },
+    "Random seed": {
+      "type": "int | float",
+      "description": "Random seed",
+      "required": true,
+      "component": "Number"
+    }
+  },
+  "output_schema": {
+    "output 0": {
+      "type": "str",
+      "description": "output 0",
+      "component": "Html"
+    },
+    "Generated structure in PDB format (cartesian coordinates)": {
+      "type": "str | Dict(name: str (name of file), data: str (base64 representation of file), size: int (size of i",
+      "description": "Generated structure in PDB format (cartesian coordinates)",
+      "component": "File"
+    }
+  },
+  "license": "unknown",
+  "hardware": "3.4",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "ddpm",
+    "proteins",
+    "protein structure",
+    "transformer",
+    "generative",
+    "foldingdiff",
+    "region:us"
+  ],
+  "likes": 25,
+  "last_modified": "2023-02-10 01:32:34+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "estimated_latency_s": 40.0,
+  "speed_tier": "slow",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/predict",
+      "parameters": [
+        {
+          "name": "Protein backbone length to generate",
+          "label": "Protein backbone length to generate",
+          "type": "int | float",
+          "component": "Number"
+        },
+        {
+          "name": "Random seed",
+          "label": "Random seed",
+          "type": "int | float",
+          "component": "Number"
+        }
+      ],
+      "returns": [
+        {
+          "label": "output 0",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "Generated structure in PDB format (cartesian coordinates)",
+          "type": "str | Dict(name: str (name of file), data: str (base64 representation of file), size: int (size of image in bytes), is_file: bool (true if the file has been uploaded to the server), orig_name: str (or",
+          "component": "File"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/predict",
+  "_api_verified": true
+}

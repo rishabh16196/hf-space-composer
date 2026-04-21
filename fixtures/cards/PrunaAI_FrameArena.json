@@ -1,0 +1,431 @@
+{
+  "space_id": "PrunaAI/FrameArena",
+  "title": "Frame Arena",
+  "emoji": "\ud83c\udfac",
+  "description": "Frame by frame video comparison tool with quality metrics",
+  "input_schema": {
+    "video1": {
+      "type": "filepath",
+      "description": "Upload Video 1",
+      "required": true,
+      "component": "File"
+    },
+    "video2": {
+      "type": "filepath",
+      "description": "Upload Video 2",
+      "required": true,
+      "component": "File"
+    }
+  },
+  "output_schema": {
+    "Status": {
+      "type": "str",
+      "description": "Status",
+      "component": "Textbox"
+    },
+    "Frame Number": {
+      "type": "float",
+      "description": "Frame Number",
+      "component": "Slider"
+    },
+    "Video 1 Frame": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "Video 1 Frame",
+      "component": "Image"
+    },
+    "Drag to compare frames": {
+      "type": "tuple[filepath | None, filepath | None] | None",
+      "description": "Drag to compare frames",
+      "component": "Imageslider"
+    },
+    "Video 2 Frame": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "Video 2 Frame",
+      "component": "Image"
+    },
+    "Frame Information & Metrics": {
+      "type": "str",
+      "description": "Frame Information & Metrics",
+      "component": "Textbox"
+    },
+    "SSIM": {
+      "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+      "description": "SSIM",
+      "component": "Plot"
+    },
+    "PSNR": {
+      "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+      "description": "PSNR",
+      "component": "Plot"
+    },
+    "MSE": {
+      "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+      "description": "MSE",
+      "component": "Plot"
+    },
+    "pHash": {
+      "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+      "description": "pHash",
+      "component": "Plot"
+    },
+    "Color Histogram": {
+      "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+      "description": "Color Histogram",
+      "component": "Plot"
+    },
+    "Sharpness": {
+      "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+      "description": "Sharpness",
+      "component": "Plot"
+    },
+    "Overall Quality (Combined Metric [SSIM + normalized_PSNR + pHash])": {
+      "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+      "description": "Overall Quality (Combined Metric [SSIM + normalized_PSNR + pHash])",
+      "component": "Plot"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "5.38.2",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 15,
+  "last_modified": "2025-07-31 13:18:50+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/enhanced_auto_load",
+      "parameters": [
+        {
+          "name": "video1",
+          "label": "Upload Video 1",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "name": "video2",
+          "label": "Upload Video 2",
+          "type": "filepath",
+          "component": "File"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Status",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Frame Number",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Video 1 Frame",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "Drag to compare frames",
+          "type": "tuple[filepath | None, filepath | None] | None",
+          "component": "Imageslider"
+        },
+        {
+          "label": "Video 2 Frame",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "Frame Information & Metrics",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "SSIM",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "PSNR",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "MSE",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "pHash",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "Color Histogram",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "Sharpness",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "Overall Quality (Combined Metric [SSIM + normalized_PSNR + pHash])",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        }
+      ]
+    },
+    {
+      "name": "/enhanced_auto_load_1",
+      "parameters": [
+        {
+          "name": "video1",
+          "label": "Upload Video 1",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "name": "video2",
+          "label": "Upload Video 2",
+          "type": "filepath",
+          "component": "File"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Status",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Frame Number",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Video 1 Frame",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "Drag to compare frames",
+          "type": "tuple[filepath | None, filepath | None] | None",
+          "component": "Imageslider"
+        },
+        {
+          "label": "Video 2 Frame",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "Frame Information & Metrics",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "SSIM",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "PSNR",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "MSE",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "pHash",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "Color Histogram",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "Sharpness",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "Overall Quality (Combined Metric [SSIM + normalized_PSNR + pHash])",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        }
+      ]
+    },
+    {
+      "name": "/debug_load_videos_handler",
+      "parameters": [
+        {
+          "name": "video1",
+          "label": "Upload Video 1",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "name": "video2",
+          "label": "Upload Video 2",
+          "type": "filepath",
+          "component": "File"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Status",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Frame Number",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Video 1 Frame",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "Drag to compare frames",
+          "type": "tuple[filepath | None, filepath | None] | None",
+          "component": "Imageslider"
+        },
+        {
+          "label": "Video 2 Frame",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "Frame Information & Metrics",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "SSIM",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "PSNR",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "MSE",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "pHash",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "Color Histogram",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "Sharpness",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "Overall Quality (Combined Metric [SSIM + normalized_PSNR + pHash])",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        }
+      ]
+    },
+    {
+      "name": "/update_frames",
+      "parameters": [
+        {
+          "name": "frame_index",
+          "label": "Frame Number",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Video 1 Frame",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "Drag to compare frames",
+          "type": "tuple[filepath | None, filepath | None] | None",
+          "component": "Imageslider"
+        },
+        {
+          "label": "Video 2 Frame",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "Frame Information & Metrics",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "SSIM",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "PSNR",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "MSE",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "pHash",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "Color Histogram",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "Sharpness",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "Overall Quality (Combined Metric [SSIM + normalized_PSNR + pHash])",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/enhanced_auto_load",
+  "_api_verified": true,
+  "estimated_latency_s": 3.9,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "_tags_enriched": true,
+  "measured_latency_s": 3.9,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:49:48.575748+00:00"
+}

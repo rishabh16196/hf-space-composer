@@ -1,0 +1,88 @@
+{
+  "space_id": "peterbonnesoeur/pose_demo",
+  "title": "Pose_demo",
+  "emoji": "\ud83e\uddd1\u200d\ud83d\udcbb",
+  "description": "Pose_demo",
+  "input_schema": {
+    "img": {
+      "type": "filepath",
+      "description": "Input",
+      "required": true,
+      "component": "Image"
+    },
+    "ver": {
+      "type": "Literal['whole-body', 'pose', 'vehicles', 'animal']",
+      "description": "version",
+      "required": true,
+      "component": "Radio"
+    },
+    "white_overlay": {
+      "type": "bool",
+      "description": "White overlay",
+      "required": true,
+      "component": "Checkbox"
+    }
+  },
+  "output_schema": {
+    "Output": {
+      "type": "filepath",
+      "description": "Output",
+      "component": "Image"
+    }
+  },
+  "license": "unknown",
+  "hardware": "",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us",
+    "vision"
+  ],
+  "likes": 29,
+  "last_modified": "2024-07-22 21:30:20+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/predict",
+      "parameters": [
+        {
+          "name": "img",
+          "label": "Input",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "name": "ver",
+          "label": "version",
+          "type": "Literal['whole-body', 'pose', 'vehicles', 'animal']",
+          "component": "Radio"
+        },
+        {
+          "name": "white_overlay",
+          "label": "White overlay",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output",
+          "type": "filepath",
+          "component": "Image"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/predict",
+  "_api_verified": true,
+  "estimated_latency_s": 4.15,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "_tags_enriched": true,
+  "measured_latency_s": 4.15,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:51:33.429242+00:00"
+}

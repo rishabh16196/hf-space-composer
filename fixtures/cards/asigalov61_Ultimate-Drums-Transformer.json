@@ -1,0 +1,193 @@
+{
+  "space_id": "asigalov61/Ultimate-Drums-Transformer",
+  "title": "Ultimate Drums Transformer",
+  "emoji": "\ud83c\udfbc\ud83c\udfb6",
+  "description": "Generate unique drums track for any MIDI",
+  "input_schema": {
+    "input_midi": {
+      "type": "filepath",
+      "description": "Input MIDI",
+      "required": true,
+      "component": "File"
+    },
+    "input_model": {
+      "type": "Literal['Small', 'Large']",
+      "description": "Model selector",
+      "required": true,
+      "component": "Dropdown"
+    },
+    "input_drums": {
+      "type": "list[Literal['Acoustic Bass Drum', 'Acoustic Snare', 'All Drums', 'Bass Drum 1', 'Cabasa', 'Chinese ",
+      "description": "Desired drums to generate",
+      "required": true,
+      "component": "Dropdown"
+    },
+    "input_num_tokens": {
+      "type": "float",
+      "description": "Number of composition chords to generate drums for",
+      "required": true,
+      "component": "Slider"
+    },
+    "input_max_drums_per_step": {
+      "type": "float",
+      "description": "Maximum number of drums pitches per step",
+      "required": true,
+      "component": "Slider"
+    },
+    "input_drums_bias": {
+      "type": "float",
+      "description": "Drums generation bias",
+      "required": true,
+      "component": "Slider"
+    },
+    "input_temperature": {
+      "type": "float",
+      "description": "Model temperature",
+      "required": true,
+      "component": "Slider"
+    },
+    "input_top_k_value": {
+      "type": "float",
+      "description": "Model sampling top_k value",
+      "required": true,
+      "component": "Slider"
+    }
+  },
+  "output_schema": {
+    "Output MIDI title": {
+      "type": "str",
+      "description": "Output MIDI title",
+      "component": "Textbox"
+    },
+    "Output MIDI summary": {
+      "type": "str",
+      "description": "Output MIDI summary",
+      "component": "Textbox"
+    },
+    "Output MIDI file": {
+      "type": "filepath",
+      "description": "Output MIDI file",
+      "component": "File"
+    },
+    "Output MIDI audio": {
+      "type": "filepath",
+      "description": "Output MIDI audio",
+      "component": "Audio"
+    },
+    "Output MIDI score plot": {
+      "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+      "description": "Output MIDI score plot",
+      "component": "Plot"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "6.4.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "midi",
+    "drums",
+    "drums generation",
+    "drums transformer",
+    "music ai",
+    "mcp-server",
+    "region:us"
+  ],
+  "likes": 11,
+  "last_modified": "2026-01-24 05:14:04+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/Generate_Drums",
+      "parameters": [
+        {
+          "name": "input_midi",
+          "label": "Input MIDI",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "name": "input_model",
+          "label": "Model selector",
+          "type": "Literal['Small', 'Large']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "input_drums",
+          "label": "Desired drums to generate",
+          "type": "list[Literal['Acoustic Bass Drum', 'Acoustic Snare', 'All Drums', 'Bass Drum 1', 'Cabasa', 'Chinese Cymbal', 'Claves', 'Closed Hi-Hat', 'Cowbell', 'Crash Cymbal 1', 'Crash Cymbal 2', 'Electric Snare',",
+          "component": "Dropdown"
+        },
+        {
+          "name": "input_num_tokens",
+          "label": "Number of composition chords to generate drums for",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "input_max_drums_per_step",
+          "label": "Maximum number of drums pitches per step",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "input_drums_bias",
+          "label": "Drums generation bias",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "input_temperature",
+          "label": "Model temperature",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "input_top_k_value",
+          "label": "Model sampling top_k value",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output MIDI title",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Output MIDI summary",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Output MIDI file",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "label": "Output MIDI audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Output MIDI score plot",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/Generate_Drums",
+  "_api_verified": true,
+  "estimated_latency_s": 3.1,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "_tags_enriched": true,
+  "measured_latency_s": 3.1,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:50:17.925627+00:00"
+}

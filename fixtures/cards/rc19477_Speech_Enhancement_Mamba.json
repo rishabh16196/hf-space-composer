@@ -1,0 +1,88 @@
+{
+  "space_id": "rc19477/Speech_Enhancement_Mamba",
+  "title": "Speech Enhancement Mamba",
+  "emoji": "\ud83d\udcc9",
+  "description": "Speech Enhancemet using Mamba (SEMamba)",
+  "input_schema": {
+    "filepath": {
+      "type": "filepath",
+      "description": "Input Audio",
+      "required": true,
+      "component": "Audio"
+    },
+    "model_name": {
+      "type": "Literal['VCTK-Demand', 'VCTK+DNS']",
+      "description": "Choose Model (The use of VCTK+DNS is recommended)",
+      "required": true,
+      "component": "Radio"
+    }
+  },
+  "output_schema": {
+    "Enhanced Audio": {
+      "type": "filepath",
+      "description": "Enhanced Audio",
+      "component": "Audio"
+    },
+    "Spectrograms": {
+      "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+      "description": "Spectrograms",
+      "component": "Plot"
+    }
+  },
+  "license": "unknown",
+  "hardware": "5.31.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "speech-enhancement",
+    "audio",
+    "VCTK",
+    "VCTK-Demand",
+    "DNS",
+    "DNS-Challenge",
+    "SEMamba",
+    "region:us"
+  ],
+  "likes": 11,
+  "last_modified": "2026-03-18 06:30:20+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/enhance",
+      "parameters": [
+        {
+          "name": "filepath",
+          "label": "Input Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "name": "model_name",
+          "label": "Choose Model (The use of VCTK+DNS is recommended)",
+          "type": "Literal['VCTK-Demand', 'VCTK+DNS']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Enhanced Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Spectrograms",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/enhance",
+  "_api_verified": true
+}

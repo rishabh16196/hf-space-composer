@@ -1,0 +1,134 @@
+{
+  "space_id": "EPFL-VILAB/MultiMAE",
+  "title": "MultiMAE",
+  "emoji": "\ud83d\ude3b",
+  "description": "MultiMAE",
+  "input_schema": {
+    "RGB input image": {
+      "type": "str",
+      "description": "RGB input image",
+      "required": true,
+      "component": "Image"
+    },
+    "Percentage of input tokens": {
+      "type": "int | float",
+      "description": "Percentage of input tokens",
+      "required": true,
+      "component": "Slider"
+    },
+    "Manual mode: Check this to manually set the number of input tokens per modality using the sliders below": {
+      "type": "bool",
+      "description": "Manual mode: Check this to manually set the number of input tokens per modality using the sliders below",
+      "required": true,
+      "component": "Checkbox"
+    },
+    "Percentage of RGB input tokens (for manual mode only)": {
+      "type": "int | float",
+      "description": "Percentage of RGB input tokens (for manual mode only)",
+      "required": true,
+      "component": "Slider"
+    },
+    "Percentage of depth input tokens (for manual mode only)": {
+      "type": "int | float",
+      "description": "Percentage of depth input tokens (for manual mode only)",
+      "required": true,
+      "component": "Slider"
+    },
+    "Percentage of semantic input tokens (for manual mode only)": {
+      "type": "int | float",
+      "description": "Percentage of semantic input tokens (for manual mode only)",
+      "required": true,
+      "component": "Slider"
+    },
+    "Random seed: Change this to sample different masks (for manual mode only)": {
+      "type": "int | float",
+      "description": "Random seed: Change this to sample different masks (for manual mode only)",
+      "required": true,
+      "component": "Number"
+    }
+  },
+  "output_schema": {
+    "MultiMAE predictions": {
+      "type": "str",
+      "description": "MultiMAE predictions",
+      "component": "Image"
+    }
+  },
+  "license": "cc-by-nc-4.0",
+  "hardware": "3.40.1",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 30,
+  "last_modified": "2023-08-27 21:42:05+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/predict",
+      "parameters": [
+        {
+          "name": "RGB input image",
+          "label": "RGB input image",
+          "type": "str",
+          "component": "Image"
+        },
+        {
+          "name": "Percentage of input tokens",
+          "label": "Percentage of input tokens",
+          "type": "int | float",
+          "component": "Slider"
+        },
+        {
+          "name": "Manual mode: Check this to manually set the number of input tokens per modality using the sliders below",
+          "label": "Manual mode: Check this to manually set the number of input tokens per modality using the sliders below",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "Percentage of RGB input tokens (for manual mode only)",
+          "label": "Percentage of RGB input tokens (for manual mode only)",
+          "type": "int | float",
+          "component": "Slider"
+        },
+        {
+          "name": "Percentage of depth input tokens (for manual mode only)",
+          "label": "Percentage of depth input tokens (for manual mode only)",
+          "type": "int | float",
+          "component": "Slider"
+        },
+        {
+          "name": "Percentage of semantic input tokens (for manual mode only)",
+          "label": "Percentage of semantic input tokens (for manual mode only)",
+          "type": "int | float",
+          "component": "Slider"
+        },
+        {
+          "name": "Random seed: Change this to sample different masks (for manual mode only)",
+          "label": "Random seed: Change this to sample different masks (for manual mode only)",
+          "type": "int | float",
+          "component": "Number"
+        }
+      ],
+      "returns": [
+        {
+          "label": "MultiMAE predictions",
+          "type": "str",
+          "component": "Image"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/predict",
+  "_api_verified": true,
+  "estimated_latency_s": 2.86,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 2.86,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:49:17.157911+00:00"
+}

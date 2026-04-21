@@ -1,0 +1,60 @@
+{
+  "space_id": "zai-org/CodeGeeX",
+  "title": "CodeGeeX",
+  "emoji": "\ud83d\udcbb",
+  "description": "CodeGeeX",
+  "input_schema": {
+    "message": {
+      "type": "str",
+      "description": "Message",
+      "required": true,
+      "component": "Textbox"
+    }
+  },
+  "output_schema": {
+    "Message": {
+      "type": "str",
+      "description": "Message",
+      "component": "Textbox"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "4.36.1",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 327,
+  "last_modified": "2024-07-08 08:47:27+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_tags_enriched": true,
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/chat",
+      "parameters": [
+        {
+          "name": "message",
+          "label": "Message",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Message",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/chat",
+  "_api_verified": true
+}

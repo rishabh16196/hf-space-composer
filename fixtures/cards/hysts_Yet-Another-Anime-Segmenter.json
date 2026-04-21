@@ -1,0 +1,96 @@
+{
+  "space_id": "hysts/Yet-Another-Anime-Segmenter",
+  "title": "Yet Another Anime Segmenter",
+  "emoji": "\ud83c\udf0d",
+  "description": "Yet Another Anime Segmenter",
+  "input_schema": {
+    "image_path": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "Input",
+      "required": true,
+      "component": "Image"
+    },
+    "class_score_threshold": {
+      "type": "float",
+      "description": "Score Threshold",
+      "required": true,
+      "component": "Slider"
+    },
+    "mask_score_threshold": {
+      "type": "float",
+      "description": "Mask Score Threshold",
+      "required": true,
+      "component": "Slider"
+    }
+  },
+  "output_schema": {
+    "Instances": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "Instances",
+      "component": "Image"
+    },
+    "Masked": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "Masked",
+      "component": "Image"
+    }
+  },
+  "license": "unknown",
+  "hardware": "5.20.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 25,
+  "last_modified": "2025-03-04 09:28:09+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/predict",
+      "parameters": [
+        {
+          "name": "image_path",
+          "label": "Input",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "class_score_threshold",
+          "label": "Score Threshold",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "mask_score_threshold",
+          "label": "Mask Score Threshold",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Instances",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "Masked",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/predict",
+  "_api_verified": true,
+  "estimated_latency_s": 4.31,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 4.31,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:50:52.822232+00:00"
+}

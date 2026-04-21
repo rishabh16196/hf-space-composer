@@ -1,0 +1,127 @@
+{
+  "space_id": "fastrtc/moonshine-live",
+  "title": "Moonshine Live Transcription",
+  "emoji": "\ud83c\udf15",
+  "description": "Real-time captions with Moonshine ONNX",
+  "input_schema": {
+    "webrtc_data": {
+      "type": "float",
+      "description": "Stream",
+      "required": true,
+      "component": "Webrtc"
+    },
+    "param_1": {
+      "type": "Literal['moonshine/base', 'moonshine/tiny']",
+      "description": "Model",
+      "required": true,
+      "component": "Radio"
+    }
+  },
+  "output_schema": {},
+  "license": "mit",
+  "hardware": "5.17.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "webrtc",
+    "websocket",
+    "secret|TWILIO_ACCOUNT_SID",
+    "secret|TWILIO_AUTH_TOKEN",
+    "region:us"
+  ],
+  "likes": 16,
+  "last_modified": "2025-02-26 17:24:32+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/set_input_gradio",
+      "parameters": [
+        {
+          "name": "webrtc_data",
+          "label": "Stream",
+          "type": "float",
+          "component": "Webrtc"
+        },
+        {
+          "name": "param_1",
+          "label": "Model",
+          "type": "Literal['moonshine/base', 'moonshine/tiny']",
+          "component": "Radio"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/set_input_on_submit",
+      "parameters": [
+        {
+          "name": "webrtc_data",
+          "label": "Stream",
+          "type": "float",
+          "component": "Webrtc"
+        },
+        {
+          "name": "param_1",
+          "label": "Model",
+          "type": "Literal['moonshine/base', 'moonshine/tiny']",
+          "component": "Radio"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/set_input_gradio_1",
+      "parameters": [
+        {
+          "name": "webrtc_data",
+          "label": "Stream",
+          "type": "float",
+          "component": "Webrtc"
+        },
+        {
+          "name": "param_1",
+          "label": "Model",
+          "type": "Literal['moonshine/base', 'moonshine/tiny']",
+          "component": "Radio"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/handler",
+      "parameters": [
+        {
+          "name": "webrtc_id",
+          "label": "Stream",
+          "type": "float",
+          "component": "Webrtc"
+        },
+        {
+          "name": "param_1",
+          "label": "Captions",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Captions",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/set_input_gradio",
+  "_api_verified": true,
+  "estimated_latency_s": 2.77,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "_tags_enriched": true,
+  "measured_latency_s": 2.77,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:50:34.654658+00:00"
+}

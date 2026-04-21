@@ -1,0 +1,96 @@
+{
+  "space_id": "nvidia/nemotron-ocr-v2",
+  "title": "Nemotron OCR v2",
+  "emoji": "\ud83d\udcc4",
+  "description": "Nemotron OCR v2",
+  "input_schema": {
+    "image": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "Input Image",
+      "required": true,
+      "component": "Image"
+    },
+    "model_name": {
+      "type": "Literal['Multilingual (en, zh, ja, ko, ru, \u2026)', 'English-only', 'v1 (legacy, English-only)']",
+      "description": "Model",
+      "required": true,
+      "component": "Dropdown"
+    },
+    "merge_level": {
+      "type": "Literal['layout', 'word', 'sentence', 'paragraph']",
+      "description": "Output Mode",
+      "required": true,
+      "component": "Radio"
+    }
+  },
+  "output_schema": {
+    "Detected Regions": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "Detected Regions",
+      "component": "Image"
+    },
+    "Extracted Text": {
+      "type": "str",
+      "description": "Extracted Text",
+      "component": "Textbox"
+    }
+  },
+  "license": "other",
+  "hardware": "5.23.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 28,
+  "last_modified": "2026-04-09 23:54:33+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/run_ocr",
+      "parameters": [
+        {
+          "name": "image",
+          "label": "Input Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "model_name",
+          "label": "Model",
+          "type": "Literal['Multilingual (en, zh, ja, ko, ru, \u2026)', 'English-only', 'v1 (legacy, English-only)']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "merge_level",
+          "label": "Output Mode",
+          "type": "Literal['layout', 'word', 'sentence', 'paragraph']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Detected Regions",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "Extracted Text",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/run_ocr",
+  "_api_verified": true,
+  "estimated_latency_s": 4.18,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 4.18,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:51:27.114101+00:00"
+}

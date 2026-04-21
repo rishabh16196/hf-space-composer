@@ -1,0 +1,358 @@
+{
+  "space_id": "vectara/leaderboard",
+  "title": "LLM Hallucination Leaderboard",
+  "emoji": "",
+  "description": "LLM Hallucination Leaderboard",
+  "input_schema": {
+    "filter_models_by_name": {
+      "type": "str",
+      "description": "parameter_7",
+      "required": true,
+      "component": "Textbox"
+    },
+    "high_ar_only": {
+      "type": "bool",
+      "description": "Only models with \u226595% answer rate",
+      "required": true,
+      "component": "Checkbox"
+    },
+    "size_filter": {
+      "type": "Literal['all', 'small', 'large']",
+      "description": "Model size",
+      "required": true,
+      "component": "Radio"
+    },
+    "access_filter": {
+      "type": "Literal['all', 'commercial', 'open']",
+      "description": "Model type",
+      "required": true,
+      "component": "Radio"
+    },
+    "data_slice": {
+      "type": "Literal['Overall', 'Low Complexity', 'High Complexity', 'Business', 'Education', 'Finance', 'Law', '",
+      "description": "Data Slice",
+      "required": true,
+      "component": "Dropdown"
+    }
+  },
+  "output_schema": {
+    "value_5": {
+      "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+      "description": "value_5",
+      "component": "Plot"
+    },
+    "Leaderboard": {
+      "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+      "description": "Leaderboard",
+      "component": "Dataframe"
+    }
+  },
+  "license": "unknown",
+  "hardware": "",
+  "sdk": "docker",
+  "tags": [
+    "docker",
+    "region:us",
+    "benchmark",
+    "leaderboard"
+  ],
+  "likes": 193,
+  "last_modified": "2025-12-12 05:24:52+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/leaderboard",
+      "parameters": [
+        {
+          "name": "filter_models_by_name",
+          "label": "parameter_7",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "high_ar_only",
+          "label": "Only models with \u226595% answer rate",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "size_filter",
+          "label": "Model size",
+          "type": "Literal['all', 'small', 'large']",
+          "component": "Radio"
+        },
+        {
+          "name": "access_filter",
+          "label": "Model type",
+          "type": "Literal['all', 'commercial', 'open']",
+          "component": "Radio"
+        },
+        {
+          "name": "data_slice",
+          "label": "Data Slice",
+          "type": "Literal['Overall', 'Low Complexity', 'High Complexity', 'Business', 'Education', 'Finance', 'Law', 'Medicine', 'Politics', 'Science', 'Sports', 'Stocks', 'Technology']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_5",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "Leaderboard",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/leaderboard_1",
+      "parameters": [
+        {
+          "name": "filter_models_by_name",
+          "label": "parameter_7",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "high_ar_only",
+          "label": "Only models with \u226595% answer rate",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "size_filter",
+          "label": "Model size",
+          "type": "Literal['all', 'small', 'large']",
+          "component": "Radio"
+        },
+        {
+          "name": "access_filter",
+          "label": "Model type",
+          "type": "Literal['all', 'commercial', 'open']",
+          "component": "Radio"
+        },
+        {
+          "name": "data_slice",
+          "label": "Data Slice",
+          "type": "Literal['Overall', 'Low Complexity', 'High Complexity', 'Business', 'Education', 'Finance', 'Law', 'Medicine', 'Politics', 'Science', 'Sports', 'Stocks', 'Technology']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_5",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "Leaderboard",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/leaderboard_2",
+      "parameters": [
+        {
+          "name": "filter_models_by_name",
+          "label": "parameter_7",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "high_ar_only",
+          "label": "Only models with \u226595% answer rate",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "size_filter",
+          "label": "Model size",
+          "type": "Literal['all', 'small', 'large']",
+          "component": "Radio"
+        },
+        {
+          "name": "access_filter",
+          "label": "Model type",
+          "type": "Literal['all', 'commercial', 'open']",
+          "component": "Radio"
+        },
+        {
+          "name": "data_slice",
+          "label": "Data Slice",
+          "type": "Literal['Overall', 'Low Complexity', 'High Complexity', 'Business', 'Education', 'Finance', 'Law', 'Medicine', 'Politics', 'Science', 'Sports', 'Stocks', 'Technology']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_5",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "Leaderboard",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/leaderboard_3",
+      "parameters": [
+        {
+          "name": "filter_models_by_name",
+          "label": "parameter_7",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "high_ar_only",
+          "label": "Only models with \u226595% answer rate",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "size_filter",
+          "label": "Model size",
+          "type": "Literal['all', 'small', 'large']",
+          "component": "Radio"
+        },
+        {
+          "name": "access_filter",
+          "label": "Model type",
+          "type": "Literal['all', 'commercial', 'open']",
+          "component": "Radio"
+        },
+        {
+          "name": "data_slice",
+          "label": "Data Slice",
+          "type": "Literal['Overall', 'Low Complexity', 'High Complexity', 'Business', 'Education', 'Finance', 'Law', 'Medicine', 'Politics', 'Science', 'Sports', 'Stocks', 'Technology']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_5",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "Leaderboard",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/leaderboard_4",
+      "parameters": [
+        {
+          "name": "filter_models_by_name",
+          "label": "parameter_7",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "high_ar_only",
+          "label": "Only models with \u226595% answer rate",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "size_filter",
+          "label": "Model size",
+          "type": "Literal['all', 'small', 'large']",
+          "component": "Radio"
+        },
+        {
+          "name": "access_filter",
+          "label": "Model type",
+          "type": "Literal['all', 'commercial', 'open']",
+          "component": "Radio"
+        },
+        {
+          "name": "data_slice",
+          "label": "Data Slice",
+          "type": "Literal['Overall', 'Low Complexity', 'High Complexity', 'Business', 'Education', 'Finance', 'Law', 'Medicine', 'Politics', 'Science', 'Sports', 'Stocks', 'Technology']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_5",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "Leaderboard",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/leaderboard_5",
+      "parameters": [
+        {
+          "name": "filter_models_by_name",
+          "label": "parameter_7",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "high_ar_only",
+          "label": "Only models with \u226595% answer rate",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "size_filter",
+          "label": "Model size",
+          "type": "Literal['all', 'small', 'large']",
+          "component": "Radio"
+        },
+        {
+          "name": "access_filter",
+          "label": "Model type",
+          "type": "Literal['all', 'commercial', 'open']",
+          "component": "Radio"
+        },
+        {
+          "name": "data_slice",
+          "label": "Data Slice",
+          "type": "Literal['Overall', 'Low Complexity', 'High Complexity', 'Business', 'Education', 'Finance', 'Law', 'Medicine', 'Politics', 'Science', 'Sports', 'Stocks', 'Technology']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_5",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "Leaderboard",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/leaderboard",
+  "_api_verified": true,
+  "estimated_latency_s": 4.8,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "_tags_enriched": true,
+  "measured_latency_s": 4.8,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:52:01.785822+00:00"
+}

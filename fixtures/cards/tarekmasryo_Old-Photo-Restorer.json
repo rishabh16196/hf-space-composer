@@ -1,0 +1,35 @@
+{
+  "space_id": "tarekmasryo/Old-Photo-Restorer",
+  "title": "Old Photo Restorer",
+  "emoji": "\ud83d\udc40",
+  "description": "Gradio app for old photo restoration with GFPGAN",
+  "input_schema": {
+    "input": {
+      "type": "string",
+      "description": "Input",
+      "required": true
+    }
+  },
+  "output_schema": {
+    "output": {
+      "type": "string"
+    }
+  },
+  "license": "unknown",
+  "hardware": "6.9.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 3,
+  "last_modified": "2026-03-20 16:54:44+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "error",
+  "_api_error": "(Request ID: Root=1-69e77bd8-167918cd181025fa622f91d9;54a4d87e-3aa3-4e27-94dd-805a818f55bf)\n\n429 Too Many Requests: you have reached your 'api' rate limit.\nRetry after 6 seconds (0/2500 requests remai"
+}

@@ -1,0 +1,60 @@
+{
+  "space_id": "johnrobinsn/MidasDepthEstimation",
+  "title": "MidasDepthEstimation",
+  "emoji": "\ud83d\udc40",
+  "description": "MidasDepthEstimation",
+  "input_schema": {
+    "image_path": {
+      "type": "Dict(path: str, url: str | None, size: int | None, orig_name: str | None, mime_type: str | None, is_",
+      "description": "Input Image",
+      "required": true,
+      "component": "Image"
+    }
+  },
+  "output_schema": {
+    "Depth Viewer": {
+      "type": "str",
+      "description": "Depth Viewer",
+      "component": "Html"
+    }
+  },
+  "license": "mit",
+  "hardware": "4.39.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 20,
+  "last_modified": "2026-01-13 09:37:09+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_tags_enriched": true,
+  "estimated_latency_s": 5.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/process_image",
+      "parameters": [
+        {
+          "name": "image_path",
+          "label": "Input Image",
+          "type": "Dict(path: str, url: str | None, size: int | None, orig_name: str | None, mime_type: str | None, is_stream: bool, meta: Dict(str, Any))",
+          "component": "Image"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Depth Viewer",
+          "type": "str",
+          "component": "Html"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/process_image",
+  "_api_verified": true
+}

@@ -1,0 +1,119 @@
+{
+  "space_id": "nvidia/PhysicalAI-Robotics-VoMP-Demo",
+  "title": "VoMP",
+  "emoji": "\ud83d\ude80",
+  "description": "Volumetric physics materials for interactive worlds",
+  "input_schema": {
+    "input_file": {
+      "type": "filepath",
+      "description": "Upload 3D Model",
+      "required": true,
+      "component": "Model3d"
+    }
+  },
+  "output_schema": {
+    "value_13": {
+      "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+      "description": "value_13",
+      "component": "Plot"
+    },
+    "value_14": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "value_14",
+      "component": "Image"
+    },
+    "value_16": {
+      "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+      "description": "value_16",
+      "component": "Plot"
+    },
+    "value_17": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "value_17",
+      "component": "Image"
+    },
+    "value_20": {
+      "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+      "description": "value_20",
+      "component": "Plot"
+    },
+    "value_21": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "value_21",
+      "component": "Image"
+    },
+    "Download Materials (.npz)": {
+      "type": "filepath",
+      "description": "Download Materials (.npz)",
+      "component": "File"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "6.2.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 6,
+  "last_modified": "2026-04-02 01:01:29+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/process_3d_model",
+      "parameters": [
+        {
+          "name": "input_file",
+          "label": "Upload 3D Model",
+          "type": "filepath",
+          "component": "Model3d"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_13",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "value_14",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "value_16",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "value_17",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "value_20",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "value_21",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "Download Materials (.npz)",
+          "type": "filepath",
+          "component": "File"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/process_3d_model",
+  "_api_verified": true
+}

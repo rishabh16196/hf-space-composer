@@ -1,0 +1,63 @@
+{
+  "space_id": "agents-course/Final_Assignment_Template",
+  "title": "Template Final Assignment",
+  "emoji": "\ud83d\udd75\ud83c\udffb\u200d\u2642\ufe0f",
+  "description": "Template Final Assignment",
+  "input_schema": {},
+  "output_schema": {
+    "Run Status / Submission Result": {
+      "type": "str",
+      "description": "Run Status / Submission Result",
+      "component": "Textbox"
+    },
+    "Questions and Agent Answers": {
+      "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+      "description": "Questions and Agent Answers",
+      "component": "Dataframe"
+    }
+  },
+  "license": "unknown",
+  "hardware": "5.25.2",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 200,
+  "last_modified": "2025-04-24 11:27:30+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/run_and_submit_all",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Run Status / Submission Result",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Questions and Agent Answers",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/_check_login_status",
+      "parameters": [],
+      "returns": []
+    }
+  ],
+  "endpoint": "/run_and_submit_all",
+  "_api_verified": true,
+  "estimated_latency_s": 3.11,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 3.11,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:50:07.640297+00:00"
+}

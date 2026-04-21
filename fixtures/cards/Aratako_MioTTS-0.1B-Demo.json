@@ -1,0 +1,306 @@
+{
+  "space_id": "Aratako/MioTTS-0.1B-Demo",
+  "title": "MioTTS 0.1B Demo",
+  "emoji": "\ud83d\udcc8",
+  "description": "TTS demo for MioTTS-0.1B",
+  "input_schema": {
+    "mode": {
+      "type": "Literal['preset', 'upload']",
+      "description": "Reference Mode",
+      "required": true,
+      "component": "Radio"
+    }
+  },
+  "output_schema": {
+    "Preset Voice": {
+      "type": "Literal['en_female', 'en_male', 'jp_female', 'jp_male']",
+      "description": "Preset Voice",
+      "component": "Dropdown"
+    },
+    "Reference Audio": {
+      "type": "filepath",
+      "description": "Reference Audio",
+      "component": "Audio"
+    }
+  },
+  "license": "mit",
+  "hardware": "6.5.1",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us",
+    "audio",
+    "speech-synthesis",
+    "tts"
+  ],
+  "likes": 33,
+  "last_modified": "2026-02-10 06:38:59+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_tags_enriched": true,
+  "estimated_latency_s": 4.0,
+  "speed_tier": "fast",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/update_reference_visibility",
+      "parameters": [
+        {
+          "name": "mode",
+          "label": "Reference Mode",
+          "type": "Literal['preset', 'upload']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Preset Voice",
+          "type": "Literal['en_female', 'en_male', 'jp_female', 'jp_male']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Reference Audio",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ]
+    },
+    {
+      "name": "/gradio_inference",
+      "parameters": [
+        {
+          "name": "target_text",
+          "label": "Text to Synthesize",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "reference_mode",
+          "label": "Reference Mode",
+          "type": "Literal['preset', 'upload']",
+          "component": "Radio"
+        },
+        {
+          "name": "reference_audio",
+          "label": "Reference Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "name": "preset_id",
+          "label": "Preset Voice",
+          "type": "Literal['en_female', 'en_male', 'jp_female', 'jp_male']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "temperature",
+          "label": "Temperature",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "top_p",
+          "label": "Top-p",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "top_k",
+          "label": "Top-k",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "repetition_penalty",
+          "label": "Repetition Penalty",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "max_tokens",
+          "label": "Max Tokens",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "seed",
+          "label": "Seed (optional)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "num_samples",
+          "label": "Number of Samples",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Sample #1",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Sample #2",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Sample #3",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Sample #4",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Sample #5",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Sample #6",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Sample #7",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Sample #8",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Sample #9",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Sample #10",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Sample #11",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Sample #12",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Sample #13",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Sample #14",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Sample #15",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Sample #16",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Sample #17",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Sample #18",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Sample #19",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Sample #20",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Sample #21",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Sample #22",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Sample #23",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Sample #24",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Sample #25",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Sample #26",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Sample #27",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Sample #28",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Sample #29",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Sample #30",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Sample #31",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Sample #32",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/update_reference_visibility",
+  "_api_verified": true
+}

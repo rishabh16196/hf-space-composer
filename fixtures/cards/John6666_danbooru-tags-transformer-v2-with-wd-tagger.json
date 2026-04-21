@@ -1,0 +1,994 @@
+{
+  "space_id": "John6666/danbooru-tags-transformer-v2-with-wd-tagger",
+  "title": "Danbooru Tags Transformer V2 with WD Tagger & Florence 2 Flux Captioner",
+  "emoji": "\ud83d\udce6\ud83c\udfc3",
+  "description": "Danbooru Tags Transformer V2 with WD Tagger & Florence 2 Flux Captioner",
+  "input_schema": {
+    "series": {
+      "type": "str",
+      "description": "Copyright tags",
+      "required": true,
+      "component": "Textbox"
+    },
+    "character": {
+      "type": "str",
+      "description": "Character tags",
+      "required": true,
+      "component": "Textbox"
+    }
+  },
+  "output_schema": {
+    "Copyright tags": {
+      "type": "str",
+      "description": "Copyright tags",
+      "component": "Textbox"
+    },
+    "Character tags": {
+      "type": "str",
+      "description": "Character tags",
+      "component": "Textbox"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "6.10.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us",
+    "diffusion",
+    "image-generation",
+    "text-to-image",
+    "vision"
+  ],
+  "likes": 276,
+  "last_modified": "2026-03-26 22:28:36+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/select_random_character",
+      "parameters": [
+        {
+          "name": "series",
+          "label": "Copyright tags",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "character",
+          "label": "Character tags",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Copyright tags",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Character tags",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/translate_prompt",
+      "parameters": [
+        {
+          "name": "input",
+          "label": "General tags",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "General tags",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/translate_prompt_1",
+      "parameters": [
+        {
+          "name": "input",
+          "label": "Character tags",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Character tags",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/translate_prompt_2",
+      "parameters": [
+        {
+          "name": "input",
+          "label": "Copyright tags",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Copyright tags",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/lambda",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Copyright tags",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Character tags",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "General tags",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/predict_tags_wd",
+      "parameters": [
+        {
+          "name": "image",
+          "label": "Input image",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "name": "input_tags",
+          "label": "General tags",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "algo",
+          "label": "Algorithms",
+          "type": "list[Literal['Use WD Tagger', 'Use Original WD Tagger', 'Use Z3D-E621-Convnext', 'Use Florence-2-SD3-Long-Captioner', 'Use Florence-2-large-PromptGen', 'Use CogFlorence-2.1-Large', 'Use Florence-2-Flu",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "general_threshold",
+          "label": "Threshold",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "character_threshold",
+          "label": "Character threshold",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "input_series",
+          "label": "Copyright tags",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "input_character",
+          "label": "Character tags",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Copyright tags",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Character tags",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "General tags",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/predict_tags_wd_large",
+      "parameters": [
+        {
+          "name": "image",
+          "label": "Input image",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "name": "input_tags",
+          "label": "General tags",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "algo",
+          "label": "Algorithms",
+          "type": "list[Literal['Use WD Tagger', 'Use Original WD Tagger', 'Use Z3D-E621-Convnext', 'Use Florence-2-SD3-Long-Captioner', 'Use Florence-2-large-PromptGen', 'Use CogFlorence-2.1-Large', 'Use Florence-2-Flu",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "general_threshold",
+          "label": "Threshold",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "character_threshold",
+          "label": "Character threshold",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "input_series",
+          "label": "Copyright tags",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "input_character",
+          "label": "Character tags",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "model_repo",
+          "label": "Original WD Tagger Model",
+          "type": "Literal['SmilingWolf/wd-swinv2-tagger-v3', 'SmilingWolf/wd-convnext-tagger-v3', 'SmilingWolf/wd-vit-tagger-v3', 'SmilingWolf/wd-vit-large-tagger-v3', 'SmilingWolf/wd-eva02-large-tagger-v3', 'SmilingWo",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Copyright tags",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Character tags",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "General tags",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/predict_tags_e621",
+      "parameters": [
+        {
+          "name": "image",
+          "label": "Input image",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "name": "input_tags",
+          "label": "General tags",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "algo",
+          "label": "Algorithms",
+          "type": "list[Literal['Use WD Tagger', 'Use Original WD Tagger', 'Use Z3D-E621-Convnext', 'Use Florence-2-SD3-Long-Captioner', 'Use Florence-2-large-PromptGen', 'Use CogFlorence-2.1-Large', 'Use Florence-2-Flu",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "threshold",
+          "label": "Threshold (Z3D-E621-Convnext)",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "General tags",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/predict_tags_fl2_sd3",
+      "parameters": [
+        {
+          "name": "image",
+          "label": "Input image",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "name": "input_tags",
+          "label": "General tags",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "algo",
+          "label": "Algorithms",
+          "type": "list[Literal['Use WD Tagger', 'Use Original WD Tagger', 'Use Z3D-E621-Convnext', 'Use Florence-2-SD3-Long-Captioner', 'Use Florence-2-large-PromptGen', 'Use CogFlorence-2.1-Large', 'Use Florence-2-Flu",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "General tags",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/predict_tags_fl2_base_prompt_gen",
+      "parameters": [
+        {
+          "name": "image",
+          "label": "Input image",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "name": "input_tags",
+          "label": "General tags",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "algo",
+          "label": "Algorithms",
+          "type": "list[Literal['Use WD Tagger', 'Use Original WD Tagger', 'Use Z3D-E621-Convnext', 'Use Florence-2-SD3-Long-Captioner', 'Use Florence-2-large-PromptGen', 'Use CogFlorence-2.1-Large', 'Use Florence-2-Flu",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "General tags",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/predict_tags_fl2_cog",
+      "parameters": [
+        {
+          "name": "image",
+          "label": "Input image",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "name": "input_tags",
+          "label": "General tags",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "algo",
+          "label": "Algorithms",
+          "type": "list[Literal['Use WD Tagger', 'Use Original WD Tagger', 'Use Z3D-E621-Convnext', 'Use Florence-2-SD3-Long-Captioner', 'Use Florence-2-large-PromptGen', 'Use CogFlorence-2.1-Large', 'Use Florence-2-Flu",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "General tags",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/predict_tags_fl2_flux",
+      "parameters": [
+        {
+          "name": "image",
+          "label": "Input image",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "name": "input_tags",
+          "label": "General tags",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "algo",
+          "label": "Algorithms",
+          "type": "list[Literal['Use WD Tagger', 'Use Original WD Tagger', 'Use Z3D-E621-Convnext', 'Use Florence-2-SD3-Long-Captioner', 'Use Florence-2-large-PromptGen', 'Use CogFlorence-2.1-Large', 'Use Florence-2-Flu",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "General tags",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/predict_tags_dgb",
+      "parameters": [
+        {
+          "name": "image",
+          "label": "Input image",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "name": "input_tags",
+          "label": "General tags",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "algo",
+          "label": "Algorithms",
+          "type": "list[Literal['Use WD Tagger', 'Use Original WD Tagger', 'Use Z3D-E621-Convnext', 'Use Florence-2-SD3-Long-Captioner', 'Use Florence-2-large-PromptGen', 'Use CogFlorence-2.1-Large', 'Use Florence-2-Flu",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "threshold",
+          "label": "Threshold",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "General tags",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/remove_specific_prompt",
+      "parameters": [
+        {
+          "name": "input_prompt",
+          "label": "General tags",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "keep_tags",
+          "label": "Remove tags leaving only the following",
+          "type": "Literal['body', 'dress', 'all']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "General tags",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/convert_danbooru_to_e621_prompt",
+      "parameters": [
+        {
+          "name": "input_prompt",
+          "label": "General tags",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "prompt_type",
+          "label": "Convert tags to",
+          "type": "Literal['danbooru', 'e621']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "General tags",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/sort_tags",
+      "parameters": [
+        {
+          "name": "tags",
+          "label": "General tags",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "General tags",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/insert_recom_prompt",
+      "parameters": [
+        {
+          "name": "prompt",
+          "label": "General tags",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "neg_prompt",
+          "label": "Negative prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "type",
+          "label": "Insert reccomended prompt",
+          "type": "Literal['None', 'Animagine', 'Pony']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "General tags",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Negative prompt",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/compose_prompt_to_copy",
+      "parameters": [
+        {
+          "name": "character",
+          "label": "Character tags",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "series",
+          "label": "Copyright tags",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "general",
+          "label": "General tags",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_28",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/gradio_copy_text",
+      "parameters": [
+        {
+          "name": "_text",
+          "label": "parameter_28",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/v2_upsampling_prompt",
+      "parameters": [
+        {
+          "name": "model",
+          "label": "Model",
+          "type": "Literal['dart-v2-moe-sft', 'dart-v2-sft']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "copyright",
+          "label": "Copyright tags",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "character",
+          "label": "Character tags",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "general_tags",
+          "label": "General tags",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "rating",
+          "label": "Rating",
+          "type": "Literal['sfw', 'general', 'sensitive', 'nsfw', 'questionable', 'explicit']",
+          "component": "Radio"
+        },
+        {
+          "name": "aspect_ratio",
+          "label": "Aspect ratio",
+          "type": "Literal['ultra_wide', 'wide', 'square', 'tall', 'ultra_tall']",
+          "component": "Radio"
+        },
+        {
+          "name": "length",
+          "label": "Length",
+          "type": "Literal['very_short', 'short', 'medium', 'long', 'very_long']",
+          "component": "Radio"
+        },
+        {
+          "name": "identity",
+          "label": "Keep identity",
+          "type": "Literal['none', 'lax', 'strict']",
+          "component": "Radio"
+        },
+        {
+          "name": "ban_tags",
+          "label": "Ban tags",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output tags",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/sort_tags_1",
+      "parameters": [
+        {
+          "name": "tags",
+          "label": "Output tags",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output tags",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/convert_danbooru_to_e621_prompt_1",
+      "parameters": [
+        {
+          "name": "input_prompt",
+          "label": "Output tags",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "prompt_type",
+          "label": "Output tag conversion",
+          "type": "Literal['danbooru', 'e621']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output tags (Pony e621 style)",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/insert_recom_prompt_1",
+      "parameters": [
+        {
+          "name": "prompt",
+          "label": "Output tags",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "neg_prompt",
+          "label": "Negative prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "type",
+          "label": "Animagine reccomended prompt",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output tags",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Negative prompt",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/insert_recom_prompt_2",
+      "parameters": [
+        {
+          "name": "prompt",
+          "label": "Output tags (Pony e621 style)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "neg_prompt",
+          "label": "Negative prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "type",
+          "label": "Pony reccomended prompt",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output tags (Pony e621 style)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Negative prompt",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_1",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/gradio_copy_text_1",
+      "parameters": [
+        {
+          "name": "_text",
+          "label": "Output tags",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/gradio_copy_text_2",
+      "parameters": [
+        {
+          "name": "_text",
+          "label": "Output tags (Pony e621 style)",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/prompt_enhancer",
+      "parameters": [
+        {
+          "name": "character",
+          "label": "Character tags",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "series",
+          "label": "Copyright tags",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "general",
+          "label": "General tags",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "model_choice",
+          "label": "Model Choice",
+          "type": "Literal['Medium', 'Long', 'Flux']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output tags",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/convert_danbooru_to_e621_prompt_2",
+      "parameters": [
+        {
+          "name": "input_prompt",
+          "label": "Output tags",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "prompt_type",
+          "label": "Output tag conversion",
+          "type": "Literal['danbooru', 'e621']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output tags (Pony e621 style)",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/insert_recom_prompt_3",
+      "parameters": [
+        {
+          "name": "prompt",
+          "label": "Output tags",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "neg_prompt",
+          "label": "Negative prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "type",
+          "label": "Animagine reccomended prompt",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output tags",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Negative prompt",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/insert_recom_prompt_4",
+      "parameters": [
+        {
+          "name": "prompt",
+          "label": "Output tags (Pony e621 style)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "neg_prompt",
+          "label": "Negative prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "type",
+          "label": "Pony reccomended prompt",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output tags (Pony e621 style)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Negative prompt",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/gradio_copy_text_3",
+      "parameters": [
+        {
+          "name": "_text",
+          "label": "Output tags",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/gradio_copy_text_4",
+      "parameters": [
+        {
+          "name": "_text",
+          "label": "Output tags (Pony e621 style)",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": []
+    }
+  ],
+  "endpoint": "/select_random_character",
+  "_api_verified": true,
+  "estimated_latency_s": 3.63,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "_tags_enriched": true,
+  "measured_latency_s": 3.63,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:49:30.439370+00:00"
+}

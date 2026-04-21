@@ -1,0 +1,76 @@
+{
+  "space_id": "WeShopAI/WeShopAI-Fashion-Model-Pose-Change",
+  "title": "WeShopAI Fashion Model Pose Change",
+  "emoji": "\ud83d\ude46\u200d\u2642\ufe0f",
+  "description": "WeShopAI Fashion Model Pose Change. Change poses in photos.",
+  "input_schema": {
+    "main_image": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "Main Image",
+      "required": true,
+      "component": "Image"
+    },
+    "text_description": {
+      "type": "str",
+      "description": "Text Description",
+      "required": true,
+      "component": "Textbox"
+    }
+  },
+  "output_schema": {
+    "Pose Change Result": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "Pose Change Result",
+      "component": "Image"
+    }
+  },
+  "license": "other",
+  "hardware": "5.25.2",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us",
+    "vision"
+  ],
+  "likes": 285,
+  "last_modified": "2026-02-03 11:50:01+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/generate_image",
+      "parameters": [
+        {
+          "name": "main_image",
+          "label": "Main Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "text_description",
+          "label": "Text Description",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Pose Change Result",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/generate_image",
+  "_api_verified": true,
+  "estimated_latency_s": 3.25,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "_tags_enriched": true,
+  "measured_latency_s": 3.25,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:50:04.525005+00:00"
+}

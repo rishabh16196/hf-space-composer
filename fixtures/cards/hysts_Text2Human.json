@@ -1,0 +1,128 @@
+{
+  "space_id": "hysts/Text2Human",
+  "title": "Text2Human",
+  "emoji": "\ud83c\udfc3",
+  "description": "Text2Human",
+  "input_schema": {
+    "pose_image": {
+      "type": "filepath",
+      "description": "Input Pose Image",
+      "required": true,
+      "component": "Image"
+    }
+  },
+  "output_schema": {},
+  "license": "unknown",
+  "hardware": "4.36.1",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 76,
+  "last_modified": "2024-06-10 07:49:40+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/process_pose_image",
+      "parameters": [
+        {
+          "name": "pose_image",
+          "label": "Input Pose Image",
+          "type": "filepath",
+          "component": "Image"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/generate_label_image",
+      "parameters": [
+        {
+          "name": "shape_text",
+          "label": "Shape Description",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Label Image",
+          "type": "filepath",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/randomize_seed_fn",
+      "parameters": [
+        {
+          "name": "seed",
+          "label": "Seed",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "randomize_seed",
+          "label": "Randomize seed",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Seed",
+          "type": "float",
+          "component": "Slider"
+        }
+      ]
+    },
+    {
+      "name": "/generate_human",
+      "parameters": [
+        {
+          "name": "label_image",
+          "label": "Label Image",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "name": "texture_text",
+          "label": "Texture Description",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "sample_steps",
+          "label": "Sample Steps",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "seed",
+          "label": "Seed",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Result",
+          "type": "filepath",
+          "component": "Image"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/process_pose_image",
+  "_api_verified": true,
+  "estimated_latency_s": 4.09,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 4.09,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:50:51.713775+00:00"
+}

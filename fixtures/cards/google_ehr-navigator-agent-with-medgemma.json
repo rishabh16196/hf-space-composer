@@ -1,0 +1,41 @@
+{
+  "space_id": "google/ehr-navigator-agent-with-medgemma",
+  "title": "EHR Navigator Agent With MedGemma",
+  "emoji": "\ud83e\ude7a",
+  "description": "EHR Navigator Agent With MedGemma",
+  "input_schema": {
+    "input": {
+      "type": "string",
+      "description": "Input",
+      "required": true
+    }
+  },
+  "output_schema": {
+    "output": {
+      "type": "string"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "",
+  "sdk": "docker",
+  "tags": [
+    "docker",
+    "medgemma",
+    "healthcare",
+    "ehr",
+    "fhir",
+    "agent",
+    "google",
+    "region:us"
+  ],
+  "likes": 53,
+  "last_modified": "2025-12-08 19:43:14+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "error",
+  "_api_error": "Could not get Gradio config from: https://google-ehr-navigator-agent-with-medgemma.hf.space",
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred"
+}

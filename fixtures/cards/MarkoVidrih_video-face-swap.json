@@ -1,0 +1,77 @@
+{
+  "space_id": "MarkoVidrih/video-face-swap",
+  "title": "Video Face Swap",
+  "emoji": "\ud83e\udd2f",
+  "description": "Video Face Swap",
+  "input_schema": {
+    "source_file": {
+      "type": "str",
+      "description": "source_file",
+      "required": true,
+      "component": "Image"
+    },
+    "target_file": {
+      "type": "str | Dict(name: str (name of file), data: str (base64 representation of file), size: int (size of i",
+      "description": "target_file",
+      "required": true,
+      "component": "Video"
+    }
+  },
+  "output_schema": {
+    "output": {
+      "type": "str | Dict(name: str (name of file), data: str (base64 representation of file), size: int (size of i",
+      "description": "output",
+      "component": "Video"
+    }
+  },
+  "license": "unknown",
+  "hardware": "3.42.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us",
+    "video",
+    "vision"
+  ],
+  "likes": 36,
+  "last_modified": "2024-04-01 20:31:40+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/predict",
+      "parameters": [
+        {
+          "name": "source_file",
+          "label": "source_file",
+          "type": "str",
+          "component": "Image"
+        },
+        {
+          "name": "target_file",
+          "label": "target_file",
+          "type": "str | Dict(name: str (name of file), data: str (base64 representation of file), size: int (size of image in bytes), is_file: bool (true if the file has been uploaded to the server), orig_name: str (or",
+          "component": "Video"
+        }
+      ],
+      "returns": [
+        {
+          "label": "output",
+          "type": "str | Dict(name: str (name of file), data: str (base64 representation of file), size: int (size of image in bytes), is_file: bool (true if the file has been uploaded to the server), orig_name: str (or",
+          "component": "Video"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/predict",
+  "_api_verified": true,
+  "estimated_latency_s": 4.96,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "_tags_enriched": true,
+  "measured_latency_s": 4.96,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:49:37.930533+00:00"
+}

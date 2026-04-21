@@ -1,0 +1,62 @@
+{
+  "space_id": "NimaBoscarino/hotdog-gradio",
+  "title": "Hotdog Gradio",
+  "emoji": "\ud83e\udd80",
+  "description": "Hotdog Gradio",
+  "input_schema": {
+    "Upload hot dog candidate": {
+      "type": "str",
+      "description": "Upload hot dog candidate",
+      "required": true,
+      "component": "Image"
+    }
+  },
+  "output_schema": {
+    "output": {
+      "type": "Dict[Any, Any]",
+      "description": "output",
+      "component": "Label"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "3.1.7",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 11,
+  "last_modified": "2022-08-24 22:28:51+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/predict",
+      "parameters": [
+        {
+          "name": "Upload hot dog candidate",
+          "label": "Upload hot dog candidate",
+          "type": "str",
+          "component": "Image"
+        }
+      ],
+      "returns": [
+        {
+          "label": "output",
+          "type": "Dict[Any, Any]",
+          "component": "Label"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/predict",
+  "_api_verified": true,
+  "estimated_latency_s": 2.78,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 2.78,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:49:40.759524+00:00"
+}

@@ -1,0 +1,133 @@
+{
+  "space_id": "99eren99/turkish-tts",
+  "title": "T\u00fcrk\u00e7e Seslendirme Modeli",
+  "emoji": "\ud83c\udf16",
+  "description": "T\u00fcrk\u00e7e Seslendirme Modeli",
+  "input_schema": {
+    "text": {
+      "type": "str",
+      "description": "Metin",
+      "required": true,
+      "component": "Textbox"
+    },
+    "volume": {
+      "type": "float",
+      "description": "volume",
+      "required": true,
+      "component": "Slider"
+    },
+    "length_scale": {
+      "type": "float",
+      "description": "length_scale",
+      "required": true,
+      "component": "Slider"
+    },
+    "noise_scale": {
+      "type": "float",
+      "description": "noise_scale",
+      "required": true,
+      "component": "Slider"
+    },
+    "noise_w_scale": {
+      "type": "float",
+      "description": "noise_w_scale",
+      "required": true,
+      "component": "Slider"
+    },
+    "normalize_audio": {
+      "type": "bool",
+      "description": "normalize_raw_audio",
+      "required": true,
+      "component": "Checkbox"
+    }
+  },
+  "output_schema": {
+    "\u00c7\u0131kt\u0131": {
+      "type": "filepath",
+      "description": "\u00c7\u0131kt\u0131",
+      "component": "Audio"
+    },
+    "Metrikler": {
+      "type": "str",
+      "description": "Metrikler",
+      "component": "Textbox"
+    }
+  },
+  "license": "unknown",
+  "hardware": "6.3.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us",
+    "audio",
+    "speech-synthesis",
+    "tts"
+  ],
+  "likes": 7,
+  "last_modified": "2026-04-15 12:32:41+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_tags_enriched": true,
+  "estimated_latency_s": 4.0,
+  "speed_tier": "fast",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/tts",
+      "parameters": [
+        {
+          "name": "text",
+          "label": "Metin",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "volume",
+          "label": "volume",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "length_scale",
+          "label": "length_scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "noise_scale",
+          "label": "noise_scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "noise_w_scale",
+          "label": "noise_w_scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "normalize_audio",
+          "label": "normalize_raw_audio",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "\u00c7\u0131kt\u0131",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Metrikler",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/tts",
+  "_api_verified": true
+}

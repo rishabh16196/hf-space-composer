@@ -1,0 +1,142 @@
+{
+  "space_id": "Manjushri/Manju-Dream-Booth-GPU",
+  "title": "Manju Dream Booth",
+  "emoji": "\ud83d\udc40",
+  "description": "Manju Dream Booth",
+  "input_schema": {
+    "Prompt": {
+      "type": "str",
+      "description": "What you want the AI to generate. 77 Token Limit.",
+      "required": true,
+      "component": "Textbox"
+    },
+    "negative_prompt": {
+      "type": "str",
+      "description": "What you Do Not want the AI to generate. 77 Token Limit",
+      "required": true,
+      "component": "Textbox"
+    },
+    "height": {
+      "type": "float",
+      "description": "Height",
+      "required": true,
+      "component": "Slider"
+    },
+    "width": {
+      "type": "float",
+      "description": "Width",
+      "required": true,
+      "component": "Slider"
+    },
+    "scale": {
+      "type": "float",
+      "description": "Guidance Scale",
+      "required": true,
+      "component": "Slider"
+    },
+    "steps": {
+      "type": "float",
+      "description": "Number of Iterations",
+      "required": true,
+      "component": "Slider"
+    },
+    "seed": {
+      "type": "float",
+      "description": "Seed: 0 is Random",
+      "required": true,
+      "component": "Slider"
+    }
+  },
+  "output_schema": {
+    "Generated Image": {
+      "type": "filepath",
+      "description": "Generated Image",
+      "component": "Image"
+    }
+  },
+  "license": "mit",
+  "hardware": "6.12.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 195,
+  "last_modified": "2026-04-20 06:48:47+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/genie",
+      "parameters": [
+        {
+          "name": "Prompt",
+          "label": "What you want the AI to generate. 77 Token Limit.",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "negative_prompt",
+          "label": "What you Do Not want the AI to generate. 77 Token Limit",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "height",
+          "label": "Height",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "width",
+          "label": "Width",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "scale",
+          "label": "Guidance Scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "steps",
+          "label": "Number of Iterations",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "seed",
+          "label": "Seed: 0 is Random",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Generated Image",
+          "type": "filepath",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/get_random_value",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Seed: 0 is Random",
+          "type": "float",
+          "component": "Slider"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/genie",
+  "_api_verified": true
+}

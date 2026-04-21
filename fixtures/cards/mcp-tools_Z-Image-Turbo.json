@@ -1,0 +1,138 @@
+{
+  "space_id": "mcp-tools/Z-Image-Turbo",
+  "title": "Z Image Turbo",
+  "emoji": "\ud83c\udfc3",
+  "description": "Z Image Turbo",
+  "input_schema": {
+    "prompt": {
+      "type": "str",
+      "description": "Prompt",
+      "required": true,
+      "component": "Textbox"
+    },
+    "resolution": {
+      "type": "Literal['1024x1024 ( 1:1 )', '1152x896 ( 9:7 )', '896x1152 ( 7:9 )', '1152x864 ( 4:3 )', '864x1152 (",
+      "description": "Width x Height (Ratio)",
+      "required": true,
+      "component": "Dropdown"
+    },
+    "seed": {
+      "type": "int",
+      "description": "Seed",
+      "required": true,
+      "component": "Number"
+    },
+    "steps": {
+      "type": "float",
+      "description": "Steps",
+      "required": true,
+      "component": "Slider"
+    },
+    "shift": {
+      "type": "float",
+      "description": "Time Shift",
+      "required": true,
+      "component": "Slider"
+    },
+    "random_seed": {
+      "type": "bool",
+      "description": "Random Seed",
+      "required": true,
+      "component": "Checkbox"
+    }
+  },
+  "output_schema": {
+    "Result": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "Result",
+      "component": "Image"
+    },
+    "Seed Used": {
+      "type": "str",
+      "description": "Seed Used",
+      "component": "Textbox"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "6.0.2",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "mcp-server",
+    "region:us",
+    "diffusion",
+    "image-generation",
+    "text-to-image",
+    "vision"
+  ],
+  "likes": 28,
+  "last_modified": "2025-12-05 07:05:32+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/generate",
+      "parameters": [
+        {
+          "name": "prompt",
+          "label": "Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "resolution",
+          "label": "Width x Height (Ratio)",
+          "type": "Literal['1024x1024 ( 1:1 )', '1152x896 ( 9:7 )', '896x1152 ( 7:9 )', '1152x864 ( 4:3 )', '864x1152 ( 3:4 )', '1248x832 ( 3:2 )', '832x1248 ( 2:3 )', '1280x720 ( 16:9 )', '720x1280 ( 9:16 )', '1344x576",
+          "component": "Dropdown"
+        },
+        {
+          "name": "seed",
+          "label": "Seed",
+          "type": "int",
+          "component": "Number"
+        },
+        {
+          "name": "steps",
+          "label": "Steps",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "shift",
+          "label": "Time Shift",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "random_seed",
+          "label": "Random Seed",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Result",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "Seed Used",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/generate",
+  "_api_verified": true,
+  "estimated_latency_s": 5.25,
+  "speed_tier": "medium",
+  "_latency_source": "measured",
+  "_tags_enriched": true,
+  "measured_latency_s": 5.25,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:51:14.843332+00:00"
+}

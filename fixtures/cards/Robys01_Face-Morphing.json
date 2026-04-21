@@ -1,0 +1,144 @@
+{
+  "space_id": "Robys01/Face-Morphing",
+  "title": "Face Morphing",
+  "emoji": "\ud83d\udc20",
+  "description": "Face Morphing",
+  "input_schema": {
+    "image_files": {
+      "type": "List[filepath]",
+      "description": "image_files",
+      "required": true,
+      "component": "File"
+    },
+    "duration": {
+      "type": "float",
+      "description": "Duration (seconds) between images",
+      "required": true,
+      "component": "Slider"
+    },
+    "fps": {
+      "type": "float",
+      "description": "Frames per second (fps)",
+      "required": true,
+      "component": "Slider"
+    },
+    "method": {
+      "type": "Literal['Dlib', 'MediaPipe']",
+      "description": "Landmarks detection method",
+      "required": true,
+      "component": "Dropdown"
+    },
+    "align_resize": {
+      "type": "bool",
+      "description": "Align and Resize Images",
+      "required": true,
+      "component": "Checkbox"
+    },
+    "order_images": {
+      "type": "bool",
+      "description": "Order Images by Age",
+      "required": true,
+      "component": "Checkbox"
+    },
+    "guideline": {
+      "type": "bool",
+      "description": "Guideline",
+      "required": true,
+      "component": "Checkbox"
+    }
+  },
+  "output_schema": {
+    "output 0": {
+      "type": "Dict(video: filepath, subtitles: filepath | None)",
+      "description": "output 0",
+      "component": "Video"
+    },
+    "Output Message": {
+      "type": "str",
+      "description": "Output Message",
+      "component": "Textbox"
+    }
+  },
+  "license": "mit",
+  "hardware": "4.37.2",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 22,
+  "last_modified": "2024-07-02 19:30:51+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/predict",
+      "parameters": [
+        {
+          "name": "image_files",
+          "label": "image_files",
+          "type": "List[filepath]",
+          "component": "File"
+        },
+        {
+          "name": "duration",
+          "label": "Duration (seconds) between images",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "fps",
+          "label": "Frames per second (fps)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "method",
+          "label": "Landmarks detection method",
+          "type": "Literal['Dlib', 'MediaPipe']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "align_resize",
+          "label": "Align and Resize Images",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "order_images",
+          "label": "Order Images by Age",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "guideline",
+          "label": "Guideline",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "output 0",
+          "type": "Dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        },
+        {
+          "label": "Output Message",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/predict",
+  "_api_verified": true,
+  "estimated_latency_s": 2.78,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 2.78,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:49:53.143744+00:00"
+}

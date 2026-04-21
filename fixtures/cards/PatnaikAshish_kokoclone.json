@@ -1,0 +1,106 @@
+{
+  "space_id": "PatnaikAshish/kokoclone",
+  "title": "Kokoclone",
+  "emoji": "\ud83d\udcbb",
+  "description": "Kokoro, But It Clones Voices Now",
+  "input_schema": {},
+  "output_schema": {},
+  "license": "apache-2.0",
+  "hardware": "6.8.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 26,
+  "last_modified": "2026-03-21 08:08:33+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/lambda",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/clone_voice",
+      "parameters": [
+        {
+          "name": "text",
+          "label": "1. Text to Synthesize",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "lang",
+          "label": "2. Language",
+          "type": "Literal['en', 'hi', 'fr', 'ja', 'zh', 'it', 'es', 'pt']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "ref_audio_path",
+          "label": "3. Reference Voice (Upload or Record)",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Generated Cloned Audio",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_1",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/lambda_2",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/convert_voice",
+      "parameters": [
+        {
+          "name": "source_audio_path",
+          "label": "1. Source Audio (speech to re-voice)",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "name": "ref_audio_path",
+          "label": "2. Reference Voice (target speaker)",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Converted Audio",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_3",
+      "parameters": [],
+      "returns": []
+    }
+  ],
+  "endpoint": "/lambda",
+  "_api_verified": true,
+  "estimated_latency_s": 3.11,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "_tags_enriched": true,
+  "measured_latency_s": 3.11,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:49:46.685686+00:00"
+}

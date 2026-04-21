@@ -1,0 +1,396 @@
+{
+  "space_id": "microsoft/paza-bench",
+  "title": "PazaBench",
+  "emoji": "\ud83e\udd47",
+  "description": "ASR Leaderboard for low resource languages",
+  "input_schema": {
+    "models": {
+      "type": "list[Literal['Qwen/Qwen2-Audio-7B', 'Qwen/Qwen2-Audio-7B-Instruct', 'distil/whisper-distil-large-v2'",
+      "description": "Model",
+      "required": true,
+      "component": "Dropdown"
+    },
+    "languages": {
+      "type": "list[Literal['Afrikaans', 'Amharic', 'Arabic', 'Basaa', 'Dholuo', 'Dioula', 'Ekoti', 'Fula', 'Hausa'",
+      "description": "Language",
+      "required": true,
+      "component": "Dropdown"
+    },
+    "dataset_groups": {
+      "type": "list[Literal['ALFFA (Read speech & broadcast news, 3 languages)', 'African Next Voices Kenya (Conver",
+      "description": "Dataset group",
+      "required": true,
+      "component": "Dropdown"
+    },
+    "view_mode": {
+      "type": "Literal['Model families', 'Individual models']",
+      "description": "Columns show",
+      "required": true,
+      "component": "Radio"
+    },
+    "african_regions": {
+      "type": "list[Literal['Central Africa', 'East Africa', 'North Africa', 'Southern Africa', 'West Africa']]",
+      "description": "African Region",
+      "required": true,
+      "component": "Dropdown"
+    }
+  },
+  "output_schema": {
+    "value_25": {
+      "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+      "description": "value_25",
+      "component": "Dataframe"
+    },
+    "value_28": {
+      "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+      "description": "value_28",
+      "component": "Dataframe"
+    },
+    "value_31": {
+      "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+      "description": "value_31",
+      "component": "Dataframe"
+    }
+  },
+  "license": "mit",
+  "hardware": "6.2.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "leaderboard",
+    "region:us",
+    "benchmark"
+  ],
+  "likes": 14,
+  "last_modified": "2026-02-04 20:56:01+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/update_metric_dataframes_with_telemetry",
+      "parameters": [
+        {
+          "name": "models",
+          "label": "Model",
+          "type": "list[Literal['Qwen/Qwen2-Audio-7B', 'Qwen/Qwen2-Audio-7B-Instruct', 'distil/whisper-distil-large-v2', 'distil/whisper-distil-large-v3', 'distil/whisper-distil-medium.en', 'efficient/speech-lite-whispe",
+          "component": "Dropdown"
+        },
+        {
+          "name": "languages",
+          "label": "Language",
+          "type": "list[Literal['Afrikaans', 'Amharic', 'Arabic', 'Basaa', 'Dholuo', 'Dioula', 'Ekoti', 'Fula', 'Hausa', 'Igbo', 'Kabyle', 'Kalenjin', 'Kamba', 'Kidaw'ida', 'Kikuyu', 'Kinyarwanda', 'Lingala', 'Luganda',",
+          "component": "Dropdown"
+        },
+        {
+          "name": "dataset_groups",
+          "label": "Dataset group",
+          "type": "list[Literal['ALFFA (Read speech & broadcast news, 3 languages)', 'African Next Voices Kenya (Conversational speech, 5 languages)', 'African Next Voices South Africa (Conversational speech, 6 language",
+          "component": "Dropdown"
+        },
+        {
+          "name": "view_mode",
+          "label": "Columns show",
+          "type": "Literal['Model families', 'Individual models']",
+          "component": "Radio"
+        },
+        {
+          "name": "african_regions",
+          "label": "African Region",
+          "type": "list[Literal['Central Africa', 'East Africa', 'North Africa', 'Southern Africa', 'West Africa']]",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_25",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_28",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_31",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/update_wer_leaderboard_with_telemetry",
+      "parameters": [
+        {
+          "name": "langs",
+          "label": "Filter by Language",
+          "type": "list[Literal['Afrikaans', 'Amharic', 'Arabic', 'Basaa', 'Dholuo', 'Dioula', 'Ekoti', 'Fula', 'Hausa', 'Igbo', 'Kabyle', 'Kalenjin', 'Kamba', 'Kidaw'ida', 'Kikuyu', 'Kinyarwanda', 'Lingala', 'Luganda',",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_50",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        }
+      ]
+    },
+    {
+      "name": "/update_cer_leaderboard_with_telemetry",
+      "parameters": [
+        {
+          "name": "langs",
+          "label": "Filter by Language",
+          "type": "list[Literal['Afrikaans', 'Amharic', 'Arabic', 'Basaa', 'Dholuo', 'Dioula', 'Ekoti', 'Fula', 'Hausa', 'Igbo', 'Kabyle', 'Kalenjin', 'Kamba', 'Kidaw'ida', 'Kikuyu', 'Kinyarwanda', 'Lingala', 'Luganda',",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_42",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        }
+      ]
+    },
+    {
+      "name": "/update_speed_accuracy_with_telemetry",
+      "parameters": [
+        {
+          "name": "langs",
+          "label": "Filter by Language",
+          "type": "list[Literal['Afrikaans', 'Amharic', 'Arabic', 'Basaa', 'Dholuo', 'Dioula', 'Ekoti', 'Fula', 'Hausa', 'Igbo', 'Kabyle', 'Kalenjin', 'Kamba', 'Kidaw'ida', 'Kikuyu', 'Kinyarwanda', 'Lingala', 'Luganda',",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_57",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        }
+      ]
+    },
+    {
+      "name": "/update_correlation_with_telemetry",
+      "parameters": [
+        {
+          "name": "langs",
+          "label": "Filter by Language",
+          "type": "list[Literal['Afrikaans', 'Amharic', 'Arabic', 'Basaa', 'Dholuo', 'Dioula', 'Ekoti', 'Fula', 'Hausa', 'Igbo', 'Kabyle', 'Kalenjin', 'Kamba', 'Kidaw'ida', 'Kikuyu', 'Kinyarwanda', 'Lingala', 'Luganda',",
+          "component": "Dropdown"
+        },
+        {
+          "name": "top_n",
+          "label": "Top N Models (0 = all)",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_67",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        }
+      ]
+    },
+    {
+      "name": "/update_correlation_with_telemetry_1",
+      "parameters": [
+        {
+          "name": "langs",
+          "label": "Filter by Language",
+          "type": "list[Literal['Afrikaans', 'Amharic', 'Arabic', 'Basaa', 'Dholuo', 'Dioula', 'Ekoti', 'Fula', 'Hausa', 'Igbo', 'Kabyle', 'Kalenjin', 'Kamba', 'Kidaw'ida', 'Kikuyu', 'Kinyarwanda', 'Lingala', 'Luganda',",
+          "component": "Dropdown"
+        },
+        {
+          "name": "top_n",
+          "label": "Top N Models (0 = all)",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_67",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        }
+      ]
+    },
+    {
+      "name": "/update_benchmark_language_views",
+      "parameters": [
+        {
+          "name": "langs",
+          "label": "Select a Language",
+          "type": "list[Literal['Afrikaans', 'Amharic', 'Arabic', 'Basaa', 'Dholuo', 'Dioula', 'Ekoti', 'Fula', 'Hausa', 'Igbo', 'Kabyle', 'Kalenjin', 'Kamba', 'Kidaw'ida', 'Kikuyu', 'Kinyarwanda', 'Lingala', 'Luganda',",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_81",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "value_85",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "value_87",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        }
+      ]
+    },
+    {
+      "name": "/toggle_dataset_inputs",
+      "parameters": [
+        {
+          "name": "location",
+          "label": "Dataset Location *",
+          "type": "Literal['HuggingFace', 'Other']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Dataset Name *",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Dataset URL *",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/submit_language_eval_with_telemetry",
+      "parameters": [
+        {
+          "name": "location",
+          "label": "Dataset Location *",
+          "type": "Literal['HuggingFace', 'Other']",
+          "component": "Radio"
+        },
+        {
+          "name": "dataset_name",
+          "label": "Dataset Name *",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "dataset_url",
+          "label": "Dataset URL *",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "dataset_config",
+          "label": "Dataset Subset/Language",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "dataset_split",
+          "label": "Dataset Split",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "audio_column",
+          "label": "Audio Column",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "text_column",
+          "label": "Text/Transcript Column",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "license",
+          "label": "License *",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_107",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "Dataset Location *",
+          "type": "Literal['HuggingFace', 'Other']",
+          "component": "Radio"
+        },
+        {
+          "label": "Dataset Name *",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Dataset URL *",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Dataset Subset/Language",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Dataset Split",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Audio Column",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Text/Transcript Column",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "License *",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Dataset Name *",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Dataset URL *",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/update_metric_dataframes_with_telemetry",
+  "_api_verified": true,
+  "estimated_latency_s": 4.4,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "_tags_enriched": true,
+  "measured_latency_s": 4.4,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:51:15.345512+00:00"
+}

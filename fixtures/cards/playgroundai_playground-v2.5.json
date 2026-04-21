@@ -1,0 +1,145 @@
+{
+  "space_id": "playgroundai/playground-v2.5",
+  "title": "Playground V2.5",
+  "emoji": "\ud83c\udf0d",
+  "description": "Generate highly aesthetic images",
+  "input_schema": {
+    "parameter_23": {
+      "type": "int",
+      "description": "parameter_23",
+      "required": true,
+      "component": "Dataset"
+    }
+  },
+  "output_schema": {
+    "Prompt": {
+      "type": "str",
+      "description": "Prompt",
+      "component": "Textbox"
+    },
+    "Result": {
+      "type": "List[Dict(image: filepath, caption: str | None)]",
+      "description": "Result",
+      "component": "Gallery"
+    },
+    "Seed": {
+      "type": "float",
+      "description": "Seed",
+      "component": "Slider"
+    }
+  },
+  "license": "mit",
+  "hardware": "4.8.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 1134,
+  "last_modified": "2024-07-09 15:12:42+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_tags_enriched": true,
+  "estimated_latency_s": 3.0,
+  "speed_tier": "fast",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/load_example",
+      "parameters": [
+        {
+          "name": "parameter_23",
+          "label": "parameter_23",
+          "type": "int",
+          "component": "Dataset"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Result",
+          "type": "List[Dict(image: filepath, caption: str | None)]",
+          "component": "Gallery"
+        },
+        {
+          "label": "Seed",
+          "type": "float",
+          "component": "Slider"
+        }
+      ]
+    },
+    {
+      "name": "/run",
+      "parameters": [
+        {
+          "name": "Prompt",
+          "label": "Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "Negative prompt",
+          "label": "Negative prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "Use negative prompt",
+          "label": "Use negative prompt",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "Seed",
+          "label": "Seed",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "Width",
+          "label": "Width",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "Height",
+          "label": "Height",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "Guidance Scale",
+          "label": "Guidance Scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "Randomize seed",
+          "label": "Randomize seed",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Result",
+          "type": "List[Dict(image: filepath, caption: str | None)]",
+          "component": "Gallery"
+        },
+        {
+          "label": "Seed",
+          "type": "float",
+          "component": "Slider"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/load_example",
+  "_api_verified": true
+}

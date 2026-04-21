@@ -1,0 +1,919 @@
+{
+  "space_id": "harumaa/Anime-XL-Studio-And-Qwen-Edit",
+  "title": "Anime XL Studio + Qwen Edit",
+  "emoji": "\ud83c\udfa8",
+  "description": "4x SDXL Anime Models - Text to Image and Image to Image",
+  "input_schema": {},
+  "output_schema": {
+    "value_10": {
+      "type": "str",
+      "description": "value_10",
+      "component": "Textbox"
+    },
+    "CFG Scale": {
+      "type": "float",
+      "description": "CFG Scale",
+      "component": "Slider"
+    },
+    "Steps": {
+      "type": "float",
+      "description": "Steps",
+      "component": "Slider"
+    },
+    "Sampler": {
+      "type": "Literal['Euler A', 'Euler', 'DPM++ 2M', 'DDIM', 'Heun', 'DPM2 Karras']",
+      "description": "Sampler",
+      "component": "Dropdown"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "6.10.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "image-generation",
+    "stable-diffusion-xl",
+    "sdxl",
+    "anime",
+    "diffusion",
+    "text-to-image",
+    "image-to-image",
+    "region:us",
+    "vision"
+  ],
+  "likes": 8,
+  "last_modified": "2026-04-14 04:18:10+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_tags_enriched": true,
+  "estimated_latency_s": 40.0,
+  "speed_tier": "slow",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/_fn",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_10",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "CFG Scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Steps",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Sampler",
+          "type": "Literal['Euler A', 'Euler', 'DPM++ 2M', 'DDIM', 'Heun', 'DPM2 Karras']",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/_fn_1",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_10",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "CFG Scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Steps",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Sampler",
+          "type": "Literal['Euler A', 'Euler', 'DPM++ 2M', 'DDIM', 'Heun', 'DPM2 Karras']",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/calc_t2i",
+      "parameters": [
+        {
+          "name": "ratio_label",
+          "label": "",
+          "type": "Literal['1:1  Square', '4:3  Landscape', '3:4  Portrait', '16:9 Widescreen', '9:16 Mobile', '21:9 Ultrawide', '9:21 Tall', '3:2  Photo', '2:3  Photo Port.']",
+          "component": "Radio"
+        },
+        {
+          "name": "res_label",
+          "label": "",
+          "type": "Literal['512^2  ->  512 x 512', '768^2  ->  768 x 768', '1024^2  ->  1024 x 1024', '1280^2  ->  1280 x 1280', '1536^2  ->  1536 x 1536', '1920^2  ->  1920 x 1920']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "",
+          "type": "Literal['512^2  ->  512 x 512', '768^2  ->  768 x 768', '1024^2  ->  1024 x 1024', '1280^2  ->  1280 x 1280', '1536^2  ->  1536 x 1536', '1920^2  ->  1920 x 1920']",
+          "component": "Radio"
+        },
+        {
+          "label": "Width",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Height",
+          "type": "float",
+          "component": "Slider"
+        }
+      ]
+    },
+    {
+      "name": "/calc_t2i_1",
+      "parameters": [
+        {
+          "name": "ratio_label",
+          "label": "",
+          "type": "Literal['1:1  Square', '4:3  Landscape', '3:4  Portrait', '16:9 Widescreen', '9:16 Mobile', '21:9 Ultrawide', '9:21 Tall', '3:2  Photo', '2:3  Photo Port.']",
+          "component": "Radio"
+        },
+        {
+          "name": "res_label",
+          "label": "",
+          "type": "Literal['512^2  ->  512 x 512', '768^2  ->  768 x 768', '1024^2  ->  1024 x 1024', '1280^2  ->  1280 x 1280', '1536^2  ->  1536 x 1536', '1920^2  ->  1920 x 1920']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "",
+          "type": "Literal['512^2  ->  512 x 512', '768^2  ->  768 x 768', '1024^2  ->  1024 x 1024', '1280^2  ->  1280 x 1280', '1536^2  ->  1536 x 1536', '1920^2  ->  1920 x 1920']",
+          "component": "Radio"
+        },
+        {
+          "label": "Width",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Height",
+          "type": "float",
+          "component": "Slider"
+        }
+      ]
+    },
+    {
+      "name": "/infer_t2i",
+      "parameters": [
+        {
+          "name": "mn",
+          "label": "parameter_10",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "pr",
+          "label": "parameter_12",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "ne",
+          "label": "Negative Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "se",
+          "label": "Seed",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "ra",
+          "label": "Randomize seed",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "w",
+          "label": "Width",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "h",
+          "label": "Height",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "cf",
+          "label": "CFG Scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "st",
+          "label": "Steps",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "sa",
+          "label": "Sampler",
+          "type": "Literal['Euler A', 'Euler', 'DPM++ 2M', 'DDIM', 'Heun', 'DPM2 Karras']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_17",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "Seed",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "value_16",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "",
+          "type": "filepath",
+          "component": "Downloadbutton"
+        }
+      ]
+    },
+    {
+      "name": "/auto_res",
+      "parameters": [
+        {
+          "name": "input_image",
+          "label": "Input Image",
+          "type": "filepath",
+          "component": "Image"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_52",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "value_53",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "value_51",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/_fn_2",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_45",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "CFG Scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Steps",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Sampler",
+          "type": "Literal['Euler A', 'Euler', 'DPM++ 2M', 'DDIM', 'Heun', 'DPM2 Karras']",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/_fn_3",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_45",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "CFG Scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Steps",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Sampler",
+          "type": "Literal['Euler A', 'Euler', 'DPM++ 2M', 'DDIM', 'Heun', 'DPM2 Karras']",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/infer_i2i",
+      "parameters": [
+        {
+          "name": "mn",
+          "label": "parameter_45",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "img",
+          "label": "Input Image",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "name": "pr",
+          "label": "parameter_55",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "ne",
+          "label": "Negative Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "se",
+          "label": "Seed",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "ra",
+          "label": "Randomize seed",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "aw",
+          "label": "parameter_52",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "ah",
+          "label": "parameter_53",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "ow",
+          "label": "Override Width (0=auto)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "oh",
+          "label": "Override Height (0=auto)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "cf",
+          "label": "CFG Scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "st",
+          "label": "Steps",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "sr",
+          "label": "Strength",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "sa",
+          "label": "Sampler",
+          "type": "Literal['Euler A', 'Euler', 'DPM++ 2M', 'DDIM', 'Heun', 'DPM2 Karras']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "ad",
+          "label": "Enable ADetailer (Face & Hand Enhancement)",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_49",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "Seed",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "value_58",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "Download",
+          "type": "filepath",
+          "component": "Downloadbutton"
+        }
+      ]
+    },
+    {
+      "name": "/auto_res_1",
+      "parameters": [
+        {
+          "name": "input_image",
+          "label": "Reference Image",
+          "type": "filepath",
+          "component": "Image"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_98",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "value_99",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "value_92",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/preview_control_map",
+      "parameters": [
+        {
+          "name": "input_image",
+          "label": "Reference Image",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "name": "mode_name",
+          "label": "ControlNet Mode",
+          "type": "Literal['OpenPose', 'Depth', 'Canny', 'Scribble']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Control Map",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "value_92",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/update_mode_ui",
+      "parameters": [
+        {
+          "name": "mode_name",
+          "label": "ControlNet Mode",
+          "type": "Literal['OpenPose', 'Depth', 'Canny', 'Scribble']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_87",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "Conditioning Scale",
+          "type": "float",
+          "component": "Slider"
+        }
+      ]
+    },
+    {
+      "name": "/_fn_4",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_85",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "CFG Scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Steps",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Sampler",
+          "type": "Literal['Euler A', 'Euler', 'DPM++ 2M', 'DDIM', 'Heun', 'DPM2 Karras']",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/_fn_5",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_85",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "CFG Scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Steps",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Sampler",
+          "type": "Literal['Euler A', 'Euler', 'DPM++ 2M', 'DDIM', 'Heun', 'DPM2 Karras']",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/infer_controlnet",
+      "parameters": [
+        {
+          "name": "mn",
+          "label": "parameter_85",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "img",
+          "label": "Reference Image",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "name": "mode",
+          "label": "ControlNet Mode",
+          "type": "Literal['OpenPose', 'Depth', 'Canny', 'Scribble']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "pr",
+          "label": "parameter_101",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "ne",
+          "label": "Negative Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "se",
+          "label": "Seed",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "ra",
+          "label": "Randomize seed",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "aw",
+          "label": "parameter_98",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "ah",
+          "label": "parameter_99",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "ow",
+          "label": "Override Width (0=auto)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "oh",
+          "label": "Override Height (0=auto)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "cf",
+          "label": "CFG Scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "st",
+          "label": "Steps",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "scale",
+          "label": "Conditioning Scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "sa",
+          "label": "Sampler",
+          "type": "Literal['Euler A', 'Euler', 'DPM++ 2M', 'DDIM', 'Heun', 'DPM2 Karras']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "ad",
+          "label": "Enable ADetailer (Face & Hand Enhancement)",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Control Map",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "Output",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "Seed",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "value_104",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "Download",
+          "type": "filepath",
+          "component": "Downloadbutton"
+        }
+      ]
+    },
+    {
+      "name": "/auto_res_editor",
+      "parameters": [
+        {
+          "name": "editor_data",
+          "label": "Upload image and paint mask",
+          "type": "dict(background: filepath | None, layers: list[filepath], composite: filepath | None, id: str | None)",
+          "component": "Imageeditor"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_139",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "value_140",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "value_135",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/_fn_6",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_131",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "CFG Scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Steps",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Sampler",
+          "type": "Literal['Euler A', 'Euler', 'DPM++ 2M', 'DDIM', 'Heun', 'DPM2 Karras']",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/_fn_7",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_131",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "CFG Scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Steps",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Sampler",
+          "type": "Literal['Euler A', 'Euler', 'DPM++ 2M', 'DDIM', 'Heun', 'DPM2 Karras']",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/infer_inpaint",
+      "parameters": [
+        {
+          "name": "mn",
+          "label": "parameter_131",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "ed",
+          "label": "Upload image and paint mask",
+          "type": "dict(background: filepath | None, layers: list[filepath], composite: filepath | None, id: str | None)",
+          "component": "Imageeditor"
+        },
+        {
+          "name": "pr",
+          "label": "parameter_142",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "ne",
+          "label": "Negative Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "se",
+          "label": "Seed",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "ra",
+          "label": "Randomize seed",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "aw",
+          "label": "parameter_139",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "ah",
+          "label": "parameter_140",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "ow",
+          "label": "Override Width (0=auto)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "oh",
+          "label": "Override Height (0=auto)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "cf",
+          "label": "CFG Scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "st",
+          "label": "Steps",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "sr",
+          "label": "Inpaint Strength",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "sa",
+          "label": "Sampler",
+          "type": "Literal['Euler A', 'Euler', 'DPM++ 2M', 'DDIM', 'Heun', 'DPM2 Karras']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "ad",
+          "label": "Enable ADetailer (Face & Hand Enhancement)",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_137",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "Seed",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "value_145",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "Download",
+          "type": "filepath",
+          "component": "Downloadbutton"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/_fn",
+  "_api_verified": true
+}

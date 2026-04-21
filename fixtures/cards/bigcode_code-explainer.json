@@ -1,0 +1,37 @@
+{
+  "space_id": "bigcode/code-explainer",
+  "description": "Code explainer \u2014 natural-language descriptions of code snippets in many languages.",
+  "input_schema": {
+    "code_snippet": {
+      "type": "string",
+      "description": "Code to explain",
+      "required": true
+    },
+    "language": {
+      "type": "string",
+      "description": "Programming language",
+      "required": false
+    }
+  },
+  "output_schema": {
+    "explanation": {
+      "type": "string",
+      "description": "Natural-language explanation"
+    }
+  },
+  "license": "apache-2.0",
+  "sdk": "gradio",
+  "tags": [
+    "explanation",
+    "code",
+    "nlp",
+    "code-generation"
+  ],
+  "_api_scraped": true,
+  "_api_status": "not_found",
+  "_api_error": "404",
+  "estimated_latency_s": 8.0,
+  "speed_tier": "medium",
+  "_latency_source": "measured",
+  "_tags_enriched": true
+}

@@ -1,0 +1,155 @@
+{
+  "space_id": "Agnuxo/OpenCLAW-Agent",
+  "title": "OpenCLAW SEED Agent",
+  "emoji": "\ud83c\udf31",
+  "description": "OpenCLAW SEED Agent",
+  "input_schema": {},
+  "output_schema": {
+    "Agent State": {
+      "type": "str",
+      "description": "Agent State",
+      "component": "Code"
+    }
+  },
+  "license": "mit",
+  "hardware": "",
+  "sdk": "docker",
+  "tags": [
+    "docker",
+    "region:us"
+  ],
+  "likes": 8,
+  "last_modified": "2026-02-11 09:46:04+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/get_status",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Agent State",
+          "type": "str",
+          "component": "Code"
+        }
+      ]
+    },
+    {
+      "name": "/get_status_1",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Agent State",
+          "type": "str",
+          "component": "Code"
+        }
+      ]
+    },
+    {
+      "name": "/get_activity",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Recent Activity",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/get_activity_1",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Recent Activity",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/get_seed_status",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "SEED Status",
+          "type": "str",
+          "component": "Code"
+        }
+      ]
+    },
+    {
+      "name": "/trigger_harvest",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Growth Log",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/get_seed_status_1",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "SEED Status",
+          "type": "str",
+          "component": "Code"
+        }
+      ]
+    },
+    {
+      "name": "/get_papers",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Known Papers",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/get_papers_1",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Known Papers",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/get_strategy",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Strategy Analysis",
+          "type": "str",
+          "component": "Code"
+        }
+      ]
+    },
+    {
+      "name": "/trigger_cycle",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Cycle Results",
+          "type": "str",
+          "component": "Code"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/get_status",
+  "_api_verified": true
+}

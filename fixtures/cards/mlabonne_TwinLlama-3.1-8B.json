@@ -1,0 +1,131 @@
+{
+  "space_id": "mlabonne/TwinLlama-3.1-8B",
+  "title": "TwinLlama-3.1-8B",
+  "emoji": "\ud83d\udc65",
+  "description": "TwinLlama-3.1-8B",
+  "input_schema": {
+    "message": {
+      "type": "str",
+      "description": "Message",
+      "required": true,
+      "component": "Textbox"
+    },
+    "system_prompt": {
+      "type": "str",
+      "description": "System prompt",
+      "required": true,
+      "component": "Textbox"
+    },
+    "temperature": {
+      "type": "float",
+      "description": "Temperature",
+      "required": true,
+      "component": "Slider"
+    },
+    "max_new_tokens": {
+      "type": "float",
+      "description": "Max new tokens",
+      "required": true,
+      "component": "Slider"
+    },
+    "top_k": {
+      "type": "float",
+      "description": "Top K sampling",
+      "required": true,
+      "component": "Slider"
+    },
+    "repetition_penalty": {
+      "type": "float",
+      "description": "Repetition penalty",
+      "required": true,
+      "component": "Slider"
+    },
+    "top_p": {
+      "type": "float",
+      "description": "Top P sampling",
+      "required": true,
+      "component": "Slider"
+    }
+  },
+  "output_schema": {
+    "Message": {
+      "type": "str",
+      "description": "Message",
+      "component": "Textbox"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "4.39.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 7,
+  "last_modified": "2024-08-22 15:20:33+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/chat",
+      "parameters": [
+        {
+          "name": "message",
+          "label": "Message",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "system_prompt",
+          "label": "System prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "temperature",
+          "label": "Temperature",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "max_new_tokens",
+          "label": "Max new tokens",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "top_k",
+          "label": "Top K sampling",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "repetition_penalty",
+          "label": "Repetition penalty",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "top_p",
+          "label": "Top P sampling",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Message",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/chat",
+  "_api_verified": true
+}

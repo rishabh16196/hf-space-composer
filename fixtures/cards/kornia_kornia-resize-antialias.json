@@ -1,0 +1,83 @@
+{
+  "space_id": "kornia/kornia-resize-antialias",
+  "title": "Kornia Reshaping Antialias",
+  "emoji": "\ud83c\udf0d",
+  "description": "Kornia Reshaping Antialias",
+  "input_schema": {
+    "image": {
+      "type": "filepath",
+      "description": "Input Image",
+      "required": true,
+      "component": "Image"
+    },
+    "height": {
+      "type": "float",
+      "description": "Height Scale",
+      "required": true,
+      "component": "Slider"
+    },
+    "width": {
+      "type": "float",
+      "description": "Width Scale",
+      "required": true,
+      "component": "Slider"
+    }
+  },
+  "output_schema": {
+    "Resized Image": {
+      "type": "filepath",
+      "description": "Resized Image",
+      "component": "Image"
+    }
+  },
+  "license": "unknown",
+  "hardware": "4.38.1",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 8,
+  "last_modified": "2024-07-15 14:21:57+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/rescale_aa",
+      "parameters": [
+        {
+          "name": "image",
+          "label": "Input Image",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "name": "height",
+          "label": "Height Scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "width",
+          "label": "Width Scale",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Resized Image",
+          "type": "filepath",
+          "component": "Image"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/rescale_aa",
+  "_api_verified": true
+}

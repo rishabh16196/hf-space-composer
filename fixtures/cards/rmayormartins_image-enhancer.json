@@ -1,0 +1,159 @@
+{
+  "space_id": "rmayormartins/image-enhancer",
+  "title": "image-enhancer",
+  "emoji": "\ud83d\ude80",
+  "description": "image-enhancer",
+  "input_schema": {
+    "Upload": {
+      "type": "filepath",
+      "description": "Upload",
+      "required": true,
+      "component": "Image"
+    },
+    "Enhance Image (ESRGAN)": {
+      "type": "bool",
+      "description": "Enhance Image (ESRGAN)",
+      "required": true,
+      "component": "Checkbox"
+    },
+    "Resolution model": {
+      "type": "Literal['2x', '4x', '8x']",
+      "description": "Resolution model",
+      "required": true,
+      "component": "Radio"
+    },
+    "Adjust DPI": {
+      "type": "bool",
+      "description": "Adjust DPI",
+      "required": true,
+      "component": "Checkbox"
+    },
+    "DPI": {
+      "type": "float",
+      "description": "DPI",
+      "required": true,
+      "component": "Number"
+    },
+    "Resize": {
+      "type": "bool",
+      "description": "Resize",
+      "required": true,
+      "component": "Checkbox"
+    },
+    "Width": {
+      "type": "float",
+      "description": "Width",
+      "required": true,
+      "component": "Number"
+    },
+    "Height": {
+      "type": "float",
+      "description": "Height",
+      "required": true,
+      "component": "Number"
+    }
+  },
+  "output_schema": {
+    "Final Image": {
+      "type": "filepath",
+      "description": "Final Image",
+      "component": "Image"
+    },
+    "Download Final Image": {
+      "type": "filepath",
+      "description": "Download Final Image",
+      "component": "File"
+    }
+  },
+  "license": "unknown",
+  "hardware": "4.12.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us",
+    "image-generation",
+    "vision"
+  ],
+  "likes": 68,
+  "last_modified": "2024-11-09 00:20:48+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/predict",
+      "parameters": [
+        {
+          "name": "Upload",
+          "label": "Upload",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "name": "Enhance Image (ESRGAN)",
+          "label": "Enhance Image (ESRGAN)",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "Resolution model",
+          "label": "Resolution model",
+          "type": "Literal['2x', '4x', '8x']",
+          "component": "Radio"
+        },
+        {
+          "name": "Adjust DPI",
+          "label": "Adjust DPI",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "DPI",
+          "label": "DPI",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "Resize",
+          "label": "Resize",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "Width",
+          "label": "Width",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "Height",
+          "label": "Height",
+          "type": "float",
+          "component": "Number"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Final Image",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "Download Final Image",
+          "type": "filepath",
+          "component": "File"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/predict",
+  "_api_verified": true,
+  "estimated_latency_s": 3.73,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "_tags_enriched": true,
+  "measured_latency_s": 3.73,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:51:45.054254+00:00"
+}

@@ -1,0 +1,35 @@
+{
+  "space_id": "Detomo/voice-japanese",
+  "title": "Japanese Voice Recognition",
+  "emoji": "\ud83c\udf99",
+  "description": "Japanese Voice Recognition",
+  "input_schema": {
+    "input": {
+      "type": "string",
+      "description": "Input",
+      "required": true
+    }
+  },
+  "output_schema": {
+    "output": {
+      "type": "string"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "3.8",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 4,
+  "last_modified": "2022-12-20 05:54:27+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "error",
+  "_api_error": "(Request ID: Root=1-69e77bc4-0323f3f3740689080abf3480;b3b1be39-a4c9-4e30-aa17-466bfa3afee6)\n\n429 Too Many Requests: you have reached your 'api' rate limit.\nRetry after 26 seconds (0/2500 requests rema"
+}

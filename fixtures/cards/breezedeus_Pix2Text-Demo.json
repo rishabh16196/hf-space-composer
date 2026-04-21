@@ -1,0 +1,129 @@
+{
+  "space_id": "breezedeus/Pix2Text-Demo",
+  "title": "Pix2Text",
+  "emoji": "\u267e\ufe0f",
+  "description": "Pix2Text",
+  "input_schema": {
+    "Text Languages": {
+      "type": "List[Literal['Abaza', 'Adyghe', 'Afrikaans', 'Albanian', 'Angika', 'Arabic', 'Assamese', 'Avar', 'Az",
+      "description": "Text Languages",
+      "required": true,
+      "component": "Dropdown"
+    },
+    "MFD Models": {
+      "type": "Literal['mfd-1.5', 'mfd-advanced-1.5', 'mfd-pro-1.5', 'mfd', 'mfd-advanced', 'mfd-pro']",
+      "description": "MFD Models",
+      "required": true,
+      "component": "Dropdown"
+    },
+    "MFR Models": {
+      "type": "Literal['mfr-1.5', 'mfr-pro-1.5', 'mfr', 'mfr-pro', 'mfr-plus']",
+      "description": "MFR Models",
+      "required": true,
+      "component": "Dropdown"
+    },
+    "file_type": {
+      "type": "Literal['page', 'text_formula', 'formula', 'text']",
+      "description": "file_type",
+      "required": true,
+      "component": "Dropdown"
+    },
+    "resized_shape": {
+      "type": "float",
+      "description": "resized_shape",
+      "required": true,
+      "component": "Slider"
+    },
+    "Image": {
+      "type": "filepath",
+      "description": "Image",
+      "required": true,
+      "component": "Image"
+    }
+  },
+  "output_schema": {
+    "Recognition Result ": {
+      "type": "str",
+      "description": "Recognition Result ",
+      "component": "Textbox"
+    },
+    "Detection Result": {
+      "type": "filepath",
+      "description": "Detection Result",
+      "component": "Image"
+    }
+  },
+  "license": "mit",
+  "hardware": "4.19.2",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 55,
+  "last_modified": "2025-07-25 01:48:02+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/recognize",
+      "parameters": [
+        {
+          "name": "Text Languages",
+          "label": "Text Languages",
+          "type": "List[Literal['Abaza', 'Adyghe', 'Afrikaans', 'Albanian', 'Angika', 'Arabic', 'Assamese', 'Avar', 'Azerbaijani', 'Belarusian', 'Bengali', 'Bhojpuri', 'Bihari', 'Bosnian', 'Bulgarian', 'Chechen', 'Chine",
+          "component": "Dropdown"
+        },
+        {
+          "name": "MFD Models",
+          "label": "MFD Models",
+          "type": "Literal['mfd-1.5', 'mfd-advanced-1.5', 'mfd-pro-1.5', 'mfd', 'mfd-advanced', 'mfd-pro']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "MFR Models",
+          "label": "MFR Models",
+          "type": "Literal['mfr-1.5', 'mfr-pro-1.5', 'mfr', 'mfr-pro', 'mfr-plus']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "file_type",
+          "label": "file_type",
+          "type": "Literal['page', 'text_formula', 'formula', 'text']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "resized_shape",
+          "label": "resized_shape",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "Image",
+          "label": "Image",
+          "type": "filepath",
+          "component": "Image"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Recognition Result ",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Detection Result",
+          "type": "filepath",
+          "component": "Image"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/recognize",
+  "_api_verified": true
+}

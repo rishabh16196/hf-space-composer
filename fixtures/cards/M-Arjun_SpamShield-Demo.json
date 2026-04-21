@@ -1,0 +1,141 @@
+{
+  "space_id": "M-Arjun/SpamShield-Demo",
+  "title": "SpamShield Demo",
+  "emoji": "\ud83d\udc22",
+  "description": "SpamShield Demo",
+  "input_schema": {
+    "text": {
+      "type": "str",
+      "description": "Message",
+      "required": true,
+      "component": "Textbox"
+    }
+  },
+  "output_schema": {
+    "Verdict": {
+      "type": "str",
+      "description": "Verdict",
+      "component": "Textbox"
+    },
+    "Category": {
+      "type": "str",
+      "description": "Category",
+      "component": "Textbox"
+    },
+    "Confidence score": {
+      "type": "float",
+      "description": "Confidence score",
+      "component": "Number"
+    },
+    "Raw output": {
+      "type": "str | float | bool | list | dict",
+      "description": "Raw output",
+      "component": "Json"
+    },
+    "Summary": {
+      "type": "str",
+      "description": "Summary",
+      "component": "Textbox"
+    }
+  },
+  "license": "mit",
+  "hardware": "6.12.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 2,
+  "last_modified": "2026-04-18 05:15:56+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/detect_spam",
+      "parameters": [
+        {
+          "name": "text",
+          "label": "Message",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Verdict",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Category",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Confidence score",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "label": "Raw output",
+          "type": "str | float | bool | list | dict",
+          "component": "Json"
+        },
+        {
+          "label": "Summary",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/lambda",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Verdict",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Category",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Confidence score",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "label": "Raw output",
+          "type": "str | float | bool | list | dict",
+          "component": "Json"
+        },
+        {
+          "label": "Summary",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_1",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Message",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/detect_spam",
+  "_api_verified": true
+}

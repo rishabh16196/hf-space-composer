@@ -1,0 +1,180 @@
+{
+  "space_id": "ASLP-lab/DiffRhythm",
+  "title": "Di\u266a\u266aRhythm",
+  "emoji": "\ud83c\udfb6",
+  "description": "Blazingly Fast and Embarrassingly Simple Song Generation",
+  "input_schema": {},
+  "output_schema": {},
+  "license": "apache-2.0",
+  "hardware": "5.20.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "music generation",
+    "region:us",
+    "audio",
+    "music",
+    "song-generation"
+  ],
+  "likes": 687,
+  "last_modified": "2025-09-02 03:50:40+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/update_prompt_type",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/R1_infer1",
+      "parameters": [
+        {
+          "name": "theme",
+          "label": "theme",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "tags_gen",
+          "label": "tags",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "language",
+          "label": "Language",
+          "type": "Literal['cn', 'en']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Generated LRC",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/R1_infer2",
+      "parameters": [
+        {
+          "name": "tags_lyrics",
+          "label": "tags",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "lyrics_input",
+          "label": "Raw Lyrics (without timestamps)",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Generated LRC",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/lambda",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/infer_music",
+      "parameters": [
+        {
+          "name": "lrc",
+          "label": "Lyrics",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "ref_audio_path",
+          "label": "Audio Prompt",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "name": "text_prompt",
+          "label": "Text Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "seed",
+          "label": "Seed",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "randomize_seed",
+          "label": "Randomize seed",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "steps",
+          "label": "Diffusion Steps",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "cfg_strength",
+          "label": "CFG Strength",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "file_type",
+          "label": "Output Format",
+          "type": "Literal['wav', 'mp3', 'ogg']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "odeint_method",
+          "label": "ODE Solver",
+          "type": "Literal['euler', 'midpoint', 'rk4', 'implicit_adams']",
+          "component": "Radio"
+        },
+        {
+          "name": "preference_infer",
+          "label": "Preference",
+          "type": "Literal['quality first', 'speed first']",
+          "component": "Radio"
+        },
+        {
+          "name": "Music_Duration",
+          "label": "Music Duration (s)",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Audio Result",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/update_prompt_type",
+  "_api_verified": true,
+  "estimated_latency_s": 4.78,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "_tags_enriched": true,
+  "measured_latency_s": 4.78,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:49:06.492216+00:00",
+  "_inference_attempt_status": "predict_failed",
+  "_inference_attempt_error": "The upstream Gradio app has raised an exception but has not enabled verbose error reporting. To enable, set show_error=True in launch()."
+}

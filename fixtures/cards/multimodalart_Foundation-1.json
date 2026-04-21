@@ -1,0 +1,168 @@
+{
+  "space_id": "multimodalart/Foundation-1",
+  "title": "Foundation 1",
+  "emoji": "\ud83d\ude80",
+  "description": "Foundation 1",
+  "input_schema": {
+    "is_experimental": {
+      "type": "bool",
+      "description": "Experimental Prompts (More Timbre Mix)",
+      "required": true,
+      "component": "Checkbox"
+    }
+  },
+  "output_schema": {
+    "Prompt": {
+      "type": "str",
+      "description": "Prompt",
+      "component": "Textbox"
+    },
+    "Bars": {
+      "type": "Literal['4', '8']",
+      "description": "Bars",
+      "component": "Dropdown"
+    },
+    "BPM": {
+      "type": "Literal['100', '110', '120', '128', '130', '140', '150']",
+      "description": "BPM",
+      "component": "Dropdown"
+    },
+    "Key": {
+      "type": "Literal['A', 'A#', 'B', 'C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#']",
+      "description": "Key",
+      "component": "Dropdown"
+    },
+    "Scale": {
+      "type": "Literal['major', 'minor']",
+      "description": "Scale",
+      "component": "Dropdown"
+    }
+  },
+  "license": "unknown",
+  "hardware": "6.9.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 63,
+  "last_modified": "2026-03-26 14:53:06+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/generate_random_prompt",
+      "parameters": [
+        {
+          "name": "is_experimental",
+          "label": "Experimental Prompts (More Timbre Mix)",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Bars",
+          "type": "Literal['4', '8']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "BPM",
+          "type": "Literal['100', '110', '120', '128', '130', '140', '150']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Key",
+          "type": "Literal['A', 'A#', 'B', 'C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Scale",
+          "type": "Literal['major', 'minor']",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/generate_audio",
+      "parameters": [
+        {
+          "name": "prompt",
+          "label": "Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "negative_prompt",
+          "label": "Negative Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "bars",
+          "label": "Bars",
+          "type": "Literal['4', '8']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "bpm",
+          "label": "BPM",
+          "type": "Literal['100', '110', '120', '128', '130', '140', '150']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "note",
+          "label": "Key",
+          "type": "Literal['A', 'A#', 'B', 'C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "scale",
+          "label": "Scale",
+          "type": "Literal['major', 'minor']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "steps",
+          "label": "Inference Steps",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "cfg_scale",
+          "label": "CFG Scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "seed",
+          "label": "Seed (-1 for random)",
+          "type": "int",
+          "component": "Number"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Generated Audio",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/generate_random_prompt",
+  "_api_verified": true,
+  "estimated_latency_s": 3.96,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 3.96,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:51:18.805411+00:00"
+}

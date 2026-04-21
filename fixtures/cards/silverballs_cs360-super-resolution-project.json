@@ -1,0 +1,102 @@
+{
+  "space_id": "silverballs/cs360-super-resolution-project",
+  "title": "CS360 Super Resolution Project",
+  "emoji": "\ud83d\ude80",
+  "description": "CS360 Super Resolution Project",
+  "input_schema": {
+    "image": {
+      "type": "filepath",
+      "description": "Upload Artwork",
+      "required": true,
+      "component": "Image"
+    },
+    "scale": {
+      "type": "float",
+      "description": "Upscale Factor",
+      "required": true,
+      "component": "Slider"
+    }
+  },
+  "output_schema": {
+    "Enhanced Output": {
+      "type": "filepath",
+      "description": "Enhanced Output",
+      "component": "Image"
+    },
+    "Resolution Info": {
+      "type": "str",
+      "description": "Resolution Info",
+      "component": "Textbox"
+    }
+  },
+  "license": "unknown",
+  "hardware": "6.12.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 2,
+  "last_modified": "2026-04-19 10:53:08+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/enhance",
+      "parameters": [
+        {
+          "name": "image",
+          "label": "Upload Artwork",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "name": "scale",
+          "label": "Upscale Factor",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Enhanced Output",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "Resolution Info",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/lambda",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Upload Artwork",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "Enhanced Output",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "Resolution Info",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/enhance",
+  "_api_verified": true
+}

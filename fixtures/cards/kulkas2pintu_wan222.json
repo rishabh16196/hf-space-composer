@@ -1,0 +1,277 @@
+{
+  "space_id": "kulkas2pintu/wan222",
+  "title": "Wan2.2 14B Preview",
+  "emoji": "\ud83d\udc0c",
+  "description": "generate a video from an image with a text prompt",
+  "input_schema": {
+    "input_image": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "Input Image",
+      "required": true,
+      "component": "Image"
+    },
+    "last_image": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "Last Image (Optional)",
+      "required": true,
+      "component": "Image"
+    },
+    "prompt": {
+      "type": "str",
+      "description": "Prompt",
+      "required": true,
+      "component": "Textbox"
+    },
+    "steps": {
+      "type": "float",
+      "description": "Inference Steps",
+      "required": true,
+      "component": "Slider"
+    },
+    "negative_prompt": {
+      "type": "str",
+      "description": "Negative Prompt",
+      "required": true,
+      "component": "Textbox"
+    },
+    "duration_seconds": {
+      "type": "float",
+      "description": "Duration (seconds)",
+      "required": true,
+      "component": "Slider"
+    },
+    "guidance_scale": {
+      "type": "float",
+      "description": "Guidance Scale - high noise stage",
+      "required": true,
+      "component": "Slider"
+    },
+    "guidance_scale_2": {
+      "type": "float",
+      "description": "Guidance Scale 2 - low noise stage",
+      "required": true,
+      "component": "Slider"
+    },
+    "seed": {
+      "type": "float",
+      "description": "Seed",
+      "required": true,
+      "component": "Slider"
+    },
+    "randomize_seed": {
+      "type": "bool",
+      "description": "Randomize seed",
+      "required": true,
+      "component": "Checkbox"
+    },
+    "quality": {
+      "type": "float",
+      "description": "Video Quality",
+      "required": true,
+      "component": "Slider"
+    },
+    "scheduler": {
+      "type": "Literal['FlowMatchEulerDiscrete', 'SASolver', 'DEISMultistep', 'DPMSolverMultistepInverse', 'UniPCMu",
+      "description": "Scheduler",
+      "required": true,
+      "component": "Dropdown"
+    },
+    "flow_shift": {
+      "type": "float",
+      "description": "Flow Shift",
+      "required": true,
+      "component": "Slider"
+    },
+    "frame_multiplier": {
+      "type": "Literal['16', '32', '64']",
+      "description": "Video Fluidity (Frames per Second)",
+      "required": true,
+      "component": "Dropdown"
+    },
+    "video_component": {
+      "type": "bool",
+      "description": "Display result",
+      "required": true,
+      "component": "Checkbox"
+    }
+  },
+  "output_schema": {
+    "Generated Video": {
+      "type": "dict(video: filepath, subtitles: filepath | None)",
+      "description": "Generated Video",
+      "component": "Video"
+    },
+    "Download Video": {
+      "type": "filepath",
+      "description": "Download Video",
+      "component": "File"
+    },
+    "Seed": {
+      "type": "float",
+      "description": "Seed",
+      "component": "Slider"
+    }
+  },
+  "license": "unknown",
+  "hardware": "5.44.1",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "mcp-server",
+    "region:us",
+    "text"
+  ],
+  "likes": 22,
+  "last_modified": "2026-03-26 22:35:15+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/generate_video",
+      "parameters": [
+        {
+          "name": "input_image",
+          "label": "Input Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "last_image",
+          "label": "Last Image (Optional)",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "prompt",
+          "label": "Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "steps",
+          "label": "Inference Steps",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "negative_prompt",
+          "label": "Negative Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "duration_seconds",
+          "label": "Duration (seconds)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "guidance_scale",
+          "label": "Guidance Scale - high noise stage",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "guidance_scale_2",
+          "label": "Guidance Scale 2 - low noise stage",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "seed",
+          "label": "Seed",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "randomize_seed",
+          "label": "Randomize seed",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "quality",
+          "label": "Video Quality",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "scheduler",
+          "label": "Scheduler",
+          "type": "Literal['FlowMatchEulerDiscrete', 'SASolver', 'DEISMultistep', 'DPMSolverMultistepInverse', 'UniPCMultistep', 'DPMSolverMultistep', 'DPMSolverSinglestep']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "flow_shift",
+          "label": "Flow Shift",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "frame_multiplier",
+          "label": "Video Fluidity (Frames per Second)",
+          "type": "Literal['16', '32', '64']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "video_component",
+          "label": "Display result",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Generated Video",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        },
+        {
+          "label": "Download Video",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "label": "Seed",
+          "type": "float",
+          "component": "Slider"
+        }
+      ]
+    },
+    {
+      "name": "/extract_frame",
+      "parameters": [
+        {
+          "name": "video_path",
+          "label": "Generated Video",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        },
+        {
+          "name": "timestamp",
+          "label": "Timestamp",
+          "type": "float",
+          "component": "Number"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Input Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/generate_video",
+  "_api_verified": true,
+  "estimated_latency_s": 3.74,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "_tags_enriched": true,
+  "measured_latency_s": 3.74,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:51:05.634774+00:00"
+}

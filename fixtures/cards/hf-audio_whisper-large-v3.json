@@ -1,0 +1,136 @@
+{
+  "space_id": "hf-audio/whisper-large-v3",
+  "title": "Whisper Large V3",
+  "emoji": "\ud83e\udd2b",
+  "description": "Whisper Large V3",
+  "input_schema": {
+    "inputs": {
+      "type": "filepath",
+      "description": "parameter_1",
+      "required": true,
+      "component": "Audio"
+    },
+    "task": {
+      "type": "Literal['transcribe', 'translate']",
+      "description": "Task",
+      "required": true,
+      "component": "Radio"
+    }
+  },
+  "output_schema": {
+    "output": {
+      "type": "str",
+      "description": "output",
+      "component": "Textbox"
+    }
+  },
+  "license": "unknown",
+  "hardware": "6.3.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "whisper-event",
+    "mcp-server",
+    "region:us",
+    "asr",
+    "audio",
+    "transcription"
+  ],
+  "likes": 827,
+  "last_modified": "2026-01-14 18:11:51+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "endpoint": "/transcribe",
+  "_verified_live": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/transcribe",
+      "parameters": [
+        {
+          "name": "inputs",
+          "label": "parameter_1",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "name": "task",
+          "label": "Task",
+          "type": "Literal['transcribe', 'translate']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "output",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/transcribe_1",
+      "parameters": [
+        {
+          "name": "inputs",
+          "label": "Audio file",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "name": "task",
+          "label": "Task",
+          "type": "Literal['transcribe', 'translate']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "output",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/yt_transcribe",
+      "parameters": [
+        {
+          "name": "yt_url",
+          "label": "YouTube URL",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "task",
+          "label": "Task",
+          "type": "Literal['transcribe', 'translate']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "output 0",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "output 1",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    }
+  ],
+  "_api_verified": true,
+  "estimated_latency_s": 10.25,
+  "speed_tier": "medium",
+  "_latency_source": "measured_inference",
+  "_tags_enriched": true,
+  "measured_latency_s": 10.25,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:50:45.066067+00:00",
+  "measured_inference_s": 10.25,
+  "measured_inference_timestamp": "2026-04-20T07:54:58Z"
+}

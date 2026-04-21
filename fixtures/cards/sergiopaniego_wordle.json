@@ -1,0 +1,38 @@
+{
+  "space_id": "sergiopaniego/wordle",
+  "title": "TextArena Environment Server",
+  "emoji": "\ud83c\udfae",
+  "description": "TextArena Environment Server",
+  "input_schema": {
+    "input": {
+      "type": "string",
+      "description": "Input",
+      "required": true
+    }
+  },
+  "output_schema": {
+    "output": {
+      "type": "string"
+    }
+  },
+  "license": "unknown",
+  "hardware": "",
+  "sdk": "docker",
+  "tags": [
+    "docker",
+    "openenv",
+    "rl-environment",
+    "region:us"
+  ],
+  "likes": 3,
+  "last_modified": "2026-03-06 12:05:05+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_tags_enriched": true,
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "error",
+  "_api_error": "(Request ID: Root=1-69e77bd8-217e4aa15690d2804f0fc665;cc479c97-a7a6-4dfd-b9a8-6fea54231f7d)\n\n429 Too Many Requests: you have reached your 'api' rate limit.\nRetry after 6 seconds (0/2500 requests remai"
+}

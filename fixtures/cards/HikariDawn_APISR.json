@@ -1,0 +1,74 @@
+{
+  "space_id": "HikariDawn/APISR",
+  "title": "APISR",
+  "emoji": "\ud83c\udfc3",
+  "description": "APISR",
+  "input_schema": {
+    "Input": {
+      "type": "filepath",
+      "description": "Input",
+      "required": true,
+      "component": "Image"
+    },
+    "model": {
+      "type": "Literal['2xRRDB', '4xRRDB', '4xGRL', '4xDAT']",
+      "description": "model",
+      "required": true,
+      "component": "Dropdown"
+    }
+  },
+  "output_schema": {
+    "Output image": {
+      "type": "filepath",
+      "description": "Output image",
+      "component": "Image"
+    }
+  },
+  "license": "gpl-3.0",
+  "hardware": "4.21.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 141,
+  "last_modified": "2024-04-10 03:32:16+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/inference",
+      "parameters": [
+        {
+          "name": "Input",
+          "label": "Input",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "name": "model",
+          "label": "model",
+          "type": "Literal['2xRRDB', '4xRRDB', '4xGRL', '4xDAT']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output image",
+          "type": "filepath",
+          "component": "Image"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/inference",
+  "_api_verified": true,
+  "estimated_latency_s": 2.55,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 2.55,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:49:25.207366+00:00"
+}

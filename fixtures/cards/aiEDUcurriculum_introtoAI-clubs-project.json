@@ -1,0 +1,119 @@
+{
+  "space_id": "aiEDUcurriculum/introtoAI-clubs-project",
+  "title": "IntrotoAI Clubs Project",
+  "emoji": "\ud83c\udf92",
+  "description": "IntrotoAI Clubs Project",
+  "input_schema": {
+    "param_0": {
+      "type": "Literal['1 - I'm 100% introvert', '2', '3 - I could go either way', '4', '5 - I'm 100% extrovert']",
+      "description": "How social would you consider yourself?",
+      "required": true,
+      "component": "Dropdown"
+    },
+    "param_1": {
+      "type": "Literal['I don't have a preference', 'Indoors', 'Outdoors']",
+      "description": "Where would you rather spend your time?",
+      "required": true,
+      "component": "Dropdown"
+    },
+    "param_2": {
+      "type": "Literal['Bravery', 'Creativity', 'Fairness', 'Humor', 'Intelligence', 'Kindness', 'Loyalty']",
+      "description": "If you had to pick one, which one of the following attributes do you feel is a personal strength of yours?",
+      "required": true,
+      "component": "Dropdown"
+    },
+    "param_3": {
+      "type": "Literal['Helping people', 'Managing finances', 'Managing people', 'Organizing', 'Traveling', 'Workin",
+      "description": "If you had to pick one, which of the following activities do you feel you enjoy the most?",
+      "required": true,
+      "component": "Dropdown"
+    },
+    "param_4": {
+      "type": "Literal['No', 'Yes']",
+      "description": "Are you a particularly competitive type of person?",
+      "required": true,
+      "component": "Dropdown"
+    },
+    "param_5": {
+      "type": "float",
+      "description": "How many days of the week would you like to be involved in a club?",
+      "required": true,
+      "component": "Number"
+    }
+  },
+  "output_schema": {
+    "Your recommendation:": {
+      "type": "str",
+      "description": "Your recommendation:",
+      "component": "Textbox"
+    }
+  },
+  "license": "afl-3.0",
+  "hardware": "5.13.2",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 2,
+  "last_modified": "2026-01-26 21:15:16+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/predict",
+      "parameters": [
+        {
+          "name": "param_0",
+          "label": "How social would you consider yourself?",
+          "type": "Literal['1 - I'm 100% introvert', '2', '3 - I could go either way', '4', '5 - I'm 100% extrovert']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_1",
+          "label": "Where would you rather spend your time?",
+          "type": "Literal['I don't have a preference', 'Indoors', 'Outdoors']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_2",
+          "label": "If you had to pick one, which one of the following attributes do you feel is a personal strength of yours?",
+          "type": "Literal['Bravery', 'Creativity', 'Fairness', 'Humor', 'Intelligence', 'Kindness', 'Loyalty']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_3",
+          "label": "If you had to pick one, which of the following activities do you feel you enjoy the most?",
+          "type": "Literal['Helping people', 'Managing finances', 'Managing people', 'Organizing', 'Traveling', 'Working with my hands', 'Writing']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_4",
+          "label": "Are you a particularly competitive type of person?",
+          "type": "Literal['No', 'Yes']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_5",
+          "label": "How many days of the week would you like to be involved in a club?",
+          "type": "float",
+          "component": "Number"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Your recommendation:",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/predict",
+  "_api_verified": true
+}

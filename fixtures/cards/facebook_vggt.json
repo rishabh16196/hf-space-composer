@@ -1,0 +1,719 @@
+{
+  "space_id": "facebook/vggt",
+  "title": "vggt",
+  "emoji": "\ud83c\udfc6",
+  "description": "VGGT (CVPR 2025)",
+  "input_schema": {},
+  "output_schema": {
+    "value_14": {
+      "type": "filepath",
+      "description": "value_14",
+      "component": "Model3d"
+    }
+  },
+  "license": "cc-by-nc-4.0",
+  "hardware": "5.17.1",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 471,
+  "last_modified": "2025-03-17 19:25:08+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/clear_fields",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_14",
+          "type": "filepath",
+          "component": "Model3d"
+        }
+      ]
+    },
+    {
+      "name": "/update_log",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_13",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/gradio_demo",
+      "parameters": [
+        {
+          "name": "target_dir",
+          "label": "Target Dir",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "conf_thres",
+          "label": "Confidence Threshold (%)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "frame_filter",
+          "label": "Show Points from Frame",
+          "type": "Literal['All']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "mask_black_bg",
+          "label": "Filter Black Background",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "mask_white_bg",
+          "label": "Filter White Background",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "show_cam",
+          "label": "Show Camera",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "mask_sky",
+          "label": "Filter Sky",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "prediction_mode",
+          "label": "Select a Prediction Mode",
+          "type": "Literal['Depthmap and Camera Branch', 'Pointmap Branch']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_14",
+          "type": "filepath",
+          "component": "Model3d"
+        },
+        {
+          "label": "value_13",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "Show Points from Frame",
+          "type": "Literal['All']",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/lambda",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "is_example",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/update_visualization",
+      "parameters": [
+        {
+          "name": "target_dir",
+          "label": "Target Dir",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "conf_thres",
+          "label": "Confidence Threshold (%)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "frame_filter",
+          "label": "Show Points from Frame",
+          "type": "Literal['All']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "mask_black_bg",
+          "label": "Filter Black Background",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "mask_white_bg",
+          "label": "Filter White Background",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "show_cam",
+          "label": "Show Camera",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "mask_sky",
+          "label": "Filter Sky",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "prediction_mode",
+          "label": "Select a Prediction Mode",
+          "type": "Literal['Depthmap and Camera Branch', 'Pointmap Branch']",
+          "component": "Radio"
+        },
+        {
+          "name": "is_example",
+          "label": "is_example",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_14",
+          "type": "filepath",
+          "component": "Model3d"
+        },
+        {
+          "label": "value_13",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/update_visualization_1",
+      "parameters": [
+        {
+          "name": "target_dir",
+          "label": "Target Dir",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "conf_thres",
+          "label": "Confidence Threshold (%)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "frame_filter",
+          "label": "Show Points from Frame",
+          "type": "Literal['All']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "mask_black_bg",
+          "label": "Filter Black Background",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "mask_white_bg",
+          "label": "Filter White Background",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "show_cam",
+          "label": "Show Camera",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "mask_sky",
+          "label": "Filter Sky",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "prediction_mode",
+          "label": "Select a Prediction Mode",
+          "type": "Literal['Depthmap and Camera Branch', 'Pointmap Branch']",
+          "component": "Radio"
+        },
+        {
+          "name": "is_example",
+          "label": "is_example",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_14",
+          "type": "filepath",
+          "component": "Model3d"
+        },
+        {
+          "label": "value_13",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/update_visualization_2",
+      "parameters": [
+        {
+          "name": "target_dir",
+          "label": "Target Dir",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "conf_thres",
+          "label": "Confidence Threshold (%)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "frame_filter",
+          "label": "Show Points from Frame",
+          "type": "Literal['All']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "mask_black_bg",
+          "label": "Filter Black Background",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "mask_white_bg",
+          "label": "Filter White Background",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "show_cam",
+          "label": "Show Camera",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "mask_sky",
+          "label": "Filter Sky",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "prediction_mode",
+          "label": "Select a Prediction Mode",
+          "type": "Literal['Depthmap and Camera Branch', 'Pointmap Branch']",
+          "component": "Radio"
+        },
+        {
+          "name": "is_example",
+          "label": "is_example",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_14",
+          "type": "filepath",
+          "component": "Model3d"
+        },
+        {
+          "label": "value_13",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/update_visualization_3",
+      "parameters": [
+        {
+          "name": "target_dir",
+          "label": "Target Dir",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "conf_thres",
+          "label": "Confidence Threshold (%)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "frame_filter",
+          "label": "Show Points from Frame",
+          "type": "Literal['All']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "mask_black_bg",
+          "label": "Filter Black Background",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "mask_white_bg",
+          "label": "Filter White Background",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "show_cam",
+          "label": "Show Camera",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "mask_sky",
+          "label": "Filter Sky",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "prediction_mode",
+          "label": "Select a Prediction Mode",
+          "type": "Literal['Depthmap and Camera Branch', 'Pointmap Branch']",
+          "component": "Radio"
+        },
+        {
+          "name": "is_example",
+          "label": "is_example",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_14",
+          "type": "filepath",
+          "component": "Model3d"
+        },
+        {
+          "label": "value_13",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/update_visualization_4",
+      "parameters": [
+        {
+          "name": "target_dir",
+          "label": "Target Dir",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "conf_thres",
+          "label": "Confidence Threshold (%)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "frame_filter",
+          "label": "Show Points from Frame",
+          "type": "Literal['All']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "mask_black_bg",
+          "label": "Filter Black Background",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "mask_white_bg",
+          "label": "Filter White Background",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "show_cam",
+          "label": "Show Camera",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "mask_sky",
+          "label": "Filter Sky",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "prediction_mode",
+          "label": "Select a Prediction Mode",
+          "type": "Literal['Depthmap and Camera Branch', 'Pointmap Branch']",
+          "component": "Radio"
+        },
+        {
+          "name": "is_example",
+          "label": "is_example",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_14",
+          "type": "filepath",
+          "component": "Model3d"
+        },
+        {
+          "label": "value_13",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/update_visualization_5",
+      "parameters": [
+        {
+          "name": "target_dir",
+          "label": "Target Dir",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "conf_thres",
+          "label": "Confidence Threshold (%)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "frame_filter",
+          "label": "Show Points from Frame",
+          "type": "Literal['All']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "mask_black_bg",
+          "label": "Filter Black Background",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "mask_white_bg",
+          "label": "Filter White Background",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "show_cam",
+          "label": "Show Camera",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "mask_sky",
+          "label": "Filter Sky",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "prediction_mode",
+          "label": "Select a Prediction Mode",
+          "type": "Literal['Depthmap and Camera Branch', 'Pointmap Branch']",
+          "component": "Radio"
+        },
+        {
+          "name": "is_example",
+          "label": "is_example",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_14",
+          "type": "filepath",
+          "component": "Model3d"
+        },
+        {
+          "label": "value_13",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/update_visualization_6",
+      "parameters": [
+        {
+          "name": "target_dir",
+          "label": "Target Dir",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "conf_thres",
+          "label": "Confidence Threshold (%)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "frame_filter",
+          "label": "Show Points from Frame",
+          "type": "Literal['All']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "mask_black_bg",
+          "label": "Filter Black Background",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "mask_white_bg",
+          "label": "Filter White Background",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "show_cam",
+          "label": "Show Camera",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "mask_sky",
+          "label": "Filter Sky",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "prediction_mode",
+          "label": "Select a Prediction Mode",
+          "type": "Literal['Depthmap and Camera Branch', 'Pointmap Branch']",
+          "component": "Radio"
+        },
+        {
+          "name": "is_example",
+          "label": "is_example",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_14",
+          "type": "filepath",
+          "component": "Model3d"
+        },
+        {
+          "label": "value_13",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/update_gallery_on_upload",
+      "parameters": [
+        {
+          "name": "input_video",
+          "label": "Upload Video",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        },
+        {
+          "name": "input_images",
+          "label": "Upload Images",
+          "type": "list[filepath]",
+          "component": "File"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_14",
+          "type": "filepath",
+          "component": "Model3d"
+        },
+        {
+          "label": "Target Dir",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Preview",
+          "type": "list[dict(image: dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Origi",
+          "component": "Gallery"
+        },
+        {
+          "label": "value_13",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/update_gallery_on_upload_1",
+      "parameters": [
+        {
+          "name": "input_video",
+          "label": "Upload Video",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        },
+        {
+          "name": "input_images",
+          "label": "Upload Images",
+          "type": "list[filepath]",
+          "component": "File"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_14",
+          "type": "filepath",
+          "component": "Model3d"
+        },
+        {
+          "label": "Target Dir",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Preview",
+          "type": "list[dict(image: dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Origi",
+          "component": "Gallery"
+        },
+        {
+          "label": "value_13",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/clear_fields",
+  "_api_verified": true,
+  "estimated_latency_s": 2.75,
+  "speed_tier": "fast",
+  "_latency_source": "measured_inference",
+  "measured_latency_s": 2.75,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:50:33.616761+00:00",
+  "measured_inference_s": 2.75,
+  "measured_inference_timestamp": "2026-04-20T07:59:33.471257+00:00",
+  "measured_inference_method": "auto_predict",
+  "measured_inference_api": "/gradio_demo"
+}

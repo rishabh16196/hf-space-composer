@@ -1,0 +1,523 @@
+{
+  "space_id": "aadnk/whisper-webui",
+  "title": "Whisper Webui",
+  "emoji": "\u26a1",
+  "description": "Whisper Webui",
+  "input_schema": {
+    "Model": {
+      "type": "str",
+      "description": "Model",
+      "required": true,
+      "component": "Dropdown"
+    },
+    "Language": {
+      "type": "str",
+      "description": "Language",
+      "required": true,
+      "component": "Dropdown"
+    },
+    "URL (YouTube, etc.)": {
+      "type": "str",
+      "description": "URL (YouTube, etc.)",
+      "required": true,
+      "component": "Textbox"
+    },
+    "Upload Files": {
+      "type": "List[str | Dict(name: str (name of file), data: str (base64 representation of file), size: int (size",
+      "description": "Upload Files",
+      "required": true,
+      "component": "File"
+    },
+    "Microphone Input": {
+      "type": "str | Dict(name: str (name of file), data: str (base64 representation of file), size: int (size of i",
+      "description": "Microphone Input",
+      "required": true,
+      "component": "Audio"
+    },
+    "Task": {
+      "type": "str",
+      "description": "Task",
+      "required": true,
+      "component": "Dropdown"
+    },
+    "VAD": {
+      "type": "str",
+      "description": "VAD",
+      "required": true,
+      "component": "Dropdown"
+    },
+    "VAD - Merge Window (s)": {
+      "type": "int | float",
+      "description": "VAD - Merge Window (s)",
+      "required": true,
+      "component": "Number"
+    },
+    "VAD - Max Merge Size (s)": {
+      "type": "int | float",
+      "description": "VAD - Max Merge Size (s)",
+      "required": true,
+      "component": "Number"
+    },
+    "Word Timestamps": {
+      "type": "bool",
+      "description": "Word Timestamps",
+      "required": true,
+      "component": "Checkbox"
+    },
+    "Word Timestamps - Highlight Words": {
+      "type": "bool",
+      "description": "Word Timestamps - Highlight Words",
+      "required": true,
+      "component": "Checkbox"
+    },
+    "Diarization": {
+      "type": "bool",
+      "description": "Diarization",
+      "required": true,
+      "component": "Checkbox"
+    },
+    "Diarization - Speakers": {
+      "type": "int | float",
+      "description": "Diarization - Speakers",
+      "required": true,
+      "component": "Number"
+    }
+  },
+  "output_schema": {
+    "Download": {
+      "type": "str | Dict(name: str (name of file), data: str (base64 representation of file), size: int (size of i",
+      "description": "Download",
+      "component": "File"
+    },
+    "Transcription": {
+      "type": "str",
+      "description": "Transcription",
+      "component": "Textbox"
+    },
+    "Segments": {
+      "type": "str",
+      "description": "Segments",
+      "component": "Textbox"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "3.38.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us",
+    "asr",
+    "audio",
+    "transcription"
+  ],
+  "likes": 368,
+  "last_modified": "2026-02-04 03:16:23+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_tags_enriched": true,
+  "estimated_latency_s": 5.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/predict",
+      "parameters": [
+        {
+          "name": "Model",
+          "label": "Model",
+          "type": "str",
+          "component": "Dropdown"
+        },
+        {
+          "name": "Language",
+          "label": "Language",
+          "type": "str",
+          "component": "Dropdown"
+        },
+        {
+          "name": "URL (YouTube, etc.)",
+          "label": "URL (YouTube, etc.)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "Upload Files",
+          "label": "Upload Files",
+          "type": "List[str | Dict(name: str (name of file), data: str (base64 representation of file), size: int (size of image in bytes), is_file: bool (true if the file has been uploaded to the server), orig_name: st",
+          "component": "File"
+        },
+        {
+          "name": "Microphone Input",
+          "label": "Microphone Input",
+          "type": "str | Dict(name: str (name of file), data: str (base64 representation of file), size: int (size of image in bytes), is_file: bool (true if the file has been uploaded to the server), orig_name: str (or",
+          "component": "Audio"
+        },
+        {
+          "name": "Task",
+          "label": "Task",
+          "type": "str",
+          "component": "Dropdown"
+        },
+        {
+          "name": "VAD",
+          "label": "VAD",
+          "type": "str",
+          "component": "Dropdown"
+        },
+        {
+          "name": "VAD - Merge Window (s)",
+          "label": "VAD - Merge Window (s)",
+          "type": "int | float",
+          "component": "Number"
+        },
+        {
+          "name": "VAD - Max Merge Size (s)",
+          "label": "VAD - Max Merge Size (s)",
+          "type": "int | float",
+          "component": "Number"
+        },
+        {
+          "name": "Word Timestamps",
+          "label": "Word Timestamps",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "Word Timestamps - Highlight Words",
+          "label": "Word Timestamps - Highlight Words",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "Diarization",
+          "label": "Diarization",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "Diarization - Speakers",
+          "label": "Diarization - Speakers",
+          "type": "int | float",
+          "component": "Number"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Download",
+          "type": "str | Dict(name: str (name of file), data: str (base64 representation of file), size: int (size of image in bytes), is_file: bool (true if the file has been uploaded to the server), orig_name: str (or",
+          "component": "File"
+        },
+        {
+          "label": "Transcription",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Segments",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/predict_1",
+      "parameters": [
+        {
+          "name": "Model",
+          "label": "Model",
+          "type": "str",
+          "component": "Dropdown"
+        },
+        {
+          "name": "Language",
+          "label": "Language",
+          "type": "str",
+          "component": "Dropdown"
+        },
+        {
+          "name": "URL (YouTube, etc.)",
+          "label": "URL (YouTube, etc.)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "Upload Files",
+          "label": "Upload Files",
+          "type": "List[str | Dict(name: str (name of file), data: str (base64 representation of file), size: int (size of image in bytes), is_file: bool (true if the file has been uploaded to the server), orig_name: st",
+          "component": "File"
+        },
+        {
+          "name": "Microphone Input",
+          "label": "Microphone Input",
+          "type": "str | Dict(name: str (name of file), data: str (base64 representation of file), size: int (size of image in bytes), is_file: bool (true if the file has been uploaded to the server), orig_name: str (or",
+          "component": "Audio"
+        },
+        {
+          "name": "Task",
+          "label": "Task",
+          "type": "str",
+          "component": "Dropdown"
+        },
+        {
+          "name": "VAD",
+          "label": "VAD",
+          "type": "str",
+          "component": "Dropdown"
+        },
+        {
+          "name": "VAD - Merge Window (s)",
+          "label": "VAD - Merge Window (s)",
+          "type": "int | float",
+          "component": "Number"
+        },
+        {
+          "name": "VAD - Max Merge Size (s)",
+          "label": "VAD - Max Merge Size (s)",
+          "type": "int | float",
+          "component": "Number"
+        },
+        {
+          "name": "VAD - Padding (s)",
+          "label": "VAD - Padding (s)",
+          "type": "int | float",
+          "component": "Number"
+        },
+        {
+          "name": "VAD - Prompt Window (s)",
+          "label": "VAD - Prompt Window (s)",
+          "type": "int | float",
+          "component": "Number"
+        },
+        {
+          "name": "VAD - Initial Prompt Mode",
+          "label": "VAD - Initial Prompt Mode",
+          "type": "str",
+          "component": "Dropdown"
+        },
+        {
+          "name": "Word Timestamps",
+          "label": "Word Timestamps",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "Word Timestamps - Highlight Words",
+          "label": "Word Timestamps - Highlight Words",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "Word Timestamps - Prepend Punctuations",
+          "label": "Word Timestamps - Prepend Punctuations",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "Word Timestamps - Append Punctuations",
+          "label": "Word Timestamps - Append Punctuations",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "Initial Prompt",
+          "label": "Initial Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "Temperature",
+          "label": "Temperature",
+          "type": "int | float",
+          "component": "Number"
+        },
+        {
+          "name": "Best Of - Non-zero temperature",
+          "label": "Best Of - Non-zero temperature",
+          "type": "int | float",
+          "component": "Number"
+        },
+        {
+          "name": "Beam Size - Zero temperature",
+          "label": "Beam Size - Zero temperature",
+          "type": "int | float",
+          "component": "Number"
+        },
+        {
+          "name": "Patience - Zero temperature",
+          "label": "Patience - Zero temperature",
+          "type": "int | float",
+          "component": "Number"
+        },
+        {
+          "name": "Length Penalty - Any temperature",
+          "label": "Length Penalty - Any temperature",
+          "type": "int | float",
+          "component": "Number"
+        },
+        {
+          "name": "Suppress Tokens - Comma-separated list of token IDs",
+          "label": "Suppress Tokens - Comma-separated list of token IDs",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "Condition on previous text",
+          "label": "Condition on previous text",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "FP16",
+          "label": "FP16",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "Temperature increment on fallback",
+          "label": "Temperature increment on fallback",
+          "type": "int | float",
+          "component": "Number"
+        },
+        {
+          "name": "Compression ratio threshold",
+          "label": "Compression ratio threshold",
+          "type": "int | float",
+          "component": "Number"
+        },
+        {
+          "name": "Logprob threshold",
+          "label": "Logprob threshold",
+          "type": "int | float",
+          "component": "Number"
+        },
+        {
+          "name": "No speech threshold",
+          "label": "No speech threshold",
+          "type": "int | float",
+          "component": "Number"
+        },
+        {
+          "name": "Diarization",
+          "label": "Diarization",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "Diarization - Speakers",
+          "label": "Diarization - Speakers",
+          "type": "int | float",
+          "component": "Number"
+        },
+        {
+          "name": "Diarization - Min Speakers",
+          "label": "Diarization - Min Speakers",
+          "type": "int | float",
+          "component": "Number"
+        },
+        {
+          "name": "Diarization - Max Speakers",
+          "label": "Diarization - Max Speakers",
+          "type": "int | float",
+          "component": "Number"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Download",
+          "type": "str | Dict(name: str (name of file), data: str (base64 representation of file), size: int (size of image in bytes), is_file: bool (true if the file has been uploaded to the server), orig_name: str (or",
+          "component": "File"
+        },
+        {
+          "label": "Transcription",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Segments",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/predict_2",
+      "parameters": [
+        {
+          "name": "Language",
+          "label": "Language",
+          "type": "str",
+          "component": "Dropdown"
+        },
+        {
+          "name": "URL (YouTube, etc.)",
+          "label": "URL (YouTube, etc.)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "Upload Audio File",
+          "label": "Upload Audio File",
+          "type": "str | Dict(name: str (name of file), data: str (base64 representation of file), size: int (size of image in bytes), is_file: bool (true if the file has been uploaded to the server), orig_name: str (or",
+          "component": "File"
+        },
+        {
+          "name": "Upload JSON/SRT File",
+          "label": "Upload JSON/SRT File",
+          "type": "str | Dict(name: str (name of file), data: str (base64 representation of file), size: int (size of image in bytes), is_file: bool (true if the file has been uploaded to the server), orig_name: str (or",
+          "component": "File"
+        },
+        {
+          "name": "Word Timestamps - Highlight Words",
+          "label": "Word Timestamps - Highlight Words",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "Diarization",
+          "label": "Diarization",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "Diarization - Speakers",
+          "label": "Diarization - Speakers",
+          "type": "int | float",
+          "component": "Number"
+        },
+        {
+          "name": "Diarization - Min Speakers",
+          "label": "Diarization - Min Speakers",
+          "type": "int | float",
+          "component": "Number"
+        },
+        {
+          "name": "Diarization - Max Speakers",
+          "label": "Diarization - Max Speakers",
+          "type": "int | float",
+          "component": "Number"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Download",
+          "type": "str | Dict(name: str (name of file), data: str (base64 representation of file), size: int (size of image in bytes), is_file: bool (true if the file has been uploaded to the server), orig_name: str (or",
+          "component": "File"
+        },
+        {
+          "label": "Transcription",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Segments",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/predict",
+  "_api_verified": true
+}

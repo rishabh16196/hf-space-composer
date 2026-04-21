@@ -1,0 +1,186 @@
+{
+  "space_id": "InstantX/InstantID",
+  "title": "InstantID",
+  "emoji": "\ud83d\ude3b",
+  "description": "InstantID",
+  "input_schema": {},
+  "output_schema": {
+    "InstantID Usage Tips": {
+      "type": "str",
+      "description": "InstantID Usage Tips",
+      "component": "Markdown"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "4.40.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 3591,
+  "last_modified": "2025-08-26 18:13:43+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/remove_tips",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "InstantID Usage Tips",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/generate_image",
+      "parameters": [
+        {
+          "name": "face_image_path",
+          "label": "Upload a photo of your face",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "name": "pose_image_path",
+          "label": "Upload a reference pose image (Optional)",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "name": "prompt",
+          "label": "Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "negative_prompt",
+          "label": "Negative Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "style_name",
+          "label": "Style template",
+          "type": "Literal['(No style)', 'Spring Festival', 'Watercolor', 'Film Noir', 'Neon', 'Jungle', 'Mars', 'Vibrant Color', 'Snow', 'Line art']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "num_steps",
+          "label": "Number of sample steps",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "identitynet_strength_ratio",
+          "label": "IdentityNet strength (for fidelity)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "adapter_strength_ratio",
+          "label": "Image adapter strength (for detail)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "canny_strength",
+          "label": "Canny strength",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "depth_strength",
+          "label": "Depth strength",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "controlnet_selection",
+          "label": "Controlnet",
+          "type": "List[Literal['canny', 'depth']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "guidance_scale",
+          "label": "Guidance scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "seed",
+          "label": "Seed",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "scheduler",
+          "label": "Schedulers",
+          "type": "Literal['DEISMultistepScheduler', 'HeunDiscreteScheduler', 'EulerDiscreteScheduler', 'DPMSolverMultistepScheduler', 'DPMSolverMultistepScheduler-Karras', 'DPMSolverMultistepScheduler-Karras-SDE']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "enable_LCM",
+          "label": "Enable Fast Inference with LCM",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "enhance_face_region",
+          "label": "Enhance non-face region",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Generated Images",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "InstantID Usage Tips",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/toggle_lcm_ui",
+      "parameters": [
+        {
+          "name": "value",
+          "label": "Enable Fast Inference with LCM",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Number of sample steps",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Guidance scale",
+          "type": "float",
+          "component": "Slider"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/remove_tips",
+  "_api_verified": true,
+  "estimated_latency_s": 2.76,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 2.76,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:49:27.951190+00:00",
+  "_inference_attempt_status": "predict_failed",
+  "_inference_attempt_error": "The upstream Gradio app has raised an exception but has not enabled verbose error reporting. To enable, set show_error=True in launch()."
+}

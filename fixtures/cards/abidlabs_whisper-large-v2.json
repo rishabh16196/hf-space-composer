@@ -1,0 +1,64 @@
+{
+  "space_id": "abidlabs/whisper-large-v2",
+  "title": "Whisper Large V2",
+  "emoji": "\ud83e\udd2b",
+  "description": "Whisper Large V2",
+  "input_schema": {
+    "microphone": {
+      "type": "str | Dict(name: str (name of file), data: str (base64 representation of file), size: int (size of i",
+      "description": "microphone",
+      "required": true,
+      "component": "Audio"
+    }
+  },
+  "output_schema": {
+    "output 0": {
+      "type": "str",
+      "description": "output 0",
+      "component": "Textbox"
+    }
+  },
+  "license": "unknown",
+  "hardware": "3.9.1",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "whisper-event",
+    "region:us",
+    "asr",
+    "audio",
+    "transcription"
+  ],
+  "likes": 13,
+  "last_modified": "2023-05-05 21:20:11+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_tags_enriched": true,
+  "estimated_latency_s": 5.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/predict",
+      "parameters": [
+        {
+          "name": "microphone",
+          "label": "microphone",
+          "type": "str | Dict(name: str (name of file), data: str (base64 representation of file), size: int (size of image in bytes), is_file: bool (true if the file has been uploaded to the server), orig_name: str (or",
+          "component": "Audio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "output 0",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/predict",
+  "_api_verified": true
+}

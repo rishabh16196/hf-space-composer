@@ -1,0 +1,209 @@
+{
+  "space_id": "TencentARC/PhotoMaker-V2",
+  "title": "PhotoMaker V2",
+  "emoji": "\ud83d\udcf7\u270f\ufe0f",
+  "description": "PhotoMaker V2",
+  "input_schema": {
+    "images": {
+      "type": "list[filepath]",
+      "description": "Drag (Select) 1 or more photos of your face",
+      "required": true,
+      "component": "File"
+    }
+  },
+  "output_schema": {
+    "Your images": {
+      "type": "list[dict(image: dict(path: str | None (Path to a local file), url: str | None (Publicly available u",
+      "description": "Your images",
+      "component": "Gallery"
+    },
+    "Drag (Select) 1 or more photos of your face": {
+      "type": "list[filepath]",
+      "description": "Drag (Select) 1 or more photos of your face",
+      "component": "File"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "5.29.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 1209,
+  "last_modified": "2025-05-09 06:42:57+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/swap_to_gallery",
+      "parameters": [
+        {
+          "name": "images",
+          "label": "Drag (Select) 1 or more photos of your face",
+          "type": "list[filepath]",
+          "component": "File"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Your images",
+          "type": "list[dict(image: dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Origi",
+          "component": "Gallery"
+        },
+        {
+          "label": "Drag (Select) 1 or more photos of your face",
+          "type": "list[filepath]",
+          "component": "File"
+        }
+      ]
+    },
+    {
+      "name": "/remove_back_to_files",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Your images",
+          "type": "list[dict(image: dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Origi",
+          "component": "Gallery"
+        },
+        {
+          "label": "Drag (Select) 1 or more photos of your face",
+          "type": "list[filepath]",
+          "component": "File"
+        }
+      ]
+    },
+    {
+      "name": "/change_doodle_space",
+      "parameters": [
+        {
+          "name": "use_doodle",
+          "label": "Enable Drawing Doodle for Control",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/remove_tips",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Usage tips of PhotoMaker",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/generate_image",
+      "parameters": [
+        {
+          "name": "upload_images",
+          "label": "Drag (Select) 1 or more photos of your face",
+          "type": "list[filepath]",
+          "component": "File"
+        },
+        {
+          "name": "prompt",
+          "label": "Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "negative_prompt",
+          "label": "Negative Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "aspect_ratio_name",
+          "label": "Output aspect ratio",
+          "type": "Literal['Instagram (1:1)', '35mm film / Landscape (3:2)', '35mm film / Portrait (2:3)', 'CRT Monitor / Landscape (4:3)', 'CRT Monitor / Portrait (3:4)', 'Widescreen TV / Landscape (16:9)', 'Widescreen",
+          "component": "Dropdown"
+        },
+        {
+          "name": "style_name",
+          "label": "Style template",
+          "type": "Literal['(No style)', 'Cinematic', 'Disney Charactor', 'Digital Art', 'Photographic (Default)', 'Fantasy art', 'Neonpunk', 'Enhance', 'Comic book', 'Lowpoly', 'Line art']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "num_steps",
+          "label": "Number of sample steps",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "style_strength_ratio",
+          "label": "Style strength (%)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "num_outputs",
+          "label": "Number of output images",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "guidance_scale",
+          "label": "Guidance scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "seed",
+          "label": "Seed",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "use_doodle",
+          "label": "Enable Drawing Doodle for Control",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "sketch_image",
+          "label": "Canvas",
+          "type": "dict(background: filepath | None, layers: list[filepath], composite: filepath | None, id: str | None)",
+          "component": "Imageeditor"
+        },
+        {
+          "name": "adapter_conditioning_scale",
+          "label": "Adapter conditioning scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "adapter_conditioning_factor",
+          "label": "Adapter conditioning factor",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Generated Images",
+          "type": "list[dict(image: dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Origi",
+          "component": "Gallery"
+        },
+        {
+          "label": "Usage tips of PhotoMaker",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/swap_to_gallery",
+  "_api_verified": true
+}

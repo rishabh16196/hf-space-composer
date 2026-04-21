@@ -1,0 +1,99 @@
+{
+  "space_id": "kazuk/youtube-whisper",
+  "title": "Youtube Whisper",
+  "emoji": "\u26a1",
+  "description": "Youtube Whisper",
+  "input_schema": {
+    "url": {
+      "type": "str",
+      "description": "URL",
+      "required": true,
+      "component": "Textbox"
+    },
+    "model_size": {
+      "type": "Literal['tiny.en', 'tiny', 'base.en', 'base', 'small.en', 'small', 'medium.en', 'medium', 'large-v1'",
+      "description": "Model",
+      "required": true,
+      "component": "Dropdown"
+    },
+    "lang": {
+      "type": "Literal['None', 'afrikaans', 'albanian', 'amharic', 'arabic', 'armenian', 'assamese', 'azerbaijani',",
+      "description": "Language (Optional)",
+      "required": true,
+      "component": "Dropdown"
+    },
+    "format": {
+      "type": "Literal['None', '.srt']",
+      "description": "Timestamps? (Optional)",
+      "required": true,
+      "component": "Dropdown"
+    }
+  },
+  "output_schema": {
+    "Transcription": {
+      "type": "str",
+      "description": "Transcription",
+      "component": "Textbox"
+    }
+  },
+  "license": "unknown",
+  "hardware": "4.36.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us",
+    "asr",
+    "audio",
+    "transcription"
+  ],
+  "likes": 12,
+  "last_modified": "2024-06-09 22:40:47+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_tags_enriched": true,
+  "estimated_latency_s": 5.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/get_transcript",
+      "parameters": [
+        {
+          "name": "url",
+          "label": "URL",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "model_size",
+          "label": "Model",
+          "type": "Literal['tiny.en', 'tiny', 'base.en', 'base', 'small.en', 'small', 'medium.en', 'medium', 'large-v1', 'large-v2', 'large-v3', 'large']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "lang",
+          "label": "Language (Optional)",
+          "type": "Literal['None', 'afrikaans', 'albanian', 'amharic', 'arabic', 'armenian', 'assamese', 'azerbaijani', 'bashkir', 'basque', 'belarusian', 'bengali', 'bosnian', 'breton', 'bulgarian', 'cantonese', 'catal",
+          "component": "Dropdown"
+        },
+        {
+          "name": "format",
+          "label": "Timestamps? (Optional)",
+          "type": "Literal['None', '.srt']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Transcription",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/get_transcript",
+  "_api_verified": true
+}

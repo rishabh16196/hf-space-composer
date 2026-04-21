@@ -1,0 +1,318 @@
+{
+  "space_id": "ovi054/image-to-vector",
+  "title": "Image To Vector",
+  "emoji": "\ud83d\ude80",
+  "description": "Vectorizer AI | Convert Image to SVG",
+  "input_schema": {
+    "value": {
+      "type": "Literal['color', 'binary']",
+      "description": "Color Mode",
+      "required": true,
+      "component": "Radio"
+    }
+  },
+  "output_schema": {
+    "Selected Mode": {
+      "type": "str",
+      "description": "Selected Mode",
+      "component": "Textbox"
+    }
+  },
+  "license": "unknown",
+  "hardware": "4.44.1",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 84,
+  "last_modified": "2024-12-13 20:00:12+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/handle_color_mode",
+      "parameters": [
+        {
+          "name": "value",
+          "label": "Color Mode",
+          "type": "Literal['color', 'binary']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Selected Mode",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/handle_color_mode_1",
+      "parameters": [
+        {
+          "name": "value",
+          "label": "Hierarchical Mode",
+          "type": "Literal['stacked', 'cutout']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Selected Mode",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/handle_color_mode_2",
+      "parameters": [
+        {
+          "name": "value",
+          "label": "Mode",
+          "type": "Literal['spline', 'polygon', 'none']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Selected Mode",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/update_interactivity_and_visibility",
+      "parameters": [
+        {
+          "name": "colormode",
+          "label": "Color Mode",
+          "type": "Literal['color', 'binary']",
+          "component": "Radio"
+        },
+        {
+          "name": "color_precision_value",
+          "label": "Color Precision",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "layer_difference_value",
+          "label": "Gradient Step",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Color Precision",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Gradient Step",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Hierarchical Mode",
+          "type": "Literal['stacked', 'cutout']",
+          "component": "Radio"
+        }
+      ]
+    },
+    {
+      "name": "/update_interactivity_and_visibility_for_mode",
+      "parameters": [
+        {
+          "name": "mode",
+          "label": "Mode",
+          "type": "Literal['spline', 'polygon', 'none']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Corner Threshold",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Segment Length",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Splice Threshold",
+          "type": "float",
+          "component": "Slider"
+        }
+      ]
+    },
+    {
+      "name": "/clear_inputs",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Upload Image",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "Color Mode",
+          "type": "Literal['color', 'binary']",
+          "component": "Radio"
+        },
+        {
+          "label": "Hierarchical Mode",
+          "type": "Literal['stacked', 'cutout']",
+          "component": "Radio"
+        },
+        {
+          "label": "Mode",
+          "type": "Literal['spline', 'polygon', 'none']",
+          "component": "Radio"
+        },
+        {
+          "label": "Filter Speckle",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Color Precision",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Gradient Step",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Corner Threshold",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Segment Length",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Max Iterations",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Splice Threshold",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Path Precision",
+          "type": "float",
+          "component": "Slider"
+        }
+      ]
+    },
+    {
+      "name": "/convert_to_vector_1",
+      "parameters": [
+        {
+          "name": "image",
+          "label": "Upload Image",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "name": "colormode",
+          "label": "Color Mode",
+          "type": "Literal['color', 'binary']",
+          "component": "Radio"
+        },
+        {
+          "name": "hierarchical",
+          "label": "Hierarchical Mode",
+          "type": "Literal['stacked', 'cutout']",
+          "component": "Radio"
+        },
+        {
+          "name": "mode",
+          "label": "Mode",
+          "type": "Literal['spline', 'polygon', 'none']",
+          "component": "Radio"
+        },
+        {
+          "name": "filter_speckle",
+          "label": "Filter Speckle",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "color_precision",
+          "label": "Color Precision",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "layer_difference",
+          "label": "Gradient Step",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "corner_threshold",
+          "label": "Corner Threshold",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "length_threshold",
+          "label": "Segment Length",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "max_iterations",
+          "label": "Max Iterations",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "splice_threshold",
+          "label": "Splice Threshold",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "path_precision",
+          "label": "Path Precision",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "SVG Output",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "Download SVG",
+          "type": "filepath",
+          "component": "File"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/handle_color_mode",
+  "_api_verified": true
+}

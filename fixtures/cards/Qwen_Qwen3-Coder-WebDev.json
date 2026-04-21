@@ -1,0 +1,216 @@
+{
+  "space_id": "Qwen/Qwen3-Coder-WebDev",
+  "title": "Qwen3 Coder WebDev",
+  "emoji": "\ud83c\udf0d",
+  "description": "Qwen3 Coder WebDev",
+  "input_schema": {},
+  "output_schema": {
+    "value_14": {
+      "type": "str",
+      "description": "value_14",
+      "component": "Antdinputtextarea"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "5.38.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us",
+    "code",
+    "code-generation"
+  ],
+  "likes": 1054,
+  "last_modified": "2025-07-30 09:42:56+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/lambda",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_14",
+          "type": "str",
+          "component": "Antdinputtextarea"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_1",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_14",
+          "type": "str",
+          "component": "Antdinputtextarea"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_2",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_14",
+          "type": "str",
+          "component": "Antdinputtextarea"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_3",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_14",
+          "type": "str",
+          "component": "Antdinputtextarea"
+        }
+      ]
+    },
+    {
+      "name": "/close_modal",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/open_modal",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/update_system_prompt",
+      "parameters": [
+        {
+          "name": "system_prompt_input_value",
+          "label": "parameter_54",
+          "type": "str",
+          "component": "Antdinputtextarea"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/close_modal_1",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/close_modal_2",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/reset_system_prompt",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_54",
+          "type": "str",
+          "component": "Antdinputtextarea"
+        }
+      ]
+    },
+    {
+      "name": "/close_modal_3",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/clear_history",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/open_modal_1",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/render_history",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_61",
+          "type": "list[dict(role: str, metadata: dict(title: str, id: int | str, parent_id: int | str, log: str, duration: float, status: Literal['pending', 'done']) | None, content: str | dict(file: filepath, alt_text",
+          "component": "Chatbot"
+        }
+      ]
+    },
+    {
+      "name": "/close_modal_4",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/open_modal_2",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/open_modal_3",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/lambda_4",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/generate_code",
+      "parameters": [
+        {
+          "name": "input_value",
+          "label": "parameter_14",
+          "type": "str",
+          "component": "Antdinputtextarea"
+        },
+        {
+          "name": "system_prompt_input_value",
+          "label": "parameter_54",
+          "type": "str",
+          "component": "Antdinputtextarea"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_59",
+          "type": "str",
+          "component": "Modelscopemarkdown"
+        },
+        {
+          "label": "value_41",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_5",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/close_modal_5",
+      "parameters": [],
+      "returns": []
+    }
+  ],
+  "endpoint": "/lambda",
+  "_api_verified": true,
+  "estimated_latency_s": 2.22,
+  "speed_tier": "fast",
+  "_latency_source": "measured_inference",
+  "_tags_enriched": true,
+  "measured_latency_s": 2.22,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:49:50.429875+00:00",
+  "measured_inference_s": 2.22,
+  "measured_inference_timestamp": "2026-04-20T07:58:52.272014+00:00",
+  "measured_inference_method": "auto_predict",
+  "measured_inference_api": "/update_system_prompt"
+}

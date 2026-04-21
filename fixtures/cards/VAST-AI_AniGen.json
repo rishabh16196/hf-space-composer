@@ -1,0 +1,310 @@
+{
+  "space_id": "VAST-AI/AniGen",
+  "title": "AniGen",
+  "emoji": "",
+  "description": "AniGen",
+  "input_schema": {},
+  "output_schema": {},
+  "license": "unknown",
+  "hardware": "4.44.1",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 22,
+  "last_modified": "2026-04-13 16:32:56+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/start_session",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/on_slat_model_change",
+      "parameters": [
+        {
+          "name": "slat_model_name",
+          "label": "SLAT Model (Structured Latent)",
+          "type": "Literal['slat_flow_auto', 'slat_flow_control']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Joints Density",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "value_28",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/get_seed",
+      "parameters": [
+        {
+          "name": "randomize_seed",
+          "label": "Randomize Seed",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "seed",
+          "label": "Seed",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Seed",
+          "type": "float",
+          "component": "Slider"
+        }
+      ]
+    },
+    {
+      "name": "/prepare_input_for_generation",
+      "parameters": [
+        {
+          "name": "image",
+          "label": "Image Prompt",
+          "type": "filepath",
+          "component": "Image"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Processed Image",
+          "type": "filepath",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/mark_generate_queued",
+      "parameters": [
+        {
+          "name": "ss_sampling_steps",
+          "label": "Sampling Steps",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "slat_sampling_steps",
+          "label": "Sampling Steps",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_45",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/generate_preview",
+      "parameters": [
+        {
+          "name": "seed",
+          "label": "Seed",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "ss_model_name",
+          "label": "SS Model (Sparse Structure)",
+          "type": "Literal['ss_flow_duet', 'ss_flow_solo', 'ss_flow_epic']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "slat_model_name",
+          "label": "SLAT Model (Structured Latent)",
+          "type": "Literal['slat_flow_auto', 'slat_flow_control']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "ss_guidance_strength",
+          "label": "Guidance Strength",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "ss_sampling_steps",
+          "label": "Sampling Steps",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "slat_guidance_strength",
+          "label": "Guidance Strength",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "slat_sampling_steps",
+          "label": "Sampling Steps",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "joints_density",
+          "label": "Joints Density",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Generated Mesh",
+          "type": "filepath",
+          "component": "Model3d"
+        },
+        {
+          "label": "Skeleton Preview / Final GLB",
+          "type": "filepath",
+          "component": "Litmodel3d"
+        },
+        {
+          "label": "value_45",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/disable_download_buttons",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Download Mesh GLB",
+          "type": "filepath",
+          "component": "Downloadbutton"
+        },
+        {
+          "label": "Download Skeleton GLB",
+          "type": "filepath",
+          "component": "Downloadbutton"
+        }
+      ]
+    },
+    {
+      "name": "/mark_extract_queued",
+      "parameters": [
+        {
+          "name": "texture_size",
+          "label": "Texture Resolution",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "simplify_ratio",
+          "label": "Mesh Simplification Ratio",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "fill_holes",
+          "label": "Fill Holes",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_45",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/extract_glb",
+      "parameters": [
+        {
+          "name": "texture_size",
+          "label": "Texture Resolution",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "simplify_ratio",
+          "label": "Mesh Simplification Ratio",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "fill_holes",
+          "label": "Fill Holes",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Generated Mesh",
+          "type": "filepath",
+          "component": "Model3d"
+        },
+        {
+          "label": "Skeleton Preview / Final GLB",
+          "type": "filepath",
+          "component": "Litmodel3d"
+        },
+        {
+          "label": "value_45",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/update_download_buttons",
+      "parameters": [
+        {
+          "name": "mesh_path",
+          "label": "Generated Mesh",
+          "type": "filepath",
+          "component": "Model3d"
+        },
+        {
+          "name": "skel_path",
+          "label": "Skeleton Preview / Final GLB",
+          "type": "filepath",
+          "component": "Litmodel3d"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Download Mesh GLB",
+          "type": "filepath",
+          "component": "Downloadbutton"
+        },
+        {
+          "label": "Download Skeleton GLB",
+          "type": "filepath",
+          "component": "Downloadbutton"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/start_session",
+  "_api_verified": true,
+  "estimated_latency_s": 3.24,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 3.24,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:50:01.124719+00:00"
+}

@@ -1,0 +1,61 @@
+{
+  "space_id": "johngoad/prompt-extend",
+  "title": "Prompt Extend",
+  "emoji": "\u270d\ufe0f",
+  "description": "Prompt Extend",
+  "input_schema": {
+    "Type the prompt here": {
+      "type": "str",
+      "description": "Type the prompt here",
+      "required": true,
+      "component": "Textbox"
+    }
+  },
+  "output_schema": {
+    "Extended prompt": {
+      "type": "str",
+      "description": "Extended prompt",
+      "component": "Textbox"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "3.8.2",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us",
+    "text"
+  ],
+  "likes": 8,
+  "last_modified": "2022-11-12 13:25:16+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_tags_enriched": true,
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/predict",
+      "parameters": [
+        {
+          "name": "Type the prompt here",
+          "label": "Type the prompt here",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Extended prompt",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/predict",
+  "_api_verified": true
+}

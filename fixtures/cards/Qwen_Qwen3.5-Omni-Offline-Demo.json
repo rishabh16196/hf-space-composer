@@ -1,0 +1,234 @@
+{
+  "space_id": "Qwen/Qwen3.5-Omni-Offline-Demo",
+  "title": "Qwen3.5 Omni Offline Demo",
+  "emoji": "\ud83c\udf0d",
+  "description": "Qwen3.5 Omni Offline Demo",
+  "input_schema": {
+    "text": {
+      "type": "str",
+      "description": "parameter_20",
+      "required": true,
+      "component": "Textbox"
+    },
+    "audio": {
+      "type": "filepath",
+      "description": "Audio (<1 h)",
+      "required": true,
+      "component": "Audio"
+    },
+    "image": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "Image (<10 MB)",
+      "required": true,
+      "component": "Image"
+    },
+    "video": {
+      "type": "dict(video: filepath, subtitles: filepath | None)",
+      "description": "Video (<1 h)",
+      "required": true,
+      "component": "Video"
+    },
+    "history": {
+      "type": "list[dict(role: str, metadata: dict(title: str, id: int | str, parent_id: int | str, log: str, durat",
+      "description": "Chat History (\u5bf9\u8bdd\u5386\u53f2)",
+      "required": true,
+      "component": "Chatbot"
+    },
+    "system_prompt": {
+      "type": "str",
+      "description": "System Prompt",
+      "required": true,
+      "component": "Textbox"
+    },
+    "temperature": {
+      "type": "float",
+      "description": "Temperature",
+      "required": true,
+      "component": "Slider"
+    },
+    "top_p": {
+      "type": "float",
+      "description": "Top P",
+      "required": true,
+      "component": "Slider"
+    },
+    "top_k": {
+      "type": "float",
+      "description": "Top K",
+      "required": true,
+      "component": "Slider"
+    }
+  },
+  "output_schema": {
+    "value_20": {
+      "type": "str",
+      "description": "value_20",
+      "component": "Textbox"
+    },
+    "Audio (<1 h)": {
+      "type": "filepath",
+      "description": "Audio (<1 h)",
+      "component": "Audio"
+    },
+    "Image (<10 MB)": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "Image (<10 MB)",
+      "component": "Image"
+    },
+    "Video (<1 h)": {
+      "type": "dict(video: filepath, subtitles: filepath | None)",
+      "description": "Video (<1 h)",
+      "component": "Video"
+    },
+    "Chat History (\u5bf9\u8bdd\u5386\u53f2)": {
+      "type": "list[dict(role: str, metadata: dict(title: str, id: int | str, parent_id: int | str, log: str, durat",
+      "description": "Chat History (\u5bf9\u8bdd\u5386\u53f2)",
+      "component": "Chatbot"
+    }
+  },
+  "license": "unknown",
+  "hardware": "5.42.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 126,
+  "last_modified": "2026-03-30 12:56:44+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/chat_predict",
+      "parameters": [
+        {
+          "name": "text",
+          "label": "parameter_20",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "audio",
+          "label": "Audio (<1 h)",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "name": "image",
+          "label": "Image (<10 MB)",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "video",
+          "label": "Video (<1 h)",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        },
+        {
+          "name": "history",
+          "label": "Chat History (\u5bf9\u8bdd\u5386\u53f2)",
+          "type": "list[dict(role: str, metadata: dict(title: str, id: int | str, parent_id: int | str, log: str, duration: float, status: Literal['pending', 'done']) | None, content: str | dict(file: filepath, alt_text",
+          "component": "Chatbot"
+        },
+        {
+          "name": "system_prompt",
+          "label": "System Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "temperature",
+          "label": "Temperature",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "top_p",
+          "label": "Top P",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "top_k",
+          "label": "Top K",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_20",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Audio (<1 h)",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Image (<10 MB)",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "Video (<1 h)",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        },
+        {
+          "label": "Chat History (\u5bf9\u8bdd\u5386\u53f2)",
+          "type": "list[dict(role: str, metadata: dict(title: str, id: int | str, parent_id: int | str, log: str, duration: float, status: Literal['pending', 'done']) | None, content: str | dict(file: filepath, alt_text",
+          "component": "Chatbot"
+        }
+      ]
+    },
+    {
+      "name": "/lambda",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/clear_history_offline",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Chat History (\u5bf9\u8bdd\u5386\u53f2)",
+          "type": "list[dict(role: str, metadata: dict(title: str, id: int | str, parent_id: int | str, log: str, duration: float, status: Literal['pending', 'done']) | None, content: str | dict(file: filepath, alt_text",
+          "component": "Chatbot"
+        },
+        {
+          "label": "value_20",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Audio (<1 h)",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Image (<10 MB)",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "Video (<1 h)",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/chat_predict",
+  "_api_verified": true,
+  "estimated_latency_s": 4.58,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 4.58,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:49:53.159602+00:00"
+}

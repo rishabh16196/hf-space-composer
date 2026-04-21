@@ -1,0 +1,140 @@
+{
+  "space_id": "Qwen/Qwen3-ASR",
+  "title": "Qwen3-ASR Demo",
+  "emoji": "\ud83c\udf99\ufe0f",
+  "description": "Qwen3-ASR Demo",
+  "input_schema": {
+    "audio_upload": {
+      "type": "filepath",
+      "description": "Upload Audio",
+      "required": true,
+      "component": "Audio"
+    },
+    "lang_disp": {
+      "type": "Literal['Auto', 'Chinese', 'Cantonese', 'English', 'Arabic', 'German', 'French', 'Spanish', 'Portugu",
+      "description": "Language (leave 'Auto' for automatic detection)",
+      "required": true,
+      "component": "Dropdown"
+    },
+    "return_ts": {
+      "type": "bool",
+      "description": "Enable Timestamps (recommended for visualization)",
+      "required": true,
+      "component": "Checkbox"
+    }
+  },
+  "output_schema": {
+    "Detected Language": {
+      "type": "str",
+      "description": "Detected Language",
+      "component": "Textbox"
+    },
+    "Transcription Result": {
+      "type": "str",
+      "description": "Transcription Result",
+      "component": "Textbox"
+    },
+    "Timestamps (JSON)": {
+      "type": "str | float | bool | list | dict",
+      "description": "Timestamps (JSON)",
+      "component": "Json"
+    },
+    "Timestamps Visualization": {
+      "type": "str",
+      "description": "Timestamps Visualization",
+      "component": "Html"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "6.8.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 131,
+  "last_modified": "2026-03-03 07:22:11+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/transcribe",
+      "parameters": [
+        {
+          "name": "audio_upload",
+          "label": "Upload Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "name": "lang_disp",
+          "label": "Language (leave 'Auto' for automatic detection)",
+          "type": "Literal['Auto', 'Chinese', 'Cantonese', 'English', 'Arabic', 'German', 'French', 'Spanish', 'Portuguese', 'Indonesian', 'Italian', 'Korean', 'Russian', 'Thai', 'Vietnamese', 'Japanese', 'Turkish', 'Hi",
+          "component": "Dropdown"
+        },
+        {
+          "name": "return_ts",
+          "label": "Enable Timestamps (recommended for visualization)",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Detected Language",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Transcription Result",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Timestamps (JSON)",
+          "type": "str | float | bool | list | dict",
+          "component": "Json"
+        },
+        {
+          "label": "Timestamps Visualization",
+          "type": "str",
+          "component": "Html"
+        }
+      ]
+    },
+    {
+      "name": "/visualize_timestamps",
+      "parameters": [
+        {
+          "name": "audio_upload",
+          "label": "Upload Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "name": "timestamps_json",
+          "label": "Timestamps (JSON)",
+          "type": "str | float | bool | list | dict",
+          "component": "Json"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Timestamps Visualization",
+          "type": "str",
+          "component": "Html"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/transcribe",
+  "_api_verified": true,
+  "estimated_latency_s": 3.24,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 3.24,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:49:50.721154+00:00"
+}

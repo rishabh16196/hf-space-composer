@@ -1,0 +1,79 @@
+{
+  "space_id": "innat/HybridModel-GradCAM",
+  "title": "HybridModel-GradCAM",
+  "emoji": "\ud83d\udd25",
+  "description": "HybridModel-GradCAM",
+  "input_schema": {
+    "Input Image": {
+      "type": "str",
+      "description": "Input Image",
+      "required": true,
+      "component": "Image"
+    }
+  },
+  "output_schema": {
+    "Prediction": {
+      "type": "Dict[Any, Any]",
+      "description": "Prediction",
+      "component": "Label"
+    },
+    "CNN GradCAM": {
+      "type": "str",
+      "description": "CNN GradCAM",
+      "component": "Image"
+    },
+    "Transformer GradCAM": {
+      "type": "str",
+      "description": "Transformer GradCAM",
+      "component": "Image"
+    }
+  },
+  "license": "unknown",
+  "hardware": "3.0.15",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 7,
+  "last_modified": "2025-07-25 12:59:35+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/predict",
+      "parameters": [
+        {
+          "name": "Input Image",
+          "label": "Input Image",
+          "type": "str",
+          "component": "Image"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Prediction",
+          "type": "Dict[Any, Any]",
+          "component": "Label"
+        },
+        {
+          "label": "CNN GradCAM",
+          "type": "str",
+          "component": "Image"
+        },
+        {
+          "label": "Transformer GradCAM",
+          "type": "str",
+          "component": "Image"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/predict",
+  "_api_verified": true
+}

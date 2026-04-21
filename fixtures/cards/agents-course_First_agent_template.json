@@ -1,0 +1,89 @@
+{
+  "space_id": "agents-course/First_agent_template",
+  "title": "First Agent Template",
+  "emoji": "\u26a1",
+  "description": "First Agent Template",
+  "input_schema": {
+    "text_input": {
+      "type": "str",
+      "description": "Chat Message",
+      "required": true,
+      "component": "Textbox"
+    }
+  },
+  "output_schema": {
+    "Chat Message": {
+      "type": "str",
+      "description": "Chat Message",
+      "component": "Textbox"
+    }
+  },
+  "license": "unknown",
+  "hardware": "5.23.1",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "smolagents",
+    "agent",
+    "smolagent",
+    "tool",
+    "agent-course",
+    "region:us"
+  ],
+  "likes": 670,
+  "last_modified": "2025-05-06 08:19:21+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/log_user_message",
+      "parameters": [
+        {
+          "name": "text_input",
+          "label": "Chat Message",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Chat Message",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/interact_with_agent",
+      "parameters": [
+        {
+          "name": "messages",
+          "label": "Agent",
+          "type": "list[dict(role: str, metadata: dict(title: str, id: int | str, parent_id: int | str, log: str, duration: float, status: Literal['pending', 'done']) | None, content: str | dict(file: filepath, alt_text",
+          "component": "Chatbot"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Agent",
+          "type": "list[dict(role: str, metadata: dict(title: str, id: int | str, parent_id: int | str, log: str, duration: float, status: Literal['pending', 'done']) | None, content: str | dict(file: filepath, alt_text",
+          "component": "Chatbot"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/log_user_message",
+  "_api_verified": true,
+  "estimated_latency_s": 2.37,
+  "speed_tier": "fast",
+  "_latency_source": "measured_inference",
+  "measured_latency_s": 2.37,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:50:07.807797+00:00",
+  "measured_inference_s": 2.37,
+  "measured_inference_timestamp": "2026-04-20T07:59:11.919009+00:00",
+  "measured_inference_method": "auto_predict",
+  "measured_inference_api": "/log_user_message"
+}

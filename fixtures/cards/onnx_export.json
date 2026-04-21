@@ -1,0 +1,88 @@
+{
+  "space_id": "onnx/export",
+  "title": "Export to ONNX",
+  "emoji": "\ud83c\udfce\ufe0f",
+  "description": "Export to ONNX",
+  "input_schema": {
+    "model_id": {
+      "type": "str",
+      "description": "Hub model ID",
+      "required": true,
+      "component": "Huggingfacehubsearch"
+    },
+    "task": {
+      "type": "str",
+      "description": "Task (can be left to \"auto\", will be automatically inferred)",
+      "required": true,
+      "component": "Textbox"
+    },
+    "opset": {
+      "type": "str",
+      "description": "ONNX opset (optional, can be left blank)",
+      "required": true,
+      "component": "Textbox"
+    }
+  },
+  "output_schema": {
+    "Output": {
+      "type": "str",
+      "description": "Output",
+      "component": "Markdown"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "4.42.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 80,
+  "last_modified": "2025-05-20 15:13:12+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/onnx_export",
+      "parameters": [
+        {
+          "name": "model_id",
+          "label": "Hub model ID",
+          "type": "str",
+          "component": "Huggingfacehubsearch"
+        },
+        {
+          "name": "task",
+          "label": "Task (can be left to \"auto\", will be automatically inferred)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "opset",
+          "label": "ONNX opset (optional, can be left blank)",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/_check_login_status",
+      "parameters": [],
+      "returns": []
+    }
+  ],
+  "endpoint": "/onnx_export",
+  "_api_verified": true
+}

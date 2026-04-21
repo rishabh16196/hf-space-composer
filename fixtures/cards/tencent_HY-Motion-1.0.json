@@ -1,0 +1,339 @@
+{
+  "space_id": "tencent/HY-Motion-1.0",
+  "title": "HY-Motion-1.0",
+  "emoji": "\ud83d\udc83",
+  "description": "Text-to-3D and Image-to-3D Generation",
+  "input_schema": {},
+  "output_schema": {
+    "\ud83c\udfaf Random Seeds": {
+      "type": "str",
+      "description": "\ud83c\udfaf Random Seeds",
+      "component": "Textbox"
+    }
+  },
+  "license": "unknown",
+  "hardware": "4.44.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 271,
+  "last_modified": "2026-01-01 03:17:51+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/_generate_random_seeds",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "\ud83c\udfaf Random Seeds",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/lambda",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "\ud83d\udcdd Input Text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "\ud83c\udfaf Random Seeds",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "\u23f1\ufe0f Action Duration (seconds)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "\u270f\ufe0f Rewritten Text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "\ud83d\udcca Status Information",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_1",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "\ud83d\udcdd Input Text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "\ud83c\udfaf Random Seeds",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "\u23f1\ufe0f Action Duration (seconds)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "\u270f\ufe0f Rewritten Text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "\ud83d\udcca Status Information",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/_on_example_select",
+      "parameters": [
+        {
+          "name": "selected_example",
+          "label": "\ud83d\udcda Example Prompts",
+          "type": "Literal['Custom Input', 'A person jumps upward with both legs twice.', 'A person jumps on their right leg.', 'A person climbs upward, moving up the slope.', 'A person climbs an obstacle.', 'A person w",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "\ud83d\udcdd Input Text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "\ud83c\udfaf Random Seeds",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "\u23f1\ufe0f Action Duration (seconds)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "\u270f\ufe0f Rewritten Text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "\ud83d\udcca Status Information",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_2",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "\ud83d\udcca Status Information",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/_prompt_engineering",
+      "parameters": [
+        {
+          "name": "text",
+          "label": "\ud83d\udcdd Input Text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "duration",
+          "label": "\u23f1\ufe0f Action Duration (seconds)",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "\u270f\ufe0f Rewritten Text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "\u23f1\ufe0f Action Duration (seconds)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "\ud83d\udcca Status Information",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_3",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "\u270f\ufe0f Rewritten Text",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_4",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "\ud83d\udcca Status Information",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/generate_motion_func",
+      "parameters": [
+        {
+          "name": "original_text",
+          "label": "\ud83d\udcdd Input Text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "rewritten_text",
+          "label": "\u270f\ufe0f Rewritten Text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "seed_input",
+          "label": "\ud83c\udfaf Random Seeds",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "motion_duration",
+          "label": "\u23f1\ufe0f Action Duration (seconds)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "cfg_scale",
+          "label": "\u2699\ufe0f CFG Strength",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_27",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "\ud83d\udce6 Download FBX Files",
+          "type": "List[filepath]",
+          "component": "File"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_5",
+      "parameters": [
+        {
+          "name": "fbx_list",
+          "label": "\ud83d\udce6 Download FBX Files",
+          "type": "List[filepath]",
+          "component": "File"
+        }
+      ],
+      "returns": [
+        {
+          "label": "\ud83d\udcca Status Information",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_6",
+      "parameters": [
+        {
+          "name": "text",
+          "label": "\ud83d\udcdd Input Text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "rewritten",
+          "label": "\u270f\ufe0f Rewritten Text",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "\u270f\ufe0f Rewritten Text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "\ud83d\udcca Status Information",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_7",
+      "parameters": [
+        {
+          "name": "text",
+          "label": "\u270f\ufe0f Rewritten Text",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "\ud83d\udcca Status Information",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/_get_header_text",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_3",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/_generate_random_seeds",
+  "_api_verified": true,
+  "estimated_latency_s": 5.34,
+  "speed_tier": "medium",
+  "_latency_source": "measured",
+  "_tags_enriched": true,
+  "measured_latency_s": 5.34,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:51:57.782745+00:00"
+}

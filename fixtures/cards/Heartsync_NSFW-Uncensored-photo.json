@@ -1,0 +1,118 @@
+{
+  "space_id": "Heartsync/NSFW-Uncensored-photo",
+  "title": "NSFW Uncensored Photo",
+  "emoji": "\ud83d\ude80",
+  "description": "NSFW FLUX Uncensored photo 'Text & Imagery for AI Limits'",
+  "input_schema": {},
+  "output_schema": {
+    "\u270f\ufe0f Prompt": {
+      "type": "str",
+      "description": "\u270f\ufe0f Prompt",
+      "component": "Textbox"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "6.10.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "not-for-all-audiences",
+    "region:us",
+    "diffusion",
+    "image-generation",
+    "text-to-image",
+    "vision"
+  ],
+  "likes": 43,
+  "last_modified": "2026-03-30 01:42:34+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/get_random_prompt",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "\u270f\ufe0f Prompt",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/generate_image",
+      "parameters": [
+        {
+          "name": "prompt",
+          "label": "\u270f\ufe0f Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "height",
+          "label": "\ud83d\udcd0 Height",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "width",
+          "label": "\ud83d\udcd0 Width",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "num_inference_steps",
+          "label": "\ud83d\udd04 Inference Steps",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "seed",
+          "label": "\ud83c\udf31 Seed",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "randomize_seed",
+          "label": "\ud83c\udfb2 Randomize Seed",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "num_images",
+          "label": "\ud83d\uddbc\ufe0f Number of Images",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "\ud83c\udfa8 Generated Images",
+          "type": "list[dict(image: filepath, caption: str | None) | dict(video: filepath, caption: str | None)]",
+          "component": "Gallery"
+        },
+        {
+          "label": "\ud83c\udf31 Seed Used",
+          "type": "float",
+          "component": "Number"
+        }
+      ]
+    },
+    {
+      "name": "/_check_login_status",
+      "parameters": [],
+      "returns": []
+    }
+  ],
+  "endpoint": "/get_random_prompt",
+  "_api_verified": true,
+  "estimated_latency_s": 2.87,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "_tags_enriched": true,
+  "measured_latency_s": 2.87,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:49:22.705734+00:00"
+}

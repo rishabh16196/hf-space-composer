@@ -1,0 +1,156 @@
+{
+  "space_id": "Gradio-Blocks/DualStyleGAN",
+  "title": "Portrait Style Transfer",
+  "emoji": "\ud83d\ude3b",
+  "description": "Portrait Style Transfer",
+  "input_schema": {
+    "image": {
+      "type": "filepath",
+      "description": "Input Image",
+      "required": true,
+      "component": "Image"
+    }
+  },
+  "output_schema": {
+    "Aligned Face": {
+      "type": "filepath",
+      "description": "Aligned Face",
+      "component": "Image"
+    }
+  },
+  "license": "unknown",
+  "hardware": "4.36.1",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 142,
+  "last_modified": "2024-06-10 06:06:20+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/detect_and_align_face",
+      "parameters": [
+        {
+          "name": "image",
+          "label": "Input Image",
+          "type": "filepath",
+          "component": "Image"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Aligned Face",
+          "type": "filepath",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/reconstruct_face",
+      "parameters": [
+        {
+          "name": "image",
+          "label": "Aligned Face",
+          "type": "filepath",
+          "component": "Image"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Reconstructed Face",
+          "type": "filepath",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/update_slider",
+      "parameters": [
+        {
+          "name": "choice",
+          "label": "Style Type",
+          "type": "Literal['cartoon', 'caricature', 'anime', 'arcane', 'comic', 'pixar', 'slamdunk']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Style Image Index",
+          "type": "float",
+          "component": "Slider"
+        }
+      ]
+    },
+    {
+      "name": "/update_style_image",
+      "parameters": [
+        {
+          "name": "style_name",
+          "label": "Style Type",
+          "type": "Literal['cartoon', 'caricature', 'anime', 'arcane', 'comic', 'pixar', 'slamdunk']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_25",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/generate",
+      "parameters": [
+        {
+          "name": "style_type",
+          "label": "Style Type",
+          "type": "Literal['cartoon', 'caricature', 'anime', 'arcane', 'comic', 'pixar', 'slamdunk']",
+          "component": "Radio"
+        },
+        {
+          "name": "style_id",
+          "label": "Style Image Index",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "structure_weight",
+          "label": "Structure Weight",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "color_weight",
+          "label": "Color Weight",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "structure_only",
+          "label": "Structure Only",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Result",
+          "type": "filepath",
+          "component": "Image"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/detect_and_align_face",
+  "_api_verified": true,
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_measurement_error": "The read operation timed out"
+}

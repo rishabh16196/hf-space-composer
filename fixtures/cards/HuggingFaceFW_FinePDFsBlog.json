@@ -1,0 +1,37 @@
+{
+  "space_id": "HuggingFaceFW/FinePDFsBlog",
+  "title": "FinePDFs: Liberating 3T of the finest tokens from PDFs",
+  "emoji": "\ud83d\udcc4",
+  "description": "FinePDFs: Liberating 3T of the finest tokens from PDFs",
+  "input_schema": {
+    "pdf_url": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "output_schema": {
+    "extracted_text": {
+      "type": "string"
+    }
+  },
+  "license": "unknown",
+  "hardware": "",
+  "sdk": "docker",
+  "tags": [
+    "docker",
+    "research",
+    "dataset",
+    "pdf",
+    "region:us"
+  ],
+  "likes": 69,
+  "last_modified": "2026-01-07 17:29:13+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "error",
+  "_api_error": "Expecting value: line 1 column 1 (char 0)",
+  "estimated_latency_s": 6.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred"
+}

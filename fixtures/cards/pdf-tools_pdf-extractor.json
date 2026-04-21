@@ -1,0 +1,30 @@
+{
+  "space_id": "pdf-tools/pdf-extractor",
+  "description": "PDF text extractor \u2014 parses PDFs and returns raw text with basic structure.",
+  "input_schema": {
+    "pdf_url": {
+      "type": "string",
+      "description": "URL to PDF document",
+      "required": true
+    }
+  },
+  "output_schema": {
+    "extracted_text": {
+      "type": "string",
+      "description": "Plain text from PDF"
+    }
+  },
+  "license": "apache-2.0",
+  "sdk": "gradio",
+  "tags": [
+    "pdf",
+    "document",
+    "extraction"
+  ],
+  "_api_scraped": true,
+  "_api_status": "not_found",
+  "_api_error": "404",
+  "estimated_latency_s": 5.0,
+  "speed_tier": "medium",
+  "_latency_source": "measured"
+}

@@ -1,0 +1,67 @@
+{
+  "space_id": "Parakeet-Inc/Parayomi",
+  "title": "Parayomi \u2014 \u3075\u308a\u304c\u306a\u4e88\u6e2c\u30e2\u30c7\u30eb",
+  "emoji": "\ud83d\udcd6",
+  "description": "Parayomi \u2014 \u3075\u308a\u304c\u306a\u4e88\u6e2c\u30e2\u30c7\u30eb",
+  "input_schema": {
+    "text": {
+      "type": "str",
+      "description": "\u65e5\u672c\u8a9e\u30c6\u30ad\u30b9\u30c8",
+      "required": true,
+      "component": "Textbox"
+    }
+  },
+  "output_schema": {
+    "\u7d50\u679c": {
+      "type": "str",
+      "description": "\u7d50\u679c",
+      "component": "Html"
+    }
+  },
+  "license": "unknown",
+  "hardware": "6.9.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 25,
+  "last_modified": "2026-04-08 06:55:47+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/process_2",
+      "parameters": [
+        {
+          "name": "text",
+          "label": "\u65e5\u672c\u8a9e\u30c6\u30ad\u30b9\u30c8",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "\u7d50\u679c",
+          "type": "str",
+          "component": "Html"
+        }
+      ]
+    },
+    {
+      "name": "/ping",
+      "parameters": [],
+      "returns": []
+    }
+  ],
+  "endpoint": "/process_2",
+  "_api_verified": true,
+  "estimated_latency_s": 2.92,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 2.92,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:49:46.163259+00:00"
+}

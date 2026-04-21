@@ -1,0 +1,1364 @@
+{
+  "space_id": "depth-anything/depth-anything-3",
+  "title": "Depth Anything 3",
+  "emoji": "\ud83c\udfe2",
+  "description": "Depth Anything 3",
+  "input_schema": {
+    "checked": {
+      "type": "bool",
+      "description": "Infer 3D Gaussian Splatting",
+      "required": true,
+      "component": "Checkbox"
+    }
+  },
+  "output_schema": {
+    "Rendering trajectory for 3DGS viewpoints (requires n_views \u2265 2)": {
+      "type": "Literal['smooth', 'extend']",
+      "description": "Rendering trajectory for 3DGS viewpoints (requires n_views \u2265 2)",
+      "component": "Dropdown"
+    },
+    "Video quality for 3DGS rendered outputs": {
+      "type": "Literal['low', 'medium', 'high']",
+      "description": "Video quality for 3DGS rendered outputs",
+      "component": "Dropdown"
+    },
+    "3DGS Rendered NVS Video (depth shown for reference only)": {
+      "type": "dict(video: filepath, subtitles: filepath | None)",
+      "description": "3DGS Rendered NVS Video (depth shown for reference only)",
+      "component": "Video"
+    },
+    "value_71": {
+      "type": "str",
+      "description": "value_71",
+      "component": "Markdown"
+    }
+  },
+  "license": "cc-by-nc-4.0",
+  "hardware": "5.49.1",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us",
+    "depth-estimation",
+    "vision"
+  ],
+  "likes": 409,
+  "last_modified": "2025-11-20 15:05:40+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/lambda",
+      "parameters": [
+        {
+          "name": "checked",
+          "label": "Infer 3D Gaussian Splatting",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Rendering trajectory for 3DGS viewpoints (requires n_views \u2265 2)",
+          "type": "Literal['smooth', 'extend']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Video quality for 3DGS rendered outputs",
+          "type": "Literal['low', 'medium', 'high']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "3DGS Rendered NVS Video (depth shown for reference only)",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        },
+        {
+          "label": "value_71",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/clear_fields",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_56",
+          "type": "filepath",
+          "component": "Model3d"
+        }
+      ]
+    },
+    {
+      "name": "/update_log",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_53",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/gradio_demo",
+      "parameters": [
+        {
+          "name": "target_dir",
+          "label": "Target Dir",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "show_cam",
+          "label": "Show Camera",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "filter_black_bg",
+          "label": "Filter Black Background",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "filter_white_bg",
+          "label": "Filter White Background",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "process_res_method",
+          "label": "Image Processing Method",
+          "type": "Literal['high_res', 'low_res']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "save_percentage",
+          "label": "Filter Percentage",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "num_max_points",
+          "label": "Max Points (K points)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "infer_gs",
+          "label": "Infer 3D Gaussian Splatting",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "gs_trj_mode",
+          "label": "Rendering trajectory for 3DGS viewpoints (requires n_views \u2265 2)",
+          "type": "Literal['smooth', 'extend']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "gs_video_quality",
+          "label": "Video quality for 3DGS rendered outputs",
+          "type": "Literal['low', 'medium', 'high']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_56",
+          "type": "filepath",
+          "component": "Model3d"
+        },
+        {
+          "label": "value_53",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "RGB Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "Depth Visualization (Right Half)",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "value_68",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "Select View",
+          "type": "Literal['View 1']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "3DGS Rendered NVS Video (depth shown for reference only)",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        },
+        {
+          "label": "3DGS Rendered NVS Video (depth shown for reference only)",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        },
+        {
+          "label": "value_71",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_1",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "is_example",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/update_visualization",
+      "parameters": [
+        {
+          "name": "target_dir",
+          "label": "Target Dir",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "show_cam",
+          "label": "Show Camera",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "is_example",
+          "label": "is_example",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "filter_black_bg",
+          "label": "Filter Black Background",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "filter_white_bg",
+          "label": "Filter White Background",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "process_res_method",
+          "label": "Image Processing Method",
+          "type": "Literal['high_res', 'low_res']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_56",
+          "type": "filepath",
+          "component": "Model3d"
+        },
+        {
+          "label": "value_53",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/update_visualization_1",
+      "parameters": [
+        {
+          "name": "target_dir",
+          "label": "Target Dir",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "show_cam",
+          "label": "Show Camera",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "is_example",
+          "label": "is_example",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "filter_black_bg",
+          "label": "Filter Black Background",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "filter_white_bg",
+          "label": "Filter White Background",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "process_res_method",
+          "label": "Image Processing Method",
+          "type": "Literal['high_res', 'low_res']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_56",
+          "type": "filepath",
+          "component": "Model3d"
+        },
+        {
+          "label": "value_53",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/update_visualization_2",
+      "parameters": [
+        {
+          "name": "target_dir",
+          "label": "Target Dir",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "show_cam",
+          "label": "Show Camera",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "is_example",
+          "label": "is_example",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "filter_black_bg",
+          "label": "Filter Black Background",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "filter_white_bg",
+          "label": "Filter White Background",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "process_res_method",
+          "label": "Image Processing Method",
+          "type": "Literal['high_res', 'low_res']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_56",
+          "type": "filepath",
+          "component": "Model3d"
+        },
+        {
+          "label": "value_53",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/handle_uploads",
+      "parameters": [
+        {
+          "name": "input_video",
+          "label": "Upload Video",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        },
+        {
+          "name": "input_images",
+          "label": "Upload Images",
+          "type": "list[filepath]",
+          "component": "File"
+        },
+        {
+          "name": "s_time_interval",
+          "label": "Sampling FPS (Frames Per Second)",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_56",
+          "type": "filepath",
+          "component": "Model3d"
+        },
+        {
+          "label": "Target Dir",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Preview",
+          "type": "list[dict(image: dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Origi",
+          "component": "Gallery"
+        },
+        {
+          "label": "value_53",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/handle_uploads_1",
+      "parameters": [
+        {
+          "name": "input_video",
+          "label": "Upload Video",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        },
+        {
+          "name": "input_images",
+          "label": "Upload Images",
+          "type": "list[filepath]",
+          "component": "File"
+        },
+        {
+          "name": "s_time_interval",
+          "label": "Sampling FPS (Frames Per Second)",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_56",
+          "type": "filepath",
+          "component": "Model3d"
+        },
+        {
+          "label": "Target Dir",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Preview",
+          "type": "list[dict(image: dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Origi",
+          "component": "Gallery"
+        },
+        {
+          "label": "value_53",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/handle_image_selection",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_53",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/select_first_frame",
+      "parameters": [
+        {
+          "name": "image_gallery",
+          "label": "Preview",
+          "type": "list[dict(image: dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Origi",
+          "component": "Gallery"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Preview",
+          "type": "list[dict(image: dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Origi",
+          "component": "Gallery"
+        },
+        {
+          "label": "value_53",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_2",
+      "parameters": [
+        {
+          "name": "current_selector",
+          "label": "Select View",
+          "type": "Literal['View 1']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Select View",
+          "type": "Literal['View 1']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "RGB Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "Depth Visualization (Right Half)",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_3",
+      "parameters": [
+        {
+          "name": "current_selector",
+          "label": "Select View",
+          "type": "Literal['View 1']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Select View",
+          "type": "Literal['View 1']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "RGB Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "Depth Visualization (Right Half)",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_4",
+      "parameters": [
+        {
+          "name": "selector_value",
+          "label": "Select View",
+          "type": "Literal['View 1']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "RGB Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "Depth Visualization (Right Half)",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/measure",
+      "parameters": [
+        {
+          "name": "current_view_selector",
+          "label": "Select View",
+          "type": "Literal['View 1']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "RGB Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "Depth Visualization (Right Half)",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "value_68",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_5",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_56",
+          "type": "filepath",
+          "component": "Model3d"
+        },
+        {
+          "label": "Target Dir",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Preview",
+          "type": "list[dict(image: dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Origi",
+          "component": "Gallery"
+        },
+        {
+          "label": "value_53",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "Select View",
+          "type": "Literal['View 1']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "3DGS Rendered NVS Video (depth shown for reference only)",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        },
+        {
+          "label": "3DGS Rendered NVS Video (depth shown for reference only)",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        },
+        {
+          "label": "value_71",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "is_example",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "RGB Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "Depth Visualization (Right Half)",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_6",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_56",
+          "type": "filepath",
+          "component": "Model3d"
+        },
+        {
+          "label": "Target Dir",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Preview",
+          "type": "list[dict(image: dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Origi",
+          "component": "Gallery"
+        },
+        {
+          "label": "value_53",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "Select View",
+          "type": "Literal['View 1']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "3DGS Rendered NVS Video (depth shown for reference only)",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        },
+        {
+          "label": "3DGS Rendered NVS Video (depth shown for reference only)",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        },
+        {
+          "label": "value_71",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "is_example",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "RGB Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "Depth Visualization (Right Half)",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_7",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_56",
+          "type": "filepath",
+          "component": "Model3d"
+        },
+        {
+          "label": "Target Dir",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Preview",
+          "type": "list[dict(image: dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Origi",
+          "component": "Gallery"
+        },
+        {
+          "label": "value_53",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "Select View",
+          "type": "Literal['View 1']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "3DGS Rendered NVS Video (depth shown for reference only)",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        },
+        {
+          "label": "3DGS Rendered NVS Video (depth shown for reference only)",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        },
+        {
+          "label": "value_71",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "is_example",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "RGB Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "Depth Visualization (Right Half)",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_8",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_56",
+          "type": "filepath",
+          "component": "Model3d"
+        },
+        {
+          "label": "Target Dir",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Preview",
+          "type": "list[dict(image: dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Origi",
+          "component": "Gallery"
+        },
+        {
+          "label": "value_53",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "Select View",
+          "type": "Literal['View 1']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "3DGS Rendered NVS Video (depth shown for reference only)",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        },
+        {
+          "label": "3DGS Rendered NVS Video (depth shown for reference only)",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        },
+        {
+          "label": "value_71",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "is_example",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "RGB Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "Depth Visualization (Right Half)",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_9",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_56",
+          "type": "filepath",
+          "component": "Model3d"
+        },
+        {
+          "label": "Target Dir",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Preview",
+          "type": "list[dict(image: dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Origi",
+          "component": "Gallery"
+        },
+        {
+          "label": "value_53",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "Select View",
+          "type": "Literal['View 1']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "3DGS Rendered NVS Video (depth shown for reference only)",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        },
+        {
+          "label": "3DGS Rendered NVS Video (depth shown for reference only)",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        },
+        {
+          "label": "value_71",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "is_example",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "RGB Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "Depth Visualization (Right Half)",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_10",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_56",
+          "type": "filepath",
+          "component": "Model3d"
+        },
+        {
+          "label": "Target Dir",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Preview",
+          "type": "list[dict(image: dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Origi",
+          "component": "Gallery"
+        },
+        {
+          "label": "value_53",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "Select View",
+          "type": "Literal['View 1']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "3DGS Rendered NVS Video (depth shown for reference only)",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        },
+        {
+          "label": "3DGS Rendered NVS Video (depth shown for reference only)",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        },
+        {
+          "label": "value_71",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "is_example",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "RGB Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "Depth Visualization (Right Half)",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_11",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_56",
+          "type": "filepath",
+          "component": "Model3d"
+        },
+        {
+          "label": "Target Dir",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Preview",
+          "type": "list[dict(image: dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Origi",
+          "component": "Gallery"
+        },
+        {
+          "label": "value_53",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "Select View",
+          "type": "Literal['View 1']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "3DGS Rendered NVS Video (depth shown for reference only)",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        },
+        {
+          "label": "3DGS Rendered NVS Video (depth shown for reference only)",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        },
+        {
+          "label": "value_71",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "is_example",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "RGB Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "Depth Visualization (Right Half)",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_12",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_56",
+          "type": "filepath",
+          "component": "Model3d"
+        },
+        {
+          "label": "Target Dir",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Preview",
+          "type": "list[dict(image: dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Origi",
+          "component": "Gallery"
+        },
+        {
+          "label": "value_53",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "Select View",
+          "type": "Literal['View 1']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "3DGS Rendered NVS Video (depth shown for reference only)",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        },
+        {
+          "label": "3DGS Rendered NVS Video (depth shown for reference only)",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        },
+        {
+          "label": "value_71",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "is_example",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "RGB Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "Depth Visualization (Right Half)",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_13",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_56",
+          "type": "filepath",
+          "component": "Model3d"
+        },
+        {
+          "label": "Target Dir",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Preview",
+          "type": "list[dict(image: dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Origi",
+          "component": "Gallery"
+        },
+        {
+          "label": "value_53",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "Select View",
+          "type": "Literal['View 1']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "3DGS Rendered NVS Video (depth shown for reference only)",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        },
+        {
+          "label": "3DGS Rendered NVS Video (depth shown for reference only)",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        },
+        {
+          "label": "value_71",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "is_example",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "RGB Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "Depth Visualization (Right Half)",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_14",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_56",
+          "type": "filepath",
+          "component": "Model3d"
+        },
+        {
+          "label": "Target Dir",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Preview",
+          "type": "list[dict(image: dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Origi",
+          "component": "Gallery"
+        },
+        {
+          "label": "value_53",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "Select View",
+          "type": "Literal['View 1']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "3DGS Rendered NVS Video (depth shown for reference only)",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        },
+        {
+          "label": "3DGS Rendered NVS Video (depth shown for reference only)",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        },
+        {
+          "label": "value_71",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "is_example",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "RGB Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "Depth Visualization (Right Half)",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_15",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_56",
+          "type": "filepath",
+          "component": "Model3d"
+        },
+        {
+          "label": "Target Dir",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Preview",
+          "type": "list[dict(image: dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Origi",
+          "component": "Gallery"
+        },
+        {
+          "label": "value_53",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "Select View",
+          "type": "Literal['View 1']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "3DGS Rendered NVS Video (depth shown for reference only)",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        },
+        {
+          "label": "3DGS Rendered NVS Video (depth shown for reference only)",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        },
+        {
+          "label": "value_71",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "is_example",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "RGB Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "Depth Visualization (Right Half)",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_16",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_56",
+          "type": "filepath",
+          "component": "Model3d"
+        },
+        {
+          "label": "Target Dir",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Preview",
+          "type": "list[dict(image: dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Origi",
+          "component": "Gallery"
+        },
+        {
+          "label": "value_53",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "Select View",
+          "type": "Literal['View 1']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "3DGS Rendered NVS Video (depth shown for reference only)",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        },
+        {
+          "label": "3DGS Rendered NVS Video (depth shown for reference only)",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        },
+        {
+          "label": "value_71",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "is_example",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "RGB Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "Depth Visualization (Right Half)",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/lambda",
+  "_api_verified": true,
+  "estimated_latency_s": 4.98,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "_tags_enriched": true,
+  "measured_latency_s": 4.98,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:50:31.129329+00:00",
+  "_inference_attempt_status": "predict_failed",
+  "_inference_attempt_error": "Value 42.0 is less than minimum value 1000."
+}

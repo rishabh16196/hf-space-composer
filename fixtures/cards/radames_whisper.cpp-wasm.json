@@ -1,0 +1,36 @@
+{
+  "space_id": "radames/whisper.cpp-wasm",
+  "title": "Whisper.cpp WASM",
+  "emoji": "\ud83d\udcc9",
+  "description": "Whisper.cpp WASM",
+  "input_schema": {
+    "input": {
+      "type": "string",
+      "description": "Input",
+      "required": true
+    }
+  },
+  "output_schema": {
+    "output": {
+      "type": "string"
+    }
+  },
+  "license": "unknown",
+  "hardware": "",
+  "sdk": "static",
+  "tags": [
+    "static",
+    "region:us"
+  ],
+  "likes": 16,
+  "last_modified": "2023-08-29 21:26:48+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_tags_enriched": true,
+  "estimated_latency_s": 5.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "error",
+  "_api_error": "Could not fetch config for https://radames-whisper-cpp-wasm.static.hf.space"
+}

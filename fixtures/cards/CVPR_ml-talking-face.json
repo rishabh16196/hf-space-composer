@@ -1,0 +1,136 @@
+{
+  "space_id": "CVPR/ml-talking-face",
+  "title": "Talking Face Generation with Multilingual TTS",
+  "emoji": "\ud83d\udc44",
+  "description": "Talking Face Generation with Multilingual TTS",
+  "input_schema": {
+    "Text": {
+      "type": "str",
+      "description": "Text",
+      "required": true,
+      "component": "Textbox"
+    },
+    "Language": {
+      "type": "Literal['Korean', 'English', 'Japanese', 'Chinese']",
+      "description": "Language",
+      "required": true,
+      "component": "Radio"
+    },
+    "Duration (The bigger the value, the slower the speech)": {
+      "type": "float",
+      "description": "Duration (The bigger the value, the slower the speech)",
+      "required": true,
+      "component": "Slider"
+    },
+    "Select an action ...": {
+      "type": "Literal['Default', 'Hand', 'BothHand', 'HandDown', 'Sorry']",
+      "description": "Select an action ...",
+      "required": true,
+      "component": "Radio"
+    },
+    "Select a background image/video ...": {
+      "type": "Literal['None', 'CVPR', 'Black', 'River', 'Sky']",
+      "description": "Select a background image/video ...",
+      "required": true,
+      "component": "Radio"
+    }
+  },
+  "output_schema": {
+    "Toxicity (from Perspective API)": {
+      "type": "Dict(label: str | int | float | None, confidences: List[Dict(label: str | int | float | None, confid",
+      "description": "Toxicity (from Perspective API)",
+      "component": "Label"
+    },
+    "Translation Result": {
+      "type": "str",
+      "description": "Translation Result",
+      "component": "Textbox"
+    },
+    "value_19": {
+      "type": "Dict(video: filepath, subtitles: filepath | None)",
+      "description": "value_19",
+      "component": "Video"
+    }
+  },
+  "license": "cc-by-nc-sa-4.0",
+  "hardware": "4.13.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us",
+    "audio",
+    "speech-synthesis",
+    "tts"
+  ],
+  "likes": 561,
+  "last_modified": "2024-04-04 02:28:35+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/infer",
+      "parameters": [
+        {
+          "name": "Text",
+          "label": "Text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "Language",
+          "label": "Language",
+          "type": "Literal['Korean', 'English', 'Japanese', 'Chinese']",
+          "component": "Radio"
+        },
+        {
+          "name": "Duration (The bigger the value, the slower the speech)",
+          "label": "Duration (The bigger the value, the slower the speech)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "Select an action ...",
+          "label": "Select an action ...",
+          "type": "Literal['Default', 'Hand', 'BothHand', 'HandDown', 'Sorry']",
+          "component": "Radio"
+        },
+        {
+          "name": "Select a background image/video ...",
+          "label": "Select a background image/video ...",
+          "type": "Literal['None', 'CVPR', 'Black', 'River', 'Sky']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Toxicity (from Perspective API)",
+          "type": "Dict(label: str | int | float | None, confidences: List[Dict(label: str | int | float | None, confidence: float | None)] | None)",
+          "component": "Label"
+        },
+        {
+          "label": "Translation Result",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "value_19",
+          "type": "Dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/infer",
+  "_api_verified": true,
+  "estimated_latency_s": 2.79,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "_tags_enriched": true,
+  "measured_latency_s": 2.79,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:49:12.389743+00:00",
+  "_inference_attempt_status": "predict_failed",
+  "_inference_attempt_error": "The upstream Gradio app has raised an exception but has not enabled verbose error reporting. To enable, set show_error=True in launch()."
+}

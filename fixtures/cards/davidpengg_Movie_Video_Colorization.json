@@ -1,0 +1,101 @@
+{
+  "space_id": "davidpengg/Movie_Video_Colorization",
+  "title": "Movie Video Colorization",
+  "emoji": "\ud83c\udfac \ud83c\udf08",
+  "description": "Movie Video Colorization",
+  "input_schema": {
+    "url": {
+      "type": "str",
+      "description": "YouTube Video URL",
+      "required": true,
+      "component": "Textbox"
+    }
+  },
+  "output_schema": {
+    "Black-and-White Video": {
+      "type": "dict(video: filepath, subtitles: filepath | None)",
+      "description": "Black-and-White Video",
+      "component": "Video"
+    }
+  },
+  "license": "mit",
+  "hardware": "5.37.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 6,
+  "last_modified": "2025-07-17 00:54:52+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/download_youtube",
+      "parameters": [
+        {
+          "name": "url",
+          "label": "YouTube Video URL",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Black-and-White Video",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        }
+      ]
+    },
+    {
+      "name": "/colorize_video",
+      "parameters": [
+        {
+          "name": "path_video",
+          "label": "Black-and-White Video",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        },
+        {
+          "name": "chosen_model",
+          "label": "Model",
+          "type": "Literal['modelv2', 'modelv1']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "chosen_fps",
+          "label": "FPS of Colorized Video",
+          "type": "Literal['3', '6', '12', '24', '30', 'Same as original']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "start",
+          "label": "Start Time (hh:mm:ss or blank for original)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "end",
+          "label": "End Time (hh:mm:ss or blank for original)",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Colorized Video",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/download_youtube",
+  "_api_verified": true
+}

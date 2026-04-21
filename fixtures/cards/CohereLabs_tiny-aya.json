@@ -1,0 +1,98 @@
+{
+  "space_id": "CohereLabs/tiny-aya",
+  "title": "Tiny Aya",
+  "emoji": "\ud83d\ude80",
+  "description": "Tiny Aya",
+  "input_schema": {
+    "message": {
+      "type": "str",
+      "description": "parameter_1",
+      "required": true,
+      "component": "Textbox"
+    },
+    "system_prompt": {
+      "type": "str",
+      "description": "System Prompt (optional)",
+      "required": true,
+      "component": "Textbox"
+    },
+    "temperature": {
+      "type": "float",
+      "description": "Temperature",
+      "required": true,
+      "component": "Slider"
+    },
+    "max_new_tokens": {
+      "type": "float",
+      "description": "Max New Tokens",
+      "required": true,
+      "component": "Slider"
+    }
+  },
+  "output_schema": {
+    "Response": {
+      "type": "str | float | bool | list | dict",
+      "description": "Response",
+      "component": "Json"
+    }
+  },
+  "license": "unknown",
+  "hardware": "6.5.1",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 63,
+  "last_modified": "2026-03-12 06:24:16+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/generate",
+      "parameters": [
+        {
+          "name": "message",
+          "label": "parameter_1",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "system_prompt",
+          "label": "System Prompt (optional)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "temperature",
+          "label": "Temperature",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "max_new_tokens",
+          "label": "Max New Tokens",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Response",
+          "type": "str | float | bool | list | dict",
+          "component": "Json"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/generate",
+  "_api_verified": true,
+  "estimated_latency_s": 2.98,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 2.98,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:49:15.369479+00:00"
+}

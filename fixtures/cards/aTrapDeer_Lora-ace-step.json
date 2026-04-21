@@ -1,0 +1,767 @@
+{
+  "space_id": "aTrapDeer/Lora-ace-step",
+  "title": "ACE-Step 1.5 LoRA Studio",
+  "emoji": "\ud83c\udfb5",
+  "description": "ACE-Step 1.5 LoRA Studio",
+  "input_schema": {},
+  "output_schema": {
+    "Workflow Status": {
+      "type": "str",
+      "description": "Workflow Status",
+      "component": "Textbox"
+    }
+  },
+  "license": "unknown",
+  "hardware": "",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 2,
+  "last_modified": "2026-02-19 05:13:11+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/workflow_status",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Workflow Status",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/init_model",
+      "parameters": [
+        {
+          "name": "model_name",
+          "label": "DiT Model",
+          "type": "Literal['acestep-v15-base']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "device",
+          "label": "Device",
+          "type": "Literal['auto', 'cuda', 'mps', 'cpu']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "offload_cpu",
+          "label": "Offload To CPU (optional)",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "offload_dit_cpu",
+          "label": "Offload DiT To CPU (optional)",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Initialization Output",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Workflow Status",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/scan_folder",
+      "parameters": [
+        {
+          "name": "folder_path",
+          "label": "Dataset Folder Path",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Dataset Result",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Tracks",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/load_uploaded",
+      "parameters": [
+        {
+          "name": "file_paths",
+          "label": "Drag/Drop Audio Files (+ Optional JSON Sidecars)",
+          "type": "list[filepath]",
+          "component": "File"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Dataset Result",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Tracks",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/init_auto_label_lm",
+      "parameters": [
+        {
+          "name": "lm_model_path",
+          "label": "Auto-Label LM Model",
+          "type": "Literal['acestep-5Hz-lm-0.6B', 'acestep-5Hz-lm-1.7B', 'acestep-5Hz-lm-4B']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "lm_backend",
+          "label": "LM Backend",
+          "type": "Literal['pt', 'vllm', 'mlx']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "lm_device",
+          "label": "LM Device",
+          "type": "Literal['auto', 'cuda', 'mps', 'xpu', 'cpu']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Auto-Label LM Status",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/auto_label_all",
+      "parameters": [
+        {
+          "name": "overwrite_existing",
+          "label": "Overwrite Existing Caption/Lyrics",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "caption_only",
+          "label": "Caption-Only (Skip Lyrics)",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "max_files_per_run",
+          "label": "Files Per Run (Zero GPU Safe)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "reset_cursor",
+          "label": "Restart From First Track",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Auto-Label Summary",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Tracks",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "Auto-Label Log",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/save_sidecar",
+      "parameters": [
+        {
+          "name": "index",
+          "label": "Track Index (0-based)",
+          "type": "int",
+          "component": "Number"
+        },
+        {
+          "name": "caption",
+          "label": "Caption",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "lyrics",
+          "label": "Lyrics",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "bpm",
+          "label": "BPM",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "keyscale",
+          "label": "Key/Scale",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "lang",
+          "label": "Language",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Save Result",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/start_training",
+      "parameters": [
+        {
+          "name": "lora_rank",
+          "label": "LoRA Rank",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "lora_alpha",
+          "label": "LoRA Alpha",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "lora_dropout",
+          "label": "LoRA Dropout",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "lr",
+          "label": "Learning Rate",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "weight_decay",
+          "label": "Weight Decay",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "optimizer_name",
+          "label": "Optimizer",
+          "type": "Literal['adamw', 'adamw_8bit']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "max_grad_norm",
+          "label": "Max Grad Norm",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "warmup_ratio",
+          "label": "Warmup Ratio",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "scheduler_name",
+          "label": "Scheduler",
+          "type": "Literal['constant_with_warmup', 'linear', 'cosine']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "num_epochs",
+          "label": "Epochs",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "batch_size",
+          "label": "Batch Size",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "grad_accum",
+          "label": "Grad Accumulation",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "save_every",
+          "label": "Save Every N Epochs",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "log_every",
+          "label": "Log Every N Steps",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "shift",
+          "label": "Timestep Shift",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "max_duration",
+          "label": "Max Audio Duration (s)",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "output_dir",
+          "label": "Output Directory",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "resume_from",
+          "label": "Resume From Adapter Directory (optional)",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Training Log",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/stop_training",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Training Log",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/poll_training",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Training Log",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "value_104",
+          "type": "str | float | bool | list | dict",
+          "component": "Lineplot"
+        }
+      ]
+    },
+    {
+      "name": "/list_adapters",
+      "parameters": [
+        {
+          "name": "d",
+          "label": "Adapters Directory",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Select Adapter",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/upload_adapter_files",
+      "parameters": [
+        {
+          "name": "uploaded_files",
+          "label": "Upload LoRA Adapter (.zip or adapter files)",
+          "type": "list[filepath]",
+          "component": "File"
+        },
+        {
+          "name": "adapter_dir",
+          "label": "Adapters Directory",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "adapter_name",
+          "label": "Uploaded Adapter Name (optional)",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Adapter Status",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Select Adapter",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/load_adapter",
+      "parameters": [
+        {
+          "name": "adapter_path",
+          "label": "Select Adapter",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Adapter Status",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/get_workflow_status",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Workflow Status",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/unload_adapter",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Adapter Status",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/get_workflow_status_1",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Workflow Status",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/init_eval_lm",
+      "parameters": [
+        {
+          "name": "lm_model_path",
+          "label": "Eval LM Model",
+          "type": "Literal['acestep-5Hz-lm-0.6B', 'acestep-5Hz-lm-1.7B', 'acestep-5Hz-lm-4B']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "lm_backend",
+          "label": "Eval LM Backend",
+          "type": "Literal['pt', 'vllm', 'mlx']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "lm_device",
+          "label": "Eval LM Device",
+          "type": "Literal['auto', 'cuda', 'mps', 'xpu', 'cpu']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Eval LM Status",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/generate_sample",
+      "parameters": [
+        {
+          "name": "prompt",
+          "label": "Prompt / Caption",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "lyrics",
+          "label": "Lyrics",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "duration",
+          "label": "Duration (s)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "bpm",
+          "label": "BPM (0 = auto)",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "key_root",
+          "label": "Key Root",
+          "type": "Literal['Auto', 'C', 'C#', 'Db', 'D', 'D#', 'Eb', 'E', 'F', 'F#', 'Gb', 'G', 'G#', 'Ab', 'A', 'A#', 'Bb', 'B']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "key_mode",
+          "label": "Mode",
+          "type": "Literal['Auto', 'major', 'minor']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "steps",
+          "label": "Inference Steps",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "guidance",
+          "label": "Guidance Scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "seed",
+          "label": "Seed (-1 = random)",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "use_lora",
+          "label": "Use LoRA",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "lora_scale",
+          "label": "LoRA Scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "use_lm_planner",
+          "label": "Use LM Planner (Thinking + CoT)",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "lm_temperature",
+          "label": "LM Temperature",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "use_cot_caption",
+          "label": "CoT Caption Rewrite",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "use_cot_metas",
+          "label": "CoT Metadata",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "use_cot_language",
+          "label": "CoT Language",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Single Output",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Generation Status",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/ab_test",
+      "parameters": [
+        {
+          "name": "prompt",
+          "label": "Prompt / Caption",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "lyrics",
+          "label": "Lyrics",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "duration",
+          "label": "Duration (s)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "bpm",
+          "label": "BPM (0 = auto)",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "key_root",
+          "label": "Key Root",
+          "type": "Literal['Auto', 'C', 'C#', 'Db', 'D', 'D#', 'Eb', 'E', 'F', 'F#', 'Gb', 'G', 'G#', 'Ab', 'A', 'A#', 'Bb', 'B']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "key_mode",
+          "label": "Mode",
+          "type": "Literal['Auto', 'major', 'minor']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "steps",
+          "label": "Inference Steps",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "guidance",
+          "label": "Guidance Scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "seed",
+          "label": "Seed (-1 = random)",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "lora_scale_b",
+          "label": "LoRA Scale for B",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "use_lm_planner",
+          "label": "Use LM Planner (Thinking + CoT)",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "lm_temperature",
+          "label": "LM Temperature",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "use_cot_caption",
+          "label": "CoT Caption Rewrite",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "use_cot_metas",
+          "label": "CoT Metadata",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "use_cot_language",
+          "label": "CoT Language",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "A - Base",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Status A",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "B - Base + LoRA",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Status B",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/workflow_status",
+  "_api_verified": true
+}

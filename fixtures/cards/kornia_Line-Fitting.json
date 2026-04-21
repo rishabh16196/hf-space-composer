@@ -1,0 +1,95 @@
+{
+  "space_id": "kornia/Line-Fitting",
+  "title": "Fit Line",
+  "emoji": "\ud83e\ude84",
+  "description": "Fit Line",
+  "input_schema": {
+    "point1": {
+      "type": "float",
+      "description": "Point 1 X",
+      "required": true,
+      "component": "Slider"
+    },
+    "point2": {
+      "type": "float",
+      "description": "Point 1 Y",
+      "required": true,
+      "component": "Slider"
+    },
+    "point3": {
+      "type": "float",
+      "description": "Point 2 X",
+      "required": true,
+      "component": "Slider"
+    },
+    "point4": {
+      "type": "float",
+      "description": "Point 2 Y",
+      "required": true,
+      "component": "Slider"
+    }
+  },
+  "output_schema": {
+    "output": {
+      "type": "Dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+      "description": "output",
+      "component": "Plot"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "4.37.2",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 3,
+  "last_modified": "2024-07-10 12:25:32+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/predict",
+      "parameters": [
+        {
+          "name": "point1",
+          "label": "Point 1 X",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "point2",
+          "label": "Point 1 Y",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "point3",
+          "label": "Point 2 X",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "point4",
+          "label": "Point 2 Y",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "output",
+          "type": "Dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/predict",
+  "_api_verified": true
+}

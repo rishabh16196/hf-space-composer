@@ -1,0 +1,37 @@
+{
+  "space_id": "k2-fsa/wasm-speech-enhancement-gtcrn",
+  "title": "Wasm Speech Enhancement Gtcrn",
+  "emoji": "\ud83d\udcbb",
+  "description": "WebAssembly speech enhancement",
+  "input_schema": {
+    "input": {
+      "type": "string",
+      "description": "Input",
+      "required": true
+    }
+  },
+  "output_schema": {
+    "output": {
+      "type": "string"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "",
+  "sdk": "static",
+  "tags": [
+    "static",
+    "region:us",
+    "audio"
+  ],
+  "likes": 7,
+  "last_modified": "2026-04-10 17:50:33+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_tags_enriched": true,
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "error",
+  "_api_error": "Could not fetch config for https://k2-fsa-wasm-speech-enhancement-gtcrn.static.hf.space"
+}

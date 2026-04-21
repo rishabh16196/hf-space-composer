@@ -1,0 +1,65 @@
+{
+  "space_id": "tonyassi/face-swap",
+  "title": "Face Swap",
+  "emoji": "\ud83d\udc69\ud83c\udffb\u200d\ud83e\uddb0",
+  "description": "Image deep fake (uncensored)",
+  "input_schema": {},
+  "output_schema": {},
+  "license": "unknown",
+  "hardware": "6.0.1",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us",
+    "video",
+    "vision"
+  ],
+  "likes": 773,
+  "last_modified": "2026-04-17 02:12:33+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/open_side",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/swap_faces",
+      "parameters": [
+        {
+          "name": "src_img",
+          "label": "Source Image (face to copy)",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "dest_img",
+          "label": "Target Image (face to replace)",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Result",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/open_side",
+  "_api_verified": true,
+  "estimated_latency_s": 3.99,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "_tags_enriched": true,
+  "measured_latency_s": 3.99,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:51:58.177053+00:00",
+  "_inference_attempt_status": "predict_failed",
+  "_inference_attempt_error": "The upstream Gradio app has raised an exception but has not enabled verbose error reporting. To enable, set show_error=True in launch()."
+}

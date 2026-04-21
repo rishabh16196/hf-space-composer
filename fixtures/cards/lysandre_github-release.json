@@ -1,0 +1,134 @@
+{
+  "space_id": "lysandre/github-release",
+  "title": "Github Release",
+  "emoji": "\ud83d\udc28",
+  "description": "Github Release",
+  "input_schema": {
+    "token": {
+      "type": "str",
+      "description": "token",
+      "required": true,
+      "component": "Textbox"
+    },
+    "repo": {
+      "type": "str",
+      "description": "repo",
+      "required": true,
+      "component": "Textbox"
+    },
+    "tag": {
+      "type": "str",
+      "description": "tag",
+      "required": true,
+      "component": "Textbox"
+    },
+    "branch": {
+      "type": "str",
+      "description": "branch",
+      "required": true,
+      "component": "Textbox"
+    },
+    "Threshold for significant contributors": {
+      "type": "int | float",
+      "description": "Threshold for significant contributors",
+      "required": true,
+      "component": "Slider"
+    },
+    "Ignore dependabot commits": {
+      "type": "bool",
+      "description": "Ignore dependabot commits",
+      "required": true,
+      "component": "Checkbox"
+    },
+    "Ignore direct commits": {
+      "type": "bool",
+      "description": "Ignore direct commits",
+      "required": true,
+      "component": "Checkbox"
+    }
+  },
+  "output_schema": {
+    "output": {
+      "type": "str",
+      "description": "output",
+      "component": "Textbox"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "3.16.2",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 13,
+  "last_modified": "2025-11-28 15:39:48+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/predict",
+      "parameters": [
+        {
+          "name": "token",
+          "label": "token",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "repo",
+          "label": "repo",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "tag",
+          "label": "tag",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "branch",
+          "label": "branch",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "Threshold for significant contributors",
+          "label": "Threshold for significant contributors",
+          "type": "int | float",
+          "component": "Slider"
+        },
+        {
+          "name": "Ignore dependabot commits",
+          "label": "Ignore dependabot commits",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "Ignore direct commits",
+          "label": "Ignore direct commits",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "output",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/predict",
+  "_api_verified": true,
+  "estimated_latency_s": 3.36,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 3.36,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:51:10.944079+00:00"
+}

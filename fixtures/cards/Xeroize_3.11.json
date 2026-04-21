@@ -1,0 +1,40 @@
+{
+  "space_id": "Xeroize/3.11",
+  "title": "Animagine XL 4.0",
+  "emoji": "\ud83c\udf0d",
+  "description": "The Ultimate Anime-themed SDXL model",
+  "input_schema": {
+    "input": {
+      "type": "string",
+      "description": "Input",
+      "required": true
+    }
+  },
+  "output_schema": {
+    "output": {
+      "type": "string"
+    }
+  },
+  "license": "mit",
+  "hardware": "5.38.2",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us",
+    "diffusion",
+    "image-generation",
+    "text-to-image",
+    "vision"
+  ],
+  "likes": 3,
+  "last_modified": "2025-11-26 18:59:28+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_tags_enriched": true,
+  "estimated_latency_s": 40.0,
+  "speed_tier": "slow",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "error",
+  "_api_error": "(Request ID: Root=1-69e77bd8-38a0fada0de6e09d77f9b6a4;a41dd6b8-1d21-45ea-824f-90f07a2f8b1b)\n\n429 Too Many Requests: you have reached your 'api' rate limit.\nRetry after 6 seconds (0/2500 requests remai"
+}

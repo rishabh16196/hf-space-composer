@@ -1,0 +1,113 @@
+{
+  "space_id": "sweetcocoa/pop2piano",
+  "title": "Pop2Piano Demo",
+  "emoji": "\ud83c\udfb9",
+  "description": "Pop2Piano Demo",
+  "input_schema": {
+    "yt_link": {
+      "type": "str",
+      "description": "Enter YouTube Link of the Video",
+      "required": true,
+      "component": "Textbox"
+    }
+  },
+  "output_schema": {
+    "Audio Extracted from the YouTube Video": {
+      "type": "filepath",
+      "description": "Audio Extracted from the YouTube Video",
+      "component": "Audio"
+    },
+    "Upload an audio": {
+      "type": "filepath",
+      "description": "Upload an audio",
+      "component": "Audio"
+    }
+  },
+  "license": "unknown",
+  "hardware": "4.39.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 122,
+  "last_modified": "2025-12-11 04:44:34+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/get_audio_from_yt_video",
+      "parameters": [
+        {
+          "name": "yt_link",
+          "label": "Enter YouTube Link of the Video",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Audio Extracted from the YouTube Video",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Upload an audio",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ]
+    },
+    {
+      "name": "/inference",
+      "parameters": [
+        {
+          "name": "file_uploaded",
+          "label": "Upload an audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "name": "composer",
+          "label": "Arranger",
+          "type": "Literal['composer1', 'composer2', 'composer3', 'composer4', 'composer5', 'composer6', 'composer7', 'composer8', 'composer9', 'composer10', 'composer11', 'composer12', 'composer13', 'composer14', 'comp",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Listen to the Generated MIDI",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Download the Generated MIDI (.mp3)",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "label": "Download the Generated MIDI (.mid)",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "label": "Listen to the Stereo Mix",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Download the Stereo Mix (.mp3",
+          "type": "filepath",
+          "component": "File"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/get_audio_from_yt_video",
+  "_api_verified": true
+}

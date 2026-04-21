@@ -1,0 +1,159 @@
+{
+  "space_id": "silma-ai/Arabic-LLM-Broad-Leaderboard",
+  "title": "Arabic Broad Leaderboard (ABL)",
+  "emoji": "\ud83e\udd47",
+  "description": "NextGen Evaluation Benchmark and Leaderboard for Arabic LLMs",
+  "input_schema": {
+    "size_name": {
+      "type": "Literal['Large (More than 35B Parameter)', 'Medium (~35B)', 'Small (~10B)', 'Nano (~3B)']",
+      "description": "Select Model Size",
+      "required": true,
+      "component": "Dropdown"
+    }
+  },
+  "output_schema": {
+    "value_8": {
+      "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+      "description": "value_8",
+      "component": "Dataframe"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "5.29.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "leaderboard",
+    "region:us",
+    "benchmark"
+  ],
+  "likes": 43,
+  "last_modified": "2026-04-05 14:16:02+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/filter_dataframe",
+      "parameters": [
+        {
+          "name": "size_name",
+          "label": "Select Model Size",
+          "type": "Literal['Large (More than 35B Parameter)', 'Medium (~35B)', 'Small (~10B)', 'Nano (~3B)']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_8",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/filter_dataframe_1",
+      "parameters": [
+        {
+          "name": "skill",
+          "label": "Select Skill",
+          "type": "Literal['MMLU', 'General Knowledge', 'Reasoning & Math', 'Translation (incl Dialects)', 'Trust & Safety', 'Writing (incl Dialects)', 'RAG QA', 'Reading Comprehension', 'Arabic Language & Grammar', 'Di",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_12",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/draw_radar_chart",
+      "parameters": [
+        {
+          "name": "models",
+          "label": "Select Models",
+          "type": "list[Literal['google/gemini-3-pro-preview', 'z-ai/glm-5', 'openai/gpt-4o', 'google/gemini-2.5-pro-preview-05-06', 'google/gemma-4-31B-it', 'google/gemini-2.5-flash-preview-04-17', 'openai/o3', 'openai",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_18",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        }
+      ]
+    },
+    {
+      "name": "/get_model_info_blocks",
+      "parameters": [
+        {
+          "name": "chosen_model_name",
+          "label": "Select Model",
+          "type": "Literal['google/gemini-3-pro-preview', 'z-ai/glm-5', 'openai/gpt-4o', 'google/gemini-2.5-pro-preview-05-06', 'google/gemma-4-31B-it', 'google/gemini-2.5-flash-preview-04-17', 'openai/o3', 'openai/gpt-",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_25",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "value_27",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "value_28",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "value_29",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "value_30",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "value_31",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "google/gemini-3-pro-preview model skills",
+          "type": "str | float | bool | list | dict",
+          "component": "Barplot"
+        },
+        {
+          "label": "Model Responses",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "value_35",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/filter_dataframe",
+  "_api_verified": true,
+  "estimated_latency_s": 5.44,
+  "speed_tier": "medium",
+  "_latency_source": "measured",
+  "_tags_enriched": true,
+  "measured_latency_s": 5.44,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:51:53.147301+00:00"
+}

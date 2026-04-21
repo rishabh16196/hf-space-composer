@@ -1,0 +1,310 @@
+{
+  "space_id": "alexander00001/Adult-NSFW-Txt2Image-gen",
+  "title": "Private Nsfw Image Gen",
+  "emoji": "\ud83d\uddbc",
+  "description": "private-nsfw-image-gen, for gay-twink",
+  "input_schema": {
+    "prompt": {
+      "type": "str",
+      "description": "\ud83c\udfa8 Detailed NSFW Prompt (LoRA-Enhanced Processing)",
+      "required": true,
+      "component": "Textbox"
+    },
+    "model_name": {
+      "type": "Literal['PornMasterPro', 'CounterfeitV3', 'PornMaster SDXL', 'MeinaMix', 'MeinaUnreal', 'SDXL Base']",
+      "description": "Choose Base Model",
+      "required": true,
+      "component": "Radio"
+    },
+    "style": {
+      "type": "Literal['None', 'Realistic', 'Anime', 'Oil Painting', 'Comic', 'Watercolor', 'Portrait', 'Fantasy']",
+      "description": "\ud83c\udfad Style Preset (LoRA-Enhanced)",
+      "required": true,
+      "component": "Radio"
+    },
+    "neg_prompt": {
+      "type": "str",
+      "description": "\u274c Negative Prompt (LoRA-Optimized)",
+      "required": true,
+      "component": "Textbox"
+    },
+    "steps": {
+      "type": "float",
+      "description": "\ud83d\udd25 Steps (Auto-adjusted for Lightning)",
+      "required": true,
+      "component": "Slider"
+    },
+    "cfg": {
+      "type": "float",
+      "description": "\ud83c\udfaf CFG Scale (Auto-adjusted for Lightning)",
+      "required": true,
+      "component": "Slider"
+    },
+    "l_en": {
+      "type": "bool",
+      "description": "Enable SDXL Lightning",
+      "required": true,
+      "component": "Checkbox"
+    },
+    "l_sc": {
+      "type": "float",
+      "description": "Lightning Scale",
+      "required": true,
+      "component": "Slider"
+    },
+    "q_en": {
+      "type": "bool",
+      "description": "Enable Quality Enhancer",
+      "required": true,
+      "component": "Checkbox"
+    },
+    "q_sc": {
+      "type": "float",
+      "description": "Quality Scale",
+      "required": true,
+      "component": "Slider"
+    },
+    "d_en": {
+      "type": "bool",
+      "description": "Enable Detail Enhancer",
+      "required": true,
+      "component": "Checkbox"
+    },
+    "d_sc": {
+      "type": "float",
+      "description": "Detail Scale",
+      "required": true,
+      "component": "Slider"
+    }
+  },
+  "output_schema": {
+    "Generated LoRA-Enhanced NSFW Image": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "Generated LoRA-Enhanced NSFW Image",
+      "component": "Image"
+    },
+    "LoRA-Enhanced Status": {
+      "type": "str",
+      "description": "LoRA-Enhanced Status",
+      "component": "Textbox"
+    }
+  },
+  "license": "unknown",
+  "hardware": "5.38.2",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "not-for-all-audiences",
+    "region:us"
+  ],
+  "likes": 17,
+  "last_modified": "2025-08-25 17:51:25+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/lambda",
+      "parameters": [
+        {
+          "name": "prompt",
+          "label": "\ud83c\udfa8 Detailed NSFW Prompt (LoRA-Enhanced Processing)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "model_name",
+          "label": "Choose Base Model",
+          "type": "Literal['PornMasterPro', 'CounterfeitV3', 'PornMaster SDXL', 'MeinaMix', 'MeinaUnreal', 'SDXL Base']",
+          "component": "Radio"
+        },
+        {
+          "name": "style",
+          "label": "\ud83c\udfad Style Preset (LoRA-Enhanced)",
+          "type": "Literal['None', 'Realistic', 'Anime', 'Oil Painting', 'Comic', 'Watercolor', 'Portrait', 'Fantasy']",
+          "component": "Radio"
+        },
+        {
+          "name": "neg_prompt",
+          "label": "\u274c Negative Prompt (LoRA-Optimized)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "steps",
+          "label": "\ud83d\udd25 Steps (Auto-adjusted for Lightning)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "cfg",
+          "label": "\ud83c\udfaf CFG Scale (Auto-adjusted for Lightning)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "l_en",
+          "label": "Enable SDXL Lightning",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "l_sc",
+          "label": "Lightning Scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "q_en",
+          "label": "Enable Quality Enhancer",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "q_sc",
+          "label": "Quality Scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "d_en",
+          "label": "Enable Detail Enhancer",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "d_sc",
+          "label": "Detail Scale",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Generated LoRA-Enhanced NSFW Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "LoRA-Enhanced Status",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_1",
+      "parameters": [
+        {
+          "name": "prompt",
+          "label": "\ud83c\udfa8 Detailed NSFW Prompt (LoRA-Enhanced Processing)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "model_name",
+          "label": "Choose Base Model",
+          "type": "Literal['PornMasterPro', 'CounterfeitV3', 'PornMaster SDXL', 'MeinaMix', 'MeinaUnreal', 'SDXL Base']",
+          "component": "Radio"
+        },
+        {
+          "name": "style",
+          "label": "\ud83c\udfad Style Preset (LoRA-Enhanced)",
+          "type": "Literal['None', 'Realistic', 'Anime', 'Oil Painting', 'Comic', 'Watercolor', 'Portrait', 'Fantasy']",
+          "component": "Radio"
+        },
+        {
+          "name": "neg_prompt",
+          "label": "\u274c Negative Prompt (LoRA-Optimized)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "steps",
+          "label": "\ud83d\udd25 Steps (Auto-adjusted for Lightning)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "cfg",
+          "label": "\ud83c\udfaf CFG Scale (Auto-adjusted for Lightning)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "l_en",
+          "label": "Enable SDXL Lightning",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "l_sc",
+          "label": "Lightning Scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "q_en",
+          "label": "Enable Quality Enhancer",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "q_sc",
+          "label": "Quality Scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "d_en",
+          "label": "Enable Detail Enhancer",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "d_sc",
+          "label": "Detail Scale",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Generated LoRA-Enhanced NSFW Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "LoRA-Enhanced Status",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_2",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Generated LoRA-Enhanced NSFW Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "LoRA-Enhanced Status",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/lambda",
+  "_api_verified": true,
+  "estimated_latency_s": 3.66,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 3.66,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:50:11.467474+00:00"
+}

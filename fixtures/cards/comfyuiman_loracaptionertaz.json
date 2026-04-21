@@ -1,0 +1,39 @@
+{
+  "space_id": "comfyuiman/loracaptionertaz",
+  "title": "LoRA Caption Assistant",
+  "emoji": "\ud83d\uddbc\ufe0f",
+  "description": "LoRA Caption Assistant",
+  "input_schema": {
+    "input": {
+      "type": "string",
+      "description": "Input",
+      "required": true
+    }
+  },
+  "output_schema": {
+    "output": {
+      "type": "string"
+    }
+  },
+  "license": "unknown",
+  "hardware": "",
+  "sdk": "docker",
+  "tags": [
+    "docker",
+    "region:us",
+    "captioning",
+    "image-to-text",
+    "vision"
+  ],
+  "likes": 7,
+  "last_modified": "2025-12-26 04:51:25+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_tags_enriched": true,
+  "estimated_latency_s": 3.0,
+  "speed_tier": "fast",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "error",
+  "_api_error": "Expecting value: line 1 column 1 (char 0)"
+}

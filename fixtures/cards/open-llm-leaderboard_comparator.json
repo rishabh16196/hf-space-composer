@@ -1,0 +1,611 @@
+{
+  "space_id": "open-llm-leaderboard/comparator",
+  "title": "Open LLM Leaderboard Model Comparator",
+  "emoji": "\ud83c\udfc6",
+  "description": "Compare Open LLM Leaderboard results",
+  "input_schema": {},
+  "output_schema": {},
+  "license": "unknown",
+  "hardware": "4.44.1",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "leaderboard",
+    "region:us",
+    "benchmark"
+  ],
+  "likes": 113,
+  "last_modified": "2025-01-09 15:13:23+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/load_result_paths_per_model",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/lambda",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Models",
+          "type": "List[Literal[]]",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_1",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/display_loading_message_for_results",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_29",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "value_40",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "value_64",
+          "type": "str",
+          "component": "Html"
+        }
+      ]
+    },
+    {
+      "name": "/load_results",
+      "parameters": [
+        {
+          "name": "param_1",
+          "label": "Models",
+          "type": "List[Literal[]]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_2",
+          "label": "Base models",
+          "type": "List[Literal[]]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_3",
+          "label": "Adapters",
+          "type": "List[Literal[]]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_4",
+          "label": "Finetunes",
+          "type": "List[Literal[]]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_5",
+          "label": "Merges",
+          "type": "List[Literal[]]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_6",
+          "label": "Quantizations",
+          "type": "List[Literal[]]",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_29",
+          "type": "str",
+          "component": "Html"
+        }
+      ]
+    },
+    {
+      "name": "/update_tasks_component",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Tasks",
+          "type": "Literal['All', 'leaderboard_bbh', 'leaderboard_gpqa', 'leaderboard_ifeval', 'leaderboard_math', 'leaderboard_mmlu_pro', 'leaderboard_musr']",
+          "component": "Radio"
+        },
+        {
+          "label": "Tasks",
+          "type": "Literal['All', 'leaderboard_bbh', 'leaderboard_gpqa', 'leaderboard_ifeval', 'leaderboard_math', 'leaderboard_mmlu_pro', 'leaderboard_musr']",
+          "component": "Radio"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_2",
+      "parameters": [
+        {
+          "name": "task",
+          "label": "Tasks",
+          "type": "Literal['All', 'leaderboard_bbh', 'leaderboard_gpqa', 'leaderboard_ifeval', 'leaderboard_math', 'leaderboard_mmlu_pro', 'leaderboard_musr']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Tasks",
+          "type": "Literal['All', 'leaderboard_bbh', 'leaderboard_gpqa', 'leaderboard_ifeval', 'leaderboard_math', 'leaderboard_mmlu_pro', 'leaderboard_musr']",
+          "component": "Radio"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_3",
+      "parameters": [
+        {
+          "name": "task",
+          "label": "Tasks",
+          "type": "Literal['All', 'leaderboard_bbh', 'leaderboard_gpqa', 'leaderboard_ifeval', 'leaderboard_math', 'leaderboard_mmlu_pro', 'leaderboard_musr']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Tasks",
+          "type": "Literal['All', 'leaderboard_bbh', 'leaderboard_gpqa', 'leaderboard_ifeval', 'leaderboard_math', 'leaderboard_mmlu_pro', 'leaderboard_musr']",
+          "component": "Radio"
+        }
+      ]
+    },
+    {
+      "name": "/update_task_description_component",
+      "parameters": [
+        {
+          "name": "task",
+          "label": "Tasks",
+          "type": "Literal['All', 'leaderboard_bbh', 'leaderboard_gpqa', 'leaderboard_ifeval', 'leaderboard_math', 'leaderboard_mmlu_pro', 'leaderboard_musr']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Task Description",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/update_task_description_component_1",
+      "parameters": [
+        {
+          "name": "task",
+          "label": "Tasks",
+          "type": "Literal['All', 'leaderboard_bbh', 'leaderboard_gpqa', 'leaderboard_ifeval', 'leaderboard_math', 'leaderboard_mmlu_pro', 'leaderboard_musr']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Task Description",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/display_results",
+      "parameters": [
+        {
+          "name": "task",
+          "label": "Tasks",
+          "type": "Literal['All', 'leaderboard_bbh', 'leaderboard_gpqa', 'leaderboard_ifeval', 'leaderboard_math', 'leaderboard_mmlu_pro', 'leaderboard_musr']",
+          "component": "Radio"
+        },
+        {
+          "name": "hide_std_errors",
+          "label": "Hide Standard Errors",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "show_only_differences",
+          "label": "Show Only Differences",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_29",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "value_40",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "value_64",
+          "type": "str",
+          "component": "Html"
+        }
+      ]
+    },
+    {
+      "name": "/plot_results",
+      "parameters": [
+        {
+          "name": "task",
+          "label": "Tasks",
+          "type": "Literal['All', 'leaderboard_bbh', 'leaderboard_gpqa', 'leaderboard_ifeval', 'leaderboard_math', 'leaderboard_mmlu_pro', 'leaderboard_musr']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_27",
+          "type": "Dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "value_28",
+          "type": "Dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        }
+      ]
+    },
+    {
+      "name": "/plot_env_impact",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_62",
+          "type": "Dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "value_63",
+          "type": "Dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        }
+      ]
+    },
+    {
+      "name": "/clear_results_file",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_32",
+          "type": "filepath",
+          "component": "File"
+        }
+      ]
+    },
+    {
+      "name": "/download_results",
+      "parameters": [
+        {
+          "name": "results",
+          "label": "parameter_29",
+          "type": "str",
+          "component": "Html"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_32",
+          "type": "filepath",
+          "component": "File"
+        }
+      ]
+    },
+    {
+      "name": "/clear_results",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Models",
+          "type": "List[Literal[]]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Tasks",
+          "type": "Literal['All', 'leaderboard_bbh', 'leaderboard_gpqa', 'leaderboard_ifeval', 'leaderboard_math', 'leaderboard_mmlu_pro', 'leaderboard_musr']",
+          "component": "Radio"
+        },
+        {
+          "label": "Tasks",
+          "type": "Literal['All', 'leaderboard_bbh', 'leaderboard_gpqa', 'leaderboard_ifeval', 'leaderboard_math', 'leaderboard_mmlu_pro', 'leaderboard_musr']",
+          "component": "Radio"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_4",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/lambda_5",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Base models",
+          "type": "List[Literal[]]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Adapters",
+          "type": "List[Literal[]]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Finetunes",
+          "type": "List[Literal[]]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Merges",
+          "type": "List[Literal[]]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Quantizations",
+          "type": "List[Literal[]]",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/clear_results_file_1",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_32",
+          "type": "filepath",
+          "component": "File"
+        }
+      ]
+    },
+    {
+      "name": "/update_task_description_component_2",
+      "parameters": [
+        {
+          "name": "task",
+          "label": "Tasks",
+          "type": "Literal['leaderboard_bbh', 'leaderboard_gpqa', 'leaderboard_ifeval', 'leaderboard_math', 'leaderboard_mmlu_pro', 'leaderboard_musr']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Task Description",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/update_subtasks_component",
+      "parameters": [
+        {
+          "name": "task",
+          "label": "Tasks",
+          "type": "Literal['leaderboard_bbh', 'leaderboard_gpqa', 'leaderboard_ifeval', 'leaderboard_math', 'leaderboard_mmlu_pro', 'leaderboard_musr']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Subtasks",
+          "type": "Literal[]",
+          "component": "Radio"
+        }
+      ]
+    },
+    {
+      "name": "/update_load_details_component",
+      "parameters": [
+        {
+          "name": "model_id",
+          "label": "Models",
+          "type": "List[Literal[]]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "subtask",
+          "label": "Subtasks",
+          "type": "Literal[]",
+          "component": "Radio"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/display_loading_message_for_details",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_53",
+          "type": "str",
+          "component": "Html"
+        }
+      ]
+    },
+    {
+      "name": "/load_details",
+      "parameters": [
+        {
+          "name": "subtask",
+          "label": "Subtasks",
+          "type": "Literal[]",
+          "component": "Radio"
+        },
+        {
+          "name": "param_1",
+          "label": "Models",
+          "type": "List[Literal[]]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_2",
+          "label": "Base models",
+          "type": "List[Literal[]]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_3",
+          "label": "Adapters",
+          "type": "List[Literal[]]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_4",
+          "label": "Finetunes",
+          "type": "List[Literal[]]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_5",
+          "label": "Merges",
+          "type": "List[Literal[]]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_6",
+          "label": "Quantizations",
+          "type": "List[Literal[]]",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_53",
+          "type": "str",
+          "component": "Html"
+        }
+      ]
+    },
+    {
+      "name": "/update_sample_idx_component",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Sample Index",
+          "type": "float",
+          "component": "Number"
+        }
+      ]
+    },
+    {
+      "name": "/display_details",
+      "parameters": [
+        {
+          "name": "sample_idx",
+          "label": "Sample Index",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "show_only_differences",
+          "label": "Show Only Differences",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_53",
+          "type": "str",
+          "component": "Html"
+        }
+      ]
+    },
+    {
+      "name": "/clear_details",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Models",
+          "type": "List[Literal[]]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Tasks",
+          "type": "Literal['leaderboard_bbh', 'leaderboard_gpqa', 'leaderboard_ifeval', 'leaderboard_math', 'leaderboard_mmlu_pro', 'leaderboard_musr']",
+          "component": "Radio"
+        },
+        {
+          "label": "Subtasks",
+          "type": "Literal[]",
+          "component": "Radio"
+        },
+        {
+          "label": "Sample Index",
+          "type": "float",
+          "component": "Number"
+        }
+      ]
+    },
+    {
+      "name": "/load_model_tree",
+      "parameters": [
+        {
+          "name": "model_ids",
+          "label": "Models",
+          "type": "List[Literal[]]",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Base models",
+          "type": "List[Literal[]]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Adapters",
+          "type": "List[Literal[]]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Finetunes",
+          "type": "List[Literal[]]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Merges",
+          "type": "List[Literal[]]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Quantizations",
+          "type": "List[Literal[]]",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/_check_login_status",
+      "parameters": [],
+      "returns": []
+    }
+  ],
+  "endpoint": "/load_result_paths_per_model",
+  "_api_verified": true,
+  "estimated_latency_s": 4.31,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "_tags_enriched": true,
+  "measured_latency_s": 4.31,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:51:29.574043+00:00"
+}

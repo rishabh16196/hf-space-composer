@@ -1,0 +1,54 @@
+{
+  "space_id": "openai/whisper-large-v3",
+  "description": "Whisper Large v3 is a state-of-the-art multilingual ASR model from OpenAI. Supports 99 languages with strong performance on noisy audio, accents, and code-switching. Use 'language' parameter to constrain decoding for better accuracy.",
+  "input_schema": {
+    "audio_url": {
+      "type": "string",
+      "description": "Public URL to audio file (wav, mp3, m4a)",
+      "required": true
+    },
+    "language": {
+      "type": "string",
+      "description": "ISO 639-1 language code (e.g., 'en', 'hi'). Auto-detect if omitted.",
+      "required": false
+    }
+  },
+  "output_schema": {
+    "transcript": {
+      "type": "string",
+      "description": "Full transcription"
+    },
+    "language_detected": {
+      "type": "string",
+      "description": "Detected language code"
+    },
+    "duration_seconds": {
+      "type": "number",
+      "description": "Audio length"
+    }
+  },
+  "example_inputs": [
+    {
+      "audio_url": "https://example.com/sample_hi.wav",
+      "language": "hi"
+    }
+  ],
+  "license": "mit",
+  "hardware": "a10g-small",
+  "sdk": "gradio",
+  "tags": [
+    "audio",
+    "transcription",
+    "asr",
+    "code",
+    "code-generation"
+  ],
+  "last_modified": "2025-09-15",
+  "_api_scraped": true,
+  "_api_status": "not_found",
+  "_api_error": "404",
+  "estimated_latency_s": 5.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_tags_enriched": true
+}

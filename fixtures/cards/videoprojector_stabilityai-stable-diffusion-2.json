@@ -1,0 +1,40 @@
+{
+  "space_id": "videoprojector/stabilityai-stable-diffusion-2",
+  "title": "Stabilityai Stable Diffusion 2",
+  "emoji": "\ud83d\udc41",
+  "description": "Stabilityai Stable Diffusion 2",
+  "input_schema": {
+    "input": {
+      "type": "string",
+      "description": "Input",
+      "required": true
+    }
+  },
+  "output_schema": {
+    "output": {
+      "type": "string"
+    }
+  },
+  "license": "unknown",
+  "hardware": "3.15.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us",
+    "diffusion",
+    "image-generation",
+    "text-to-image",
+    "vision"
+  ],
+  "likes": 4,
+  "last_modified": "2023-01-02 01:06:16+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_tags_enriched": true,
+  "estimated_latency_s": 40.0,
+  "speed_tier": "slow",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "error",
+  "_api_error": "(Request ID: Root=1-69e77bd5-44c094353ee770de18a6b478;3e39a63a-15f4-4f9e-9580-a8bdc0209bbd)\n\n429 Too Many Requests: you have reached your 'api' rate limit.\nRetry after 9 seconds (0/2500 requests remai"
+}

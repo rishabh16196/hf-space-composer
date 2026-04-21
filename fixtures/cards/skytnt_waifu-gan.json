@@ -1,0 +1,159 @@
+{
+  "space_id": "skytnt/waifu-gan",
+  "title": "Waifu Gan",
+  "emoji": "\ud83d\udcc8",
+  "description": "Waifu Gan",
+  "input_schema": {
+    "method": {
+      "type": "Literal['random', 'use seed']",
+      "description": "method",
+      "required": true,
+      "component": "Radio"
+    },
+    "seed": {
+      "type": "float",
+      "description": "seed",
+      "required": true,
+      "component": "Slider"
+    },
+    "psi1": {
+      "type": "float",
+      "description": "truncation psi 1",
+      "required": true,
+      "component": "Slider"
+    },
+    "psi2": {
+      "type": "float",
+      "description": "truncation psi 2",
+      "required": true,
+      "component": "Slider"
+    }
+  },
+  "output_schema": {
+    "output image": {
+      "type": "filepath",
+      "description": "output image",
+      "component": "Image"
+    },
+    "seed": {
+      "type": "float",
+      "description": "seed",
+      "component": "Slider"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "4.36.1",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 30,
+  "last_modified": "2024-06-10 12:16:15+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/gen_fn",
+      "parameters": [
+        {
+          "name": "method",
+          "label": "method",
+          "type": "Literal['random', 'use seed']",
+          "component": "Radio"
+        },
+        {
+          "name": "seed",
+          "label": "seed",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "psi1",
+          "label": "truncation psi 1",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "psi2",
+          "label": "truncation psi 2",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "output image",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "seed",
+          "type": "float",
+          "component": "Slider"
+        }
+      ]
+    },
+    {
+      "name": "/lambda",
+      "parameters": [
+        {
+          "name": "i",
+          "label": "source",
+          "type": "Literal['current generated image']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "selected image 1",
+          "type": "filepath",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_1",
+      "parameters": [
+        {
+          "name": "i",
+          "label": "source",
+          "type": "Literal['current generated image']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "selected image 2",
+          "type": "filepath",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/gen_video_fn",
+      "parameters": [
+        {
+          "name": "frame",
+          "label": "frame",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "output video",
+          "type": "Dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/gen_fn",
+  "_api_verified": true
+}

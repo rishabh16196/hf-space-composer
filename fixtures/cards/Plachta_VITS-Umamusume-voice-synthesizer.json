@@ -1,0 +1,240 @@
+{
+  "space_id": "Plachta/VITS-Umamusume-voice-synthesizer",
+  "title": "Multilingual Anime TTS",
+  "emoji": "\ud83c\udf99\ud83d\udc34",
+  "description": "Multilingual Anime TTS",
+  "input_schema": {
+    "is_symbol_input": {
+      "type": "bool",
+      "description": "Symbol input",
+      "required": true,
+      "component": "Checkbox"
+    },
+    "input_text": {
+      "type": "str",
+      "description": "Text",
+      "required": true,
+      "component": "Textbox"
+    }
+  },
+  "output_schema": {
+    "Text": {
+      "type": "str",
+      "description": "Text",
+      "component": "Textbox"
+    }
+  },
+  "license": "unknown",
+  "hardware": "5.44.1",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us",
+    "audio",
+    "speech-synthesis",
+    "tts"
+  ],
+  "likes": 595,
+  "last_modified": "2025-10-20 12:32:48+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_tags_enriched": true,
+  "estimated_latency_s": 4.0,
+  "speed_tier": "fast",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/to_symbol_fn",
+      "parameters": [
+        {
+          "name": "is_symbol_input",
+          "label": "Symbol input",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "input_text",
+          "label": "Text",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Text",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/tts_fn",
+      "parameters": [
+        {
+          "name": "text",
+          "label": "Text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "speaker",
+          "label": "character",
+          "type": "Literal['\u7279\u522b\u5468 Special Week (Umamusume Pretty Derby)', '\u65e0\u58f0\u94c3\u9e7f Silence Suzuka (Umamusume Pretty Derby)', '\u4e1c\u6d77\u5e1d\u738b Tokai Teio (Umamusume Pretty Derby)', '\u4e38\u5584\u65af\u57fa Maruzensky (Umamusume Pretty Derby)', '\u5bcc\u58eb\u5947\u8ff9 Fuji ",
+          "component": "Dropdown"
+        },
+        {
+          "name": "language",
+          "label": "language",
+          "type": "Literal['\u65e5\u672c\u8a9e', '\u7b80\u4f53\u4e2d\u6587', 'English', 'Mix']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "speed",
+          "label": "\u901f\u5ea6 Speed",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "is_symbol",
+          "label": "Symbol input",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Message",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Output Audio",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ]
+    },
+    {
+      "name": "/to_symbol_fn_1",
+      "parameters": [
+        {
+          "name": "is_symbol_input",
+          "label": "Symbol input",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "input_text",
+          "label": "Text",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Text",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/tts_fn_1",
+      "parameters": [
+        {
+          "name": "text",
+          "label": "Text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "speaker",
+          "label": "character",
+          "type": "Literal['\u7279\u522b\u5468 Special Week (Umamusume Pretty Derby)', '\u65e0\u58f0\u94c3\u9e7f Silence Suzuka (Umamusume Pretty Derby)', '\u4e1c\u6d77\u5e1d\u738b Tokai Teio (Umamusume Pretty Derby)', '\u4e38\u5584\u65af\u57fa Maruzensky (Umamusume Pretty Derby)', '\u5bcc\u58eb\u5947\u8ff9 Fuji ",
+          "component": "Dropdown"
+        },
+        {
+          "name": "language",
+          "label": "language",
+          "type": "Literal['Japanese']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "speed",
+          "label": "\u901f\u5ea6 Speed",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "is_symbol",
+          "label": "Symbol input",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Message",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Output Audio",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ]
+    },
+    {
+      "name": "/tts_fn_2",
+      "parameters": [
+        {
+          "name": "text",
+          "label": "Text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "speaker",
+          "label": "character",
+          "type": "Literal['\u7279\u522b\u5468 Special Week (Umamusume Pretty Derby)', '\u65e0\u58f0\u94c3\u9e7f Silence Suzuka (Umamusume Pretty Derby)', '\u4e1c\u6d77\u5e1d\u738b Tokai Teio (Umamusume Pretty Derby)', '\u4e38\u5584\u65af\u57fa Maruzensky (Umamusume Pretty Derby)', '\u5bcc\u58eb\u5947\u8ff9 Fuji ",
+          "component": "Dropdown"
+        },
+        {
+          "name": "language",
+          "label": "language",
+          "type": "Literal['\u65e5\u672c\u8a9e', '\u7b80\u4f53\u4e2d\u6587', 'English', 'Mix']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "speed",
+          "label": "\u901f\u5ea6 Speed",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "is_symbol",
+          "label": "Symbol input",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Message",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Output Audio",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/to_symbol_fn",
+  "_api_verified": true
+}

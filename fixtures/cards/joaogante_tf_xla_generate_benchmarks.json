@@ -1,0 +1,195 @@
+{
+  "space_id": "joaogante/tf_xla_generate_benchmarks",
+  "title": "Tf Xla Generate Benchmarks",
+  "emoji": "\ud83c\udfc3",
+  "description": "Tf Xla Generate Benchmarks",
+  "input_schema": {
+    "model_name": {
+      "type": "Literal['DistilGPT2', 'GPT2', 'OPT-1.3B', 'GPTJ-6B', 'T5 Small', 'T5 Base', 'T5 Large', 'T5 3B']",
+      "description": "Model",
+      "required": true,
+      "component": "Dropdown"
+    },
+    "plot_eager": {
+      "type": "Literal['Yes', 'No']",
+      "description": "Plot TF Eager Execution?",
+      "required": true,
+      "component": "Radio"
+    }
+  },
+  "output_schema": {
+    "value_10": {
+      "type": "filepath",
+      "description": "value_10",
+      "component": "Image"
+    }
+  },
+  "license": "unknown",
+  "hardware": "4.42.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 10,
+  "last_modified": "2024-09-04 13:29:00+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/partial",
+      "parameters": [
+        {
+          "name": "model_name",
+          "label": "Model",
+          "type": "Literal['DistilGPT2', 'GPT2', 'OPT-1.3B', 'GPTJ-6B', 'T5 Small', 'T5 Base', 'T5 Large', 'T5 3B']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "plot_eager",
+          "label": "Plot TF Eager Execution?",
+          "type": "Literal['Yes', 'No']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_10",
+          "type": "filepath",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/partial_1",
+      "parameters": [
+        {
+          "name": "model_name",
+          "label": "Model",
+          "type": "Literal['DistilGPT2', 'GPT2', 'OPT-1.3B', 'GPTJ-6B', 'T5 Small', 'T5 Base', 'T5 Large', 'T5 3B']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "plot_eager",
+          "label": "Plot TF Eager Execution?",
+          "type": "Literal['Yes', 'No']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_10",
+          "type": "filepath",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/partial_2",
+      "parameters": [
+        {
+          "name": "model_name",
+          "label": "Model",
+          "type": "Literal['DistilGPT2', 'GPT2', 'OPT-1.3B', 'GPTJ-6B', 'T5 Small', 'T5 Base', 'T5 Large', 'T5 3B']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "plot_eager",
+          "label": "Plot TF Eager Execution?",
+          "type": "Literal['Yes', 'No']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_18",
+          "type": "filepath",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/partial_3",
+      "parameters": [
+        {
+          "name": "model_name",
+          "label": "Model",
+          "type": "Literal['DistilGPT2', 'GPT2', 'OPT-1.3B', 'GPTJ-6B', 'T5 Small', 'T5 Base', 'T5 Large', 'T5 3B']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "plot_eager",
+          "label": "Plot TF Eager Execution?",
+          "type": "Literal['Yes', 'No']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_18",
+          "type": "filepath",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/partial_4",
+      "parameters": [
+        {
+          "name": "model_name",
+          "label": "Model",
+          "type": "Literal['DistilGPT2', 'GPT2', 'OPT-1.3B', 'GPTJ-6B', 'T5 Small', 'T5 Base', 'T5 Large', 'T5 3B']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "plot_eager",
+          "label": "Plot TF Eager Execution?",
+          "type": "Literal['Yes', 'No']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_26",
+          "type": "filepath",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/partial_5",
+      "parameters": [
+        {
+          "name": "model_name",
+          "label": "Model",
+          "type": "Literal['DistilGPT2', 'GPT2', 'OPT-1.3B', 'GPTJ-6B', 'T5 Small', 'T5 Base', 'T5 Large', 'T5 3B']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "plot_eager",
+          "label": "Plot TF Eager Execution?",
+          "type": "Literal['Yes', 'No']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_26",
+          "type": "filepath",
+          "component": "Image"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/partial",
+  "_api_verified": true,
+  "estimated_latency_s": 4.12,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "_tags_enriched": true,
+  "measured_latency_s": 4.12,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:51:01.891431+00:00"
+}

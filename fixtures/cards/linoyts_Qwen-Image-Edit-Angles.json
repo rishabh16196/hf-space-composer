@@ -1,0 +1,904 @@
+{
+  "space_id": "linoyts/Qwen-Image-Edit-Angles",
+  "title": "Qwen Image Edit Camera Control",
+  "emoji": "\ud83c\udfac",
+  "description": "Fast 4 step inference with Qwen Image Edit 2509",
+  "input_schema": {
+    "rotate": {
+      "type": "float",
+      "description": "Rotate Right \u2194 Left (\u00b0)",
+      "required": true,
+      "component": "Slider"
+    },
+    "forward": {
+      "type": "float",
+      "description": "Move Forward \u2192 Close-Up",
+      "required": true,
+      "component": "Slider"
+    },
+    "tilt": {
+      "type": "float",
+      "description": "Vertical: Bird's-eye \u2194 Worm's-eye",
+      "required": true,
+      "component": "Slider"
+    },
+    "wide": {
+      "type": "bool",
+      "description": "\ud83d\udd2d Wide-Angle Lens",
+      "required": true,
+      "component": "Checkbox"
+    }
+  },
+  "output_schema": {
+    "Generated Prompt": {
+      "type": "str",
+      "description": "Generated Prompt",
+      "component": "Textbox"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "6.2.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "mcp-server",
+    "region:us",
+    "image-generation",
+    "vision"
+  ],
+  "likes": 2187,
+  "last_modified": "2026-01-12 15:15:50+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/update_prompt_from_sliders",
+      "parameters": [
+        {
+          "name": "rotate",
+          "label": "Rotate Right \u2194 Left (\u00b0)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "forward",
+          "label": "Move Forward \u2192 Close-Up",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "tilt",
+          "label": "Vertical: Bird's-eye \u2194 Worm's-eye",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "wide",
+          "label": "\ud83d\udd2d Wide-Angle Lens",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Generated Prompt",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/update_prompt_from_sliders_1",
+      "parameters": [
+        {
+          "name": "rotate",
+          "label": "Rotate Right \u2194 Left (\u00b0)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "forward",
+          "label": "Move Forward \u2192 Close-Up",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "tilt",
+          "label": "Vertical: Bird's-eye \u2194 Worm's-eye",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "wide",
+          "label": "\ud83d\udd2d Wide-Angle Lens",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Generated Prompt",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/update_prompt_from_sliders_2",
+      "parameters": [
+        {
+          "name": "rotate",
+          "label": "Rotate Right \u2194 Left (\u00b0)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "forward",
+          "label": "Move Forward \u2192 Close-Up",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "tilt",
+          "label": "Vertical: Bird's-eye \u2194 Worm's-eye",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "wide",
+          "label": "\ud83d\udd2d Wide-Angle Lens",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Generated Prompt",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/update_prompt_from_sliders_3",
+      "parameters": [
+        {
+          "name": "rotate",
+          "label": "Rotate Right \u2194 Left (\u00b0)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "forward",
+          "label": "Move Forward \u2192 Close-Up",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "tilt",
+          "label": "Vertical: Bird's-eye \u2194 Worm's-eye",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "wide",
+          "label": "\ud83d\udd2d Wide-Angle Lens",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Generated Prompt",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/sync_3d_to_sliders",
+      "parameters": [
+        {
+          "name": "camera_value",
+          "label": "parameter_8",
+          "type": "str",
+          "component": "Html"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Rotate Right \u2194 Left (\u00b0)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Move Forward \u2192 Close-Up",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Vertical: Bird's-eye \u2194 Worm's-eye",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "\ud83d\udd2d Wide-Angle Lens",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "Generated Prompt",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/maybe_infer",
+      "parameters": [
+        {
+          "name": "is_reset_val",
+          "label": "parameter_6",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "progress",
+          "label": "Input Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "param_2",
+          "label": "Rotate Right \u2194 Left (\u00b0)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_3",
+          "label": "Move Forward \u2192 Close-Up",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_4",
+          "label": "Vertical: Bird's-eye \u2194 Worm's-eye",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_5",
+          "label": "\ud83d\udd2d Wide-Angle Lens",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_6",
+          "label": "Seed",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_7",
+          "label": "Randomize Seed",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_8",
+          "label": "True Guidance Scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_9",
+          "label": "Inference Steps",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_10",
+          "label": "Height",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_11",
+          "label": "Width",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_12",
+          "label": "parameter_5",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "Seed",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Generated Prompt",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/sync_sliders_to_3d",
+      "parameters": [
+        {
+          "name": "rotate",
+          "label": "Rotate Right \u2194 Left (\u00b0)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "forward",
+          "label": "Move Forward \u2192 Close-Up",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "tilt",
+          "label": "Vertical: Bird's-eye \u2194 Worm's-eye",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "wide",
+          "label": "\ud83d\udd2d Wide-Angle Lens",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_8",
+          "type": "str",
+          "component": "Html"
+        }
+      ]
+    },
+    {
+      "name": "/sync_sliders_to_3d_1",
+      "parameters": [
+        {
+          "name": "rotate",
+          "label": "Rotate Right \u2194 Left (\u00b0)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "forward",
+          "label": "Move Forward \u2192 Close-Up",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "tilt",
+          "label": "Vertical: Bird's-eye \u2194 Worm's-eye",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "wide",
+          "label": "\ud83d\udd2d Wide-Angle Lens",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_8",
+          "type": "str",
+          "component": "Html"
+        }
+      ]
+    },
+    {
+      "name": "/sync_sliders_to_3d_2",
+      "parameters": [
+        {
+          "name": "rotate",
+          "label": "Rotate Right \u2194 Left (\u00b0)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "forward",
+          "label": "Move Forward \u2192 Close-Up",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "tilt",
+          "label": "Vertical: Bird's-eye \u2194 Worm's-eye",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "wide",
+          "label": "\ud83d\udd2d Wide-Angle Lens",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_8",
+          "type": "str",
+          "component": "Html"
+        }
+      ]
+    },
+    {
+      "name": "/sync_sliders_to_3d_3",
+      "parameters": [
+        {
+          "name": "rotate",
+          "label": "Rotate Right \u2194 Left (\u00b0)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "forward",
+          "label": "Move Forward \u2192 Close-Up",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "tilt",
+          "label": "Vertical: Bird's-eye \u2194 Worm's-eye",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "wide",
+          "label": "\ud83d\udd2d Wide-Angle Lens",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_8",
+          "type": "str",
+          "component": "Html"
+        }
+      ]
+    },
+    {
+      "name": "/reset_all",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Rotate Right \u2194 Left (\u00b0)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Move Forward \u2192 Close-Up",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Vertical: Bird's-eye \u2194 Worm's-eye",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "\ud83d\udd2d Wide-Angle Lens",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "value_6",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ]
+    },
+    {
+      "name": "/end_reset",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_6",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ]
+    },
+    {
+      "name": "/sync_sliders_to_3d_4",
+      "parameters": [
+        {
+          "name": "rotate",
+          "label": "Rotate Right \u2194 Left (\u00b0)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "forward",
+          "label": "Move Forward \u2192 Close-Up",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "tilt",
+          "label": "Vertical: Bird's-eye \u2194 Worm's-eye",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "wide",
+          "label": "\ud83d\udd2d Wide-Angle Lens",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_8",
+          "type": "str",
+          "component": "Html"
+        }
+      ]
+    },
+    {
+      "name": "/infer_and_show_video_button",
+      "parameters": [
+        {
+          "name": "param_0",
+          "label": "Input Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "param_1",
+          "label": "Rotate Right \u2194 Left (\u00b0)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_2",
+          "label": "Move Forward \u2192 Close-Up",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_3",
+          "label": "Vertical: Bird's-eye \u2194 Worm's-eye",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_4",
+          "label": "\ud83d\udd2d Wide-Angle Lens",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_5",
+          "label": "Seed",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_6",
+          "label": "Randomize Seed",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_7",
+          "label": "True Guidance Scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_8",
+          "label": "Inference Steps",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_9",
+          "label": "Height",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_10",
+          "label": "Width",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_11",
+          "label": "parameter_5",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "Seed",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Generated Prompt",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/update_dimensions_on_upload",
+      "parameters": [
+        {
+          "name": "image",
+          "label": "Input Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Width",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Height",
+          "type": "float",
+          "component": "Slider"
+        }
+      ]
+    },
+    {
+      "name": "/reset_all_1",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Rotate Right \u2194 Left (\u00b0)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Move Forward \u2192 Close-Up",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Vertical: Bird's-eye \u2194 Worm's-eye",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "\ud83d\udd2d Wide-Angle Lens",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "value_6",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ]
+    },
+    {
+      "name": "/end_reset_1",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_6",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ]
+    },
+    {
+      "name": "/update_3d_image",
+      "parameters": [
+        {
+          "name": "img",
+          "label": "Input Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_8",
+          "type": "str",
+          "component": "Html"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_1",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_8",
+          "type": "str",
+          "component": "Html"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_2",
+      "parameters": [
+        {
+          "name": "img",
+          "label": "Output Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_5",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/infer_edit_camera_angles",
+      "parameters": [
+        {
+          "name": "image",
+          "label": "1st",
+          "type": "None | dict(format: None | str, format_description: None | str)",
+          "component": "Api"
+        },
+        {
+          "name": "rotate_deg",
+          "label": "2nd",
+          "type": "float",
+          "component": "Api"
+        },
+        {
+          "name": "move_forward",
+          "label": "3rd",
+          "type": "float",
+          "component": "Api"
+        },
+        {
+          "name": "vertical_tilt",
+          "label": "4th",
+          "type": "float",
+          "component": "Api"
+        },
+        {
+          "name": "wideangle",
+          "label": "5th",
+          "type": "bool",
+          "component": "Api"
+        },
+        {
+          "name": "seed",
+          "label": "6th",
+          "type": "int",
+          "component": "Api"
+        },
+        {
+          "name": "randomize_seed",
+          "label": "7th",
+          "type": "bool",
+          "component": "Api"
+        },
+        {
+          "name": "true_guidance_scale",
+          "label": "8th",
+          "type": "float",
+          "component": "Api"
+        },
+        {
+          "name": "num_inference_steps",
+          "label": "9th",
+          "type": "int",
+          "component": "Api"
+        },
+        {
+          "name": "height",
+          "label": "10th",
+          "type": "None | int",
+          "component": "Api"
+        },
+        {
+          "name": "width",
+          "label": "11th",
+          "type": "None | int",
+          "component": "Api"
+        },
+        {
+          "name": "prev_output",
+          "label": "12th",
+          "type": "None | dict(format: None | str, format_description: None | str)",
+          "component": "Api"
+        }
+      ],
+      "returns": [
+        {
+          "label": "1st",
+          "type": "dict(format: None | str, format_description: None | str)",
+          "component": "Api"
+        },
+        {
+          "label": "2nd",
+          "type": "int",
+          "component": "Api"
+        },
+        {
+          "label": "3rd",
+          "type": "str",
+          "component": "Api"
+        }
+      ]
+    },
+    {
+      "name": "/create_video_between_images_1",
+      "parameters": [
+        {
+          "name": "input_image",
+          "label": "1st",
+          "type": "None | dict(format: None | str, format_description: None | str)",
+          "component": "Api"
+        },
+        {
+          "name": "output_image",
+          "label": "2nd",
+          "type": "None | Any",
+          "component": "Api"
+        },
+        {
+          "name": "prompt",
+          "label": "3rd",
+          "type": "str",
+          "component": "Api"
+        }
+      ],
+      "returns": [
+        {
+          "label": "1st",
+          "type": "str",
+          "component": "Api"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/update_prompt_from_sliders",
+  "_api_verified": true,
+  "estimated_latency_s": 2.1,
+  "speed_tier": "fast",
+  "_latency_source": "measured_inference",
+  "_tags_enriched": true,
+  "measured_latency_s": 2.1,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:51:10.415395+00:00",
+  "measured_inference_s": 2.1,
+  "measured_inference_timestamp": "2026-04-20T07:58:32.329606+00:00",
+  "measured_inference_method": "auto_predict",
+  "measured_inference_api": "/update_prompt_from_sliders"
+}

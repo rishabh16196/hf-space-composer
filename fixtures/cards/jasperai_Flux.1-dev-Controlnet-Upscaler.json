@@ -1,0 +1,44 @@
+{
+  "space_id": "jasperai/Flux.1-dev-Controlnet-Upscaler",
+  "title": "Flux.1-dev Upscaler",
+  "emoji": "\ud83d\udd0e",
+  "description": "Flux.1-dev Upscaler",
+  "input_schema": {
+    "input": {
+      "type": "string",
+      "description": "Input",
+      "required": true
+    }
+  },
+  "output_schema": {
+    "output": {
+      "type": "string"
+    }
+  },
+  "license": "other",
+  "hardware": "5.29.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "upscaler",
+    "super-resolution",
+    "controlnet",
+    "flux.1-dev",
+    "region:us"
+  ],
+  "likes": 1682,
+  "last_modified": "2026-02-06 15:29:12+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [],
+  "_api_verified": true,
+  "estimated_latency_s": 3.63,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "_tags_enriched": true,
+  "measured_latency_s": 3.63,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:50:59.631358+00:00"
+}

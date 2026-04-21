@@ -1,0 +1,438 @@
+{
+  "space_id": "alexnasa/Wan2.2-Animate-ZEROGPU",
+  "title": "Wan2.2 Animate [Local]",
+  "emoji": "\ud83d\udd25",
+  "description": "Edit Videos with Wan 2.2",
+  "input_schema": {},
+  "output_schema": {},
+  "license": "unknown",
+  "hardware": "5.49.1",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 258,
+  "last_modified": "2026-04-10 01:55:44+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/start_session",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/animate_scene",
+      "parameters": [
+        {
+          "name": "input_video",
+          "label": "Input Video",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        },
+        {
+          "name": "max_duration_s",
+          "label": "Max Duration",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "edited_frame",
+          "label": "Ref Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "rc_str",
+          "label": "parameter_17",
+          "type": "Literal['Video \u2192 Ref Image', 'Video \u2190 Ref Image']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Edited Video",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        },
+        {
+          "label": "Pose Video",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        },
+        {
+          "label": "Background Video",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        },
+        {
+          "label": "Mask Video",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        },
+        {
+          "label": "Face Video",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        }
+      ]
+    },
+    {
+      "name": "/update_time_required",
+      "parameters": [
+        {
+          "name": "max_duration_s",
+          "label": "Max Duration",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "rc_str",
+          "label": "parameter_17",
+          "type": "Literal['Video \u2192 Ref Image', 'Video \u2190 Ref Image']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_23",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/log_change",
+      "parameters": [
+        {
+          "name": "meta_data",
+          "label": "parameter_17",
+          "type": "Literal['Video \u2192 Ref Image', 'Video \u2190 Ref Image']",
+          "component": "Radio"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/sync_slider",
+      "parameters": [
+        {
+          "name": "val",
+          "label": "Max Duration",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Max Duration",
+          "type": "float",
+          "component": "Slider"
+        }
+      ]
+    },
+    {
+      "name": "/log_change_1",
+      "parameters": [
+        {
+          "name": "meta_data",
+          "label": "Max Duration",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/update_time_required_1",
+      "parameters": [
+        {
+          "name": "max_duration_s",
+          "label": "Max Duration",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "rc_str",
+          "label": "parameter_17",
+          "type": "Literal['Video \u2192 Ref Image', 'Video \u2190 Ref Image']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_23",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/extract_frames",
+      "parameters": [
+        {
+          "name": "input_video",
+          "label": "Input Video",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        },
+        {
+          "name": "max_duration_s",
+          "label": "Max Duration",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_49",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "Frame Index",
+          "type": "float",
+          "component": "Slider"
+        }
+      ]
+    },
+    {
+      "name": "/log_change_2",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/set_reset",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_52",
+          "type": "Literal['\u2714\ufe0fInclude', '\u274cExclude']",
+          "component": "Radio"
+        }
+      ]
+    },
+    {
+      "name": "/log_change_3",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/log_change_4",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/set_reset_1",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_52",
+          "type": "Literal['\u2714\ufe0fInclude', '\u274cExclude']",
+          "component": "Radio"
+        }
+      ]
+    },
+    {
+      "name": "/open_modal",
+      "parameters": [
+        {
+          "name": "input_video",
+          "label": "Input Video",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        },
+        {
+          "name": "edited_frame",
+          "label": "Ref Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/extract_frames_1",
+      "parameters": [
+        {
+          "name": "input_video",
+          "label": "Input Video",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        },
+        {
+          "name": "max_duration_s",
+          "label": "Max Duration",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_49",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "Frame Index",
+          "type": "float",
+          "component": "Slider"
+        }
+      ]
+    },
+    {
+      "name": "/lambda",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/animate_scene_1",
+      "parameters": [
+        {
+          "name": "input_video",
+          "label": "Input Video",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        },
+        {
+          "name": "max_duration_s",
+          "label": "Max Duration",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "edited_frame",
+          "label": "Ref Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "rc_str",
+          "label": "parameter_17",
+          "type": "Literal['Video \u2192 Ref Image', 'Video \u2190 Ref Image']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Edited Video",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        },
+        {
+          "label": "Pose Video",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        },
+        {
+          "label": "Background Video",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        },
+        {
+          "label": "Mask Video",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        },
+        {
+          "label": "Face Video",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        }
+      ]
+    },
+    {
+      "name": "/set_reset_2",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_52",
+          "type": "Literal['\u2714\ufe0fInclude', '\u274cExclude']",
+          "component": "Radio"
+        }
+      ]
+    },
+    {
+      "name": "/set_sam2_mode",
+      "parameters": [
+        {
+          "name": "mode",
+          "label": "parameter_52",
+          "type": "Literal['\u2714\ufe0fInclude', '\u274cExclude']",
+          "component": "Radio"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/set_reset_3",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_52",
+          "type": "Literal['\u2714\ufe0fInclude', '\u274cExclude']",
+          "component": "Radio"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_1",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/set_input_image",
+      "parameters": [
+        {
+          "name": "frame_index",
+          "label": "Frame Index",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_49",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/get_select_coords",
+      "parameters": [
+        {
+          "name": "frame_idx",
+          "label": "Frame Index",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "img_path",
+          "label": "parameter_49",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_49",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/start_session",
+  "_api_verified": true,
+  "estimated_latency_s": 3.83,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "_tags_enriched": true,
+  "measured_latency_s": 3.83,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:50:12.847145+00:00"
+}

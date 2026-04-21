@@ -1,0 +1,59 @@
+{
+  "space_id": "course-demos/audio-reverse",
+  "title": "Audio Reverse",
+  "emoji": "\ud83d\ude80",
+  "description": "Audio Reverse",
+  "input_schema": {
+    "audio": {
+      "type": "filepath",
+      "description": "Speak here...",
+      "required": true,
+      "component": "Audio"
+    }
+  },
+  "output_schema": {
+    "output": {
+      "type": "filepath",
+      "description": "output",
+      "component": "Audio"
+    }
+  },
+  "license": "mit",
+  "hardware": "5.45.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 7,
+  "last_modified": "2025-09-12 14:46:18+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/predict",
+      "parameters": [
+        {
+          "name": "audio",
+          "label": "Speak here...",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "output",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/predict",
+  "_api_verified": true
+}

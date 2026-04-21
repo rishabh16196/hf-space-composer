@@ -1,0 +1,95 @@
+{
+  "space_id": "kornia/morphological_operators",
+  "title": "Morphological Operators",
+  "emoji": "\ud83d\ude3b",
+  "description": "Morphological Operators",
+  "input_schema": {
+    "img": {
+      "type": "filepath",
+      "description": "Input Image",
+      "required": true,
+      "component": "Image"
+    },
+    "operator": {
+      "type": "Literal['Dilation', 'Erosion', 'Open', 'Close', 'Gradient', 'Bottom Hat', 'Top Hat']",
+      "description": "Operator",
+      "required": true,
+      "component": "Dropdown"
+    },
+    "kernel": {
+      "type": "Literal['Ones', 'Eye', 'Cross']",
+      "description": "Kernel Type",
+      "required": true,
+      "component": "Radio"
+    },
+    "kernel_size": {
+      "type": "float",
+      "description": "Kernel size",
+      "required": true,
+      "component": "Slider"
+    }
+  },
+  "output_schema": {
+    "Output Image": {
+      "type": "filepath",
+      "description": "Output Image",
+      "component": "Image"
+    }
+  },
+  "license": "unknown",
+  "hardware": "4.37.2",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 3,
+  "last_modified": "2024-07-12 12:21:24+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/morphological_operators",
+      "parameters": [
+        {
+          "name": "img",
+          "label": "Input Image",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "name": "operator",
+          "label": "Operator",
+          "type": "Literal['Dilation', 'Erosion', 'Open', 'Close', 'Gradient', 'Bottom Hat', 'Top Hat']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "kernel",
+          "label": "Kernel Type",
+          "type": "Literal['Ones', 'Eye', 'Cross']",
+          "component": "Radio"
+        },
+        {
+          "name": "kernel_size",
+          "label": "Kernel size",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output Image",
+          "type": "filepath",
+          "component": "Image"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/morphological_operators",
+  "_api_verified": true
+}

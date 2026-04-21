@@ -1,0 +1,96 @@
+{
+  "space_id": "BilalSardar/Lyrics-Text_to_music",
+  "title": "Lyrics-Text To Music",
+  "emoji": "\ud83c\udfba\ud83c\udfb9",
+  "description": "Lyrics-Text To Music",
+  "input_schema": {
+    "Enter Prompt": {
+      "type": "str",
+      "description": "Enter Prompt",
+      "required": true,
+      "component": "Textbox"
+    },
+    "Enter Number of Notes": {
+      "type": "int | float",
+      "description": "Enter Number of Notes",
+      "required": true,
+      "component": "Number"
+    },
+    "randomize_words_matching": {
+      "type": "bool",
+      "description": "randomize_words_matching",
+      "required": true,
+      "component": "Checkbox"
+    }
+  },
+  "output_schema": {
+    "output 0": {
+      "type": "str | Dict(name: str (name of file), data: str (base64 representation of file), size: int (size of i",
+      "description": "output 0",
+      "component": "Audio"
+    },
+    "output 1": {
+      "type": "str",
+      "description": "output 1",
+      "component": "Image"
+    }
+  },
+  "license": "unknown",
+  "hardware": "3.17.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us",
+    "audio",
+    "music"
+  ],
+  "likes": 32,
+  "last_modified": "2023-10-22 12:23:24+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_tags_enriched": true,
+  "estimated_latency_s": 60.0,
+  "speed_tier": "very_slow",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/predict",
+      "parameters": [
+        {
+          "name": "Enter Prompt",
+          "label": "Enter Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "Enter Number of Notes",
+          "label": "Enter Number of Notes",
+          "type": "int | float",
+          "component": "Number"
+        },
+        {
+          "name": "randomize_words_matching",
+          "label": "randomize_words_matching",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "output 0",
+          "type": "str | Dict(name: str (name of file), data: str (base64 representation of file), size: int (size of image in bytes), is_file: bool (true if the file has been uploaded to the server), orig_name: str (or",
+          "component": "Audio"
+        },
+        {
+          "label": "output 1",
+          "type": "str",
+          "component": "Image"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/predict",
+  "_api_verified": true
+}

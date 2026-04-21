@@ -1,0 +1,803 @@
+{
+  "space_id": "Heartsync/angle",
+  "title": "Qwen Image Edit Camera Control",
+  "emoji": "\ud83c\udfac",
+  "description": "Free AI Creative Tools - www.humangen.ai",
+  "input_schema": {},
+  "output_schema": {
+    "\u2194\ufe0f Rotate Right-Left (degrees \u00b0)": {
+      "type": "float",
+      "description": "\u2194\ufe0f Rotate Right-Left (degrees \u00b0)",
+      "component": "Slider"
+    },
+    "\ud83d\udd0d Move Forward \u2192 Close-Up": {
+      "type": "float",
+      "description": "\ud83d\udd0d Move Forward \u2192 Close-Up",
+      "component": "Slider"
+    },
+    "\u2195\ufe0f Vertical Angle (Bird \u2194 Worm)": {
+      "type": "float",
+      "description": "\u2195\ufe0f Vertical Angle (Bird \u2194 Worm)",
+      "component": "Slider"
+    },
+    "\ud83d\udcd0 Wide-Angle Lens": {
+      "type": "bool",
+      "description": "\ud83d\udcd0 Wide-Angle Lens",
+      "component": "Checkbox"
+    },
+    "value_11": {
+      "type": "bool",
+      "description": "value_11",
+      "component": "Checkbox"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "6.0.2",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "mcp-server",
+    "region:us"
+  ],
+  "likes": 7,
+  "last_modified": "2026-01-03 06:11:35+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/reset_all",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "\u2194\ufe0f Rotate Right-Left (degrees \u00b0)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "\ud83d\udd0d Move Forward \u2192 Close-Up",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "\u2195\ufe0f Vertical Angle (Bird \u2194 Worm)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "\ud83d\udcd0 Wide-Angle Lens",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "value_11",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ]
+    },
+    {
+      "name": "/end_reset",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_11",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ]
+    },
+    {
+      "name": "/infer_and_show_video_button",
+      "parameters": [
+        {
+          "name": "param_0",
+          "label": "\ud83d\udcf7 Upload Your Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "param_1",
+          "label": "\u2194\ufe0f Rotate Right-Left (degrees \u00b0)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_2",
+          "label": "\ud83d\udd0d Move Forward \u2192 Close-Up",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_3",
+          "label": "\u2195\ufe0f Vertical Angle (Bird \u2194 Worm)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_4",
+          "label": "\ud83d\udcd0 Wide-Angle Lens",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_5",
+          "label": "\ud83c\udfb2 Seed",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_6",
+          "label": "\ud83d\udd00 Randomize Seed",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_7",
+          "label": "\ud83d\udcca True Guidance Scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_8",
+          "label": "\ud83d\udd22 Inference Steps",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_9",
+          "label": "\ud83d\udccf Height",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_10",
+          "label": "\ud83d\udcd0 Width",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_11",
+          "label": "parameter_10",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ],
+      "returns": [
+        {
+          "label": "\ud83d\uddbc\ufe0f Output Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "\ud83c\udfb2 Seed",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "\ud83d\udcdd Generated Prompt",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/update_dimensions_on_upload",
+      "parameters": [
+        {
+          "name": "image",
+          "label": "\ud83d\udcf7 Upload Your Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ],
+      "returns": [
+        {
+          "label": "\ud83d\udcd0 Width",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "\ud83d\udccf Height",
+          "type": "float",
+          "component": "Slider"
+        }
+      ]
+    },
+    {
+      "name": "/reset_all_1",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "\u2194\ufe0f Rotate Right-Left (degrees \u00b0)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "\ud83d\udd0d Move Forward \u2192 Close-Up",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "\u2195\ufe0f Vertical Angle (Bird \u2194 Worm)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "\ud83d\udcd0 Wide-Angle Lens",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "value_11",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ]
+    },
+    {
+      "name": "/end_reset_1",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_11",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ]
+    },
+    {
+      "name": "/maybe_infer",
+      "parameters": [
+        {
+          "name": "is_reset",
+          "label": "parameter_11",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "progress",
+          "label": "\ud83d\udcf7 Upload Your Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "param_2",
+          "label": "\u2194\ufe0f Rotate Right-Left (degrees \u00b0)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_3",
+          "label": "\ud83d\udd0d Move Forward \u2192 Close-Up",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_4",
+          "label": "\u2195\ufe0f Vertical Angle (Bird \u2194 Worm)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_5",
+          "label": "\ud83d\udcd0 Wide-Angle Lens",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_6",
+          "label": "\ud83c\udfb2 Seed",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_7",
+          "label": "\ud83d\udd00 Randomize Seed",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_8",
+          "label": "\ud83d\udcca True Guidance Scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_9",
+          "label": "\ud83d\udd22 Inference Steps",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_10",
+          "label": "\ud83d\udccf Height",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_11",
+          "label": "\ud83d\udcd0 Width",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_12",
+          "label": "parameter_10",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ],
+      "returns": [
+        {
+          "label": "\ud83d\uddbc\ufe0f Output Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "\ud83c\udfb2 Seed",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "\ud83d\udcdd Generated Prompt",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/maybe_infer_1",
+      "parameters": [
+        {
+          "name": "is_reset",
+          "label": "parameter_11",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "progress",
+          "label": "\ud83d\udcf7 Upload Your Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "param_2",
+          "label": "\u2194\ufe0f Rotate Right-Left (degrees \u00b0)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_3",
+          "label": "\ud83d\udd0d Move Forward \u2192 Close-Up",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_4",
+          "label": "\u2195\ufe0f Vertical Angle (Bird \u2194 Worm)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_5",
+          "label": "\ud83d\udcd0 Wide-Angle Lens",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_6",
+          "label": "\ud83c\udfb2 Seed",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_7",
+          "label": "\ud83d\udd00 Randomize Seed",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_8",
+          "label": "\ud83d\udcca True Guidance Scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_9",
+          "label": "\ud83d\udd22 Inference Steps",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_10",
+          "label": "\ud83d\udccf Height",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_11",
+          "label": "\ud83d\udcd0 Width",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_12",
+          "label": "parameter_10",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ],
+      "returns": [
+        {
+          "label": "\ud83d\uddbc\ufe0f Output Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "\ud83c\udfb2 Seed",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "\ud83d\udcdd Generated Prompt",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/maybe_infer_2",
+      "parameters": [
+        {
+          "name": "is_reset",
+          "label": "parameter_11",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "progress",
+          "label": "\ud83d\udcf7 Upload Your Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "param_2",
+          "label": "\u2194\ufe0f Rotate Right-Left (degrees \u00b0)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_3",
+          "label": "\ud83d\udd0d Move Forward \u2192 Close-Up",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_4",
+          "label": "\u2195\ufe0f Vertical Angle (Bird \u2194 Worm)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_5",
+          "label": "\ud83d\udcd0 Wide-Angle Lens",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_6",
+          "label": "\ud83c\udfb2 Seed",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_7",
+          "label": "\ud83d\udd00 Randomize Seed",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_8",
+          "label": "\ud83d\udcca True Guidance Scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_9",
+          "label": "\ud83d\udd22 Inference Steps",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_10",
+          "label": "\ud83d\udccf Height",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_11",
+          "label": "\ud83d\udcd0 Width",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_12",
+          "label": "parameter_10",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ],
+      "returns": [
+        {
+          "label": "\ud83d\uddbc\ufe0f Output Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "\ud83c\udfb2 Seed",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "\ud83d\udcdd Generated Prompt",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/maybe_infer_3",
+      "parameters": [
+        {
+          "name": "is_reset",
+          "label": "parameter_11",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "progress",
+          "label": "\ud83d\udcf7 Upload Your Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "param_2",
+          "label": "\u2194\ufe0f Rotate Right-Left (degrees \u00b0)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_3",
+          "label": "\ud83d\udd0d Move Forward \u2192 Close-Up",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_4",
+          "label": "\u2195\ufe0f Vertical Angle (Bird \u2194 Worm)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_5",
+          "label": "\ud83d\udcd0 Wide-Angle Lens",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_6",
+          "label": "\ud83c\udfb2 Seed",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_7",
+          "label": "\ud83d\udd00 Randomize Seed",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_8",
+          "label": "\ud83d\udcca True Guidance Scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_9",
+          "label": "\ud83d\udd22 Inference Steps",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_10",
+          "label": "\ud83d\udccf Height",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_11",
+          "label": "\ud83d\udcd0 Width",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_12",
+          "label": "parameter_10",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ],
+      "returns": [
+        {
+          "label": "\ud83d\uddbc\ufe0f Output Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "\ud83c\udfb2 Seed",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "\ud83d\udcdd Generated Prompt",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_1",
+      "parameters": [
+        {
+          "name": "img",
+          "label": "\ud83d\uddbc\ufe0f Output Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_10",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/infer_edit_camera_angles",
+      "parameters": [
+        {
+          "name": "image",
+          "label": "1st",
+          "type": "None | dict(format: None | str, format_description: None | str)",
+          "component": "Api"
+        },
+        {
+          "name": "rotate_deg",
+          "label": "2nd",
+          "type": "float",
+          "component": "Api"
+        },
+        {
+          "name": "move_forward",
+          "label": "3rd",
+          "type": "float",
+          "component": "Api"
+        },
+        {
+          "name": "vertical_tilt",
+          "label": "4th",
+          "type": "float",
+          "component": "Api"
+        },
+        {
+          "name": "wideangle",
+          "label": "5th",
+          "type": "bool",
+          "component": "Api"
+        },
+        {
+          "name": "seed",
+          "label": "6th",
+          "type": "int",
+          "component": "Api"
+        },
+        {
+          "name": "randomize_seed",
+          "label": "7th",
+          "type": "bool",
+          "component": "Api"
+        },
+        {
+          "name": "true_guidance_scale",
+          "label": "8th",
+          "type": "float",
+          "component": "Api"
+        },
+        {
+          "name": "num_inference_steps",
+          "label": "9th",
+          "type": "int",
+          "component": "Api"
+        },
+        {
+          "name": "height",
+          "label": "10th",
+          "type": "None | int",
+          "component": "Api"
+        },
+        {
+          "name": "width",
+          "label": "11th",
+          "type": "None | int",
+          "component": "Api"
+        },
+        {
+          "name": "prev_output",
+          "label": "12th",
+          "type": "None | dict(format: None | str, format_description: None | str)",
+          "component": "Api"
+        }
+      ],
+      "returns": [
+        {
+          "label": "1st",
+          "type": "dict(format: None | str, format_description: None | str)",
+          "component": "Api"
+        },
+        {
+          "label": "2nd",
+          "type": "int",
+          "component": "Api"
+        },
+        {
+          "label": "3rd",
+          "type": "str",
+          "component": "Api"
+        }
+      ]
+    },
+    {
+      "name": "/create_video_between_images_1",
+      "parameters": [
+        {
+          "name": "input_image",
+          "label": "1st",
+          "type": "None | dict(format: None | str, format_description: None | str)",
+          "component": "Api"
+        },
+        {
+          "name": "output_image",
+          "label": "2nd",
+          "type": "None | Any",
+          "component": "Api"
+        },
+        {
+          "name": "prompt",
+          "label": "3rd",
+          "type": "str",
+          "component": "Api"
+        }
+      ],
+      "returns": [
+        {
+          "label": "1st",
+          "type": "str",
+          "component": "Api"
+        }
+      ]
+    },
+    {
+      "name": "/_check_login_status",
+      "parameters": [],
+      "returns": []
+    }
+  ],
+  "endpoint": "/reset_all",
+  "_api_verified": true
+}

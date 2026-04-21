@@ -1,0 +1,38 @@
+{
+  "space_id": "AMA-bench/AMA-bench-Leaderboard",
+  "title": "AMA-Bench Leaderboard",
+  "emoji": "\ud83e\udde0",
+  "description": "AMA-Bench Leaderboard",
+  "input_schema": {
+    "input": {
+      "type": "string",
+      "description": "Input",
+      "required": true
+    }
+  },
+  "output_schema": {
+    "output": {
+      "type": "string"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "5.23.3",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us",
+    "benchmark",
+    "leaderboard"
+  ],
+  "likes": 3,
+  "last_modified": "2026-03-05 23:32:23+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_tags_enriched": true,
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "error",
+  "_api_error": "(Request ID: Root=1-69e77bd8-38cf50ad072a13cf4da1b616;26b866ba-ed8a-444c-8b4c-96004554bd62)\n\n429 Too Many Requests: you have reached your 'api' rate limit.\nRetry after 6 seconds (0/2500 requests remai"
+}

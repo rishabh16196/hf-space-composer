@@ -1,0 +1,161 @@
+{
+  "space_id": "nari-labs/Dia-1.6B",
+  "title": "Dia 1.6B",
+  "emoji": "\ud83d\udc6f",
+  "description": "Generate realistic dialogue from a script, using Dia!",
+  "input_schema": {
+    "text_input": {
+      "type": "str",
+      "description": "Input Text",
+      "required": true,
+      "component": "Textbox"
+    },
+    "audio_prompt_input": {
+      "type": "filepath",
+      "description": "Audio Prompt (\u2264 10 s, Optional)",
+      "required": true,
+      "component": "Audio"
+    },
+    "transcription_input": {
+      "type": "str",
+      "description": "Audio Prompt Transcription (Optional)",
+      "required": true,
+      "component": "Textbox"
+    },
+    "max_new_tokens": {
+      "type": "float",
+      "description": "Max New Tokens (Audio Length)",
+      "required": true,
+      "component": "Slider"
+    },
+    "cfg_scale": {
+      "type": "float",
+      "description": "CFG Scale (Guidance Strength)",
+      "required": true,
+      "component": "Slider"
+    },
+    "temperature": {
+      "type": "float",
+      "description": "Temperature (Randomness)",
+      "required": true,
+      "component": "Slider"
+    },
+    "top_p": {
+      "type": "float",
+      "description": "Top P (Nucleus Sampling)",
+      "required": true,
+      "component": "Slider"
+    },
+    "cfg_filter_top_k": {
+      "type": "float",
+      "description": "CFG Filter Top K",
+      "required": true,
+      "component": "Slider"
+    },
+    "speed_factor": {
+      "type": "float",
+      "description": "Speed Factor",
+      "required": true,
+      "component": "Slider"
+    }
+  },
+  "output_schema": {
+    "Generated Audio": {
+      "type": "filepath",
+      "description": "Generated Audio",
+      "component": "Audio"
+    }
+  },
+  "license": "unknown",
+  "hardware": "5.25.2",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 1773,
+  "last_modified": "2025-11-01 23:24:47+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/generate_audio",
+      "parameters": [
+        {
+          "name": "text_input",
+          "label": "Input Text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "audio_prompt_input",
+          "label": "Audio Prompt (\u2264 10 s, Optional)",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "name": "transcription_input",
+          "label": "Audio Prompt Transcription (Optional)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "max_new_tokens",
+          "label": "Max New Tokens (Audio Length)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "cfg_scale",
+          "label": "CFG Scale (Guidance Strength)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "temperature",
+          "label": "Temperature (Randomness)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "top_p",
+          "label": "Top P (Nucleus Sampling)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "cfg_filter_top_k",
+          "label": "CFG Filter Top K",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "speed_factor",
+          "label": "Speed Factor",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Generated Audio",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/generate_audio",
+  "_api_verified": true,
+  "estimated_latency_s": 3.97,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "_tags_enriched": true,
+  "measured_latency_s": 3.97,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:51:23.082956+00:00",
+  "_inference_attempt_status": "predict_failed",
+  "_inference_attempt_error": "Inference failed: 'Audio prompt must be 10 seconds or shorter.'"
+}

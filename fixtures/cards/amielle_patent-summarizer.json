@@ -1,0 +1,36 @@
+{
+  "space_id": "amielle/patent-summarizer",
+  "title": "Patent Summarizer",
+  "emoji": "\ud83d\udcdd",
+  "description": "Patent Summarizer",
+  "input_schema": {
+    "input": {
+      "type": "string",
+      "description": "Input",
+      "required": true
+    }
+  },
+  "output_schema": {
+    "output": {
+      "type": "string"
+    }
+  },
+  "license": "mit",
+  "hardware": "2.8.12",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 3,
+  "last_modified": "2022-03-31 13:11:06+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_tags_enriched": true,
+  "estimated_latency_s": 4.0,
+  "speed_tier": "fast",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "error",
+  "_api_error": "(Request ID: Root=1-69e77bdb-4ba2930b3706903a494100b7;8adff00c-80b9-41cd-907f-e4d844ee14eb)\n\n429 Too Many Requests: you have reached your 'api' rate limit.\nRetry after 3 seconds (0/2500 requests remai"
+}

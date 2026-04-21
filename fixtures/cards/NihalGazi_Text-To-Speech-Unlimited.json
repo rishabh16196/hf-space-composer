@@ -1,0 +1,116 @@
+{
+  "space_id": "NihalGazi/Text-To-Speech-Unlimited",
+  "title": "Realistic Text To Speech Unlimited",
+  "emoji": "\ud83d\udd25",
+  "description": "Free Text-To-Speech generator with Emotion control (OpenAI)",
+  "input_schema": {
+    "use_random_seed": {
+      "type": "bool",
+      "description": "Use Random Seed",
+      "required": true,
+      "component": "Checkbox"
+    }
+  },
+  "output_schema": {
+    "Specific Seed": {
+      "type": "int",
+      "description": "Specific Seed",
+      "component": "Number"
+    }
+  },
+  "license": "unknown",
+  "hardware": "6.10.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us",
+    "audio",
+    "sentiment",
+    "text"
+  ],
+  "likes": 1752,
+  "last_modified": "2026-03-29 18:15:52+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_tags_enriched": true,
+  "estimated_latency_s": 2.5,
+  "speed_tier": "fast",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/toggle_seed_input",
+      "parameters": [
+        {
+          "name": "use_random_seed",
+          "label": "Use Random Seed",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Specific Seed",
+          "type": "int",
+          "component": "Number"
+        }
+      ]
+    },
+    {
+      "name": "/text_to_speech_app",
+      "parameters": [
+        {
+          "name": "prompt",
+          "label": "Prompt (Max 200 chars)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "voice",
+          "label": "Voice",
+          "type": "Literal['alloy', 'echo', 'fable', 'onyx', 'nova', 'shimmer', 'coral', 'verse', 'ballad', 'ash', 'sage', 'amuch', 'dan']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "emotion",
+          "label": "Emotion Style",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "use_random_seed",
+          "label": "Use Random Seed",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "specific_seed",
+          "label": "Specific Seed",
+          "type": "int",
+          "component": "Number"
+        },
+        {
+          "name": "api_key_input",
+          "label": "Pollinations API Key (Optional)",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Generated Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Status",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/toggle_seed_input",
+  "_api_verified": true
+}

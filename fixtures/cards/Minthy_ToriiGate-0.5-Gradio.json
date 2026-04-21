@@ -1,0 +1,399 @@
+{
+  "space_id": "Minthy/ToriiGate-0.5-Gradio",
+  "title": "ToriiGate 0.5 Gradio",
+  "emoji": "\ud83c\udfe2",
+  "description": "Gradio demo for ToriiGate-0.5 model",
+  "input_schema": {
+    "x": {
+      "type": "bool",
+      "description": "Add Tags",
+      "required": true,
+      "component": "Checkbox"
+    }
+  },
+  "output_schema": {
+    "Tags (comma-separated)": {
+      "type": "str",
+      "description": "Tags (comma-separated)",
+      "component": "Textbox"
+    }
+  },
+  "license": "unknown",
+  "hardware": "6.11.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 7,
+  "last_modified": "2026-04-09 22:33:28+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/lambda",
+      "parameters": [
+        {
+          "name": "x",
+          "label": "Add Tags",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Tags (comma-separated)",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_1",
+      "parameters": [
+        {
+          "name": "x",
+          "label": "Add Character List",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Character Names (comma-separated)",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_2",
+      "parameters": [
+        {
+          "name": "x",
+          "label": "Add Character Tags",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/lambda_3",
+      "parameters": [
+        {
+          "name": "x",
+          "label": "Add Character Descriptions",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/generate_caption",
+      "parameters": [
+        {
+          "name": "image",
+          "label": "Upload Image",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "name": "c_type",
+          "label": "Caption Type",
+          "type": "Literal['long_thoughts_v2', 'long_thoughts', 'json', 'long', 'min_structured_md', 'json_comic', 'md_comic', 'min_structured_json', 'chroma-style', 'short']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "use_names",
+          "label": "Use Names (enable character names)",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "add_tags",
+          "label": "Add Tags",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "add_char_list",
+          "label": "Add Character List",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "add_chars_tags",
+          "label": "Add Character Tags",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "add_chars_descr",
+          "label": "Add Character Descriptions",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "tags_text",
+          "label": "Tags (comma-separated)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "characters_text",
+          "label": "Character Names (comma-separated)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "char1_name",
+          "label": "Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "char1_tags",
+          "label": "Tags (comma-separated)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "char2_name",
+          "label": "Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "char2_tags",
+          "label": "Tags (comma-separated)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "char3_name",
+          "label": "Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "char3_tags",
+          "label": "Tags (comma-separated)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "char4_name",
+          "label": "Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "char4_tags",
+          "label": "Tags (comma-separated)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "char5_name",
+          "label": "Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "char5_tags",
+          "label": "Tags (comma-separated)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "char_descr1_name",
+          "label": "Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "char_descr1_text",
+          "label": "Description",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "char_descr2_name",
+          "label": "Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "char_descr2_text",
+          "label": "Description",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "char_descr3_name",
+          "label": "Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "char_descr3_text",
+          "label": "Description",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "char_descr4_name",
+          "label": "Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "char_descr4_text",
+          "label": "Description",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "char_descr5_name",
+          "label": "Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "char_descr5_text",
+          "label": "Description",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Caption Output",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/clear_char_tags",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Tags (comma-separated)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Tags (comma-separated)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Tags (comma-separated)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Tags (comma-separated)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Tags (comma-separated)",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/clear_char_descr",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Description",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Description",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Description",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Description",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Description",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/lambda",
+  "_api_verified": true
+}

@@ -1,0 +1,118 @@
+{
+  "space_id": "awacke1/Image-to-Line-Drawings",
+  "title": "\u270f\ufe0fImage2Drawing",
+  "emoji": "\u270f\ufe0f",
+  "description": "\u270f\ufe0fImage2Drawing",
+  "input_schema": {
+    "input_img_path": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "Upload Image",
+      "required": true,
+      "component": "Image"
+    },
+    "line_style": {
+      "type": "Literal['Complex Lines', 'Simple Lines']",
+      "description": "Line Style",
+      "required": true,
+      "component": "Radio"
+    },
+    "filter_choice": {
+      "type": "Literal['\ud83d\udcc4 Standard', '\u26ab\u26aa Invert', '\ud83c\udf2b\ufe0f Blur', '\ud83d\udd2a Sharpen', '\ud83d\uddfa\ufe0f Contour', '\ud83d\udd0d Detail', '\ud83d\udccf EdgeEnhance'",
+      "description": "Filter",
+      "required": true,
+      "component": "Dropdown"
+    }
+  },
+  "output_schema": {
+    "Filtered Line Art": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "Filtered Line Art",
+      "component": "Image"
+    }
+  },
+  "license": "mit",
+  "hardware": "5.42.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 494,
+  "last_modified": "2025-08-17 06:47:34+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/predict",
+      "parameters": [
+        {
+          "name": "input_img_path",
+          "label": "Upload Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "line_style",
+          "label": "Line Style",
+          "type": "Literal['Complex Lines', 'Simple Lines']",
+          "component": "Radio"
+        },
+        {
+          "name": "filter_choice",
+          "label": "Filter",
+          "type": "Literal['\ud83d\udcc4 Standard', '\u26ab\u26aa Invert', '\ud83c\udf2b\ufe0f Blur', '\ud83d\udd2a Sharpen', '\ud83d\uddfa\ufe0f Contour', '\ud83d\udd0d Detail', '\ud83d\udccf EdgeEnhance', '\ud83d\udcd0 EdgeEnhanceMore', '\ud83c\udfde\ufe0f Emboss', '\ud83d\udd75\ufe0f FindEdges', '\ud83c\udf0a Smooth', '\ud83d\udca7 SmoothMore', '\u2600\ufe0f Solarize', '\ud83d\uddbc\ufe0f1 ",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Filtered Line Art",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/predict_1",
+      "parameters": [
+        {
+          "name": "input_img_path",
+          "label": "Upload Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "line_style",
+          "label": "Line Style",
+          "type": "Literal['Complex Lines', 'Simple Lines']",
+          "component": "Radio"
+        },
+        {
+          "name": "filter_choice",
+          "label": "Filter",
+          "type": "Literal['\ud83d\udcc4 Standard', '\u26ab\u26aa Invert', '\ud83c\udf2b\ufe0f Blur', '\ud83d\udd2a Sharpen', '\ud83d\uddfa\ufe0f Contour', '\ud83d\udd0d Detail', '\ud83d\udccf EdgeEnhance', '\ud83d\udcd0 EdgeEnhanceMore', '\ud83c\udfde\ufe0f Emboss', '\ud83d\udd75\ufe0f FindEdges', '\ud83c\udf0a Smooth', '\ud83d\udca7 SmoothMore', '\u2600\ufe0f Solarize', '\ud83d\uddbc\ufe0f1 ",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Filtered Line Art",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/predict",
+  "_api_verified": true,
+  "estimated_latency_s": 3.09,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 3.09,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:50:20.147779+00:00",
+  "_inference_attempt_status": "predict_failed",
+  "_inference_attempt_error": "The upstream Gradio app has raised an exception but has not enabled verbose error reporting. To enable, set show_error=True in launch()."
+}

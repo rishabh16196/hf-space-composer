@@ -1,0 +1,286 @@
+{
+  "space_id": "Luminia/rvc-beatrice-voice-conversion",
+  "title": "RVC-v2 + Beatrice-v2 Voice Conversion + training",
+  "emoji": "\ud83c\udfa4",
+  "description": "RVC-v2 Beatrice-v2 - CPU inference + training",
+  "input_schema": {
+    "model_type_val": {
+      "type": "Literal['RVC v2', 'Beatrice v2']",
+      "description": "Model Type",
+      "required": true,
+      "component": "Radio"
+    }
+  },
+  "output_schema": {
+    "F0 Method": {
+      "type": "Literal['rmvpe', 'pm', 'harvest']",
+      "description": "F0 Method",
+      "component": "Radio"
+    }
+  },
+  "license": "mit",
+  "hardware": "6.3.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "voice-conversion",
+    "rvc",
+    "beatrice",
+    "beatrice-v2",
+    "mcp-server",
+    "region:us"
+  ],
+  "likes": 14,
+  "last_modified": "2026-04-15 10:22:21+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/update_model_type",
+      "parameters": [
+        {
+          "name": "model_type_val",
+          "label": "Model Type",
+          "type": "Literal['RVC v2', 'Beatrice v2']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "F0 Method",
+          "type": "Literal['rmvpe', 'pm', 'harvest']",
+          "component": "Radio"
+        }
+      ]
+    },
+    {
+      "name": "/load_example_model",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "RVC Model (.pth)",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "label": "Index File (.index) - Optional",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "label": "Status",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/convert",
+      "parameters": [
+        {
+          "name": "source",
+          "label": "Source Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "name": "m_type",
+          "label": "Model Type",
+          "type": "Literal['RVC v2', 'Beatrice v2']",
+          "component": "Radio"
+        },
+        {
+          "name": "rvc_model",
+          "label": "RVC Model (.pth)",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "name": "rvc_index",
+          "label": "Index File (.index) - Optional",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "name": "beat_model",
+          "label": "Beatrice Model (.pt.gz)",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "name": "beat_speaker",
+          "label": "Target Speaker",
+          "type": "int",
+          "component": "Number"
+        },
+        {
+          "name": "beat_formant",
+          "label": "Formant Shift",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "pitch",
+          "label": "Pitch (semitones)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "f0",
+          "label": "F0 Method",
+          "type": "Literal['rmvpe', 'pm', 'harvest']",
+          "component": "Radio"
+        },
+        {
+          "name": "idx_rate",
+          "label": "Index Rate",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "prot",
+          "label": "Protect (voiceless consonants)",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Converted Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Status",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/update_trainer_options",
+      "parameters": [
+        {
+          "name": "trainer",
+          "label": "Trainer",
+          "type": "Literal['RVC v2', 'Beatrice v2']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/lambda",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/train",
+      "parameters": [
+        {
+          "name": "trainer",
+          "label": "Trainer",
+          "type": "Literal['RVC v2', 'Beatrice v2']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "audio",
+          "label": "Training Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "name": "name",
+          "label": "Model Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "rvc_epochs",
+          "label": "Epochs",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "rvc_batch",
+          "label": "Batch Size",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "rvc_sr",
+          "label": "Sample Rate",
+          "type": "Literal['32000', '40000', '48000']",
+          "component": "Radio"
+        },
+        {
+          "name": "rvc_f0",
+          "label": "F0 Method",
+          "type": "Literal['rmvpe', 'pm', 'harvest']",
+          "component": "Radio"
+        },
+        {
+          "name": "beat_epochs",
+          "label": "Epochs (30 recommended)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "beat_batch",
+          "label": "Batch Size",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "beat_resume",
+          "label": "Resume from checkpoint",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Trained Model (.pth)",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "label": "Index File (.index)",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "label": "Training Status",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_1",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/_on_cancel",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Training Status",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/update_model_type",
+  "_api_verified": true,
+  "estimated_latency_s": 3.35,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 3.35,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:49:34.987088+00:00"
+}

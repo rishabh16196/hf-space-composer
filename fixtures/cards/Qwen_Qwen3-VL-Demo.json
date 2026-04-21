@@ -1,0 +1,204 @@
+{
+  "space_id": "Qwen/Qwen3-VL-Demo",
+  "title": "Qwen3 VL Demo",
+  "emoji": "\ud83d\ude3b",
+  "description": "Qwen3 VL Demo",
+  "input_schema": {},
+  "output_schema": {},
+  "license": "apache-2.0",
+  "hardware": "5.29.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 420,
+  "last_modified": "2025-09-24 23:53:16+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/apply_state_change",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/toggle_thinking",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/update_browser_state",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_43",
+          "type": "str | float | bool | list | dict",
+          "component": "Browserstate"
+        }
+      ]
+    },
+    {
+      "name": "/apply_browser_state",
+      "parameters": [
+        {
+          "name": "browser_state_value",
+          "label": "parameter_43",
+          "type": "str | float | bool | list | dict",
+          "component": "Browserstate"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/new_chat",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_29",
+          "type": "list[dict(actions: list[Literal['copy', 'like', 'dislike', 'retry', 'edit', 'delete'] | dict(action: Literal['copy', 'like', 'dislike', 'retry', 'edit', 'delete'], disabled: bool | None, tooltip: str ",
+          "component": "Modelscopeprochatbot"
+        }
+      ]
+    },
+    {
+      "name": "/select_conversation",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_29",
+          "type": "list[dict(actions: list[Literal['copy', 'like', 'dislike', 'retry', 'edit', 'delete'] | dict(action: Literal['copy', 'like', 'dislike', 'retry', 'edit', 'delete'], disabled: bool | None, tooltip: str ",
+          "component": "Modelscopeprochatbot"
+        }
+      ]
+    },
+    {
+      "name": "/click_conversation_menu",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_29",
+          "type": "list[dict(actions: list[Literal['copy', 'like', 'dislike', 'retry', 'edit', 'delete'] | dict(action: Literal['copy', 'like', 'dislike', 'retry', 'edit', 'delete'], disabled: bool | None, tooltip: str ",
+          "component": "Modelscopeprochatbot"
+        }
+      ]
+    },
+    {
+      "name": "/apply_prompt",
+      "parameters": [
+        {
+          "name": "input_value",
+          "label": "parameter_31",
+          "type": "dict(files: list[filepath] | None, text: str | None)",
+          "component": "Modelscopepromultimodalinput"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_31",
+          "type": "dict(files: list[filepath] | None, text: str | None)",
+          "component": "Modelscopepromultimodalinput"
+        }
+      ]
+    },
+    {
+      "name": "/delete_message",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/edit_message",
+      "parameters": [
+        {
+          "name": "chatbot_value",
+          "label": "parameter_29",
+          "type": "list[dict(actions: list[Literal['copy', 'like', 'dislike', 'retry', 'edit', 'delete'] | dict(action: Literal['copy', 'like', 'dislike', 'retry', 'edit', 'delete'], disabled: bool | None, tooltip: str ",
+          "component": "Modelscopeprochatbot"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_29",
+          "type": "list[dict(actions: list[Literal['copy', 'like', 'dislike', 'retry', 'edit', 'delete'] | dict(action: Literal['copy', 'like', 'dislike', 'retry', 'edit', 'delete'], disabled: bool | None, tooltip: str ",
+          "component": "Modelscopeprochatbot"
+        }
+      ]
+    },
+    {
+      "name": "/regenerate_message",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_31",
+          "type": "dict(files: list[filepath] | None, text: str | None)",
+          "component": "Modelscopepromultimodalinput"
+        },
+        {
+          "label": "value_29",
+          "type": "list[dict(actions: list[Literal['copy', 'like', 'dislike', 'retry', 'edit', 'delete'] | dict(action: Literal['copy', 'like', 'dislike', 'retry', 'edit', 'delete'], disabled: bool | None, tooltip: str ",
+          "component": "Modelscopeprochatbot"
+        }
+      ]
+    },
+    {
+      "name": "/add_message",
+      "parameters": [
+        {
+          "name": "input_value",
+          "label": "parameter_31",
+          "type": "dict(files: list[filepath] | None, text: str | None)",
+          "component": "Modelscopepromultimodalinput"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_31",
+          "type": "dict(files: list[filepath] | None, text: str | None)",
+          "component": "Modelscopepromultimodalinput"
+        },
+        {
+          "label": "value_29",
+          "type": "list[dict(actions: list[Literal['copy', 'like', 'dislike', 'retry', 'edit', 'delete'] | dict(action: Literal['copy', 'like', 'dislike', 'retry', 'edit', 'delete'], disabled: bool | None, tooltip: str ",
+          "component": "Modelscopeprochatbot"
+        }
+      ]
+    },
+    {
+      "name": "/cancel",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_31",
+          "type": "dict(files: list[filepath] | None, text: str | None)",
+          "component": "Modelscopepromultimodalinput"
+        },
+        {
+          "label": "value_29",
+          "type": "list[dict(actions: list[Literal['copy', 'like', 'dislike', 'retry', 'edit', 'delete'] | dict(action: Literal['copy', 'like', 'dislike', 'retry', 'edit', 'delete'], disabled: bool | None, tooltip: str ",
+          "component": "Modelscopeprochatbot"
+        }
+      ]
+    },
+    {
+      "name": "/clear_conversation_history",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_29",
+          "type": "list[dict(actions: list[Literal['copy', 'like', 'dislike', 'retry', 'edit', 'delete'] | dict(action: Literal['copy', 'like', 'dislike', 'retry', 'edit', 'delete'], disabled: bool | None, tooltip: str ",
+          "component": "Modelscopeprochatbot"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/apply_state_change",
+  "_api_verified": true,
+  "estimated_latency_s": 4.02,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 4.02,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:49:52.079795+00:00"
+}

@@ -1,0 +1,104 @@
+{
+  "space_id": "gdTharusha/3D-Modle-Generator",
+  "title": "TripoSR",
+  "emoji": "\ud83d\udc33",
+  "description": "TripoSR",
+  "input_schema": {
+    "Input Image": {
+      "type": "filepath",
+      "description": "Input Image",
+      "required": true,
+      "component": "Image"
+    }
+  },
+  "output_schema": {},
+  "license": "mit",
+  "hardware": "4.25.0",
+  "sdk": "docker",
+  "tags": [
+    "docker",
+    "region:us"
+  ],
+  "likes": 52,
+  "last_modified": "2024-04-21 05:46:00+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/check_input_image",
+      "parameters": [
+        {
+          "name": "Input Image",
+          "label": "Input Image",
+          "type": "filepath",
+          "component": "Image"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/preprocess",
+      "parameters": [
+        {
+          "name": "Input Image",
+          "label": "Input Image",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "name": "Remove Background",
+          "label": "Remove Background",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "Foreground Ratio",
+          "label": "Foreground Ratio",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Processed Image",
+          "type": "filepath",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/generate",
+      "parameters": [
+        {
+          "name": "Processed Image",
+          "label": "Processed Image",
+          "type": "filepath",
+          "component": "Image"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output Model",
+          "type": "filepath",
+          "component": "Model3d"
+        },
+        {
+          "label": "Output Model",
+          "type": "filepath",
+          "component": "Model3d"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/check_input_image",
+  "_api_verified": true,
+  "estimated_latency_s": 3.29,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "_tags_enriched": true,
+  "measured_latency_s": 3.29,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:50:40.057419+00:00"
+}

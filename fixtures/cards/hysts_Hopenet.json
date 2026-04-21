@@ -1,0 +1,76 @@
+{
+  "space_id": "hysts/Hopenet",
+  "title": "Hopenet",
+  "emoji": "\ud83d\udcda",
+  "description": "head pose estimation",
+  "input_schema": {
+    "image": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "Input",
+      "required": true,
+      "component": "Image"
+    },
+    "model_name": {
+      "type": "Literal['hopenet_alpha1', 'hopenet_alpha2', 'hopenet_robust_alpha1']",
+      "description": "Model",
+      "required": true,
+      "component": "Radio"
+    }
+  },
+  "output_schema": {
+    "Output": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "Output",
+      "component": "Image"
+    }
+  },
+  "license": "unknown",
+  "hardware": "5.44.1",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us",
+    "vision"
+  ],
+  "likes": 10,
+  "last_modified": "2025-09-05 07:44:29+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/run",
+      "parameters": [
+        {
+          "name": "image",
+          "label": "Input",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "model_name",
+          "label": "Model",
+          "type": "Literal['hopenet_alpha1', 'hopenet_alpha2', 'hopenet_robust_alpha1']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/run",
+  "_api_verified": true,
+  "estimated_latency_s": 3.38,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "_tags_enriched": true,
+  "measured_latency_s": 3.38,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:50:48.513652+00:00"
+}

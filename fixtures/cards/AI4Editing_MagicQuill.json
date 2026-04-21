@@ -1,0 +1,208 @@
+{
+  "space_id": "AI4Editing/MagicQuill",
+  "title": "MagicQuill",
+  "emoji": "\ud83e\udeb6",
+  "description": "MagicQuill",
+  "input_schema": {
+    "x": {
+      "type": "str",
+      "description": "parameter_4",
+      "required": true,
+      "component": "Magicquill"
+    },
+    "ckpt_name": {
+      "type": "Literal['SD1.5/realisticVisionV60B1_v51VAE.safetensors']",
+      "description": "Base Model (fixed for demo)",
+      "required": true,
+      "component": "Dropdown"
+    },
+    "negative_prompt": {
+      "type": "str",
+      "description": "Negative Prompt",
+      "required": true,
+      "component": "Textbox"
+    },
+    "fine_edge": {
+      "type": "Literal['enable', 'disable']",
+      "description": "Fine Edge",
+      "required": true,
+      "component": "Radio"
+    },
+    "grow_size": {
+      "type": "float",
+      "description": "Grow Size",
+      "required": true,
+      "component": "Slider"
+    },
+    "edge_strength": {
+      "type": "float",
+      "description": "Edge Strength",
+      "required": true,
+      "component": "Slider"
+    },
+    "color_strength": {
+      "type": "float",
+      "description": "Color Strength",
+      "required": true,
+      "component": "Slider"
+    },
+    "inpaint_strength": {
+      "type": "float",
+      "description": "Inpaint Strength",
+      "required": true,
+      "component": "Slider"
+    },
+    "seed": {
+      "type": "float",
+      "description": "Seed",
+      "required": true,
+      "component": "Number"
+    },
+    "steps": {
+      "type": "float",
+      "description": "Steps",
+      "required": true,
+      "component": "Slider"
+    },
+    "cfg": {
+      "type": "float",
+      "description": "CFG",
+      "required": true,
+      "component": "Slider"
+    },
+    "sampler_name": {
+      "type": "Literal['euler', 'euler_ancestral', 'heun', 'heunpp2', 'dpm_2', 'dpm_2_ancestral', 'lms', 'dpm_fast'",
+      "description": "Sampler Name",
+      "required": true,
+      "component": "Dropdown"
+    },
+    "scheduler": {
+      "type": "Literal['normal', 'karras', 'exponential', 'sgm_uniform', 'simple', 'ddim_uniform']",
+      "description": "Scheduler",
+      "required": true,
+      "component": "Dropdown"
+    }
+  },
+  "output_schema": {
+    "value_4": {
+      "type": "str",
+      "description": "value_4",
+      "component": "Magicquill"
+    }
+  },
+  "license": "cc-by-nc-4.0",
+  "hardware": "4.44.1",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 2238,
+  "last_modified": "2025-12-03 04:24:08+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/generate_image_handler",
+      "parameters": [
+        {
+          "name": "x",
+          "label": "parameter_4",
+          "type": "str",
+          "component": "Magicquill"
+        },
+        {
+          "name": "ckpt_name",
+          "label": "Base Model (fixed for demo)",
+          "type": "Literal['SD1.5/realisticVisionV60B1_v51VAE.safetensors']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "negative_prompt",
+          "label": "Negative Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "fine_edge",
+          "label": "Fine Edge",
+          "type": "Literal['enable', 'disable']",
+          "component": "Radio"
+        },
+        {
+          "name": "grow_size",
+          "label": "Grow Size",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "edge_strength",
+          "label": "Edge Strength",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "color_strength",
+          "label": "Color Strength",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "inpaint_strength",
+          "label": "Inpaint Strength",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "seed",
+          "label": "Seed",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "steps",
+          "label": "Steps",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "cfg",
+          "label": "CFG",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "sampler_name",
+          "label": "Sampler Name",
+          "type": "Literal['euler', 'euler_ancestral', 'heun', 'heunpp2', 'dpm_2', 'dpm_2_ancestral', 'lms', 'dpm_fast', 'dpm_adaptive', 'dpmpp_2s_ancestral', 'dpmpp_sde', 'dpmpp_sde_gpu', 'dpmpp_2m', 'dpmpp_2m_sde', 'd",
+          "component": "Dropdown"
+        },
+        {
+          "name": "scheduler",
+          "label": "Scheduler",
+          "type": "Literal['normal', 'karras', 'exponential', 'sgm_uniform', 'simple', 'ddim_uniform']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_4",
+          "type": "str",
+          "component": "Magicquill"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/generate_image_handler",
+  "_api_verified": true,
+  "estimated_latency_s": 3.01,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 3.01,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:49:01.706230+00:00",
+  "_inference_attempt_status": "predict_failed",
+  "_inference_attempt_error": "string indices must be integers"
+}

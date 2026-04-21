@@ -1,0 +1,81 @@
+{
+  "space_id": "merve/deprem-ocr-migrate-ner",
+  "title": "Deprem Ocr 2",
+  "emoji": "\ud83d\udc40",
+  "description": "Deprem Ocr 2",
+  "input_schema": {
+    "Ekran G\u00f6r\u00fcnt\u00fcs\u00fc y\u00fckleyin \ud83d\udc47": {
+      "type": "str",
+      "description": "Ekran G\u00f6r\u00fcnt\u00fcs\u00fc y\u00fckleyin \ud83d\udc47",
+      "required": true,
+      "component": "Image"
+    }
+  },
+  "output_schema": {
+    "Tam Adres": {
+      "type": "str",
+      "description": "Tam Adres",
+      "component": "Textbox"
+    }
+  },
+  "license": "unknown",
+  "hardware": "3.17.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us",
+    "entity-extraction",
+    "ner",
+    "text"
+  ],
+  "likes": 3,
+  "last_modified": "2023-02-08 15:10:32+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_tags_enriched": true,
+  "estimated_latency_s": 3.0,
+  "speed_tier": "fast",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/upload_image",
+      "parameters": [
+        {
+          "name": "Ekran G\u00f6r\u00fcnt\u00fcs\u00fc y\u00fckleyin \ud83d\udc47",
+          "label": "Ekran G\u00f6r\u00fcnt\u00fcs\u00fc y\u00fckleyin \ud83d\udc47",
+          "type": "str",
+          "component": "Image"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Tam Adres",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/upload-text",
+      "parameters": [
+        {
+          "name": "Metin y\u00fckleyin \ud83d\udc47 ",
+          "label": "Metin y\u00fckleyin \ud83d\udc47 ",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Tam Adres",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/upload_image",
+  "_api_verified": true
+}

@@ -1,0 +1,105 @@
+{
+  "space_id": "nvidia/parakeet-tdt-0.6b-v3",
+  "title": "Parakeet TDT 0.6b V3",
+  "emoji": "\ud83d\udd25",
+  "description": "Transcribe Speech with Multilingual parakeet-tdt-0.6b-v3",
+  "input_schema": {},
+  "output_schema": {},
+  "license": "cc-by-4.0",
+  "hardware": "5.42.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us",
+    "audio"
+  ],
+  "likes": 111,
+  "last_modified": "2026-04-10 16:27:49+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/start_session",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/transcribe_mic",
+      "parameters": [
+        {
+          "name": "audio_path",
+          "label": "Record Audio",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Transcription Segments",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "Download Transcript (CSV)",
+          "type": "filepath",
+          "component": "Downloadbutton"
+        },
+        {
+          "label": "Download Transcript (SRT)",
+          "type": "filepath",
+          "component": "Downloadbutton"
+        }
+      ]
+    },
+    {
+      "name": "/transcribe_file",
+      "parameters": [
+        {
+          "name": "audio_path",
+          "label": "Upload Audio File",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Transcription Segments",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "Download Transcript (CSV)",
+          "type": "filepath",
+          "component": "Downloadbutton"
+        },
+        {
+          "label": "Download Transcript (SRT)",
+          "type": "filepath",
+          "component": "Downloadbutton"
+        }
+      ]
+    },
+    {
+      "name": "/play_segment",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Selected Segment",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/start_session",
+  "_api_verified": true,
+  "estimated_latency_s": 4.58,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "_tags_enriched": true,
+  "measured_latency_s": 4.58,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:51:27.664900+00:00"
+}

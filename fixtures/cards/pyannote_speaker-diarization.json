@@ -1,0 +1,38 @@
+{
+  "space_id": "pyannote/speaker-diarization",
+  "description": "Pyannote speaker diarization \u2014 identifies who spoke when in multi-speaker audio. Use the 'language' parameter for better accuracy.",
+  "input_schema": {
+    "audio_url": {
+      "type": "string",
+      "description": "URL to audio file (wav/mp3)",
+      "required": true
+    },
+    "language": {
+      "type": "string",
+      "description": "ISO 639-1 code (optional)",
+      "required": false
+    }
+  },
+  "output_schema": {
+    "transcript": {
+      "type": "string",
+      "description": "Full transcription"
+    },
+    "language_detected": {
+      "type": "string",
+      "description": "Detected language"
+    }
+  },
+  "license": "mit",
+  "sdk": "gradio",
+  "tags": [
+    "speech",
+    "diarization"
+  ],
+  "_api_scraped": true,
+  "_api_status": "not_found",
+  "_api_error": "404",
+  "estimated_latency_s": 8.0,
+  "speed_tier": "medium",
+  "_latency_source": "measured"
+}

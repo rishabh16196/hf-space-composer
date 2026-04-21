@@ -1,0 +1,170 @@
+{
+  "space_id": "yuntian-deng/ChatGPT",
+  "title": "Chat-with-GPT5-mini",
+  "emoji": "\ud83d\ude80",
+  "description": "Chat-with-GPT5-mini",
+  "input_schema": {},
+  "output_schema": {},
+  "license": "mit",
+  "hardware": "5.25.1",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 411,
+  "last_modified": "2025-09-11 03:43:30+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_tags_enriched": true,
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/enable_inputs",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/reset_textbox",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Type an input and press Enter",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/predict",
+      "parameters": [
+        {
+          "name": "inputs",
+          "label": "Type an input and press Enter",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "top_p",
+          "label": "Top-p (nucleus sampling)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "temperature",
+          "label": "Temperature",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "chat_counter",
+          "label": "parameter_17",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "chatbot",
+          "label": "parameter_5",
+          "type": "tuple[str | dict(file: filepath, alt_text: str | None) | dict(component: str, value: Any, constructor_args: dict(), props: dict()) | None, str | dict(file: filepath, alt_text: str | None) | dict(compo",
+          "component": "Chatbot"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_5",
+          "type": "tuple[str | dict(file: filepath, alt_text: str | None) | dict(component: str, value: Any, constructor_args: dict(), props: dict()) | None, str | dict(file: filepath, alt_text: str | None) | dict(compo",
+          "component": "Chatbot"
+        },
+        {
+          "label": "value_17",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "label": "Status code from OpenAI server",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Type an input and press Enter",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/reset_textbox_1",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Type an input and press Enter",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/predict_1",
+      "parameters": [
+        {
+          "name": "inputs",
+          "label": "Type an input and press Enter",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "top_p",
+          "label": "Top-p (nucleus sampling)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "temperature",
+          "label": "Temperature",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "chat_counter",
+          "label": "parameter_17",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "chatbot",
+          "label": "parameter_5",
+          "type": "tuple[str | dict(file: filepath, alt_text: str | None) | dict(component: str, value: Any, constructor_args: dict(), props: dict()) | None, str | dict(file: filepath, alt_text: str | None) | dict(compo",
+          "component": "Chatbot"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_5",
+          "type": "tuple[str | dict(file: filepath, alt_text: str | None) | dict(component: str, value: Any, constructor_args: dict(), props: dict()) | None, str | dict(file: filepath, alt_text: str | None) | dict(compo",
+          "component": "Chatbot"
+        },
+        {
+          "label": "value_17",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "label": "Status code from OpenAI server",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Type an input and press Enter",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/enable_inputs",
+  "_api_verified": true
+}

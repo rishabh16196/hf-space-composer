@@ -1,0 +1,228 @@
+{
+  "space_id": "yanze/PuLID-FLUX",
+  "title": "PuLID-FLUX",
+  "emoji": "\ud83e\udd17",
+  "description": "PuLID-FLUX",
+  "input_schema": {
+    "prompt": {
+      "type": "str",
+      "description": "Prompt",
+      "required": true,
+      "component": "Textbox"
+    },
+    "id_image": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "ID Image",
+      "required": true,
+      "component": "Image"
+    },
+    "start_step": {
+      "type": "float",
+      "description": "timestep to start inserting ID",
+      "required": true,
+      "component": "Slider"
+    },
+    "guidance": {
+      "type": "float",
+      "description": "Guidance",
+      "required": true,
+      "component": "Slider"
+    },
+    "seed": {
+      "type": "str",
+      "description": "Seed (-1 for random)",
+      "required": true,
+      "component": "Textbox"
+    },
+    "true_cfg": {
+      "type": "float",
+      "description": "true CFG scale",
+      "required": true,
+      "component": "Slider"
+    },
+    "width": {
+      "type": "float",
+      "description": "Width",
+      "required": true,
+      "component": "Slider"
+    },
+    "height": {
+      "type": "float",
+      "description": "Height",
+      "required": true,
+      "component": "Slider"
+    },
+    "num_steps": {
+      "type": "float",
+      "description": "Number of steps",
+      "required": true,
+      "component": "Slider"
+    },
+    "id_weight": {
+      "type": "float",
+      "description": "id weight",
+      "required": true,
+      "component": "Slider"
+    },
+    "neg_prompt": {
+      "type": "str",
+      "description": "Negative Prompt",
+      "required": true,
+      "component": "Textbox"
+    },
+    "timestep_to_start_cfg": {
+      "type": "float",
+      "description": "timestep to start cfg",
+      "required": true,
+      "component": "Slider"
+    },
+    "max_sequence_length": {
+      "type": "float",
+      "description": "max_sequence_length for prompt (T5), small will be faster",
+      "required": true,
+      "component": "Slider"
+    }
+  },
+  "output_schema": {
+    "Generated Image": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "Generated Image",
+      "component": "Image"
+    },
+    "Used Seed": {
+      "type": "str",
+      "description": "Used Seed",
+      "component": "Textbox"
+    },
+    "Output": {
+      "type": "list[dict(image: dict(path: str | None (Path to a local file), url: str | None (Publicly available u",
+      "description": "Output",
+      "component": "Gallery"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "5.39.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us",
+    "diffusion",
+    "image-generation",
+    "text-to-image",
+    "vision"
+  ],
+  "likes": 2078,
+  "last_modified": "2025-07-31 17:47:42+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_tags_enriched": true,
+  "estimated_latency_s": 40.0,
+  "speed_tier": "slow",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/generate_image",
+      "parameters": [
+        {
+          "name": "prompt",
+          "label": "Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "id_image",
+          "label": "ID Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "start_step",
+          "label": "timestep to start inserting ID",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "guidance",
+          "label": "Guidance",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "seed",
+          "label": "Seed (-1 for random)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "true_cfg",
+          "label": "true CFG scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "width",
+          "label": "Width",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "height",
+          "label": "Height",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "num_steps",
+          "label": "Number of steps",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "id_weight",
+          "label": "id weight",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "neg_prompt",
+          "label": "Negative Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "timestep_to_start_cfg",
+          "label": "timestep to start cfg",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "max_sequence_length",
+          "label": "max_sequence_length for prompt (T5), small will be faster",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Generated Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "Used Seed",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Output",
+          "type": "list[dict(image: dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Origi",
+          "component": "Gallery"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/generate_image",
+  "_api_verified": true
+}

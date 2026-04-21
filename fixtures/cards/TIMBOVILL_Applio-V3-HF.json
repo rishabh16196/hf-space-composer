@@ -1,0 +1,593 @@
+{
+  "space_id": "TIMBOVILL/Applio-V3-HF",
+  "title": "Applio V3 HF",
+  "emoji": "\ud83c\udf4f",
+  "description": "Applio V3 HF",
+  "input_schema": {},
+  "output_schema": {
+    "Voice Model": {
+      "type": "Literal[]",
+      "description": "Voice Model",
+      "component": "Dropdown"
+    }
+  },
+  "license": "openrail",
+  "hardware": "",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 15,
+  "last_modified": "2024-01-28 21:17:55+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/lambda",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Voice Model",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/match_index",
+      "parameters": [
+        {
+          "name": "Voice Model",
+          "label": "Voice Model",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Index File",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/change_choices",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Voice Model",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Index File",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Select Audio",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/output_path_fn",
+      "parameters": [
+        {
+          "name": "Select Audio",
+          "label": "Select Audio",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output Path",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/save_to_wav2",
+      "parameters": [
+        {
+          "name": "Upload Audio",
+          "label": "Upload Audio",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Select Audio",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Output Path",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/save_to_wav",
+      "parameters": [
+        {
+          "name": "Upload Audio",
+          "label": "Upload Audio",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Select Audio",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Output Path",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/delete_outputs",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/run_infer_script",
+      "parameters": [
+        {
+          "name": "Pitch",
+          "label": "Pitch",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "If >=3: apply median filtering to the harvested pitch results. The value represents the filter radius and can reduce breathiness",
+          "label": "If >=3: apply median filtering to the harvested pitch results. The value represents the filter radius and can reduce breathiness",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "Search Feature Ratio",
+          "label": "Search Feature Ratio",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "Hop Length",
+          "label": "Hop Length",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "Pitch extraction algorithm",
+          "label": "Pitch extraction algorithm",
+          "type": "Literal['pm', 'harvest', 'dio', 'crepe', 'crepe-tiny', 'rmvpe']",
+          "component": "Radio"
+        },
+        {
+          "name": "Select Audio",
+          "label": "Select Audio",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "Output Path",
+          "label": "Output Path",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "Voice Model",
+          "label": "Voice Model",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "Index File",
+          "label": "Index File",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "Split Audio",
+          "label": "Split Audio",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output Information",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Export Audio",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ]
+    },
+    {
+      "name": "/run_batch_infer_script",
+      "parameters": [
+        {
+          "name": "Pitch",
+          "label": "Pitch",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "If >=3: apply median filtering to the harvested pitch results. The value represents the filter radius and can reduce breathiness",
+          "label": "If >=3: apply median filtering to the harvested pitch results. The value represents the filter radius and can reduce breathiness",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "Search Feature Ratio",
+          "label": "Search Feature Ratio",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "Hop Length",
+          "label": "Hop Length",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "Pitch extraction algorithm",
+          "label": "Pitch extraction algorithm",
+          "type": "Literal['pm', 'harvest', 'dio', 'crepe', 'crepe-tiny', 'rmvpe']",
+          "component": "Radio"
+        },
+        {
+          "name": "Input Folder",
+          "label": "Input Folder",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "Output Folder",
+          "label": "Output Folder",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "Voice Model",
+          "label": "Voice Model",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "Index File",
+          "label": "Index File",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output Information",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_1",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Voice Model",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/match_index_1",
+      "parameters": [
+        {
+          "name": "Voice Model",
+          "label": "Voice Model",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Index File",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/change_choices_1",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Voice Model",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Index File",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/run_tts_script",
+      "parameters": [
+        {
+          "name": "Text to Synthesize",
+          "label": "Text to Synthesize",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "TTS Voices",
+          "label": "TTS Voices",
+          "type": "Literal['af-ZA-AdriNeural', 'af-ZA-WillemNeural', 'sq-AL-AnilaNeural', 'sq-AL-IlirNeural', 'am-ET-AmehaNeural', 'am-ET-MekdesNeural', 'ar-DZ-AminaNeural', 'ar-DZ-IsmaelNeural', 'ar-BH-AliNeural', 'ar-",
+          "component": "Dropdown"
+        },
+        {
+          "name": "Pitch",
+          "label": "Pitch",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "If >=3: apply median filtering to the harvested pitch results. The value represents the filter radius and can reduce breathiness",
+          "label": "If >=3: apply median filtering to the harvested pitch results. The value represents the filter radius and can reduce breathiness",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "Search Feature Ratio",
+          "label": "Search Feature Ratio",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "Hop Length",
+          "label": "Hop Length",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "Pitch extraction algorithm",
+          "label": "Pitch extraction algorithm",
+          "type": "Literal['pm', 'harvest', 'dio', 'crepe', 'crepe-tiny', 'rmvpe']",
+          "component": "Radio"
+        },
+        {
+          "name": "Output Path for TTS Audio",
+          "label": "Output Path for TTS Audio",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "Output Path for RVC Audio",
+          "label": "Output Path for RVC Audio",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "Voice Model",
+          "label": "Voice Model",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "Index File",
+          "label": "Index File",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output Information",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Export Audio",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ]
+    },
+    {
+      "name": "/model_fusion",
+      "parameters": [
+        {
+          "name": "Model Name",
+          "label": "Model Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "Path to Model A",
+          "label": "Path to Model A",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "Path to Model B",
+          "label": "Path to Model B",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output Information",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/model_info",
+      "parameters": [
+        {
+          "name": "Path to Model",
+          "label": "Path to Model",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output Information",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/model_extract",
+      "parameters": [
+        {
+          "name": "Path to Model",
+          "label": "Path to Model",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "Model Name",
+          "label": "Model Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "Sampling Rate",
+          "label": "Sampling Rate",
+          "type": "Literal['32000', '40000', '48000']",
+          "component": "Radio"
+        },
+        {
+          "name": "Pitch Guidance",
+          "label": "Pitch Guidance",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "Model information to be placed",
+          "label": "Model information to be placed",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "RVC Version",
+          "label": "RVC Version",
+          "type": "Literal['v1', 'v2']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output Information",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/get_audio_info",
+      "parameters": [
+        {
+          "name": "parameter_127",
+          "label": "parameter_127",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_133",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_134",
+          "type": "filepath",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/model_download",
+      "parameters": [
+        {
+          "name": "Model Link",
+          "label": "Model Link",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output Information",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/save_drop_model",
+      "parameters": [
+        {
+          "name": "Drag your .pth file and .index file into this space. Drag one and then the other.",
+          "label": "Drag your .pth file and .index file into this space. Drag one and then the other.",
+          "type": "filepath",
+          "component": "File"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Drag your .pth file and .index file into this space. Drag one and then the other.",
+          "type": "filepath",
+          "component": "File"
+        }
+      ]
+    },
+    {
+      "name": "/toggle_button_label",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_152",
+          "type": "Dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/lambda",
+  "_api_verified": true,
+  "estimated_latency_s": 3.93,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 3.93,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:49:58.403097+00:00"
+}

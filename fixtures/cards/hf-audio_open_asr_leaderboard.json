@@ -1,0 +1,206 @@
+{
+  "space_id": "hf-audio/open_asr_leaderboard",
+  "title": "Open ASR Leaderboard",
+  "emoji": "\ud83c\udfc6",
+  "description": "Open ASR Leaderboard",
+  "input_schema": {
+    "search_query": {
+      "type": "str",
+      "description": "Search models",
+      "required": true,
+      "component": "Textbox"
+    },
+    "show_proprietary": {
+      "type": "bool",
+      "description": "Show proprietary models",
+      "required": true,
+      "component": "Checkbox"
+    },
+    "selected_columns": {
+      "type": "list[Literal['RTFx \u2b06\ufe0f\ufe0f', 'License', 'Size (B)', '# Languages', 'Encoder', 'Decoder', 'AMI', 'Earning",
+      "description": "Select columns to display",
+      "required": true,
+      "component": "Checkboxgroup"
+    }
+  },
+  "output_schema": {
+    "value_10": {
+      "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+      "description": "value_10",
+      "component": "Dataframe"
+    }
+  },
+  "license": "unknown",
+  "hardware": "6.5.1",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "leaderboard",
+    "region:us",
+    "benchmark"
+  ],
+  "likes": 1317,
+  "last_modified": "2026-04-19 10:37:16+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/filter_main_table",
+      "parameters": [
+        {
+          "name": "search_query",
+          "label": "Search models",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "show_proprietary",
+          "label": "Show proprietary models",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "selected_columns",
+          "label": "Select columns to display",
+          "type": "list[Literal['RTFx \u2b06\ufe0f\ufe0f', 'License', 'Size (B)', '# Languages', 'Encoder', 'Decoder', 'AMI', 'Earnings22', 'Gigaspeech', 'LS Clean', 'LS Other', 'SPGISpeech', 'Tedlium', 'Voxpopuli']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_10",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/filter_main_table_1",
+      "parameters": [
+        {
+          "name": "search_query",
+          "label": "Search models",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "show_proprietary",
+          "label": "Show proprietary models",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "selected_columns",
+          "label": "Select columns to display",
+          "type": "list[Literal['RTFx \u2b06\ufe0f\ufe0f', 'License', 'Size (B)', '# Languages', 'Encoder', 'Decoder', 'AMI', 'Earnings22', 'Gigaspeech', 'LS Clean', 'LS Other', 'SPGISpeech', 'Tedlium', 'Voxpopuli']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_10",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/filter_main_table_2",
+      "parameters": [
+        {
+          "name": "search_query",
+          "label": "Search models",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "show_proprietary",
+          "label": "Show proprietary models",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "selected_columns",
+          "label": "Select columns to display",
+          "type": "list[Literal['RTFx \u2b06\ufe0f\ufe0f', 'License', 'Size (B)', '# Languages', 'Encoder', 'Decoder', 'AMI', 'Earnings22', 'Gigaspeech', 'LS Clean', 'LS Other', 'SPGISpeech', 'Tedlium', 'Voxpopuli']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_10",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/lambda",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_23",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_1",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_23",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_2",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_23",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_3",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_23",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_4",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_23",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/filter_main_table",
+  "_api_verified": true,
+  "estimated_latency_s": 3.76,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "_tags_enriched": true,
+  "measured_latency_s": 3.76,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:50:44.045694+00:00",
+  "_inference_attempt_status": "predict_failed",
+  "_inference_attempt_error": "Value: 'R' (type: <class 'str'>) is not in the list of choices: ['RTFx \u2b06\ufe0f\ufe0f', 'License', 'Size (B)', '# Languages', 'Encoder', 'Decoder', 'AMI', 'Earnings22', 'Gigaspeech', 'LS Clean', 'LS Other', 'SPG"
+}

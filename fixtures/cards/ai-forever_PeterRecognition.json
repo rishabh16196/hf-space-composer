@@ -1,0 +1,37 @@
+{
+  "space_id": "ai-forever/PeterRecognition",
+  "title": "PeterRecognition",
+  "emoji": "\ud83c\udf16",
+  "description": "PeterRecognition",
+  "input_schema": {
+    "image_url": {
+      "type": "string",
+      "description": "Image with text",
+      "required": true
+    }
+  },
+  "output_schema": {
+    "extracted_text": {
+      "type": "string"
+    }
+  },
+  "license": "mit",
+  "hardware": "3.4",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "Segmentation",
+    "HTR",
+    "region:us"
+  ],
+  "likes": 3,
+  "last_modified": "2022-11-17 13:04:46+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "estimated_latency_s": 5.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "sleeping",
+  "_api_error": "Space is in RUNTIME_ERROR state"
+}

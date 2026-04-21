@@ -1,0 +1,214 @@
+{
+  "space_id": "skytnt/full-body-anime-gan",
+  "title": "Full Body Anime GAN",
+  "emoji": "\ud83d\ude07",
+  "description": "Full Body Anime GAN",
+  "input_schema": {
+    "seed": {
+      "type": "float",
+      "description": "seed",
+      "required": true,
+      "component": "Slider"
+    },
+    "random_seed": {
+      "type": "bool",
+      "description": "Random",
+      "required": true,
+      "component": "Checkbox"
+    },
+    "psi1": {
+      "type": "float",
+      "description": "truncation psi 1",
+      "required": true,
+      "component": "Slider"
+    },
+    "psi2": {
+      "type": "float",
+      "description": "truncation psi 2",
+      "required": true,
+      "component": "Slider"
+    },
+    "noise": {
+      "type": "float",
+      "description": "noise strength",
+      "required": true,
+      "component": "Slider"
+    }
+  },
+  "output_schema": {
+    "output image": {
+      "type": "Dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "output image",
+      "component": "Image"
+    },
+    "seed": {
+      "type": "float",
+      "description": "seed",
+      "component": "Slider"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "5.4.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 125,
+  "last_modified": "2024-11-04 15:25:48+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/gen_fn",
+      "parameters": [
+        {
+          "name": "seed",
+          "label": "seed",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "random_seed",
+          "label": "Random",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "psi1",
+          "label": "truncation psi 1",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "psi2",
+          "label": "truncation psi 2",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "noise",
+          "label": "noise strength",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "output image",
+          "type": "Dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "seed",
+          "type": "float",
+          "component": "Slider"
+        }
+      ]
+    },
+    {
+      "name": "/encode_img_fn",
+      "parameters": [
+        {
+          "name": "img",
+          "label": "input image",
+          "type": "Dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "noise",
+          "label": "noise strength",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "output message",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "detected",
+          "type": "Dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "encoded",
+          "type": "Dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/lambda",
+      "parameters": [
+        {
+          "name": "i",
+          "label": "Select image 1",
+          "type": "Literal['current generated image', 'current encoded image']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "selected image 1",
+          "type": "Dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_1",
+      "parameters": [
+        {
+          "name": "i",
+          "label": "Select image 2",
+          "type": "Literal['current generated image', 'current encoded image']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "selected image 2",
+          "type": "Dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/gen_video_fn",
+      "parameters": [
+        {
+          "name": "noise",
+          "label": "noise strength",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "frame",
+          "label": "frame",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "output video",
+          "type": "Dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/gen_fn",
+  "_api_verified": true,
+  "estimated_latency_s": 4.26,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 4.26,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:51:53.083495+00:00"
+}

@@ -1,0 +1,139 @@
+{
+  "space_id": "SII-GAIR/daVinci-MagiHuman",
+  "title": "daVinci-MagiHuman",
+  "emoji": "\ud83c\udfac",
+  "description": "daVinci-MagiHuman",
+  "input_schema": {
+    "image": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "Reference Image",
+      "required": true,
+      "component": "Image"
+    },
+    "prompt": {
+      "type": "str",
+      "description": "Video Description (will be auto-enhanced)",
+      "required": true,
+      "component": "Textbox"
+    },
+    "seed": {
+      "type": "float",
+      "description": "Seed (-1 = random)",
+      "required": true,
+      "component": "Number"
+    },
+    "seconds": {
+      "type": "float",
+      "description": "Duration (seconds)",
+      "required": true,
+      "component": "Slider"
+    }
+  },
+  "output_schema": {
+    "Enhanced Prompt (sent to model)": {
+      "type": "str",
+      "description": "Enhanced Prompt (sent to model)",
+      "component": "Textbox"
+    }
+  },
+  "license": "unknown",
+  "hardware": "5.23.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 158,
+  "last_modified": "2026-03-24 12:36:17+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/step1_enhance",
+      "parameters": [
+        {
+          "name": "image",
+          "label": "Reference Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "prompt",
+          "label": "Video Description (will be auto-enhanced)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "seed",
+          "label": "Seed (-1 = random)",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "seconds",
+          "label": "Duration (seconds)",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Enhanced Prompt (sent to model)",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/step2_generate",
+      "parameters": [
+        {
+          "name": "image",
+          "label": "Reference Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "enhanced",
+          "label": "Enhanced Prompt (sent to model)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "seed",
+          "label": "Seed (-1 = random)",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "seconds",
+          "label": "Duration (seconds)",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Generated Video",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        },
+        {
+          "label": "Status",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/step1_enhance",
+  "_api_verified": true,
+  "estimated_latency_s": 2.93,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 2.93,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:49:53.649356+00:00"
+}

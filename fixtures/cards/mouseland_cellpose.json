@@ -1,0 +1,183 @@
+{
+  "space_id": "mouseland/cellpose",
+  "title": "Cellpose",
+  "emoji": "\ud83d\udd2c",
+  "description": "cellpose is a generalist algorithm for cellular segmentation",
+  "input_schema": {
+    "filepath": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "Input",
+      "required": true,
+      "component": "Image"
+    }
+  },
+  "output_schema": {
+    "Input": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "Input",
+      "component": "Image"
+    },
+    "Multi-file upload (png, jpg, tif etc)": {
+      "type": "list[filepath]",
+      "description": "Multi-file upload (png, jpg, tif etc)",
+      "component": "Uploadbutton"
+    },
+    "Outlines": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "Outlines",
+      "component": "Image"
+    },
+    "Cellpose flows": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "Cellpose flows",
+      "component": "Image"
+    }
+  },
+  "license": "bsd-3-clause-clear",
+  "hardware": "5.27.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 67,
+  "last_modified": "2025-09-03 06:04:29+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/update_button",
+      "parameters": [
+        {
+          "name": "filepath",
+          "label": "Input",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Input",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "Multi-file upload (png, jpg, tif etc)",
+          "type": "list[filepath]",
+          "component": "Uploadbutton"
+        },
+        {
+          "label": "Outlines",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "Cellpose flows",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/update_image",
+      "parameters": [
+        {
+          "name": "filepath",
+          "label": "Multi-file upload (png, jpg, tif etc)",
+          "type": "list[filepath]",
+          "component": "Uploadbutton"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Input",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "Multi-file upload (png, jpg, tif etc)",
+          "type": "list[filepath]",
+          "component": "Uploadbutton"
+        },
+        {
+          "label": "Outlines",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "Cellpose flows",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/cellpose_segment",
+      "parameters": [
+        {
+          "name": "filepath",
+          "label": "Multi-file upload (png, jpg, tif etc)",
+          "type": "list[filepath]",
+          "component": "Uploadbutton"
+        },
+        {
+          "name": "resize",
+          "label": "max resize",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "max_iter",
+          "label": "max iterations",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "flow_threshold",
+          "label": "flow threshold",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "cellprob_threshold",
+          "label": "cellprob threshold",
+          "type": "float",
+          "component": "Number"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Outlines",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "Cellpose flows",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "Download masks (TIF)",
+          "type": "filepath",
+          "component": "Downloadbutton"
+        },
+        {
+          "label": "Download outlines (PNG)",
+          "type": "filepath",
+          "component": "Downloadbutton"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/update_button",
+  "_api_verified": true,
+  "estimated_latency_s": 4.07,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "_tags_enriched": true,
+  "measured_latency_s": 4.07,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:51:16.440493+00:00"
+}

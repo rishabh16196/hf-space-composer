@@ -1,0 +1,145 @@
+{
+  "space_id": "hf-accelerate/accelerate_examples",
+  "title": "Accelerate Examples",
+  "emoji": "\ud83c\udf16",
+  "description": "Accelerate Examples",
+  "input_schema": {
+    "inp": {
+      "type": "Literal['Basic', 'Calculating Metrics', 'Checkpointing', 'Experiment Tracking', 'Gradient Accumulati",
+      "description": "Select a feature you would like to integrate",
+      "required": true,
+      "component": "Radio"
+    },
+    "textbox": {
+      "type": "str",
+      "description": "tab_name",
+      "required": true,
+      "component": "Textbox"
+    }
+  },
+  "output_schema": {
+    "value_8": {
+      "type": "str",
+      "description": "value_8",
+      "component": "Markdown"
+    },
+    "value_7": {
+      "type": "str",
+      "description": "value_7",
+      "component": "Markdown"
+    },
+    "value_12": {
+      "type": "str",
+      "description": "value_12",
+      "component": "Markdown"
+    },
+    "value_16": {
+      "type": "str",
+      "description": "value_16",
+      "component": "Markdown"
+    }
+  },
+  "license": "unknown",
+  "hardware": "4.36.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 22,
+  "last_modified": "2025-05-20 16:13:03+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/change",
+      "parameters": [
+        {
+          "name": "inp",
+          "label": "Select a feature you would like to integrate",
+          "type": "Literal['Basic', 'Calculating Metrics', 'Checkpointing', 'Experiment Tracking', 'Gradient Accumulation']",
+          "component": "Radio"
+        },
+        {
+          "name": "textbox",
+          "label": "tab_name",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_8",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_7",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_12",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_16",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/change_1",
+      "parameters": [
+        {
+          "name": "inp",
+          "label": "Select a distributed YAML configuration you would like to view.",
+          "type": "Literal['AWS SageMaker', 'DeepSpeed', 'Megatron-LM', 'Multi GPU', 'Multi Node Multi GPU', 'PyTorch FSDP']",
+          "component": "Radio"
+        },
+        {
+          "name": "textbox",
+          "label": "tab_name",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_24",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_28",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_32",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_36",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_40",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/change",
+  "_api_verified": true
+}

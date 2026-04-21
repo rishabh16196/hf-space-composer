@@ -1,0 +1,48 @@
+{
+  "space_id": "fffiloni/PASD",
+  "title": "PASD Magnify",
+  "emoji": "\u2728",
+  "description": "Magnify subject details and enhance image quality",
+  "input_schema": {},
+  "output_schema": {
+    "Seed": {
+      "type": "float",
+      "description": "Seed",
+      "component": "Slider"
+    }
+  },
+  "license": "unknown",
+  "hardware": "6.12.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 243,
+  "last_modified": "2026-04-16 09:04:15+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/get_random_value",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Seed",
+          "type": "float",
+          "component": "Slider"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/get_random_value",
+  "_api_verified": true,
+  "estimated_latency_s": 3.0,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 3.0,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:50:36.618602+00:00"
+}

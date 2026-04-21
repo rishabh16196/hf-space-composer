@@ -1,0 +1,40 @@
+{
+  "space_id": "AIML-TUDA/safe-stable-diffusion",
+  "title": "Safe Stable Diffusion",
+  "emoji": "\ud83d\ude07",
+  "description": "Safe Stable Diffusion",
+  "input_schema": {
+    "input": {
+      "type": "string",
+      "description": "Input",
+      "required": true
+    }
+  },
+  "output_schema": {
+    "output": {
+      "type": "string"
+    }
+  },
+  "license": "creativeml-openrail-m",
+  "hardware": "3.4",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us",
+    "diffusion",
+    "image-generation",
+    "text-to-image",
+    "vision"
+  ],
+  "likes": 12,
+  "last_modified": "2023-02-20 14:18:21+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_tags_enriched": true,
+  "estimated_latency_s": 40.0,
+  "speed_tier": "slow",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "sleeping",
+  "_api_error": "Space is in RUNTIME_ERROR state"
+}

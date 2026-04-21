@@ -1,0 +1,128 @@
+{
+  "space_id": "zai-org/CogVideoX-2B-Space",
+  "title": "CogVideoX-2B",
+  "emoji": "\ud83c\udfa5",
+  "description": "Text-to-Video",
+  "input_schema": {
+    "prompt": {
+      "type": "str",
+      "description": "Prompt (Less than 200 Words)",
+      "required": true,
+      "component": "Textbox"
+    },
+    "num_inference_steps": {
+      "type": "float",
+      "description": "Inference Steps",
+      "required": true,
+      "component": "Number"
+    },
+    "guidance_scale": {
+      "type": "float",
+      "description": "Guidance Scale",
+      "required": true,
+      "component": "Number"
+    }
+  },
+  "output_schema": {
+    "CogVideoX Generate Video": {
+      "type": "dict(video: filepath, subtitles: filepath | None)",
+      "description": "CogVideoX Generate Video",
+      "component": "Video"
+    },
+    "\ud83d\udce5 Download Video": {
+      "type": "filepath",
+      "description": "\ud83d\udce5 Download Video",
+      "component": "File"
+    },
+    "\ud83d\udce5 Download GIF": {
+      "type": "filepath",
+      "description": "\ud83d\udce5 Download GIF",
+      "component": "File"
+    }
+  },
+  "license": "unknown",
+  "hardware": "5.34.2",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "cogvideox",
+    "thudm",
+    "region:us"
+  ],
+  "likes": 461,
+  "last_modified": "2025-06-27 11:22:02+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/generate",
+      "parameters": [
+        {
+          "name": "prompt",
+          "label": "Prompt (Less than 200 Words)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "num_inference_steps",
+          "label": "Inference Steps",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "guidance_scale",
+          "label": "Guidance Scale",
+          "type": "float",
+          "component": "Number"
+        }
+      ],
+      "returns": [
+        {
+          "label": "CogVideoX Generate Video",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        },
+        {
+          "label": "\ud83d\udce5 Download Video",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "label": "\ud83d\udce5 Download GIF",
+          "type": "filepath",
+          "component": "File"
+        }
+      ]
+    },
+    {
+      "name": "/enhance_prompt_func",
+      "parameters": [
+        {
+          "name": "prompt",
+          "label": "Prompt (Less than 200 Words)",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Prompt (Less than 200 Words)",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/generate",
+  "_api_verified": true,
+  "estimated_latency_s": 3.9,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 3.9,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:52:06.846719+00:00",
+  "_inference_attempt_status": "predict_failed",
+  "_inference_attempt_error": "RuntimeError"
+}

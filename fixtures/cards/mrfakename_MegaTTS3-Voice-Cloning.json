@@ -1,0 +1,111 @@
+{
+  "space_id": "mrfakename/MegaTTS3-Voice-Cloning",
+  "title": "MegaTTS 3 Voice Cloning",
+  "emoji": "\ud83c\udfa4",
+  "description": "MegaTTS 3 but with voice cloning!",
+  "input_schema": {
+    "inp_audio": {
+      "type": "filepath",
+      "description": "Reference Audio",
+      "required": true,
+      "component": "Audio"
+    },
+    "inp_text": {
+      "type": "str",
+      "description": "Text to Generate",
+      "required": true,
+      "component": "Textbox"
+    },
+    "infer_timestep": {
+      "type": "float",
+      "description": "Inference Timesteps",
+      "required": true,
+      "component": "Number"
+    },
+    "p_w": {
+      "type": "float",
+      "description": "Intelligibility Weight",
+      "required": true,
+      "component": "Number"
+    },
+    "t_w": {
+      "type": "float",
+      "description": "Similarity Weight",
+      "required": true,
+      "component": "Number"
+    }
+  },
+  "output_schema": {
+    "Generated Audio": {
+      "type": "filepath",
+      "description": "Generated Audio",
+      "component": "Audio"
+    }
+  },
+  "license": "unknown",
+  "hardware": "5.38.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 280,
+  "last_modified": "2025-08-09 18:10:00+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/generate_speech",
+      "parameters": [
+        {
+          "name": "inp_audio",
+          "label": "Reference Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "name": "inp_text",
+          "label": "Text to Generate",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "infer_timestep",
+          "label": "Inference Timesteps",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "p_w",
+          "label": "Intelligibility Weight",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "t_w",
+          "label": "Similarity Weight",
+          "type": "float",
+          "component": "Number"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Generated Audio",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/generate_speech",
+  "_api_verified": true,
+  "estimated_latency_s": 4.28,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "_tags_enriched": true,
+  "measured_latency_s": 4.28,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:51:18.300216+00:00"
+}

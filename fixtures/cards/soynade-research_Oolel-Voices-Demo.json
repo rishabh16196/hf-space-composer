@@ -1,0 +1,40 @@
+{
+  "space_id": "soynade-research/Oolel-Voices-Demo",
+  "title": "Oolel-Voices - a high quality TTS model for Wolof.",
+  "emoji": "\ud83c\udf7f",
+  "description": "Zero-shot TTS model for Wolof",
+  "input_schema": {
+    "input": {
+      "type": "string",
+      "description": "Input",
+      "required": true
+    }
+  },
+  "output_schema": {
+    "output": {
+      "type": "string"
+    }
+  },
+  "license": "unknown",
+  "hardware": "6.3.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "mcp-server",
+    "region:us",
+    "audio",
+    "speech-synthesis",
+    "tts"
+  ],
+  "likes": 5,
+  "last_modified": "2026-03-12 21:10:57+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_tags_enriched": true,
+  "estimated_latency_s": 4.0,
+  "speed_tier": "fast",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "error",
+  "_api_error": "(Request ID: Root=1-69e77b8d-11d772262dadb2313ae6a72e;e80e5095-375a-4cbb-9170-d5ee0aaa1037)\n\n429 Too Many Requests: you have reached your 'api' rate limit.\nRetry after 81 seconds (0/2500 requests rema"
+}

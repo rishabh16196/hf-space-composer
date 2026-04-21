@@ -1,0 +1,155 @@
+{
+  "space_id": "ResembleAI/Chatterbox-Multilingual-TTS",
+  "title": "Chatterbox-Multilingual-TTS",
+  "emoji": "\ud83c\udf0e",
+  "description": "Chatterbox TTS supporting 23 languages",
+  "input_schema": {
+    "lang": {
+      "type": "Literal['ar', 'da', 'de', 'el', 'en', 'es', 'fi', 'fr', 'he', 'hi', 'it', 'ja', 'ko', 'ms', 'nl', 'n",
+      "description": "Language",
+      "required": true,
+      "component": "Dropdown"
+    },
+    "current_ref": {
+      "type": "filepath",
+      "description": "Reference Audio File (Optional)",
+      "required": true,
+      "component": "Audio"
+    },
+    "current_text": {
+      "type": "str",
+      "description": "Text to synthesize (max chars 300)",
+      "required": true,
+      "component": "Textbox"
+    }
+  },
+  "output_schema": {
+    "Reference Audio File (Optional)": {
+      "type": "filepath",
+      "description": "Reference Audio File (Optional)",
+      "component": "Audio"
+    },
+    "Text to synthesize (max chars 300)": {
+      "type": "str",
+      "description": "Text to synthesize (max chars 300)",
+      "component": "Textbox"
+    }
+  },
+  "license": "unknown",
+  "hardware": "5.29.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "mcp-server",
+    "region:us",
+    "audio",
+    "speech-synthesis",
+    "tts"
+  ],
+  "likes": 386,
+  "last_modified": "2025-09-24 07:41:20+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/on_language_change",
+      "parameters": [
+        {
+          "name": "lang",
+          "label": "Language",
+          "type": "Literal['ar', 'da', 'de', 'el', 'en', 'es', 'fi', 'fr', 'he', 'hi', 'it', 'ja', 'ko', 'ms', 'nl', 'no', 'pl', 'pt', 'ru', 'sv', 'sw', 'tr', 'zh']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "current_ref",
+          "label": "Reference Audio File (Optional)",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "name": "current_text",
+          "label": "Text to synthesize (max chars 300)",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Reference Audio File (Optional)",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Text to synthesize (max chars 300)",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/generate_tts_audio",
+      "parameters": [
+        {
+          "name": "text_input",
+          "label": "Text to synthesize (max chars 300)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "language_id",
+          "label": "Language",
+          "type": "Literal['ar', 'da', 'de', 'el', 'en', 'es', 'fi', 'fr', 'he', 'hi', 'it', 'ja', 'ko', 'ms', 'nl', 'no', 'pl', 'pt', 'ru', 'sv', 'sw', 'tr', 'zh']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "audio_prompt_path_input",
+          "label": "Reference Audio File (Optional)",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "name": "exaggeration_input",
+          "label": "Exaggeration (Neutral = 0.5, extreme values can be unstable)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "temperature_input",
+          "label": "Temperature",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "seed_num_input",
+          "label": "Random seed (0 for random)",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "cfgw_input",
+          "label": "CFG/Pace",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output Audio",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/on_language_change",
+  "_api_verified": true,
+  "estimated_latency_s": 3.21,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "_tags_enriched": true,
+  "measured_latency_s": 3.21,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:49:53.022929+00:00"
+}

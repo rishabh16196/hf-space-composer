@@ -1,0 +1,96 @@
+{
+  "space_id": "prithivMLmods/GLM-OCR-Demo",
+  "title": "GLM OCR Demo",
+  "emoji": "\ud83d\udcc4",
+  "description": "Multimodal OCR model for complex document understanding.",
+  "input_schema": {},
+  "output_schema": {},
+  "license": "apache-2.0",
+  "hardware": "6.9.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "mcp-server",
+    "region:us"
+  ],
+  "likes": 93,
+  "last_modified": "2026-03-22 13:54:06+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/noop",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/noop_1",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/run_router",
+      "parameters": [
+        {
+          "name": "task",
+          "label": "parameter_2",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "image_b64",
+          "label": "parameter_1",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "max_new_tokens_v",
+          "label": "parameter_3",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "gpu_timeout_v",
+          "label": "parameter_4",
+          "type": "float",
+          "component": "Number"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_5",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/load_example_data",
+      "parameters": [
+        {
+          "name": "idx_str",
+          "label": "parameter_6",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_7",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/noop",
+  "_api_verified": true,
+  "estimated_latency_s": 4.33,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 4.33,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:51:35.904237+00:00"
+}

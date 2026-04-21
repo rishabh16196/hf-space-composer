@@ -1,0 +1,167 @@
+{
+  "space_id": "maddog241/mvinverse-demo",
+  "title": "MVInverse Demo",
+  "emoji": "\ud83d\udcf8",
+  "description": "Feed-forward Multi-view Inverse Rendering in seconds)",
+  "input_schema": {
+    "t": {
+      "type": "Literal['Single Image', 'Multiple Images', 'ZIP', 'Video']",
+      "description": "\ud83d\udee0\ufe0f Input Type",
+      "required": true,
+      "component": "Radio"
+    }
+  },
+  "output_schema": {
+    "Single Image": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "Single Image",
+      "component": "Image"
+    },
+    "Multiple Images": {
+      "type": "list[filepath]",
+      "description": "Multiple Images",
+      "component": "File"
+    },
+    "Zip File": {
+      "type": "filepath",
+      "description": "Zip File",
+      "component": "File"
+    },
+    "Input Video": {
+      "type": "filepath",
+      "description": "Input Video",
+      "component": "Video"
+    },
+    "Stride": {
+      "type": "float",
+      "description": "Stride",
+      "component": "Slider"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "6.3.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 6,
+  "last_modified": "2026-01-22 06:22:28+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/switch",
+      "parameters": [
+        {
+          "name": "t",
+          "label": "\ud83d\udee0\ufe0f Input Type",
+          "type": "Literal['Single Image', 'Multiple Images', 'ZIP', 'Video']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Single Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "Multiple Images",
+          "type": "list[filepath]",
+          "component": "File"
+        },
+        {
+          "label": "Zip File",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "label": "Input Video",
+          "type": "filepath",
+          "component": "Video"
+        },
+        {
+          "label": "Stride",
+          "type": "float",
+          "component": "Slider"
+        }
+      ]
+    },
+    {
+      "name": "/run_inference",
+      "parameters": [
+        {
+          "name": "input_type",
+          "label": "\ud83d\udee0\ufe0f Input Type",
+          "type": "Literal['Single Image', 'Multiple Images', 'ZIP', 'Video']",
+          "component": "Radio"
+        },
+        {
+          "name": "single",
+          "label": "Single Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "multi",
+          "label": "Multiple Images",
+          "type": "list[filepath]",
+          "component": "File"
+        },
+        {
+          "name": "zip_f",
+          "label": "Zip File",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "name": "video",
+          "label": "Input Video",
+          "type": "filepath",
+          "component": "Video"
+        },
+        {
+          "name": "stride",
+          "label": "Stride",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Albedo",
+          "type": "list[dict(image: dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Origi",
+          "component": "Gallery"
+        },
+        {
+          "label": "Metallic",
+          "type": "list[dict(image: dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Origi",
+          "component": "Gallery"
+        },
+        {
+          "label": "Roughness",
+          "type": "list[dict(image: dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Origi",
+          "component": "Gallery"
+        },
+        {
+          "label": "Normal",
+          "type": "list[dict(image: dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Origi",
+          "component": "Gallery"
+        },
+        {
+          "label": "Shading",
+          "type": "list[dict(image: dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Origi",
+          "component": "Gallery"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/switch",
+  "_api_verified": true
+}

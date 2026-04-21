@@ -1,0 +1,68 @@
+{
+  "space_id": "fancyfeast/joy-caption-pre-alpha",
+  "title": "Joy Caption Pre Alpha",
+  "emoji": "\ud83d\udcac",
+  "description": "Joy Caption Pre Alpha",
+  "input_schema": {
+    "input_image": {
+      "type": "filepath",
+      "description": "Input Image",
+      "required": true,
+      "component": "Image"
+    }
+  },
+  "output_schema": {
+    "Caption": {
+      "type": "str",
+      "description": "Caption",
+      "component": "Textbox"
+    }
+  },
+  "license": "mit",
+  "hardware": "4.36.1",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us",
+    "captioning",
+    "image-to-text",
+    "vision"
+  ],
+  "likes": 1426,
+  "last_modified": "2024-07-30 23:04:56+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/stream_chat",
+      "parameters": [
+        {
+          "name": "input_image",
+          "label": "Input Image",
+          "type": "filepath",
+          "component": "Image"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Caption",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/stream_chat",
+  "_api_verified": true,
+  "estimated_latency_s": 3.31,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "_tags_enriched": true,
+  "measured_latency_s": 3.31,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:50:34.445232+00:00",
+  "_inference_attempt_status": "predict_failed",
+  "_inference_attempt_error": "The upstream Gradio app has raised an exception but has not enabled verbose error reporting. To enable, set show_error=True in launch()."
+}

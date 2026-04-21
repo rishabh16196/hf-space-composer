@@ -1,0 +1,145 @@
+{
+  "space_id": "BoobyBoobs/Flux_Lustly_AI_Uncensored_NSFW_V1",
+  "title": "Serverless ImgGen Hub",
+  "emoji": "\u2668\ufe0f\u2668\ufe0f\u2668\ufe0f",
+  "description": "Highly hackable hub w/ Flux, SD 3.5, LoRAs, no GPUs required",
+  "input_schema": {
+    "search_term": {
+      "type": "str",
+      "description": "Filter Models",
+      "required": true,
+      "component": "Textbox"
+    }
+  },
+  "output_schema": {
+    "Select a model below": {
+      "type": "Literal['3D Sketchfab', '80s Cyberpunk', '90s Anime Art', 'AbsoluteReality 1.8.1', 'Analog', 'Analog",
+      "description": "Select a model below",
+      "component": "Radio"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "4.36.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us",
+    "diffusion",
+    "image-generation",
+    "text-to-image",
+    "vision"
+  ],
+  "likes": 130,
+  "last_modified": "2025-01-24 23:37:17+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/filter_models",
+      "parameters": [
+        {
+          "name": "search_term",
+          "label": "Filter Models",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Select a model below",
+          "type": "Literal['3D Sketchfab', '80s Cyberpunk', '90s Anime Art', 'AbsoluteReality 1.8.1', 'Analog', 'Analog Madness Realistic v7', 'Analog Redmond', 'Archfey Anime', 'Ascii Art', 'Brain Melt Acid Art', 'Bore",
+          "component": "Radio"
+        }
+      ]
+    },
+    {
+      "name": "/query",
+      "parameters": [
+        {
+          "name": "prompt",
+          "label": "Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "model",
+          "label": "Select a model below",
+          "type": "Literal['3D Sketchfab', '80s Cyberpunk', '90s Anime Art', 'AbsoluteReality 1.8.1', 'Analog', 'Analog Madness Realistic v7', 'Analog Redmond', 'Archfey Anime', 'Ascii Art', 'Brain Melt Acid Art', 'Bore",
+          "component": "Radio"
+        },
+        {
+          "name": "custom_lora",
+          "label": "Custom LoRA",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "is_negative",
+          "label": "Negative Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "steps",
+          "label": "Sampling steps",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "cfg_scale",
+          "label": "CFG Scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "sampler",
+          "label": "Sampling method",
+          "type": "Literal['DPM++ 2M Karras', 'DPM++ SDE Karras', 'Euler', 'Euler a', 'Heun', 'DDIM']",
+          "component": "Radio"
+        },
+        {
+          "name": "seed",
+          "label": "Seed",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "strength",
+          "label": "Strength",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "width",
+          "label": "Width",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "height",
+          "label": "Height",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Image Output",
+          "type": "filepath",
+          "component": "Image"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/filter_models",
+  "_api_verified": true,
+  "estimated_latency_s": 3.29,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "_tags_enriched": true,
+  "measured_latency_s": 3.29,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:49:09.787053+00:00"
+}

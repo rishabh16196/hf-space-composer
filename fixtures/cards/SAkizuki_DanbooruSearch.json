@@ -1,0 +1,38 @@
+{
+  "space_id": "SAkizuki/DanbooruSearch",
+  "title": "DanbooruSearch",
+  "emoji": "\ud83d\udc41",
+  "description": "\u57fa\u4e8e\u8bed\u4e49\u5339\u914d\u7684 Danbooru \u6807\u7b7e\u641c\u7d22\u5f15\u64ce\uff0c\u652f\u6301\u591a\u7ef4\u5339\u914d\u3001\u667a\u80fd\u5206\u8bcd\u4e0e\u5171\u73b0\u5173\u8054\u63a8\u8350\u3002",
+  "input_schema": {
+    "prompt": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "output_schema": {
+    "image_url": {
+      "type": "string"
+    }
+  },
+  "license": "mit",
+  "hardware": "",
+  "sdk": "docker",
+  "tags": [
+    "docker",
+    "prompt-engineering",
+    "stable-diffusion",
+    "danbooru",
+    "nlp",
+    "region:us"
+  ],
+  "likes": 41,
+  "last_modified": "2026-04-19 03:59:23+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "error",
+  "_api_error": "Could not get Gradio config from: https://sakizuki-danboorusearch.hf.space",
+  "estimated_latency_s": 40.0,
+  "speed_tier": "slow",
+  "_latency_source": "inferred"
+}

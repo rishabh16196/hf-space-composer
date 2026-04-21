@@ -1,0 +1,38 @@
+{
+  "space_id": "MCP-1st-Birthday/Business-Location-Scouter",
+  "title": "Business Location Scouter",
+  "emoji": "\ud83d\udc28",
+  "description": "Finds the top cities with the strongest business potential",
+  "input_schema": {
+    "input": {
+      "type": "string",
+      "description": "Input",
+      "required": true
+    }
+  },
+  "output_schema": {
+    "output": {
+      "type": "string"
+    }
+  },
+  "license": "mit",
+  "hardware": "6.0.1",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "building-mcp-track-enterprise",
+    "building-mcp-track-consumer",
+    "mcp-server",
+    "region:us"
+  ],
+  "likes": 3,
+  "last_modified": "2025-11-29 13:34:23+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "error",
+  "_api_error": "(Request ID: Root=1-69e77bd8-32ac7cd0263963e70bd5c8fb;d32ab321-0430-4e88-926b-1606675d1e97)\n\n429 Too Many Requests: you have reached your 'api' rate limit.\nRetry after 6 seconds (0/2500 requests remai"
+}

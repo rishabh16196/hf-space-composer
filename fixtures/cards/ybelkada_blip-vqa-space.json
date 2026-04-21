@@ -1,0 +1,39 @@
+{
+  "space_id": "ybelkada/blip-vqa-space",
+  "title": "Blip Image Captioning Space",
+  "emoji": "\ud83d\udc22",
+  "description": "Blip Image Captioning Space",
+  "input_schema": {
+    "input": {
+      "type": "string",
+      "description": "Input",
+      "required": true
+    }
+  },
+  "output_schema": {
+    "output": {
+      "type": "string"
+    }
+  },
+  "license": "unknown",
+  "hardware": "3.14.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us",
+    "captioning",
+    "image-to-text",
+    "vision"
+  ],
+  "likes": 5,
+  "last_modified": "2022-12-21 08:41:04+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_tags_enriched": true,
+  "estimated_latency_s": 4.0,
+  "speed_tier": "fast",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "error",
+  "_api_error": "(Request ID: Root=1-69e77b96-4ba2c36c2b6160596d49616f;3b328b27-0b34-47e4-afcc-d44d6735c443)\n\n429 Too Many Requests: you have reached your 'api' rate limit.\nRetry after 72 seconds (0/2500 requests rema"
+}

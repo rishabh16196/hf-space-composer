@@ -1,0 +1,71 @@
+{
+  "space_id": "pragnakalp/OCR-image-to-text",
+  "title": "OCR Image To Text",
+  "emoji": "\ud83d\udcf8",
+  "description": "OCR Image To Text",
+  "input_schema": {
+    "Method": {
+      "type": "Literal[PaddleOCR, EasyOCR, KerasOCR]",
+      "description": "Method",
+      "required": true,
+      "component": "Radio"
+    },
+    "img": {
+      "type": "filepath",
+      "description": "img",
+      "required": true,
+      "component": "Image"
+    }
+  },
+  "output_schema": {
+    "Output": {
+      "type": "str",
+      "description": "Output",
+      "component": "Textbox"
+    }
+  },
+  "license": "unknown",
+  "hardware": "4.7.1",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 182,
+  "last_modified": "2024-04-20 06:19:50+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/predict",
+      "parameters": [
+        {
+          "name": "Method",
+          "label": "Method",
+          "type": "Literal[PaddleOCR, EasyOCR, KerasOCR]",
+          "component": "Radio"
+        },
+        {
+          "name": "img",
+          "label": "img",
+          "type": "filepath",
+          "component": "Image"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/predict",
+  "_api_verified": true
+}

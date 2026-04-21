@@ -1,0 +1,149 @@
+{
+  "space_id": "Robys01/Face-Aging",
+  "title": "Face Aging",
+  "emoji": "\ud83d\udc41",
+  "description": "Face Aging",
+  "input_schema": {
+    "image_path": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "Input Image",
+      "required": true,
+      "component": "Image"
+    },
+    "source_age": {
+      "type": "float",
+      "description": "Current age",
+      "required": true,
+      "component": "Slider"
+    },
+    "target_age": {
+      "type": "float",
+      "description": "Target age",
+      "required": true,
+      "component": "Slider"
+    }
+  },
+  "output_schema": {
+    "Aged Image": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "Aged Image",
+      "component": "Image"
+    }
+  },
+  "license": "mit",
+  "hardware": "5.15.0",
+  "sdk": "docker",
+  "tags": [
+    "docker",
+    "region:us"
+  ],
+  "likes": 7,
+  "last_modified": "2025-10-21 16:18:47+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/predict",
+      "parameters": [
+        {
+          "name": "image_path",
+          "label": "Input Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "source_age",
+          "label": "Current age",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "target_age",
+          "label": "Target age",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Aged Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/predict_1",
+      "parameters": [
+        {
+          "name": "image_path",
+          "label": "Input Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "source_age",
+          "label": "Current age",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "target_age",
+          "label": "Target age",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "duration",
+          "label": "Duration (seconds)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "fps",
+          "label": "Frames per second (fps)",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Aged Video",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        }
+      ]
+    },
+    {
+      "name": "/predict_2",
+      "parameters": [
+        {
+          "name": "image_path",
+          "label": "Input Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "source_age",
+          "label": "Current age",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Aging Timelapse",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/predict",
+  "_api_verified": true
+}

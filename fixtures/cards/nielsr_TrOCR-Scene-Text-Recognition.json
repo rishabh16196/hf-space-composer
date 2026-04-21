@@ -1,0 +1,62 @@
+{
+  "space_id": "nielsr/TrOCR-Scene-Text-Recognition",
+  "title": "Trocr Scene Text Recognition",
+  "emoji": "\ud83e\udd80",
+  "description": "Trocr Scene Text Recognition",
+  "input_schema": {
+    "image": {
+      "type": "str",
+      "description": "image",
+      "required": true,
+      "component": "Image"
+    }
+  },
+  "output_schema": {
+    "output": {
+      "type": "str",
+      "description": "output",
+      "component": "Textbox"
+    }
+  },
+  "license": "unknown",
+  "hardware": "3.3",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us",
+    "ocr",
+    "vision"
+  ],
+  "likes": 24,
+  "last_modified": "2022-09-14 06:47:21+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_tags_enriched": true,
+  "estimated_latency_s": 5.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/predict",
+      "parameters": [
+        {
+          "name": "image",
+          "label": "image",
+          "type": "str",
+          "component": "Image"
+        }
+      ],
+      "returns": [
+        {
+          "label": "output",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/predict",
+  "_api_verified": true
+}

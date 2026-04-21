@@ -1,0 +1,405 @@
+{
+  "space_id": "rahul7star/LTX-2.3-Lora",
+  "title": "Ltx-2.3 FFLFwith Lora",
+  "emoji": "\ud83d\udcda",
+  "description": "Ltx-2.3 FFLFwith Lora",
+  "input_schema": {
+    "first_image": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "First Frame (Optional)",
+      "required": true,
+      "component": "Image"
+    },
+    "last_image": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "Last Frame (Optional)",
+      "required": true,
+      "component": "Image"
+    },
+    "high_res": {
+      "type": "bool",
+      "description": "High Resolution",
+      "required": true,
+      "component": "Checkbox"
+    }
+  },
+  "output_schema": {
+    "Width": {
+      "type": "int",
+      "description": "Width",
+      "component": "Number"
+    },
+    "Height": {
+      "type": "int",
+      "description": "Height",
+      "component": "Number"
+    }
+  },
+  "license": "unknown",
+  "hardware": "6.8.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 39,
+  "last_modified": "2026-04-07 09:54:08+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/on_image_upload",
+      "parameters": [
+        {
+          "name": "first_image",
+          "label": "First Frame (Optional)",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "last_image",
+          "label": "Last Frame (Optional)",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "high_res",
+          "label": "High Resolution",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Width",
+          "type": "int",
+          "component": "Number"
+        },
+        {
+          "label": "Height",
+          "type": "int",
+          "component": "Number"
+        }
+      ]
+    },
+    {
+      "name": "/on_image_upload_1",
+      "parameters": [
+        {
+          "name": "first_image",
+          "label": "First Frame (Optional)",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "last_image",
+          "label": "Last Frame (Optional)",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "high_res",
+          "label": "High Resolution",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Width",
+          "type": "int",
+          "component": "Number"
+        },
+        {
+          "label": "Height",
+          "type": "int",
+          "component": "Number"
+        }
+      ]
+    },
+    {
+      "name": "/on_highres_toggle",
+      "parameters": [
+        {
+          "name": "first_image",
+          "label": "First Frame (Optional)",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "last_image",
+          "label": "Last Frame (Optional)",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "high_res",
+          "label": "High Resolution",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Width",
+          "type": "int",
+          "component": "Number"
+        },
+        {
+          "label": "Height",
+          "type": "int",
+          "component": "Number"
+        }
+      ]
+    },
+    {
+      "name": "/prepare_lora_cache",
+      "parameters": [
+        {
+          "name": "paste_strength",
+          "label": "Paste anything Lora strength",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "ruri_strength",
+          "label": "Ruri lady Lora strength",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "transit_strength",
+          "label": "Transition Lora strength",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "pose_strength",
+          "label": "Anthro Enhancer strength",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "general_strength",
+          "label": "Reasoning Enhancer strength",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "motion_strength",
+          "label": "Anthro Posing Helper strength",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "dreamlay_strength",
+          "label": "Dreamfly strength",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "mself_strength",
+          "label": "Mself strength",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "dramatic_strength",
+          "label": "Dramatic strength",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "fluid_strength",
+          "label": "Fluid Helper strength",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "liquid_strength",
+          "label": "Liquid Helper strength",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "demopose_strength",
+          "label": "Demopose Helper strength",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "LoRA Cache Status",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/generate_video",
+      "parameters": [
+        {
+          "name": "first_image",
+          "label": "First Frame (Optional)",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "last_image",
+          "label": "Last Frame (Optional)",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "input_audio",
+          "label": "Audio Input (Optional)",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "name": "prompt",
+          "label": "Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "duration",
+          "label": "Duration (seconds)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "gpu_duration",
+          "label": "ZeroGPU duration (seconds)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "enhance_prompt",
+          "label": "Enhance Prompt",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "seed",
+          "label": "Seed",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "randomize_seed",
+          "label": "Randomize Seed",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "height",
+          "label": "Height",
+          "type": "int",
+          "component": "Number"
+        },
+        {
+          "name": "width",
+          "label": "Width",
+          "type": "int",
+          "component": "Number"
+        },
+        {
+          "name": "paste_strength",
+          "label": "Paste anything Lora strength",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "ruri_strength",
+          "label": "Ruri lady Lora strength",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "transit_strength",
+          "label": "Transition Lora strength",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "pose_strength",
+          "label": "Anthro Enhancer strength",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "general_strength",
+          "label": "Reasoning Enhancer strength",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "motion_strength",
+          "label": "Anthro Posing Helper strength",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "dreamlay_strength",
+          "label": "Dreamfly strength",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "mself_strength",
+          "label": "Mself strength",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "dramatic_strength",
+          "label": "Dramatic strength",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "fluid_strength",
+          "label": "Fluid Helper strength",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "liquid_strength",
+          "label": "Liquid Helper strength",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "demopose_strength",
+          "label": "Demopose Helper strength",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Generated Video",
+          "type": "filepath",
+          "component": "Video"
+        },
+        {
+          "label": "Seed",
+          "type": "float",
+          "component": "Slider"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/on_image_upload",
+  "_api_verified": true,
+  "estimated_latency_s": 4.09,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 4.09,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:51:43.687246+00:00"
+}

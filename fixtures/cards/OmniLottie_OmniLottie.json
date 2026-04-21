@@ -1,0 +1,264 @@
+{
+  "space_id": "OmniLottie/OmniLottie",
+  "title": "OmniLottie",
+  "emoji": "\ud83c\udf0d",
+  "description": "Official Demo Page of OmniLottie.",
+  "input_schema": {
+    "text_prompt": {
+      "type": "str",
+      "description": "Text Description",
+      "required": true,
+      "component": "Textbox"
+    },
+    "max_tokens": {
+      "type": "float",
+      "description": "Max Tokens",
+      "required": true,
+      "component": "Slider"
+    },
+    "use_sampling": {
+      "type": "bool",
+      "description": "Use Sampling",
+      "required": true,
+      "component": "Checkbox"
+    },
+    "temperature": {
+      "type": "float",
+      "description": "Temperature",
+      "required": true,
+      "component": "Slider"
+    },
+    "top_p": {
+      "type": "float",
+      "description": "Top-p",
+      "required": true,
+      "component": "Slider"
+    },
+    "top_k": {
+      "type": "float",
+      "description": "Top-k",
+      "required": true,
+      "component": "Slider"
+    }
+  },
+  "output_schema": {
+    "Animation Preview": {
+      "type": "str",
+      "description": "Animation Preview",
+      "component": "Html"
+    },
+    "value_99": {
+      "type": "str",
+      "description": "value_99",
+      "component": "Markdown"
+    },
+    "\ud83d\udce5 Download JSON": {
+      "type": "filepath",
+      "description": "\ud83d\udce5 Download JSON",
+      "component": "File"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "6.8.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 82,
+  "last_modified": "2026-03-03 05:57:32+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/process_text_to_lottie",
+      "parameters": [
+        {
+          "name": "text_prompt",
+          "label": "Text Description",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "max_tokens",
+          "label": "Max Tokens",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "use_sampling",
+          "label": "Use Sampling",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "temperature",
+          "label": "Temperature",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "top_p",
+          "label": "Top-p",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "top_k",
+          "label": "Top-k",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Animation Preview",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "value_99",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "\ud83d\udce5 Download JSON",
+          "type": "filepath",
+          "component": "File"
+        }
+      ]
+    },
+    {
+      "name": "/process_image_to_lottie",
+      "parameters": [
+        {
+          "name": "image_file",
+          "label": "Upload Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "text_description",
+          "label": "Animation Description",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "max_tokens",
+          "label": "Max Tokens",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "use_sampling",
+          "label": "Use Sampling",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "temperature",
+          "label": "Temperature",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "top_p",
+          "label": "Top-p",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "top_k",
+          "label": "Top-k",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Animation Preview",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "value_120",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "\ud83d\udce5 Download JSON",
+          "type": "filepath",
+          "component": "File"
+        }
+      ]
+    },
+    {
+      "name": "/process_video_to_lottie",
+      "parameters": [
+        {
+          "name": "video",
+          "label": "Upload Video / GIF / WebP",
+          "type": "filepath",
+          "component": "Video"
+        },
+        {
+          "name": "max_tokens",
+          "label": "Max Tokens",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "use_sampling",
+          "label": "Use Sampling",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "temperature",
+          "label": "Temperature",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "top_p",
+          "label": "Top-p",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "top_k",
+          "label": "Top-k",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Animation Preview",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "value_140",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "\ud83d\udce5 Download JSON",
+          "type": "filepath",
+          "component": "File"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/process_text_to_lottie",
+  "_api_verified": true,
+  "estimated_latency_s": 3.72,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 3.72,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:49:43.142847+00:00"
+}

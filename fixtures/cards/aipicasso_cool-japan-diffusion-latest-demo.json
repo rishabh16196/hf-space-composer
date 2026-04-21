@@ -1,0 +1,254 @@
+{
+  "space_id": "aipicasso/cool-japan-diffusion-latest-demo",
+  "title": "Cool Japan Diffusion",
+  "emoji": "\ud83c\udd92",
+  "description": "Cool Japan Diffusion",
+  "input_schema": {
+    "prompt": {
+      "type": "str",
+      "description": "Prompt",
+      "required": true,
+      "component": "Textbox"
+    },
+    "guidance": {
+      "type": "float",
+      "description": "Guidance scale",
+      "required": true,
+      "component": "Slider"
+    },
+    "steps": {
+      "type": "float",
+      "description": "Steps",
+      "required": true,
+      "component": "Slider"
+    },
+    "image_size": {
+      "type": "Literal['Portrait', 'Landscape', 'Square', 'Highreso.', 'Superreso.']",
+      "description": "parameter_20",
+      "required": true,
+      "component": "Radio"
+    },
+    "seed": {
+      "type": "float",
+      "description": "Seed (0 = random)",
+      "required": true,
+      "component": "Slider"
+    },
+    "img": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "Image",
+      "required": true,
+      "component": "Image"
+    },
+    "strength": {
+      "type": "float",
+      "description": "Transformation strength",
+      "required": true,
+      "component": "Slider"
+    },
+    "neg_prompt": {
+      "type": "str",
+      "description": "Negative prompt",
+      "required": true,
+      "component": "Textbox"
+    },
+    "cool_japan_type": {
+      "type": "Literal['Anime', 'Manga', 'Game']",
+      "description": "parameter_6",
+      "required": true,
+      "component": "Radio"
+    },
+    "disable_auto_prompt_correction": {
+      "type": "bool",
+      "description": "Disable auto prompt corretion.",
+      "required": true,
+      "component": "Checkbox"
+    }
+  },
+  "output_schema": {
+    "value_12": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "value_12",
+      "component": "Image"
+    },
+    "value_13": {
+      "type": "str",
+      "description": "value_13",
+      "component": "Markdown"
+    }
+  },
+  "license": "unknown",
+  "hardware": "6.5.1",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 111,
+  "last_modified": "2026-02-03 23:44:15+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/inference",
+      "parameters": [
+        {
+          "name": "prompt",
+          "label": "Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "guidance",
+          "label": "Guidance scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "steps",
+          "label": "Steps",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "image_size",
+          "label": "parameter_20",
+          "type": "Literal['Portrait', 'Landscape', 'Square', 'Highreso.', 'Superreso.']",
+          "component": "Radio"
+        },
+        {
+          "name": "seed",
+          "label": "Seed (0 = random)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "img",
+          "label": "Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "strength",
+          "label": "Transformation strength",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "neg_prompt",
+          "label": "Negative prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "cool_japan_type",
+          "label": "parameter_6",
+          "type": "Literal['Anime', 'Manga', 'Game']",
+          "component": "Radio"
+        },
+        {
+          "name": "disable_auto_prompt_correction",
+          "label": "Disable auto prompt corretion.",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_12",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "value_13",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/generate",
+      "parameters": [
+        {
+          "name": "prompt",
+          "label": "Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "guidance",
+          "label": "Guidance scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "steps",
+          "label": "Steps",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "image_size",
+          "label": "parameter_20",
+          "type": "Literal['Portrait', 'Landscape', 'Square', 'Highreso.', 'Superreso.']",
+          "component": "Radio"
+        },
+        {
+          "name": "seed",
+          "label": "Seed (0 = random)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "img",
+          "label": "Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "strength",
+          "label": "Transformation strength",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "neg_prompt",
+          "label": "Negative prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "cool_japan_type",
+          "label": "parameter_6",
+          "type": "Literal['Anime', 'Manga', 'Game']",
+          "component": "Radio"
+        },
+        {
+          "name": "disable_auto_prompt_correction",
+          "label": "Disable auto prompt corretion.",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_12",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "value_13",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/inference",
+  "_api_verified": true
+}

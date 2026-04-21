@@ -1,0 +1,312 @@
+{
+  "space_id": "OpenMOSS-Team/MOSS-Speech",
+  "title": "MOSS-Speech Demo",
+  "emoji": "",
+  "description": "True Speech-to-Speech Language Model",
+  "input_schema": {
+    "audio_in": {
+      "type": "filepath",
+      "description": "\ud83c\udf99\ufe0f Speech Input",
+      "required": true,
+      "component": "Audio"
+    },
+    "text_in": {
+      "type": "str",
+      "description": "\ud83e\uddfe Text Input",
+      "required": true,
+      "component": "Textbox"
+    },
+    "mode": {
+      "type": "Literal['speech_instruct_speech_response', 'speech_instruct_text_response', 'text_instruct_speech_re",
+      "description": "\ud83c\udfaf Interaction Mode",
+      "required": true,
+      "component": "Radio"
+    },
+    "temperature": {
+      "type": "float",
+      "description": "\ud83c\udf21\ufe0f Temperature",
+      "required": true,
+      "component": "Slider"
+    },
+    "top_p": {
+      "type": "float",
+      "description": "\ud83c\udfaf Top-p",
+      "required": true,
+      "component": "Slider"
+    },
+    "repetition_penalty": {
+      "type": "float",
+      "description": "\ud83d\udd04 Repetition Penalty",
+      "required": true,
+      "component": "Slider"
+    },
+    "max_new_tokens": {
+      "type": "float",
+      "description": "\ud83d\udcdd Max New Tokens",
+      "required": true,
+      "component": "Slider"
+    },
+    "min_new_tokens": {
+      "type": "float",
+      "description": "\ud83d\udccf Min New Tokens",
+      "required": true,
+      "component": "Slider"
+    },
+    "top_k": {
+      "type": "float",
+      "description": "\ud83d\udd1d Top-k",
+      "required": true,
+      "component": "Slider"
+    },
+    "system_prompt": {
+      "type": "str",
+      "description": "\ud83e\udd16 System Prompt",
+      "required": true,
+      "component": "Textbox"
+    },
+    "decoder_audio_prompt": {
+      "type": "filepath",
+      "description": "\ud83c\udf99\ufe0f Decoder Audio Prompt (Optional)",
+      "required": true,
+      "component": "Audio"
+    },
+    "clear_on_submit": {
+      "type": "bool",
+      "description": "Clear history on each submit",
+      "required": true,
+      "component": "Checkbox"
+    }
+  },
+  "output_schema": {
+    "\ud83d\udcc4 Text Output": {
+      "type": "str",
+      "description": "\ud83d\udcc4 Text Output",
+      "component": "Textbox"
+    },
+    "\ud83d\udd0a Speech Output": {
+      "type": "filepath",
+      "description": "\ud83d\udd0a Speech Output",
+      "component": "Audio"
+    },
+    "\ud83d\udcac Chat History": {
+      "type": "list[dict(role: str, metadata: dict(title: str, id: int | str, parent_id: int | str, log: str, durat",
+      "description": "\ud83d\udcac Chat History",
+      "component": "Chatbot"
+    }
+  },
+  "license": "unknown",
+  "hardware": "5.47.2",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us",
+    "audio"
+  ],
+  "likes": 19,
+  "last_modified": "2025-10-11 11:26:22+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/_submit_with_clear",
+      "parameters": [
+        {
+          "name": "audio_in",
+          "label": "\ud83c\udf99\ufe0f Speech Input",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "name": "text_in",
+          "label": "\ud83e\uddfe Text Input",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "mode",
+          "label": "\ud83c\udfaf Interaction Mode",
+          "type": "Literal['speech_instruct_speech_response', 'speech_instruct_text_response', 'text_instruct_speech_response', 'text_instruct_text_response']",
+          "component": "Radio"
+        },
+        {
+          "name": "temperature",
+          "label": "\ud83c\udf21\ufe0f Temperature",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "top_p",
+          "label": "\ud83c\udfaf Top-p",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "repetition_penalty",
+          "label": "\ud83d\udd04 Repetition Penalty",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "max_new_tokens",
+          "label": "\ud83d\udcdd Max New Tokens",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "min_new_tokens",
+          "label": "\ud83d\udccf Min New Tokens",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "top_k",
+          "label": "\ud83d\udd1d Top-k",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "system_prompt",
+          "label": "\ud83e\udd16 System Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "decoder_audio_prompt",
+          "label": "\ud83c\udf99\ufe0f Decoder Audio Prompt (Optional)",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "name": "clear_on_submit",
+          "label": "Clear history on each submit",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "\ud83d\udcc4 Text Output",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "\ud83d\udd0a Speech Output",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "\ud83d\udcac Chat History",
+          "type": "list[dict(role: str, metadata: dict(title: str, id: int | str, parent_id: int | str, log: str, duration: float, status: Literal['pending', 'done']) | None, content: str | dict(file: filepath, alt_text",
+          "component": "Chatbot"
+        }
+      ]
+    },
+    {
+      "name": "/_hard_clear",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "\ud83d\udcc4 Text Output",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "\ud83d\udd0a Speech Output",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "\ud83d\udcac Chat History",
+          "type": "list[dict(role: str, metadata: dict(title: str, id: int | str, parent_id: int | str, log: str, duration: float, status: Literal['pending', 'done']) | None, content: str | dict(file: filepath, alt_text",
+          "component": "Chatbot"
+        }
+      ]
+    },
+    {
+      "name": "/_on_mode_change",
+      "parameters": [
+        {
+          "name": "task",
+          "label": "\ud83c\udfaf Interaction Mode",
+          "type": "Literal['speech_instruct_speech_response', 'speech_instruct_text_response', 'text_instruct_speech_response', 'text_instruct_text_response']",
+          "component": "Radio"
+        },
+        {
+          "name": "clear_history_on_mode_change",
+          "label": "Clear history on mode change",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "\ud83e\udd16 System Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "\ud83d\udcac Chat History",
+          "type": "list[dict(role: str, metadata: dict(title: str, id: int | str, parent_id: int | str, log: str, duration: float, status: Literal['pending', 'done']) | None, content: str | dict(file: filepath, alt_text",
+          "component": "Chatbot"
+        }
+      ]
+    },
+    {
+      "name": "/update_interface_visibility",
+      "parameters": [
+        {
+          "name": "selected_mode",
+          "label": "\ud83c\udfaf Interaction Mode",
+          "type": "Literal['speech_instruct_speech_response', 'speech_instruct_text_response', 'text_instruct_speech_response', 'text_instruct_text_response']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "\ud83c\udf99\ufe0f Speech Input",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "\ud83e\uddfe Text Input",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/update_output_visibility",
+      "parameters": [
+        {
+          "name": "selected_mode",
+          "label": "\ud83c\udfaf Interaction Mode",
+          "type": "Literal['speech_instruct_speech_response', 'speech_instruct_text_response', 'text_instruct_speech_response', 'text_instruct_text_response']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "\ud83d\udcc4 Text Output",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "\ud83d\udd0a Speech Output",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/_submit_with_clear",
+  "_api_verified": true,
+  "estimated_latency_s": 3.41,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "_tags_enriched": true,
+  "measured_latency_s": 3.41,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:49:44.170271+00:00"
+}

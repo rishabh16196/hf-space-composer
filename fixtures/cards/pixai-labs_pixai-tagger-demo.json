@@ -1,0 +1,373 @@
+{
+  "space_id": "pixai-labs/pixai-tagger-demo",
+  "title": "Pixai Tagger Demo",
+  "emoji": "\ud83d\ude80",
+  "description": "Pixai Tagger Demo",
+  "input_schema": {
+    "selected": {
+      "type": "Literal['threshold', 'topk']",
+      "description": "Mode",
+      "required": true,
+      "component": "Radio"
+    }
+  },
+  "output_schema": {},
+  "license": "mit",
+  "hardware": "5.44.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 64,
+  "last_modified": "2025-10-24 03:31:34+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/toggle_mode",
+      "parameters": [
+        {
+          "name": "selected",
+          "label": "Mode",
+          "type": "Literal['threshold', 'topk']",
+          "component": "Radio"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/predict_url",
+      "parameters": [
+        {
+          "name": "image",
+          "label": "Upload image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "url",
+          "label": "Image URL",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "general_threshold",
+          "label": "General threshold",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "character_threshold",
+          "label": "Character threshold",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "mode_val",
+          "label": "Mode",
+          "type": "Literal['threshold', 'topk']",
+          "component": "Radio"
+        },
+        {
+          "name": "topk_general_val",
+          "label": "Top-K general",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "topk_character_val",
+          "label": "Top-K character",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "include_scores_val",
+          "label": "Include scores in output",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "underscore_mode_val",
+          "label": "Underscore-separated output",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "General tags",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Character tags",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "IP tags",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Combined tags",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Timings/Device",
+          "type": "str | float | bool | list | dict",
+          "component": "Json"
+        },
+        {
+          "label": "Raw JSON",
+          "type": "str | float | bool | list | dict",
+          "component": "Json"
+        }
+      ]
+    },
+    {
+      "name": "/predict_image",
+      "parameters": [
+        {
+          "name": "image",
+          "label": "Upload image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "url",
+          "label": "Image URL",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "general_threshold",
+          "label": "General threshold",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "character_threshold",
+          "label": "Character threshold",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "mode_val",
+          "label": "Mode",
+          "type": "Literal['threshold', 'topk']",
+          "component": "Radio"
+        },
+        {
+          "name": "topk_general_val",
+          "label": "Top-K general",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "topk_character_val",
+          "label": "Top-K character",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "include_scores_val",
+          "label": "Include scores in output",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "underscore_mode_val",
+          "label": "Underscore-separated output",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "General tags",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Character tags",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "IP tags",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Combined tags",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Timings/Device",
+          "type": "str | float | bool | list | dict",
+          "component": "Json"
+        },
+        {
+          "label": "Raw JSON",
+          "type": "str | float | bool | list | dict",
+          "component": "Json"
+        }
+      ]
+    },
+    {
+      "name": "/lambda",
+      "parameters": [
+        {
+          "name": "x",
+          "label": "Combined tags",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Combined tags",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_1",
+      "parameters": [
+        {
+          "name": "x",
+          "label": "Character tags",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Character tags",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_2",
+      "parameters": [
+        {
+          "name": "x",
+          "label": "General tags",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "General tags",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_3",
+      "parameters": [
+        {
+          "name": "x",
+          "label": "IP tags",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "IP tags",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_4",
+      "parameters": [
+        {
+          "name": "x",
+          "label": "Raw JSON",
+          "type": "str | float | bool | list | dict",
+          "component": "Json"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Raw JSON",
+          "type": "str | float | bool | list | dict",
+          "component": "Json"
+        }
+      ]
+    },
+    {
+      "name": "/clear",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Upload image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "Image URL",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "General threshold",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Character threshold",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "General tags",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Character tags",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "IP tags",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Timings/Device",
+          "type": "str | float | bool | list | dict",
+          "component": "Json"
+        },
+        {
+          "label": "Raw JSON",
+          "type": "str | float | bool | list | dict",
+          "component": "Json"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/toggle_mode",
+  "_api_verified": true,
+  "estimated_latency_s": 3.96,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 3.96,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:51:34.113572+00:00"
+}

@@ -1,0 +1,547 @@
+{
+  "space_id": "dream2589632147/Dream-wan2-2-faster-Pro",
+  "title": "Dream-wan2-2-faster-Pro",
+  "emoji": "\ud83c\udfa5",
+  "description": "generate a video from an image with a text prompt",
+  "input_schema": {
+    "img": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "\ud83d\uddbc\ufe0f Upload B&W Image",
+      "required": true,
+      "component": "Image"
+    },
+    "style": {
+      "type": "Literal['natural', 'cinematic', 'warm']",
+      "description": "\ud83c\udfa8 Color Style",
+      "required": true,
+      "component": "Radio"
+    },
+    "factor": {
+      "type": "float",
+      "description": "\ud83d\udd0d Render Factor",
+      "required": true,
+      "component": "Slider"
+    }
+  },
+  "output_schema": {
+    "\ud83c\udf08 Colorized Result": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "\ud83c\udf08 Colorized Result",
+      "component": "Image"
+    },
+    "output_1": {
+      "type": "str",
+      "description": "",
+      "component": "Markdown"
+    },
+    "Original (B&W)": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "Original (B&W)",
+      "component": "Image"
+    },
+    "Colorized": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "Colorized",
+      "component": "Image"
+    }
+  },
+  "license": "unknown",
+  "hardware": "6.1.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "mcp-server",
+    "region:us",
+    "text",
+    "video",
+    "video-generation",
+    "vision"
+  ],
+  "likes": 1351,
+  "last_modified": "2026-03-02 15:47:01+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/_run_colorize",
+      "parameters": [
+        {
+          "name": "img",
+          "label": "\ud83d\uddbc\ufe0f Upload B&W Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "style",
+          "label": "\ud83c\udfa8 Color Style",
+          "type": "Literal['natural', 'cinematic', 'warm']",
+          "component": "Radio"
+        },
+        {
+          "name": "factor",
+          "label": "\ud83d\udd0d Render Factor",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "\ud83c\udf08 Colorized Result",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "Original (B&W)",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "Colorized",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/lambda",
+      "parameters": [
+        {
+          "name": "img",
+          "label": "\ud83c\udf08 Colorized Result",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ],
+      "returns": [
+        {
+          "label": "\ud83d\udcf8 Upload Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/load_history_display",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_139",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_1",
+      "parameters": [
+        {
+          "name": "v",
+          "label": "\ud83c\udfac Generated Video",
+          "type": "filepath",
+          "component": "Video"
+        }
+      ],
+      "returns": [
+        {
+          "label": "\ud83d\udcf9 \u0627\u0644\u0641\u064a\u062f\u064a\u0648 \u0627\u0644\u0645\u0631\u0627\u062f \u0625\u0636\u0627\u0641\u0629 \u0645\u0648\u0633\u064a\u0642\u0649 \u0644\u0647",
+          "type": "filepath",
+          "component": "Video"
+        }
+      ]
+    },
+    {
+      "name": "/generate_music_for_video",
+      "parameters": [
+        {
+          "name": "video_path",
+          "label": "\ud83d\udcf9 \u0627\u0644\u0641\u064a\u062f\u064a\u0648 \u0627\u0644\u0645\u0631\u0627\u062f \u0625\u0636\u0627\u0641\u0629 \u0645\u0648\u0633\u064a\u0642\u0649 \u0644\u0647",
+          "type": "filepath",
+          "component": "Video"
+        },
+        {
+          "name": "video_prompt",
+          "label": "\u270d\ufe0f \u0648\u0635\u0641 \u0645\u0634\u0647\u062f \u0627\u0644\u0641\u064a\u062f\u064a\u0648 (\u0644\u0644\u0640 AI)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "music_duration",
+          "label": "\u23f1\ufe0f \u0645\u062f\u0629 \u0627\u0644\u0645\u0648\u0633\u064a\u0642\u0649 (\u062b\u0648\u0627\u0646\u064a)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "fade_in",
+          "label": "\ud83c\udf05 Fade In (\u062b\u0648\u0627\u0646\u064a)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "fade_out",
+          "label": "\ud83c\udf07 Fade Out (\u062b\u0648\u0627\u0646\u064a)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "volume",
+          "label": "\ud83d\udd0a \u0645\u0633\u062a\u0648\u0649 \u0627\u0644\u0635\u0648\u062a",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "\ud83c\udfac\ud83c\udfb5 \u0627\u0644\u0641\u064a\u062f\u064a\u0648 \u0645\u0639 \u0627\u0644\u0645\u0648\u0633\u064a\u0642\u0649 AI",
+          "type": "filepath",
+          "component": "Video"
+        },
+        {
+          "label": "\ud83c\udfbc \u0627\u0644\u0648\u0635\u0641 \u0627\u0644\u0645\u0648\u0633\u064a\u0642\u064a \u0627\u0644\u0630\u064a \u0627\u0633\u062a\u062e\u062f\u0645\u0647 MusicGen",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/generate_video",
+      "parameters": [
+        {
+          "name": "input_image",
+          "label": "\ud83d\udcf8 Upload Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "prompt",
+          "label": "\u270d\ufe0f Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "steps",
+          "label": "\ud83d\udd01 Inference Steps",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "negative_prompt",
+          "label": "\ud83d\udeab Negative Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "duration_seconds",
+          "label": "\u23f1\ufe0f Duration (seconds)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "guidance_scale",
+          "label": "\ud83c\udfaf Guidance Scale (high-noise stage)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "guidance_scale_2",
+          "label": "\ud83c\udfaf Guidance Scale 2 (low-noise stage)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "seed",
+          "label": "\ud83c\udf31 Seed",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "randomize_seed",
+          "label": "\ud83c\udfb2 Randomize",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "auto_enhance",
+          "label": "Auto-enhance",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "\ud83c\udfac Generated Video",
+          "type": "filepath",
+          "component": "Video"
+        },
+        {
+          "label": "\ud83c\udf31 Used Seed",
+          "type": "int",
+          "component": "Number"
+        },
+        {
+          "label": "\ud83d\udcdd Final Prompt (after enhancement)",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/enhance_prompt_with_claude",
+      "parameters": [
+        {
+          "name": "user_prompt",
+          "label": "\u270d\ufe0f Prompt",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "\u270d\ufe0f Prompt",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/apply_preset",
+      "parameters": [
+        {
+          "name": "preset_name",
+          "label": "",
+          "type": "Literal['\ud83c\udf0a Flowing', '\ud83c\udfa5 Cinematic', '\ud83d\udca8 Dynamic', '\ud83c\udf3f Nature', '\u2728 Magical', '\ud83c\udfc3 Action', '\ud83c\udf05 Timelapse', '\ud83c\udfad Dramatic']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "\u270d\ufe0f Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "\ud83c\udfbc \u0627\u062e\u062a\u0631 \u0627\u0644\u062a\u0631\u0627\u0643",
+          "type": "Literal['\ud83c\udfac Cinematic Epic', '\ud83c\udf0a Ambient Flow', '\u26a1 Action Drive', '\ud83c\udf3f Nature Serenity', '\u2728 Magical Wonder', '\ud83c\udfad Dramatic Tension', '\ud83c\udf05 Sunrise Journey', '\ud83c\udfb8 Indie Vibes', '\ud83c\udfb9 Piano Emotion', '\ud83c\udf03 Night City', ",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/_toggle_music_source",
+      "parameters": [
+        {
+          "name": "source",
+          "label": "\u0645\u0635\u062f\u0631 \u0627\u0644\u0645\u0648\u0633\u064a\u0642\u0649",
+          "type": "Literal['\ud83c\udfb5 \u0645\u0646 \u0627\u0644\u0645\u0643\u062a\u0628\u0629', '\ud83d\udcc1 \u0627\u0631\u0641\u0639 \u0645\u0644\u0641', '\ud83d\udd07 \u0628\u062f\u0648\u0646 \u0645\u0648\u0633\u064a\u0642\u0649']",
+          "component": "Radio"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/_toggle_music_source_1",
+      "parameters": [
+        {
+          "name": "source",
+          "label": "\u0645\u0635\u062f\u0631 \u0627\u0644\u0645\u0648\u0633\u064a\u0642\u0649",
+          "type": "Literal['\ud83c\udfb5 \u0645\u0646 \u0627\u0644\u0645\u0643\u062a\u0628\u0629', '\ud83d\udcc1 \u0627\u0631\u0641\u0639 \u0645\u0644\u0641', '\ud83d\udd07 \u0628\u062f\u0648\u0646 \u0645\u0648\u0633\u064a\u0642\u0649']",
+          "component": "Radio"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/_update_track_info",
+      "parameters": [
+        {
+          "name": "track_name",
+          "label": "\ud83c\udfbc \u0627\u0644\u062a\u0631\u0627\u0643",
+          "type": "Literal['\ud83c\udfac Cinematic Epic', '\ud83c\udf0a Ambient Flow', '\u26a1 Action Drive', '\ud83c\udf3f Nature Serenity', '\u2728 Magical Wonder', '\ud83c\udfad Dramatic Tension', '\ud83c\udf05 Sunrise Journey', '\ud83c\udfb8 Indie Vibes', '\ud83c\udfb9 Piano Emotion', '\ud83c\udf03 Night City', ",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/_ai_suggest",
+      "parameters": [
+        {
+          "name": "prompt_text",
+          "label": "\u270d\ufe0f Prompt",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "\ud83c\udfbc \u0627\u062e\u062a\u0631 \u0627\u0644\u062a\u0631\u0627\u0643",
+          "type": "Literal['\ud83c\udfac Cinematic Epic', '\ud83c\udf0a Ambient Flow', '\u26a1 Action Drive', '\ud83c\udf3f Nature Serenity', '\u2728 Magical Wonder', '\ud83c\udfad Dramatic Tension', '\ud83c\udf05 Sunrise Journey', '\ud83c\udfb8 Indie Vibes', '\ud83c\udfb9 Piano Emotion', '\ud83c\udf03 Night City', ",
+          "component": "Dropdown"
+        },
+        {
+          "label": "",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/_add_music_generate",
+      "parameters": [
+        {
+          "name": "video_path",
+          "label": "\ud83c\udfac Generated Video",
+          "type": "filepath",
+          "component": "Video"
+        },
+        {
+          "name": "source",
+          "label": "\u0645\u0635\u062f\u0631 \u0627\u0644\u0645\u0648\u0633\u064a\u0642\u0649",
+          "type": "Literal['\ud83c\udfb5 \u0645\u0646 \u0627\u0644\u0645\u0643\u062a\u0628\u0629', '\ud83d\udcc1 \u0627\u0631\u0641\u0639 \u0645\u0644\u0641', '\ud83d\udd07 \u0628\u062f\u0648\u0646 \u0645\u0648\u0633\u064a\u0642\u0649']",
+          "component": "Radio"
+        },
+        {
+          "name": "track",
+          "label": "\ud83c\udfbc \u0627\u062e\u062a\u0631 \u0627\u0644\u062a\u0631\u0627\u0643",
+          "type": "Literal['\ud83c\udfac Cinematic Epic', '\ud83c\udf0a Ambient Flow', '\u26a1 Action Drive', '\ud83c\udf3f Nature Serenity', '\u2728 Magical Wonder', '\ud83c\udfad Dramatic Tension', '\ud83c\udf05 Sunrise Journey', '\ud83c\udfb8 Indie Vibes', '\ud83c\udfb9 Piano Emotion', '\ud83c\udf03 Night City', ",
+          "component": "Dropdown"
+        },
+        {
+          "name": "custom_audio",
+          "label": "\ud83d\udcc1 \u0627\u0631\u0641\u0639 \u0645\u0644\u0641 \u0635\u0648\u062a\u064a (MP3/WAV/OGG)",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "name": "volume",
+          "label": "\ud83d\udd0a \u0645\u0633\u062a\u0648\u0649 \u0627\u0644\u0635\u0648\u062a",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "fade_in",
+          "label": "\ud83c\udf05 Fade In (\u062b\u0648\u0627\u0646\u064a)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "fade_out",
+          "label": "\ud83c\udf07 Fade Out (\u062b\u0648\u0627\u0646\u064a)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "loop",
+          "label": "\ud83d\udd01 \u062a\u0643\u0631\u0627\u0631 \u0627\u0644\u0645\u0648\u0633\u064a\u0642\u0649 \u0625\u0630\u0627 \u0643\u0627\u0646\u062a \u0623\u0642\u0635\u0631 \u0645\u0646 \u0627\u0644\u0641\u064a\u062f\u064a\u0648",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "\ud83c\udfac\ud83c\udfb5 \u0627\u0644\u0641\u064a\u062f\u064a\u0648 \u0645\u0639 \u0627\u0644\u0645\u0648\u0633\u064a\u0642\u0649",
+          "type": "filepath",
+          "component": "Video"
+        },
+        {
+          "label": "",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/_studio_add_music",
+      "parameters": [
+        {
+          "name": "video",
+          "label": "\ud83d\udcf9 \u0627\u0631\u0641\u0639 \u0641\u064a\u062f\u064a\u0648",
+          "type": "filepath",
+          "component": "Video"
+        },
+        {
+          "name": "source",
+          "label": "\u0645\u0635\u062f\u0631 \u0627\u0644\u0645\u0648\u0633\u064a\u0642\u0649",
+          "type": "Literal['\ud83c\udfb5 \u0645\u0646 \u0627\u0644\u0645\u0643\u062a\u0628\u0629', '\ud83d\udcc1 \u0627\u0631\u0641\u0639 \u0645\u0644\u0641', '\ud83d\udd07 \u0628\u062f\u0648\u0646 \u0645\u0648\u0633\u064a\u0642\u0649']",
+          "component": "Radio"
+        },
+        {
+          "name": "track",
+          "label": "\ud83c\udfbc \u0627\u0644\u062a\u0631\u0627\u0643",
+          "type": "Literal['\ud83c\udfac Cinematic Epic', '\ud83c\udf0a Ambient Flow', '\u26a1 Action Drive', '\ud83c\udf3f Nature Serenity', '\u2728 Magical Wonder', '\ud83c\udfad Dramatic Tension', '\ud83c\udf05 Sunrise Journey', '\ud83c\udfb8 Indie Vibes', '\ud83c\udfb9 Piano Emotion', '\ud83c\udf03 Night City', ",
+          "component": "Dropdown"
+        },
+        {
+          "name": "custom_audio",
+          "label": "\ud83d\udcc1 \u0627\u0631\u0641\u0639 \u0645\u0644\u0641 \u0635\u0648\u062a\u064a",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "name": "volume",
+          "label": "\ud83d\udd0a \u0645\u0633\u062a\u0648\u0649 \u0627\u0644\u0635\u0648\u062a",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "fade_in",
+          "label": "\ud83c\udf05 Fade In",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "fade_out",
+          "label": "\ud83c\udf07 Fade Out",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "loop",
+          "label": "\ud83d\udd01 \u062a\u0643\u0631\u0627\u0631 \u0627\u0644\u0645\u0648\u0633\u064a\u0642\u0649",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "\ud83c\udfac\ud83c\udfb5 \u0627\u0644\u0646\u062a\u064a\u062c\u0629",
+          "type": "filepath",
+          "component": "Video"
+        },
+        {
+          "label": "value_80",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/_run_colorize",
+  "_api_verified": true,
+  "estimated_latency_s": 4.32,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "_tags_enriched": true,
+  "measured_latency_s": 4.32,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:50:31.134409+00:00",
+  "_inference_attempt_status": "predict_failed",
+  "_inference_attempt_error": "The upstream Gradio app has raised an exception but has not enabled verbose error reporting. To enable, set show_error=True in launch()."
+}

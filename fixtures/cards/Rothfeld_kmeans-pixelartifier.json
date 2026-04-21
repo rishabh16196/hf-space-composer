@@ -1,0 +1,153 @@
+{
+  "space_id": "Rothfeld/kmeans-pixelartifier",
+  "title": "Kmeans Pixelartifier",
+  "emoji": "\ud83c\udfe2",
+  "description": "Kmeans Pixelartifier",
+  "input_schema": {
+    "Search image": {
+      "type": "str",
+      "description": "Search image",
+      "required": true,
+      "component": "Image"
+    },
+    "Block Size ": {
+      "type": "str",
+      "description": "Block Size ",
+      "required": true,
+      "component": "Textbox"
+    },
+    "Palette Size (Number of Colors)": {
+      "type": "int | float",
+      "description": "Palette Size (Number of Colors)",
+      "required": true,
+      "component": "Slider"
+    },
+    "HSV Weights. Weights of the channels when selecting a \"representative pixel\"/centroid from a cluster of pixels": {
+      "type": "str",
+      "description": "HSV Weights. Weights of the channels when selecting a \"representative pixel\"/centroid from a cluster of pixels",
+      "required": true,
+      "component": "Textbox"
+    },
+    "Blur radius to calculate local contrast": {
+      "type": "int | float",
+      "description": "Blur radius to calculate local contrast",
+      "required": true,
+      "component": "Slider"
+    },
+    "Seed for the random number generator (empty to randomize)": {
+      "type": "str",
+      "description": "Seed for the random number generator (empty to randomize)",
+      "required": true,
+      "component": "Textbox"
+    },
+    "Output scaling factor": {
+      "type": "int | float",
+      "description": "Output scaling factor",
+      "required": true,
+      "component": "Slider"
+    },
+    "Dithering amount": {
+      "type": "int | float",
+      "description": "Dithering amount",
+      "required": true,
+      "component": "Slider"
+    }
+  },
+  "output_schema": {
+    "Output": {
+      "type": "str",
+      "description": "Output",
+      "component": "Image"
+    },
+    "used seed": {
+      "type": "str",
+      "description": "used seed",
+      "component": "Textbox"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "3.4",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 7,
+  "last_modified": "2024-10-03 15:18:15+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/predict",
+      "parameters": [
+        {
+          "name": "Search image",
+          "label": "Search image",
+          "type": "str",
+          "component": "Image"
+        },
+        {
+          "name": "Block Size ",
+          "label": "Block Size ",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "Palette Size (Number of Colors)",
+          "label": "Palette Size (Number of Colors)",
+          "type": "int | float",
+          "component": "Slider"
+        },
+        {
+          "name": "HSV Weights. Weights of the channels when selecting a \"representative pixel\"/centroid from a cluster of pixels",
+          "label": "HSV Weights. Weights of the channels when selecting a \"representative pixel\"/centroid from a cluster of pixels",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "Blur radius to calculate local contrast",
+          "label": "Blur radius to calculate local contrast",
+          "type": "int | float",
+          "component": "Slider"
+        },
+        {
+          "name": "Seed for the random number generator (empty to randomize)",
+          "label": "Seed for the random number generator (empty to randomize)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "Output scaling factor",
+          "label": "Output scaling factor",
+          "type": "int | float",
+          "component": "Slider"
+        },
+        {
+          "name": "Dithering amount",
+          "label": "Dithering amount",
+          "type": "int | float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output",
+          "type": "str",
+          "component": "Image"
+        },
+        {
+          "label": "used seed",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/predict",
+  "_api_verified": true
+}

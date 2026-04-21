@@ -1,0 +1,192 @@
+{
+  "space_id": "Qwen/Qwen-Image-Layered",
+  "title": "Qwen Image Layered",
+  "emoji": "\ud83d\ude80",
+  "description": "Qwen Image Layered",
+  "input_schema": {
+    "input_image": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "Input Image",
+      "required": true,
+      "component": "Image"
+    },
+    "seed": {
+      "type": "float",
+      "description": "Seed",
+      "required": true,
+      "component": "Slider"
+    },
+    "randomize_seed": {
+      "type": "bool",
+      "description": "Randomize seed",
+      "required": true,
+      "component": "Checkbox"
+    },
+    "prompt": {
+      "type": "str",
+      "description": "Prompt (Optional)",
+      "required": true,
+      "component": "Textbox"
+    },
+    "neg_prompt": {
+      "type": "str",
+      "description": "Negative Prompt (Optional)",
+      "required": true,
+      "component": "Textbox"
+    },
+    "true_guidance_scale": {
+      "type": "float",
+      "description": "True guidance scale",
+      "required": true,
+      "component": "Slider"
+    },
+    "num_inference_steps": {
+      "type": "float",
+      "description": "Number of inference steps",
+      "required": true,
+      "component": "Slider"
+    },
+    "layer": {
+      "type": "float",
+      "description": "Layers",
+      "required": true,
+      "component": "Slider"
+    },
+    "cfg_norm": {
+      "type": "bool",
+      "description": "Whether enable CFG normalization",
+      "required": true,
+      "component": "Checkbox"
+    },
+    "use_en_prompt": {
+      "type": "bool",
+      "description": "Automatic caption language if no prompt provided, True for EN, False for ZH",
+      "required": true,
+      "component": "Checkbox"
+    }
+  },
+  "output_schema": {
+    "Layers": {
+      "type": "list[dict(image: dict(path: str | None (Path to a local file), url: str | None (Publicly available u",
+      "description": "Layers",
+      "component": "Gallery"
+    },
+    "Download PPTX": {
+      "type": "filepath",
+      "description": "Download PPTX",
+      "component": "File"
+    },
+    "Download ZIP": {
+      "type": "filepath",
+      "description": "Download ZIP",
+      "component": "File"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "6.1.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 502,
+  "last_modified": "2025-12-22 08:37:38+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/infer_1",
+      "parameters": [
+        {
+          "name": "input_image",
+          "label": "Input Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "seed",
+          "label": "Seed",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "randomize_seed",
+          "label": "Randomize seed",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "prompt",
+          "label": "Prompt (Optional)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "neg_prompt",
+          "label": "Negative Prompt (Optional)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "true_guidance_scale",
+          "label": "True guidance scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "num_inference_steps",
+          "label": "Number of inference steps",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "layer",
+          "label": "Layers",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "cfg_norm",
+          "label": "Whether enable CFG normalization",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "use_en_prompt",
+          "label": "Automatic caption language if no prompt provided, True for EN, False for ZH",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Layers",
+          "type": "list[dict(image: dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Origi",
+          "component": "Gallery"
+        },
+        {
+          "label": "Download PPTX",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "label": "Download ZIP",
+          "type": "filepath",
+          "component": "File"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/infer_1",
+  "_api_verified": true,
+  "estimated_latency_s": 3.12,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 3.12,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:49:49.809764+00:00",
+  "_inference_attempt_status": "predict_failed",
+  "_inference_attempt_error": "The upstream Gradio app has raised an exception but has not enabled verbose error reporting. To enable, set show_error=True in launch()."
+}

@@ -1,0 +1,139 @@
+{
+  "space_id": "proxima-fusion/constellaration-bench",
+  "title": "ConStellaration Design Leaderboard",
+  "emoji": "\ud83d\udd0b",
+  "description": "ConStellaration Design Leaderboard",
+  "input_schema": {
+    "selected_file": {
+      "type": "Literal['geometrical/2025-07-02T06-59-39.077726_geometrical_results.json', 'geometrical/2025-07-04T1",
+      "description": "Choose a leaderboard entry",
+      "required": true,
+      "component": "Dropdown"
+    }
+  },
+  "output_schema": {
+    "value_16": {
+      "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+      "description": "value_16",
+      "component": "Plot"
+    }
+  },
+  "license": "unknown",
+  "hardware": "",
+  "sdk": "docker",
+  "tags": [
+    "docker",
+    "region:us",
+    "benchmark",
+    "leaderboard"
+  ],
+  "likes": 23,
+  "last_modified": "2026-03-09 11:56:30+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_tags_enriched": true,
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/get_boundary_vis",
+      "parameters": [
+        {
+          "name": "selected_file",
+          "label": "Choose a leaderboard entry",
+          "type": "Literal['geometrical/2025-07-02T06-59-39.077726_geometrical_results.json', 'geometrical/2025-07-04T14-57-44.717484_geometrical_results.json', 'geometrical/2025-07-08T01-42-37.236266_geometrical_result",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_16",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        }
+      ]
+    },
+    {
+      "name": "/get_boundary_vis_1",
+      "parameters": [
+        {
+          "name": "selected_file",
+          "label": "Choose a leaderboard entry",
+          "type": "Literal['geometrical/2025-07-02T06-59-39.077726_geometrical_results.json', 'geometrical/2025-07-04T14-57-44.717484_geometrical_results.json', 'geometrical/2025-07-08T01-42-37.236266_geometrical_result",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_16",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        }
+      ]
+    },
+    {
+      "name": "/lambda",
+      "parameters": [
+        {
+          "name": "x",
+          "label": "Username",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/submit_boundary",
+      "parameters": [
+        {
+          "name": "problem_type",
+          "label": "Problem Type",
+          "type": "Literal['geometrical', 'simple_to_build', 'mhd_stable']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "boundary_file",
+          "label": "Boundary JSON File (.json)",
+          "type": "filepath",
+          "component": "File"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Status",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/show_output_box",
+      "parameters": [
+        {
+          "name": "message",
+          "label": "Status",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Status",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/evaluate_boundary",
+      "parameters": [],
+      "returns": []
+    }
+  ],
+  "endpoint": "/get_boundary_vis",
+  "_api_verified": true
+}

@@ -1,0 +1,109 @@
+{
+  "space_id": "ggml-org/gguf-my-repo",
+  "title": "GGUF My Repo",
+  "emoji": "\ud83e\udd99",
+  "description": "GGUF My Repo",
+  "input_schema": {
+    "split_model": {
+      "type": "bool",
+      "description": "Split Model",
+      "required": true,
+      "component": "Checkbox"
+    }
+  },
+  "output_schema": {
+    "Max Tensors per File": {
+      "type": "float",
+      "description": "Max Tensors per File",
+      "component": "Number"
+    },
+    "Max File Size": {
+      "type": "str",
+      "description": "Max File Size",
+      "component": "Textbox"
+    }
+  },
+  "license": "unknown",
+  "hardware": "",
+  "sdk": "docker",
+  "tags": [
+    "docker",
+    "region:us"
+  ],
+  "likes": 1924,
+  "last_modified": "2026-04-11 03:37:26+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/update_split_visibility",
+      "parameters": [
+        {
+          "name": "split_model",
+          "label": "Split Model",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Max Tensors per File",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "label": "Max File Size",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/update_visibility",
+      "parameters": [
+        {
+          "name": "use_imatrix",
+          "label": "Use Imatrix Quantization",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Quantization Method",
+          "type": "Literal['Q2_K', 'Q3_K_S', 'Q3_K_M', 'Q3_K_L', 'Q4_0', 'Q4_K_S', 'Q4_K_M', 'Q5_0', 'Q5_K_S', 'Q5_K_M', 'Q6_K', 'Q8_0']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Imatrix Quantization Method",
+          "type": "Literal['IQ3_M', 'IQ3_XXS', 'Q4_K_M', 'Q4_K_S', 'IQ4_NL', 'IQ4_XS', 'Q5_K_M', 'Q5_K_S']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Training Data File",
+          "type": "filepath",
+          "component": "File"
+        }
+      ]
+    },
+    {
+      "name": "/_check_login_status",
+      "parameters": [],
+      "returns": []
+    }
+  ],
+  "endpoint": "/update_split_visibility",
+  "_api_verified": true,
+  "estimated_latency_s": 2.02,
+  "speed_tier": "fast",
+  "_latency_source": "measured_inference",
+  "measured_latency_s": 2.02,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:50:40.281287+00:00",
+  "measured_inference_s": 2.02,
+  "measured_inference_timestamp": "2026-04-20T07:58:32.523911+00:00",
+  "measured_inference_method": "auto_predict",
+  "measured_inference_api": "/update_split_visibility"
+}

@@ -1,0 +1,35 @@
+{
+  "space_id": "course-demos/gpt-2",
+  "title": "Test GPT2",
+  "emoji": "\ud83d\udca9",
+  "description": "Test GPT2",
+  "input_schema": {
+    "input": {
+      "type": "string",
+      "description": "Input",
+      "required": true
+    }
+  },
+  "output_schema": {
+    "output": {
+      "type": "string"
+    }
+  },
+  "license": "unknown",
+  "hardware": "2.9b40",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 4,
+  "last_modified": "2022-05-11 20:28:06+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "error",
+  "_api_error": "(Request ID: Root=1-69e77bc7-491042db2ec336ee4700f79f;932a2252-1756-47f4-977f-245466b813a9)\n\n429 Too Many Requests: you have reached your 'api' rate limit.\nRetry after 23 seconds (0/2500 requests rema"
+}

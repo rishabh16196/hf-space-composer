@@ -1,0 +1,125 @@
+{
+  "space_id": "CompVis/EDGS",
+  "title": "EDGS",
+  "emoji": "\ud83c\udfa5",
+  "description": "EDGS",
+  "input_schema": {
+    "input_file": {
+      "type": "list[filepath]",
+      "description": "Upload Video or Images",
+      "required": true,
+      "component": "File"
+    },
+    "num_ref_views": {
+      "type": "float",
+      "description": "Number of Reference Views",
+      "required": true,
+      "component": "Slider"
+    }
+  },
+  "output_schema": {
+    "Selected Reference Views": {
+      "type": "list[dict(image: dict(path: str | None (Path to a local file), url: str | None (Publicly available u",
+      "description": "Selected Reference Views",
+      "component": "Gallery"
+    }
+  },
+  "license": "other",
+  "hardware": "5.25.2",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 66,
+  "last_modified": "2026-02-24 13:02:44+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/on_preprocess_click",
+      "parameters": [
+        {
+          "name": "input_file",
+          "label": "Upload Video or Images",
+          "type": "list[filepath]",
+          "component": "File"
+        },
+        {
+          "name": "num_ref_views",
+          "label": "Number of Reference Views",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Selected Reference Views",
+          "type": "list[dict(image: dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Origi",
+          "component": "Gallery"
+        }
+      ]
+    },
+    {
+      "name": "/on_start_click",
+      "parameters": [
+        {
+          "name": "num_ref_views",
+          "label": "Number of Reference Views",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "num_corrs",
+          "label": "Correspondences per Reference View",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "num_steps",
+          "label": "Number of optimization steps",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Training Video",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        },
+        {
+          "label": "3D Model Viewer",
+          "type": "filepath",
+          "component": "Model3d"
+        },
+        {
+          "label": "\ud83d\udda5\ufe0f Log",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/lambda",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "\ud83d\udcc4 Pretrained Model (.ply)",
+          "type": "filepath",
+          "component": "File"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/on_preprocess_click",
+  "_api_verified": true,
+  "estimated_latency_s": 2.95,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 2.95,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:49:15.373932+00:00"
+}

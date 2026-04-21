@@ -1,0 +1,1909 @@
+{
+  "space_id": "KwabsHug/Language-Learn-Idea",
+  "title": "Language Learn Idea",
+  "emoji": "\ud83c\udf0d",
+  "description": "Language Learn Idea",
+  "input_schema": {
+    "link": {
+      "type": "Literal['https://rasmus-whisper-youtube-crosslingual-subtitles.hf.space', 'https://hf-audio-whisper-",
+      "description": "Choose/Cancel type any .hf.space link here (can also type a link)'",
+      "required": true,
+      "component": "Dropdown"
+    }
+  },
+  "output_schema": {
+    "value_28": {
+      "type": "str",
+      "description": "value_28",
+      "component": "Html"
+    }
+  },
+  "license": "unknown",
+  "hardware": "",
+  "sdk": "docker",
+  "tags": [
+    "docker",
+    "region:us"
+  ],
+  "likes": 6,
+  "last_modified": "2024-06-21 22:20:24+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/display_website",
+      "parameters": [
+        {
+          "name": "link",
+          "label": "Choose/Cancel type any .hf.space link here (can also type a link)'",
+          "type": "Literal['https://rasmus-whisper-youtube-crosslingual-subtitles.hf.space', 'https://hf-audio-whisper-large-v3.hf.space', 'https://pyf98-owsm-v3-demo.hf.space', 'https://kadirnar-multilingual-translatio",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_28",
+          "type": "str",
+          "component": "Html"
+        }
+      ]
+    },
+    {
+      "name": "/display_website_1",
+      "parameters": [
+        {
+          "name": "link",
+          "label": "Choose/Cancel type any .hf.space link here (can also type a link)'",
+          "type": "Literal['https://facebook-seamless-m4t-v2-large.hf.space', 'https://mms-meta-mms.hf.space', 'https://coqui-xtts.hf.space', 'https://suno-bark.hf.space', 'https://mrfakename-metavoice-1b-v0-1.hf.space'",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_34",
+          "type": "str",
+          "component": "Html"
+        }
+      ]
+    },
+    {
+      "name": "/display_website_2",
+      "parameters": [
+        {
+          "name": "link",
+          "label": "Choose/Cancel type any .hf.space link here (can also type a link)'",
+          "type": "Literal['https://prodia-sdxl-stable-diffusion-xl.hf.space', 'https://prodia-fast-stable-diffusion.hf.space', 'https://lllyasviel-ic-light.hf.space', 'https://gparmar-img2img-turbo-sketch.hf.space', 'h",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_40",
+          "type": "str",
+          "component": "Html"
+        }
+      ]
+    },
+    {
+      "name": "/display_website_3",
+      "parameters": [
+        {
+          "name": "link",
+          "label": "Choose/Cancel type any .hf.space link here (can also type a link)'",
+          "type": "Literal['https://tencentarc-instantmesh.hf.space', 'https://ashawkey-lgm.hf.space', 'https://dylanebert-lgm-mini.hf.space', 'https://dylanebert-splat-to-mesh.hf.space', 'https://dylanebert-multi-view-",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_46",
+          "type": "str",
+          "component": "Html"
+        }
+      ]
+    },
+    {
+      "name": "/display_website_4",
+      "parameters": [
+        {
+          "name": "link",
+          "label": "Choose/Cancel type any .hf.space link here (can also type a link)'",
+          "type": "Literal['https://google-paligemma-hf.hf.space', 'https://kingnish-gpt-4o.hf.space', 'https://linfanluntan-grounded-sam.hf.space', 'https://merve-llava-next.hf.space', 'https://badayvedat-llava.hf.spac",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_52",
+          "type": "str",
+          "component": "Html"
+        }
+      ]
+    },
+    {
+      "name": "/display_website_5",
+      "parameters": [
+        {
+          "name": "link",
+          "label": "Choose/Cancel type any .hf.space link here (can also type a link)'",
+          "type": "Literal['https://labs.perplexity.ai/', 'https://chat.lmsys.org', 'https://sdk.vercel.ai/docs', 'https://qwen-qwen-max-0428.hf.space', 'https://cohereforai-c4ai-command-r-plus.hf.space', 'https://huggi",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_67",
+          "type": "str",
+          "component": "Html"
+        }
+      ]
+    },
+    {
+      "name": "/predict",
+      "parameters": [
+        {
+          "name": "inlist",
+          "label": "Enter a list of words",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Grouped words",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/TabNavigation",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/predict_1",
+      "parameters": [
+        {
+          "name": "text",
+          "label": "text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "reps_per_item",
+          "label": "reps_per_item",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "seconds_per_item",
+          "label": "seconds_per_item",
+          "type": "float",
+          "component": "Number"
+        }
+      ],
+      "returns": [
+        {
+          "label": "output",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/changeexposuretext",
+      "parameters": [
+        {
+          "name": "text",
+          "label": "Exposure at the top",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_122",
+          "type": "str",
+          "component": "Html"
+        }
+      ]
+    },
+    {
+      "name": "/predict_2",
+      "parameters": [
+        {
+          "name": "text",
+          "label": "text",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "output",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/nllbtransctranslationoptionalw4w",
+      "parameters": [
+        {
+          "name": "source",
+          "label": "Choose source language",
+          "type": "Literal['Acehnese (Arabic script)', 'Acehnese (Latin script)', 'Mesopotamian Arabic', 'Ta\u2019izzi-Adeni Arabic', 'Tunisian Arabic', 'Afrikaans', 'South Levantine Arabic', 'Akan', 'Amharic', 'North Levant",
+          "component": "Dropdown"
+        },
+        {
+          "name": "target",
+          "label": "Choose target language",
+          "type": "Literal['Acehnese (Arabic script)', 'Acehnese (Latin script)', 'Mesopotamian Arabic', 'Ta\u2019izzi-Adeni Arabic', 'Tunisian Arabic', 'Afrikaans', 'South Levantine Arabic', 'Akan', 'Amharic', 'North Levant",
+          "component": "Dropdown"
+        },
+        {
+          "name": "text",
+          "label": "Paste Text you want to learn here (wordlists and UDHR can be used as )",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Side by side",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Side by side Inference Details",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "value_174",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/nllbtransctranslationoptionalw4w_1",
+      "parameters": [
+        {
+          "name": "source",
+          "label": "Choose target language",
+          "type": "Literal['Acehnese (Arabic script)', 'Acehnese (Latin script)', 'Mesopotamian Arabic', 'Ta\u2019izzi-Adeni Arabic', 'Tunisian Arabic', 'Afrikaans', 'South Levantine Arabic', 'Akan', 'Amharic', 'North Levant",
+          "component": "Dropdown"
+        },
+        {
+          "name": "target",
+          "label": "Choose source language",
+          "type": "Literal['Acehnese (Arabic script)', 'Acehnese (Latin script)', 'Mesopotamian Arabic', 'Ta\u2019izzi-Adeni Arabic', 'Tunisian Arabic', 'Afrikaans', 'South Levantine Arabic', 'Akan', 'Amharic', 'North Levant",
+          "component": "Dropdown"
+        },
+        {
+          "name": "text",
+          "label": "Whole Translation of text",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Whole Translation of text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Side by side Inference Details",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "value_174",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/nllbtransctranslation",
+      "parameters": [
+        {
+          "name": "source",
+          "label": "Choose source language",
+          "type": "Literal['Acehnese (Arabic script)', 'Acehnese (Latin script)', 'Mesopotamian Arabic', 'Ta\u2019izzi-Adeni Arabic', 'Tunisian Arabic', 'Afrikaans', 'South Levantine Arabic', 'Akan', 'Amharic', 'North Levant",
+          "component": "Dropdown"
+        },
+        {
+          "name": "target",
+          "label": "Choose target language",
+          "type": "Literal['Acehnese (Arabic script)', 'Acehnese (Latin script)', 'Mesopotamian Arabic', 'Ta\u2019izzi-Adeni Arabic', 'Tunisian Arabic', 'Afrikaans', 'South Levantine Arabic', 'Akan', 'Amharic', 'North Levant",
+          "component": "Dropdown"
+        },
+        {
+          "name": "text",
+          "label": "Paste Text you want to learn here (wordlists and UDHR can be used as )",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Whole Translation of text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Inference Details",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "value_174",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/clearfocusreadertext",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_202",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "value_203",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "value_204",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "value_205",
+          "type": "str",
+          "component": "Html"
+        }
+      ]
+    },
+    {
+      "name": "/singlefocusreadertext",
+      "parameters": [
+        {
+          "name": "text",
+          "label": "parameter_197",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_202",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "value_203",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "value_204",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "value_205",
+          "type": "str",
+          "component": "Html"
+        }
+      ]
+    },
+    {
+      "name": "/multifocusreadertext",
+      "parameters": [
+        {
+          "name": "text",
+          "label": "parameter_197",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_202",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "value_203",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "value_204",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "value_205",
+          "type": "str",
+          "component": "Html"
+        }
+      ]
+    },
+    {
+      "name": "/predict_3",
+      "parameters": [
+        {
+          "name": "text",
+          "label": "text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "sidebyside",
+          "label": "sidebyside",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "output",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/predict_4",
+      "parameters": [
+        {
+          "name": "text",
+          "label": "text",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "output 0",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "label": "output 1",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "output 2",
+          "type": "str",
+          "component": "Code"
+        }
+      ]
+    },
+    {
+      "name": "/predict_5",
+      "parameters": [
+        {
+          "name": "text",
+          "label": "text",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "output 0",
+          "type": "str",
+          "component": "Code"
+        },
+        {
+          "label": "output 1",
+          "type": "str",
+          "component": "Html"
+        }
+      ]
+    },
+    {
+      "name": "/predict_6",
+      "parameters": [
+        {
+          "name": "inputtext",
+          "label": "inputtext",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "output 0",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "label": "output 1",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "output 2",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/predict_7",
+      "parameters": [
+        {
+          "name": "text",
+          "label": "text",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "output 0",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "output 1",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/predict_8",
+      "parameters": [
+        {
+          "name": "text",
+          "label": "text",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "output",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/predict_9",
+      "parameters": [
+        {
+          "name": "text",
+          "label": "text",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "output 0",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "output 1",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/predict_10",
+      "parameters": [
+        {
+          "name": "term",
+          "label": "term",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "output",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/predict_11",
+      "parameters": [
+        {
+          "name": "text",
+          "label": "text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "HTMLCompMode",
+          "label": "HTMLCompMode",
+          "type": "Literal['Dropdown', 'Links']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "output",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/predict_12",
+      "parameters": [
+        {
+          "name": "button_id",
+          "label": "button_id",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "button_caption",
+          "label": "button_caption",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "div_content",
+          "label": "div_content",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "output",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/predict_13",
+      "parameters": [
+        {
+          "name": "splitby",
+          "label": "Split by",
+          "type": "Literal['sentences', 'words']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "learning",
+          "label": "learning",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "reading",
+          "label": "reading",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "output",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/predict_14",
+      "parameters": [
+        {
+          "name": "text",
+          "label": "Choose one the below languages",
+          "type": "Literal['English-Latin1', 'Akuapem_Twi-UTF8', 'Zulu-Latin1', 'Afrikaans-Latin1', 'German_Deutsch-Latin1', 'Japanese_Nihongo-EUC', 'Japanese_Nihongo-SJIS', 'Japanese_Nihongo-UTF8', 'Spanish-Latin1', 'K",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "output 0",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "output 1",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/predict_15",
+      "parameters": [
+        {
+          "name": "textspreprocess",
+          "label": "textspreprocess",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "seperator",
+          "label": "seperator",
+          "type": "Literal['.', ',', 'lines', 'Sentences']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "output",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/display_website_6",
+      "parameters": [
+        {
+          "name": "link",
+          "label": "parameter_470",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_471",
+          "type": "str",
+          "component": "Html"
+        }
+      ]
+    },
+    {
+      "name": "/predict_16",
+      "parameters": [
+        {
+          "name": "video",
+          "label": "select a mp4 video file",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "name": "subtitle",
+          "label": "select a subtitle file",
+          "type": "filepath",
+          "component": "File"
+        }
+      ],
+      "returns": [
+        {
+          "label": "output",
+          "type": "Dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        }
+      ]
+    },
+    {
+      "name": "/predict_17",
+      "parameters": [
+        {
+          "name": "file_path",
+          "label": "select a mp4 video file",
+          "type": "filepath",
+          "component": "File"
+        }
+      ],
+      "returns": [
+        {
+          "label": "output",
+          "type": "List[List[str]]",
+          "component": "Fileexplorer"
+        }
+      ]
+    },
+    {
+      "name": "/display_website_7",
+      "parameters": [
+        {
+          "name": "link",
+          "label": "parameter_497",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_498",
+          "type": "str",
+          "component": "Html"
+        }
+      ]
+    },
+    {
+      "name": "/display_website_8",
+      "parameters": [
+        {
+          "name": "link",
+          "label": "parameter_502",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_503",
+          "type": "str",
+          "component": "Html"
+        }
+      ]
+    },
+    {
+      "name": "/predict_18",
+      "parameters": [
+        {
+          "name": "input_image",
+          "label": "input_image",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "name": "text",
+          "label": "text",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "output",
+          "type": "filepath",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/predict_19",
+      "parameters": [
+        {
+          "name": "chunkmode",
+          "label": "Choose Chunk Type",
+          "type": "Literal['Chunks', 'Reverse', 'Three Word Chunks', 'Spelling Chunks']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "translate",
+          "label": "translate",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "text",
+          "label": "text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "choice",
+          "label": "choice",
+          "type": "Literal['Words', 'Words5x', 'Sentences', 'Paragraph', 'Page']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "output 0",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "output 1",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "output 2",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "output 3",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "output 4",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "output 5",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "output 6",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "output 7",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "output 8",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "output 9",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/predict_20",
+      "parameters": [
+        {
+          "name": "sentence",
+          "label": "sentence",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "output",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/predict_21",
+      "parameters": [
+        {
+          "name": "input",
+          "label": "input",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "num_lines",
+          "label": "number of lines",
+          "type": "float",
+          "component": "Number"
+        }
+      ],
+      "returns": [
+        {
+          "label": "output",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/predict_22",
+      "parameters": [
+        {
+          "name": "String",
+          "label": "String",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "output",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/predict_23",
+      "parameters": [
+        {
+          "name": "Text",
+          "label": "Text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "Choice",
+          "label": "choice",
+          "type": "Literal['Words', 'Words5x', 'Sentences', 'Paragraph', 'Page']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "output",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/predict_24",
+      "parameters": [
+        {
+          "name": "word_list",
+          "label": "word_list",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "output",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/predict_25",
+      "parameters": [
+        {
+          "name": "sentence",
+          "label": "sentence",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "output",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/predict_26",
+      "parameters": [
+        {
+          "name": "text",
+          "label": "text",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "output",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/predict_27",
+      "parameters": [
+        {
+          "name": "Text",
+          "label": "Text",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "output",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/predict_28",
+      "parameters": [
+        {
+          "name": "text",
+          "label": "text",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "output 0",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "output 1",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "output 2",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/predict_29",
+      "parameters": [
+        {
+          "name": "sentences",
+          "label": "sentences",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "output",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/predict_30",
+      "parameters": [
+        {
+          "name": "source_text",
+          "label": "source_text",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "output 0",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "output 1",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/predict_31",
+      "parameters": [
+        {
+          "name": "source_text",
+          "label": "source_text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "num_words",
+          "label": "Length of generation",
+          "type": "float",
+          "component": "Number"
+        }
+      ],
+      "returns": [
+        {
+          "label": "output",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/build_sentence_basic",
+      "parameters": [
+        {
+          "name": "subject",
+          "label": "Subject",
+          "type": "Literal['The curious cat', 'The playful dog', 'The majestic eagle', 'The wise owl', 'The friendly dolphin', 'The cat', 'The dog', 'The bird', 'The elephant', 'The lion', 'The monkey', 'The rabbit', 'T",
+          "component": "Dropdown"
+        },
+        {
+          "name": "verb",
+          "label": "Verb",
+          "type": "Literal['chases', 'discovers', 'explores', 'investigates', 'observes', 'chases', 'eats', 'watches', 'plays with', 'jumps over', 'runs from', 'hides from', 'sleeps on']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "obj",
+          "label": "Object",
+          "type": "Literal['the colorful butterfly', 'the mysterious cave', 'the ancient ruins', 'the hidden treasure', 'the underwater world']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Sentence (SVO)",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/build_sentence_basic_1",
+      "parameters": [
+        {
+          "name": "subject",
+          "label": "Subject",
+          "type": "Literal['The curious cat', 'The playful dog', 'The majestic eagle', 'The wise owl', 'The friendly dolphin', 'The cat', 'The dog', 'The bird', 'The elephant', 'The lion', 'The monkey', 'The rabbit', 'T",
+          "component": "Dropdown"
+        },
+        {
+          "name": "verb",
+          "label": "Verb",
+          "type": "Literal['chases', 'discovers', 'explores', 'investigates', 'observes', 'chases', 'eats', 'watches', 'plays with', 'jumps over', 'runs from', 'hides from', 'sleeps on']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "obj",
+          "label": "Object",
+          "type": "Literal['the colorful butterfly', 'the mysterious cave', 'the ancient ruins', 'the hidden treasure', 'the underwater world']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Sentence (SOV)",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/build_sentence_basic_2",
+      "parameters": [
+        {
+          "name": "subject",
+          "label": "Subject",
+          "type": "Literal['The curious cat', 'The playful dog', 'The majestic eagle', 'The wise owl', 'The friendly dolphin', 'The cat', 'The dog', 'The bird', 'The elephant', 'The lion', 'The monkey', 'The rabbit', 'T",
+          "component": "Dropdown"
+        },
+        {
+          "name": "verb",
+          "label": "Verb",
+          "type": "Literal['chases', 'discovers', 'explores', 'investigates', 'observes', 'chases', 'eats', 'watches', 'plays with', 'jumps over', 'runs from', 'hides from', 'sleeps on']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "obj",
+          "label": "Object",
+          "type": "Literal['the colorful butterfly', 'the mysterious cave', 'the ancient ruins', 'the hidden treasure', 'the underwater world']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Sentence (VSO)",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/build_sentence",
+      "parameters": [
+        {
+          "name": "subject",
+          "label": "Subject",
+          "type": "Literal['The curious cat', 'The playful dog', 'The majestic eagle', 'The wise owl', 'The friendly dolphin', 'The cat', 'The dog', 'The bird', 'The elephant', 'The lion', 'The monkey', 'The rabbit', 'T",
+          "component": "Dropdown"
+        },
+        {
+          "name": "verb",
+          "label": "Verb",
+          "type": "Literal['chases', 'discovers', 'explores', 'investigates', 'observes', 'chases', 'eats', 'watches', 'plays with', 'jumps over', 'runs from', 'hides from', 'sleeps on']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "obj",
+          "label": "Object",
+          "type": "Literal['the colorful butterfly', 'the mysterious cave', 'the ancient ruins', 'the hidden treasure', 'the underwater world']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "adjective",
+          "label": "Adjective",
+          "type": "Literal['beautiful', 'enchanting', 'fascinating', 'intriguing', 'marvelous', 'the mouse', 'the bone', 'the worm', 'the ball', 'the fence', 'the hunter', 'the predator', 'the leaf']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "adverb",
+          "label": "Adverb",
+          "type": "Literal['cautiously', 'eagerly', 'enthusiastically', 'patiently', 'swiftly']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "prep_phrase",
+          "label": "Prepositional Phrase",
+          "type": "Literal['in the dense forest', 'near the babbling brook', 'on the sandy beach', 'under the starry sky', 'within the deep ocean']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "conjunction",
+          "label": "Conjunction",
+          "type": "Literal['and', 'but', 'yet', 'for', 'so']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "structure",
+          "label": "Structure",
+          "type": "Literal['SVOAAPC', 'SVOAPC', 'SVOAC', 'SVOAPAC', 'SVCAOAP', 'SVACOAP', 'SVACOP', 'SVCAPO', 'SVAPO', 'SVCPO', 'SVOAA', 'SVAPA', 'SVPAO', 'SVOAP', 'SVPOA', 'SVOPA', 'SADVV', 'SADJV', 'SPPV', 'SCONJV', '",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Complex Sentence",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/sentbuildgenerate_quiz_question",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Sentence",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Question",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Options",
+          "type": "Literal['SVO', 'SOV', 'VSO']",
+          "component": "Radio"
+        },
+        {
+          "label": "Answer",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/sentbuildcheck_answer",
+      "parameters": [
+        {
+          "name": "selected",
+          "label": "Options",
+          "type": "Literal['SVO', 'SOV', 'VSO']",
+          "component": "Radio"
+        },
+        {
+          "name": "correct",
+          "label": "Answer",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Feedback",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/predict_32",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "output 0",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "output 1",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "output 2",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/YTTransciptAnalysisandLoad",
+      "parameters": [
+        {
+          "name": "link",
+          "label": "parameter_834",
+          "type": "Literal['https://www.youtube.com/watch?v=l8pRSuU81PU', 'https://www.youtube.com/watch?v=UYk43fncV68', 'https://youtu.be/dxVaP0-aFIE']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_836",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "value_855",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "value_852",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "value_858",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/predict_33",
+      "parameters": [
+        {
+          "name": "text",
+          "label": "text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "lang",
+          "label": "choose the language of the srt",
+          "type": "Literal['en', 'ja', 'ko', 'zh-cn']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "output 0",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "output 1",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "label": "output 2",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "output 3",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/predict_34",
+      "parameters": [
+        {
+          "name": "srt_text",
+          "label": "srt_text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "chunk_size",
+          "label": "chunk_size",
+          "type": "float",
+          "component": "Number"
+        }
+      ],
+      "returns": [
+        {
+          "label": "output 0",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "output 1",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/predict_35",
+      "parameters": [
+        {
+          "name": "string",
+          "label": "string",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "output",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/merge_lines",
+      "parameters": [
+        {
+          "name": "roman_file",
+          "label": "Paste Roman",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "name": "w4w_file",
+          "label": "Paste Word 4 Word",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "name": "full_mean_file",
+          "label": "Paste Full Meaning",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "name": "macaronic_file",
+          "label": "Paste Macaronic Text",
+          "type": "filepath",
+          "component": "File"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/SRTLineSort",
+      "parameters": [
+        {
+          "name": "text",
+          "label": "Output",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/predict_36",
+      "parameters": [
+        {
+          "name": "video_file",
+          "label": "Video File",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "name": "subtitle_file",
+          "label": "Subtitle File",
+          "type": "filepath",
+          "component": "File"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Download Segmented Files",
+          "type": "filepath",
+          "component": "File"
+        }
+      ]
+    },
+    {
+      "name": "/display_subtitles_from_zip",
+      "parameters": [
+        {
+          "name": "zip_file_path",
+          "label": "Upload Zip File",
+          "type": "filepath",
+          "component": "File"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Subtitle Output",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Images",
+          "type": "List[Dict(image: filepath, caption: str | None)]",
+          "component": "Gallery"
+        }
+      ]
+    },
+    {
+      "name": "/predict_37",
+      "parameters": [
+        {
+          "name": "target",
+          "label": "target",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "guess",
+          "label": "guess",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "output",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/predict_38",
+      "parameters": [
+        {
+          "name": "text",
+          "label": "text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "language",
+          "label": "language",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "output",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/predict_39",
+      "parameters": [
+        {
+          "name": "Inputtext",
+          "label": "Inputtext",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "output",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/predict_40",
+      "parameters": [
+        {
+          "name": "text",
+          "label": "text",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "output",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/predict_41",
+      "parameters": [
+        {
+          "name": "sentence",
+          "label": "sentence",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "output",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/imagebasedreading",
+      "parameters": [
+        {
+          "name": "inputtext",
+          "label": "parameter_1051",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_1054",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "label": "value_1058",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "value_1060",
+          "type": "str",
+          "component": "Code"
+        }
+      ]
+    },
+    {
+      "name": "/predict_42",
+      "parameters": [
+        {
+          "name": "sentence",
+          "label": "sentence",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "output",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/imagebasedreadingwordlevel",
+      "parameters": [
+        {
+          "name": "inputtext",
+          "label": "parameter_1079",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_1082",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "label": "value_1086",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "value_1088",
+          "type": "str",
+          "component": "Code"
+        }
+      ]
+    },
+    {
+      "name": "/predict_43",
+      "parameters": [
+        {
+          "name": "inputtext",
+          "label": "inputtext",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "output 1",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "output 2",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "output 3",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "output 4",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "output 5",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "output 6",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "output 7",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "output 8",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "output 9",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/predict_44",
+      "parameters": [
+        {
+          "name": "text",
+          "label": "text",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "output",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/display_website",
+  "_api_verified": true
+}

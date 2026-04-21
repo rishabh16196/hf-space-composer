@@ -1,0 +1,191 @@
+{
+  "space_id": "IbarakiDouji/WAI-NSFW-illustrious-SDXL",
+  "title": "WAI NSFW illustrious SDXL",
+  "emoji": "\ud83e\udeb7",
+  "description": "WAI NSFW illustrious SDXL | v11 to v16",
+  "input_schema": {
+    "seed": {
+      "type": "float",
+      "description": "Seed",
+      "required": true,
+      "component": "Slider"
+    },
+    "randomize_seed": {
+      "type": "bool",
+      "description": "Randomize seed",
+      "required": true,
+      "component": "Checkbox"
+    }
+  },
+  "output_schema": {
+    "Seed": {
+      "type": "float",
+      "description": "Seed",
+      "component": "Slider"
+    }
+  },
+  "license": "mit",
+  "hardware": "6.10.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "not-for-all-audiences",
+    "region:us",
+    "diffusion",
+    "image-generation",
+    "text-to-image",
+    "vision"
+  ],
+  "likes": 132,
+  "last_modified": "2026-04-09 18:26:08+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/False",
+      "parameters": [
+        {
+          "name": "seed",
+          "label": "Seed",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "randomize_seed",
+          "label": "Randomize seed",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Seed",
+          "type": "float",
+          "component": "Slider"
+        }
+      ]
+    },
+    {
+      "name": "/lambda",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/generate",
+      "parameters": [
+        {
+          "name": "prompt",
+          "label": "Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "negative_prompt",
+          "label": "Negative Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "seed",
+          "label": "Seed",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "custom_width",
+          "label": "Width",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "custom_height",
+          "label": "Height",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "guidance_scale",
+          "label": "Guidance scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "num_inference_steps",
+          "label": "Number of inference steps",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "sampler",
+          "label": "Sampler",
+          "type": "Literal['DPM++ 2M Karras', 'DPM++ SDE Karras', 'DPM++ 2M SDE Karras', 'Euler', 'Euler a', 'DDIM']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "model_name",
+          "label": "Model",
+          "type": "Literal['v16', 'v15', 'v14', 'v13', 'v12', 'v11']",
+          "component": "Radio"
+        },
+        {
+          "name": "aspect_ratio_selector",
+          "label": "Aspect Ratio",
+          "type": "Literal['1536 x 1536', '1728 x 1344', '1344 x 1728', '1824 x 1248', '1248 x 1824', '2016 x 1152', '1152 x 2016', '2304 x 960', '960 x 2304', 'Custom']",
+          "component": "Radio"
+        },
+        {
+          "name": "use_upscaler",
+          "label": "Use Upscaler",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "upscaler_strength",
+          "label": "Strength",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "upscale_by",
+          "label": "Upscale by",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "add_quality_tags",
+          "label": "Quality Tags",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Generated Images",
+          "type": "list[dict(image: filepath, caption: str | None) | dict(video: filepath, caption: str | None)]",
+          "component": "Gallery"
+        },
+        {
+          "label": "Image Metadata",
+          "type": "str | float | bool | list | dict",
+          "component": "Json"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_1",
+      "parameters": [],
+      "returns": []
+    }
+  ],
+  "endpoint": "/False",
+  "_api_verified": true,
+  "estimated_latency_s": 3.07,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "_tags_enriched": true,
+  "measured_latency_s": 3.07,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:49:25.959304+00:00"
+}

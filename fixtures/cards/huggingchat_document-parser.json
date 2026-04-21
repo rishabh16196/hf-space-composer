@@ -1,0 +1,84 @@
+{
+  "space_id": "huggingchat/document-parser",
+  "title": "Document Parser",
+  "emoji": "\ud83d\udcc8",
+  "description": "Document Parser",
+  "input_schema": {
+    "input_file": {
+      "type": "filepath",
+      "description": "Upload File",
+      "required": true,
+      "component": "File"
+    },
+    "filename": {
+      "type": "str",
+      "description": "Filename",
+      "required": true,
+      "component": "Textbox"
+    }
+  },
+  "output_schema": {
+    "Markdown": {
+      "type": "str",
+      "description": "Markdown",
+      "component": "Textbox"
+    },
+    "Metadata": {
+      "type": "Dict[Any, Any]",
+      "description": "Metadata",
+      "component": "Json"
+    }
+  },
+  "license": "gpl-2.0",
+  "hardware": "4.31.5",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 32,
+  "last_modified": "2024-05-23 01:50:58+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/predict",
+      "parameters": [
+        {
+          "name": "input_file",
+          "label": "Upload File",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "name": "filename",
+          "label": "Filename",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Markdown",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Metadata",
+          "type": "Dict[Any, Any]",
+          "component": "Json"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/predict",
+  "_api_verified": true,
+  "estimated_latency_s": 3.28,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 3.28,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:50:45.207913+00:00"
+}

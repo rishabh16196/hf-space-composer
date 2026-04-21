@@ -1,0 +1,390 @@
+{
+  "space_id": "linoyts/LTX-2-3-outpaint",
+  "title": "LTX 2.3 Outpaint",
+  "emoji": "\ud83c\udf20",
+  "description": "expand videos to any aspect ratio with LTX 2.3",
+  "input_schema": {
+    "video": {
+      "type": "filepath",
+      "description": "Source Video",
+      "required": true,
+      "component": "Video"
+    },
+    "high_res": {
+      "type": "bool",
+      "description": "High Resolution (2\u00d7)",
+      "required": true,
+      "component": "Checkbox"
+    }
+  },
+  "output_schema": {
+    "Duration (s)": {
+      "type": "float",
+      "description": "Duration (s)",
+      "component": "Slider"
+    }
+  },
+  "license": "unknown",
+  "hardware": "6.12.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 7,
+  "last_modified": "2026-04-17 14:10:01+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/on_video_upload",
+      "parameters": [
+        {
+          "name": "video",
+          "label": "Source Video",
+          "type": "filepath",
+          "component": "Video"
+        },
+        {
+          "name": "high_res",
+          "label": "High Resolution (2\u00d7)",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Duration (s)",
+          "type": "float",
+          "component": "Slider"
+        }
+      ]
+    },
+    {
+      "name": "/preview_letterbox",
+      "parameters": [
+        {
+          "name": "video",
+          "label": "Source Video",
+          "type": "filepath",
+          "component": "Video"
+        },
+        {
+          "name": "target_aspect",
+          "label": "Expand to Aspect Ratio",
+          "type": "Literal['16:9', '9:16', '1:1', '4:3', '3:4', '21:9']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "high_res",
+          "label": "High Resolution (2\u00d7)",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "use_gamma",
+          "label": "Gamma Correction (for dark scenes)",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Letterboxed first frame (black = regions to generate)",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "Output Width",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "label": "Output Height",
+          "type": "float",
+          "component": "Number"
+        }
+      ]
+    },
+    {
+      "name": "/preview_letterbox_1",
+      "parameters": [
+        {
+          "name": "video",
+          "label": "Source Video",
+          "type": "filepath",
+          "component": "Video"
+        },
+        {
+          "name": "target_aspect",
+          "label": "Expand to Aspect Ratio",
+          "type": "Literal['16:9', '9:16', '1:1', '4:3', '3:4', '21:9']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "high_res",
+          "label": "High Resolution (2\u00d7)",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "use_gamma",
+          "label": "Gamma Correction (for dark scenes)",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Letterboxed first frame (black = regions to generate)",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "Output Width",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "label": "Output Height",
+          "type": "float",
+          "component": "Number"
+        }
+      ]
+    },
+    {
+      "name": "/preview_letterbox_2",
+      "parameters": [
+        {
+          "name": "video",
+          "label": "Source Video",
+          "type": "filepath",
+          "component": "Video"
+        },
+        {
+          "name": "target_aspect",
+          "label": "Expand to Aspect Ratio",
+          "type": "Literal['16:9', '9:16', '1:1', '4:3', '3:4', '21:9']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "high_res",
+          "label": "High Resolution (2\u00d7)",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "use_gamma",
+          "label": "Gamma Correction (for dark scenes)",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Letterboxed first frame (black = regions to generate)",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "Output Width",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "label": "Output Height",
+          "type": "float",
+          "component": "Number"
+        }
+      ]
+    },
+    {
+      "name": "/preview_letterbox_3",
+      "parameters": [
+        {
+          "name": "video",
+          "label": "Source Video",
+          "type": "filepath",
+          "component": "Video"
+        },
+        {
+          "name": "target_aspect",
+          "label": "Expand to Aspect Ratio",
+          "type": "Literal['16:9', '9:16', '1:1', '4:3', '3:4', '21:9']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "high_res",
+          "label": "High Resolution (2\u00d7)",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "use_gamma",
+          "label": "Gamma Correction (for dark scenes)",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Letterboxed first frame (black = regions to generate)",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "Output Width",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "label": "Output Height",
+          "type": "float",
+          "component": "Number"
+        }
+      ]
+    },
+    {
+      "name": "/preview_letterbox_4",
+      "parameters": [
+        {
+          "name": "video",
+          "label": "Source Video",
+          "type": "filepath",
+          "component": "Video"
+        },
+        {
+          "name": "target_aspect",
+          "label": "Expand to Aspect Ratio",
+          "type": "Literal['16:9', '9:16', '1:1', '4:3', '3:4', '21:9']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "high_res",
+          "label": "High Resolution (2\u00d7)",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "use_gamma",
+          "label": "Gamma Correction (for dark scenes)",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Letterboxed first frame (black = regions to generate)",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "Output Width",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "label": "Output Height",
+          "type": "float",
+          "component": "Number"
+        }
+      ]
+    },
+    {
+      "name": "/generate_video",
+      "parameters": [
+        {
+          "name": "input_video",
+          "label": "Source Video",
+          "type": "filepath",
+          "component": "Video"
+        },
+        {
+          "name": "prompt",
+          "label": "Prompt (optional)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "duration",
+          "label": "Duration (s)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "target_aspect",
+          "label": "Expand to Aspect Ratio",
+          "type": "Literal['16:9', '9:16', '1:1', '4:3', '3:4', '21:9']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "conditioning_strength",
+          "label": "Conditioning Strength",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "enhance_prompt",
+          "label": "Enhance Prompt",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "use_gamma",
+          "label": "Gamma Correction (for dark scenes)",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "use_video_audio",
+          "label": "Preserve Audio from Source Video",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "seed",
+          "label": "Seed",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "randomize_seed",
+          "label": "Randomize Seed",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "high_res",
+          "label": "High Resolution (2\u00d7)",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "input_audio",
+          "label": "Override Audio (optional \u2014 replaces video audio)",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Outpainted Result",
+          "type": "filepath",
+          "component": "Video"
+        },
+        {
+          "label": "Seed",
+          "type": "float",
+          "component": "Slider"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/on_video_upload",
+  "_api_verified": true
+}

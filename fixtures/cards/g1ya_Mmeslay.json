@@ -1,0 +1,61 @@
+{
+  "space_id": "g1ya/Mmeslay",
+  "title": "Mmeslay",
+  "emoji": "\ud83c\udf99\ufe0f",
+  "description": "A Speech To Text System in Kabyle",
+  "input_schema": {
+    "audio_file": {
+      "type": "filepath",
+      "description": "Upload Audio File",
+      "required": true,
+      "component": "Audio"
+    }
+  },
+  "output_schema": {
+    "Transcription": {
+      "type": "str",
+      "description": "Transcription",
+      "component": "Textbox"
+    }
+  },
+  "license": "unknown",
+  "hardware": "",
+  "sdk": "docker",
+  "tags": [
+    "docker",
+    "region:us",
+    "audio"
+  ],
+  "likes": 2,
+  "last_modified": "2026-04-18 09:58:09+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_tags_enriched": true,
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/transcribe_audio",
+      "parameters": [
+        {
+          "name": "audio_file",
+          "label": "Upload Audio File",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Transcription",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/transcribe_audio",
+  "_api_verified": true
+}

@@ -1,0 +1,310 @@
+{
+  "space_id": "aet256/Qwen-Image-Edit-Rapid-AIO-Loras-Experimental",
+  "title": "QIE-2511 Rapid-AIO LoRAs Fast (Experimental)",
+  "emoji": "\u26a1",
+  "description": "Demo of the Collection of Qwen Image Edit LoRAs",
+  "input_schema": {
+    "selected_lora": {
+      "type": "Literal['None', 'Consistance', 'Semirealistic-photo-detailer', 'AnyPose', 'Any2Real_2601', 'Hyperrea",
+      "description": "Choose Editing Style",
+      "required": true,
+      "component": "Dropdown"
+    },
+    "current_prompt": {
+      "type": "str",
+      "description": "Edit Prompt",
+      "required": true,
+      "component": "Textbox"
+    },
+    "current_extras_condition_only": {
+      "type": "bool",
+      "description": "Extra references are conditioning-only (exclude from VAE)",
+      "required": true,
+      "component": "Checkbox"
+    }
+  },
+  "output_schema": {
+    "Edit Prompt": {
+      "type": "str",
+      "description": "Edit Prompt",
+      "component": "Textbox"
+    },
+    "Upload Reference (Image 2)": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "Upload Reference (Image 2)",
+      "component": "Image"
+    },
+    "Extra references are conditioning-only (exclude from VAE)": {
+      "type": "bool",
+      "description": "Extra references are conditioning-only (exclude from VAE)",
+      "component": "Checkbox"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "6.2.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "mcp-server",
+    "region:us",
+    "image-generation",
+    "vision"
+  ],
+  "likes": 16,
+  "last_modified": "2026-02-11 20:16:54+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/on_lora_change_ui",
+      "parameters": [
+        {
+          "name": "selected_lora",
+          "label": "Choose Editing Style",
+          "type": "Literal['None', 'Consistance', 'Semirealistic-photo-detailer', 'AnyPose', 'Any2Real_2601', 'Hyperrealistic-Portrait', 'Ultrarealistic-Portrait', 'BFS-Best-FaceSwap', 'BFS-Best-FaceSwap-merge', 'F2P', ",
+          "component": "Dropdown"
+        },
+        {
+          "name": "current_prompt",
+          "label": "Edit Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "current_extras_condition_only",
+          "label": "Extra references are conditioning-only (exclude from VAE)",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Edit Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Upload Reference (Image 2)",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "Extra references are conditioning-only (exclude from VAE)",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ]
+    },
+    {
+      "name": "/infer",
+      "parameters": [
+        {
+          "name": "input_image_1",
+          "label": "Upload Image 1 (Base / Target)",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "input_image_2",
+          "label": "Upload Reference (Image 2)",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "input_images_extra",
+          "label": "Upload Additional Images (auto-indexed after Image 1/2)",
+          "type": "list[dict(image: dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Origi",
+          "component": "Gallery"
+        },
+        {
+          "name": "prompt",
+          "label": "Edit Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "lora_adapter",
+          "label": "Choose Editing Style",
+          "type": "Literal['None', 'Consistance', 'Semirealistic-photo-detailer', 'AnyPose', 'Any2Real_2601', 'Hyperrealistic-Portrait', 'Ultrarealistic-Portrait', 'BFS-Best-FaceSwap', 'BFS-Best-FaceSwap-merge', 'F2P', ",
+          "component": "Dropdown"
+        },
+        {
+          "name": "seed",
+          "label": "Seed",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "randomize_seed",
+          "label": "Randomize Seed",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "guidance_scale",
+          "label": "Guidance Scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "steps",
+          "label": "Inference Steps",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "target_megapixels",
+          "label": "Target Megapixels (canvas, 0 = match input area)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "extras_condition_only",
+          "label": "Extra references are conditioning-only (exclude from VAE)",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "pad_to_canvas",
+          "label": "Pad images to canvas aspect (avoid warping)",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "vae_tiling",
+          "label": "VAE tiling (lower VRAM, slower)",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "resolution_multiple",
+          "label": "Resolution lattice multiple (anti-drift)",
+          "type": "Literal['32', '56', '112']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "vae_ref_megapixels",
+          "label": "Extra refs VAE megapixels override (0 = use canvas)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "decoder_vae",
+          "label": "Decoder VAE",
+          "type": "Literal['qwen', 'wan2x']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "keep_decoder_2x",
+          "label": "Keep 2\u00d7 output (wan2x only)",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "Seed",
+          "type": "float",
+          "component": "Slider"
+        }
+      ]
+    },
+    {
+      "name": "/set_output_as_image1",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Upload Image 1 (Base / Target)",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/set_output_as_image2",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Upload Reference (Image 2)",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/set_output_as_extra",
+      "parameters": [
+        {
+          "name": "existing_extra",
+          "label": "Upload Additional Images (auto-indexed after Image 1/2)",
+          "type": "list[dict(image: dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Origi",
+          "component": "Gallery"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Upload Additional Images (auto-indexed after Image 1/2)",
+          "type": "list[dict(image: dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Origi",
+          "component": "Gallery"
+        }
+      ]
+    },
+    {
+      "name": "/add_derived_ref",
+      "parameters": [
+        {
+          "name": "img1",
+          "label": "Upload Image 1 (Base / Target)",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "existing_extra",
+          "label": "Upload Additional Images (auto-indexed after Image 1/2)",
+          "type": "list[dict(image: dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Origi",
+          "component": "Gallery"
+        },
+        {
+          "name": "derived_type",
+          "label": "Derived Type (from Image 1)",
+          "type": "Literal['None', 'Depth (Depth Anything V2 Small)']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "derived_use_gpu",
+          "label": "Use GPU for derived model",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Upload Additional Images (auto-indexed after Image 1/2)",
+          "type": "list[dict(image: dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Origi",
+          "component": "Gallery"
+        },
+        {
+          "label": "Derived Conditioning Preview",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/on_lora_change_ui",
+  "_api_verified": true,
+  "estimated_latency_s": 3.77,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "_tags_enriched": true,
+  "measured_latency_s": 3.77,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:50:08.283610+00:00"
+}

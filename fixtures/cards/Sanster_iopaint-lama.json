@@ -1,0 +1,35 @@
+{
+  "space_id": "Sanster/iopaint-lama",
+  "title": "IOPaint-LaMA",
+  "emoji": "\u26a1",
+  "description": "IOPaint-LaMA",
+  "input_schema": {
+    "input": {
+      "type": "string",
+      "description": "Input",
+      "required": true
+    }
+  },
+  "output_schema": {
+    "output": {
+      "type": "string"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "3.9.1",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 209,
+  "last_modified": "2024-01-29 03:22:56+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "error",
+  "_api_error": "Could not get Gradio config from: https://sanster-iopaint-lama.hf.space",
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred"
+}

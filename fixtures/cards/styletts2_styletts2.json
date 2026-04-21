@@ -1,0 +1,157 @@
+{
+  "space_id": "styletts2/styletts2",
+  "title": "StyleTTS 2",
+  "emoji": "\ud83d\udde3\ufe0f",
+  "description": "Efficient, fast, and natural text to speech with StyleTTS 2!",
+  "input_schema": {
+    "text": {
+      "type": "str",
+      "description": "Text",
+      "required": true,
+      "component": "Textbox"
+    },
+    "voice": {
+      "type": "Literal['f-us-1', 'f-us-2', 'f-us-3', 'f-us-4', 'm-us-1', 'm-us-2', 'm-us-3', 'm-us-4']",
+      "description": "Voice",
+      "required": true,
+      "component": "Dropdown"
+    },
+    "lngsteps": {
+      "type": "float",
+      "description": "Diffusion Steps",
+      "required": true,
+      "component": "Slider"
+    }
+  },
+  "output_schema": {
+    "Synthesized Audio": {
+      "type": "filepath",
+      "description": "Synthesized Audio",
+      "component": "Audio"
+    }
+  },
+  "license": "unknown",
+  "hardware": "5.38.2",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us",
+    "audio"
+  ],
+  "likes": 726,
+  "last_modified": "2025-08-07 02:40:51+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_tags_enriched": true,
+  "estimated_latency_s": 4.0,
+  "speed_tier": "fast",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/synthesize",
+      "parameters": [
+        {
+          "name": "text",
+          "label": "Text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "voice",
+          "label": "Voice",
+          "type": "Literal['f-us-1', 'f-us-2', 'f-us-3', 'f-us-4', 'm-us-1', 'm-us-2', 'm-us-3', 'm-us-4']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "lngsteps",
+          "label": "Diffusion Steps",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Synthesized Audio",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ]
+    },
+    {
+      "name": "/rn_clsynthesize",
+      "parameters": [
+        {
+          "name": "text",
+          "label": "Text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "voice",
+          "label": "Voice",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "name": "vcsteps",
+          "label": "Diffusion Steps",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "embscale",
+          "label": "Embedding Scale (READ WARNING BELOW)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "alpha",
+          "label": "Alpha",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "beta",
+          "label": "Beta",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Synthesized Audio",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ]
+    },
+    {
+      "name": "/rn_ljsynthesize",
+      "parameters": [
+        {
+          "name": "text",
+          "label": "Text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "steps",
+          "label": "Diffusion Steps",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Synthesized Audio",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/synthesize",
+  "_api_verified": true
+}

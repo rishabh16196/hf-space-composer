@@ -1,0 +1,210 @@
+{
+  "space_id": "asgaardlab/CLIPxGamePhysics",
+  "title": "CLIP GamePhysics",
+  "emoji": "\ud83d\udcbb",
+  "description": "CLIP GamePhysics",
+  "input_schema": {
+    "query": {
+      "type": "str",
+      "description": "Query",
+      "required": true,
+      "component": "Textbox"
+    },
+    "game_name": {
+      "type": "Literal['Grand Theft Auto V']",
+      "description": "Game To Search",
+      "required": true,
+      "component": "Radio"
+    },
+    "selected_model": {
+      "type": "Literal['ViT-B/32']",
+      "description": "Model",
+      "required": true,
+      "component": "Radio"
+    },
+    "aggregator": {
+      "type": "Literal['Majority', 'Top-K']",
+      "description": "Aggregator",
+      "required": true,
+      "component": "Radio"
+    },
+    "pool_size": {
+      "type": "float",
+      "description": "Pool Size",
+      "required": true,
+      "component": "Slider"
+    }
+  },
+  "output_schema": {
+    "Search Params": {
+      "type": "str",
+      "description": "Search Params",
+      "component": "Textbox"
+    },
+    "Result 1": {
+      "type": "filepath",
+      "description": "Result 1",
+      "component": "Video"
+    },
+    "output 2": {
+      "type": "str",
+      "description": "output 2",
+      "component": "Markdown"
+    },
+    "Result 2": {
+      "type": "filepath",
+      "description": "Result 2",
+      "component": "Video"
+    },
+    "output 4": {
+      "type": "str",
+      "description": "output 4",
+      "component": "Markdown"
+    },
+    "Result 3": {
+      "type": "filepath",
+      "description": "Result 3",
+      "component": "Video"
+    },
+    "output 6": {
+      "type": "str",
+      "description": "output 6",
+      "component": "Markdown"
+    },
+    "Result 4": {
+      "type": "filepath",
+      "description": "Result 4",
+      "component": "Video"
+    },
+    "output 8": {
+      "type": "str",
+      "description": "output 8",
+      "component": "Markdown"
+    },
+    "Result 5": {
+      "type": "filepath",
+      "description": "Result 5",
+      "component": "Video"
+    },
+    "output 10": {
+      "type": "str",
+      "description": "output 10",
+      "component": "Markdown"
+    }
+  },
+  "license": "unknown",
+  "hardware": "6.2.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 30,
+  "last_modified": "2025-12-24 21:45:09+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/gradio_search",
+      "parameters": [
+        {
+          "name": "query",
+          "label": "Query",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "game_name",
+          "label": "Game To Search",
+          "type": "Literal['Grand Theft Auto V']",
+          "component": "Radio"
+        },
+        {
+          "name": "selected_model",
+          "label": "Model",
+          "type": "Literal['ViT-B/32']",
+          "component": "Radio"
+        },
+        {
+          "name": "aggregator",
+          "label": "Aggregator",
+          "type": "Literal['Majority', 'Top-K']",
+          "component": "Radio"
+        },
+        {
+          "name": "pool_size",
+          "label": "Pool Size",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Search Params",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Result 1",
+          "type": "filepath",
+          "component": "Video"
+        },
+        {
+          "label": "output 2",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "Result 2",
+          "type": "filepath",
+          "component": "Video"
+        },
+        {
+          "label": "output 4",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "Result 3",
+          "type": "filepath",
+          "component": "Video"
+        },
+        {
+          "label": "output 6",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "Result 4",
+          "type": "filepath",
+          "component": "Video"
+        },
+        {
+          "label": "output 8",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "Result 5",
+          "type": "filepath",
+          "component": "Video"
+        },
+        {
+          "label": "output 10",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/gradio_search",
+  "_api_verified": true,
+  "estimated_latency_s": 3.72,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 3.72,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:50:17.238191+00:00"
+}

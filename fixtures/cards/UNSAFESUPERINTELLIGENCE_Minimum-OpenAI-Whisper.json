@@ -1,0 +1,39 @@
+{
+  "space_id": "UNSAFESUPERINTELLIGENCE/Minimum-OpenAI-Whisper",
+  "title": "Transcription | Speech to Text | OpenAI Whisper",
+  "emoji": "\ud83d\udde3\ufe0f",
+  "description": "Minimum working OpenAI Whisper pipeline",
+  "input_schema": {
+    "input": {
+      "type": "string",
+      "description": "Input",
+      "required": true
+    }
+  },
+  "output_schema": {
+    "output": {
+      "type": "string"
+    }
+  },
+  "license": "unlicense",
+  "hardware": "5.30.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us",
+    "asr",
+    "audio",
+    "transcription"
+  ],
+  "likes": 4,
+  "last_modified": "2025-05-26 19:54:11+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_tags_enriched": true,
+  "estimated_latency_s": 5.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "error",
+  "_api_error": "(Request ID: Root=1-69e77bce-4b02765b248ad4f063c73704;e8bb65c2-3d87-41a7-94e8-59ee4aab044e)\n\n429 Too Many Requests: you have reached your 'api' rate limit.\nRetry after 16 seconds (0/2500 requests rema"
+}

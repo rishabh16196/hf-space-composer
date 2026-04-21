@@ -1,0 +1,110 @@
+{
+  "space_id": "FunAudioLLM/PrismAudio",
+  "title": "PrismAudio",
+  "emoji": "\ud83c\udfb5",
+  "description": "PrismAudio",
+  "input_schema": {
+    "video_file": {
+      "type": "dict(video: filepath, subtitles: filepath | None)",
+      "description": "Upload Video",
+      "required": true,
+      "component": "Video"
+    },
+    "caption": {
+      "type": "str",
+      "description": "Caption / Prompt",
+      "required": true,
+      "component": "Textbox"
+    }
+  },
+  "output_schema": {
+    "output_0": {
+      "type": "str",
+      "description": "",
+      "component": "Textbox"
+    },
+    "Video + Generated Audio": {
+      "type": "dict(video: filepath, subtitles: filepath | None)",
+      "description": "Video + Generated Audio",
+      "component": "Video"
+    }
+  },
+  "license": "unknown",
+  "hardware": "5.42.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 35,
+  "last_modified": "2026-03-25 02:40:18+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/generate_audio",
+      "parameters": [
+        {
+          "name": "video_file",
+          "label": "Upload Video",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        },
+        {
+          "name": "caption",
+          "label": "Caption / Prompt",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Video + Generated Audio",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        }
+      ]
+    },
+    {
+      "name": "/clear_all",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Upload Video",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        },
+        {
+          "label": "Caption / Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Video + Generated Audio",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/generate_audio",
+  "_api_verified": true,
+  "estimated_latency_s": 2.81,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 2.81,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:49:19.831790+00:00"
+}

@@ -1,0 +1,123 @@
+{
+  "space_id": "NihalGazi/FaceFlux-Face-Swapper",
+  "title": "FaceFlux - Unlimited Fast Face Swap",
+  "emoji": "\ud83d\udd25",
+  "description": "FaceFlux: Instant CPU-Only Face Swap\u2014No GAN Needed",
+  "input_schema": {
+    "video_path": {
+      "type": "dict(video: filepath, subtitles: filepath | None)",
+      "description": "Input Video",
+      "required": true,
+      "component": "Video"
+    },
+    "ref_img": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "Reference Image",
+      "required": true,
+      "component": "Image"
+    },
+    "trans": {
+      "type": "float",
+      "description": "Strength",
+      "required": true,
+      "component": "Slider"
+    },
+    "res": {
+      "type": "Literal['256', '384', '512', '768']",
+      "description": "Face Resolution",
+      "required": true,
+      "component": "Dropdown"
+    },
+    "step": {
+      "type": "float",
+      "description": "Quality",
+      "required": true,
+      "component": "Slider"
+    },
+    "feather_pct": {
+      "type": "float",
+      "description": "Feather (%)",
+      "required": true,
+      "component": "Slider"
+    }
+  },
+  "output_schema": {
+    "Morphed Video": {
+      "type": "dict(video: filepath, subtitles: filepath | None)",
+      "description": "Morphed Video",
+      "component": "Video"
+    }
+  },
+  "license": "unknown",
+  "hardware": "5.25.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 33,
+  "last_modified": "2025-08-20 15:12:28+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/process_video",
+      "parameters": [
+        {
+          "name": "video_path",
+          "label": "Input Video",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        },
+        {
+          "name": "ref_img",
+          "label": "Reference Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "trans",
+          "label": "Strength",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "res",
+          "label": "Face Resolution",
+          "type": "Literal['256', '384', '512', '768']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "step",
+          "label": "Quality",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "feather_pct",
+          "label": "Feather (%)",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Morphed Video",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/process_video",
+  "_api_verified": true,
+  "estimated_latency_s": 3.13,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "_tags_enriched": true,
+  "measured_latency_s": 3.13,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:49:41.063665+00:00"
+}

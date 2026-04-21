@@ -1,0 +1,39 @@
+{
+  "space_id": "kouenYoung/anime-tts",
+  "title": "Anime TTS with VITS",
+  "emoji": "\ud83e\udd84\ufe0f",
+  "description": "Anime TTS with VITS",
+  "input_schema": {
+    "input": {
+      "type": "string",
+      "description": "Input",
+      "required": true
+    }
+  },
+  "output_schema": {
+    "output": {
+      "type": "string"
+    }
+  },
+  "license": "unknown",
+  "hardware": "3.4.1",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us",
+    "audio",
+    "speech-synthesis",
+    "tts"
+  ],
+  "likes": 5,
+  "last_modified": "2022-12-22 15:34:15+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_tags_enriched": true,
+  "estimated_latency_s": 4.0,
+  "speed_tier": "fast",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "error",
+  "_api_error": "(Request ID: Root=1-69e77b97-1c5714c35ca9bd0206b54d9b;68120370-afae-41e2-841f-c77d3699fe36)\n\n429 Too Many Requests: you have reached your 'api' rate limit.\nRetry after 71 seconds (0/2500 requests rema"
+}

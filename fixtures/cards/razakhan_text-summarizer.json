@@ -1,0 +1,99 @@
+{
+  "space_id": "razakhan/text-summarizer",
+  "title": "Text Summarizer",
+  "emoji": "\ud83e\udd80",
+  "description": "Text Summarizer",
+  "input_schema": {
+    "model_choice": {
+      "type": "Any",
+      "description": "model_choice",
+      "required": true,
+      "component": "Dropdown"
+    },
+    "Text to be summarized": {
+      "type": "str",
+      "description": "Text to be summarized",
+      "required": true,
+      "component": "Textbox"
+    },
+    "Context": {
+      "type": "str",
+      "description": "Context",
+      "required": true,
+      "component": "Textbox"
+    },
+    "Question": {
+      "type": "str",
+      "description": "Question",
+      "required": true,
+      "component": "Textbox"
+    }
+  },
+  "output_schema": {
+    "output": {
+      "type": "str",
+      "description": "output",
+      "component": "Textbox"
+    }
+  },
+  "license": "unknown",
+  "hardware": "",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 22,
+  "last_modified": "2022-01-02 19:30:45+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/predict",
+      "parameters": [
+        {
+          "name": "model_choice",
+          "label": "model_choice",
+          "type": "Any",
+          "component": "Dropdown"
+        },
+        {
+          "name": "Text to be summarized",
+          "label": "Text to be summarized",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "Context",
+          "label": "Context",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "Question",
+          "label": "Question",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "output",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/predict",
+  "_api_verified": true,
+  "estimated_latency_s": 3.85,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "_tags_enriched": true,
+  "measured_latency_s": 3.85,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:51:44.609210+00:00"
+}

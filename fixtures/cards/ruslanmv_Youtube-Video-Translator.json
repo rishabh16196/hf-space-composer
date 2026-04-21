@@ -1,0 +1,83 @@
+{
+  "space_id": "ruslanmv/Youtube-Video-Translator",
+  "title": "Youtube Video Translator",
+  "emoji": "\ud83d\udc28",
+  "description": "Youtube Video Translator",
+  "input_schema": {
+    "url": {
+      "type": "str",
+      "description": "Enter the YouTube URL below:",
+      "required": true,
+      "component": "Textbox"
+    },
+    "initial_language": {
+      "type": "Literal['English', 'Italian', 'Japanese', 'Russian', 'Spanish', 'German']",
+      "description": "Initial Language",
+      "required": true,
+      "component": "Dropdown"
+    },
+    "final_language": {
+      "type": "Literal['Russian', 'Italian', 'Spanish', 'German', 'English', 'Japanese']",
+      "description": "Final Language",
+      "required": true,
+      "component": "Dropdown"
+    }
+  },
+  "output_schema": {
+    "output": {
+      "type": "Dict(video: filepath, subtitles: filepath | None)",
+      "description": "output",
+      "component": "Video"
+    }
+  },
+  "license": "cc0-1.0",
+  "hardware": "5.5.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 21,
+  "last_modified": "2025-02-04 21:08:44+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/predict",
+      "parameters": [
+        {
+          "name": "url",
+          "label": "Enter the YouTube URL below:",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "initial_language",
+          "label": "Initial Language",
+          "type": "Literal['English', 'Italian', 'Japanese', 'Russian', 'Spanish', 'German']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "final_language",
+          "label": "Final Language",
+          "type": "Literal['Russian', 'Italian', 'Spanish', 'German', 'English', 'Japanese']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "output",
+          "type": "Dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/predict",
+  "_api_verified": true
+}

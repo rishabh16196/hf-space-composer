@@ -1,0 +1,180 @@
+{
+  "space_id": "VAST-AI/MV-Adapter-Text2Texture",
+  "title": "MV Adapter Text2Texture",
+  "emoji": "\ud83d\udc41",
+  "description": "Generate 3D texture from texts",
+  "input_schema": {
+    "randomize_seed": {
+      "type": "bool",
+      "description": "Randomize seed",
+      "required": true,
+      "component": "Checkbox"
+    },
+    "seed": {
+      "type": "float",
+      "description": "Seed",
+      "required": true,
+      "component": "Slider"
+    }
+  },
+  "output_schema": {
+    "Seed": {
+      "type": "float",
+      "description": "Seed",
+      "component": "Slider"
+    }
+  },
+  "license": "mit",
+  "hardware": "5.23.1",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 103,
+  "last_modified": "2026-02-14 04:54:31+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/get_random_seed",
+      "parameters": [
+        {
+          "name": "randomize_seed",
+          "label": "Randomize seed",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "seed",
+          "label": "Seed",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Seed",
+          "type": "float",
+          "component": "Slider"
+        }
+      ]
+    },
+    {
+      "name": "/run_mvadapter",
+      "parameters": [
+        {
+          "name": "mesh_path",
+          "label": "Input 3D mesh",
+          "type": "filepath",
+          "component": "Model3d"
+        },
+        {
+          "name": "prompt",
+          "label": "Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "seed",
+          "label": "Seed",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "guidance_scale",
+          "label": "CFG scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "num_inference_steps",
+          "label": "Number of inference steps",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Multi-View Results",
+          "type": "list[dict(image: dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Origi",
+          "component": "Gallery"
+        }
+      ]
+    },
+    {
+      "name": "/run_texturing",
+      "parameters": [
+        {
+          "name": "mesh_path",
+          "label": "Input 3D mesh",
+          "type": "filepath",
+          "component": "Model3d"
+        },
+        {
+          "name": "mv_images",
+          "label": "Multi-View Results",
+          "type": "list[dict(image: dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Origi",
+          "component": "Gallery"
+        },
+        {
+          "name": "uv_unwarp",
+          "label": "Unwarp UV",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "preprocess_mesh",
+          "label": "Preprocess Mesh",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "uv_size",
+          "label": "UV Size",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Textured GLB",
+          "type": "filepath",
+          "component": "Model3d"
+        },
+        {
+          "label": "Download GLB",
+          "type": "filepath",
+          "component": "Downloadbutton"
+        }
+      ]
+    },
+    {
+      "name": "/lambda",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Download GLB",
+          "type": "filepath",
+          "component": "Downloadbutton"
+        }
+      ]
+    },
+    {
+      "name": "/start_session",
+      "parameters": [],
+      "returns": []
+    }
+  ],
+  "endpoint": "/get_random_seed",
+  "_api_verified": true,
+  "estimated_latency_s": 3.62,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "_tags_enriched": true,
+  "measured_latency_s": 3.62,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:50:01.622569+00:00"
+}

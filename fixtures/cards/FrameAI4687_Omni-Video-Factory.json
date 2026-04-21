@@ -1,0 +1,916 @@
+{
+  "space_id": "FrameAI4687/Omni-Video-Factory",
+  "title": "Omni Video Factory",
+  "emoji": "\ud83c\udfc6",
+  "description": "text to video, image to video, video extend",
+  "input_schema": {
+    "res_value": {
+      "type": "Literal['384', '512']",
+      "description": "Resolution",
+      "required": true,
+      "component": "Radio"
+    },
+    "scene_value": {
+      "type": "Literal['1', '2', '3', '4']",
+      "description": "Scene Count",
+      "required": true,
+      "component": "Radio"
+    }
+  },
+  "output_schema": {
+    "Scene Count": {
+      "type": "Literal['1', '2', '3', '4']",
+      "description": "Scene Count",
+      "component": "Radio"
+    },
+    "Scene Prompt 1": {
+      "type": "str",
+      "description": "Scene Prompt 1",
+      "component": "Textbox"
+    },
+    "Scene Prompt 2": {
+      "type": "str",
+      "description": "Scene Prompt 2",
+      "component": "Textbox"
+    },
+    "Scene Prompt 3": {
+      "type": "str",
+      "description": "Scene Prompt 3",
+      "component": "Textbox"
+    },
+    "Scene Prompt 4": {
+      "type": "str",
+      "description": "Scene Prompt 4",
+      "component": "Textbox"
+    },
+    "Scene Prompt 1_5": {
+      "type": "str",
+      "description": "Scene Prompt 1",
+      "component": "Textbox"
+    },
+    "Scene Prompt 2_6": {
+      "type": "str",
+      "description": "Scene Prompt 2",
+      "component": "Textbox"
+    },
+    "Scene Prompt 3_7": {
+      "type": "str",
+      "description": "Scene Prompt 3",
+      "component": "Textbox"
+    },
+    "Scene Prompt 4_8": {
+      "type": "str",
+      "description": "Scene Prompt 4",
+      "component": "Textbox"
+    }
+  },
+  "license": "mit",
+  "hardware": "5.44.1",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 906,
+  "last_modified": "2026-03-06 11:12:22+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/_on_resolution_change_with_scene_boxes",
+      "parameters": [
+        {
+          "name": "res_value",
+          "label": "Resolution",
+          "type": "Literal['384', '512']",
+          "component": "Radio"
+        },
+        {
+          "name": "scene_value",
+          "label": "Scene Count",
+          "type": "Literal['1', '2', '3', '4']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Scene Count",
+          "type": "Literal['1', '2', '3', '4']",
+          "component": "Radio"
+        },
+        {
+          "label": "Scene Prompt 1",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Scene Prompt 2",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Scene Prompt 3",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Scene Prompt 4",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Scene Prompt 1",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Scene Prompt 2",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Scene Prompt 3",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Scene Prompt 4",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/_resolution_note_text",
+      "parameters": [
+        {
+          "name": "res_value",
+          "label": "Resolution",
+          "type": "Literal['384', '512']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_8",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/_on_scene_count_change",
+      "parameters": [
+        {
+          "name": "scene_value",
+          "label": "Scene Count",
+          "type": "Literal['1', '2', '3', '4']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Scene Prompt 1",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Scene Prompt 2",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Scene Prompt 3",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Scene Prompt 4",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Scene Prompt 1",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Scene Prompt 2",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Scene Prompt 3",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Scene Prompt 4",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/_generate_i2v_scenes",
+      "parameters": [
+        {
+          "name": "base_prompt",
+          "label": "Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "scene_count",
+          "label": "Scene Count",
+          "type": "Literal['1', '2', '3', '4']",
+          "component": "Radio"
+        },
+        {
+          "name": "seconds_per_scene",
+          "label": "Seconds per Scene",
+          "type": "Literal['3', '5']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Scene Prompt 1",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Scene Prompt 2",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Scene Prompt 3",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Scene Prompt 4",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Auto Prompt Status",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/_submit_i2v_manual",
+      "parameters": [
+        {
+          "name": "scene_count",
+          "label": "Scene Count",
+          "type": "Literal['1', '2', '3', '4']",
+          "component": "Radio"
+        },
+        {
+          "name": "seconds_per_scene",
+          "label": "Seconds per Scene",
+          "type": "Literal['3', '5']",
+          "component": "Radio"
+        },
+        {
+          "name": "resolution",
+          "label": "Resolution",
+          "type": "Literal['384', '512']",
+          "component": "Radio"
+        },
+        {
+          "name": "image_file",
+          "label": "Image file",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "name": "base_prompt",
+          "label": "Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "s1",
+          "label": "Scene Prompt 1",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "s2",
+          "label": "Scene Prompt 2",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "s3",
+          "label": "Scene Prompt 3",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "s4",
+          "label": "Scene Prompt 4",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Generation status",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Generated video",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        },
+        {
+          "label": "value_33",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "NSFW Preview (Blurred 80% Frame)",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "value_34",
+          "type": "str",
+          "component": "Html"
+        }
+      ]
+    },
+    {
+      "name": "/_submit_i2v",
+      "parameters": [
+        {
+          "name": "scene_count",
+          "label": "Scene Count",
+          "type": "Literal['1', '2', '3', '4']",
+          "component": "Radio"
+        },
+        {
+          "name": "seconds_per_scene",
+          "label": "Seconds per Scene",
+          "type": "Literal['3', '5']",
+          "component": "Radio"
+        },
+        {
+          "name": "resolution",
+          "label": "Resolution",
+          "type": "Literal['384', '512']",
+          "component": "Radio"
+        },
+        {
+          "name": "image_file",
+          "label": "Image file",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "name": "base_prompt",
+          "label": "Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "s1",
+          "label": "Scene Prompt 1",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "s2",
+          "label": "Scene Prompt 2",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "s3",
+          "label": "Scene Prompt 3",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "s4",
+          "label": "Scene Prompt 4",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Generation status",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Generated video",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        },
+        {
+          "label": "value_33",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "NSFW Preview (Blurred 80% Frame)",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "value_34",
+          "type": "str",
+          "component": "Html"
+        }
+      ]
+    },
+    {
+      "name": "/_on_resolution_change_with_scene_boxes_1",
+      "parameters": [
+        {
+          "name": "res_value",
+          "label": "Resolution",
+          "type": "Literal['384', '512']",
+          "component": "Radio"
+        },
+        {
+          "name": "scene_value",
+          "label": "Scene Count",
+          "type": "Literal['1', '2', '3', '4']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Scene Count",
+          "type": "Literal['1', '2', '3', '4']",
+          "component": "Radio"
+        },
+        {
+          "label": "Scene Prompt 1",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Scene Prompt 2",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Scene Prompt 3",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Scene Prompt 4",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Scene Prompt 1",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Scene Prompt 2",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Scene Prompt 3",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Scene Prompt 4",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/_resolution_note_text_1",
+      "parameters": [
+        {
+          "name": "res_value",
+          "label": "Resolution",
+          "type": "Literal['384', '512']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_45",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/_on_scene_count_change_1",
+      "parameters": [
+        {
+          "name": "scene_value",
+          "label": "Scene Count",
+          "type": "Literal['1', '2', '3', '4']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Scene Prompt 1",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Scene Prompt 2",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Scene Prompt 3",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Scene Prompt 4",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Scene Prompt 1",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Scene Prompt 2",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Scene Prompt 3",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Scene Prompt 4",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/_on_dims_change",
+      "parameters": [
+        {
+          "name": "ratio_value",
+          "label": "Aspect Ratio",
+          "type": "Literal['16:9', '4:3', '1:1', '3:4', '9:16']",
+          "component": "Radio"
+        },
+        {
+          "name": "res_value",
+          "label": "Resolution",
+          "type": "Literal['384', '512']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_47",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/_on_dims_change_1",
+      "parameters": [
+        {
+          "name": "ratio_value",
+          "label": "Aspect Ratio",
+          "type": "Literal['16:9', '4:3', '1:1', '3:4', '9:16']",
+          "component": "Radio"
+        },
+        {
+          "name": "res_value",
+          "label": "Resolution",
+          "type": "Literal['384', '512']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_47",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/_generate_t2v_scenes",
+      "parameters": [
+        {
+          "name": "base_prompt",
+          "label": "Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "scene_count",
+          "label": "Scene Count",
+          "type": "Literal['1', '2', '3', '4']",
+          "component": "Radio"
+        },
+        {
+          "name": "seconds_per_scene",
+          "label": "Seconds per Scene",
+          "type": "Literal['3', '5']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Scene Prompt 1",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Scene Prompt 2",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Scene Prompt 3",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Scene Prompt 4",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Auto Prompt Status",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/_submit_t2v_manual",
+      "parameters": [
+        {
+          "name": "scene_count",
+          "label": "Scene Count",
+          "type": "Literal['1', '2', '3', '4']",
+          "component": "Radio"
+        },
+        {
+          "name": "seconds_per_scene",
+          "label": "Seconds per Scene",
+          "type": "Literal['3', '5']",
+          "component": "Radio"
+        },
+        {
+          "name": "resolution",
+          "label": "Resolution",
+          "type": "Literal['384', '512']",
+          "component": "Radio"
+        },
+        {
+          "name": "aspect_ratio",
+          "label": "Aspect Ratio",
+          "type": "Literal['16:9', '4:3', '1:1', '3:4', '9:16']",
+          "component": "Radio"
+        },
+        {
+          "name": "base_prompt",
+          "label": "Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "s1",
+          "label": "Scene Prompt 1",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "s2",
+          "label": "Scene Prompt 2",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "s3",
+          "label": "Scene Prompt 3",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "s4",
+          "label": "Scene Prompt 4",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Generation status",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Generated video",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        },
+        {
+          "label": "value_71",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "NSFW Preview (Blurred 80% Frame)",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "value_72",
+          "type": "str",
+          "component": "Html"
+        }
+      ]
+    },
+    {
+      "name": "/_submit_t2v",
+      "parameters": [
+        {
+          "name": "scene_count",
+          "label": "Scene Count",
+          "type": "Literal['1', '2', '3', '4']",
+          "component": "Radio"
+        },
+        {
+          "name": "seconds_per_scene",
+          "label": "Seconds per Scene",
+          "type": "Literal['3', '5']",
+          "component": "Radio"
+        },
+        {
+          "name": "resolution",
+          "label": "Resolution",
+          "type": "Literal['384', '512']",
+          "component": "Radio"
+        },
+        {
+          "name": "aspect_ratio",
+          "label": "Aspect Ratio",
+          "type": "Literal['16:9', '4:3', '1:1', '3:4', '9:16']",
+          "component": "Radio"
+        },
+        {
+          "name": "base_prompt",
+          "label": "Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "s1",
+          "label": "Scene Prompt 1",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "s2",
+          "label": "Scene Prompt 2",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "s3",
+          "label": "Scene Prompt 3",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "s4",
+          "label": "Scene Prompt 4",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Generation status",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Generated video",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        },
+        {
+          "label": "value_71",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "NSFW Preview (Blurred 80% Frame)",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "value_72",
+          "type": "str",
+          "component": "Html"
+        }
+      ]
+    },
+    {
+      "name": "/_submit_v2v",
+      "parameters": [
+        {
+          "name": "prompt",
+          "label": "Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "video_file",
+          "label": "Video file",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "name": "resolution",
+          "label": "Resolution",
+          "type": "Literal['384', '512']",
+          "component": "Radio"
+        },
+        {
+          "name": "seconds_per_scene",
+          "label": "Additional Seconds",
+          "type": "Literal['3', '5']",
+          "component": "Radio"
+        },
+        {
+          "name": "aspect_ratio",
+          "label": "Aspect Ratio",
+          "type": "Literal['16:9', '4:3', '1:1', '3:4', '9:16']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Generation status",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Generated video",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        },
+        {
+          "label": "value_89",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "NSFW Preview (Blurred 80% Frame)",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "value_90",
+          "type": "str",
+          "component": "Html"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/_on_resolution_change_with_scene_boxes",
+  "_api_verified": true,
+  "estimated_latency_s": 3.76,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 3.76,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:49:19.491292+00:00",
+  "_inference_attempt_status": "predict_failed",
+  "_inference_attempt_error": "Value: '384' (type: <class 'str'>) is not in the list of choices: [384, 512]"
+}

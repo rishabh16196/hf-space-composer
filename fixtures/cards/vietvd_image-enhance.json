@@ -1,0 +1,81 @@
+{
+  "space_id": "vietvd/image-enhance",
+  "title": "Image Enhance",
+  "emoji": "\ud83c\udfe2",
+  "description": "Image Enhance",
+  "input_schema": {
+    "Input": {
+      "type": "str",
+      "description": "Input",
+      "required": true,
+      "component": "Image"
+    },
+    "Rescaling factor. Note max rescaling factor is 4": {
+      "type": "int | float",
+      "description": "Rescaling factor. Note max rescaling factor is 4",
+      "required": true,
+      "component": "Number"
+    }
+  },
+  "output_schema": {
+    "Output (The whole image)": {
+      "type": "str",
+      "description": "Output (The whole image)",
+      "component": "Image"
+    },
+    "Download the output image": {
+      "type": "str | Dict(name: str (name of file), data: str (base64 representation of file), size: int (size of i",
+      "description": "Download the output image",
+      "component": "File"
+    }
+  },
+  "license": "unknown",
+  "hardware": "3.15.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 32,
+  "last_modified": "2023-01-03 07:36:12+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/predict",
+      "parameters": [
+        {
+          "name": "Input",
+          "label": "Input",
+          "type": "str",
+          "component": "Image"
+        },
+        {
+          "name": "Rescaling factor. Note max rescaling factor is 4",
+          "label": "Rescaling factor. Note max rescaling factor is 4",
+          "type": "int | float",
+          "component": "Number"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output (The whole image)",
+          "type": "str",
+          "component": "Image"
+        },
+        {
+          "label": "Download the output image",
+          "type": "str | Dict(name: str (name of file), data: str (base64 representation of file), size: int (size of image in bytes), is_file: bool (true if the file has been uploaded to the server), orig_name: str (or",
+          "component": "File"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/predict",
+  "_api_verified": true
+}

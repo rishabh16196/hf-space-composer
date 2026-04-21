@@ -1,0 +1,224 @@
+{
+  "space_id": "opsiclear-admin/Trellis.2.multiview",
+  "title": "TRELLIS.2 Multi-Image Conditioning",
+  "emoji": "\ud83e\uddca",
+  "description": "Multi-view image to 3D generation",
+  "input_schema": {},
+  "output_schema": {},
+  "license": "mit",
+  "hardware": "5.12.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 7,
+  "last_modified": "2026-02-24 22:17:43+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_tags_enriched": true,
+  "estimated_latency_s": 3.0,
+  "speed_tier": "fast",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/start_session",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/on_gallery_select",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/remove_selected_image",
+      "parameters": [
+        {
+          "name": "images",
+          "label": "Multi-View Images",
+          "type": "list[dict(image: dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Origi",
+          "component": "Gallery"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Multi-View Images",
+          "type": "list[dict(image: dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Origi",
+          "component": "Gallery"
+        }
+      ]
+    },
+    {
+      "name": "/get_seed",
+      "parameters": [
+        {
+          "name": "randomize_seed",
+          "label": "Randomize Seed",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "seed",
+          "label": "Seed",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Seed",
+          "type": "float",
+          "component": "Slider"
+        }
+      ]
+    },
+    {
+      "name": "/image_to_3d",
+      "parameters": [
+        {
+          "name": "multiimages",
+          "label": "Multi-View Images",
+          "type": "list[dict(image: dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Origi",
+          "component": "Gallery"
+        },
+        {
+          "name": "seed",
+          "label": "Seed",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "resolution",
+          "label": "Resolution",
+          "type": "Literal['512', '1024', '1536']",
+          "component": "Radio"
+        },
+        {
+          "name": "ss_guidance_strength",
+          "label": "Guidance Strength",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "ss_guidance_rescale",
+          "label": "Guidance Rescale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "ss_sampling_steps",
+          "label": "Sampling Steps",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "ss_rescale_t",
+          "label": "Rescale T",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "shape_slat_guidance_strength",
+          "label": "Guidance Strength",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "shape_slat_guidance_rescale",
+          "label": "Guidance Rescale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "shape_slat_sampling_steps",
+          "label": "Sampling Steps",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "shape_slat_rescale_t",
+          "label": "Rescale T",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "tex_slat_guidance_strength",
+          "label": "Guidance Strength",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "tex_slat_guidance_rescale",
+          "label": "Guidance Rescale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "tex_slat_sampling_steps",
+          "label": "Sampling Steps",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "tex_slat_rescale_t",
+          "label": "Rescale T",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "multiimage_algo",
+          "label": "Structure Algorithm",
+          "type": "Literal['stochastic', 'multidiffusion']",
+          "component": "Radio"
+        },
+        {
+          "name": "tex_multiimage_algo",
+          "label": "Texture Algorithm",
+          "type": "Literal['stochastic', 'multidiffusion']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "3D Asset Preview",
+          "type": "str",
+          "component": "Html"
+        }
+      ]
+    },
+    {
+      "name": "/extract_glb",
+      "parameters": [
+        {
+          "name": "decimation_target",
+          "label": "Decimation Target",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "texture_size",
+          "label": "Texture Size",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Extracted GLB",
+          "type": "filepath",
+          "component": "Model3d"
+        },
+        {
+          "label": "Download GLB",
+          "type": "filepath",
+          "component": "Downloadbutton"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/start_session",
+  "_api_verified": true
+}

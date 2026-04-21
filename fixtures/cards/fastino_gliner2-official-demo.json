@@ -1,0 +1,177 @@
+{
+  "space_id": "fastino/gliner2-official-demo",
+  "title": "GLiNER2",
+  "emoji": "\ud83d\udcc9",
+  "description": "GLiNER2",
+  "input_schema": {
+    "text": {
+      "type": "str",
+      "description": "Input Text",
+      "required": true,
+      "component": "Textbox"
+    },
+    "entity_types": {
+      "type": "str",
+      "description": "Entity Types (one per line)",
+      "required": true,
+      "component": "Textbox"
+    },
+    "threshold": {
+      "type": "float",
+      "description": "Confidence Threshold",
+      "required": true,
+      "component": "Slider"
+    }
+  },
+  "output_schema": {
+    "Results (JSON)": {
+      "type": "str",
+      "description": "Results (JSON)",
+      "component": "Code"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "5.35.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 25,
+  "last_modified": "2025-11-24 15:53:17+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/extract_entities_demo",
+      "parameters": [
+        {
+          "name": "text",
+          "label": "Input Text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "entity_types",
+          "label": "Entity Types (one per line)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "threshold",
+          "label": "Confidence Threshold",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Results (JSON)",
+          "type": "str",
+          "component": "Code"
+        }
+      ]
+    },
+    {
+      "name": "/classify_text_demo",
+      "parameters": [
+        {
+          "name": "text",
+          "label": "Input Text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "tasks_text",
+          "label": "Classification Tasks",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "threshold",
+          "label": "Confidence Threshold",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Results (JSON)",
+          "type": "str",
+          "component": "Code"
+        }
+      ]
+    },
+    {
+      "name": "/extract_json_demo",
+      "parameters": [
+        {
+          "name": "text",
+          "label": "Input Text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "structures_text",
+          "label": "Structure Definitions (use [structure_name] headers)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "threshold",
+          "label": "Threshold",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Results (JSON)",
+          "type": "str",
+          "component": "Code"
+        }
+      ]
+    },
+    {
+      "name": "/combined_demo",
+      "parameters": [
+        {
+          "name": "text",
+          "label": "Input Text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "schema_text",
+          "label": "Combined Schema Definition",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "threshold",
+          "label": "Threshold",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Results (JSON)",
+          "type": "str",
+          "component": "Code"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/extract_entities_demo",
+  "_api_verified": true,
+  "estimated_latency_s": 3.31,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "_tags_enriched": true,
+  "measured_latency_s": 3.31,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:50:34.785998+00:00"
+}

@@ -1,0 +1,87 @@
+{
+  "space_id": "UCSB-SURFI/VulnLLM-R",
+  "title": "VulnLLM R",
+  "emoji": "\ud83d\udcda",
+  "description": "Specialized Reasoning LLM for Vulnerability Detection",
+  "input_schema": {
+    "code": {
+      "type": "str",
+      "description": "Code to Analyze",
+      "required": true,
+      "component": "Code"
+    },
+    "language": {
+      "type": "Literal['python', 'javascript', 'typescript', 'java', 'c', 'cpp', 'csharp', 'go', 'rust', 'php', 'ru",
+      "description": "Programming Language",
+      "required": true,
+      "component": "Dropdown"
+    },
+    "model": {
+      "type": "Literal['virtueguard-code', 'claude-4-sonnet', 'gpt-4.1']",
+      "description": "Model",
+      "required": true,
+      "component": "Dropdown"
+    }
+  },
+  "output_schema": {
+    "Analysis Result": {
+      "type": "str",
+      "description": "Analysis Result",
+      "component": "Markdown"
+    }
+  },
+  "license": "mit",
+  "hardware": "6.1.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 19,
+  "last_modified": "2025-12-13 00:07:15+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/analyze_code",
+      "parameters": [
+        {
+          "name": "code",
+          "label": "Code to Analyze",
+          "type": "str",
+          "component": "Code"
+        },
+        {
+          "name": "language",
+          "label": "Programming Language",
+          "type": "Literal['python', 'javascript', 'typescript', 'java', 'c', 'cpp', 'csharp', 'go', 'rust', 'php', 'ruby', 'swift', 'kotlin']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "model",
+          "label": "Model",
+          "type": "Literal['virtueguard-code', 'claude-4-sonnet', 'gpt-4.1']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Analysis Result",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/analyze_code",
+  "_api_verified": true,
+  "estimated_latency_s": 2.73,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "_tags_enriched": true,
+  "measured_latency_s": 2.73,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:49:59.236162+00:00"
+}

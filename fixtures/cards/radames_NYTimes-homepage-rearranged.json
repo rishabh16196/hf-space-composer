@@ -1,0 +1,38 @@
+{
+  "space_id": "radames/NYTimes-homepage-rearranged",
+  "title": "NYTimes Homepage Sentiment Analysis",
+  "emoji": "\ud83d\udcf0",
+  "description": "News Sentiment Analysis Toggle Between Good and Bad",
+  "input_schema": {
+    "input": {
+      "type": "string",
+      "description": "Input",
+      "required": true
+    }
+  },
+  "output_schema": {
+    "output": {
+      "type": "string"
+    }
+  },
+  "license": "unknown",
+  "hardware": "",
+  "sdk": "docker",
+  "tags": [
+    "docker",
+    "region:us",
+    "sentiment",
+    "text"
+  ],
+  "likes": 14,
+  "last_modified": "2024-04-09 06:22:09+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "sleeping",
+  "_api_error": "Space is in RUNTIME_ERROR state",
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_tags_enriched": true
+}

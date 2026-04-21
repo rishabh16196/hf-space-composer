@@ -1,0 +1,283 @@
+{
+  "space_id": "limuloo1999/RefineAnything",
+  "title": "RefineAnything",
+  "emoji": "\ud83d\uddbc",
+  "description": "RefineAnything",
+  "input_schema": {
+    "image1_value": {
+      "type": "dict(background: filepath | None, layers: list[filepath], composite: filepath | None, id: str | None",
+      "description": "Source image (brush to select region)",
+      "required": true,
+      "component": "Imageeditor"
+    },
+    "image2": {
+      "type": "dict(background: filepath | None, layers: list[filepath], composite: filepath | None, id: str | None",
+      "description": "Reference image (optional, brush to crop)",
+      "required": true,
+      "component": "Imageeditor"
+    },
+    "prompt": {
+      "type": "str",
+      "description": "Prompt",
+      "required": true,
+      "component": "Textbox"
+    },
+    "mode": {
+      "type": "Literal['Run inference', 'Preview only']",
+      "description": "Mode",
+      "required": true,
+      "component": "Radio"
+    },
+    "spatial_source": {
+      "type": "Literal['mask', 'bbox']",
+      "description": "Spatial prompt source",
+      "required": true,
+      "component": "Radio"
+    },
+    "seed": {
+      "type": "int",
+      "description": "Seed",
+      "required": true,
+      "component": "Number"
+    },
+    "steps": {
+      "type": "int",
+      "description": "Steps",
+      "required": true,
+      "component": "Number"
+    },
+    "true_cfg_scale": {
+      "type": "float",
+      "description": "True CFG scale",
+      "required": true,
+      "component": "Number"
+    },
+    "guidance_scale": {
+      "type": "float",
+      "description": "Guidance scale",
+      "required": true,
+      "component": "Number"
+    },
+    "load_lightning_lora": {
+      "type": "bool",
+      "description": "Lightning LoRA (faster)",
+      "required": true,
+      "component": "Checkbox"
+    },
+    "paste_back_bbox": {
+      "type": "bool",
+      "description": "Composite paste-back",
+      "required": true,
+      "component": "Checkbox"
+    },
+    "paste_back_mode": {
+      "type": "Literal['mask', 'bbox']",
+      "description": "Paste-back mode",
+      "required": true,
+      "component": "Radio"
+    },
+    "focus_crop_for_bbox": {
+      "type": "bool",
+      "description": "Focus-crop edit region",
+      "required": true,
+      "component": "Checkbox"
+    },
+    "focus_crop_margin": {
+      "type": "int",
+      "description": "Crop margin (px)",
+      "required": true,
+      "component": "Number"
+    },
+    "paste_mask_grow": {
+      "type": "int",
+      "description": "Mask grow",
+      "required": true,
+      "component": "Number"
+    },
+    "paste_blend_kernel": {
+      "type": "int",
+      "description": "Blend kernel",
+      "required": true,
+      "component": "Number"
+    }
+  },
+  "output_schema": {
+    "Before / After": {
+      "type": "tuple[dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base6",
+      "description": "Before / After",
+      "component": "Imageslider"
+    },
+    "Actual prompt sent": {
+      "type": "str",
+      "description": "Actual prompt sent",
+      "component": "Textbox"
+    },
+    "Input preview (ViT 384) + region overlay": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "Input preview (ViT 384) + region overlay",
+      "component": "Image"
+    },
+    "Status": {
+      "type": "str",
+      "description": "Status",
+      "component": "Textbox"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "6.5.1",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 35,
+  "last_modified": "2026-04-18 03:17:00+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/_predict_impl",
+      "parameters": [
+        {
+          "name": "image1_value",
+          "label": "Source image (brush to select region)",
+          "type": "dict(background: filepath | None, layers: list[filepath], composite: filepath | None, id: str | None)",
+          "component": "Imageeditor"
+        },
+        {
+          "name": "image2",
+          "label": "Reference image (optional, brush to crop)",
+          "type": "dict(background: filepath | None, layers: list[filepath], composite: filepath | None, id: str | None)",
+          "component": "Imageeditor"
+        },
+        {
+          "name": "prompt",
+          "label": "Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "mode",
+          "label": "Mode",
+          "type": "Literal['Run inference', 'Preview only']",
+          "component": "Radio"
+        },
+        {
+          "name": "spatial_source",
+          "label": "Spatial prompt source",
+          "type": "Literal['mask', 'bbox']",
+          "component": "Radio"
+        },
+        {
+          "name": "seed",
+          "label": "Seed",
+          "type": "int",
+          "component": "Number"
+        },
+        {
+          "name": "steps",
+          "label": "Steps",
+          "type": "int",
+          "component": "Number"
+        },
+        {
+          "name": "true_cfg_scale",
+          "label": "True CFG scale",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "guidance_scale",
+          "label": "Guidance scale",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "load_lightning_lora",
+          "label": "Lightning LoRA (faster)",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "paste_back_bbox",
+          "label": "Composite paste-back",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "paste_back_mode",
+          "label": "Paste-back mode",
+          "type": "Literal['mask', 'bbox']",
+          "component": "Radio"
+        },
+        {
+          "name": "focus_crop_for_bbox",
+          "label": "Focus-crop edit region",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "focus_crop_margin",
+          "label": "Crop margin (px)",
+          "type": "int",
+          "component": "Number"
+        },
+        {
+          "name": "paste_mask_grow",
+          "label": "Mask grow",
+          "type": "int",
+          "component": "Number"
+        },
+        {
+          "name": "paste_blend_kernel",
+          "label": "Blend kernel",
+          "type": "int",
+          "component": "Number"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Before / After",
+          "type": "tuple[dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filenam",
+          "component": "Imageslider"
+        },
+        {
+          "label": "Actual prompt sent",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Input preview (ViT 384) + region overlay",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "Status",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/_randomize_seed",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Seed",
+          "type": "int",
+          "component": "Number"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/_predict_impl",
+  "_api_verified": true,
+  "estimated_latency_s": 3.39,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 3.39,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:51:06.396055+00:00"
+}

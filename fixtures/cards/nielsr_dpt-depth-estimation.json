@@ -1,0 +1,65 @@
+{
+  "space_id": "nielsr/dpt-depth-estimation",
+  "title": "Dpt Depth Estimation",
+  "emoji": "\u26a1",
+  "description": "Dpt Depth Estimation",
+  "input_schema": {
+    "image": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "image",
+      "required": true,
+      "component": "Image"
+    }
+  },
+  "output_schema": {
+    "predicted depth": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "predicted depth",
+      "component": "Image"
+    }
+  },
+  "license": "unknown",
+  "hardware": "5.37.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us",
+    "depth-estimation",
+    "vision"
+  ],
+  "likes": 159,
+  "last_modified": "2025-07-15 10:29:38+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/predict",
+      "parameters": [
+        {
+          "name": "image",
+          "label": "image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ],
+      "returns": [
+        {
+          "label": "predicted depth",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/predict",
+  "_api_verified": true,
+  "estimated_latency_s": 3.24,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "_tags_enriched": true,
+  "measured_latency_s": 3.24,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:51:22.936723+00:00"
+}

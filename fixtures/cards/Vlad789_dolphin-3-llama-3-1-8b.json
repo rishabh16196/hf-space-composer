@@ -1,0 +1,112 @@
+{
+  "space_id": "Vlad789/dolphin-3-llama-3-1-8b",
+  "title": "Dolphin 3 Llama 3 1 8b",
+  "emoji": "\ud83d\udcac",
+  "description": "Dolphin 3.0 Llama 3.1 8B chatbot",
+  "input_schema": {
+    "message": {
+      "type": "str",
+      "description": "Message",
+      "required": true,
+      "component": "Textbox"
+    },
+    "system_message": {
+      "type": "str",
+      "description": "System message",
+      "required": true,
+      "component": "Textbox"
+    },
+    "max_tokens": {
+      "type": "float",
+      "description": "Max new tokens",
+      "required": true,
+      "component": "Slider"
+    },
+    "temperature": {
+      "type": "float",
+      "description": "Temperature",
+      "required": true,
+      "component": "Slider"
+    },
+    "top_p": {
+      "type": "float",
+      "description": "Top-p (nucleus sampling)",
+      "required": true,
+      "component": "Slider"
+    }
+  },
+  "output_schema": {
+    "Response": {
+      "type": "str | float | bool | list | dict",
+      "description": "Response",
+      "component": "Json"
+    }
+  },
+  "license": "unknown",
+  "hardware": "5.42.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 15,
+  "last_modified": "2026-01-11 19:20:03+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/chat",
+      "parameters": [
+        {
+          "name": "message",
+          "label": "Message",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "system_message",
+          "label": "System message",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "max_tokens",
+          "label": "Max new tokens",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "temperature",
+          "label": "Temperature",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "top_p",
+          "label": "Top-p (nucleus sampling)",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Response",
+          "type": "str | float | bool | list | dict",
+          "component": "Json"
+        }
+      ]
+    },
+    {
+      "name": "/_check_login_status",
+      "parameters": [],
+      "returns": []
+    }
+  ],
+  "endpoint": "/chat",
+  "_api_verified": true
+}

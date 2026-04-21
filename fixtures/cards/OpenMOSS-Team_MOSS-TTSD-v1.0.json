@@ -1,0 +1,218 @@
+{
+  "space_id": "OpenMOSS-Team/MOSS-TTSD-v1.0",
+  "title": "MOSS TTSD",
+  "emoji": "\ud83d\udd25",
+  "description": "MOSS-TTSD: Text to Spoken Dialogue Generation",
+  "input_schema": {
+    "speaker_count": {
+      "type": "float",
+      "description": "Speaker Count",
+      "required": true,
+      "component": "Slider"
+    }
+  },
+  "output_schema": {},
+  "license": "apache-2.0",
+  "hardware": "6.5.1",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 49,
+  "last_modified": "2026-02-17 09:24:02+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/update_speaker_panels",
+      "parameters": [
+        {
+          "name": "speaker_count",
+          "label": "Speaker Count",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/apply_preset_selection",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Speaker Count",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "S1 Reference Audio (Optional)",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "S1 Prompt Text (Required with reference audio)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "S2 Reference Audio (Optional)",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "S2 Prompt Text (Required with reference audio)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Dialogue Text",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/run_inference",
+      "parameters": [
+        {
+          "name": "speaker_count",
+          "label": "Speaker Count",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_1",
+          "label": "S1 Reference Audio (Optional)",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "name": "param_2",
+          "label": "S2 Reference Audio (Optional)",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "name": "param_3",
+          "label": "S3 Reference Audio (Optional)",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "name": "param_4",
+          "label": "S4 Reference Audio (Optional)",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "name": "param_5",
+          "label": "S5 Reference Audio (Optional)",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "name": "param_6",
+          "label": "S1 Prompt Text (Required with reference audio)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_7",
+          "label": "S2 Prompt Text (Required with reference audio)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_8",
+          "label": "S3 Prompt Text (Required with reference audio)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_9",
+          "label": "S4 Prompt Text (Required with reference audio)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_10",
+          "label": "S5 Prompt Text (Required with reference audio)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_11",
+          "label": "Dialogue Text",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_12",
+          "label": "text_normalize",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_13",
+          "label": "sample_rate_normalize",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_14",
+          "label": "temperature",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_15",
+          "label": "top_p",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_16",
+          "label": "top_k",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_17",
+          "label": "repetition_penalty",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "param_18",
+          "label": "max_new_tokens",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Status",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/update_speaker_panels",
+  "_api_verified": true,
+  "estimated_latency_s": 3.59,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "_tags_enriched": true,
+  "measured_latency_s": 3.59,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:49:44.849458+00:00"
+}

@@ -1,0 +1,190 @@
+{
+  "space_id": "BlinkDL/RWKV-Gradio-1",
+  "title": "RWKV-Gradio-1",
+  "emoji": "\ud83d\udcbb",
+  "description": "RWKV-Gradio-1",
+  "input_schema": {
+    "ctx": {
+      "type": "str",
+      "description": "Prompt",
+      "required": true,
+      "component": "Textbox"
+    },
+    "token_count": {
+      "type": "float",
+      "description": "Max Tokens",
+      "required": true,
+      "component": "Slider"
+    },
+    "temperature": {
+      "type": "float",
+      "description": "Temperature",
+      "required": true,
+      "component": "Slider"
+    },
+    "top_p": {
+      "type": "float",
+      "description": "Top P",
+      "required": true,
+      "component": "Slider"
+    },
+    "presencePenalty": {
+      "type": "float",
+      "description": "Presence Penalty",
+      "required": true,
+      "component": "Slider"
+    },
+    "countPenalty": {
+      "type": "float",
+      "description": "Count Penalty",
+      "required": true,
+      "component": "Slider"
+    },
+    "penalty_decay": {
+      "type": "float",
+      "description": "Penalty Decay",
+      "required": true,
+      "component": "Slider"
+    }
+  },
+  "output_schema": {
+    "Output": {
+      "type": "str",
+      "description": "Output",
+      "component": "Textbox"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "5.44.1",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 498,
+  "last_modified": "2026-04-21 04:08:54+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/evaluate",
+      "parameters": [
+        {
+          "name": "ctx",
+          "label": "Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "token_count",
+          "label": "Max Tokens",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "temperature",
+          "label": "Temperature",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "top_p",
+          "label": "Top P",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "presencePenalty",
+          "label": "Presence Penalty",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "countPenalty",
+          "label": "Count Penalty",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "penalty_decay",
+          "label": "Penalty Decay",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/lambda",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Output",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_1",
+      "parameters": [
+        {
+          "name": "x",
+          "label": "Example Instructions",
+          "type": "int",
+          "component": "Dataset"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Max Tokens",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Temperature",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Top P",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Presence Penalty",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Count Penalty",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Penalty Decay",
+          "type": "float",
+          "component": "Slider"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/evaluate",
+  "_api_verified": true
+}

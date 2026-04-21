@@ -1,0 +1,91 @@
+{
+  "space_id": "fffiloni/scene-edit-detection",
+  "title": "Scene Edit Detection",
+  "emoji": "\u2702\ufe0f \ud83c\udf9e",
+  "description": "Scene Edit Detection",
+  "input_schema": {
+    "video_path": {
+      "type": "dict(video: filepath, subtitles: filepath | None)",
+      "description": "Video Sequence",
+      "required": true,
+      "component": "Video"
+    },
+    "threshold": {
+      "type": "float",
+      "description": "Threshold pixel comparison: if exceeded, triggers a scene cut. Default: 27.0",
+      "required": true,
+      "component": "Slider"
+    }
+  },
+  "output_schema": {
+    "Shots detected": {
+      "type": "str | float | bool | list | dict",
+      "description": "Shots detected",
+      "component": "Json"
+    },
+    "Downloadable Shots": {
+      "type": "filepath",
+      "description": "Downloadable Shots",
+      "component": "File"
+    },
+    "Still Images from each shot": {
+      "type": "list[dict(image: dict(path: str | None (Path to a local file), url: str | None (Publicly available u",
+      "description": "Still Images from each shot",
+      "component": "Gallery"
+    }
+  },
+  "license": "unknown",
+  "hardware": "5.45.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 20,
+  "last_modified": "2025-09-11 14:47:08+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/predict",
+      "parameters": [
+        {
+          "name": "video_path",
+          "label": "Video Sequence",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        },
+        {
+          "name": "threshold",
+          "label": "Threshold pixel comparison: if exceeded, triggers a scene cut. Default: 27.0",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Shots detected",
+          "type": "str | float | bool | list | dict",
+          "component": "Json"
+        },
+        {
+          "label": "Downloadable Shots",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "label": "Still Images from each shot",
+          "type": "list[dict(image: dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Origi",
+          "component": "Gallery"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/predict",
+  "_api_verified": true
+}

@@ -1,0 +1,39 @@
+{
+  "space_id": "nvidia/nv-reason-cxr",
+  "title": "NV-Reason-CXR-3B Demo",
+  "emoji": "\ud83e\ude7b",
+  "description": "NV-Reason-CXR-3B Demo",
+  "input_schema": {
+    "input": {
+      "type": "string",
+      "description": "Input",
+      "required": true
+    }
+  },
+  "output_schema": {
+    "output": {
+      "type": "string"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "5.44.1",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 17,
+  "last_modified": "2025-10-16 21:33:54+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [],
+  "_api_verified": true,
+  "estimated_latency_s": 4.58,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 4.58,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:51:27.587845+00:00"
+}

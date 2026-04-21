@@ -1,0 +1,120 @@
+{
+  "space_id": "nvidia/RE-USE",
+  "title": "RE USE",
+  "emoji": "\ud83e\udd2b",
+  "description": "A universal speech enhancement model for diverse degradation",
+  "input_schema": {
+    "audio_path": {
+      "type": "filepath",
+      "description": "Input Audio",
+      "required": true,
+      "component": "Audio"
+    },
+    "video_path": {
+      "type": "filepath",
+      "description": "Input Video",
+      "required": true,
+      "component": "File"
+    },
+    "lp_sr": {
+      "type": "str",
+      "description": "(Optional) Enter target sampling rate for pre-low-pass filtering before bandwidth extension:",
+      "required": true,
+      "component": "Textbox"
+    },
+    "target_sr": {
+      "type": "str",
+      "description": "(Optional) Enter target sampling rate for bandwidth extension:",
+      "required": true,
+      "component": "Textbox"
+    }
+  },
+  "output_schema": {
+    "Original Input Audio": {
+      "type": "filepath",
+      "description": "Original Input Audio",
+      "component": "Audio"
+    },
+    "Enhanced Audio": {
+      "type": "filepath",
+      "description": "Enhanced Audio",
+      "component": "Audio"
+    },
+    "Spectrograms": {
+      "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+      "description": "Spectrograms",
+      "component": "Plot"
+    }
+  },
+  "license": "unknown",
+  "hardware": "6.9.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us",
+    "audio"
+  ],
+  "likes": 10,
+  "last_modified": "2026-03-30 02:24:46+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/unified_enhance",
+      "parameters": [
+        {
+          "name": "audio_path",
+          "label": "Input Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "name": "video_path",
+          "label": "Input Video",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "name": "lp_sr",
+          "label": "(Optional) Enter target sampling rate for pre-low-pass filtering before bandwidth extension:",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "target_sr",
+          "label": "(Optional) Enter target sampling rate for bandwidth extension:",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Original Input Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Enhanced Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Spectrograms",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/unified_enhance",
+  "_api_verified": true,
+  "estimated_latency_s": 3.71,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "_tags_enriched": true,
+  "measured_latency_s": 3.71,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:51:25.266136+00:00"
+}

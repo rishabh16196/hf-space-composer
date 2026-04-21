@@ -1,0 +1,1323 @@
+{
+  "space_id": "Intel/low_bit_open_llm_leaderboard",
+  "title": "Low-bit Quantized Open LLM Leaderboard",
+  "emoji": "\ud83c\udfc6",
+  "description": "Track, rank and evaluate open LLMs and chatbots",
+  "input_schema": {
+    "df": {
+      "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+      "description": "parameter_42",
+      "required": true,
+      "component": "Dataframe"
+    }
+  },
+  "output_schema": {
+    "Accuracy Comparison (Selected Models from Table)": {
+      "type": "list[Literal[]]",
+      "description": "Accuracy Comparison (Selected Models from Table)",
+      "component": "Checkboxgroup"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "6.5.1",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "leaderboard",
+    "region:us",
+    "benchmark"
+  ],
+  "likes": 198,
+  "last_modified": "2026-04-18 03:38:46+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_tags_enriched": true,
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/select",
+      "parameters": [
+        {
+          "name": "df",
+          "label": "parameter_42",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Accuracy Comparison (Selected Models from Table)",
+          "type": "list[Literal[]]",
+          "component": "Checkboxgroup"
+        }
+      ]
+    },
+    {
+      "name": "/show_modal",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/generate_spider_chart",
+      "parameters": [
+        {
+          "name": "df",
+          "label": "parameter_42",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "name": "selected_keys",
+          "label": "Accuracy Comparison (Selected Models from Table)",
+          "type": "list[Literal[]]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_4",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "value_5",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/close_modal_logic",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/init_comparison_data",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Accuracy Comparison (Selected Models from Table)",
+          "type": "list[Literal[]]",
+          "component": "Checkboxgroup"
+        }
+      ]
+    },
+    {
+      "name": "/update_table",
+      "parameters": [
+        {
+          "name": "hidden_df",
+          "label": "parameter_43",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "name": "columns",
+          "label": "Select columns to show",
+          "type": "list[Literal['T', 'Average \u2b06\ufe0f', 'ARC-c', 'ARC-e', 'Architecture', 'Boolq', 'Compute dtype', 'Double Quant', 'Group Size', 'HellaSwag', 'Lambada', 'Hub License', 'Hub \u2764\ufe0f', 'MMLU', '#Size (G)', 'Openboo",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "type_query",
+          "label": "Quantization types",
+          "type": "list[Literal['\ud83d\udfe2 GPTQ', '\u2b50 AQLM', '\ud83d\udfe9 AWQ', '\ud83d\udd37 llama.cpp', '\ud83d\udd35 bitsandbytes', '\ud83c\udf52 AutoRound', '? ?']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "precision_query",
+          "label": "Weight precision",
+          "type": "list[Literal['2bit', '3bit', '4bit', '8bit', '16bit', '32bit', '?']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "size_query",
+          "label": "Model parameters (in billions of parameters)",
+          "type": "list[Literal['?', '~1.5', '~3', '~7', '~13', '~35', '~60', '70+']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "params_query",
+          "label": "Model sizes (GB, int4)",
+          "type": "list[Literal['?', '~4', '~8', '~16', '~36', '~48', '~64', '>72']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "hide_models",
+          "label": "parameter_44",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "query",
+          "label": "parameter_14",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "compute_dtype",
+          "label": "Compute Dtype",
+          "type": "Literal['All', 'float16', 'bfloat16', 'int8', 'float32', '?']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "weight_dtype",
+          "label": "Weight Dtype",
+          "type": "Literal['All', 'int2', 'int3', 'int4', 'int8', 'nf4', 'fp4', 'float16', 'bfloat16', 'float32', '?']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "double_quant",
+          "label": "Double Quant",
+          "type": "Literal['All', 'True', 'False']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "group_dtype",
+          "label": "Group Size",
+          "type": "Literal['-1', '1024', '256', '128', '64', '32', 'All']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_42",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/update_quantization_types",
+      "parameters": [
+        {
+          "name": "selected_quant",
+          "label": "Quantization types",
+          "type": "list[Literal['\ud83d\udfe2 GPTQ', '\u2b50 AQLM', '\ud83d\udfe9 AWQ', '\ud83d\udd37 llama.cpp', '\ud83d\udd35 bitsandbytes', '\ud83c\udf52 AutoRound', '? ?']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Weight Dtype",
+          "type": "Literal['All', 'int2', 'int3', 'int4', 'int8', 'nf4', 'fp4', 'float16', 'bfloat16', 'float32', '?']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Compute Dtype",
+          "type": "Literal['All', 'float16', 'bfloat16', 'int8', 'float32', '?']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Weight precision",
+          "type": "list[Literal['2bit', '3bit', '4bit', '8bit', '16bit', '32bit', '?']]",
+          "component": "Checkboxgroup"
+        }
+      ]
+    },
+    {
+      "name": "/update_Weight_Precision",
+      "parameters": [
+        {
+          "name": "temp_precisions",
+          "label": "Weight precision",
+          "type": "list[Literal['2bit', '3bit', '4bit', '8bit', '16bit', '32bit', '?']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Weight Dtype",
+          "type": "Literal['All', 'int2', 'int3', 'int4', 'int8', 'nf4', 'fp4', 'float16', 'bfloat16', 'float32', '?']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Compute Dtype",
+          "type": "Literal['All', 'float16', 'bfloat16', 'int8', 'float32', '?']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Weight precision",
+          "type": "list[Literal['2bit', '3bit', '4bit', '8bit', '16bit', '32bit', '?']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "label": "Quantization types",
+          "type": "list[Literal['\ud83d\udfe2 GPTQ', '\u2b50 AQLM', '\ud83d\udfe9 AWQ', '\ud83d\udd37 llama.cpp', '\ud83d\udd35 bitsandbytes', '\ud83c\udf52 AutoRound', '? ?']]",
+          "component": "Checkboxgroup"
+        }
+      ]
+    },
+    {
+      "name": "/update_Weight_Dtype",
+      "parameters": [
+        {
+          "name": "weight",
+          "label": "Weight Dtype",
+          "type": "Literal['All', 'int2', 'int3', 'int4', 'int8', 'nf4', 'fp4', 'float16', 'bfloat16', 'float32', '?']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Weight precision",
+          "type": "list[Literal['2bit', '3bit', '4bit', '8bit', '16bit', '32bit', '?']]",
+          "component": "Checkboxgroup"
+        }
+      ]
+    },
+    {
+      "name": "/update_table_1",
+      "parameters": [
+        {
+          "name": "hidden_df",
+          "label": "parameter_43",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "name": "columns",
+          "label": "Select columns to show",
+          "type": "list[Literal['T', 'Average \u2b06\ufe0f', 'ARC-c', 'ARC-e', 'Architecture', 'Boolq', 'Compute dtype', 'Double Quant', 'Group Size', 'HellaSwag', 'Lambada', 'Hub License', 'Hub \u2764\ufe0f', 'MMLU', '#Size (G)', 'Openboo",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "type_query",
+          "label": "Quantization types",
+          "type": "list[Literal['\ud83d\udfe2 GPTQ', '\u2b50 AQLM', '\ud83d\udfe9 AWQ', '\ud83d\udd37 llama.cpp', '\ud83d\udd35 bitsandbytes', '\ud83c\udf52 AutoRound', '? ?']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "precision_query",
+          "label": "Weight precision",
+          "type": "list[Literal['2bit', '3bit', '4bit', '8bit', '16bit', '32bit', '?']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "size_query",
+          "label": "Model parameters (in billions of parameters)",
+          "type": "list[Literal['?', '~1.5', '~3', '~7', '~13', '~35', '~60', '70+']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "params_query",
+          "label": "Model sizes (GB, int4)",
+          "type": "list[Literal['?', '~4', '~8', '~16', '~36', '~48', '~64', '>72']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "hide_models",
+          "label": "parameter_44",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "query",
+          "label": "parameter_14",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "compute_dtype",
+          "label": "Compute Dtype",
+          "type": "Literal['All', 'float16', 'bfloat16', 'int8', 'float32', '?']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "weight_dtype",
+          "label": "Weight Dtype",
+          "type": "Literal['All', 'int2', 'int3', 'int4', 'int8', 'nf4', 'fp4', 'float16', 'bfloat16', 'float32', '?']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "double_quant",
+          "label": "Double Quant",
+          "type": "Literal['All', 'True', 'False']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "group_dtype",
+          "label": "Group Size",
+          "type": "Literal['-1', '1024', '256', '128', '64', '32', 'All']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_42",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/update_table_2",
+      "parameters": [
+        {
+          "name": "hidden_df",
+          "label": "parameter_43",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "name": "columns",
+          "label": "Select columns to show",
+          "type": "list[Literal['T', 'Average \u2b06\ufe0f', 'ARC-c', 'ARC-e', 'Architecture', 'Boolq', 'Compute dtype', 'Double Quant', 'Group Size', 'HellaSwag', 'Lambada', 'Hub License', 'Hub \u2764\ufe0f', 'MMLU', '#Size (G)', 'Openboo",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "type_query",
+          "label": "Quantization types",
+          "type": "list[Literal['\ud83d\udfe2 GPTQ', '\u2b50 AQLM', '\ud83d\udfe9 AWQ', '\ud83d\udd37 llama.cpp', '\ud83d\udd35 bitsandbytes', '\ud83c\udf52 AutoRound', '? ?']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "precision_query",
+          "label": "Weight precision",
+          "type": "list[Literal['2bit', '3bit', '4bit', '8bit', '16bit', '32bit', '?']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "size_query",
+          "label": "Model parameters (in billions of parameters)",
+          "type": "list[Literal['?', '~1.5', '~3', '~7', '~13', '~35', '~60', '70+']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "params_query",
+          "label": "Model sizes (GB, int4)",
+          "type": "list[Literal['?', '~4', '~8', '~16', '~36', '~48', '~64', '>72']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "hide_models",
+          "label": "parameter_44",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "query",
+          "label": "parameter_14",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "compute_dtype",
+          "label": "Compute Dtype",
+          "type": "Literal['All', 'float16', 'bfloat16', 'int8', 'float32', '?']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "weight_dtype",
+          "label": "Weight Dtype",
+          "type": "Literal['All', 'int2', 'int3', 'int4', 'int8', 'nf4', 'fp4', 'float16', 'bfloat16', 'float32', '?']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "double_quant",
+          "label": "Double Quant",
+          "type": "Literal['All', 'True', 'False']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "group_dtype",
+          "label": "Group Size",
+          "type": "Literal['-1', '1024', '256', '128', '64', '32', 'All']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_42",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/update_table_3",
+      "parameters": [
+        {
+          "name": "hidden_df",
+          "label": "parameter_43",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "name": "columns",
+          "label": "Select columns to show",
+          "type": "list[Literal['T', 'Average \u2b06\ufe0f', 'ARC-c', 'ARC-e', 'Architecture', 'Boolq', 'Compute dtype', 'Double Quant', 'Group Size', 'HellaSwag', 'Lambada', 'Hub License', 'Hub \u2764\ufe0f', 'MMLU', '#Size (G)', 'Openboo",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "type_query",
+          "label": "Quantization types",
+          "type": "list[Literal['\ud83d\udfe2 GPTQ', '\u2b50 AQLM', '\ud83d\udfe9 AWQ', '\ud83d\udd37 llama.cpp', '\ud83d\udd35 bitsandbytes', '\ud83c\udf52 AutoRound', '? ?']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "precision_query",
+          "label": "Weight precision",
+          "type": "list[Literal['2bit', '3bit', '4bit', '8bit', '16bit', '32bit', '?']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "size_query",
+          "label": "Model parameters (in billions of parameters)",
+          "type": "list[Literal['?', '~1.5', '~3', '~7', '~13', '~35', '~60', '70+']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "params_query",
+          "label": "Model sizes (GB, int4)",
+          "type": "list[Literal['?', '~4', '~8', '~16', '~36', '~48', '~64', '>72']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "hide_models",
+          "label": "parameter_44",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "query",
+          "label": "parameter_14",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "compute_dtype",
+          "label": "Compute Dtype",
+          "type": "Literal['All', 'float16', 'bfloat16', 'int8', 'float32', '?']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "weight_dtype",
+          "label": "Weight Dtype",
+          "type": "Literal['All', 'int2', 'int3', 'int4', 'int8', 'nf4', 'fp4', 'float16', 'bfloat16', 'float32', '?']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "double_quant",
+          "label": "Double Quant",
+          "type": "Literal['All', 'True', 'False']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "group_dtype",
+          "label": "Group Size",
+          "type": "Literal['-1', '1024', '256', '128', '64', '32', 'All']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_42",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/update_table_4",
+      "parameters": [
+        {
+          "name": "hidden_df",
+          "label": "parameter_43",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "name": "columns",
+          "label": "Select columns to show",
+          "type": "list[Literal['T', 'Average \u2b06\ufe0f', 'ARC-c', 'ARC-e', 'Architecture', 'Boolq', 'Compute dtype', 'Double Quant', 'Group Size', 'HellaSwag', 'Lambada', 'Hub License', 'Hub \u2764\ufe0f', 'MMLU', '#Size (G)', 'Openboo",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "type_query",
+          "label": "Quantization types",
+          "type": "list[Literal['\ud83d\udfe2 GPTQ', '\u2b50 AQLM', '\ud83d\udfe9 AWQ', '\ud83d\udd37 llama.cpp', '\ud83d\udd35 bitsandbytes', '\ud83c\udf52 AutoRound', '? ?']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "precision_query",
+          "label": "Weight precision",
+          "type": "list[Literal['2bit', '3bit', '4bit', '8bit', '16bit', '32bit', '?']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "size_query",
+          "label": "Model parameters (in billions of parameters)",
+          "type": "list[Literal['?', '~1.5', '~3', '~7', '~13', '~35', '~60', '70+']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "params_query",
+          "label": "Model sizes (GB, int4)",
+          "type": "list[Literal['?', '~4', '~8', '~16', '~36', '~48', '~64', '>72']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "hide_models",
+          "label": "parameter_44",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "query",
+          "label": "parameter_14",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "compute_dtype",
+          "label": "Compute Dtype",
+          "type": "Literal['All', 'float16', 'bfloat16', 'int8', 'float32', '?']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "weight_dtype",
+          "label": "Weight Dtype",
+          "type": "Literal['All', 'int2', 'int3', 'int4', 'int8', 'nf4', 'fp4', 'float16', 'bfloat16', 'float32', '?']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "double_quant",
+          "label": "Double Quant",
+          "type": "Literal['All', 'True', 'False']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "group_dtype",
+          "label": "Group Size",
+          "type": "Literal['-1', '1024', '256', '128', '64', '32', 'All']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_42",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/update_table_5",
+      "parameters": [
+        {
+          "name": "hidden_df",
+          "label": "parameter_43",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "name": "columns",
+          "label": "Select columns to show",
+          "type": "list[Literal['T', 'Average \u2b06\ufe0f', 'ARC-c', 'ARC-e', 'Architecture', 'Boolq', 'Compute dtype', 'Double Quant', 'Group Size', 'HellaSwag', 'Lambada', 'Hub License', 'Hub \u2764\ufe0f', 'MMLU', '#Size (G)', 'Openboo",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "type_query",
+          "label": "Quantization types",
+          "type": "list[Literal['\ud83d\udfe2 GPTQ', '\u2b50 AQLM', '\ud83d\udfe9 AWQ', '\ud83d\udd37 llama.cpp', '\ud83d\udd35 bitsandbytes', '\ud83c\udf52 AutoRound', '? ?']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "precision_query",
+          "label": "Weight precision",
+          "type": "list[Literal['2bit', '3bit', '4bit', '8bit', '16bit', '32bit', '?']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "size_query",
+          "label": "Model parameters (in billions of parameters)",
+          "type": "list[Literal['?', '~1.5', '~3', '~7', '~13', '~35', '~60', '70+']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "params_query",
+          "label": "Model sizes (GB, int4)",
+          "type": "list[Literal['?', '~4', '~8', '~16', '~36', '~48', '~64', '>72']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "hide_models",
+          "label": "parameter_44",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "query",
+          "label": "parameter_14",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "compute_dtype",
+          "label": "Compute Dtype",
+          "type": "Literal['All', 'float16', 'bfloat16', 'int8', 'float32', '?']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "weight_dtype",
+          "label": "Weight Dtype",
+          "type": "Literal['All', 'int2', 'int3', 'int4', 'int8', 'nf4', 'fp4', 'float16', 'bfloat16', 'float32', '?']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "double_quant",
+          "label": "Double Quant",
+          "type": "Literal['All', 'True', 'False']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "group_dtype",
+          "label": "Group Size",
+          "type": "Literal['-1', '1024', '256', '128', '64', '32', 'All']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_42",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/update_table_6",
+      "parameters": [
+        {
+          "name": "hidden_df",
+          "label": "parameter_43",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "name": "columns",
+          "label": "Select columns to show",
+          "type": "list[Literal['T', 'Average \u2b06\ufe0f', 'ARC-c', 'ARC-e', 'Architecture', 'Boolq', 'Compute dtype', 'Double Quant', 'Group Size', 'HellaSwag', 'Lambada', 'Hub License', 'Hub \u2764\ufe0f', 'MMLU', '#Size (G)', 'Openboo",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "type_query",
+          "label": "Quantization types",
+          "type": "list[Literal['\ud83d\udfe2 GPTQ', '\u2b50 AQLM', '\ud83d\udfe9 AWQ', '\ud83d\udd37 llama.cpp', '\ud83d\udd35 bitsandbytes', '\ud83c\udf52 AutoRound', '? ?']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "precision_query",
+          "label": "Weight precision",
+          "type": "list[Literal['2bit', '3bit', '4bit', '8bit', '16bit', '32bit', '?']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "size_query",
+          "label": "Model parameters (in billions of parameters)",
+          "type": "list[Literal['?', '~1.5', '~3', '~7', '~13', '~35', '~60', '70+']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "params_query",
+          "label": "Model sizes (GB, int4)",
+          "type": "list[Literal['?', '~4', '~8', '~16', '~36', '~48', '~64', '>72']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "hide_models",
+          "label": "parameter_44",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "query",
+          "label": "parameter_14",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "compute_dtype",
+          "label": "Compute Dtype",
+          "type": "Literal['All', 'float16', 'bfloat16', 'int8', 'float32', '?']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "weight_dtype",
+          "label": "Weight Dtype",
+          "type": "Literal['All', 'int2', 'int3', 'int4', 'int8', 'nf4', 'fp4', 'float16', 'bfloat16', 'float32', '?']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "double_quant",
+          "label": "Double Quant",
+          "type": "Literal['All', 'True', 'False']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "group_dtype",
+          "label": "Group Size",
+          "type": "Literal['-1', '1024', '256', '128', '64', '32', 'All']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_42",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/update_table_7",
+      "parameters": [
+        {
+          "name": "hidden_df",
+          "label": "parameter_43",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "name": "columns",
+          "label": "Select columns to show",
+          "type": "list[Literal['T', 'Average \u2b06\ufe0f', 'ARC-c', 'ARC-e', 'Architecture', 'Boolq', 'Compute dtype', 'Double Quant', 'Group Size', 'HellaSwag', 'Lambada', 'Hub License', 'Hub \u2764\ufe0f', 'MMLU', '#Size (G)', 'Openboo",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "type_query",
+          "label": "Quantization types",
+          "type": "list[Literal['\ud83d\udfe2 GPTQ', '\u2b50 AQLM', '\ud83d\udfe9 AWQ', '\ud83d\udd37 llama.cpp', '\ud83d\udd35 bitsandbytes', '\ud83c\udf52 AutoRound', '? ?']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "precision_query",
+          "label": "Weight precision",
+          "type": "list[Literal['2bit', '3bit', '4bit', '8bit', '16bit', '32bit', '?']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "size_query",
+          "label": "Model parameters (in billions of parameters)",
+          "type": "list[Literal['?', '~1.5', '~3', '~7', '~13', '~35', '~60', '70+']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "params_query",
+          "label": "Model sizes (GB, int4)",
+          "type": "list[Literal['?', '~4', '~8', '~16', '~36', '~48', '~64', '>72']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "hide_models",
+          "label": "parameter_44",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "query",
+          "label": "parameter_14",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "compute_dtype",
+          "label": "Compute Dtype",
+          "type": "Literal['All', 'float16', 'bfloat16', 'int8', 'float32', '?']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "weight_dtype",
+          "label": "Weight Dtype",
+          "type": "Literal['All', 'int2', 'int3', 'int4', 'int8', 'nf4', 'fp4', 'float16', 'bfloat16', 'float32', '?']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "double_quant",
+          "label": "Double Quant",
+          "type": "Literal['All', 'True', 'False']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "group_dtype",
+          "label": "Group Size",
+          "type": "Literal['-1', '1024', '256', '128', '64', '32', 'All']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_42",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/update_table_8",
+      "parameters": [
+        {
+          "name": "hidden_df",
+          "label": "parameter_43",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "name": "columns",
+          "label": "Select columns to show",
+          "type": "list[Literal['T', 'Average \u2b06\ufe0f', 'ARC-c', 'ARC-e', 'Architecture', 'Boolq', 'Compute dtype', 'Double Quant', 'Group Size', 'HellaSwag', 'Lambada', 'Hub License', 'Hub \u2764\ufe0f', 'MMLU', '#Size (G)', 'Openboo",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "type_query",
+          "label": "Quantization types",
+          "type": "list[Literal['\ud83d\udfe2 GPTQ', '\u2b50 AQLM', '\ud83d\udfe9 AWQ', '\ud83d\udd37 llama.cpp', '\ud83d\udd35 bitsandbytes', '\ud83c\udf52 AutoRound', '? ?']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "precision_query",
+          "label": "Weight precision",
+          "type": "list[Literal['2bit', '3bit', '4bit', '8bit', '16bit', '32bit', '?']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "size_query",
+          "label": "Model parameters (in billions of parameters)",
+          "type": "list[Literal['?', '~1.5', '~3', '~7', '~13', '~35', '~60', '70+']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "params_query",
+          "label": "Model sizes (GB, int4)",
+          "type": "list[Literal['?', '~4', '~8', '~16', '~36', '~48', '~64', '>72']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "hide_models",
+          "label": "parameter_44",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "query",
+          "label": "parameter_14",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "compute_dtype",
+          "label": "Compute Dtype",
+          "type": "Literal['All', 'float16', 'bfloat16', 'int8', 'float32', '?']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "weight_dtype",
+          "label": "Weight Dtype",
+          "type": "Literal['All', 'int2', 'int3', 'int4', 'int8', 'nf4', 'fp4', 'float16', 'bfloat16', 'float32', '?']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "double_quant",
+          "label": "Double Quant",
+          "type": "Literal['All', 'True', 'False']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "group_dtype",
+          "label": "Group Size",
+          "type": "Literal['-1', '1024', '256', '128', '64', '32', 'All']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_42",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/update_table_9",
+      "parameters": [
+        {
+          "name": "hidden_df",
+          "label": "parameter_43",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "name": "columns",
+          "label": "Select columns to show",
+          "type": "list[Literal['T', 'Average \u2b06\ufe0f', 'ARC-c', 'ARC-e', 'Architecture', 'Boolq', 'Compute dtype', 'Double Quant', 'Group Size', 'HellaSwag', 'Lambada', 'Hub License', 'Hub \u2764\ufe0f', 'MMLU', '#Size (G)', 'Openboo",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "type_query",
+          "label": "Quantization types",
+          "type": "list[Literal['\ud83d\udfe2 GPTQ', '\u2b50 AQLM', '\ud83d\udfe9 AWQ', '\ud83d\udd37 llama.cpp', '\ud83d\udd35 bitsandbytes', '\ud83c\udf52 AutoRound', '? ?']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "precision_query",
+          "label": "Weight precision",
+          "type": "list[Literal['2bit', '3bit', '4bit', '8bit', '16bit', '32bit', '?']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "size_query",
+          "label": "Model parameters (in billions of parameters)",
+          "type": "list[Literal['?', '~1.5', '~3', '~7', '~13', '~35', '~60', '70+']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "params_query",
+          "label": "Model sizes (GB, int4)",
+          "type": "list[Literal['?', '~4', '~8', '~16', '~36', '~48', '~64', '>72']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "hide_models",
+          "label": "parameter_44",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "query",
+          "label": "parameter_14",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "compute_dtype",
+          "label": "Compute Dtype",
+          "type": "Literal['All', 'float16', 'bfloat16', 'int8', 'float32', '?']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "weight_dtype",
+          "label": "Weight Dtype",
+          "type": "Literal['All', 'int2', 'int3', 'int4', 'int8', 'nf4', 'fp4', 'float16', 'bfloat16', 'float32', '?']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "double_quant",
+          "label": "Double Quant",
+          "type": "Literal['All', 'True', 'False']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "group_dtype",
+          "label": "Group Size",
+          "type": "Literal['-1', '1024', '256', '128', '64', '32', 'All']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_42",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/update_table_10",
+      "parameters": [
+        {
+          "name": "hidden_df",
+          "label": "parameter_43",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "name": "columns",
+          "label": "Select columns to show",
+          "type": "list[Literal['T', 'Average \u2b06\ufe0f', 'ARC-c', 'ARC-e', 'Architecture', 'Boolq', 'Compute dtype', 'Double Quant', 'Group Size', 'HellaSwag', 'Lambada', 'Hub License', 'Hub \u2764\ufe0f', 'MMLU', '#Size (G)', 'Openboo",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "type_query",
+          "label": "Quantization types",
+          "type": "list[Literal['\ud83d\udfe2 GPTQ', '\u2b50 AQLM', '\ud83d\udfe9 AWQ', '\ud83d\udd37 llama.cpp', '\ud83d\udd35 bitsandbytes', '\ud83c\udf52 AutoRound', '? ?']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "precision_query",
+          "label": "Weight precision",
+          "type": "list[Literal['2bit', '3bit', '4bit', '8bit', '16bit', '32bit', '?']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "size_query",
+          "label": "Model parameters (in billions of parameters)",
+          "type": "list[Literal['?', '~1.5', '~3', '~7', '~13', '~35', '~60', '70+']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "params_query",
+          "label": "Model sizes (GB, int4)",
+          "type": "list[Literal['?', '~4', '~8', '~16', '~36', '~48', '~64', '>72']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "hide_models",
+          "label": "parameter_44",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "query",
+          "label": "parameter_14",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "compute_dtype",
+          "label": "Compute Dtype",
+          "type": "Literal['All', 'float16', 'bfloat16', 'int8', 'float32', '?']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "weight_dtype",
+          "label": "Weight Dtype",
+          "type": "Literal['All', 'int2', 'int3', 'int4', 'int8', 'nf4', 'fp4', 'float16', 'bfloat16', 'float32', '?']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "double_quant",
+          "label": "Double Quant",
+          "type": "Literal['All', 'True', 'False']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "group_dtype",
+          "label": "Group Size",
+          "type": "Literal['-1', '1024', '256', '128', '64', '32', 'All']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_42",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/check_model_size_and_submit",
+      "parameters": [
+        {
+          "name": "model",
+          "label": "Model name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "revision",
+          "label": "Revision commit",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "private",
+          "label": "Private",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "compute_dtype",
+          "label": "Quantization Scheme",
+          "type": "Literal['MXFP4', 'NVFP4', 'INT4 (W4A16)']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "model_size_input",
+          "label": "Model size (billions of parameters, e.g. 7, 13, 70)",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_73",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "Model size (billions of parameters, e.g. 7, 13, 70)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "value_74",
+          "type": "str",
+          "component": "Html"
+        }
+      ]
+    },
+    {
+      "name": "/confirm_submit_with_size",
+      "parameters": [
+        {
+          "name": "model",
+          "label": "Model name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "revision",
+          "label": "Revision commit",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "private",
+          "label": "Private",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "compute_dtype",
+          "label": "Quantization Scheme",
+          "type": "Literal['MXFP4', 'NVFP4', 'INT4 (W4A16)']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "model_size_input",
+          "label": "Model size (billions of parameters, e.g. 7, 13, 70)",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_73",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "Model size (billions of parameters, e.g. 7, 13, 70)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "value_74",
+          "type": "str",
+          "component": "Html"
+        }
+      ]
+    },
+    {
+      "name": "/check_model_size_and_submit_1",
+      "parameters": [
+        {
+          "name": "model",
+          "label": "Model name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "revision",
+          "label": "Revision commit",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "private",
+          "label": "Private",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "compute_dtype",
+          "label": "Compute dtype",
+          "type": "Literal['INT4 (W4A16)']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "model_size_input",
+          "label": "Model size (billions of parameters, e.g. 7, 13, 70)",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_105",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "Model size (billions of parameters, e.g. 7, 13, 70)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "value_106",
+          "type": "str",
+          "component": "Html"
+        }
+      ]
+    },
+    {
+      "name": "/confirm_submit_with_size_1",
+      "parameters": [
+        {
+          "name": "model",
+          "label": "Model name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "revision",
+          "label": "Revision commit",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "private",
+          "label": "Private",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "compute_dtype",
+          "label": "Compute dtype",
+          "type": "Literal['INT4 (W4A16)']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "model_size_input",
+          "label": "Model size (billions of parameters, e.g. 7, 13, 70)",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_105",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "Model size (billions of parameters, e.g. 7, 13, 70)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "value_106",
+          "type": "str",
+          "component": "Html"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/select",
+  "_api_verified": true
+}

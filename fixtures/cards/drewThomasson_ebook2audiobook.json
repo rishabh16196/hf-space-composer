@@ -1,0 +1,5511 @@
+{
+  "space_id": "drewThomasson/ebook2audiobook",
+  "title": "Ebook2audiobook v26.4.16",
+  "emoji": "\ud83d\ude80",
+  "description": "Turn any ebook into audiobook, 1107+ languages supported!",
+  "input_schema": {
+    "session": {
+      "type": "str",
+      "description": "",
+      "required": true,
+      "component": "Textbox"
+    }
+  },
+  "output_schema": {
+    "value_123": {
+      "type": "str",
+      "description": "value_123",
+      "component": "Textbox"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "",
+  "sdk": "docker",
+  "tags": [
+    "docker",
+    "region:us"
+  ],
+  "likes": 303,
+  "last_modified": "2026-04-20 00:29:54+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/lambda",
+      "parameters": [
+        {
+          "name": "session",
+          "label": "",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_123",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_1",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/lambda_2",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/lambda_3",
+      "parameters": [
+        {
+          "name": "session",
+          "label": "",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_130",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_4",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/lambda_5",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/lambda_6",
+      "parameters": [
+        {
+          "name": "session",
+          "label": "",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_137",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_7",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/lambda_8",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/lambda_9",
+      "parameters": [
+        {
+          "name": "session",
+          "label": "",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_144",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_10",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/lambda_11",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/lambda_12",
+      "parameters": [
+        {
+          "name": "session",
+          "label": "",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_151",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_13",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/lambda_14",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/lambda_15",
+      "parameters": [
+        {
+          "name": "session",
+          "label": "",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_158",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_16",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/lambda_17",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/lambda_18",
+      "parameters": [
+        {
+          "name": "session",
+          "label": "",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_165",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_19",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/lambda_20",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/lambda_21",
+      "parameters": [
+        {
+          "name": "session",
+          "label": "",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_172",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_22",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/lambda_23",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/lambda_24",
+      "parameters": [
+        {
+          "name": "session",
+          "label": "",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_179",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_25",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/lambda_26",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/lambda_27",
+      "parameters": [
+        {
+          "name": "session",
+          "label": "",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_186",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_28",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/lambda_29",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/lambda_30",
+      "parameters": [
+        {
+          "name": "session",
+          "label": "",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_193",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_31",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/lambda_32",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/lambda_33",
+      "parameters": [
+        {
+          "name": "session",
+          "label": "",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_200",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_34",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/lambda_35",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/lambda_36",
+      "parameters": [
+        {
+          "name": "session",
+          "label": "",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_207",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_37",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/lambda_38",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/lambda_39",
+      "parameters": [
+        {
+          "name": "session",
+          "label": "",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_214",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_40",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/lambda_41",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/lambda_42",
+      "parameters": [
+        {
+          "name": "session",
+          "label": "",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_221",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_43",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/lambda_44",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/change_gr_ebook_src",
+      "parameters": [
+        {
+          "name": "session_id",
+          "label": "",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "ebook_mode",
+          "label": "",
+          "type": "Literal['single', 'directory', 'text']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "data",
+          "label": "-",
+          "type": "filepath",
+          "component": "File"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_226",
+          "type": "str",
+          "component": "Html"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_45",
+      "parameters": [
+        {
+          "name": "s",
+          "label": "",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Text Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "",
+          "type": "Literal['single', 'directory', 'text']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Chapters Preview",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "",
+          "type": "Literal['ara', 'ben', 'zho', 'eng', 'fra', 'deu', 'hin', 'hun', 'ind', 'ita', 'jav', 'jpn', 'kor', 'fas', 'pol', 'por', 'rus', 'spa', 'tam', 'tel', 'tur', 'yor', 'zzz', 'abi', 'ace', 'aca', 'acn', 'ac",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Upload Voice",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "label": "Voices",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "",
+          "type": "Literal['cpu', 'cuda', 'mps', 'rocm', 'xpu', 'jetson']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Fine Tuned Preset Models",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Upload ZIP File",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "label": "",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Format",
+          "type": "Literal['aac', 'flac', 'mp3', 'm4b', 'm4a', 'mp4', 'mov', 'ogg', 'wav', 'webm']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Channel",
+          "type": "Literal['mono', 'stereo']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Split File",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "",
+          "type": "Literal['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "value_226",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "value_238",
+          "type": "int",
+          "component": "Number"
+        }
+      ]
+    },
+    {
+      "name": "/change_gr_ebook_textarea",
+      "parameters": [
+        {
+          "name": "session_id",
+          "label": "",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "ebook_textarea",
+          "label": "Text Prompt",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/change_gr_ebook_mode",
+      "parameters": [
+        {
+          "name": "session_id",
+          "label": "",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "val",
+          "label": "",
+          "type": "Literal['single', 'directory', 'text']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "-",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "label": "Text Prompt",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_46",
+      "parameters": [
+        {
+          "name": "session_id",
+          "label": "",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "val",
+          "label": "Chapters Preview",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/disable_on_voice_upload",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "-",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "label": "Text Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "",
+          "type": "Literal['single', 'directory', 'text']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "",
+          "type": "Literal['ara', 'ben', 'zho', 'eng', 'fra', 'deu', 'hin', 'hun', 'ind', 'ita', 'jav', 'jpn', 'kor', 'fas', 'pol', 'por', 'rus', 'spa', 'tam', 'tel', 'tur', 'yor', 'zzz', 'abi', 'ace', 'aca', 'acn', 'ac",
+          "component": "Dropdown"
+        },
+        {
+          "label": "",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Fine Tuned Preset Models",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Upload ZIP File",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "label": "",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/change_gr_voice_file",
+      "parameters": [
+        {
+          "name": "session_id",
+          "label": "",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "f",
+          "label": "Upload Voice",
+          "type": "filepath",
+          "component": "File"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Voices",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_47",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Upload Voice",
+          "type": "filepath",
+          "component": "File"
+        }
+      ]
+    },
+    {
+      "name": "/enable_on_voice_upload",
+      "parameters": [
+        {
+          "name": "session_id",
+          "label": "",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "-",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "label": "Text Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "",
+          "type": "Literal['single', 'directory', 'text']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "",
+          "type": "Literal['ara', 'ben', 'zho', 'eng', 'fra', 'deu', 'hin', 'hun', 'ind', 'ita', 'jav', 'jpn', 'kor', 'fas', 'pol', 'por', 'rus', 'spa', 'tam', 'tel', 'tur', 'yor', 'zzz', 'abi', 'ace', 'aca', 'acn', 'ac",
+          "component": "Dropdown"
+        },
+        {
+          "label": "",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Fine Tuned Preset Models",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Upload ZIP File",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "label": "",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/change_gr_voice_list",
+      "parameters": [
+        {
+          "name": "session_id",
+          "label": "",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "selected",
+          "label": "Voices",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_23",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ]
+    },
+    {
+      "name": "/click_gr_voice_del_btn",
+      "parameters": [
+        {
+          "name": "session_id",
+          "label": "",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "selected",
+          "label": "Voices",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_226",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "value_228",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/change_gr_device",
+      "parameters": [
+        {
+          "name": "session_id",
+          "label": "",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "selected",
+          "label": "",
+          "type": "Literal['cpu', 'cuda', 'mps', 'rocm', 'xpu', 'jetson']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/change_gr_language",
+      "parameters": [
+        {
+          "name": "session_id",
+          "label": "",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "selected",
+          "label": "",
+          "type": "Literal['ara', 'ben', 'zho', 'eng', 'fra', 'deu', 'hin', 'hun', 'ind', 'ita', 'jav', 'jpn', 'kor', 'fas', 'pol', 'por', 'rus', 'spa', 'tam', 'tel', 'tur', 'yor', 'zzz', 'abi', 'ace', 'aca', 'acn', 'ac",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "",
+          "type": "Literal['ara', 'ben', 'zho', 'eng', 'fra', 'deu', 'hin', 'hun', 'ind', 'ita', 'jav', 'jpn', 'kor', 'fas', 'pol', 'por', 'rus', 'spa', 'tam', 'tel', 'tur', 'yor', 'zzz', 'abi', 'ace', 'aca', 'acn', 'ac",
+          "component": "Dropdown"
+        },
+        {
+          "label": "",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Fine Tuned Preset Models",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/update_gr_voice_list",
+      "parameters": [
+        {
+          "name": "session_id",
+          "label": "",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Voices",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/change_gr_tts_engine_list",
+      "parameters": [
+        {
+          "name": "session_id",
+          "label": "",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "engine",
+          "label": "",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_34",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "Fine Tuned Preset Models",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Upload ZIP File",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "label": "",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/update_gr_voice_list_1",
+      "parameters": [
+        {
+          "name": "session_id",
+          "label": "",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Voices",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/change_gr_fine_tuned_list",
+      "parameters": [
+        {
+          "name": "session_id",
+          "label": "",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "selected",
+          "label": "Fine Tuned Preset Models",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/update_gr_voice_list_2",
+      "parameters": [
+        {
+          "name": "session_id",
+          "label": "",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Voices",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/disable_on_custom_upload",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "-",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "label": "Text Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "",
+          "type": "Literal['single', 'directory', 'text']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "",
+          "type": "Literal['ara', 'ben', 'zho', 'eng', 'fra', 'deu', 'hin', 'hun', 'ind', 'ita', 'jav', 'jpn', 'kor', 'fas', 'pol', 'por', 'rus', 'spa', 'tam', 'tel', 'tur', 'yor', 'zzz', 'abi', 'ace', 'aca', 'acn', 'ac",
+          "component": "Dropdown"
+        },
+        {
+          "label": "",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Fine Tuned Preset Models",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Upload Voice",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "label": "",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/change_gr_custom_model_file",
+      "parameters": [
+        {
+          "name": "session_id",
+          "label": "",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "custom_file",
+          "label": "Upload ZIP File",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "name": "tts_engine",
+          "label": "",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Upload ZIP File",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "label": "",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/update_gr_voice_list_3",
+      "parameters": [
+        {
+          "name": "session_id",
+          "label": "",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Voices",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/enable_on_custom_upload",
+      "parameters": [
+        {
+          "name": "custom_model",
+          "label": "",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "ebook_data",
+          "label": "-",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "name": "ebook_textarea",
+          "label": "Text Prompt",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "-",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "label": "Text Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "",
+          "type": "Literal['single', 'directory', 'text']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "",
+          "type": "Literal['ara', 'ben', 'zho', 'eng', 'fra', 'deu', 'hin', 'hun', 'ind', 'ita', 'jav', 'jpn', 'kor', 'fas', 'pol', 'por', 'rus', 'spa', 'tam', 'tel', 'tur', 'yor', 'zzz', 'abi', 'ace', 'aca', 'acn', 'ac",
+          "component": "Dropdown"
+        },
+        {
+          "label": "",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Fine Tuned Preset Models",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Upload Voice",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "label": "",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/change_gr_custom_model_list",
+      "parameters": [
+        {
+          "name": "session_id",
+          "label": "",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "selected",
+          "label": "",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Fine Tuned Preset Models",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Voices",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/click_gr_custom_model_del_btn",
+      "parameters": [
+        {
+          "name": "session_id",
+          "label": "",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "selected",
+          "label": "",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_226",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "value_228",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/change_gr_output_format_list",
+      "parameters": [
+        {
+          "name": "session_id",
+          "label": "",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "val",
+          "label": "Format",
+          "type": "Literal['aac', 'flac', 'mp3', 'm4b', 'm4a', 'mp4', 'mov', 'ogg', 'wav', 'webm']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/change_gr_output_channel_list",
+      "parameters": [
+        {
+          "name": "session_id",
+          "label": "",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "val",
+          "label": "Channel",
+          "type": "Literal['mono', 'stereo']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/change_gr_output_split",
+      "parameters": [
+        {
+          "name": "session_id",
+          "label": "",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "val",
+          "label": "Split File",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/lambda_48",
+      "parameters": [
+        {
+          "name": "session_id",
+          "label": "",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "val",
+          "label": "",
+          "type": "Literal['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/click_gr_session_switch_btn",
+      "parameters": [
+        {
+          "name": "session_id",
+          "label": "",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_233",
+          "type": "str | float | bool | list | dict",
+          "component": "Json"
+        },
+        {
+          "label": "",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_49",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Text Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "",
+          "type": "Literal['single', 'directory', 'text']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Chapters Preview",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "",
+          "type": "Literal['ara', 'ben', 'zho', 'eng', 'fra', 'deu', 'hin', 'hun', 'ind', 'ita', 'jav', 'jpn', 'kor', 'fas', 'pol', 'por', 'rus', 'spa', 'tam', 'tel', 'tur', 'yor', 'zzz', 'abi', 'ace', 'aca', 'acn', 'ac",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Upload Voice",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "label": "Voices",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "",
+          "type": "Literal['cpu', 'cuda', 'mps', 'rocm', 'xpu', 'jetson']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Fine Tuned Preset Models",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Upload ZIP File",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "label": "",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Format",
+          "type": "Literal['aac', 'flac', 'mp3', 'm4b', 'm4a', 'mp4', 'mov', 'ogg', 'wav', 'webm']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Channel",
+          "type": "Literal['mono', 'stereo']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Split File",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "",
+          "type": "Literal['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12']",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_50",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/enable_components",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Text Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "",
+          "type": "Literal['single', 'directory', 'text']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Chapters Preview",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "",
+          "type": "Literal['ara', 'ben', 'zho', 'eng', 'fra', 'deu', 'hin', 'hun', 'ind', 'ita', 'jav', 'jpn', 'kor', 'fas', 'pol', 'por', 'rus', 'spa', 'tam', 'tel', 'tur', 'yor', 'zzz', 'abi', 'ace', 'aca', 'acn', 'ac",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Upload Voice",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "label": "Voices",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "",
+          "type": "Literal['cpu', 'cuda', 'mps', 'rocm', 'xpu', 'jetson']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Fine Tuned Preset Models",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Upload ZIP File",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "label": "",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Format",
+          "type": "Literal['aac', 'flac', 'mp3', 'm4b', 'm4a', 'mp4', 'mov', 'ogg', 'wav', 'webm']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Channel",
+          "type": "Literal['mono', 'stereo']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Split File",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "",
+          "type": "Literal['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "value_226",
+          "type": "str",
+          "component": "Html"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_51",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/change_gr_playback_time",
+      "parameters": [
+        {
+          "name": "session_id",
+          "label": "",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "time",
+          "label": "",
+          "type": "float",
+          "component": "Number"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/toggle_audiobook_files",
+      "parameters": [
+        {
+          "name": "session_id",
+          "label": "",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "audiobook",
+          "label": "",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "",
+          "type": "list[filepath]",
+          "component": "File"
+        }
+      ]
+    },
+    {
+      "name": "/change_gr_audiobook_list",
+      "parameters": [
+        {
+          "name": "session_id",
+          "label": "",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "selected",
+          "label": "",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/update_gr_audiobook_player",
+      "parameters": [
+        {
+          "name": "session_id",
+          "label": "",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "label": "",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_52",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "",
+          "type": "list[filepath]",
+          "component": "File"
+        }
+      ]
+    },
+    {
+      "name": "/click_gr_audiobook_del_btn",
+      "parameters": [
+        {
+          "name": "session_id",
+          "label": "",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "selected",
+          "label": "",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_226",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "value_228",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_53",
+      "parameters": [
+        {
+          "name": "session_id",
+          "label": "",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "val",
+          "label": "Temperature",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/lambda_54",
+      "parameters": [
+        {
+          "name": "session_id",
+          "label": "",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "val",
+          "label": "Length Penalty",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "val2",
+          "label": "Number Beams",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/lambda_55",
+      "parameters": [
+        {
+          "name": "session_id",
+          "label": "",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "val",
+          "label": "Number Beams",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "val2",
+          "label": "Length Penalty",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/lambda_56",
+      "parameters": [
+        {
+          "name": "session_id",
+          "label": "",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "val",
+          "label": "Repetition Penalty",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/lambda_57",
+      "parameters": [
+        {
+          "name": "session_id",
+          "label": "",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "val",
+          "label": "Top-k Sampling",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/lambda_58",
+      "parameters": [
+        {
+          "name": "session_id",
+          "label": "",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "val",
+          "label": "Top-p Sampling",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/lambda_59",
+      "parameters": [
+        {
+          "name": "session_id",
+          "label": "",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "val",
+          "label": "Speed",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/lambda_60",
+      "parameters": [
+        {
+          "name": "session_id",
+          "label": "",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "val",
+          "label": "Enable Text Splitting",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/lambda_61",
+      "parameters": [
+        {
+          "name": "session_id",
+          "label": "",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "val",
+          "label": "Text Temperature",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/lambda_62",
+      "parameters": [
+        {
+          "name": "session_id",
+          "label": "",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "val",
+          "label": "Waveform Temperature",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/update_gr_save_session",
+      "parameters": [
+        {
+          "name": "session_id",
+          "label": "",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_235",
+          "type": "str | float | bool | list | dict",
+          "component": "Json"
+        },
+        {
+          "label": "",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/disable_components",
+      "parameters": [
+        {
+          "name": "session_id",
+          "label": "",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Text Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "",
+          "type": "Literal['single', 'directory', 'text']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Chapters Preview",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "",
+          "type": "Literal['ara', 'ben', 'zho', 'eng', 'fra', 'deu', 'hin', 'hun', 'ind', 'ita', 'jav', 'jpn', 'kor', 'fas', 'pol', 'por', 'rus', 'spa', 'tam', 'tel', 'tur', 'yor', 'zzz', 'abi', 'ace', 'aca', 'acn', 'ac",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Upload Voice",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "label": "Voices",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "",
+          "type": "Literal['cpu', 'cuda', 'mps', 'rocm', 'xpu', 'jetson']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Fine Tuned Preset Models",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Upload ZIP File",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "label": "",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Format",
+          "type": "Literal['aac', 'flac', 'mp3', 'm4b', 'm4a', 'mp4', 'mov', 'ogg', 'wav', 'webm']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Channel",
+          "type": "Literal['mono', 'stereo']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Split File",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "",
+          "type": "Literal['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12']",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/check_override_ebook",
+      "parameters": [
+        {
+          "name": "session_id",
+          "label": "",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "ebook_mode",
+          "label": "",
+          "type": "Literal['single', 'directory', 'text']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "ebook_data",
+          "label": "-",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "name": "ebook_textarea",
+          "label": "Text Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "blocks_preview",
+          "label": "Chapters Preview",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "event",
+          "label": "parameter_236",
+          "type": "int",
+          "component": "Number"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_226",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "value_236",
+          "type": "int",
+          "component": "Number"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_63",
+      "parameters": [
+        {
+          "name": "s",
+          "label": "",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Text Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "",
+          "type": "Literal['single', 'directory', 'text']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Chapters Preview",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "",
+          "type": "Literal['ara', 'ben', 'zho', 'eng', 'fra', 'deu', 'hin', 'hun', 'ind', 'ita', 'jav', 'jpn', 'kor', 'fas', 'pol', 'por', 'rus', 'spa', 'tam', 'tel', 'tur', 'yor', 'zzz', 'abi', 'ace', 'aca', 'acn', 'ac",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Upload Voice",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "label": "Voices",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "",
+          "type": "Literal['cpu', 'cuda', 'mps', 'rocm', 'xpu', 'jetson']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Fine Tuned Preset Models",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Upload ZIP File",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "label": "",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Format",
+          "type": "Literal['aac', 'flac', 'mp3', 'm4b', 'm4a', 'mp4', 'mov', 'ogg', 'wav', 'webm']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Channel",
+          "type": "Literal['mono', 'stereo']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Split File",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "",
+          "type": "Literal['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "value_226",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "value_238",
+          "type": "int",
+          "component": "Number"
+        }
+      ]
+    },
+    {
+      "name": "/click_gr_override_cancel_btn",
+      "parameters": [
+        {
+          "name": "session_id",
+          "label": "",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_226",
+          "type": "str",
+          "component": "Html"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_64",
+      "parameters": [
+        {
+          "name": "s",
+          "label": "",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Text Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "",
+          "type": "Literal['single', 'directory', 'text']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Chapters Preview",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "",
+          "type": "Literal['ara', 'ben', 'zho', 'eng', 'fra', 'deu', 'hin', 'hun', 'ind', 'ita', 'jav', 'jpn', 'kor', 'fas', 'pol', 'por', 'rus', 'spa', 'tam', 'tel', 'tur', 'yor', 'zzz', 'abi', 'ace', 'aca', 'acn', 'ac",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Upload Voice",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "label": "Voices",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "",
+          "type": "Literal['cpu', 'cuda', 'mps', 'rocm', 'xpu', 'jetson']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Fine Tuned Preset Models",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Upload ZIP File",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "label": "",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Format",
+          "type": "Literal['aac', 'flac', 'mp3', 'm4b', 'm4a', 'mp4', 'mov', 'ogg', 'wav', 'webm']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Channel",
+          "type": "Literal['mono', 'stereo']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Split File",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "",
+          "type": "Literal['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "value_226",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "value_238",
+          "type": "int",
+          "component": "Number"
+        }
+      ]
+    },
+    {
+      "name": "/click_gr_override_confirm_btn",
+      "parameters": [
+        {
+          "name": "session_id",
+          "label": "",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "event",
+          "label": "parameter_236",
+          "type": "int",
+          "component": "Number"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_226",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "value_236",
+          "type": "int",
+          "component": "Number"
+        },
+        {
+          "label": "",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "",
+          "type": "list[filepath]",
+          "component": "File"
+        }
+      ]
+    },
+    {
+      "name": "/disable_components_1",
+      "parameters": [
+        {
+          "name": "session_id",
+          "label": "",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Text Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "",
+          "type": "Literal['single', 'directory', 'text']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Chapters Preview",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "",
+          "type": "Literal['ara', 'ben', 'zho', 'eng', 'fra', 'deu', 'hin', 'hun', 'ind', 'ita', 'jav', 'jpn', 'kor', 'fas', 'pol', 'por', 'rus', 'spa', 'tam', 'tel', 'tur', 'yor', 'zzz', 'abi', 'ace', 'aca', 'acn', 'ac",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Upload Voice",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "label": "Voices",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "",
+          "type": "Literal['cpu', 'cuda', 'mps', 'rocm', 'xpu', 'jetson']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Fine Tuned Preset Models",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Upload ZIP File",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "label": "",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Format",
+          "type": "Literal['aac', 'flac', 'mp3', 'm4b', 'm4a', 'mp4', 'mov', 'ogg', 'wav', 'webm']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Channel",
+          "type": "Literal['mono', 'stereo']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Split File",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "",
+          "type": "Literal['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12']",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_65",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/start_conversion",
+      "parameters": [
+        {
+          "name": "session_id",
+          "label": "",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "device",
+          "label": "",
+          "type": "Literal['cpu', 'cuda', 'mps', 'rocm', 'xpu', 'jetson']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "ebook_mode",
+          "label": "",
+          "type": "Literal['single', 'directory', 'text']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "ebook_src",
+          "label": "-",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "name": "ebook_textarea",
+          "label": "Text Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "blocks_preview",
+          "label": "Chapters Preview",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "tts_engine",
+          "label": "",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "language",
+          "label": "",
+          "type": "Literal['ara', 'ben', 'zho', 'eng', 'fra', 'deu', 'hin', 'hun', 'ind', 'ita', 'jav', 'jpn', 'kor', 'fas', 'pol', 'por', 'rus', 'spa', 'tam', 'tel', 'tur', 'yor', 'zzz', 'abi', 'ace', 'aca', 'acn', 'ac",
+          "component": "Dropdown"
+        },
+        {
+          "name": "voice",
+          "label": "Voices",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "custom_model",
+          "label": "",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "fine_tuned",
+          "label": "Fine Tuned Preset Models",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "output_format",
+          "label": "Format",
+          "type": "Literal['aac', 'flac', 'mp3', 'm4b', 'm4a', 'mp4', 'mov', 'ogg', 'wav', 'webm']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "output_channel",
+          "label": "Channel",
+          "type": "Literal['mono', 'stereo']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "xtts_temperature",
+          "label": "Temperature",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "xtts_length_penalty",
+          "label": "Length Penalty",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "xtts_num_beams",
+          "label": "Number Beams",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "xtts_repetition_penalty",
+          "label": "Repetition Penalty",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "xtts_top_k",
+          "label": "Top-k Sampling",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "xtts_top_p",
+          "label": "Top-p Sampling",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "xtts_speed",
+          "label": "Speed",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "xtts_enable_text_splitting",
+          "label": "Enable Text Splitting",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "bark_text_temp",
+          "label": "Text Temperature",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "bark_waveform_temp",
+          "label": "Waveform Temperature",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "output_split",
+          "label": "Split File",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "output_split_hours",
+          "label": "",
+          "type": "Literal['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/edit_blocks",
+      "parameters": [
+        {
+          "name": "session_id",
+          "label": "",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_111",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_107",
+          "type": "int",
+          "component": "Number"
+        },
+        {
+          "label": "",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "value_120",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "value_123",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "value_127",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "value_130",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "value_134",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "value_137",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "value_141",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "value_144",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "value_148",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "value_151",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "value_155",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "value_158",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "value_162",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "value_165",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "value_169",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "value_172",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "value_176",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "value_179",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "value_183",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "value_186",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "value_190",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "value_193",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "value_197",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "value_200",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "value_204",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "value_207",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "value_211",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "value_214",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "value_218",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "value_221",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "value_114",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/refresh_interface",
+      "parameters": [
+        {
+          "name": "session_id",
+          "label": "",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_226",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "-",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "label": "Text Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "",
+          "type": "Literal['cpu', 'cuda', 'mps', 'rocm', 'xpu', 'jetson']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Voices",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/check_override_ebook_1",
+      "parameters": [
+        {
+          "name": "session_id",
+          "label": "",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "ebook_mode",
+          "label": "",
+          "type": "Literal['single', 'directory', 'text']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "ebook_data",
+          "label": "-",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "name": "ebook_textarea",
+          "label": "Text Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "blocks_preview",
+          "label": "Chapters Preview",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "event",
+          "label": "parameter_236",
+          "type": "int",
+          "component": "Number"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_226",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "value_236",
+          "type": "int",
+          "component": "Number"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_66",
+      "parameters": [
+        {
+          "name": "s",
+          "label": "",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Text Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "",
+          "type": "Literal['single', 'directory', 'text']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Chapters Preview",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "",
+          "type": "Literal['ara', 'ben', 'zho', 'eng', 'fra', 'deu', 'hin', 'hun', 'ind', 'ita', 'jav', 'jpn', 'kor', 'fas', 'pol', 'por', 'rus', 'spa', 'tam', 'tel', 'tur', 'yor', 'zzz', 'abi', 'ace', 'aca', 'acn', 'ac",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Upload Voice",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "label": "Voices",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "",
+          "type": "Literal['cpu', 'cuda', 'mps', 'rocm', 'xpu', 'jetson']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Fine Tuned Preset Models",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Upload ZIP File",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "label": "",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Format",
+          "type": "Literal['aac', 'flac', 'mp3', 'm4b', 'm4a', 'mp4', 'mov', 'ogg', 'wav', 'webm']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Channel",
+          "type": "Literal['mono', 'stereo']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Split File",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "",
+          "type": "Literal['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "value_226",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "value_238",
+          "type": "int",
+          "component": "Number"
+        }
+      ]
+    },
+    {
+      "name": "/click_gr_blocks_cancel_btn",
+      "parameters": [
+        {
+          "name": "session_id",
+          "label": "",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "page",
+          "label": "parameter_107",
+          "type": "int",
+          "component": "Number"
+        },
+        {
+          "name": "param_4",
+          "label": "",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_5",
+          "label": "",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_6",
+          "label": "",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_7",
+          "label": "",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_8",
+          "label": "",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_9",
+          "label": "",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_10",
+          "label": "",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_11",
+          "label": "",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_12",
+          "label": "",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_13",
+          "label": "",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_14",
+          "label": "",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_15",
+          "label": "",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_16",
+          "label": "",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_17",
+          "label": "",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_18",
+          "label": "",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_19",
+          "label": "parameter_120",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_20",
+          "label": "parameter_127",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_21",
+          "label": "parameter_134",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_22",
+          "label": "parameter_141",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_23",
+          "label": "parameter_148",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_24",
+          "label": "parameter_155",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_25",
+          "label": "parameter_162",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_26",
+          "label": "parameter_169",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_27",
+          "label": "parameter_176",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_28",
+          "label": "parameter_183",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_29",
+          "label": "parameter_190",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_30",
+          "label": "parameter_197",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_31",
+          "label": "parameter_204",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_32",
+          "label": "parameter_211",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_33",
+          "label": "parameter_218",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_34",
+          "label": "parameter_123",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_35",
+          "label": "parameter_130",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_36",
+          "label": "parameter_137",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_37",
+          "label": "parameter_144",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_38",
+          "label": "parameter_151",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_39",
+          "label": "parameter_158",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_40",
+          "label": "parameter_165",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_41",
+          "label": "parameter_172",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_42",
+          "label": "parameter_179",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_43",
+          "label": "parameter_186",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_44",
+          "label": "parameter_193",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_45",
+          "label": "parameter_200",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_46",
+          "label": "parameter_207",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_47",
+          "label": "parameter_214",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_48",
+          "label": "parameter_221",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Text Prompt",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_67",
+      "parameters": [
+        {
+          "name": "s",
+          "label": "",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Text Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "",
+          "type": "Literal['single', 'directory', 'text']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Chapters Preview",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "",
+          "type": "Literal['ara', 'ben', 'zho', 'eng', 'fra', 'deu', 'hin', 'hun', 'ind', 'ita', 'jav', 'jpn', 'kor', 'fas', 'pol', 'por', 'rus', 'spa', 'tam', 'tel', 'tur', 'yor', 'zzz', 'abi', 'ace', 'aca', 'acn', 'ac",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Upload Voice",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "label": "Voices",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "",
+          "type": "Literal['cpu', 'cuda', 'mps', 'rocm', 'xpu', 'jetson']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Fine Tuned Preset Models",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Upload ZIP File",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "label": "",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Format",
+          "type": "Literal['aac', 'flac', 'mp3', 'm4b', 'm4a', 'mp4', 'mov', 'ogg', 'wav', 'webm']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Channel",
+          "type": "Literal['mono', 'stereo']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Split File",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "",
+          "type": "Literal['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "value_226",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "value_238",
+          "type": "int",
+          "component": "Number"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_68",
+      "parameters": [
+        {
+          "name": "page",
+          "label": "parameter_107",
+          "type": "int",
+          "component": "Number"
+        },
+        {
+          "name": "param_3",
+          "label": "",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_4",
+          "label": "",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_5",
+          "label": "",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_6",
+          "label": "",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_7",
+          "label": "",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_8",
+          "label": "",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_9",
+          "label": "",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_10",
+          "label": "",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_11",
+          "label": "",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_12",
+          "label": "",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_13",
+          "label": "",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_14",
+          "label": "",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_15",
+          "label": "",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_16",
+          "label": "",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_17",
+          "label": "",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_18",
+          "label": "parameter_120",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_19",
+          "label": "parameter_127",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_20",
+          "label": "parameter_134",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_21",
+          "label": "parameter_141",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_22",
+          "label": "parameter_148",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_23",
+          "label": "parameter_155",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_24",
+          "label": "parameter_162",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_25",
+          "label": "parameter_169",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_26",
+          "label": "parameter_176",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_27",
+          "label": "parameter_183",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_28",
+          "label": "parameter_190",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_29",
+          "label": "parameter_197",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_30",
+          "label": "parameter_204",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_31",
+          "label": "parameter_211",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_32",
+          "label": "parameter_218",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_33",
+          "label": "parameter_123",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_34",
+          "label": "parameter_130",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_35",
+          "label": "parameter_137",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_36",
+          "label": "parameter_144",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_37",
+          "label": "parameter_151",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_38",
+          "label": "parameter_158",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_39",
+          "label": "parameter_165",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_40",
+          "label": "parameter_172",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_41",
+          "label": "parameter_179",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_42",
+          "label": "parameter_186",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_43",
+          "label": "parameter_193",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_44",
+          "label": "parameter_200",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_45",
+          "label": "parameter_207",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_46",
+          "label": "parameter_214",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_47",
+          "label": "parameter_221",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/click_gr_blocks_confirm_btn",
+      "parameters": [
+        {
+          "name": "session_id",
+          "label": "",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "event",
+          "label": "parameter_237",
+          "type": "int",
+          "component": "Number"
+        },
+        {
+          "name": "page",
+          "label": "parameter_107",
+          "type": "int",
+          "component": "Number"
+        },
+        {
+          "name": "param_5",
+          "label": "",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_6",
+          "label": "",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_7",
+          "label": "",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_8",
+          "label": "",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_9",
+          "label": "",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_10",
+          "label": "",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_11",
+          "label": "",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_12",
+          "label": "",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_13",
+          "label": "",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_14",
+          "label": "",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_15",
+          "label": "",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_16",
+          "label": "",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_17",
+          "label": "",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_18",
+          "label": "",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_19",
+          "label": "",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_20",
+          "label": "parameter_120",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_21",
+          "label": "parameter_127",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_22",
+          "label": "parameter_134",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_23",
+          "label": "parameter_141",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_24",
+          "label": "parameter_148",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_25",
+          "label": "parameter_155",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_26",
+          "label": "parameter_162",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_27",
+          "label": "parameter_169",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_28",
+          "label": "parameter_176",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_29",
+          "label": "parameter_183",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_30",
+          "label": "parameter_190",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_31",
+          "label": "parameter_197",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_32",
+          "label": "parameter_204",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_33",
+          "label": "parameter_211",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_34",
+          "label": "parameter_218",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_35",
+          "label": "parameter_123",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_36",
+          "label": "parameter_130",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_37",
+          "label": "parameter_137",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_38",
+          "label": "parameter_144",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_39",
+          "label": "parameter_151",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_40",
+          "label": "parameter_158",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_41",
+          "label": "parameter_165",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_42",
+          "label": "parameter_172",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_43",
+          "label": "parameter_179",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_44",
+          "label": "parameter_186",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_45",
+          "label": "parameter_193",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_46",
+          "label": "parameter_200",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_47",
+          "label": "parameter_207",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_48",
+          "label": "parameter_214",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_49",
+          "label": "parameter_221",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Text Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "value_237",
+          "type": "int",
+          "component": "Number"
+        }
+      ]
+    },
+    {
+      "name": "/finalize_audiobook",
+      "parameters": [
+        {
+          "name": "session_id",
+          "label": "",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/refresh_interface_1",
+      "parameters": [
+        {
+          "name": "session_id",
+          "label": "",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_226",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "-",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "label": "Text Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "",
+          "type": "Literal['cpu', 'cuda', 'mps', 'rocm', 'xpu', 'jetson']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Voices",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/check_override_ebook_2",
+      "parameters": [
+        {
+          "name": "session_id",
+          "label": "",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "ebook_mode",
+          "label": "",
+          "type": "Literal['single', 'directory', 'text']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "ebook_data",
+          "label": "-",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "name": "ebook_textarea",
+          "label": "Text Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "blocks_preview",
+          "label": "Chapters Preview",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "event",
+          "label": "parameter_236",
+          "type": "int",
+          "component": "Number"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_226",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "value_236",
+          "type": "int",
+          "component": "Number"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_69",
+      "parameters": [
+        {
+          "name": "s",
+          "label": "",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Text Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "",
+          "type": "Literal['single', 'directory', 'text']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Chapters Preview",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "",
+          "type": "Literal['ara', 'ben', 'zho', 'eng', 'fra', 'deu', 'hin', 'hun', 'ind', 'ita', 'jav', 'jpn', 'kor', 'fas', 'pol', 'por', 'rus', 'spa', 'tam', 'tel', 'tur', 'yor', 'zzz', 'abi', 'ace', 'aca', 'acn', 'ac",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Upload Voice",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "label": "Voices",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "",
+          "type": "Literal['cpu', 'cuda', 'mps', 'rocm', 'xpu', 'jetson']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Fine Tuned Preset Models",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Upload ZIP File",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "label": "",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Format",
+          "type": "Literal['aac', 'flac', 'mp3', 'm4b', 'm4a', 'mp4', 'mov', 'ogg', 'wav', 'webm']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Channel",
+          "type": "Literal['mono', 'stereo']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Split File",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "",
+          "type": "Literal['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "value_226",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "value_238",
+          "type": "int",
+          "component": "Number"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_70",
+      "parameters": [
+        {
+          "name": "page",
+          "label": "parameter_107",
+          "type": "int",
+          "component": "Number"
+        },
+        {
+          "name": "param_3",
+          "label": "",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_4",
+          "label": "",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_5",
+          "label": "",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_6",
+          "label": "",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_7",
+          "label": "",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_8",
+          "label": "",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_9",
+          "label": "",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_10",
+          "label": "",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_11",
+          "label": "",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_12",
+          "label": "",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_13",
+          "label": "",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_14",
+          "label": "",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_15",
+          "label": "",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_16",
+          "label": "",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_17",
+          "label": "",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_18",
+          "label": "parameter_120",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_19",
+          "label": "parameter_127",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_20",
+          "label": "parameter_134",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_21",
+          "label": "parameter_141",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_22",
+          "label": "parameter_148",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_23",
+          "label": "parameter_155",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_24",
+          "label": "parameter_162",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_25",
+          "label": "parameter_169",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_26",
+          "label": "parameter_176",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_27",
+          "label": "parameter_183",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_28",
+          "label": "parameter_190",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_29",
+          "label": "parameter_197",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_30",
+          "label": "parameter_204",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_31",
+          "label": "parameter_211",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_32",
+          "label": "parameter_218",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_33",
+          "label": "parameter_123",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_34",
+          "label": "parameter_130",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_35",
+          "label": "parameter_137",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_36",
+          "label": "parameter_144",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_37",
+          "label": "parameter_151",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_38",
+          "label": "parameter_158",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_39",
+          "label": "parameter_165",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_40",
+          "label": "parameter_172",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_41",
+          "label": "parameter_179",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_42",
+          "label": "parameter_186",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_43",
+          "label": "parameter_193",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_44",
+          "label": "parameter_200",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_45",
+          "label": "parameter_207",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_46",
+          "label": "parameter_214",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_47",
+          "label": "parameter_221",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_107",
+          "type": "int",
+          "component": "Number"
+        }
+      ]
+    },
+    {
+      "name": "/populate_page",
+      "parameters": [
+        {
+          "name": "session_id",
+          "label": "",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "page",
+          "label": "parameter_107",
+          "type": "int",
+          "component": "Number"
+        }
+      ],
+      "returns": [
+        {
+          "label": "",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "value_120",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "value_123",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "value_127",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "value_130",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "value_134",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "value_137",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "value_141",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "value_144",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "value_148",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "value_151",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "value_155",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "value_158",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "value_162",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "value_165",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "value_169",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "value_172",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "value_176",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "value_179",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "value_183",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "value_186",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "value_190",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "value_193",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "value_197",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "value_200",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "value_204",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "value_207",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "value_211",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "value_214",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "value_218",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "value_221",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "value_114",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_71",
+      "parameters": [
+        {
+          "name": "page",
+          "label": "parameter_107",
+          "type": "int",
+          "component": "Number"
+        },
+        {
+          "name": "param_3",
+          "label": "",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_4",
+          "label": "",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_5",
+          "label": "",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_6",
+          "label": "",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_7",
+          "label": "",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_8",
+          "label": "",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_9",
+          "label": "",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_10",
+          "label": "",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_11",
+          "label": "",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_12",
+          "label": "",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_13",
+          "label": "",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_14",
+          "label": "",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_15",
+          "label": "",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_16",
+          "label": "",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_17",
+          "label": "",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "param_18",
+          "label": "parameter_120",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_19",
+          "label": "parameter_127",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_20",
+          "label": "parameter_134",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_21",
+          "label": "parameter_141",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_22",
+          "label": "parameter_148",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_23",
+          "label": "parameter_155",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_24",
+          "label": "parameter_162",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_25",
+          "label": "parameter_169",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_26",
+          "label": "parameter_176",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_27",
+          "label": "parameter_183",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_28",
+          "label": "parameter_190",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_29",
+          "label": "parameter_197",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_30",
+          "label": "parameter_204",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_31",
+          "label": "parameter_211",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_32",
+          "label": "parameter_218",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "param_33",
+          "label": "parameter_123",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_34",
+          "label": "parameter_130",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_35",
+          "label": "parameter_137",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_36",
+          "label": "parameter_144",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_37",
+          "label": "parameter_151",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_38",
+          "label": "parameter_158",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_39",
+          "label": "parameter_165",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_40",
+          "label": "parameter_172",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_41",
+          "label": "parameter_179",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_42",
+          "label": "parameter_186",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_43",
+          "label": "parameter_193",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_44",
+          "label": "parameter_200",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_45",
+          "label": "parameter_207",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_46",
+          "label": "parameter_214",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "param_47",
+          "label": "parameter_221",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_107",
+          "type": "int",
+          "component": "Number"
+        }
+      ]
+    },
+    {
+      "name": "/populate_page_1",
+      "parameters": [
+        {
+          "name": "session_id",
+          "label": "",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "page",
+          "label": "parameter_107",
+          "type": "int",
+          "component": "Number"
+        }
+      ],
+      "returns": [
+        {
+          "label": "",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "value_120",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "value_123",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "value_127",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "value_130",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "value_134",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "value_137",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "value_141",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "value_144",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "value_148",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "value_151",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "value_155",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "value_158",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "value_162",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "value_165",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "value_169",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "value_172",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "value_176",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "value_179",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "value_183",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "value_186",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "value_190",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "value_193",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "value_197",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "value_200",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "value_204",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "value_207",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "value_211",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "value_214",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "value_218",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "value_221",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "value_114",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/change_gr_restore_session",
+      "parameters": [
+        {
+          "name": "data",
+          "label": "parameter_233",
+          "type": "str | float | bool | list | dict",
+          "component": "Json"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_235",
+          "type": "str | float | bool | list | dict",
+          "component": "Json"
+        },
+        {
+          "label": "",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "value_227",
+          "type": "str",
+          "component": "Html"
+        }
+      ]
+    },
+    {
+      "name": "/restore_interface",
+      "parameters": [
+        {
+          "name": "session_id",
+          "label": "",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "-",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "label": "Text Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "",
+          "type": "Literal['single', 'directory', 'text']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Chapters Preview",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "",
+          "type": "Literal['cpu', 'cuda', 'mps', 'rocm', 'xpu', 'jetson']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "",
+          "type": "Literal['ara', 'ben', 'zho', 'eng', 'fra', 'deu', 'hin', 'hun', 'ind', 'ita', 'jav', 'jpn', 'kor', 'fas', 'pol', 'por', 'rus', 'spa', 'tam', 'tel', 'tur', 'yor', 'zzz', 'abi', 'ace', 'aca', 'acn', 'ac",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Voices",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Fine Tuned Preset Models",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Format",
+          "type": "Literal['aac', 'flac', 'mp3', 'm4b', 'm4a', 'mp4', 'mov', 'ogg', 'wav', 'webm']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Channel",
+          "type": "Literal['mono', 'stereo']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Split File",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "",
+          "type": "Literal['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "value_23",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ]
+    },
+    {
+      "name": "/restore_audiobook_player",
+      "parameters": [
+        {
+          "name": "session_id",
+          "label": "",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "audiobook",
+          "label": "",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "value_241",
+          "type": "float",
+          "component": "Timer"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_72",
+      "parameters": [
+        {
+          "name": "session",
+          "label": "",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_227",
+          "type": "str",
+          "component": "Html"
+        }
+      ]
+    },
+    {
+      "name": "/click_gr_deletion",
+      "parameters": [
+        {
+          "name": "session_id",
+          "label": "",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "voice_path",
+          "label": "Voices",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "custom_model",
+          "label": "",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "audiobook",
+          "label": "",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "method",
+          "label": "parameter_228",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_226",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Voices",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/click_gr_deletion_1",
+      "parameters": [
+        {
+          "name": "session_id",
+          "label": "",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "voice_path",
+          "label": "Voices",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "custom_model",
+          "label": "",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "audiobook",
+          "label": "",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_226",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Voices",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/lambda",
+  "_api_verified": true,
+  "estimated_latency_s": 5.39,
+  "speed_tier": "medium",
+  "_latency_source": "measured",
+  "measured_latency_s": 5.39,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:50:32.596290+00:00"
+}

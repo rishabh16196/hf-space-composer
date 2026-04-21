@@ -1,0 +1,146 @@
+{
+  "space_id": "exias/OpAgent",
+  "title": "OpAgent",
+  "emoji": "\ud83d\udcda",
+  "description": "Browser-automation Agent",
+  "input_schema": {
+    "start_url": {
+      "type": "str",
+      "description": "Start URL",
+      "required": true,
+      "component": "Textbox"
+    },
+    "query": {
+      "type": "str",
+      "description": "Task Description",
+      "required": true,
+      "component": "Textbox"
+    },
+    "max_steps": {
+      "type": "float",
+      "description": "Max Steps",
+      "required": true,
+      "component": "Slider"
+    },
+    "poll_interval": {
+      "type": "float",
+      "description": "Polling Interval (seconds)",
+      "required": true,
+      "component": "Slider"
+    }
+  },
+  "output_schema": {
+    "Status": {
+      "type": "str",
+      "description": "Status",
+      "component": "Markdown"
+    },
+    "Execution Screenshot": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "Execution Screenshot",
+      "component": "Image"
+    },
+    "Final Answer": {
+      "type": "str",
+      "description": "Final Answer",
+      "component": "Textbox"
+    },
+    "Step Screenshots": {
+      "type": "list[dict(image: dict(path: str | None (Path to a local file), url: str | None (Publicly available u",
+      "description": "Step Screenshots",
+      "component": "Gallery"
+    },
+    "value_20": {
+      "type": "str",
+      "description": "value_20",
+      "component": "Markdown"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "6.9.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 7,
+  "last_modified": "2026-03-18 11:01:59+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/run_remote_task",
+      "parameters": [
+        {
+          "name": "start_url",
+          "label": "Start URL",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "query",
+          "label": "Task Description",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "max_steps",
+          "label": "Max Steps",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "poll_interval",
+          "label": "Polling Interval (seconds)",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Status",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "Execution Screenshot",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "Final Answer",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Step Screenshots",
+          "type": "list[dict(image: dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Origi",
+          "component": "Gallery"
+        },
+        {
+          "label": "value_20",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/cancel_remote_task",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Status",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/run_remote_task",
+  "_api_verified": true
+}

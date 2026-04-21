@@ -1,0 +1,115 @@
+{
+  "space_id": "felixrosberg/face-swap",
+  "title": "Face Swap",
+  "emoji": "\ud83e\uddd9\ud83e\uddd9\ud83e\uddd9\ud83e\uddd9\ud83e\uddd9\ud83e\uddd9\ud83e\uddd9\ud83e\uddd9",
+  "description": "Face Swap",
+  "input_schema": {
+    "target": {
+      "type": "filepath",
+      "description": "Target",
+      "required": true,
+      "component": "Image"
+    },
+    "source": {
+      "type": "filepath",
+      "description": "Source",
+      "required": true,
+      "component": "Image"
+    },
+    "slider": {
+      "type": "float",
+      "description": "Anonymization ratio (%)",
+      "required": true,
+      "component": "Slider"
+    },
+    "adv_slider": {
+      "type": "float",
+      "description": "Adversarial defense ratio (%)",
+      "required": true,
+      "component": "Slider"
+    },
+    "settings": {
+      "type": "List[Literal['Compare', 'Anonymize', 'Reconstruction Attack', 'Adversarial Defense']]",
+      "description": "Mode",
+      "required": true,
+      "component": "Checkboxgroup"
+    }
+  },
+  "output_schema": {
+    "Output": {
+      "type": "filepath",
+      "description": "Output",
+      "component": "Image"
+    }
+  },
+  "license": "cc-by-nc-sa-4.0",
+  "hardware": "4.29.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us",
+    "video",
+    "vision"
+  ],
+  "likes": 792,
+  "last_modified": "2024-05-22 13:48:25+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/run_inference",
+      "parameters": [
+        {
+          "name": "target",
+          "label": "Target",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "name": "source",
+          "label": "Source",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "name": "slider",
+          "label": "Anonymization ratio (%)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "adv_slider",
+          "label": "Adversarial defense ratio (%)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "settings",
+          "label": "Mode",
+          "type": "List[Literal['Compare', 'Anonymize', 'Reconstruction Attack', 'Adversarial Defense']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output",
+          "type": "filepath",
+          "component": "Image"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/run_inference",
+  "_api_verified": true,
+  "estimated_latency_s": 3.57,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "_tags_enriched": true,
+  "measured_latency_s": 3.57,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:50:36.166846+00:00",
+  "_inference_attempt_status": "predict_failed",
+  "_inference_attempt_error": "The upstream Gradio app has raised an exception but has not enabled verbose error reporting. To enable, set show_error=True in launch()."
+}

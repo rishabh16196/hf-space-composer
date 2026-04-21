@@ -1,0 +1,43 @@
+{
+  "space_id": "fair-forward/languagebench",
+  "title": "languagebench",
+  "emoji": "\ud83c\udf0d",
+  "description": "AI model evaluations for every language in the world.",
+  "input_schema": {
+    "input": {
+      "type": "string",
+      "description": "Input",
+      "required": true
+    }
+  },
+  "output_schema": {
+    "output": {
+      "type": "string"
+    }
+  },
+  "license": "cc-by-sa-4.0",
+  "hardware": "",
+  "sdk": "docker",
+  "tags": [
+    "docker",
+    "submission:manual",
+    "test:public",
+    "judge:auto",
+    "modality:text",
+    "modality:artefacts",
+    "eval:generation",
+    "language:English",
+    "language:German",
+    "region:us"
+  ],
+  "likes": 23,
+  "last_modified": "2026-02-26 10:57:06+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "error",
+  "_api_error": "Could not get Gradio config from: https://fair-forward-languagebench.hf.space",
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred"
+}

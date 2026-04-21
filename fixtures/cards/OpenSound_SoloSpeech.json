@@ -1,0 +1,101 @@
+{
+  "space_id": "OpenSound/SoloSpeech",
+  "title": "SoloSpeech",
+  "emoji": "\ud83c\udfaf",
+  "description": "State-of-the-art target speech extractor",
+  "input_schema": {
+    "choice": {
+      "type": "Literal['Demo1: Extract male speaker from a mixture of multiple male speakers', 'Demo2: Extract fema",
+      "description": "Select Test Demo",
+      "required": true,
+      "component": "Dropdown"
+    }
+  },
+  "output_schema": {
+    "Upload Mixture Audio": {
+      "type": "filepath",
+      "description": "Upload Mixture Audio",
+      "component": "Audio"
+    },
+    "Upload Enrollment/Speaker Audio": {
+      "type": "filepath",
+      "description": "Upload Enrollment/Speaker Audio",
+      "component": "Audio"
+    }
+  },
+  "license": "cc-by-nc-4.0",
+  "hardware": "5.31.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "target-speech-extraction",
+    "speech-separation",
+    "voice-generation",
+    "region:us",
+    "audio"
+  ],
+  "likes": 113,
+  "last_modified": "2025-09-10 23:28:47+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/update_audio_inputs",
+      "parameters": [
+        {
+          "name": "choice",
+          "label": "Select Test Demo",
+          "type": "Literal['Demo1: Extract male speaker from a mixture of multiple male speakers', 'Demo2: Extract female speaker from a mixture of multiple female speakers', 'Demo3: Extract male rapper from music with ",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Upload Mixture Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Upload Enrollment/Speaker Audio",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ]
+    },
+    {
+      "name": "/process_audio",
+      "parameters": [
+        {
+          "name": "test_wav",
+          "label": "Upload Mixture Audio",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "name": "enroll_wav",
+          "label": "Upload Enrollment/Speaker Audio",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Extracted Speech",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/update_audio_inputs",
+  "_api_verified": true,
+  "estimated_latency_s": 3.07,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "_tags_enriched": true,
+  "measured_latency_s": 3.07,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:49:44.501994+00:00"
+}

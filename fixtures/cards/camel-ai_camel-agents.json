@@ -1,0 +1,323 @@
+{
+  "space_id": "camel-ai/camel-agents",
+  "title": "Camel Agents",
+  "emoji": "\u26a1",
+  "description": "Camel Agents",
+  "input_schema": {},
+  "output_schema": {
+    "Give me a preliminary idea (EDIT ME)": {
+      "type": "str",
+      "description": "Give me a preliminary idea (EDIT ME)",
+      "component": "Textbox"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "5.12.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 136,
+  "last_modified": "2025-01-13 00:39:21+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/lambda",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Give me a preliminary idea (EDIT ME)",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_1",
+      "parameters": [
+        {
+          "name": "v",
+          "label": "With task specifier",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Word limit for task specifier",
+          "type": "float",
+          "component": "Number"
+        }
+      ]
+    },
+    {
+      "name": "/cleanup_on_launch",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Chat between autonomous agents",
+          "type": "tuple[str | dict(file: filepath, alt_text: str | None) | dict(component: str, value: Any, constructor_args: dict(), props: dict()) | None, str | dict(file: filepath, alt_text: str | None) | dict(compo",
+          "component": "Chatbot"
+        }
+      ]
+    },
+    {
+      "name": "/role_playing_start",
+      "parameters": [
+        {
+          "name": "society_name",
+          "label": "Choose the society",
+          "type": "Literal['AI Society', 'Code']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "assistant",
+          "label": "Assistant role (EDIT ME)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "user",
+          "label": "User role (EDIT ME)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "original_task",
+          "label": "Give me a preliminary idea (EDIT ME)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "max_messages",
+          "label": "Messages to generate",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "with_task_specifier",
+          "label": "With task specifier",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "word_limit",
+          "label": "Word limit for task specifier",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "language",
+          "label": "Language",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Specified task prompt given to the role-playing session based on the original (simplistic) idea",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Planned task prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Chat between autonomous agents",
+          "type": "tuple[str | dict(file: filepath, alt_text: str | None) | dict(component: str, value: Any, constructor_args: dict(), props: dict()) | None, str | dict(file: filepath, alt_text: str | None) | dict(compo",
+          "component": "Chatbot"
+        },
+        {
+          "label": "Progress",
+          "type": "float",
+          "component": "Slider"
+        }
+      ]
+    },
+    {
+      "name": "/role_playing_chat_init",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Chat between autonomous agents",
+          "type": "tuple[str | dict(file: filepath, alt_text: str | None) | dict(component: str, value: Any, constructor_args: dict(), props: dict()) | None, str | dict(file: filepath, alt_text: str | None) | dict(compo",
+          "component": "Chatbot"
+        },
+        {
+          "label": "Progress",
+          "type": "float",
+          "component": "Slider"
+        }
+      ]
+    },
+    {
+      "name": "/role_playing_chat_cont",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Chat between autonomous agents",
+          "type": "tuple[str | dict(file: filepath, alt_text: str | None) | dict(component: str, value: Any, constructor_args: dict(), props: dict()) | None, str | dict(file: filepath, alt_text: str | None) | dict(compo",
+          "component": "Chatbot"
+        },
+        {
+          "label": "Progress",
+          "type": "float",
+          "component": "Slider"
+        }
+      ]
+    },
+    {
+      "name": "/stop_session",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Progress",
+          "type": "float",
+          "component": "Slider"
+        }
+      ]
+    },
+    {
+      "name": "/change_society",
+      "parameters": [
+        {
+          "name": "society_name",
+          "label": "Choose the society",
+          "type": "Literal['AI Society', 'Code']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Example assistant roles",
+          "type": "Literal['Accountant', 'Actor', 'Administrator', 'Analyst', 'Artist', 'Athlete', 'Author', 'Chef', 'Coach', 'Consultant', 'Counselor', 'Designer', 'Developer', 'Doctor', 'Editor', 'Engineer', 'Entrepre",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Example user roles",
+          "type": "Literal['Accountant', 'Actor', 'Artist', 'Athlete', 'Blogger', 'Chef', 'Coach', 'Consultant', 'Designer', 'Developer', 'Doctor', 'Engineer', 'Entrepreneur', 'Farmer', 'Fashion designer', 'Filmmaker', ",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Give me a preliminary idea (EDIT ME)",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_2",
+      "parameters": [
+        {
+          "name": "dd",
+          "label": "Example assistant roles",
+          "type": "Literal['Accountant', 'Actor', 'Administrator', 'Analyst', 'Artist', 'Athlete', 'Author', 'Chef', 'Coach', 'Consultant', 'Counselor', 'Designer', 'Developer', 'Doctor', 'Editor', 'Engineer', 'Entrepre",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Assistant role (EDIT ME)",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_3",
+      "parameters": [
+        {
+          "name": "dd",
+          "label": "Example user roles",
+          "type": "Literal['Accountant', 'Actor', 'Artist', 'Athlete', 'Blogger', 'Chef', 'Coach', 'Consultant', 'Designer', 'Developer', 'Doctor', 'Engineer', 'Entrepreneur', 'Farmer', 'Fashion designer', 'Filmmaker', ",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "User role (EDIT ME)",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/change_society_1",
+      "parameters": [
+        {
+          "name": "society_name",
+          "label": "Choose the society",
+          "type": "Literal['AI Society', 'Code']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Example assistant roles",
+          "type": "Literal['Accountant', 'Actor', 'Administrator', 'Analyst', 'Artist', 'Athlete', 'Author', 'Chef', 'Coach', 'Consultant', 'Counselor', 'Designer', 'Developer', 'Doctor', 'Editor', 'Engineer', 'Entrepre",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Example user roles",
+          "type": "Literal['Accountant', 'Actor', 'Artist', 'Athlete', 'Blogger', 'Chef', 'Coach', 'Consultant', 'Designer', 'Developer', 'Doctor', 'Engineer', 'Entrepreneur', 'Farmer', 'Fashion designer', 'Filmmaker', ",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Give me a preliminary idea (EDIT ME)",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_4",
+      "parameters": [
+        {
+          "name": "dd",
+          "label": "Example assistant roles",
+          "type": "Literal['Accountant', 'Actor', 'Administrator', 'Analyst', 'Artist', 'Athlete', 'Author', 'Chef', 'Coach', 'Consultant', 'Counselor', 'Designer', 'Developer', 'Doctor', 'Editor', 'Engineer', 'Entrepre",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Assistant role (EDIT ME)",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_5",
+      "parameters": [
+        {
+          "name": "dd",
+          "label": "Example user roles",
+          "type": "Literal['Accountant', 'Actor', 'Artist', 'Athlete', 'Blogger', 'Chef', 'Coach', 'Consultant', 'Designer', 'Developer', 'Doctor', 'Engineer', 'Entrepreneur', 'Farmer', 'Fashion designer', 'Filmmaker', ",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "User role (EDIT ME)",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/lambda",
+  "_api_verified": true,
+  "estimated_latency_s": 3.3,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 3.3,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:50:26.117673+00:00"
+}

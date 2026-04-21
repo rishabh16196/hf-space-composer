@@ -1,0 +1,380 @@
+{
+  "space_id": "qu33fy/FaceSwapAll",
+  "title": "FaceSwapAll",
+  "emoji": "\ud83c\udfc6",
+  "description": "All-in-one face swapping: single photo, video, multi-source,",
+  "input_schema": {
+    "src_img": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "Source Face",
+      "required": true,
+      "component": "Image"
+    },
+    "src_idx": {
+      "type": "float",
+      "description": "Face Index",
+      "required": true,
+      "component": "Number"
+    },
+    "dst_img": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "Target Image",
+      "required": true,
+      "component": "Image"
+    },
+    "dst_idx": {
+      "type": "float",
+      "description": "Face Index",
+      "required": true,
+      "component": "Number"
+    },
+    "include_hair": {
+      "type": "bool",
+      "description": "Swap Hair (Beta)",
+      "required": true,
+      "component": "Checkbox"
+    }
+  },
+  "output_schema": {
+    "Result": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "Result",
+      "component": "Image"
+    },
+    "Logs": {
+      "type": "str",
+      "description": "Logs",
+      "component": "Textbox"
+    }
+  },
+  "license": "unknown",
+  "hardware": "5.29.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 2,
+  "last_modified": "2026-02-01 06:06:00+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/swap_single_photo",
+      "parameters": [
+        {
+          "name": "src_img",
+          "label": "Source Face",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "src_idx",
+          "label": "Face Index",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "dst_img",
+          "label": "Target Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "dst_idx",
+          "label": "Face Index",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "include_hair",
+          "label": "Swap Hair (Beta)",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Result",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "Logs",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/swap_single_src_multi_dst",
+      "parameters": [
+        {
+          "name": "src_img",
+          "label": "Source",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "dst_imgs",
+          "label": "Destinations",
+          "type": "list[dict(image: dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Origi",
+          "component": "Gallery"
+        },
+        {
+          "name": "dst_indices",
+          "label": "Dst Indices",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Results",
+          "type": "list[dict(image: dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Origi",
+          "component": "Gallery"
+        },
+        {
+          "label": "Logs",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/swap_multi_src_single_dst",
+      "parameters": [
+        {
+          "name": "src_imgs",
+          "label": "Sources",
+          "type": "list[dict(image: dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Origi",
+          "component": "Gallery"
+        },
+        {
+          "name": "dst_img",
+          "label": "Target",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "dst_idx",
+          "label": "Target Index",
+          "type": "float",
+          "component": "Number"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Results",
+          "type": "list[dict(image: dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Origi",
+          "component": "Gallery"
+        },
+        {
+          "label": "Logs",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/swap_multi_src_multi_dst",
+      "parameters": [
+        {
+          "name": "src_imgs",
+          "label": "Sources",
+          "type": "list[dict(image: dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Origi",
+          "component": "Gallery"
+        },
+        {
+          "name": "dst_imgs",
+          "label": "Targets",
+          "type": "list[dict(image: dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Origi",
+          "component": "Gallery"
+        },
+        {
+          "name": "dst_indices",
+          "label": "Dst Indices",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Results",
+          "type": "list[dict(image: dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Origi",
+          "component": "Gallery"
+        },
+        {
+          "label": "Logs",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/swap_faces_custom",
+      "parameters": [
+        {
+          "name": "src_imgs",
+          "label": "Sources",
+          "type": "list[dict(image: dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Origi",
+          "component": "Gallery"
+        },
+        {
+          "name": "dst_img",
+          "label": "Destination",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "mapping_str",
+          "label": "Map (e.g. 2,1,3)",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Result",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "Logs",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/swap_video",
+      "parameters": [
+        {
+          "name": "src_img",
+          "label": "Source",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "src_idx",
+          "label": "Src Idx",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "video",
+          "label": "Target Video",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        },
+        {
+          "name": "dst_idx",
+          "label": "Dst Idx",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "delete_frames",
+          "label": "Delete Frames",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "add_audio",
+          "label": "Audio",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "copy_drive",
+          "label": "Drive",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Result",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        },
+        {
+          "label": "Logs",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/swap_video_all_faces",
+      "parameters": [
+        {
+          "name": "src_img",
+          "label": "Source",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "video",
+          "label": "Target",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        },
+        {
+          "name": "num_faces",
+          "label": "Count",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "delete_frames",
+          "label": "Delete Frames",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "add_audio",
+          "label": "Audio",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "copy_drive",
+          "label": "Drive",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Result",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        },
+        {
+          "label": "Logs",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/zip_project_directory",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Download Zip",
+          "type": "filepath",
+          "component": "File"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/swap_single_photo",
+  "_api_verified": true
+}

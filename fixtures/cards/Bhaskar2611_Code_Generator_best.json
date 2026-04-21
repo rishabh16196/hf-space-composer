@@ -1,0 +1,65 @@
+{
+  "space_id": "Bhaskar2611/Code_Generator_best",
+  "title": "Code Generater Best",
+  "emoji": "\ud83d\udcac",
+  "description": "Code Generater Best",
+  "input_schema": {
+    "message": {
+      "type": "str",
+      "description": "Message",
+      "required": true,
+      "component": "Textbox"
+    }
+  },
+  "output_schema": {
+    "Response": {
+      "type": "str",
+      "description": "Response",
+      "component": "Textbox"
+    }
+  },
+  "license": "mit",
+  "hardware": "5.0.1",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us",
+    "code",
+    "code-generation"
+  ],
+  "likes": 29,
+  "last_modified": "2025-06-16 14:17:19+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/chat",
+      "parameters": [
+        {
+          "name": "message",
+          "label": "Message",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Response",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/chat",
+  "_api_verified": true,
+  "estimated_latency_s": 2.73,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "_tags_enriched": true,
+  "measured_latency_s": 2.73,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:49:09.140402+00:00"
+}

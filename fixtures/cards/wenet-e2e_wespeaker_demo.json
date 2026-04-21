@@ -1,0 +1,83 @@
+{
+  "space_id": "wenet-e2e/wespeaker_demo",
+  "title": "Wespeaker Demo",
+  "emoji": "\ud83c\udfe2",
+  "description": "Wespeaker Demo",
+  "input_schema": {
+    "Speaker#1": {
+      "type": "str | Dict(name: str (name of file), data: str (base64 representation of file), size: int (size of i",
+      "description": "Speaker#1",
+      "required": true,
+      "component": "Audio"
+    },
+    "Speaker#2": {
+      "type": "str | Dict(name: str (name of file), data: str (base64 representation of file), size: int (size of i",
+      "description": "Speaker#2",
+      "required": true,
+      "component": "Audio"
+    },
+    "Language": {
+      "type": "str",
+      "description": "Language",
+      "required": true,
+      "component": "Radio"
+    }
+  },
+  "output_schema": {
+    "output_0": {
+      "type": "str",
+      "description": "",
+      "component": "Html"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "3.2",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 25,
+  "last_modified": "2023-11-13 04:28:32+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/predict",
+      "parameters": [
+        {
+          "name": "Speaker#1",
+          "label": "Speaker#1",
+          "type": "str | Dict(name: str (name of file), data: str (base64 representation of file), size: int (size of image in bytes), is_file: bool (true if the file has been uploaded to the server), orig_name: str (or",
+          "component": "Audio"
+        },
+        {
+          "name": "Speaker#2",
+          "label": "Speaker#2",
+          "type": "str | Dict(name: str (name of file), data: str (base64 representation of file), size: int (size of image in bytes), is_file: bool (true if the file has been uploaded to the server), orig_name: str (or",
+          "component": "Audio"
+        },
+        {
+          "name": "Language",
+          "label": "Language",
+          "type": "str",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "",
+          "type": "str",
+          "component": "Html"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/predict",
+  "_api_verified": true
+}

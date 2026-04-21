@@ -1,0 +1,110 @@
+{
+  "space_id": "Keshav97/Voice-Powered-Q-A-Agent",
+  "title": "Voice Powered QA Agent",
+  "emoji": "\ud83c\udfa4",
+  "description": "Voice Powered QA Agent",
+  "input_schema": {
+    "pdf_file": {
+      "type": "filepath",
+      "description": "Upload PDF",
+      "required": true,
+      "component": "File"
+    }
+  },
+  "output_schema": {
+    "Status": {
+      "type": "str",
+      "description": "Status",
+      "component": "Textbox"
+    }
+  },
+  "license": "unknown",
+  "hardware": "",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 2,
+  "last_modified": "2026-04-17 22:22:57+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/process_pdf",
+      "parameters": [
+        {
+          "name": "pdf_file",
+          "label": "Upload PDF",
+          "type": "filepath",
+          "component": "File"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Status",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/process_voice_question",
+      "parameters": [
+        {
+          "name": "audio_filepath",
+          "label": "Record Your Question",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "\ud83d\udde3\ufe0f Your Question (recognized text)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "\ud83d\udcdd Answer",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "\ud83d\udd0a Listen to Answer",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ]
+    },
+    {
+      "name": "/process_text_question",
+      "parameters": [
+        {
+          "name": "question",
+          "label": "Type Your Question",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "\ud83d\udcdd Answer",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "\ud83d\udd0a Listen to Answer",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/process_pdf",
+  "_api_verified": true
+}

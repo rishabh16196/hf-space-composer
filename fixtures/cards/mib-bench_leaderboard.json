@@ -1,0 +1,378 @@
+{
+  "space_id": "mib-bench/leaderboard",
+  "title": "MIB Leaderboard",
+  "emoji": "\ud83d\ude0e",
+  "description": "Leaderboard for the Mechanistic Interpretability Benchmark",
+  "input_schema": {
+    "selected_task_substrings": {
+      "type": "List[Literal['IOI', 'MCQA', 'Arithmetic', 'ARC']]",
+      "description": "View tasks:",
+      "required": true,
+      "component": "Checkboxgroup"
+    },
+    "selected_model_substrings": {
+      "type": "List[Literal['GPT-2', 'Qwen-2.5', 'Gemma-2', 'Llama-3.1']]",
+      "description": "View models:",
+      "required": true,
+      "component": "Checkboxgroup"
+    }
+  },
+  "output_schema": {
+    "value_10": {
+      "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+      "description": "value_10",
+      "component": "Leaderboard"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "5.6.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us",
+    "benchmark",
+    "leaderboard"
+  ],
+  "likes": 10,
+  "last_modified": "2026-02-25 16:51:41+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/update_leaderboard",
+      "parameters": [
+        {
+          "name": "selected_task_substrings",
+          "label": "View tasks:",
+          "type": "List[Literal['IOI', 'MCQA', 'Arithmetic', 'ARC']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "selected_model_substrings",
+          "label": "View models:",
+          "type": "List[Literal['GPT-2', 'Qwen-2.5', 'Gemma-2', 'Llama-3.1']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_10",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Leaderboard"
+        }
+      ]
+    },
+    {
+      "name": "/update_leaderboard_1",
+      "parameters": [
+        {
+          "name": "selected_task_substrings",
+          "label": "View tasks:",
+          "type": "List[Literal['IOI', 'MCQA', 'Arithmetic', 'ARC']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "selected_model_substrings",
+          "label": "View models:",
+          "type": "List[Literal['GPT-2', 'Qwen-2.5', 'Gemma-2', 'Llama-3.1']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_10",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Leaderboard"
+        }
+      ]
+    },
+    {
+      "name": "/update_leaderboard_2",
+      "parameters": [
+        {
+          "name": "selected_task_substrings",
+          "label": "View tasks:",
+          "type": "List[Literal['IOI', 'MCQA', 'Arithmetic', 'ARC']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "selected_model_substrings",
+          "label": "View models:",
+          "type": "List[Literal['GPT-2', 'Qwen-2.5', 'Gemma-2', 'Llama-3.1']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_18",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Leaderboard"
+        }
+      ]
+    },
+    {
+      "name": "/update_leaderboard_3",
+      "parameters": [
+        {
+          "name": "selected_task_substrings",
+          "label": "View tasks:",
+          "type": "List[Literal['IOI', 'MCQA', 'Arithmetic', 'ARC']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "selected_model_substrings",
+          "label": "View models:",
+          "type": "List[Literal['GPT-2', 'Qwen-2.5', 'Gemma-2', 'Llama-3.1']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_18",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Leaderboard"
+        }
+      ]
+    },
+    {
+      "name": "/update_leaderboard_4",
+      "parameters": [
+        {
+          "name": "selected_task_substrings",
+          "label": "View tasks:",
+          "type": "List[Literal['IOI', 'MCQA', 'ARC (Easy)', 'RAVEL']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "selected_model_substrings",
+          "label": "View models:",
+          "type": "List[Literal['GPT-2', 'Qwen-2.5', 'Gemma-2', 'Llama-3.1']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_28",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Leaderboard"
+        }
+      ]
+    },
+    {
+      "name": "/update_leaderboard_5",
+      "parameters": [
+        {
+          "name": "selected_task_substrings",
+          "label": "View tasks:",
+          "type": "List[Literal['IOI', 'MCQA', 'ARC (Easy)', 'RAVEL']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "selected_model_substrings",
+          "label": "View models:",
+          "type": "List[Literal['GPT-2', 'Qwen-2.5', 'Gemma-2', 'Llama-3.1']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_28",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Leaderboard"
+        }
+      ]
+    },
+    {
+      "name": "/update_leaderboard_6",
+      "parameters": [
+        {
+          "name": "selected_task_substrings",
+          "label": "View tasks:",
+          "type": "List[Literal['IOI', 'MCQA', 'ARC (Easy)', 'RAVEL']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "selected_model_substrings",
+          "label": "View models:",
+          "type": "List[Literal['GPT-2', 'Qwen-2.5', 'Gemma-2', 'Llama-3.1']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_35",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Leaderboard"
+        }
+      ]
+    },
+    {
+      "name": "/update_leaderboard_7",
+      "parameters": [
+        {
+          "name": "selected_task_substrings",
+          "label": "View tasks:",
+          "type": "List[Literal['IOI', 'MCQA', 'ARC (Easy)', 'RAVEL']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "name": "selected_model_substrings",
+          "label": "View models:",
+          "type": "List[Literal['GPT-2', 'Qwen-2.5', 'Gemma-2', 'Llama-3.1']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_35",
+          "type": "Dict(headers: List[str], data: List[List[Any]], metadata: Dict(str, List[Any] | None) | None)",
+          "component": "Leaderboard"
+        }
+      ]
+    },
+    {
+      "name": "/toggle_ui",
+      "parameters": [
+        {
+          "name": "track",
+          "label": "Select Competition Track",
+          "type": "Literal['Circuit Localization Track', 'Causal Variable Localization Track']",
+          "component": "Radio"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/handle_submission",
+      "parameters": [
+        {
+          "name": "track",
+          "label": "Select Competition Track",
+          "type": "Literal['Circuit Localization Track', 'Causal Variable Localization Track']",
+          "component": "Radio"
+        },
+        {
+          "name": "hf_repo_circ",
+          "label": "HuggingFace Repository URL",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "hf_repo_cg",
+          "label": "HuggingFace Repository URL",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "level",
+          "label": "Level of granularity",
+          "type": "Literal['Edge', 'Node (submodule)', 'Node (neuron)']",
+          "component": "Radio"
+        },
+        {
+          "name": "method_name",
+          "label": "Method Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "description",
+          "label": "One-line Description",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "contact_email",
+          "label": "Contact Email",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Submission Status",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "value_62",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/lambda",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Submission Status",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "value_62",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_1",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Submission Status",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "value_62",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/remove_submission",
+      "parameters": [
+        {
+          "name": "track",
+          "label": "Select Competition Track",
+          "type": "Literal['Circuit Localization Track', 'Causal Variable Localization Track']",
+          "component": "Radio"
+        },
+        {
+          "name": "method_name",
+          "label": "Method Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "_id",
+          "label": "Submission ID",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Removal Status",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/update_leaderboard",
+  "_api_verified": true,
+  "estimated_latency_s": 3.73,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "_tags_enriched": true,
+  "measured_latency_s": 3.73,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:51:14.142894+00:00"
+}

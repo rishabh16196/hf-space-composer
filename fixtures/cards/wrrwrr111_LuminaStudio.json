@@ -1,0 +1,1046 @@
+{
+  "space_id": "wrrwrr111/LuminaStudio",
+  "title": "Lumina Studio",
+  "emoji": "\u2728",
+  "description": "Lumina Studio",
+  "input_schema": {
+    "color_mode": {
+      "type": "Literal['CMYW (Cyan/Magenta/Yellow)', 'RYBW (Red/Yellow/Blue)']",
+      "description": "\u8272\u5f69\u6a21\u5f0f Color Mode",
+      "required": true,
+      "component": "Radio"
+    },
+    "block_size_mm": {
+      "type": "float",
+      "description": "\u8272\u5757\u5c3a\u5bf8 Block Size (mm)",
+      "required": true,
+      "component": "Slider"
+    },
+    "gap_mm": {
+      "type": "float",
+      "description": "\u95f4\u9699 Gap (mm)",
+      "required": true,
+      "component": "Slider"
+    },
+    "backing_color": {
+      "type": "Literal['White', 'Cyan', 'Magenta', 'Yellow', 'Red', 'Blue']",
+      "description": "\u5e95\u677f\u989c\u8272 Backing Color",
+      "required": true,
+      "component": "Dropdown"
+    }
+  },
+  "output_schema": {
+    "\u4e0b\u8f7d Download 3MF": {
+      "type": "filepath",
+      "description": "\u4e0b\u8f7d Download 3MF",
+      "component": "File"
+    },
+    "Calibration Preview": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "Calibration Preview",
+      "component": "Image"
+    },
+    "\u72b6\u6001 Status": {
+      "type": "str",
+      "description": "\u72b6\u6001 Status",
+      "component": "Textbox"
+    }
+  },
+  "license": "unknown",
+  "hardware": "6.3.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 9,
+  "last_modified": "2026-01-21 11:02:25+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/generate_calibration_board",
+      "parameters": [
+        {
+          "name": "color_mode",
+          "label": "\u8272\u5f69\u6a21\u5f0f Color Mode",
+          "type": "Literal['CMYW (Cyan/Magenta/Yellow)', 'RYBW (Red/Yellow/Blue)']",
+          "component": "Radio"
+        },
+        {
+          "name": "block_size_mm",
+          "label": "\u8272\u5757\u5c3a\u5bf8 Block Size (mm)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "gap_mm",
+          "label": "\u95f4\u9699 Gap (mm)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "backing_color",
+          "label": "\u5e95\u677f\u989c\u8272 Backing Color",
+          "type": "Literal['White', 'Cyan', 'Magenta', 'Yellow', 'Red', 'Blue']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "\u4e0b\u8f7d Download 3MF",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "label": "Calibration Preview",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "\u72b6\u6001 Status",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/on_upload",
+      "parameters": [
+        {
+          "name": "i",
+          "label": "\u6821\u51c6\u677f\u7167\u7247 Calibration Photo",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "mode",
+          "label": "\ud83c\udfa8 \u8272\u5f69\u6a21\u5f0f Color Mode",
+          "type": "Literal['CMYW (Cyan/Magenta/Yellow)', 'RYBW (Red/Yellow/Blue)']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "\u6807\u8bb0\u56fe Marked",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "value_53",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/on_mode_change",
+      "parameters": [
+        {
+          "name": "mode",
+          "label": "\ud83c\udfa8 \u8272\u5f69\u6a21\u5f0f Color Mode",
+          "type": "Literal['CMYW (Cyan/Magenta/Yellow)', 'RYBW (Red/Yellow/Blue)']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_53",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "\u6807\u8bb0\u56fe Marked",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/on_rotate",
+      "parameters": [
+        {
+          "name": "mode",
+          "label": "\ud83c\udfa8 \u8272\u5f69\u6a21\u5f0f Color Mode",
+          "type": "Literal['CMYW (Cyan/Magenta/Yellow)', 'RYBW (Red/Yellow/Blue)']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "\u6807\u8bb0\u56fe Marked",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "value_53",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/on_click",
+      "parameters": [
+        {
+          "name": "mode",
+          "label": "\ud83c\udfa8 \u8272\u5f69\u6a21\u5f0f Color Mode",
+          "type": "Literal['CMYW (Cyan/Magenta/Yellow)', 'RYBW (Red/Yellow/Blue)']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "\u6807\u8bb0\u56fe Marked",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "value_53",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/on_clear",
+      "parameters": [
+        {
+          "name": "mode",
+          "label": "\ud83c\udfa8 \u8272\u5f69\u6a21\u5f0f Color Mode",
+          "type": "Literal['CMYW (Cyan/Magenta/Yellow)', 'RYBW (Red/Yellow/Blue)']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "\u6807\u8bb0\u56fe Marked",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "value_53",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/run_extraction",
+      "parameters": [
+        {
+          "name": "offset_x",
+          "label": "X\u504f\u79fb Offset X",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "offset_y",
+          "label": "Y\u504f\u79fb Offset Y",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "zoom",
+          "label": "\u7f29\u653e Zoom",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "barrel",
+          "label": "\u7578\u53d8 Distortion",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "wb",
+          "label": "\u81ea\u52a8\u767d\u5e73\u8861 Auto WB",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "bright",
+          "label": "\u6697\u89d2\u6821\u6b63 Vignette",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_58",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "value_65",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "\u4e0b\u8f7d Download .npy",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "label": "\u72b6\u6001 Status",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/run_extraction_1",
+      "parameters": [
+        {
+          "name": "offset_x",
+          "label": "X\u504f\u79fb Offset X",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "offset_y",
+          "label": "Y\u504f\u79fb Offset Y",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "zoom",
+          "label": "\u7f29\u653e Zoom",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "barrel",
+          "label": "\u7578\u53d8 Distortion",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "wb",
+          "label": "\u81ea\u52a8\u767d\u5e73\u8861 Auto WB",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "bright",
+          "label": "\u6697\u89d2\u6821\u6b63 Vignette",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_58",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "value_65",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "\u4e0b\u8f7d Download .npy",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "label": "\u72b6\u6001 Status",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/run_extraction_2",
+      "parameters": [
+        {
+          "name": "offset_x",
+          "label": "X\u504f\u79fb Offset X",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "offset_y",
+          "label": "Y\u504f\u79fb Offset Y",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "zoom",
+          "label": "\u7f29\u653e Zoom",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "barrel",
+          "label": "\u7578\u53d8 Distortion",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "wb",
+          "label": "\u81ea\u52a8\u767d\u5e73\u8861 Auto WB",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "bright",
+          "label": "\u6697\u89d2\u6821\u6b63 Vignette",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_58",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "value_65",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "\u4e0b\u8f7d Download .npy",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "label": "\u72b6\u6001 Status",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/run_extraction_3",
+      "parameters": [
+        {
+          "name": "offset_x",
+          "label": "X\u504f\u79fb Offset X",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "offset_y",
+          "label": "Y\u504f\u79fb Offset Y",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "zoom",
+          "label": "\u7f29\u653e Zoom",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "barrel",
+          "label": "\u7578\u53d8 Distortion",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "wb",
+          "label": "\u81ea\u52a8\u767d\u5e73\u8861 Auto WB",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "bright",
+          "label": "\u6697\u89d2\u6821\u6b63 Vignette",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_58",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "value_65",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "\u4e0b\u8f7d Download .npy",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "label": "\u72b6\u6001 Status",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/run_extraction_4",
+      "parameters": [
+        {
+          "name": "offset_x",
+          "label": "X\u504f\u79fb Offset X",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "offset_y",
+          "label": "Y\u504f\u79fb Offset Y",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "zoom",
+          "label": "\u7f29\u653e Zoom",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "barrel",
+          "label": "\u7578\u53d8 Distortion",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "wb",
+          "label": "\u81ea\u52a8\u767d\u5e73\u8861 Auto WB",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "bright",
+          "label": "\u6697\u89d2\u6821\u6b63 Vignette",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_58",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "value_65",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "\u4e0b\u8f7d Download .npy",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "label": "\u72b6\u6001 Status",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/probe_lut_cell",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_68",
+          "type": "str",
+          "component": "Html"
+        },
+        {
+          "label": "\u66ff\u6362\u989c\u8272 Override",
+          "type": "str",
+          "component": "Colorpicker"
+        }
+      ]
+    },
+    {
+      "name": "/manual_fix_cell",
+      "parameters": [
+        {
+          "name": "color_input",
+          "label": "\u66ff\u6362\u989c\u8272 Override",
+          "type": "str",
+          "component": "Colorpicker"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_65",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "\u72b6\u6001 Status",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/generate_preview_cached",
+      "parameters": [
+        {
+          "name": "image_path",
+          "label": "\u8f93\u5165\u56fe\u50cf",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "lut_path",
+          "label": "\u6821\u51c6\u6570\u636e (.npy)",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "name": "target_width_mm",
+          "label": "\u5bbd\u5ea6 (mm)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "auto_bg",
+          "label": "\u79fb\u9664\u80cc\u666f",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "bg_tol",
+          "label": "\u5bb9\u5dee",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "color_mode",
+          "label": "\u8272\u5f69\u6a21\u5f0f",
+          "type": "Literal['CMYW (Cyan/Magenta/Yellow)', 'RYBW (Red/Yellow/Blue)']",
+          "component": "Radio"
+        },
+        {
+          "name": "mirror_horizontal",
+          "label": "\u5de6\u53f3\u955c\u50cf",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "\u72b6\u6001",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/on_preview_click",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "\u542f\u7528\u6302\u5b54",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "\u6302\u5b54\u4f4d\u7f6e",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/update_preview_with_loop",
+      "parameters": [
+        {
+          "name": "add_loop",
+          "label": "\u542f\u7528\u6302\u5b54",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "loop_width",
+          "label": "\u5bbd\u5ea6(mm)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "loop_length",
+          "label": "\u957f\u5ea6(mm)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "loop_hole",
+          "label": "\u5b54\u5f84(mm)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "loop_angle",
+          "label": "\u65cb\u8f6c\u89d2\u5ea6\u00b0",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/on_remove_loop",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "\u542f\u7528\u6302\u5b54",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "label": "\u65cb\u8f6c\u89d2\u5ea6\u00b0",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "\u6302\u5b54\u4f4d\u7f6e",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/update_preview_with_loop_1",
+      "parameters": [
+        {
+          "name": "add_loop",
+          "label": "\u542f\u7528\u6302\u5b54",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "loop_width",
+          "label": "\u5bbd\u5ea6(mm)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "loop_length",
+          "label": "\u957f\u5ea6(mm)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "loop_hole",
+          "label": "\u5b54\u5f84(mm)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "loop_angle",
+          "label": "\u65cb\u8f6c\u89d2\u5ea6\u00b0",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/update_preview_with_loop_2",
+      "parameters": [
+        {
+          "name": "add_loop",
+          "label": "\u542f\u7528\u6302\u5b54",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "loop_width",
+          "label": "\u5bbd\u5ea6(mm)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "loop_length",
+          "label": "\u957f\u5ea6(mm)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "loop_hole",
+          "label": "\u5b54\u5f84(mm)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "loop_angle",
+          "label": "\u65cb\u8f6c\u89d2\u5ea6\u00b0",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/update_preview_with_loop_3",
+      "parameters": [
+        {
+          "name": "add_loop",
+          "label": "\u542f\u7528\u6302\u5b54",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "loop_width",
+          "label": "\u5bbd\u5ea6(mm)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "loop_length",
+          "label": "\u957f\u5ea6(mm)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "loop_hole",
+          "label": "\u5b54\u5f84(mm)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "loop_angle",
+          "label": "\u65cb\u8f6c\u89d2\u5ea6\u00b0",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/update_preview_with_loop_4",
+      "parameters": [
+        {
+          "name": "add_loop",
+          "label": "\u542f\u7528\u6302\u5b54",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "loop_width",
+          "label": "\u5bbd\u5ea6(mm)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "loop_length",
+          "label": "\u957f\u5ea6(mm)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "loop_hole",
+          "label": "\u5b54\u5f84(mm)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "loop_angle",
+          "label": "\u65cb\u8f6c\u89d2\u5ea6\u00b0",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/update_preview_with_loop_5",
+      "parameters": [
+        {
+          "name": "add_loop",
+          "label": "\u542f\u7528\u6302\u5b54",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "loop_width",
+          "label": "\u5bbd\u5ea6(mm)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "loop_length",
+          "label": "\u957f\u5ea6(mm)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "loop_hole",
+          "label": "\u5b54\u5f84(mm)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "loop_angle",
+          "label": "\u65cb\u8f6c\u89d2\u5ea6\u00b0",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/generate_final_model",
+      "parameters": [
+        {
+          "name": "image_path",
+          "label": "\u8f93\u5165\u56fe\u50cf",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "lut_path",
+          "label": "\u6821\u51c6\u6570\u636e (.npy)",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "name": "target_width_mm",
+          "label": "\u5bbd\u5ea6 (mm)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "spacer_thick",
+          "label": "\u80cc\u677f (mm)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "structure_mode",
+          "label": "\u7ed3\u6784",
+          "type": "Literal['\u53cc\u9762 (\u94a5\u5319\u6263)', '\u5355\u9762 (\u6d6e\u96d5)']",
+          "component": "Radio"
+        },
+        {
+          "name": "auto_bg",
+          "label": "\u79fb\u9664\u80cc\u666f",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "bg_tol",
+          "label": "\u5bb9\u5dee",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "color_mode",
+          "label": "\u8272\u5f69\u6a21\u5f0f",
+          "type": "Literal['CMYW (Cyan/Magenta/Yellow)', 'RYBW (Red/Yellow/Blue)']",
+          "component": "Radio"
+        },
+        {
+          "name": "add_loop",
+          "label": "\u542f\u7528\u6302\u5b54",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "loop_width",
+          "label": "\u5bbd\u5ea6(mm)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "loop_length",
+          "label": "\u957f\u5ea6(mm)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "loop_hole",
+          "label": "\u5b54\u5f84(mm)",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "mirror_horizontal",
+          "label": "\u5de6\u53f3\u955c\u50cf",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "3MF\u6587\u4ef6",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "label": "3D",
+          "type": "filepath",
+          "component": "Model3d"
+        },
+        {
+          "label": "",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "\u72b6\u6001",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/generate_calibration_board",
+  "_api_verified": true,
+  "estimated_latency_s": 5.8,
+  "speed_tier": "medium",
+  "_latency_source": "measured",
+  "measured_latency_s": 5.8,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:52:04.816072+00:00"
+}

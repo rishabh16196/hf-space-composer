@@ -1,0 +1,1214 @@
+{
+  "space_id": "whitecircle-ai/circle-guard-bench",
+  "title": "CircleGuardBench",
+  "emoji": "\u26aa",
+  "description": "First benchmark testing LLM guards on safety and accuracy.",
+  "input_schema": {
+    "version": {
+      "type": "Literal['v0']",
+      "description": "Benchmark Version",
+      "required": true,
+      "component": "Dropdown"
+    },
+    "search_query": {
+      "type": "str",
+      "description": "Search",
+      "required": true,
+      "component": "Textbox"
+    },
+    "model_types": {
+      "type": "list[Literal['Open-Source', 'API']]",
+      "description": "Access Type",
+      "required": true,
+      "component": "Dropdown"
+    },
+    "selected_columns": {
+      "type": "list[Literal['Submission_Date', 'Version', 'Type', 'Base Model', 'Revision', 'Precision', 'Weight Ty",
+      "description": "Columns",
+      "required": true,
+      "component": "Dropdown"
+    }
+  },
+  "output_schema": {
+    "value_18": {
+      "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+      "description": "value_18",
+      "component": "Dataframe"
+    },
+    "value_20": {
+      "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+      "description": "value_20",
+      "component": "Dataframe"
+    },
+    "value_22": {
+      "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+      "description": "value_22",
+      "component": "Dataframe"
+    },
+    "value_24": {
+      "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+      "description": "value_24",
+      "component": "Dataframe"
+    },
+    "value_26": {
+      "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+      "description": "value_26",
+      "component": "Dataframe"
+    },
+    "value_28": {
+      "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+      "description": "value_28",
+      "component": "Dataframe"
+    },
+    "value_30": {
+      "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+      "description": "value_30",
+      "component": "Dataframe"
+    },
+    "value_32": {
+      "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+      "description": "value_32",
+      "component": "Dataframe"
+    },
+    "value_34": {
+      "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+      "description": "value_34",
+      "component": "Dataframe"
+    },
+    "value_36": {
+      "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+      "description": "value_36",
+      "component": "Dataframe"
+    },
+    "value_38": {
+      "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+      "description": "value_38",
+      "component": "Dataframe"
+    },
+    "value_40": {
+      "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+      "description": "value_40",
+      "component": "Dataframe"
+    },
+    "value_42": {
+      "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+      "description": "value_42",
+      "component": "Dataframe"
+    },
+    "value_44": {
+      "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+      "description": "value_44",
+      "component": "Dataframe"
+    },
+    "value_46": {
+      "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+      "description": "value_46",
+      "component": "Dataframe"
+    },
+    "value_48": {
+      "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+      "description": "value_48",
+      "component": "Dataframe"
+    },
+    "value_50": {
+      "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+      "description": "value_50",
+      "component": "Dataframe"
+    },
+    "value_52": {
+      "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+      "description": "value_52",
+      "component": "Dataframe"
+    },
+    "value_54": {
+      "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+      "description": "value_54",
+      "component": "Dataframe"
+    }
+  },
+  "license": "unknown",
+  "hardware": "5.12.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 28,
+  "last_modified": "2026-03-10 20:26:17+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/refresh_and_update",
+      "parameters": [
+        {
+          "name": "version",
+          "label": "Benchmark Version",
+          "type": "Literal['v0']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "search_query",
+          "label": "Search",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "model_types",
+          "label": "Access Type",
+          "type": "list[Literal['Open-Source', 'API']]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "selected_columns",
+          "label": "Columns",
+          "type": "list[Literal['Submission_Date', 'Version', 'Type', 'Base Model', 'Revision', 'Precision', 'Weight Type', 'Default_Prompts_F1_Binary', 'Default_Prompts_F1', 'Default_Prompts_Recall', 'Default_Prompts_P",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_18",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_20",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_22",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_24",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_26",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_28",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_30",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_32",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_34",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_36",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_38",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_40",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_42",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_44",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_46",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_48",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_50",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_52",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_54",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/refresh_data_with_filters",
+      "parameters": [
+        {
+          "name": "version",
+          "label": "Benchmark Version",
+          "type": "Literal['v0']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "search_query",
+          "label": "Search",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "model_types",
+          "label": "Access Type",
+          "type": "list[Literal['Open-Source', 'API']]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "selected_columns",
+          "label": "Columns",
+          "type": "list[Literal['Submission_Date', 'Version', 'Type', 'Base Model', 'Revision', 'Precision', 'Weight Type', 'Default_Prompts_F1_Binary', 'Default_Prompts_F1', 'Default_Prompts_Recall', 'Default_Prompts_P",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_18",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_20",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_22",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_24",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_26",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_28",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_30",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_32",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_34",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_36",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_38",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_40",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_42",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_44",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_46",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_48",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_50",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_52",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_54",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/refresh_data_with_filters_1",
+      "parameters": [
+        {
+          "name": "version",
+          "label": "Benchmark Version",
+          "type": "Literal['v0']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "search_query",
+          "label": "Search",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "model_types",
+          "label": "Access Type",
+          "type": "list[Literal['Open-Source', 'API']]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "selected_columns",
+          "label": "Columns",
+          "type": "list[Literal['Submission_Date', 'Version', 'Type', 'Base Model', 'Revision', 'Precision', 'Weight Type', 'Default_Prompts_F1_Binary', 'Default_Prompts_F1', 'Default_Prompts_Recall', 'Default_Prompts_P",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_18",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_20",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_22",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_24",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_26",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_28",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_30",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_32",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_34",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_36",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_38",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_40",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_42",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_44",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_46",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_48",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_50",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_52",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_54",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/refresh_data_with_filters_2",
+      "parameters": [
+        {
+          "name": "version",
+          "label": "Benchmark Version",
+          "type": "Literal['v0']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "search_query",
+          "label": "Search",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "model_types",
+          "label": "Access Type",
+          "type": "list[Literal['Open-Source', 'API']]",
+          "component": "Dropdown"
+        },
+        {
+          "name": "selected_columns",
+          "label": "Columns",
+          "type": "list[Literal['Submission_Date', 'Version', 'Type', 'Base Model', 'Revision', 'Precision', 'Weight Type', 'Default_Prompts_F1_Binary', 'Default_Prompts_F1', 'Default_Prompts_Recall', 'Default_Prompts_P",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_18",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_20",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_22",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_24",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_26",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_28",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_30",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_32",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_34",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_36",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_38",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_40",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_42",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_44",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_46",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_48",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_50",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_52",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_54",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/update_columns",
+      "parameters": [
+        {
+          "name": "selected_columns",
+          "label": "Columns",
+          "type": "list[Literal['Submission_Date', 'Version', 'Type', 'Base Model', 'Revision', 'Precision', 'Weight Type', 'Default_Prompts_F1_Binary', 'Default_Prompts_F1', 'Default_Prompts_Recall', 'Default_Prompts_P",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_18",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_20",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_22",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_24",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_26",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_28",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_30",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_32",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_34",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_36",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_38",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_40",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_42",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_44",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_46",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_48",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_50",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_52",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_54",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/lambda",
+      "parameters": [
+        {
+          "name": "smm",
+          "label": "Select Model(s) [Mode] to Compare",
+          "type": "list[Literal['amazon-nova-micro-v1 [CoT]', 'atla-selene-1-mini [Strict]', 'chatgpt-4o-latest [Strict]', 'claude-3.5-haiku [CoT]', 'claude-3.5-haiku [Strict]', 'claude-3.7-sonnet [Strict]', 'deepseek-d",
+          "component": "Dropdown"
+        },
+        {
+          "name": "sc",
+          "label": "Select Category",
+          "type": "Literal['All Results', 'Corruption & Legal Evasion', 'Financial Fraud', 'AI Jailbreaking', 'Child Exploitation', 'Hate Speech', 'Labor Exploitation', 'Misinformation', 'Environmental Harm', 'Academic ",
+          "component": "Dropdown"
+        },
+        {
+          "name": "s_metric",
+          "label": "Select Metric",
+          "type": "Literal['accuracy', 'f1_binary', 'precision_binary', 'recall_binary', 'error_ratio']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "v",
+          "label": "Benchmark Version",
+          "type": "Literal['v0']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_65",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_1",
+      "parameters": [
+        {
+          "name": "smm",
+          "label": "Select Model(s) [Mode] to Compare",
+          "type": "list[Literal['amazon-nova-micro-v1 [CoT]', 'atla-selene-1-mini [Strict]', 'chatgpt-4o-latest [Strict]', 'claude-3.5-haiku [CoT]', 'claude-3.5-haiku [Strict]', 'claude-3.7-sonnet [Strict]', 'deepseek-d",
+          "component": "Dropdown"
+        },
+        {
+          "name": "sc",
+          "label": "Select Category",
+          "type": "Literal['All Results', 'Corruption & Legal Evasion', 'Financial Fraud', 'AI Jailbreaking', 'Child Exploitation', 'Hate Speech', 'Labor Exploitation', 'Misinformation', 'Environmental Harm', 'Academic ",
+          "component": "Dropdown"
+        },
+        {
+          "name": "s_metric",
+          "label": "Select Metric",
+          "type": "Literal['accuracy', 'f1_binary', 'precision_binary', 'recall_binary', 'error_ratio']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "v",
+          "label": "Benchmark Version",
+          "type": "Literal['v0']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_65",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_2",
+      "parameters": [
+        {
+          "name": "smm",
+          "label": "Select Model(s) [Mode] to Compare",
+          "type": "list[Literal['amazon-nova-micro-v1 [CoT]', 'atla-selene-1-mini [Strict]', 'chatgpt-4o-latest [Strict]', 'claude-3.5-haiku [CoT]', 'claude-3.5-haiku [Strict]', 'claude-3.7-sonnet [Strict]', 'deepseek-d",
+          "component": "Dropdown"
+        },
+        {
+          "name": "sc",
+          "label": "Select Category",
+          "type": "Literal['All Results', 'Corruption & Legal Evasion', 'Financial Fraud', 'AI Jailbreaking', 'Child Exploitation', 'Hate Speech', 'Labor Exploitation', 'Misinformation', 'Environmental Harm', 'Academic ",
+          "component": "Dropdown"
+        },
+        {
+          "name": "s_metric",
+          "label": "Select Metric",
+          "type": "Literal['accuracy', 'f1_binary', 'precision_binary', 'recall_binary', 'error_ratio']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "v",
+          "label": "Benchmark Version",
+          "type": "Literal['v0']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_65",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_3",
+      "parameters": [
+        {
+          "name": "smm",
+          "label": "Select Model(s) [Mode] to Compare",
+          "type": "list[Literal['amazon-nova-micro-v1 [CoT]', 'atla-selene-1-mini [Strict]', 'chatgpt-4o-latest [Strict]', 'claude-3.5-haiku [CoT]', 'claude-3.5-haiku [Strict]', 'claude-3.7-sonnet [Strict]', 'deepseek-d",
+          "component": "Dropdown"
+        },
+        {
+          "name": "sc",
+          "label": "Select Category",
+          "type": "Literal['All Results', 'Corruption & Legal Evasion', 'Financial Fraud', 'AI Jailbreaking', 'Child Exploitation', 'Hate Speech', 'Labor Exploitation', 'Misinformation', 'Environmental Harm', 'Academic ",
+          "component": "Dropdown"
+        },
+        {
+          "name": "s_metric",
+          "label": "Select Metric",
+          "type": "Literal['accuracy', 'f1_binary', 'precision_binary', 'recall_binary', 'error_ratio']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "v",
+          "label": "Benchmark Version",
+          "type": "Literal['v0']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_65",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        }
+      ]
+    },
+    {
+      "name": "/get_model_mode_choices",
+      "parameters": [
+        {
+          "name": "version",
+          "label": "Benchmark Version",
+          "type": "Literal['v0']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Select Model(s) [Mode] to Compare",
+          "type": "list[Literal['amazon-nova-micro-v1 [CoT]', 'atla-selene-1-mini [Strict]', 'chatgpt-4o-latest [Strict]', 'claude-3.5-haiku [CoT]', 'claude-3.5-haiku [Strict]', 'claude-3.7-sonnet [Strict]', 'deepseek-d",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/submit_results",
+      "parameters": [
+        {
+          "name": "model_name",
+          "label": "Model name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "base_model",
+          "label": "Base model (for delta or adapter weights)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "revision",
+          "label": "Revision commit",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "precision",
+          "label": "Precision",
+          "type": "Literal['float16', 'bfloat16', 'float32', 'int8', 'int4', 'NA']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "weight_type",
+          "label": "Weights type",
+          "type": "Literal['Original', 'Delta', 'Adapter']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "model_type",
+          "label": "Model type",
+          "type": "Literal['Open-Source', 'API']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "mode",
+          "label": "Mode",
+          "type": "Literal['CoT', 'Strict']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "submission_file",
+          "label": "Upload JSONL Results File",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "name": "version",
+          "label": "Benchmark Version",
+          "type": "Literal['v0']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "guard_model_type",
+          "label": "Guard model type",
+          "type": "Literal['LLAMA_GUARD', 'CLASSIFIER', 'ATLA_SELENE', 'OPENAI_MODERATION', 'LLM_REGEXP', 'LLM_SO', 'WHITECIRCLE_GUARD']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_88",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/update_leaderboards",
+      "parameters": [
+        {
+          "name": "version",
+          "label": "Benchmark Version",
+          "type": "Literal['v0']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_18",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_20",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_22",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_24",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_26",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_28",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_30",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_32",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_34",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_36",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_38",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_40",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_42",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_44",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_46",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_48",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_50",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_52",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_54",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_4",
+      "parameters": [
+        {
+          "name": "version",
+          "label": "Benchmark Version",
+          "type": "Literal['v0']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_18",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_20",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_22",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_24",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_26",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_28",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_30",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_32",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_34",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_36",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_38",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_40",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_42",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_44",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_46",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_48",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_50",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_52",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "value_54",
+          "type": "dict(headers: list[str], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/refresh_and_update",
+  "_api_verified": true,
+  "estimated_latency_s": 6.17,
+  "speed_tier": "medium",
+  "_latency_source": "measured",
+  "measured_latency_s": 6.17,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:52:04.820404+00:00"
+}

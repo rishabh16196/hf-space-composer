@@ -1,0 +1,142 @@
+{
+  "space_id": "MrDragonFox/morpheus-uncensored-tts",
+  "title": "Morpheus Uncensored Tts",
+  "emoji": "\ud83d\udc40",
+  "description": "morpheus tts - uncensored",
+  "input_schema": {
+    "text": {
+      "type": "str",
+      "description": "Text to speak",
+      "required": true,
+      "component": "Textbox"
+    },
+    "voice": {
+      "type": "Literal['baddy']",
+      "description": "Voice",
+      "required": true,
+      "component": "Dropdown"
+    },
+    "temperature": {
+      "type": "float",
+      "description": "Temperature",
+      "required": true,
+      "component": "Slider"
+    },
+    "top_p": {
+      "type": "float",
+      "description": "Top P",
+      "required": true,
+      "component": "Slider"
+    },
+    "repetition_penalty": {
+      "type": "float",
+      "description": "Repetition Penalty",
+      "required": true,
+      "component": "Slider"
+    },
+    "max_new_tokens": {
+      "type": "float",
+      "description": "Max Length",
+      "required": true,
+      "component": "Slider"
+    }
+  },
+  "output_schema": {
+    "Generated Speech": {
+      "type": "filepath",
+      "description": "Generated Speech",
+      "component": "Audio"
+    }
+  },
+  "license": "cc-by-nc-4.0",
+  "hardware": "5.25.2",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us",
+    "audio",
+    "speech-synthesis",
+    "tts"
+  ],
+  "likes": 51,
+  "last_modified": "2025-09-12 07:38:20+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/generate_speech",
+      "parameters": [
+        {
+          "name": "text",
+          "label": "Text to speak",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "voice",
+          "label": "Voice",
+          "type": "Literal['baddy']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "temperature",
+          "label": "Temperature",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "top_p",
+          "label": "Top P",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "repetition_penalty",
+          "label": "Repetition Penalty",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "max_new_tokens",
+          "label": "Max Length",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Generated Speech",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ]
+    },
+    {
+      "name": "/lambda",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Text to speak",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Generated Speech",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/generate_speech",
+  "_api_verified": true,
+  "estimated_latency_s": 2.78,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "_tags_enriched": true,
+  "measured_latency_s": 2.78,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:49:38.310005+00:00"
+}

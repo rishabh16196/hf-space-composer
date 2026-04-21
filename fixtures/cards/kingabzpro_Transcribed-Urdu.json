@@ -1,0 +1,61 @@
+{
+  "space_id": "kingabzpro/Transcribed-Urdu",
+  "title": "Transcribed Urdu",
+  "emoji": "\ud83c\udf99\ufe0f",
+  "description": "The most accurate Urdu speech recognition app.",
+  "input_schema": {
+    "audio": {
+      "type": "filepath",
+      "description": "Record or Upload Audio (Urdu)",
+      "required": true,
+      "component": "Audio"
+    }
+  },
+  "output_schema": {
+    "Transcribed Text (Urdu)": {
+      "type": "str",
+      "description": "Transcribed Text (Urdu)",
+      "component": "Textbox"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "5.35.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us",
+    "audio"
+  ],
+  "likes": 8,
+  "last_modified": "2025-07-06 20:30:37+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_tags_enriched": true,
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/predict",
+      "parameters": [
+        {
+          "name": "audio",
+          "label": "Record or Upload Audio (Urdu)",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Transcribed Text (Urdu)",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/predict",
+  "_api_verified": true
+}

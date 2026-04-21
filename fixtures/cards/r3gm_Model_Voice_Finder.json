@@ -1,0 +1,80 @@
+{
+  "space_id": "r3gm/Model_Voice_Finder",
+  "title": "Model Voice Finder",
+  "emoji": "\ud83d\udd25",
+  "description": "Model Voice Finder",
+  "input_schema": {
+    "query": {
+      "type": "str",
+      "description": "Search here",
+      "required": true,
+      "component": "Textbox"
+    }
+  },
+  "output_schema": {
+    "Search Results": {
+      "type": "str",
+      "description": "Search Results",
+      "component": "Html"
+    }
+  },
+  "license": "mit",
+  "hardware": "5.44.1",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 15,
+  "last_modified": "2025-09-09 03:19:39+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/search_files",
+      "parameters": [
+        {
+          "name": "query",
+          "label": "Search here",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Search Results",
+          "type": "str",
+          "component": "Html"
+        }
+      ]
+    },
+    {
+      "name": "/search_files_1",
+      "parameters": [
+        {
+          "name": "query",
+          "label": "Search here",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Search Results",
+          "type": "str",
+          "component": "Html"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/search_files",
+  "_api_verified": true,
+  "estimated_latency_s": 4.27,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 4.27,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:51:40.763182+00:00"
+}

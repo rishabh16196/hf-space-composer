@@ -1,0 +1,108 @@
+{
+  "space_id": "fcakyon/yolov8-segmentation",
+  "title": "YOLOv8 Segmentation",
+  "emoji": "\ud83d\udd25",
+  "description": "YOLOv8 Segmentation",
+  "input_schema": {
+    "image": {
+      "type": "filepath",
+      "description": "Input Image",
+      "required": true,
+      "component": "Image"
+    },
+    "model_name": {
+      "type": "Literal['yolov8n-seg.pt', 'yolov8s-seg.pt', 'yolov8m-seg.pt', 'yolov8l-seg.pt', 'yolov8x-seg.pt']",
+      "description": "Model type",
+      "required": true,
+      "component": "Dropdown"
+    },
+    "image_size": {
+      "type": "float",
+      "description": "Image Size",
+      "required": true,
+      "component": "Slider"
+    },
+    "conf_threshold": {
+      "type": "float",
+      "description": "Confidence Threshold",
+      "required": true,
+      "component": "Slider"
+    },
+    "iou_threshold": {
+      "type": "float",
+      "description": "IOU Threshold",
+      "required": true,
+      "component": "Slider"
+    }
+  },
+  "output_schema": {
+    "Output Image": {
+      "type": "filepath",
+      "description": "Output Image",
+      "component": "Image"
+    }
+  },
+  "license": "gpl-3.0",
+  "hardware": "4.36.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 37,
+  "last_modified": "2024-06-09 01:10:07+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_tags_enriched": true,
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/predict",
+      "parameters": [
+        {
+          "name": "image",
+          "label": "Input Image",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "name": "model_name",
+          "label": "Model type",
+          "type": "Literal['yolov8n-seg.pt', 'yolov8s-seg.pt', 'yolov8m-seg.pt', 'yolov8l-seg.pt', 'yolov8x-seg.pt']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "image_size",
+          "label": "Image Size",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "conf_threshold",
+          "label": "Confidence Threshold",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "iou_threshold",
+          "label": "IOU Threshold",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output Image",
+          "type": "filepath",
+          "component": "Image"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/predict",
+  "_api_verified": true
+}

@@ -1,0 +1,43 @@
+{
+  "space_id": "maomao88/model_structure_viewer",
+  "title": "Transformer Model Structure Visualizer",
+  "emoji": "\ud83e\udde9",
+  "description": "Visualize transformer architectures.",
+  "input_schema": {
+    "input": {
+      "type": "string",
+      "description": "Input",
+      "required": true
+    }
+  },
+  "output_schema": {
+    "output": {
+      "type": "string"
+    }
+  },
+  "license": "mit",
+  "hardware": "",
+  "sdk": "docker",
+  "tags": [
+    "docker",
+    "transformers",
+    "visualization",
+    "attention",
+    "model-architecture",
+    "huggingface",
+    "model-layers",
+    "model-structure",
+    "hidden-states",
+    "region:us"
+  ],
+  "likes": 60,
+  "last_modified": "2026-01-26 06:53:20+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "error",
+  "_api_error": "Could not get Gradio config from: https://maomao88-model-structure-viewer.hf.space",
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred"
+}

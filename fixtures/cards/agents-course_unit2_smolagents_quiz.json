@@ -1,0 +1,159 @@
+{
+  "space_id": "agents-course/unit2_smolagents_quiz",
+  "title": "Unit 2.1 smolagents Code Quiz",
+  "emoji": "\ud83d\udcbb",
+  "description": "A coding quiz app on the smolagents framework",
+  "input_schema": {},
+  "output_schema": {
+    "value_7": {
+      "type": "str",
+      "description": "value_7",
+      "component": "Markdown"
+    },
+    "Your Solution": {
+      "type": "str",
+      "description": "Your Solution",
+      "component": "Code"
+    },
+    "value_12": {
+      "type": "str",
+      "description": "value_12",
+      "component": "Markdown"
+    },
+    "Question Image": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "Question Image",
+      "component": "Image"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "5.15.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 53,
+  "last_modified": "2025-03-04 08:36:30+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/on_user_logged_in",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_7",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "Your Solution",
+          "type": "str",
+          "component": "Code"
+        },
+        {
+          "label": "value_12",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "Question Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/handle_quiz",
+      "parameters": [
+        {
+          "name": "submitted_code",
+          "label": "Your Solution",
+          "type": "str",
+          "component": "Code"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_7",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "Your Solution",
+          "type": "str",
+          "component": "Code"
+        },
+        {
+          "label": "value_12",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_18",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "Question Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/handle_quiz_1",
+      "parameters": [
+        {
+          "name": "submitted_code",
+          "label": "Your Solution",
+          "type": "str",
+          "component": "Code"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_7",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "Your Solution",
+          "type": "str",
+          "component": "Code"
+        },
+        {
+          "label": "value_12",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_18",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "Question Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/_check_login_status",
+      "parameters": [],
+      "returns": []
+    }
+  ],
+  "endpoint": "/on_user_logged_in",
+  "_api_verified": true,
+  "estimated_latency_s": 3.37,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 3.37,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:50:09.017047+00:00"
+}

@@ -1,0 +1,38 @@
+{
+  "space_id": "ncduy/emotion-classifier",
+  "title": "Emotion Classifier",
+  "emoji": "\ud83e\udd80",
+  "description": "Emotion Classifier",
+  "input_schema": {
+    "input": {
+      "type": "string",
+      "description": "Input",
+      "required": true
+    }
+  },
+  "output_schema": {
+    "output": {
+      "type": "string"
+    }
+  },
+  "license": "unknown",
+  "hardware": "",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us",
+    "sentiment",
+    "text"
+  ],
+  "likes": 4,
+  "last_modified": "2021-12-18 06:41:07+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_tags_enriched": true,
+  "estimated_latency_s": 2.5,
+  "speed_tier": "fast",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "error",
+  "_api_error": "(Request ID: Root=1-69e77bcc-5bf838da0865f9633ef48b73;be626cac-1bd8-4fb3-b07a-f8856004575f)\n\n429 Too Many Requests: you have reached your 'api' rate limit.\nRetry after 18 seconds (0/2500 requests rema"
+}

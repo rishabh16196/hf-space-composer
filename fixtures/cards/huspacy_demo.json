@@ -1,0 +1,35 @@
+{
+  "space_id": "huspacy/demo",
+  "title": "HuSpaCy Demo",
+  "emoji": "\ud83d\ude80",
+  "description": "HuSpaCy Demo",
+  "input_schema": {
+    "input": {
+      "type": "string",
+      "description": "Input",
+      "required": true
+    }
+  },
+  "output_schema": {
+    "output": {
+      "type": "string"
+    }
+  },
+  "license": "unknown",
+  "hardware": "1.25.0",
+  "sdk": "streamlit",
+  "tags": [
+    "streamlit",
+    "region:us"
+  ],
+  "likes": 8,
+  "last_modified": "2024-04-09 17:59:25+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "error",
+  "_api_error": "Could not get Gradio config from: https://huspacy-demo.hf.space",
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred"
+}

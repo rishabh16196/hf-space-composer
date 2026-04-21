@@ -1,0 +1,72 @@
+{
+  "space_id": "ahmetikrdg/stark-o",
+  "title": "Stark O",
+  "emoji": "\ud83c\udf0d",
+  "description": "sentiment analysis model",
+  "input_schema": {
+    "comment": {
+      "type": "str",
+      "description": "Yorumunuzu girin",
+      "required": true,
+      "component": "Textbox"
+    }
+  },
+  "output_schema": {
+    "Tahmin": {
+      "type": "str",
+      "description": "Tahmin",
+      "component": "Textbox"
+    },
+    "value_7": {
+      "type": "dict(label: str | int | float | None, confidences: list[dict(label: str | int | float | None, confid",
+      "description": "value_7",
+      "component": "Label"
+    }
+  },
+  "license": "mit",
+  "hardware": "5.18.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us",
+    "sentiment",
+    "text"
+  ],
+  "likes": 2,
+  "last_modified": "2025-03-12 06:21:09+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_tags_enriched": true,
+  "estimated_latency_s": 2.5,
+  "speed_tier": "fast",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/process_input",
+      "parameters": [
+        {
+          "name": "comment",
+          "label": "Yorumunuzu girin",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Tahmin",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "value_7",
+          "type": "dict(label: str | int | float | None, confidences: list[dict(label: str | int | float | None, confidence: float | None)] | None)",
+          "component": "Label"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/process_input",
+  "_api_verified": true
+}

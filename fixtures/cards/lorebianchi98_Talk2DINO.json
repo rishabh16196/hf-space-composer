@@ -1,0 +1,177 @@
+{
+  "space_id": "lorebianchi98/Talk2DINO",
+  "title": "Talk2DINO",
+  "emoji": "\ud83d\udcbb",
+  "description": "Demo of Talk2DINO, model presented at ICCV 2025.",
+  "input_schema": {
+    "with_bg": {
+      "type": "bool",
+      "description": "Include Background",
+      "required": true,
+      "component": "Checkbox"
+    }
+  },
+  "output_schema": {
+    "Background Threshold": {
+      "type": "float",
+      "description": "Background Threshold",
+      "component": "Slider"
+    },
+    "Apply Background Cleaning": {
+      "type": "bool",
+      "description": "Apply Background Cleaning",
+      "component": "Checkbox"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "5.49.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 19,
+  "last_modified": "2025-10-19 20:02:48+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/toggle_bg_options",
+      "parameters": [
+        {
+          "name": "with_bg",
+          "label": "Include Background",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Background Threshold",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Apply Background Cleaning",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ]
+    },
+    {
+      "name": "/enable_generate_button",
+      "parameters": [
+        {
+          "name": "text",
+          "label": "Comma-separated Classes",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/load_example_image",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Input Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "Comma-separated Classes",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/on_upload_image",
+      "parameters": [
+        {
+          "name": "img",
+          "label": "Input Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Input Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "Comma-separated Classes",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/talk2dino_infer",
+      "parameters": [
+        {
+          "name": "input_image",
+          "label": "Input Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "class_text",
+          "label": "Comma-separated Classes",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "selected_model",
+          "label": "Select Model",
+          "type": "Literal['Talk2DINO-ViT-B', 'Talk2DINO-ViT-L', 'Talk2DINOv3-ViT-B', 'Talk2DINOv3-ViT-L']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "apply_pamr",
+          "label": "Apply PAMR",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "with_background",
+          "label": "Include Background",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "bg_thresh",
+          "label": "Background Threshold",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "apply_bg_clean",
+          "label": "Apply Background Cleaning",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Segmentation Overlay",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/toggle_bg_options",
+  "_api_verified": true,
+  "estimated_latency_s": 3.79,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 3.79,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:51:10.489476+00:00"
+}

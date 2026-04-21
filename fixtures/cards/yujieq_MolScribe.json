@@ -1,0 +1,79 @@
+{
+  "space_id": "yujieq/MolScribe",
+  "title": "MolScribe",
+  "emoji": "\ud83d\udcd6",
+  "description": "MolScribe",
+  "input_schema": {
+    "Upload molecular image": {
+      "type": "str",
+      "description": "Upload molecular image",
+      "required": true,
+      "component": "Image"
+    }
+  },
+  "output_schema": {
+    "Prediction": {
+      "type": "str",
+      "description": "Prediction",
+      "component": "Image"
+    },
+    "SMILES": {
+      "type": "str",
+      "description": "SMILES",
+      "component": "Textbox"
+    },
+    "Molfile": {
+      "type": "str",
+      "description": "Molfile",
+      "component": "Textbox"
+    }
+  },
+  "license": "mit",
+  "hardware": "3.34.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 25,
+  "last_modified": "2023-06-13 18:21:55+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/predict",
+      "parameters": [
+        {
+          "name": "Upload molecular image",
+          "label": "Upload molecular image",
+          "type": "str",
+          "component": "Image"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Prediction",
+          "type": "str",
+          "component": "Image"
+        },
+        {
+          "label": "SMILES",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Molfile",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/predict",
+  "_api_verified": true
+}

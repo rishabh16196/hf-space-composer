@@ -1,0 +1,242 @@
+{
+  "space_id": "harumaa/Qwen-Image-Editor-SFW-NSFW",
+  "title": "Qwen Image Editor SFW NSFW",
+  "emoji": "\u270f\ufe0f",
+  "description": "Qwen Image Editor SFW NSFW",
+  "input_schema": {
+    "checked": {
+      "type": "bool",
+      "description": "\ud83c\udf38 Enable Anime2Real Style",
+      "required": true,
+      "component": "Checkbox"
+    }
+  },
+  "output_schema": {
+    "Style Strength": {
+      "type": "float",
+      "description": "Style Strength",
+      "component": "Slider"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "6.10.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "image-editing",
+    "qwen",
+    "anime",
+    "not-for-all-audiences",
+    "region:us"
+  ],
+  "likes": 9,
+  "last_modified": "2026-04-07 17:54:45+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/lambda",
+      "parameters": [
+        {
+          "name": "checked",
+          "label": "\ud83c\udf38 Enable Anime2Real Style",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Style Strength",
+          "type": "float",
+          "component": "Slider"
+        }
+      ]
+    },
+    {
+      "name": "/on_images_change",
+      "parameters": [
+        {
+          "name": "images",
+          "label": "Input Image",
+          "type": "list[dict(image: filepath, caption: str | None) | dict(video: filepath, caption: str | None)]",
+          "component": "Gallery"
+        },
+        {
+          "name": "current_ratio",
+          "label": "Aspect Ratio",
+          "type": "Literal['1:1', '4:3', '3:4', '16:9', '9:16', '3:2', '2:3']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Aspect Ratio",
+          "type": "Literal['1:1', '4:3', '3:4', '16:9', '9:16', '3:2', '2:3']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "Resolution  (capped to uploaded image)",
+          "type": "Literal['512 \u00d7 512', '768 \u00d7 768', '1024 \u00d7 1024', '1280 \u00d7 1280']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "value_13",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/on_ratio_change",
+      "parameters": [
+        {
+          "name": "ratio",
+          "label": "Aspect Ratio",
+          "type": "Literal['1:1', '4:3', '3:4', '16:9', '9:16', '3:2', '2:3']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "images",
+          "label": "Input Image",
+          "type": "list[dict(image: filepath, caption: str | None) | dict(video: filepath, caption: str | None)]",
+          "component": "Gallery"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Resolution  (capped to uploaded image)",
+          "type": "Literal['512 \u00d7 512', '768 \u00d7 768', '1024 \u00d7 1024', '1280 \u00d7 1280']",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/infer_edit",
+      "parameters": [
+        {
+          "name": "images",
+          "label": "Input Image",
+          "type": "list[dict(image: filepath, caption: str | None) | dict(video: filepath, caption: str | None)]",
+          "component": "Gallery"
+        },
+        {
+          "name": "prompt",
+          "label": "parameter_23",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "seed",
+          "label": "Seed",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "randomize_seed",
+          "label": "Randomize seed",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "cfg",
+          "label": "CFG Scale",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "steps",
+          "label": "Steps",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "res_label",
+          "label": "Resolution  (capped to uploaded image)",
+          "type": "Literal['512 \u00d7 512', '768 \u00d7 768', '1024 \u00d7 1024', '1280 \u00d7 1280']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "rewrite",
+          "label": "\ud83e\ude84 Auto-rewrite prompt via Qwen2.5-VL-72B (needs HF_TOKEN + novita perms)",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "use_anime",
+          "label": "\ud83c\udf38 Enable Anime2Real Style",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "a_weight",
+          "label": "Style Strength",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Edited Result",
+          "type": "list[dict(image: filepath, caption: str | None) | dict(video: filepath, caption: str | None)]",
+          "component": "Gallery"
+        },
+        {
+          "label": "Seed",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "\u2b07 Download",
+          "type": "filepath",
+          "component": "Downloadbutton"
+        },
+        {
+          "label": "value_26",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/use_output_as_input",
+      "parameters": [
+        {
+          "name": "imgs",
+          "label": "Edited Result",
+          "type": "list[dict(image: filepath, caption: str | None) | dict(video: filepath, caption: str | None)]",
+          "component": "Gallery"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Input Image",
+          "type": "list[dict(image: filepath, caption: str | None) | dict(video: filepath, caption: str | None)]",
+          "component": "Gallery"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_1",
+      "parameters": [
+        {
+          "name": "imgs",
+          "label": "Edited Result",
+          "type": "list[dict(image: filepath, caption: str | None) | dict(video: filepath, caption: str | None)]",
+          "component": "Gallery"
+        }
+      ],
+      "returns": []
+    }
+  ],
+  "endpoint": "/lambda",
+  "_api_verified": true,
+  "estimated_latency_s": 4.18,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "_tags_enriched": true,
+  "measured_latency_s": 4.18,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:50:42.560127+00:00"
+}

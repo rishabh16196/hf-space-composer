@@ -1,0 +1,65 @@
+{
+  "space_id": "kingabzpro/savtadepth",
+  "title": "Monocular Depth Estimation",
+  "emoji": "\ud83d\udecb",
+  "description": "Monocular Depth Estimation",
+  "input_schema": {
+    "input_img": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "Input\u202fRGB",
+      "required": true,
+      "component": "Image"
+    }
+  },
+  "output_schema": {
+    "Predicted\u202fDepth": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "Predicted\u202fDepth",
+      "component": "Image"
+    }
+  },
+  "license": "mit",
+  "hardware": "5.34.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us",
+    "depth-estimation",
+    "vision"
+  ],
+  "likes": 15,
+  "last_modified": "2025-10-30 13:12:35+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/predict",
+      "parameters": [
+        {
+          "name": "input_img",
+          "label": "Input\u202fRGB",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Predicted\u202fDepth",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/predict",
+  "_api_verified": true,
+  "estimated_latency_s": 3.66,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "_tags_enriched": true,
+  "measured_latency_s": 3.66,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:51:03.560247+00:00"
+}

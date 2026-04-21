@@ -1,0 +1,156 @@
+{
+  "space_id": "Qwen/Qwen2.5-VL-32B-Instruct",
+  "title": "Qwen2.5 VL 32B Instruct Demo",
+  "emoji": "\ud83c\udfc3",
+  "description": "Qwen2.5 VL 32B Instruct Demo",
+  "input_schema": {
+    "history": {
+      "type": "tuple[str | dict(file: filepath, alt_text: str | None) | dict(component: str, value: Any, constructo",
+      "description": "Qwen2.5-VL-32B-Instruct",
+      "required": true,
+      "component": "Chatbot"
+    },
+    "text": {
+      "type": "str",
+      "description": "Input",
+      "required": true,
+      "component": "Textbox"
+    }
+  },
+  "output_schema": {
+    "Qwen2.5-VL-32B-Instruct": {
+      "type": "tuple[str | dict(file: filepath, alt_text: str | None) | dict(component: str, value: Any, constructo",
+      "description": "Qwen2.5-VL-32B-Instruct",
+      "component": "Chatbot"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "5.22.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 166,
+  "last_modified": "2025-03-24 09:13:04+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/add_text",
+      "parameters": [
+        {
+          "name": "history",
+          "label": "Qwen2.5-VL-32B-Instruct",
+          "type": "tuple[str | dict(file: filepath, alt_text: str | None) | dict(component: str, value: Any, constructor_args: dict(str, Any), props: dict(str, Any)) | None, str | dict(file: filepath, alt_text: str | No",
+          "component": "Chatbot"
+        },
+        {
+          "name": "text",
+          "label": "Input",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Qwen2.5-VL-32B-Instruct",
+          "type": "tuple[str | dict(file: filepath, alt_text: str | None) | dict(component: str, value: Any, constructor_args: dict(str, Any), props: dict(str, Any)) | None, str | dict(file: filepath, alt_text: str | No",
+          "component": "Chatbot"
+        }
+      ]
+    },
+    {
+      "name": "/predict",
+      "parameters": [
+        {
+          "name": "_chatbot",
+          "label": "Qwen2.5-VL-32B-Instruct",
+          "type": "tuple[str | dict(file: filepath, alt_text: str | None) | dict(component: str, value: Any, constructor_args: dict(str, Any), props: dict(str, Any)) | None, str | dict(file: filepath, alt_text: str | No",
+          "component": "Chatbot"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Qwen2.5-VL-32B-Instruct",
+          "type": "tuple[str | dict(file: filepath, alt_text: str | None) | dict(component: str, value: Any, constructor_args: dict(str, Any), props: dict(str, Any)) | None, str | dict(file: filepath, alt_text: str | No",
+          "component": "Chatbot"
+        }
+      ]
+    },
+    {
+      "name": "/reset_user_input",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Input",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/reset_state",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Qwen2.5-VL-32B-Instruct",
+          "type": "tuple[str | dict(file: filepath, alt_text: str | None) | dict(component: str, value: Any, constructor_args: dict(str, Any), props: dict(str, Any)) | None, str | dict(file: filepath, alt_text: str | No",
+          "component": "Chatbot"
+        }
+      ]
+    },
+    {
+      "name": "/regenerate",
+      "parameters": [
+        {
+          "name": "_chatbot",
+          "label": "Qwen2.5-VL-32B-Instruct",
+          "type": "tuple[str | dict(file: filepath, alt_text: str | None) | dict(component: str, value: Any, constructor_args: dict(str, Any), props: dict(str, Any)) | None, str | dict(file: filepath, alt_text: str | No",
+          "component": "Chatbot"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Qwen2.5-VL-32B-Instruct",
+          "type": "tuple[str | dict(file: filepath, alt_text: str | None) | dict(component: str, value: Any, constructor_args: dict(str, Any), props: dict(str, Any)) | None, str | dict(file: filepath, alt_text: str | No",
+          "component": "Chatbot"
+        }
+      ]
+    },
+    {
+      "name": "/add_file",
+      "parameters": [
+        {
+          "name": "history",
+          "label": "Qwen2.5-VL-32B-Instruct",
+          "type": "tuple[str | dict(file: filepath, alt_text: str | None) | dict(component: str, value: Any, constructor_args: dict(str, Any), props: dict(str, Any)) | None, str | dict(file: filepath, alt_text: str | No",
+          "component": "Chatbot"
+        },
+        {
+          "name": "file",
+          "label": "\ud83d\udcc1 Upload (\u4e0a\u4f20\u6587\u4ef6)",
+          "type": "filepath",
+          "component": "Uploadbutton"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Qwen2.5-VL-32B-Instruct",
+          "type": "tuple[str | dict(file: filepath, alt_text: str | None) | dict(component: str, value: Any, constructor_args: dict(str, Any), props: dict(str, Any)) | None, str | dict(file: filepath, alt_text: str | No",
+          "component": "Chatbot"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/add_text",
+  "_api_verified": true,
+  "estimated_latency_s": 3.02,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 3.02,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:49:50.358755+00:00"
+}

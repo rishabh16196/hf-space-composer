@@ -1,0 +1,189 @@
+{
+  "space_id": "DeepLabCut/DeepLabCutModelZoo-SuperAnimals",
+  "title": "DeepLabCut Model Zoo",
+  "emoji": "\ud83d\udc15\ud83d\udc01\ud83d\udc34\ud83d\ude3b\ud83d\udc18\ud83d\udc06\ud83d\udc3f\ud83d\udc02\ud83e\udd98\ud83e\udd92",
+  "description": "DeepLabCut Model Zoo",
+  "input_schema": {
+    "img_input": {
+      "type": "filepath",
+      "description": "Input Image",
+      "required": true,
+      "component": "Image"
+    },
+    "mega_model_input": {
+      "type": "Literal['md_v5a', 'md_v5b']",
+      "description": "Select Detector model",
+      "required": true,
+      "component": "Dropdown"
+    },
+    "dlc_model_input_str": {
+      "type": "Literal['superanimal_topviewmouse_dlcrnet', 'superanimal_quadruped_dlcrnet']",
+      "description": "Select DeepLabCut model",
+      "required": true,
+      "component": "Dropdown"
+    },
+    "flag_dlc_only": {
+      "type": "bool",
+      "description": "Run DLClive only, directly on input image?",
+      "required": true,
+      "component": "Checkbox"
+    },
+    "flag_show_str_labels": {
+      "type": "bool",
+      "description": "Show bodypart labels?",
+      "required": true,
+      "component": "Checkbox"
+    },
+    "bbox_likelihood_th": {
+      "type": "float",
+      "description": "Set confidence threshold for animal detections",
+      "required": true,
+      "component": "Slider"
+    },
+    "kpts_likelihood_th": {
+      "type": "float",
+      "description": "Set confidence threshold for keypoints",
+      "required": true,
+      "component": "Slider"
+    },
+    "font_style": {
+      "type": "Literal['amiko', 'animals', 'nature', 'painter', 'zen']",
+      "description": "Select keypoint label font",
+      "required": true,
+      "component": "Dropdown"
+    },
+    "font_size": {
+      "type": "float",
+      "description": "Set font size",
+      "required": true,
+      "component": "Slider"
+    },
+    "keypt_color": {
+      "type": "str",
+      "description": "Choose color for keypoint label",
+      "required": true,
+      "component": "Colorpicker"
+    },
+    "marker_size": {
+      "type": "float",
+      "description": "Set marker size",
+      "required": true,
+      "component": "Slider"
+    }
+  },
+  "output_schema": {
+    "Output Image": {
+      "type": "filepath",
+      "description": "Output Image",
+      "component": "Image"
+    },
+    "Download JSON file": {
+      "type": "filepath",
+      "description": "Download JSON file",
+      "component": "File"
+    }
+  },
+  "license": "unknown",
+  "hardware": "6.11.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 12,
+  "last_modified": "2026-04-13 13:16:55+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/predict_pipeline",
+      "parameters": [
+        {
+          "name": "img_input",
+          "label": "Input Image",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "name": "mega_model_input",
+          "label": "Select Detector model",
+          "type": "Literal['md_v5a', 'md_v5b']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "dlc_model_input_str",
+          "label": "Select DeepLabCut model",
+          "type": "Literal['superanimal_topviewmouse_dlcrnet', 'superanimal_quadruped_dlcrnet']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "flag_dlc_only",
+          "label": "Run DLClive only, directly on input image?",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "flag_show_str_labels",
+          "label": "Show bodypart labels?",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "bbox_likelihood_th",
+          "label": "Set confidence threshold for animal detections",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "kpts_likelihood_th",
+          "label": "Set confidence threshold for keypoints",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "font_style",
+          "label": "Select keypoint label font",
+          "type": "Literal['amiko', 'animals', 'nature', 'painter', 'zen']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "font_size",
+          "label": "Set font size",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "keypt_color",
+          "label": "Choose color for keypoint label",
+          "type": "str",
+          "component": "Colorpicker"
+        },
+        {
+          "name": "marker_size",
+          "label": "Set marker size",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output Image",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "Download JSON file",
+          "type": "filepath",
+          "component": "File"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/predict_pipeline",
+  "_api_verified": true
+}

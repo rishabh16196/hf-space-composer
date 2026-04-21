@@ -1,0 +1,212 @@
+{
+  "space_id": "Ruicheng/MoGe-2",
+  "title": "MoGe 2",
+  "emoji": "\ud83d\ude80",
+  "description": "Monocular metric-scale geometry estimation",
+  "input_schema": {},
+  "output_schema": {
+    "Colorized Depth Map": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "Colorized Depth Map",
+      "component": "Image"
+    },
+    "Normal Map": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "Normal Map",
+      "component": "Image"
+    },
+    "3D Point Map": {
+      "type": "filepath",
+      "description": "3D Point Map",
+      "component": "Model3d"
+    },
+    "Output Files": {
+      "type": "filepath",
+      "description": "Output Files",
+      "component": "File"
+    },
+    "value_19": {
+      "type": "str",
+      "description": "value_19",
+      "component": "Markdown"
+    },
+    "value_17": {
+      "type": "str",
+      "description": "value_17",
+      "component": "Markdown"
+    },
+    "value_21": {
+      "type": "str",
+      "description": "value_21",
+      "component": "Markdown"
+    }
+  },
+  "license": "mit",
+  "hardware": "5.33.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 69,
+  "last_modified": "2025-07-01 10:17:37+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/lambda",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Colorized Depth Map",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "Normal Map",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "3D Point Map",
+          "type": "filepath",
+          "component": "Model3d"
+        },
+        {
+          "label": "Output Files",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "label": "value_19",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_17",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_21",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/run",
+      "parameters": [
+        {
+          "name": "image",
+          "label": "Input Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "max_size",
+          "label": "Maximum Image Size",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "resolution_level",
+          "label": "Inference Resolution Level",
+          "type": "Literal['Low', 'Medium', 'High', 'Ultra']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "apply_mask",
+          "label": "Apply mask",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "remove_edge",
+          "label": "Remove edges",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Colorized Depth Map",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "Normal Map",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "3D Point Map",
+          "type": "filepath",
+          "component": "Model3d"
+        },
+        {
+          "label": "Output Files",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "label": "value_19",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_17",
+          "type": "str",
+          "component": "Markdown"
+        },
+        {
+          "label": "value_21",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/reset_measure",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_27",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "value_28",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    },
+    {
+      "name": "/measure",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "value_27",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "value_28",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/lambda",
+  "_api_verified": true,
+  "estimated_latency_s": 4.04,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 4.04,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:49:54.470195+00:00"
+}

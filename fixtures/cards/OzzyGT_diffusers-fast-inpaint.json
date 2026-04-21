@@ -1,0 +1,192 @@
+{
+  "space_id": "OzzyGT/diffusers-fast-inpaint",
+  "title": "Diffusers Fast Inpaint",
+  "emoji": "\ud83d\udc40",
+  "description": "Diffusers Fast Inpaint",
+  "input_schema": {
+    "output_image": {
+      "type": "tuple[dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base6",
+      "description": "Generated Image",
+      "required": true,
+      "component": "Imageslider"
+    }
+  },
+  "output_schema": {
+    "Input Image": {
+      "type": "dict(background: filepath | None, layers: list[filepath], composite: filepath | None, id: str | None",
+      "description": "Input Image",
+      "component": "Imageeditor"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us",
+    "diffusion",
+    "image-generation",
+    "vision"
+  ],
+  "likes": 358,
+  "last_modified": "2025-08-26 21:10:28+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/use_output_as_input",
+      "parameters": [
+        {
+          "name": "output_image",
+          "label": "Generated Image",
+          "type": "tuple[dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filenam",
+          "component": "Imageslider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Input Image",
+          "type": "dict(background: filepath | None, layers: list[filepath], composite: filepath | None, id: str | None)",
+          "component": "Imageeditor"
+        }
+      ]
+    },
+    {
+      "name": "/clear_result",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Generated Image",
+          "type": "tuple[dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filenam",
+          "component": "Imageslider"
+        }
+      ]
+    },
+    {
+      "name": "/lambda",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/fill_image",
+      "parameters": [
+        {
+          "name": "prompt",
+          "label": "Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "negative_prompt",
+          "label": "Negative Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "image",
+          "label": "Input Image",
+          "type": "dict(background: filepath | None, layers: list[filepath], composite: filepath | None, id: str | None)",
+          "component": "Imageeditor"
+        },
+        {
+          "name": "model_selection",
+          "label": "Model",
+          "type": "Literal['RealVisXL V5.0 Lightning']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "paste_back",
+          "label": "Paste back original",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Generated Image",
+          "type": "tuple[dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filenam",
+          "component": "Imageslider"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_1",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/clear_result_1",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Generated Image",
+          "type": "tuple[dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filenam",
+          "component": "Imageslider"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_2",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/fill_image_1",
+      "parameters": [
+        {
+          "name": "prompt",
+          "label": "Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "negative_prompt",
+          "label": "Negative Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "image",
+          "label": "Input Image",
+          "type": "dict(background: filepath | None, layers: list[filepath], composite: filepath | None, id: str | None)",
+          "component": "Imageeditor"
+        },
+        {
+          "name": "model_selection",
+          "label": "Model",
+          "type": "Literal['RealVisXL V5.0 Lightning']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "paste_back",
+          "label": "Paste back original",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Generated Image",
+          "type": "tuple[dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filenam",
+          "component": "Imageslider"
+        }
+      ]
+    },
+    {
+      "name": "/lambda_3",
+      "parameters": [],
+      "returns": []
+    }
+  ],
+  "endpoint": "/use_output_as_input",
+  "_api_verified": true,
+  "estimated_latency_s": 3.06,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "_tags_enriched": true,
+  "measured_latency_s": 3.06,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:49:44.679872+00:00"
+}

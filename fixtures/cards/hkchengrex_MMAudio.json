@@ -1,0 +1,185 @@
+{
+  "space_id": "hkchengrex/MMAudio",
+  "title": "MMAudio \u2014 generating synchronized audio from video/text",
+  "emoji": "\ud83d\udd0a",
+  "description": "MMAudio \u2014 generating synchronized audio from video/text",
+  "input_schema": {
+    "video": {
+      "type": "filepath",
+      "description": "parameter_0",
+      "required": true,
+      "component": "Video"
+    },
+    "prompt": {
+      "type": "str",
+      "description": "Prompt",
+      "required": true,
+      "component": "Textbox"
+    },
+    "negative_prompt": {
+      "type": "str",
+      "description": "Negative prompt",
+      "required": true,
+      "component": "Textbox"
+    },
+    "seed": {
+      "type": "int",
+      "description": "Seed (-1: random)",
+      "required": true,
+      "component": "Number"
+    },
+    "num_steps": {
+      "type": "int",
+      "description": "Num steps",
+      "required": true,
+      "component": "Number"
+    },
+    "cfg_strength": {
+      "type": "float",
+      "description": "Guidance Strength",
+      "required": true,
+      "component": "Number"
+    },
+    "duration": {
+      "type": "float",
+      "description": "Duration (sec)",
+      "required": true,
+      "component": "Number"
+    }
+  },
+  "output_schema": {
+    "output": {
+      "type": "filepath",
+      "description": "output",
+      "component": "Video"
+    }
+  },
+  "license": "unknown",
+  "hardware": "6.3.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 943,
+  "last_modified": "2026-04-08 03:36:50+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/video_to_audio",
+      "parameters": [
+        {
+          "name": "video",
+          "label": "parameter_0",
+          "type": "filepath",
+          "component": "Video"
+        },
+        {
+          "name": "prompt",
+          "label": "Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "negative_prompt",
+          "label": "Negative prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "seed",
+          "label": "Seed (-1: random)",
+          "type": "int",
+          "component": "Number"
+        },
+        {
+          "name": "num_steps",
+          "label": "Num steps",
+          "type": "int",
+          "component": "Number"
+        },
+        {
+          "name": "cfg_strength",
+          "label": "Guidance Strength",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "duration",
+          "label": "Duration (sec)",
+          "type": "float",
+          "component": "Number"
+        }
+      ],
+      "returns": [
+        {
+          "label": "output",
+          "type": "filepath",
+          "component": "Video"
+        }
+      ]
+    },
+    {
+      "name": "/text_to_audio",
+      "parameters": [
+        {
+          "name": "prompt",
+          "label": "Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "negative_prompt",
+          "label": "Negative prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "seed",
+          "label": "Seed (-1: random)",
+          "type": "int",
+          "component": "Number"
+        },
+        {
+          "name": "num_steps",
+          "label": "Num steps",
+          "type": "int",
+          "component": "Number"
+        },
+        {
+          "name": "cfg_strength",
+          "label": "Guidance Strength",
+          "type": "float",
+          "component": "Number"
+        },
+        {
+          "name": "duration",
+          "label": "Duration (sec)",
+          "type": "float",
+          "component": "Number"
+        }
+      ],
+      "returns": [
+        {
+          "label": "output",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/video_to_audio",
+  "_api_verified": true,
+  "estimated_latency_s": 3.77,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "_tags_enriched": true,
+  "measured_latency_s": 3.77,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:50:45.135114+00:00",
+  "_inference_attempt_status": "predict_failed",
+  "_inference_attempt_error": "The upstream Gradio app has raised an exception but has not enabled verbose error reporting. To enable, set show_error=True in launch()."
+}

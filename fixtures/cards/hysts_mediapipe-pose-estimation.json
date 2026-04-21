@@ -1,0 +1,112 @@
+{
+  "space_id": "hysts/mediapipe-pose-estimation",
+  "title": "Mediapipe Pose Estimation",
+  "emoji": "\ud83d\udc41",
+  "description": "Mediapipe Pose Estimation",
+  "input_schema": {
+    "image": {
+      "type": "filepath",
+      "description": "Input",
+      "required": true,
+      "component": "Image"
+    },
+    "model_complexity": {
+      "type": "Literal['0', '1', '2']",
+      "description": "Model Complexity",
+      "required": true,
+      "component": "Radio"
+    },
+    "enable_segmentation": {
+      "type": "bool",
+      "description": "Enable Segmentation",
+      "required": true,
+      "component": "Checkbox"
+    },
+    "min_detection_confidence": {
+      "type": "float",
+      "description": "Minimum Detection Confidence",
+      "required": true,
+      "component": "Slider"
+    },
+    "background_color": {
+      "type": "Literal['white', 'black', 'green']",
+      "description": "Background Color",
+      "required": true,
+      "component": "Radio"
+    }
+  },
+  "output_schema": {
+    "Output": {
+      "type": "filepath",
+      "description": "Output",
+      "component": "Image"
+    }
+  },
+  "license": "unknown",
+  "hardware": "4.36.1",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us",
+    "vision"
+  ],
+  "likes": 58,
+  "last_modified": "2024-06-10 05:58:39+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/predict",
+      "parameters": [
+        {
+          "name": "image",
+          "label": "Input",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "name": "model_complexity",
+          "label": "Model Complexity",
+          "type": "Literal['0', '1', '2']",
+          "component": "Radio"
+        },
+        {
+          "name": "enable_segmentation",
+          "label": "Enable Segmentation",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "min_detection_confidence",
+          "label": "Minimum Detection Confidence",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "background_color",
+          "label": "Background Color",
+          "type": "Literal['white', 'black', 'green']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Output",
+          "type": "filepath",
+          "component": "Image"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/predict",
+  "_api_verified": true,
+  "estimated_latency_s": 3.72,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "_tags_enriched": true,
+  "measured_latency_s": 3.72,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:50:55.659310+00:00"
+}

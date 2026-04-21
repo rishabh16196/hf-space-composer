@@ -1,0 +1,117 @@
+{
+  "space_id": "dpe1/beat_manipulator",
+  "title": "BeatManipulator",
+  "emoji": "\ud83e\udd41",
+  "description": "BeatManipulator",
+  "input_schema": {
+    "audiofile": {
+      "type": "filepath",
+      "description": "audiofile",
+      "required": true,
+      "component": "Audio"
+    },
+    "pattern": {
+      "type": "str",
+      "description": "Pattern:",
+      "required": true,
+      "component": "Textbox"
+    },
+    "scale": {
+      "type": "str",
+      "description": "Beatmap scale. At 2, every two beat positions will be merged, at 0.5 - a beat position added between every two existing ones. Note that sometimes you need to double or halve this value to get good results, when detected BPM is twice or half the actual BPM.",
+      "required": true,
+      "component": "Textbox"
+    },
+    "shift": {
+      "type": "str",
+      "description": "Beatmap shift, in beats (applies before scaling):",
+      "required": true,
+      "component": "Textbox"
+    },
+    "variableBPM": {
+      "type": "bool",
+      "description": "Enable support for variable BPM, however this makes beat detection slightly less accurate",
+      "required": true,
+      "component": "Checkbox"
+    }
+  },
+  "output_schema": {
+    "output 0": {
+      "type": "filepath",
+      "description": "output 0",
+      "component": "Audio"
+    },
+    "Beat-image": {
+      "type": "Dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "Beat-image",
+      "component": "Image"
+    }
+  },
+  "license": "cc-by-nc-sa-4.0",
+  "hardware": "5.8.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 25,
+  "last_modified": "2025-12-07 20:19:51+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/predict",
+      "parameters": [
+        {
+          "name": "audiofile",
+          "label": "audiofile",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "name": "pattern",
+          "label": "Pattern:",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "scale",
+          "label": "Beatmap scale. At 2, every two beat positions will be merged, at 0.5 - a beat position added between every two existing ones. Note that sometimes you need to double or halve this value to get good results, when detected BPM is twice or half the actual BPM.",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "shift",
+          "label": "Beatmap shift, in beats (applies before scaling):",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "variableBPM",
+          "label": "Enable support for variable BPM, however this makes beat detection slightly less accurate",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "output 0",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Beat-image",
+          "type": "Dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/predict",
+  "_api_verified": true
+}

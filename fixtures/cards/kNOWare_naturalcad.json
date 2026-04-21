@@ -1,0 +1,133 @@
+{
+  "space_id": "kNOWare/naturalcad",
+  "title": "NaturalCAD",
+  "emoji": "\ud83c\udf43",
+  "description": "NaturalCAD",
+  "input_schema": {
+    "prompt": {
+      "type": "str",
+      "description": "Describe what you want",
+      "required": true,
+      "component": "Textbox"
+    },
+    "mode": {
+      "type": "Literal['part', 'assembly', 'sketch']",
+      "description": "Mode",
+      "required": true,
+      "component": "Dropdown"
+    },
+    "output_type": {
+      "type": "Literal['3d_solid', 'surface', '2d_vector', '1d_path']",
+      "description": "Output",
+      "required": true,
+      "component": "Dropdown"
+    }
+  },
+  "output_schema": {
+    "Preview": {
+      "type": "filepath",
+      "description": "Preview",
+      "component": "Model3d"
+    },
+    "Download STL": {
+      "type": "filepath",
+      "description": "Download STL",
+      "component": "File"
+    },
+    "Download STEP": {
+      "type": "filepath",
+      "description": "Download STEP",
+      "component": "File"
+    },
+    "Download DXF": {
+      "type": "filepath",
+      "description": "Download DXF",
+      "component": "File"
+    },
+    "Run log": {
+      "type": "str",
+      "description": "Run log",
+      "component": "Textbox"
+    },
+    "value_20": {
+      "type": "str",
+      "description": "value_20",
+      "component": "Markdown"
+    }
+  },
+  "license": "unknown",
+  "hardware": "",
+  "sdk": "docker",
+  "tags": [
+    "docker",
+    "region:us"
+  ],
+  "likes": 2,
+  "last_modified": "2026-04-18 23:58:49+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/generate_from_prompt",
+      "parameters": [
+        {
+          "name": "prompt",
+          "label": "Describe what you want",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "mode",
+          "label": "Mode",
+          "type": "Literal['part', 'assembly', 'sketch']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "output_type",
+          "label": "Output",
+          "type": "Literal['3d_solid', 'surface', '2d_vector', '1d_path']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Preview",
+          "type": "filepath",
+          "component": "Model3d"
+        },
+        {
+          "label": "Download STL",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "label": "Download STEP",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "label": "Download DXF",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "label": "Run log",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "value_20",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/generate_from_prompt",
+  "_api_verified": true
+}

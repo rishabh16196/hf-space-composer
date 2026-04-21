@@ -1,0 +1,81 @@
+{
+  "space_id": "silveroxides/lode-tagger-experiment",
+  "title": "Lode Tagger Experiment",
+  "emoji": "\ud83d\udc20",
+  "description": "Lode Tagger Experiment",
+  "input_schema": {
+    "image": {
+      "type": "filepath",
+      "description": "Source",
+      "required": true,
+      "component": "Image"
+    },
+    "top_k": {
+      "type": "float",
+      "description": "Top K",
+      "required": true,
+      "component": "Slider"
+    }
+  },
+  "output_schema": {
+    "Tag String": {
+      "type": "str",
+      "description": "Tag String",
+      "component": "Textbox"
+    },
+    "Tag Predictions": {
+      "type": "dict(label: str | int | float | None, confidences: list[dict(label: str | int | float | None, confid",
+      "description": "Tag Predictions",
+      "component": "Label"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "6.10.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 2,
+  "last_modified": "2026-04-20 21:57:01+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/get_tags",
+      "parameters": [
+        {
+          "name": "image",
+          "label": "Source",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "name": "top_k",
+          "label": "Top K",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Tag String",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Tag Predictions",
+          "type": "dict(label: str | int | float | None, confidences: list[dict(label: str | int | float | None, confidence: float | None)] | None)",
+          "component": "Label"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/get_tags",
+  "_api_verified": true
+}

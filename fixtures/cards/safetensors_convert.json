@@ -1,0 +1,92 @@
+{
+  "space_id": "safetensors/convert",
+  "title": "Convert to Safetensors",
+  "emoji": "\ud83d\udc36",
+  "description": "Convert to Safetensors",
+  "input_schema": {
+    "s": {
+      "type": "bool",
+      "description": "Private model",
+      "required": true,
+      "component": "Checkbox"
+    }
+  },
+  "output_schema": {
+    "your_hf_token": {
+      "type": "str",
+      "description": "your_hf_token",
+      "component": "Textbox"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "4.36.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 264,
+  "last_modified": "2025-11-24 14:21:07+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/lambda",
+      "parameters": [
+        {
+          "name": "s",
+          "label": "Private model",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "your_hf_token",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/run",
+      "parameters": [
+        {
+          "name": "model_id",
+          "label": "model_id",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "is_private",
+          "label": "Private model",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "token",
+          "label": "your_hf_token",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_13",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/lambda",
+  "_api_verified": true,
+  "estimated_latency_s": 3.95,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 3.95,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:51:47.038590+00:00"
+}

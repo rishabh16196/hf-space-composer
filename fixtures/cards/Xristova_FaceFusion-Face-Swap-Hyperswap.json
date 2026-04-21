@@ -1,0 +1,2898 @@
+{
+  "space_id": "Xristova/FaceFusion-Face-Swap-Hyperswap",
+  "title": "FaceFusion Face Swap HYPERSWAP (CPU)",
+  "emoji": "\ud83d\udc7d",
+  "description": "CPU = UNLIMIT (DUPLICATE this Space)!",
+  "input_schema": {
+    "value": {
+      "type": "Literal['0', '1', '2', '3', '4']",
+      "description": "Select Face Index",
+      "required": true,
+      "component": "Dropdown"
+    }
+  },
+  "output_schema": {},
+  "license": "mit",
+  "hardware": "5.50.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us",
+    "video",
+    "vision"
+  ],
+  "likes": 2,
+  "last_modified": "2026-01-26 17:43:16+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_tags_enriched": true,
+  "estimated_latency_s": 120.0,
+  "speed_tier": "very_slow",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/lambda",
+      "parameters": [
+        {
+          "name": "value",
+          "label": "Select Face Index",
+          "type": "Literal['0', '1', '2', '3', '4']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/lambda_1",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/update_processors",
+      "parameters": [
+        {
+          "name": "processors",
+          "label": "PROCESSORS",
+          "type": "list[Literal['face_swapper', 'face_enhancer']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "PROCESSORS",
+          "type": "list[Literal['face_swapper', 'face_enhancer']]",
+          "component": "Checkboxgroup"
+        }
+      ]
+    },
+    {
+      "name": "/update_age_modifier_model",
+      "parameters": [
+        {
+          "name": "age_modifier_model",
+          "label": "AGE MODIFIER MODEL",
+          "type": "Literal['styleganex_age']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "AGE MODIFIER MODEL",
+          "type": "Literal['styleganex_age']",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/update_age_modifier_direction",
+      "parameters": [
+        {
+          "name": "age_modifier_direction",
+          "label": "AGE MODIFIER DIRECTION",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/remote_update",
+      "parameters": [
+        {
+          "name": "processors",
+          "label": "PROCESSORS",
+          "type": "list[Literal['face_swapper', 'face_enhancer']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "AGE MODIFIER MODEL",
+          "type": "Literal['styleganex_age']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "AGE MODIFIER DIRECTION",
+          "type": "float",
+          "component": "Slider"
+        }
+      ]
+    },
+    {
+      "name": "/update_deep_swapper_model",
+      "parameters": [
+        {
+          "name": "deep_swapper_model",
+          "label": "DEEP SWAPPER MODEL",
+          "type": "Literal['druuzil/adam_levine_320', 'druuzil/adrianne_palicki_384', 'druuzil/agnetha_falskog_224', 'druuzil/alan_ritchson_320', 'druuzil/alicia_vikander_320', 'druuzil/amber_midthunder_320', 'druuzil/a",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "DEEP SWAPPER MODEL",
+          "type": "Literal['druuzil/adam_levine_320', 'druuzil/adrianne_palicki_384', 'druuzil/agnetha_falskog_224', 'druuzil/alan_ritchson_320', 'druuzil/alicia_vikander_320', 'druuzil/amber_midthunder_320', 'druuzil/a",
+          "component": "Dropdown"
+        },
+        {
+          "label": "DEEP SWAPPER MORPH",
+          "type": "float",
+          "component": "Slider"
+        }
+      ]
+    },
+    {
+      "name": "/update_deep_swapper_morph",
+      "parameters": [
+        {
+          "name": "deep_swapper_morph",
+          "label": "DEEP SWAPPER MORPH",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/remote_update_1",
+      "parameters": [
+        {
+          "name": "processors",
+          "label": "PROCESSORS",
+          "type": "list[Literal['face_swapper', 'face_enhancer']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "DEEP SWAPPER MODEL",
+          "type": "Literal['druuzil/adam_levine_320', 'druuzil/adrianne_palicki_384', 'druuzil/agnetha_falskog_224', 'druuzil/alan_ritchson_320', 'druuzil/alicia_vikander_320', 'druuzil/amber_midthunder_320', 'druuzil/a",
+          "component": "Dropdown"
+        },
+        {
+          "label": "DEEP SWAPPER MORPH",
+          "type": "float",
+          "component": "Slider"
+        }
+      ]
+    },
+    {
+      "name": "/update_expression_restorer_model",
+      "parameters": [
+        {
+          "name": "expression_restorer_model",
+          "label": "EXPRESSION RESTORER MODEL",
+          "type": "Literal['live_portrait']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "EXPRESSION RESTORER MODEL",
+          "type": "Literal['live_portrait']",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/update_expression_restorer_factor",
+      "parameters": [
+        {
+          "name": "expression_restorer_factor",
+          "label": "EXPRESSION RESTORER FACTOR",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/remote_update_2",
+      "parameters": [
+        {
+          "name": "processors",
+          "label": "PROCESSORS",
+          "type": "list[Literal['face_swapper', 'face_enhancer']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "EXPRESSION RESTORER MODEL",
+          "type": "Literal['live_portrait']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "EXPRESSION RESTORER FACTOR",
+          "type": "float",
+          "component": "Slider"
+        }
+      ]
+    },
+    {
+      "name": "/update_face_debugger_items",
+      "parameters": [
+        {
+          "name": "face_debugger_items",
+          "label": "FACE DEBUGGER ITEMS",
+          "type": "list[Literal['bounding-box', 'face-landmark-5', 'face-landmark-5/68', 'face-landmark-68', 'face-landmark-68/5', 'face-mask', 'face-detector-score', 'face-landmarker-score', 'age', 'gender', 'race']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/remote_update_3",
+      "parameters": [
+        {
+          "name": "processors",
+          "label": "PROCESSORS",
+          "type": "list[Literal['face_swapper', 'face_enhancer']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "FACE DEBUGGER ITEMS",
+          "type": "list[Literal['bounding-box', 'face-landmark-5', 'face-landmark-5/68', 'face-landmark-68', 'face-landmark-68/5', 'face-mask', 'face-detector-score', 'face-landmarker-score', 'age', 'gender', 'race']]",
+          "component": "Checkboxgroup"
+        }
+      ]
+    },
+    {
+      "name": "/update_face_editor_model",
+      "parameters": [
+        {
+          "name": "face_editor_model",
+          "label": "FACE EDITOR MODEL",
+          "type": "Literal['live_portrait']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "FACE EDITOR MODEL",
+          "type": "Literal['live_portrait']",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/update_face_editor_eyebrow_direction",
+      "parameters": [
+        {
+          "name": "face_editor_eyebrow_direction",
+          "label": "FACE EDITOR EYEBROW DIRECTION",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/update_face_editor_eye_gaze_horizontal",
+      "parameters": [
+        {
+          "name": "face_editor_eye_gaze_horizontal",
+          "label": "FACE EDITOR EYE GAZE HORIZONTAL",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/update_face_editor_eye_gaze_vertical",
+      "parameters": [
+        {
+          "name": "face_editor_eye_gaze_vertical",
+          "label": "FACE EDITOR EYE GAZE VERTICAL",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/update_face_editor_eye_open_ratio",
+      "parameters": [
+        {
+          "name": "face_editor_eye_open_ratio",
+          "label": "FACE EDITOR EYE OPEN RATIO",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/update_face_editor_lip_open_ratio",
+      "parameters": [
+        {
+          "name": "face_editor_lip_open_ratio",
+          "label": "FACE EDITOR LIP OPEN RATIO",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/update_face_editor_mouth_grim",
+      "parameters": [
+        {
+          "name": "face_editor_mouth_grim",
+          "label": "FACE EDITOR MOUTH GRIM",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/update_face_editor_mouth_pout",
+      "parameters": [
+        {
+          "name": "face_editor_mouth_pout",
+          "label": "FACE EDITOR MOUTH POUT",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/update_face_editor_mouth_purse",
+      "parameters": [
+        {
+          "name": "face_editor_mouth_purse",
+          "label": "FACE EDITOR MOUTH PURSE",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/update_face_editor_mouth_smile",
+      "parameters": [
+        {
+          "name": "face_editor_mouth_smile",
+          "label": "FACE EDITOR MOUTH SMILE",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/update_face_editor_mouth_position_horizontal",
+      "parameters": [
+        {
+          "name": "face_editor_mouth_position_horizontal",
+          "label": "FACE EDITOR MOUTH POSITION HORIZONTAL",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/update_face_editor_mouth_position_vertical",
+      "parameters": [
+        {
+          "name": "face_editor_mouth_position_vertical",
+          "label": "FACE EDITOR MOUTH POSITION VERTICAL",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/update_face_editor_head_pitch",
+      "parameters": [
+        {
+          "name": "face_editor_head_pitch",
+          "label": "FACE EDITOR HEAD PITCH",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/update_face_editor_head_yaw",
+      "parameters": [
+        {
+          "name": "face_editor_head_yaw",
+          "label": "FACE EDITOR HEAD YAW",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/update_face_editor_head_roll",
+      "parameters": [
+        {
+          "name": "face_editor_head_roll",
+          "label": "FACE EDITOR HEAD ROLL",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/remote_update_4",
+      "parameters": [
+        {
+          "name": "processors",
+          "label": "PROCESSORS",
+          "type": "list[Literal['face_swapper', 'face_enhancer']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "FACE EDITOR MODEL",
+          "type": "Literal['live_portrait']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "FACE EDITOR EYEBROW DIRECTION",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "FACE EDITOR EYE GAZE HORIZONTAL",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "FACE EDITOR EYE GAZE VERTICAL",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "FACE EDITOR EYE OPEN RATIO",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "FACE EDITOR LIP OPEN RATIO",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "FACE EDITOR MOUTH GRIM",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "FACE EDITOR MOUTH POUT",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "FACE EDITOR MOUTH PURSE",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "FACE EDITOR MOUTH SMILE",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "FACE EDITOR MOUTH POSITION HORIZONTAL",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "FACE EDITOR MOUTH POSITION VERTICAL",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "FACE EDITOR HEAD PITCH",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "FACE EDITOR HEAD YAW",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "FACE EDITOR HEAD ROLL",
+          "type": "float",
+          "component": "Slider"
+        }
+      ]
+    },
+    {
+      "name": "/update_face_enhancer_model",
+      "parameters": [
+        {
+          "name": "face_enhancer_model",
+          "label": "FACE ENHANCER MODEL",
+          "type": "Literal['codeformer', 'gfpgan_1.2', 'gfpgan_1.3', 'gfpgan_1.4', 'gpen_bfr_256', 'gpen_bfr_512', 'gpen_bfr_1024', 'gpen_bfr_2048', 'restoreformer_plus_plus']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "FACE ENHANCER MODEL",
+          "type": "Literal['codeformer', 'gfpgan_1.2', 'gfpgan_1.3', 'gfpgan_1.4', 'gpen_bfr_256', 'gpen_bfr_512', 'gpen_bfr_1024', 'gpen_bfr_2048', 'restoreformer_plus_plus']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "FACE ENHANCER WEIGHT",
+          "type": "float",
+          "component": "Slider"
+        }
+      ]
+    },
+    {
+      "name": "/update_face_enhancer_blend",
+      "parameters": [
+        {
+          "name": "face_enhancer_blend",
+          "label": "FACE ENHANCER BLEND",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/update_face_enhancer_weight",
+      "parameters": [
+        {
+          "name": "face_enhancer_weight",
+          "label": "FACE ENHANCER WEIGHT",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/remote_update_5",
+      "parameters": [
+        {
+          "name": "processors",
+          "label": "PROCESSORS",
+          "type": "list[Literal['face_swapper', 'face_enhancer']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "FACE ENHANCER MODEL",
+          "type": "Literal['codeformer', 'gfpgan_1.2', 'gfpgan_1.3', 'gfpgan_1.4', 'gpen_bfr_256', 'gpen_bfr_512', 'gpen_bfr_1024', 'gpen_bfr_2048', 'restoreformer_plus_plus']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "FACE ENHANCER BLEND",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "FACE ENHANCER WEIGHT",
+          "type": "float",
+          "component": "Slider"
+        }
+      ]
+    },
+    {
+      "name": "/update_face_swapper_model",
+      "parameters": [
+        {
+          "name": "face_swapper_model",
+          "label": "FACE SWAPPER MODEL",
+          "type": "Literal['blendswap_256', 'ghost_1_256', 'ghost_2_256', 'ghost_3_256', 'hififace_unofficial_256', 'hyperswap_1a_256', 'hyperswap_1b_256', 'hyperswap_1c_256', 'inswapper_128', 'inswapper_128_fp16', 'sim",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "FACE SWAPPER MODEL",
+          "type": "Literal['blendswap_256', 'ghost_1_256', 'ghost_2_256', 'ghost_3_256', 'hififace_unofficial_256', 'hyperswap_1a_256', 'hyperswap_1b_256', 'hyperswap_1c_256', 'inswapper_128', 'inswapper_128_fp16', 'sim",
+          "component": "Dropdown"
+        },
+        {
+          "label": "FACE SWAPPER PIXEL BOOST",
+          "type": "Literal['256x256', '512x512', '768x768', '1024x1024']",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/update_face_swapper_pixel_boost",
+      "parameters": [
+        {
+          "name": "face_swapper_pixel_boost",
+          "label": "FACE SWAPPER PIXEL BOOST",
+          "type": "Literal['256x256', '512x512', '768x768', '1024x1024']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/remote_update_6",
+      "parameters": [
+        {
+          "name": "processors",
+          "label": "PROCESSORS",
+          "type": "list[Literal['face_swapper', 'face_enhancer']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "FACE SWAPPER MODEL",
+          "type": "Literal['blendswap_256', 'ghost_1_256', 'ghost_2_256', 'ghost_3_256', 'hififace_unofficial_256', 'hyperswap_1a_256', 'hyperswap_1b_256', 'hyperswap_1c_256', 'inswapper_128', 'inswapper_128_fp16', 'sim",
+          "component": "Dropdown"
+        },
+        {
+          "label": "FACE SWAPPER PIXEL BOOST",
+          "type": "Literal['256x256', '512x512', '768x768', '1024x1024']",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/update_frame_colorizer_model",
+      "parameters": [
+        {
+          "name": "frame_colorizer_model",
+          "label": "FRAME COLORIZER MODEL",
+          "type": "Literal['ddcolor', 'ddcolor_artistic', 'deoldify', 'deoldify_artistic', 'deoldify_stable']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "FRAME COLORIZER MODEL",
+          "type": "Literal['ddcolor', 'ddcolor_artistic', 'deoldify', 'deoldify_artistic', 'deoldify_stable']",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/update_frame_colorizer_size",
+      "parameters": [
+        {
+          "name": "frame_colorizer_size",
+          "label": "FRAME COLORIZER SIZE",
+          "type": "Literal['192x192', '256x256', '384x384', '512x512']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/update_frame_colorizer_blend",
+      "parameters": [
+        {
+          "name": "frame_colorizer_blend",
+          "label": "FRAME COLORIZER BLEND",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/remote_update_7",
+      "parameters": [
+        {
+          "name": "processors",
+          "label": "PROCESSORS",
+          "type": "list[Literal['face_swapper', 'face_enhancer']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "FRAME COLORIZER MODEL",
+          "type": "Literal['ddcolor', 'ddcolor_artistic', 'deoldify', 'deoldify_artistic', 'deoldify_stable']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "FRAME COLORIZER BLEND",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "FRAME COLORIZER SIZE",
+          "type": "Literal['192x192', '256x256', '384x384', '512x512']",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/update_frame_enhancer_model",
+      "parameters": [
+        {
+          "name": "frame_enhancer_model",
+          "label": "FRAME ENHANCER MODEL",
+          "type": "Literal['clear_reality_x4', 'lsdir_x4', 'nomos8k_sc_x4', 'real_esrgan_x2', 'real_esrgan_x2_fp16', 'real_esrgan_x4', 'real_esrgan_x4_fp16', 'real_esrgan_x8', 'real_esrgan_x8_fp16', 'real_hatgan_x4', 'r",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "FRAME ENHANCER MODEL",
+          "type": "Literal['clear_reality_x4', 'lsdir_x4', 'nomos8k_sc_x4', 'real_esrgan_x2', 'real_esrgan_x2_fp16', 'real_esrgan_x4', 'real_esrgan_x4_fp16', 'real_esrgan_x8', 'real_esrgan_x8_fp16', 'real_hatgan_x4', 'r",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/update_frame_enhancer_blend",
+      "parameters": [
+        {
+          "name": "frame_enhancer_blend",
+          "label": "FRAME ENHANCER BLEND",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/remote_update_8",
+      "parameters": [
+        {
+          "name": "processors",
+          "label": "PROCESSORS",
+          "type": "list[Literal['face_swapper', 'face_enhancer']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "FRAME ENHANCER MODEL",
+          "type": "Literal['clear_reality_x4', 'lsdir_x4', 'nomos8k_sc_x4', 'real_esrgan_x2', 'real_esrgan_x2_fp16', 'real_esrgan_x4', 'real_esrgan_x4_fp16', 'real_esrgan_x8', 'real_esrgan_x8_fp16', 'real_hatgan_x4', 'r",
+          "component": "Dropdown"
+        },
+        {
+          "label": "FRAME ENHANCER BLEND",
+          "type": "float",
+          "component": "Slider"
+        }
+      ]
+    },
+    {
+      "name": "/update_lip_syncer_model",
+      "parameters": [
+        {
+          "name": "lip_syncer_model",
+          "label": "LIP SYNCER MODEL",
+          "type": "Literal['edtalk_256', 'wav2lip_96', 'wav2lip_gan_96']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "LIP SYNCER MODEL",
+          "type": "Literal['edtalk_256', 'wav2lip_96', 'wav2lip_gan_96']",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/update_lip_syncer_weight",
+      "parameters": [
+        {
+          "name": "lip_syncer_weight",
+          "label": "LIP SYNCER WEIGHT",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/remote_update_9",
+      "parameters": [
+        {
+          "name": "processors",
+          "label": "PROCESSORS",
+          "type": "list[Literal['face_swapper', 'face_enhancer']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "LIP SYNCER MODEL",
+          "type": "Literal['edtalk_256', 'wav2lip_96', 'wav2lip_gan_96']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "LIP SYNCER WEIGHT",
+          "type": "float",
+          "component": "Slider"
+        }
+      ]
+    },
+    {
+      "name": "/update_execution_providers",
+      "parameters": [
+        {
+          "name": "execution_providers",
+          "label": "EXECUTION PROVIDERS",
+          "type": "list[Literal['cuda', 'tensorrt', 'cpu']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "EXECUTION PROVIDERS",
+          "type": "list[Literal['cuda', 'tensorrt', 'cpu']]",
+          "component": "Checkboxgroup"
+        }
+      ]
+    },
+    {
+      "name": "/update_execution_thread_count",
+      "parameters": [
+        {
+          "name": "execution_thread_count",
+          "label": "EXECUTION THREAD COUNT",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/update_execution_queue_count",
+      "parameters": [
+        {
+          "name": "execution_queue_count",
+          "label": "EXECUTION QUEUE COUNT",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/update_download_providers",
+      "parameters": [
+        {
+          "name": "download_providers",
+          "label": "DOWNLOAD PROVIDERS",
+          "type": "list[Literal['github', 'huggingface']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "DOWNLOAD PROVIDERS",
+          "type": "list[Literal['github', 'huggingface']]",
+          "component": "Checkboxgroup"
+        }
+      ]
+    },
+    {
+      "name": "/update_video_memory_strategy",
+      "parameters": [
+        {
+          "name": "video_memory_strategy",
+          "label": "VIDEO MEMORY STRATEGY",
+          "type": "Literal['strict', 'moderate', 'tolerant']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/update_system_memory_limit",
+      "parameters": [
+        {
+          "name": "system_memory_limit",
+          "label": "SYSTEM MEMORY LIMIT",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/update_temp_frame_format",
+      "parameters": [
+        {
+          "name": "temp_frame_format",
+          "label": "TEMP FRAME FORMAT",
+          "type": "Literal['bmp', 'jpeg', 'png', 'tiff']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/update_output_image_quality",
+      "parameters": [
+        {
+          "name": "output_image_quality",
+          "label": "OUTPUT IMAGE QUALITY",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/update_output_image_resolution",
+      "parameters": [
+        {
+          "name": "output_image_resolution",
+          "label": "OUTPUT IMAGE RESOLUTION",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/update_output_audio_encoder",
+      "parameters": [
+        {
+          "name": "output_audio_encoder",
+          "label": "OUTPUT AUDIO ENCODER",
+          "type": "Literal['flac', 'aac', 'libmp3lame', 'libopus', 'libvorbis', 'pcm_s16le', 'pcm_s32le']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/update_output_audio_quality",
+      "parameters": [
+        {
+          "name": "output_audio_quality",
+          "label": "OUTPUT AUDIO QUALITY",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/update_output_audio_volume",
+      "parameters": [
+        {
+          "name": "output_audio_volume",
+          "label": "OUTPUT AUDIO VOLUME",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/update_output_video_encoder",
+      "parameters": [
+        {
+          "name": "output_video_encoder",
+          "label": "OUTPUT VIDEO ENCODER",
+          "type": "Literal['libx264', 'libx265', 'libvpx-vp9', 'h264_nvenc', 'h264_qsv', 'hevc_nvenc', 'hevc_qsv', 'rawvideo']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/update_output_video_preset",
+      "parameters": [
+        {
+          "name": "output_video_preset",
+          "label": "OUTPUT VIDEO PRESET",
+          "type": "Literal['ultrafast', 'superfast', 'veryfast', 'faster', 'fast', 'medium', 'slow', 'slower', 'veryslow']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/update_output_video_quality",
+      "parameters": [
+        {
+          "name": "output_video_quality",
+          "label": "OUTPUT VIDEO QUALITY",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/update_output_video_resolution",
+      "parameters": [
+        {
+          "name": "output_video_resolution",
+          "label": "OUTPUT VIDEO RESOLUTION",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/update_output_video_fps",
+      "parameters": [
+        {
+          "name": "output_video_fps",
+          "label": "OUTPUT VIDEO FPS",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/remote_update_10",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "OUTPUT IMAGE QUALITY",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "OUTPUT IMAGE RESOLUTION",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "OUTPUT AUDIO ENCODER",
+          "type": "Literal['flac', 'aac', 'libmp3lame', 'libopus', 'libvorbis', 'pcm_s16le', 'pcm_s32le']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "OUTPUT AUDIO QUALITY",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "OUTPUT AUDIO VOLUME",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "OUTPUT VIDEO ENCODER",
+          "type": "Literal['libx264', 'libx265', 'libvpx-vp9', 'h264_nvenc', 'h264_qsv', 'hevc_nvenc', 'hevc_qsv', 'rawvideo']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "OUTPUT VIDEO PRESET",
+          "type": "Literal['ultrafast', 'superfast', 'veryfast', 'faster', 'fast', 'medium', 'slow', 'slower', 'veryslow']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "OUTPUT VIDEO QUALITY",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "OUTPUT VIDEO RESOLUTION",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "OUTPUT VIDEO FPS",
+          "type": "float",
+          "component": "Slider"
+        }
+      ]
+    },
+    {
+      "name": "/remote_update_11",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "OUTPUT IMAGE QUALITY",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "OUTPUT IMAGE RESOLUTION",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "OUTPUT AUDIO ENCODER",
+          "type": "Literal['flac', 'aac', 'libmp3lame', 'libopus', 'libvorbis', 'pcm_s16le', 'pcm_s32le']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "OUTPUT AUDIO QUALITY",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "OUTPUT AUDIO VOLUME",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "OUTPUT VIDEO ENCODER",
+          "type": "Literal['libx264', 'libx265', 'libvpx-vp9', 'h264_nvenc', 'h264_qsv', 'hevc_nvenc', 'hevc_qsv', 'rawvideo']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "OUTPUT VIDEO PRESET",
+          "type": "Literal['ultrafast', 'superfast', 'veryfast', 'faster', 'fast', 'medium', 'slow', 'slower', 'veryslow']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "OUTPUT VIDEO QUALITY",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "OUTPUT VIDEO RESOLUTION",
+          "type": "Literal[]",
+          "component": "Dropdown"
+        },
+        {
+          "label": "OUTPUT VIDEO FPS",
+          "type": "float",
+          "component": "Slider"
+        }
+      ]
+    },
+    {
+      "name": "/update",
+      "parameters": [
+        {
+          "name": "files",
+          "label": "Source (Face)",
+          "type": "list[filepath]",
+          "component": "File"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_5",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "value_6",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/update_1",
+      "parameters": [
+        {
+          "name": "file",
+          "label": "Target (Body)",
+          "type": "filepath",
+          "component": "File"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_31",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/update_output_path",
+      "parameters": [
+        {
+          "name": "output_path",
+          "label": "OUTPUT PATH",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/start",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/run",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "OUTPUT",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "OUTPUT",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        }
+      ]
+    },
+    {
+      "name": "/stop",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/clear",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "OUTPUT",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "OUTPUT",
+          "type": "dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        }
+      ]
+    },
+    {
+      "name": "/remote_update_12",
+      "parameters": [
+        {
+          "name": "ui_workflow",
+          "label": "UI WORKFLOW",
+          "type": "Literal['instant_runner', 'job_runner', 'job_manager']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/update_job_action",
+      "parameters": [
+        {
+          "name": "job_action",
+          "label": "JOB ACTION",
+          "type": "Literal['job-run', 'job-run-all', 'job-retry', 'job-retry-all']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "JOB ID",
+          "type": "Literal['none']",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/start_1",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/run_1",
+      "parameters": [
+        {
+          "name": "job_action",
+          "label": "JOB ACTION",
+          "type": "Literal['job-run', 'job-run-all', 'job-retry', 'job-retry-all']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "job_id",
+          "label": "JOB ID",
+          "type": "Literal['none']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "JOB ID",
+          "type": "Literal['none']",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/stop_1",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/remote_update_13",
+      "parameters": [
+        {
+          "name": "ui_workflow",
+          "label": "UI WORKFLOW",
+          "type": "Literal['instant_runner', 'job_runner', 'job_manager']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "JOB ACTION",
+          "type": "Literal['job-run', 'job-run-all', 'job-retry', 'job-retry-all']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "JOB ID",
+          "type": "Literal['none']",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/update_2",
+      "parameters": [
+        {
+          "name": "job_action",
+          "label": "JOB_ACTION",
+          "type": "Literal['job-create', 'job-submit', 'job-delete', 'job-add-step', 'job-remix-step', 'job-insert-step', 'job-remove-step']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "selected_job_id",
+          "label": "JOB ID",
+          "type": "Literal['none']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "JOB ID",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "JOB ID",
+          "type": "Literal['none']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "STEP INDEX",
+          "type": "Literal['none']",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/update_step_index",
+      "parameters": [
+        {
+          "name": "job_id",
+          "label": "JOB ID",
+          "type": "Literal['none']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "STEP INDEX",
+          "type": "Literal['none']",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/apply",
+      "parameters": [
+        {
+          "name": "job_action",
+          "label": "JOB_ACTION",
+          "type": "Literal['job-create', 'job-submit', 'job-delete', 'job-add-step', 'job-remix-step', 'job-insert-step', 'job-remove-step']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "created_job_id",
+          "label": "JOB ID",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "selected_job_id",
+          "label": "JOB ID",
+          "type": "Literal['none']",
+          "component": "Dropdown"
+        },
+        {
+          "name": "selected_step_index",
+          "label": "STEP INDEX",
+          "type": "Literal['none']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "JOB_ACTION",
+          "type": "Literal['job-create', 'job-submit', 'job-delete', 'job-add-step', 'job-remix-step', 'job-insert-step', 'job-remove-step']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "JOB ID",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "JOB ID",
+          "type": "Literal['none']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "STEP INDEX",
+          "type": "Literal['none']",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/remote_update_14",
+      "parameters": [
+        {
+          "name": "ui_workflow",
+          "label": "UI WORKFLOW",
+          "type": "Literal['instant_runner', 'job_runner', 'job_manager']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "JOB_ACTION",
+          "type": "Literal['job-create', 'job-submit', 'job-delete', 'job-add-step', 'job-remix-step', 'job-insert-step', 'job-remove-step']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "JOB ID",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "JOB ID",
+          "type": "Literal['none']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "STEP INDEX",
+          "type": "Literal['none']",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/update_log_level",
+      "parameters": [
+        {
+          "name": "log_level",
+          "label": "LOG LEVEL",
+          "type": "Literal['error', 'warn', 'info', 'debug']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/update_preview_image",
+      "parameters": [
+        {
+          "name": "frame_number",
+          "label": "PREVIEW FRAME",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "PREVIEW",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/slide_preview_image",
+      "parameters": [
+        {
+          "name": "frame_number",
+          "label": "PREVIEW FRAME",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "PREVIEW",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/clear_and_update_preview_image",
+      "parameters": [
+        {
+          "name": "frame_number",
+          "label": "PREVIEW FRAME",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "PREVIEW",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/update_preview_frame_slider",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "PREVIEW FRAME",
+          "type": "float",
+          "component": "Slider"
+        }
+      ]
+    },
+    {
+      "name": "/update_preview_frame_slider_1",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "PREVIEW FRAME",
+          "type": "float",
+          "component": "Slider"
+        }
+      ]
+    },
+    {
+      "name": "/update_preview_image_1",
+      "parameters": [
+        {
+          "name": "frame_number",
+          "label": "PREVIEW FRAME",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "PREVIEW",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/update_preview_image_2",
+      "parameters": [
+        {
+          "name": "frame_number",
+          "label": "PREVIEW FRAME",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "PREVIEW",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/update_preview_image_3",
+      "parameters": [
+        {
+          "name": "frame_number",
+          "label": "PREVIEW FRAME",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "PREVIEW",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/update_preview_image_4",
+      "parameters": [
+        {
+          "name": "frame_number",
+          "label": "PREVIEW FRAME",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "PREVIEW",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/update_preview_image_5",
+      "parameters": [
+        {
+          "name": "frame_number",
+          "label": "PREVIEW FRAME",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "PREVIEW",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/update_preview_image_6",
+      "parameters": [
+        {
+          "name": "frame_number",
+          "label": "PREVIEW FRAME",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "PREVIEW",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/update_preview_image_7",
+      "parameters": [
+        {
+          "name": "frame_number",
+          "label": "PREVIEW FRAME",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "PREVIEW",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/update_preview_image_8",
+      "parameters": [
+        {
+          "name": "frame_number",
+          "label": "PREVIEW FRAME",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "PREVIEW",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/update_preview_image_9",
+      "parameters": [
+        {
+          "name": "frame_number",
+          "label": "PREVIEW FRAME",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "PREVIEW",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/update_preview_image_10",
+      "parameters": [
+        {
+          "name": "frame_number",
+          "label": "PREVIEW FRAME",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "PREVIEW",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/update_preview_image_11",
+      "parameters": [
+        {
+          "name": "frame_number",
+          "label": "PREVIEW FRAME",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "PREVIEW",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/update_preview_image_12",
+      "parameters": [
+        {
+          "name": "frame_number",
+          "label": "PREVIEW FRAME",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "PREVIEW",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/update_preview_image_13",
+      "parameters": [
+        {
+          "name": "frame_number",
+          "label": "PREVIEW FRAME",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "PREVIEW",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/update_preview_image_14",
+      "parameters": [
+        {
+          "name": "frame_number",
+          "label": "PREVIEW FRAME",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "PREVIEW",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/update_preview_image_15",
+      "parameters": [
+        {
+          "name": "frame_number",
+          "label": "PREVIEW FRAME",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "PREVIEW",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/update_preview_image_16",
+      "parameters": [
+        {
+          "name": "frame_number",
+          "label": "PREVIEW FRAME",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "PREVIEW",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/update_preview_image_17",
+      "parameters": [
+        {
+          "name": "frame_number",
+          "label": "PREVIEW FRAME",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "PREVIEW",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/update_preview_image_18",
+      "parameters": [
+        {
+          "name": "frame_number",
+          "label": "PREVIEW FRAME",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "PREVIEW",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/update_preview_image_19",
+      "parameters": [
+        {
+          "name": "frame_number",
+          "label": "PREVIEW FRAME",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "PREVIEW",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/update_preview_image_20",
+      "parameters": [
+        {
+          "name": "frame_number",
+          "label": "PREVIEW FRAME",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "PREVIEW",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/update_preview_image_21",
+      "parameters": [
+        {
+          "name": "frame_number",
+          "label": "PREVIEW FRAME",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "PREVIEW",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/update_preview_image_22",
+      "parameters": [
+        {
+          "name": "frame_number",
+          "label": "PREVIEW FRAME",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "PREVIEW",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/update_preview_image_23",
+      "parameters": [
+        {
+          "name": "frame_number",
+          "label": "PREVIEW FRAME",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "PREVIEW",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/update_preview_image_24",
+      "parameters": [
+        {
+          "name": "frame_number",
+          "label": "PREVIEW FRAME",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "PREVIEW",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/update_preview_image_25",
+      "parameters": [
+        {
+          "name": "frame_number",
+          "label": "PREVIEW FRAME",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "PREVIEW",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/update_preview_image_26",
+      "parameters": [
+        {
+          "name": "frame_number",
+          "label": "PREVIEW FRAME",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "PREVIEW",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/update_preview_image_27",
+      "parameters": [
+        {
+          "name": "frame_number",
+          "label": "PREVIEW FRAME",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "PREVIEW",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/update_preview_image_28",
+      "parameters": [
+        {
+          "name": "frame_number",
+          "label": "PREVIEW FRAME",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "PREVIEW",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/update_preview_image_29",
+      "parameters": [
+        {
+          "name": "frame_number",
+          "label": "PREVIEW FRAME",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "PREVIEW",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/update_preview_image_30",
+      "parameters": [
+        {
+          "name": "frame_number",
+          "label": "PREVIEW FRAME",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "PREVIEW",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/update_preview_image_31",
+      "parameters": [
+        {
+          "name": "frame_number",
+          "label": "PREVIEW FRAME",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "PREVIEW",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/update_preview_image_32",
+      "parameters": [
+        {
+          "name": "frame_number",
+          "label": "PREVIEW FRAME",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "PREVIEW",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/update_preview_image_33",
+      "parameters": [
+        {
+          "name": "frame_number",
+          "label": "PREVIEW FRAME",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "PREVIEW",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/update_preview_image_34",
+      "parameters": [
+        {
+          "name": "frame_number",
+          "label": "PREVIEW FRAME",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "PREVIEW",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/update_preview_image_35",
+      "parameters": [
+        {
+          "name": "frame_number",
+          "label": "PREVIEW FRAME",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "PREVIEW",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/clear_and_update_preview_image_1",
+      "parameters": [
+        {
+          "name": "frame_number",
+          "label": "PREVIEW FRAME",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "PREVIEW",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/clear_and_update_preview_image_2",
+      "parameters": [
+        {
+          "name": "frame_number",
+          "label": "PREVIEW FRAME",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "PREVIEW",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/update_trim_frame",
+      "parameters": [
+        {
+          "name": "trim_frame",
+          "label": "TRIM FRAME",
+          "type": "tuple[float | None, float | None]",
+          "component": "Rangeslider"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/remote_update_15",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "TRIM FRAME",
+          "type": "tuple[float | None, float | None]",
+          "component": "Rangeslider"
+        }
+      ]
+    },
+    {
+      "name": "/remote_update_16",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "TRIM FRAME",
+          "type": "tuple[float | None, float | None]",
+          "component": "Rangeslider"
+        }
+      ]
+    },
+    {
+      "name": "/update_face_selector_mode",
+      "parameters": [
+        {
+          "name": "face_selector_mode",
+          "label": "FACE SELECTOR MODE",
+          "type": "Literal['many', 'one', 'reference']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "REFERENCE FACE",
+          "type": "list[dict(image: dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Origi",
+          "component": "Gallery"
+        },
+        {
+          "label": "REFERENCE FACE DISTANCE",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "Select Face Index",
+          "type": "Literal['0', '1', '2', '3', '4']",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/update_face_selector_order",
+      "parameters": [
+        {
+          "name": "face_analyser_order",
+          "label": "FACE SELECTOR ORDER",
+          "type": "Literal['left-right', 'right-left', 'top-bottom', 'bottom-top', 'large-small']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "REFERENCE FACE",
+          "type": "list[dict(image: dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Origi",
+          "component": "Gallery"
+        }
+      ]
+    },
+    {
+      "name": "/update_face_selector_gender",
+      "parameters": [
+        {
+          "name": "face_selector_gender",
+          "label": "FACE SELECTOR GENDER",
+          "type": "Literal['none', 'female', 'male']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "REFERENCE FACE",
+          "type": "list[dict(image: dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Origi",
+          "component": "Gallery"
+        }
+      ]
+    },
+    {
+      "name": "/update_face_selector_race",
+      "parameters": [
+        {
+          "name": "face_selector_race",
+          "label": "FACE SELECTOR RACE",
+          "type": "Literal['none', 'white', 'black', 'latino', 'asian', 'indian', 'arabic']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "REFERENCE FACE",
+          "type": "list[dict(image: dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Origi",
+          "component": "Gallery"
+        }
+      ]
+    },
+    {
+      "name": "/update_face_selector_age_range",
+      "parameters": [
+        {
+          "name": "face_selector_age_range",
+          "label": "FACE SELECTOR AGE",
+          "type": "tuple[float | None, float | None]",
+          "component": "Rangeslider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "REFERENCE FACE",
+          "type": "list[dict(image: dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Origi",
+          "component": "Gallery"
+        }
+      ]
+    },
+    {
+      "name": "/update_face_selector_index",
+      "parameters": [
+        {
+          "name": "face_selector_index",
+          "label": "Select Face Index",
+          "type": "Literal['0', '1', '2', '3', '4']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/clear_and_update_reference_face_position",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/update_reference_face_distance",
+      "parameters": [
+        {
+          "name": "reference_face_distance",
+          "label": "REFERENCE FACE DISTANCE",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/update_reference_face_position",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/update_reference_position_gallery",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "REFERENCE FACE",
+          "type": "list[dict(image: dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Origi",
+          "component": "Gallery"
+        }
+      ]
+    },
+    {
+      "name": "/update_reference_face_position_1",
+      "parameters": [],
+      "returns": []
+    },
+    {
+      "name": "/update_reference_position_gallery_1",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "REFERENCE FACE",
+          "type": "list[dict(image: dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Origi",
+          "component": "Gallery"
+        }
+      ]
+    },
+    {
+      "name": "/clear_and_update_reference_position_gallery",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "REFERENCE FACE",
+          "type": "list[dict(image: dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Origi",
+          "component": "Gallery"
+        }
+      ]
+    },
+    {
+      "name": "/clear_and_update_reference_position_gallery_1",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "REFERENCE FACE",
+          "type": "list[dict(image: dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Origi",
+          "component": "Gallery"
+        }
+      ]
+    },
+    {
+      "name": "/clear_and_update_reference_position_gallery_2",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "REFERENCE FACE",
+          "type": "list[dict(image: dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Origi",
+          "component": "Gallery"
+        }
+      ]
+    },
+    {
+      "name": "/clear_and_update_reference_position_gallery_3",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "REFERENCE FACE",
+          "type": "list[dict(image: dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Origi",
+          "component": "Gallery"
+        }
+      ]
+    },
+    {
+      "name": "/update_reference_frame_number",
+      "parameters": [
+        {
+          "name": "reference_frame_number",
+          "label": "PREVIEW FRAME",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/update_reference_position_gallery_2",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "REFERENCE FACE",
+          "type": "list[dict(image: dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Origi",
+          "component": "Gallery"
+        }
+      ]
+    },
+    {
+      "name": "/update_reference_frame_number_1",
+      "parameters": [
+        {
+          "name": "reference_frame_number",
+          "label": "PREVIEW FRAME",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/update_reference_position_gallery_3",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "REFERENCE FACE",
+          "type": "list[dict(image: dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Origi",
+          "component": "Gallery"
+        }
+      ]
+    },
+    {
+      "name": "/update_face_occluder_model",
+      "parameters": [
+        {
+          "name": "face_occluder_model",
+          "label": "FACE OCCLUDER MODEL",
+          "type": "Literal['xseg_1', 'xseg_2', 'xseg_3']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/update_face_parser_model",
+      "parameters": [
+        {
+          "name": "face_parser_model",
+          "label": "FACE PARSER MODEL",
+          "type": "Literal['bisenet_resnet_18', 'bisenet_resnet_34']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/update_face_mask_types",
+      "parameters": [
+        {
+          "name": "face_mask_types",
+          "label": "FACE MASK TYPES",
+          "type": "list[Literal['box', 'occlusion', 'area', 'region']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "FACE MASK TYPES",
+          "type": "list[Literal['box', 'occlusion', 'area', 'region']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "label": "FACE MASK AREAS",
+          "type": "list[Literal['upper-face', 'lower-face', 'mouth']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "label": "FACE MASK REGIONS",
+          "type": "list[Literal['skin', 'left-eyebrow', 'right-eyebrow', 'left-eye', 'right-eye', 'glasses', 'nose', 'mouth', 'upper-lip', 'lower-lip']]",
+          "component": "Checkboxgroup"
+        },
+        {
+          "label": "FACE MASK BLUR",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "FACE MASK PADDING TOP",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "FACE MASK PADDING RIGHT",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "FACE MASK PADDING BOTTOM",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "label": "FACE MASK PADDING LEFT",
+          "type": "float",
+          "component": "Slider"
+        }
+      ]
+    },
+    {
+      "name": "/update_face_mask_areas",
+      "parameters": [
+        {
+          "name": "face_mask_areas",
+          "label": "FACE MASK AREAS",
+          "type": "list[Literal['upper-face', 'lower-face', 'mouth']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "FACE MASK AREAS",
+          "type": "list[Literal['upper-face', 'lower-face', 'mouth']]",
+          "component": "Checkboxgroup"
+        }
+      ]
+    },
+    {
+      "name": "/update_face_mask_regions",
+      "parameters": [
+        {
+          "name": "face_mask_regions",
+          "label": "FACE MASK REGIONS",
+          "type": "list[Literal['skin', 'left-eyebrow', 'right-eyebrow', 'left-eye', 'right-eye', 'glasses', 'nose', 'mouth', 'upper-lip', 'lower-lip']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "FACE MASK REGIONS",
+          "type": "list[Literal['skin', 'left-eyebrow', 'right-eyebrow', 'left-eye', 'right-eye', 'glasses', 'nose', 'mouth', 'upper-lip', 'lower-lip']]",
+          "component": "Checkboxgroup"
+        }
+      ]
+    },
+    {
+      "name": "/update_face_mask_blur",
+      "parameters": [
+        {
+          "name": "face_mask_blur",
+          "label": "FACE MASK BLUR",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/update_face_mask_padding",
+      "parameters": [
+        {
+          "name": "face_mask_padding_top",
+          "label": "FACE MASK PADDING TOP",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "face_mask_padding_right",
+          "label": "FACE MASK PADDING RIGHT",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "face_mask_padding_bottom",
+          "label": "FACE MASK PADDING BOTTOM",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "face_mask_padding_left",
+          "label": "FACE MASK PADDING LEFT",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/update_face_mask_padding_1",
+      "parameters": [
+        {
+          "name": "face_mask_padding_top",
+          "label": "FACE MASK PADDING TOP",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "face_mask_padding_right",
+          "label": "FACE MASK PADDING RIGHT",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "face_mask_padding_bottom",
+          "label": "FACE MASK PADDING BOTTOM",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "face_mask_padding_left",
+          "label": "FACE MASK PADDING LEFT",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/update_face_mask_padding_2",
+      "parameters": [
+        {
+          "name": "face_mask_padding_top",
+          "label": "FACE MASK PADDING TOP",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "face_mask_padding_right",
+          "label": "FACE MASK PADDING RIGHT",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "face_mask_padding_bottom",
+          "label": "FACE MASK PADDING BOTTOM",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "face_mask_padding_left",
+          "label": "FACE MASK PADDING LEFT",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/update_face_mask_padding_3",
+      "parameters": [
+        {
+          "name": "face_mask_padding_top",
+          "label": "FACE MASK PADDING TOP",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "face_mask_padding_right",
+          "label": "FACE MASK PADDING RIGHT",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "face_mask_padding_bottom",
+          "label": "FACE MASK PADDING BOTTOM",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "face_mask_padding_left",
+          "label": "FACE MASK PADDING LEFT",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/update_face_detector_model",
+      "parameters": [
+        {
+          "name": "face_detector_model",
+          "label": "FACE DETECTOR MODEL",
+          "type": "Literal['many', 'retinaface', 'scrfd', 'yolo_face']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "FACE DETECTOR MODEL",
+          "type": "Literal['many', 'retinaface', 'scrfd', 'yolo_face']",
+          "component": "Dropdown"
+        },
+        {
+          "label": "FACE DETECTOR SIZE",
+          "type": "Literal['640x640']",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/update_face_detector_size",
+      "parameters": [
+        {
+          "name": "face_detector_size",
+          "label": "FACE DETECTOR SIZE",
+          "type": "Literal['640x640']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/update_face_detector_angles",
+      "parameters": [
+        {
+          "name": "face_detector_angles",
+          "label": "FACE DETECTOR ANGLES",
+          "type": "list[Literal['0', '90', '180', '270']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": [
+        {
+          "label": "FACE DETECTOR ANGLES",
+          "type": "list[Literal['0', '90', '180', '270']]",
+          "component": "Checkboxgroup"
+        }
+      ]
+    },
+    {
+      "name": "/update_face_detector_score",
+      "parameters": [
+        {
+          "name": "face_detector_score",
+          "label": "FACE DETECTOR SCORE",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/update_face_landmarker_model",
+      "parameters": [
+        {
+          "name": "face_landmarker_model",
+          "label": "FACE LANDMARKER MODEL",
+          "type": "Literal['many', '2dfan4', 'peppa_wutz']",
+          "component": "Dropdown"
+        }
+      ],
+      "returns": [
+        {
+          "label": "FACE LANDMARKER MODEL",
+          "type": "Literal['many', '2dfan4', 'peppa_wutz']",
+          "component": "Dropdown"
+        }
+      ]
+    },
+    {
+      "name": "/update_face_landmarker_score",
+      "parameters": [
+        {
+          "name": "face_landmarker_score",
+          "label": "FACE LANDMARKER SCORE",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/update_3",
+      "parameters": [
+        {
+          "name": "common_options",
+          "label": "OPTIONS",
+          "type": "list[Literal['keep-temp']]",
+          "component": "Checkboxgroup"
+        }
+      ],
+      "returns": []
+    },
+    {
+      "name": "/read_logs",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "TERMINAL",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/lambda",
+  "_api_verified": true
+}

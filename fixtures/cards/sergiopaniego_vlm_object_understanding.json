@@ -1,0 +1,144 @@
+{
+  "space_id": "sergiopaniego/vlm_object_understanding",
+  "title": "VLM Object Understanding",
+  "emoji": "\ud83e\udd80",
+  "description": "Explore object detection, visual grounding, keypoint Detecti",
+  "input_schema": {
+    "image": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "Input Image",
+      "required": true,
+      "component": "Image"
+    },
+    "category": {
+      "type": "Literal['Query', 'Caption', 'Point', 'Detect']",
+      "description": "Select Task Category",
+      "required": true,
+      "component": "Radio"
+    }
+  },
+  "output_schema": {
+    "Suggestions": {
+      "type": "Literal[]",
+      "description": "Suggestions",
+      "component": "Radio"
+    },
+    "Prompt": {
+      "type": "str",
+      "description": "Prompt",
+      "component": "Textbox"
+    }
+  },
+  "license": "apache-2.0",
+  "hardware": "5.49.1",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 115,
+  "last_modified": "2025-10-16 12:28:45+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/on_category_and_image_change",
+      "parameters": [
+        {
+          "name": "image",
+          "label": "Input Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "category",
+          "label": "Select Task Category",
+          "type": "Literal['Query', 'Caption', 'Point', 'Detect']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Suggestions",
+          "type": "Literal[]",
+          "component": "Radio"
+        },
+        {
+          "label": "Prompt",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/update_prompt_from_radio",
+      "parameters": [
+        {
+          "name": "selected_object",
+          "label": "Suggestions",
+          "type": "Literal[]",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Prompt",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/process_inputs",
+      "parameters": [
+        {
+          "name": "image",
+          "label": "Input Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "category",
+          "label": "Select Task Category",
+          "type": "Literal['Query', 'Caption', 'Point', 'Detect']",
+          "component": "Radio"
+        },
+        {
+          "name": "prompt",
+          "label": "Prompt",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Annotated Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "Text Output",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Annotated Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "Text Output",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/on_category_and_image_change",
+  "_api_verified": true
+}

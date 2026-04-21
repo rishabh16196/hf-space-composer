@@ -1,0 +1,103 @@
+{
+  "space_id": "JonaRuthardt/SteerViT",
+  "title": "SteerViT",
+  "emoji": "\ud83d\udc41\ufe0f",
+  "description": "Steering Vision Representations with Language",
+  "input_schema": {
+    "example_name": {
+      "type": "Literal['Cat', 'Kitchen', 'Orange', 'Ski']",
+      "description": "Provided examples (preview below)",
+      "required": true,
+      "component": "Radio"
+    }
+  },
+  "output_schema": {
+    "value_8": {
+      "type": "filepath",
+      "description": "value_8",
+      "component": "Image"
+    }
+  },
+  "license": "unknown",
+  "hardware": "",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 8,
+  "last_modified": "2026-04-03 11:03:45+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/get_example_preview",
+      "parameters": [
+        {
+          "name": "example_name",
+          "label": "Provided examples (preview below)",
+          "type": "Literal['Cat', 'Kitchen', 'Orange', 'Ski']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "value_8",
+          "type": "filepath",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/run_demo_with_warning",
+      "parameters": [
+        {
+          "name": "image_upload",
+          "label": "Upload image",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "name": "image_url",
+          "label": "Image URL",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "example_name",
+          "label": "Provided examples (preview below)",
+          "type": "Literal['Cat', 'Kitchen', 'Orange', 'Ski']",
+          "component": "Radio"
+        },
+        {
+          "name": "prompt",
+          "label": "Prompt",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Result",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "value_18",
+          "type": "str",
+          "component": "Markdown"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/get_example_preview",
+  "_api_verified": true,
+  "estimated_latency_s": 2.83,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 2.83,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:49:30.177436+00:00"
+}

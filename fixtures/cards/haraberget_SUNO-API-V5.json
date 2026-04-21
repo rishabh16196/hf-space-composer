@@ -1,0 +1,35 @@
+{
+  "space_id": "haraberget/SUNO-API-V5",
+  "title": "SUNO API - Listen to mp3s in library",
+  "emoji": "\ud83d\udc28",
+  "description": "SUNO API - Listen to mp3s in library",
+  "input_schema": {
+    "input": {
+      "type": "string",
+      "description": "Input",
+      "required": true
+    }
+  },
+  "output_schema": {
+    "output": {
+      "type": "string"
+    }
+  },
+  "license": "unknown",
+  "hardware": "6.1.0",
+  "sdk": "static",
+  "tags": [
+    "static",
+    "region:us"
+  ],
+  "likes": 6,
+  "last_modified": "2026-04-16 09:50:27+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "error",
+  "_api_error": "Could not fetch config for https://haraberget-suno-api-v5.static.hf.space"
+}

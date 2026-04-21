@@ -1,0 +1,163 @@
+{
+  "space_id": "thu-sail-lab/Time_RCD",
+  "title": "Time RCD",
+  "emoji": "\ud83d\udc20",
+  "description": "Time RCD",
+  "input_schema": {
+    "option": {
+      "type": "Literal['Value + label in same file', 'Labels in separate file', 'No labels provided']",
+      "description": "Label source",
+      "required": true,
+      "component": "Radio"
+    }
+  },
+  "output_schema": {
+    "Upload label file (.csv, .txt, .npy)": {
+      "type": "filepath",
+      "description": "Upload label file (.csv, .txt, .npy)",
+      "component": "File"
+    }
+  },
+  "license": "mit",
+  "hardware": "5.49.1",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 6,
+  "last_modified": "2025-11-10 05:34:33+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/_toggle_label_file",
+      "parameters": [
+        {
+          "name": "option",
+          "label": "Label source",
+          "type": "Literal['Value + label in same file', 'Labels in separate file', 'No labels provided']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Upload label file (.csv, .txt, .npy)",
+          "type": "filepath",
+          "component": "File"
+        }
+      ]
+    },
+    {
+      "name": "/_handle_dataset_choice",
+      "parameters": [
+        {
+          "name": "choice",
+          "label": "Choose dataset",
+          "type": "Literal['Sample: Univariate SED Medical', 'Sample: Univariate UCR Medical', 'Sample: Univariate Yahoo WebService', 'Upload my own']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Upload time series file (.csv, .txt, .npy)",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "label": "Data type",
+          "type": "Literal['Univariate', 'Multivariate']",
+          "component": "Radio"
+        }
+      ]
+    },
+    {
+      "name": "/_submit",
+      "parameters": [
+        {
+          "name": "data_choice",
+          "label": "Choose dataset",
+          "type": "Literal['Sample: Univariate SED Medical', 'Sample: Univariate UCR Medical', 'Sample: Univariate Yahoo WebService', 'Upload my own']",
+          "component": "Radio"
+        },
+        {
+          "name": "file_obj",
+          "label": "Upload time series file (.csv, .txt, .npy)",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "name": "label_source_choice",
+          "label": "Label source",
+          "type": "Literal['Value + label in same file', 'Labels in separate file', 'No labels provided']",
+          "component": "Radio"
+        },
+        {
+          "name": "label_file_obj",
+          "label": "Upload label file (.csv, .txt, .npy)",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "name": "multivariate_choice",
+          "label": "Data type",
+          "type": "Literal['Univariate', 'Multivariate']",
+          "component": "Radio"
+        },
+        {
+          "name": "win",
+          "label": "Window size",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "batch",
+          "label": "Batch size",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "size",
+          "label": "Multivariate model size",
+          "type": "Literal['full', 'small']",
+          "component": "Radio"
+        },
+        {
+          "name": "columns_text",
+          "label": "Columns to use (comma-separated, optional)",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Summary",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Anomaly Scores",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        },
+        {
+          "label": "Series vs. Anomaly Score",
+          "type": "dict(type: Literal['altair', 'bokeh', 'plotly', 'matplotlib'], plot: str)",
+          "component": "Plot"
+        },
+        {
+          "label": "Metrics",
+          "type": "dict(headers: list[Any], data: list[list[Any]], metadata: dict(str, list[Any] | None) | None)",
+          "component": "Dataframe"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/_toggle_label_file",
+  "_api_verified": true
+}

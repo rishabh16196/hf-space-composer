@@ -1,0 +1,117 @@
+{
+  "space_id": "patchbanks/nanoMPC",
+  "title": "NanoMPC",
+  "emoji": "\ud83d\udd25",
+  "description": "Boom bap, lo-fi and classic hip hop drum beats.",
+  "input_schema": {
+    "bpm": {
+      "type": "float",
+      "description": "BPM",
+      "required": true,
+      "component": "Slider"
+    },
+    "temperature": {
+      "type": "float",
+      "description": "Temperature",
+      "required": true,
+      "component": "Slider"
+    },
+    "top_k": {
+      "type": "float",
+      "description": "Top-k",
+      "required": true,
+      "component": "Slider"
+    },
+    "uploaded_sf2": {
+      "type": "filepath",
+      "description": "Optional: Upload SoundFont (preset=0, bank=0)",
+      "required": true,
+      "component": "File"
+    },
+    "output_level": {
+      "type": "float",
+      "description": "Output Gain",
+      "required": true,
+      "component": "Slider"
+    }
+  },
+  "output_schema": {
+    "MIDI Output": {
+      "type": "filepath",
+      "description": "MIDI Output",
+      "component": "File"
+    },
+    "Audio Output": {
+      "type": "filepath",
+      "description": "Audio Output",
+      "component": "Audio"
+    }
+  },
+  "license": "other",
+  "hardware": "5.23.3",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 7,
+  "last_modified": "2025-04-07 14:19:57+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/generate_and_return_files",
+      "parameters": [
+        {
+          "name": "bpm",
+          "label": "BPM",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "temperature",
+          "label": "Temperature",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "top_k",
+          "label": "Top-k",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "uploaded_sf2",
+          "label": "Optional: Upload SoundFont (preset=0, bank=0)",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "name": "output_level",
+          "label": "Output Gain",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "MIDI Output",
+          "type": "filepath",
+          "component": "File"
+        },
+        {
+          "label": "Audio Output",
+          "type": "filepath",
+          "component": "Audio"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/generate_and_return_files",
+  "_api_verified": true
+}

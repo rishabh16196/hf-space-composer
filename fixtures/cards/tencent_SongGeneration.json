@@ -1,0 +1,140 @@
+{
+  "space_id": "tencent/SongGeneration",
+  "title": "Song Generation",
+  "emoji": "\ud83c\udfb5",
+  "description": "Song Generation",
+  "input_schema": {
+    "lyric": {
+      "type": "str",
+      "description": "Lyrics",
+      "required": true,
+      "component": "Textbox"
+    },
+    "description": {
+      "type": "str",
+      "description": "Song Description (Optional)",
+      "required": true,
+      "component": "Textbox"
+    },
+    "prompt_audio": {
+      "type": "filepath",
+      "description": "Prompt Audio (Optional)",
+      "required": true,
+      "component": "Audio"
+    },
+    "genre": {
+      "type": "Literal['Auto', 'Pop', 'Latin', 'Rock', 'Electronic', 'Metal', 'Country', 'R&B/Soul', 'Ballad', 'Jaz",
+      "description": "Genre Select(Optional)",
+      "required": true,
+      "component": "Radio"
+    },
+    "cfg_coef": {
+      "type": "float",
+      "description": "CFG Coefficient",
+      "required": true,
+      "component": "Slider"
+    },
+    "temperature": {
+      "type": "float",
+      "description": "Temperature",
+      "required": true,
+      "component": "Slider"
+    }
+  },
+  "output_schema": {
+    "Generated Song": {
+      "type": "filepath",
+      "description": "Generated Song",
+      "component": "Audio"
+    },
+    "Generated Info": {
+      "type": "str | float | bool | list | dict",
+      "description": "Generated Info",
+      "component": "Json"
+    }
+  },
+  "license": "unknown",
+  "hardware": "",
+  "sdk": "docker",
+  "tags": [
+    "docker",
+    "region:us",
+    "audio",
+    "music",
+    "song-generation"
+  ],
+  "likes": 711,
+  "last_modified": "2026-02-24 09:29:27+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/generate_song",
+      "parameters": [
+        {
+          "name": "lyric",
+          "label": "Lyrics",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "description",
+          "label": "Song Description (Optional)",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "prompt_audio",
+          "label": "Prompt Audio (Optional)",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "name": "genre",
+          "label": "Genre Select(Optional)",
+          "type": "Literal['Auto', 'Pop', 'Latin', 'Rock', 'Electronic', 'Metal', 'Country', 'R&B/Soul', 'Ballad', 'Jazz', 'World', 'Hip-Hop', 'Funk', 'Soundtrack']",
+          "component": "Radio"
+        },
+        {
+          "name": "cfg_coef",
+          "label": "CFG Coefficient",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "temperature",
+          "label": "Temperature",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Generated Song",
+          "type": "filepath",
+          "component": "Audio"
+        },
+        {
+          "label": "Generated Info",
+          "type": "str | float | bool | list | dict",
+          "component": "Json"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/generate_song",
+  "_api_verified": true,
+  "estimated_latency_s": 2.15,
+  "speed_tier": "fast",
+  "_latency_source": "measured_inference",
+  "_tags_enriched": true,
+  "measured_latency_s": 2.15,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:51:57.046430+00:00",
+  "measured_inference_s": 2.15,
+  "measured_inference_timestamp": "2026-04-20T07:59:08.261080+00:00",
+  "measured_inference_method": "auto_predict",
+  "measured_inference_api": "/generate_song"
+}

@@ -1,0 +1,81 @@
+{
+  "space_id": "rajesh1729/youtube-video-transcription-with-whisper",
+  "title": "Youtube Video Transcription With Whisper",
+  "emoji": "\u26a1",
+  "description": "Youtube Video Transcription With Whisper",
+  "input_schema": {
+    "url": {
+      "type": "str",
+      "description": "URL",
+      "required": true,
+      "component": "Textbox"
+    }
+  },
+  "output_schema": {
+    "Summary": {
+      "type": "str",
+      "description": "Summary",
+      "component": "Textbox"
+    }
+  },
+  "license": "afl-3.0",
+  "hardware": "4.36.1",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us",
+    "asr",
+    "audio",
+    "transcription"
+  ],
+  "likes": 82,
+  "last_modified": "2024-10-28 09:58:09+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_tags_enriched": true,
+  "estimated_latency_s": 5.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/get_summary",
+      "parameters": [
+        {
+          "name": "url",
+          "label": "URL",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Summary",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/get_text",
+      "parameters": [
+        {
+          "name": "url",
+          "label": "URL",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Transcription",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/get_summary",
+  "_api_verified": true
+}

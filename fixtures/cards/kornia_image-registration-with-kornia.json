@@ -1,0 +1,69 @@
+{
+  "space_id": "kornia/image-registration-with-kornia",
+  "title": "Image Registration With Kornia",
+  "emoji": "\ud83c\udf16",
+  "description": "Image Registration With Kornia",
+  "input_schema": {
+    "images": {
+      "type": "List[filepath]",
+      "description": "images",
+      "required": true,
+      "component": "File"
+    }
+  },
+  "output_schema": {
+    "output 0": {
+      "type": "filepath",
+      "description": "output 0",
+      "component": "Image"
+    },
+    "output 1": {
+      "type": "Dict(video: filepath, subtitles: filepath | None)",
+      "description": "output 1",
+      "component": "Video"
+    }
+  },
+  "license": "mit",
+  "hardware": "4.37.2",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 2,
+  "last_modified": "2024-07-09 12:05:53+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/predict",
+      "parameters": [
+        {
+          "name": "images",
+          "label": "images",
+          "type": "List[filepath]",
+          "component": "File"
+        }
+      ],
+      "returns": [
+        {
+          "label": "output 0",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "output 1",
+          "type": "Dict(video: filepath, subtitles: filepath | None)",
+          "component": "Video"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/predict",
+  "_api_verified": true
+}

@@ -1,0 +1,103 @@
+{
+  "space_id": "ianpan/bone-age-greulich-and-pyle",
+  "title": "Deep Learning Model for Pediatric Bone Age",
+  "emoji": "\ud83d\udd96",
+  "description": "Deep Learning Model for Pediatric Bone Age",
+  "input_schema": {
+    "Radiograph": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "Radiograph",
+      "required": true,
+      "component": "Image"
+    },
+    "Sex": {
+      "type": "Literal['Male', 'Female']",
+      "description": "Sex",
+      "required": true,
+      "component": "Radio"
+    },
+    "Heatmap": {
+      "type": "Literal['No', 'Yes']",
+      "description": "Heatmap",
+      "required": true,
+      "component": "Radio"
+    }
+  },
+  "output_schema": {
+    "output 0": {
+      "type": "dict(label: str | int | float | None, confidences: list[dict(label: str | int | float | None, confid",
+      "description": "output 0",
+      "component": "Label"
+    },
+    "output 1": {
+      "type": "str",
+      "description": "output 1",
+      "component": "Textbox"
+    },
+    "Heatmap / Image": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "Heatmap / Image",
+      "component": "Image"
+    }
+  },
+  "license": "unknown",
+  "hardware": "5.9.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 9,
+  "last_modified": "2024-12-27 17:29:36+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/predict",
+      "parameters": [
+        {
+          "name": "Radiograph",
+          "label": "Radiograph",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "Sex",
+          "label": "Sex",
+          "type": "Literal['Male', 'Female']",
+          "component": "Radio"
+        },
+        {
+          "name": "Heatmap",
+          "label": "Heatmap",
+          "type": "Literal['No', 'Yes']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "output 0",
+          "type": "dict(label: str | int | float | None, confidences: list[dict(label: str | int | float | None, confidence: float | None)] | None)",
+          "component": "Label"
+        },
+        {
+          "label": "output 1",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Heatmap / Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/predict",
+  "_api_verified": true
+}

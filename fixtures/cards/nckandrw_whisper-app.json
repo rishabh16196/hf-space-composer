@@ -1,0 +1,39 @@
+{
+  "space_id": "nckandrw/whisper-app",
+  "title": "Whisper Audio Transcriber & Translator",
+  "emoji": "\ud83c\udf99\ufe0f",
+  "description": "Whisper Audio Transcriber & Translator",
+  "input_schema": {
+    "input": {
+      "type": "string",
+      "description": "Input",
+      "required": true
+    }
+  },
+  "output_schema": {
+    "output": {
+      "type": "string"
+    }
+  },
+  "license": "unknown",
+  "hardware": "6.0.2",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us",
+    "asr",
+    "audio",
+    "transcription"
+  ],
+  "likes": 3,
+  "last_modified": "2025-12-08 09:34:55+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_tags_enriched": true,
+  "estimated_latency_s": 5.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "error",
+  "_api_error": "(Request ID: Root=1-69e77bd7-1b6d5be4309eb3396bfc81b1;d002aab4-7caf-415c-b79e-e85f751be4df)\n\n429 Too Many Requests: you have reached your 'api' rate limit.\nRetry after 7 seconds (0/2500 requests remai"
+}

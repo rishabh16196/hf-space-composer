@@ -1,0 +1,79 @@
+{
+  "space_id": "kargaranamir/visual-clutter",
+  "title": "Visual Clutter",
+  "emoji": "\ud83d\udcbb",
+  "description": "Visual Clutter",
+  "input_schema": {
+    "img_path": {
+      "type": "filepath",
+      "description": "Input",
+      "required": true,
+      "component": "Image"
+    }
+  },
+  "output_schema": {
+    "Feature Congestion Output Image": {
+      "type": "filepath",
+      "description": "Feature Congestion Output Image",
+      "component": "Image"
+    },
+    "Feature Congestion": {
+      "type": "str",
+      "description": "Feature Congestion",
+      "component": "Textbox"
+    },
+    "Subband Entropy": {
+      "type": "str",
+      "description": "Subband Entropy",
+      "component": "Textbox"
+    }
+  },
+  "license": "mit",
+  "hardware": "4.36.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 2,
+  "last_modified": "2024-06-07 21:51:57+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/predict",
+      "parameters": [
+        {
+          "name": "img_path",
+          "label": "Input",
+          "type": "filepath",
+          "component": "Image"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Feature Congestion Output Image",
+          "type": "filepath",
+          "component": "Image"
+        },
+        {
+          "label": "Feature Congestion",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "Subband Entropy",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/predict",
+  "_api_verified": true
+}

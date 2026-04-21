@@ -1,0 +1,283 @@
+{
+  "space_id": "hasanbasbunar/SAM3",
+  "title": "SAM3",
+  "emoji": "\ud83d\udd25",
+  "description": "All the powerful features of the SAM 3 model!",
+  "input_schema": {
+    "image": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "Input Image",
+      "required": true,
+      "component": "Image"
+    },
+    "text_prompt": {
+      "type": "str",
+      "description": "Text Prompt",
+      "required": true,
+      "component": "Textbox"
+    },
+    "threshold": {
+      "type": "float",
+      "description": "Confidence Threshold",
+      "required": true,
+      "component": "Slider"
+    },
+    "mask_threshold": {
+      "type": "float",
+      "description": "Mask Threshold",
+      "required": true,
+      "component": "Slider"
+    }
+  },
+  "output_schema": {
+    "Result": {
+      "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 enco",
+      "description": "Result",
+      "component": "Image"
+    },
+    "Details": {
+      "type": "str",
+      "description": "Details",
+      "component": "Textbox"
+    }
+  },
+  "license": "unknown",
+  "hardware": "6.0.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 11,
+  "last_modified": "2025-11-25 12:51:41+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/process_image_text",
+      "parameters": [
+        {
+          "name": "image",
+          "label": "Input Image",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "text_prompt",
+          "label": "Text Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "threshold",
+          "label": "Confidence Threshold",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "mask_threshold",
+          "label": "Mask Threshold",
+          "type": "float",
+          "component": "Slider"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Result",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "label": "Details",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/process_image_tracker_wrapper",
+      "parameters": [
+        {
+          "name": "image",
+          "label": "Input Image (Click to add points)",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        },
+        {
+          "name": "multimask",
+          "label": "Return Multiple Masks (Handling Ambiguity)",
+          "type": "bool",
+          "component": "Checkbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Interactive Result",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/lambda",
+      "parameters": [],
+      "returns": [
+        {
+          "label": "Interactive Result",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/process_video_text",
+      "parameters": [
+        {
+          "name": "video_path",
+          "label": "Input Video",
+          "type": "filepath",
+          "component": "Video"
+        },
+        {
+          "name": "text_prompt",
+          "label": "Text Prompt",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "max_frames",
+          "label": "Max Frames to Process",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "timeout_seconds",
+          "label": "Max Processing Time (seconds)",
+          "type": "Literal['60', '120']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Result Video",
+          "type": "filepath",
+          "component": "Video"
+        },
+        {
+          "label": "Status",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/on_video_upload",
+      "parameters": [
+        {
+          "name": "video_path",
+          "label": "Input Video",
+          "type": "filepath",
+          "component": "Video"
+        }
+      ],
+      "returns": [
+        {
+          "label": "First Frame (Click to add points)",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/add_point_video_preview",
+      "parameters": [
+        {
+          "name": "video_path",
+          "label": "Input Video",
+          "type": "filepath",
+          "component": "Video"
+        }
+      ],
+      "returns": [
+        {
+          "label": "First Frame (Click to add points)",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ]
+    },
+    {
+      "name": "/process_video_tracker_gpu",
+      "parameters": [
+        {
+          "name": "video_path",
+          "label": "Input Video",
+          "type": "filepath",
+          "component": "Video"
+        },
+        {
+          "name": "max_frames",
+          "label": "Max Frames to Process",
+          "type": "float",
+          "component": "Slider"
+        },
+        {
+          "name": "timeout_seconds",
+          "label": "Max Processing Time (seconds)",
+          "type": "Literal['60', '120']",
+          "component": "Radio"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Result Video",
+          "type": "filepath",
+          "component": "Video"
+        },
+        {
+          "label": "Status",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    },
+    {
+      "name": "/reset_tracking_view",
+      "parameters": [
+        {
+          "name": "video_path",
+          "label": "Input Video",
+          "type": "filepath",
+          "component": "Video"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Result Video",
+          "type": "filepath",
+          "component": "Video"
+        },
+        {
+          "label": "Status",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "label": "First Frame (Click to add points)",
+          "type": "dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mi",
+          "component": "Image"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/process_image_text",
+  "_api_verified": true,
+  "estimated_latency_s": 3.83,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 3.83,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:50:43.189915+00:00"
+}

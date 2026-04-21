@@ -1,0 +1,35 @@
+{
+  "space_id": "pplonski/deploy-mercury",
+  "title": "Deploy Mercury",
+  "emoji": "\ud83d\udc22",
+  "description": "Deploy Mercury",
+  "input_schema": {
+    "input": {
+      "type": "string",
+      "description": "Input",
+      "required": true
+    }
+  },
+  "output_schema": {
+    "output": {
+      "type": "string"
+    }
+  },
+  "license": "mit",
+  "hardware": "2.9.4",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 3,
+  "last_modified": "2023-09-23 11:16:06+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "estimated_latency_s": 10.0,
+  "speed_tier": "medium",
+  "_latency_source": "inferred",
+  "_api_scraped": true,
+  "_api_status": "error",
+  "_api_error": "(Request ID: Root=1-69e77bdd-5aa13a6f71cd52e652bd11ef;5b9367e4-ae4e-4be4-8717-81a610721e84)\n\n429 Too Many Requests: you have reached your 'api' rate limit.\nRetry after 1 seconds (0/2500 requests remai"
+}

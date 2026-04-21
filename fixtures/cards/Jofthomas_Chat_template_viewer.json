@@ -1,0 +1,110 @@
+{
+  "space_id": "Jofthomas/Chat_template_viewer",
+  "title": "Chat Template Viewer",
+  "emoji": "\ud83d\udcac",
+  "description": "Chat Template Viewer",
+  "input_schema": {
+    "model_name": {
+      "type": "str",
+      "description": "Model Name",
+      "required": true,
+      "component": "Textbox"
+    },
+    "test_conversation": {
+      "type": "str",
+      "description": "Conversation",
+      "required": true,
+      "component": "Textbox"
+    },
+    "add_generation_prompt": {
+      "type": "bool",
+      "description": "Add generation prompt",
+      "required": true,
+      "component": "Checkbox"
+    },
+    "cleanup_whitespace": {
+      "type": "bool",
+      "description": "Cleanup template whitespace",
+      "required": true,
+      "component": "Checkbox"
+    },
+    "hf_token": {
+      "type": "str",
+      "description": "Hugging Face Token (optional)",
+      "required": true,
+      "component": "Textbox"
+    }
+  },
+  "output_schema": {
+    "Formatted Conversation": {
+      "type": "str",
+      "description": "Formatted Conversation",
+      "component": "Textbox"
+    }
+  },
+  "license": "mit",
+  "hardware": "4.26.0",
+  "sdk": "gradio",
+  "tags": [
+    "gradio",
+    "region:us"
+  ],
+  "likes": 29,
+  "last_modified": "2025-04-22 13:53:35+00:00",
+  "readme_excerpt": "",
+  "_real_scraped": true,
+  "_api_scraped": true,
+  "_api_status": "ok",
+  "endpoints": [
+    {
+      "name": "/apply_chat_template",
+      "parameters": [
+        {
+          "name": "model_name",
+          "label": "Model Name",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "test_conversation",
+          "label": "Conversation",
+          "type": "str",
+          "component": "Textbox"
+        },
+        {
+          "name": "add_generation_prompt",
+          "label": "Add generation prompt",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "cleanup_whitespace",
+          "label": "Cleanup template whitespace",
+          "type": "bool",
+          "component": "Checkbox"
+        },
+        {
+          "name": "hf_token",
+          "label": "Hugging Face Token (optional)",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ],
+      "returns": [
+        {
+          "label": "Formatted Conversation",
+          "type": "str",
+          "component": "Textbox"
+        }
+      ]
+    }
+  ],
+  "endpoint": "/apply_chat_template",
+  "_api_verified": true,
+  "estimated_latency_s": 2.48,
+  "speed_tier": "fast",
+  "_latency_source": "measured",
+  "measured_latency_s": 2.48,
+  "measurement_method": "gradio_client_init_plus_view_api",
+  "measurement_timestamp": "2026-04-20T07:49:29.045835+00:00"
+}
