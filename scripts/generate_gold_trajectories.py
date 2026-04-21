@@ -47,13 +47,29 @@ GRPO_PROMPTS_FILE = FIXTURES_DIR / "grpo_prompts.jsonl"
 # Split: which tasks are for training vs held-out evaluation
 # ---------------------------------------------------------------------------
 
-HELDOUT_TASKS = {
+# Two-tier held-out split:
+#   EASY — mid-difficulty single-domain or short multi-domain tasks.
+#          Measures "did SFT produce a valid agent that follows format + gold pipeline?"
+#   HARD — long-horizon (7+ steps) and marathon (50+ step budget, multi-drift) tasks.
+#          Measures "does training actually solve the hard OpenEnv problem?"
+# Both tiers are excluded from SFT training data.
+EASY_HELDOUT_TASKS = {
     "multimodal_caption_speak_024",
     "multimodal_full_pipeline_025",
     "code_to_speech_020",
     "doc_quick_summary_015",
     "audio_sentiment_005",
 }
+
+HARD_HELDOUT_TASKS = {
+    "long_doc_localize_032",          # 8 steps, doc→translate→tts chain
+    "long_image_story_033",           # 7 steps, image→caption→story→tts
+    "long_meeting_analysis_034",      # 8 steps, audio→asr→summary→sentiment
+    "marathon_news_evolving_036",     # 50+ action budget, 4 drifts injected
+    "marathon_investigation_037",     # 50+ action budget, 4 drifts injected
+}
+
+HELDOUT_TASKS = EASY_HELDOUT_TASKS | HARD_HELDOUT_TASKS
 
 
 def format_prompt(obs: Any) -> str:

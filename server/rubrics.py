@@ -226,6 +226,23 @@ class SpacesPipelineRubric(TrajectoryRubric):
         final_score = raw_score / max_possible if max_possible > 0 else 0.0
         final_score = _clamp01(final_score)
 
+        # Engagement gating — close the "lazy submit" reward-hacking loophole.
+        # An agent can otherwise submit with zero Space calls, collect
+        # efficiency + cost + time + format points, and land at 0.4-0.6
+        # without actually solving anything. We hard-cap such runs.
+        n_successful_calls = sum(
+            1 for _, o in trajectory
+            if o.recent_outputs and o.recent_outputs[-1].get("success") and
+               o.recent_actions and o.recent_actions[-1].get("action_type") == "call_space"
+        )
+        task_requires_tools = bool(expected_schema) and len(expected_schema) >= 1
+        engagement_gate_applied = False
+        if task_requires_tools and n_successful_calls == 0:
+            # Cap at 0.15 — well below pass threshold
+            if final_score > 0.15:
+                final_score = 0.15
+                engagement_gate_applied = True
+
         # Save details
         self._grade_details = {
             "task_id": getattr(final_obs, "task_id", ""),
@@ -241,9 +258,11 @@ class SpacesPipelineRubric(TrajectoryRubric):
             "persona": persona,
             "actions_used": actions_used,
             "spaces_called": spaces_called,
+            "successful_space_calls": n_successful_calls,
             "time_used_s": round(time_used, 2),
             "time_budget_s": round(time_budget, 2),
             "flags_count": len(flags),
+            "engagement_gate_applied": engagement_gate_applied,
             "passed": final_score >= 0.5,
         }
 

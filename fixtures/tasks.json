@@ -110,8 +110,7 @@
       {
         "space_id": "pszemraj/summarize-long-text",
         "inputs": {
-          "text": "<step2.text>",
-          "max_length": 100
+          "input": "<step2.text>"
         }
       }
     ]
@@ -586,8 +585,7 @@
       {
         "space_id": "pszemraj/summarize-long-text",
         "inputs": {
-          "text": "<step1.extracted_text>",
-          "max_length": 100
+          "input": "<step1.extracted_text>"
         }
       }
     ]
@@ -767,8 +765,7 @@
       {
         "space_id": "pszemraj/summarize-long-text",
         "inputs": {
-          "text": "<input.article_text>",
-          "max_length": 60
+          "input": "<input.article_text>"
         }
       }
     ]
@@ -1744,7 +1741,7 @@
       {
         "space_id": "pszemraj/summarize-long-text",
         "inputs": {
-          "text": "<step1.extracted_text>"
+          "input": "<step1.extracted_text>"
         }
       },
       {
@@ -1855,7 +1852,7 @@
       {
         "space_id": "fancyfeast/joy-caption-pre-alpha",
         "inputs": {
-          "image_url": "<input.image_url>"
+          "input_image": "<input.image_url>"
         }
       },
       {
@@ -1875,13 +1872,13 @@
       {
         "space_id": "fancyfeast/joy-caption-pre-alpha",
         "inputs": {
-          "image_url": "<step3.image_url>"
+          "input_image": "<step3.image_url>"
         }
       },
       {
         "space_id": "pszemraj/summarize-long-text",
         "inputs": {
-          "text": "<step1.caption> <step4.caption>"
+          "input": "<step1.caption> <step4.caption>"
         }
       },
       {
@@ -2003,7 +2000,7 @@
       {
         "space_id": "pszemraj/summarize-long-text",
         "inputs": {
-          "text": "<step2.transcript>"
+          "input": "<step2.transcript>"
         }
       },
       {
@@ -2095,13 +2092,13 @@
       {
         "space_id": "pszemraj/summarize-long-text",
         "inputs": {
-          "text": "<step1.transcript>"
+          "input": "<step1.transcript>"
         }
       },
       {
         "space_id": "pszemraj/summarize-long-text",
         "inputs": {
-          "text": "<step2.extracted_text>"
+          "input": "<step2.extracted_text>"
         }
       },
       {
@@ -2271,13 +2268,13 @@
       {
         "space_id": "fancyfeast/joy-caption-pre-alpha",
         "inputs": {
-          "image_url": "<input.image_url>"
+          "input_image": "<input.image_url>"
         }
       },
       {
         "space_id": "pszemraj/summarize-long-text",
         "inputs": {
-          "text": "<step1.transcript> <step2.extracted_text> <step3.caption>"
+          "input": "<step1.transcript> <step2.extracted_text> <step3.caption>"
         }
       },
       {
@@ -2496,7 +2493,7 @@
       {
         "space_id": "pszemraj/summarize-long-text",
         "inputs": {
-          "text": "<step4.extracted_text>"
+          "input": "<step4.extracted_text>"
         }
       },
       {
@@ -2526,7 +2523,7 @@
       {
         "space_id": "pszemraj/summarize-long-text",
         "inputs": {
-          "text": "<step1.transcript> <step5.summary>"
+          "input": "<step1.transcript> <step5.summary>"
         }
       },
       {
