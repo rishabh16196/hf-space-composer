@@ -1529,5 +1529,1023 @@
         }
       }
     ]
+  },
+  {
+    "task_id": "long_global_podcast_031",
+    "domain": "audio_processing",
+    "difficulty": "hard",
+    "description": "Localize an English speech into 4 languages. Given an English audio clip, produce French, Spanish, Hindi, and German audio versions plus transcripts. Requires 9 Space calls total.",
+    "input": {
+      "audio_url": "https://huggingface.co/datasets/Narsil/asr_dummy/resolve/main/mlk.flac"
+    },
+    "expected_output_schema": {
+      "transcript_en": "string",
+      "translation_fr": "string",
+      "translation_es": "string",
+      "translation_hi": "string",
+      "translation_de": "string",
+      "audio_fr": "string",
+      "audio_es": "string",
+      "audio_hi": "string",
+      "audio_de": "string"
+    },
+    "max_actions": 35,
+    "max_space_calls": 12,
+    "time_budget_s": 180.0,
+    "expert_persona": "accuracy_first",
+    "expert_rubric": {
+      "transcript_en": {
+        "weight": 0.12,
+        "method": "min_length",
+        "min_length": 20
+      },
+      "translation_fr": {
+        "weight": 0.11,
+        "method": "min_length",
+        "min_length": 20
+      },
+      "translation_es": {
+        "weight": 0.11,
+        "method": "min_length",
+        "min_length": 20
+      },
+      "translation_hi": {
+        "weight": 0.11,
+        "method": "min_length",
+        "min_length": 20
+      },
+      "translation_de": {
+        "weight": 0.11,
+        "method": "min_length",
+        "min_length": 20
+      },
+      "audio_fr": {
+        "weight": 0.11,
+        "method": "non_empty"
+      },
+      "audio_es": {
+        "weight": 0.11,
+        "method": "non_empty"
+      },
+      "audio_hi": {
+        "weight": 0.11,
+        "method": "non_empty"
+      },
+      "audio_de": {
+        "weight": 0.11,
+        "method": "non_empty"
+      }
+    },
+    "gold_pipeline": [
+      {
+        "space_id": "hf-audio/whisper-large-v3",
+        "inputs": {
+          "inputs": "<input.audio_url>",
+          "task": "transcribe"
+        }
+      },
+      {
+        "space_id": "UNESCO/nllb",
+        "inputs": {
+          "text": "<step1.transcript>",
+          "src_lang": "English",
+          "tgt_lang": "French"
+        }
+      },
+      {
+        "space_id": "UNESCO/nllb",
+        "inputs": {
+          "text": "<step1.transcript>",
+          "src_lang": "English",
+          "tgt_lang": "Spanish"
+        }
+      },
+      {
+        "space_id": "UNESCO/nllb",
+        "inputs": {
+          "text": "<step1.transcript>",
+          "src_lang": "English",
+          "tgt_lang": "Hindi"
+        }
+      },
+      {
+        "space_id": "UNESCO/nllb",
+        "inputs": {
+          "text": "<step1.transcript>",
+          "src_lang": "English",
+          "tgt_lang": "German"
+        }
+      },
+      {
+        "space_id": "innoai/Edge-TTS-Text-to-Speech",
+        "inputs": {
+          "text": "<step2.text>",
+          "voice": "fr-FR-DeniseNeural - fr-FR (Female)",
+          "rate": 0,
+          "pitch": 0
+        }
+      },
+      {
+        "space_id": "innoai/Edge-TTS-Text-to-Speech",
+        "inputs": {
+          "text": "<step3.text>",
+          "voice": "es-ES-ElviraNeural - es-ES (Female)",
+          "rate": 0,
+          "pitch": 0
+        }
+      },
+      {
+        "space_id": "innoai/Edge-TTS-Text-to-Speech",
+        "inputs": {
+          "text": "<step4.text>",
+          "voice": "hi-IN-SwaraNeural - hi-IN (Female)",
+          "rate": 0,
+          "pitch": 0
+        }
+      },
+      {
+        "space_id": "innoai/Edge-TTS-Text-to-Speech",
+        "inputs": {
+          "text": "<step5.text>",
+          "voice": "de-DE-KatjaNeural - de-DE (Female)",
+          "rate": 0,
+          "pitch": 0
+        }
+      }
+    ]
+  },
+  {
+    "task_id": "long_doc_localize_032",
+    "domain": "document",
+    "difficulty": "hard",
+    "description": "Localize a PDF: extract text, summarize, translate summary to French and Japanese, extract entities from original, classify sentiment, and generate audio narration in both target languages. 8 Space calls total.",
+    "input": {
+      "pdf_url": "https://huggingface.co/datasets/hf-internal-testing/test-pdf-files/resolve/main/sample.pdf"
+    },
+    "expected_output_schema": {
+      "extracted_text": "string",
+      "summary_en": "string",
+      "summary_fr": "string",
+      "summary_ja": "string",
+      "entities": "string",
+      "sentiment": "string",
+      "audio_fr": "string",
+      "audio_ja": "string"
+    },
+    "max_actions": 30,
+    "max_space_calls": 10,
+    "time_budget_s": 150.0,
+    "expert_persona": "accuracy_first",
+    "expert_rubric": {
+      "extracted_text": {
+        "weight": 0.15,
+        "method": "min_length",
+        "min_length": 50
+      },
+      "summary_en": {
+        "weight": 0.15,
+        "method": "min_length",
+        "min_length": 30
+      },
+      "summary_fr": {
+        "weight": 0.12,
+        "method": "min_length",
+        "min_length": 30
+      },
+      "summary_ja": {
+        "weight": 0.12,
+        "method": "min_length",
+        "min_length": 10
+      },
+      "entities": {
+        "weight": 0.12,
+        "method": "non_empty"
+      },
+      "sentiment": {
+        "weight": 0.1,
+        "method": "non_empty"
+      },
+      "audio_fr": {
+        "weight": 0.12,
+        "method": "non_empty"
+      },
+      "audio_ja": {
+        "weight": 0.12,
+        "method": "non_empty"
+      }
+    },
+    "gold_pipeline": [
+      {
+        "space_id": "xiaoyao9184/marker",
+        "inputs": {
+          "filename": "<input.pdf_url>"
+        }
+      },
+      {
+        "space_id": "pszemraj/summarize-long-text",
+        "inputs": {
+          "text": "<step1.extracted_text>"
+        }
+      },
+      {
+        "space_id": "UNESCO/nllb",
+        "inputs": {
+          "text": "<step2.summary>",
+          "src_lang": "English",
+          "tgt_lang": "French"
+        }
+      },
+      {
+        "space_id": "UNESCO/nllb",
+        "inputs": {
+          "text": "<step2.summary>",
+          "src_lang": "English",
+          "tgt_lang": "Japanese"
+        }
+      },
+      {
+        "space_id": "fastino/gliner2-official-demo",
+        "inputs": {
+          "text": "<step1.extracted_text>"
+        }
+      },
+      {
+        "space_id": "Gradio-Blocks/Multilingual-Aspect-Based-Sentiment-Analysis",
+        "inputs": {
+          "text": "<step1.extracted_text>"
+        }
+      },
+      {
+        "space_id": "innoai/Edge-TTS-Text-to-Speech",
+        "inputs": {
+          "text": "<step3.text>",
+          "voice": "fr-FR-DeniseNeural - fr-FR (Female)",
+          "rate": 0,
+          "pitch": 0
+        }
+      },
+      {
+        "space_id": "innoai/Edge-TTS-Text-to-Speech",
+        "inputs": {
+          "text": "<step4.text>",
+          "voice": "ja-JP-NanamiNeural - ja-JP (Female)",
+          "rate": 0,
+          "pitch": 0
+        }
+      }
+    ]
+  },
+  {
+    "task_id": "long_image_story_033",
+    "domain": "multimodal",
+    "difficulty": "hard",
+    "description": "Turn an image into a localized multimedia story. Caption image, expand caption to prompt, generate new stylized image, caption new image, write a story combining both, translate story to Spanish, synthesize story audio. 7 Space calls.",
+    "input": {
+      "image_url": "https://huggingface.co/datasets/huggingface/documentation-images/resolve/main/transformers/tasks/document_ocr.png"
+    },
+    "expected_output_schema": {
+      "caption_original": "string",
+      "refined_prompt": "string",
+      "new_image_url": "string",
+      "caption_new": "string",
+      "story_en": "string",
+      "story_es": "string",
+      "story_audio": "string"
+    },
+    "max_actions": 25,
+    "max_space_calls": 8,
+    "time_budget_s": 120.0,
+    "expert_persona": "accuracy_first",
+    "expert_rubric": {
+      "caption_original": {
+        "weight": 0.12,
+        "method": "min_length",
+        "min_length": 15
+      },
+      "refined_prompt": {
+        "weight": 0.12,
+        "method": "min_length",
+        "min_length": 30
+      },
+      "new_image_url": {
+        "weight": 0.14,
+        "method": "non_empty"
+      },
+      "caption_new": {
+        "weight": 0.12,
+        "method": "min_length",
+        "min_length": 15
+      },
+      "story_en": {
+        "weight": 0.17,
+        "method": "min_length",
+        "min_length": 50
+      },
+      "story_es": {
+        "weight": 0.17,
+        "method": "min_length",
+        "min_length": 50
+      },
+      "story_audio": {
+        "weight": 0.16,
+        "method": "non_empty"
+      }
+    },
+    "gold_pipeline": [
+      {
+        "space_id": "fancyfeast/joy-caption-pre-alpha",
+        "inputs": {
+          "image_url": "<input.image_url>"
+        }
+      },
+      {
+        "space_id": "gokaygokay/FLUX-Prompt-Generator",
+        "inputs": {
+          "input_concept": "<step1.caption>"
+        }
+      },
+      {
+        "space_id": "black-forest-labs/FLUX.1-schnell",
+        "inputs": {
+          "prompt": "<step2.refined_prompt>",
+          "seed": 42,
+          "randomize_seed": true
+        }
+      },
+      {
+        "space_id": "fancyfeast/joy-caption-pre-alpha",
+        "inputs": {
+          "image_url": "<step3.image_url>"
+        }
+      },
+      {
+        "space_id": "pszemraj/summarize-long-text",
+        "inputs": {
+          "text": "<step1.caption> <step4.caption>"
+        }
+      },
+      {
+        "space_id": "UNESCO/nllb",
+        "inputs": {
+          "text": "<step5.summary>",
+          "src_lang": "English",
+          "tgt_lang": "Spanish"
+        }
+      },
+      {
+        "space_id": "innoai/Edge-TTS-Text-to-Speech",
+        "inputs": {
+          "text": "<step6.text>",
+          "voice": "es-ES-ElviraNeural - es-ES (Female)",
+          "rate": 0,
+          "pitch": 0
+        }
+      }
+    ]
+  },
+  {
+    "task_id": "long_meeting_analysis_034",
+    "domain": "audio_processing",
+    "difficulty": "hard",
+    "description": "Deep meeting analysis. From meeting audio: diarize speakers, transcribe each speaker, extract entities per speaker, analyze sentiment per speaker (3 speakers), summarize minutes, translate summary to Spanish. 8 Space calls.",
+    "input": {
+      "audio_url": "https://huggingface.co/datasets/Narsil/asr_dummy/resolve/main/mlk.flac"
+    },
+    "expected_output_schema": {
+      "diarization": "string",
+      "transcript": "string",
+      "entities": "string",
+      "sentiment_speaker_1": "string",
+      "sentiment_speaker_2": "string",
+      "sentiment_speaker_3": "string",
+      "minutes_en": "string",
+      "minutes_es": "string"
+    },
+    "max_actions": 30,
+    "max_space_calls": 10,
+    "time_budget_s": 150.0,
+    "expert_persona": "accuracy_first",
+    "expert_rubric": {
+      "diarization": {
+        "weight": 0.12,
+        "method": "non_empty"
+      },
+      "transcript": {
+        "weight": 0.15,
+        "method": "min_length",
+        "min_length": 30
+      },
+      "entities": {
+        "weight": 0.12,
+        "method": "non_empty"
+      },
+      "sentiment_speaker_1": {
+        "weight": 0.1,
+        "method": "non_empty"
+      },
+      "sentiment_speaker_2": {
+        "weight": 0.1,
+        "method": "non_empty"
+      },
+      "sentiment_speaker_3": {
+        "weight": 0.1,
+        "method": "non_empty"
+      },
+      "minutes_en": {
+        "weight": 0.16,
+        "method": "min_length",
+        "min_length": 40
+      },
+      "minutes_es": {
+        "weight": 0.15,
+        "method": "min_length",
+        "min_length": 40
+      }
+    },
+    "gold_pipeline": [
+      {
+        "space_id": "wenet-e2e/wespeaker_demo",
+        "inputs": {
+          "Speaker#1": "<input.audio_url>"
+        }
+      },
+      {
+        "space_id": "hf-audio/whisper-large-v3",
+        "inputs": {
+          "inputs": "<input.audio_url>",
+          "task": "transcribe"
+        }
+      },
+      {
+        "space_id": "fastino/gliner2-official-demo",
+        "inputs": {
+          "text": "<step2.transcript>"
+        }
+      },
+      {
+        "space_id": "Gradio-Blocks/Multilingual-Aspect-Based-Sentiment-Analysis",
+        "inputs": {
+          "text": "<step2.transcript>"
+        }
+      },
+      {
+        "space_id": "Gradio-Blocks/Multilingual-Aspect-Based-Sentiment-Analysis",
+        "inputs": {
+          "text": "<step2.transcript>"
+        }
+      },
+      {
+        "space_id": "Gradio-Blocks/Multilingual-Aspect-Based-Sentiment-Analysis",
+        "inputs": {
+          "text": "<step2.transcript>"
+        }
+      },
+      {
+        "space_id": "pszemraj/summarize-long-text",
+        "inputs": {
+          "text": "<step2.transcript>"
+        }
+      },
+      {
+        "space_id": "UNESCO/nllb",
+        "inputs": {
+          "text": "<step7.summary>",
+          "src_lang": "English",
+          "tgt_lang": "Spanish"
+        }
+      }
+    ]
+  },
+  {
+    "task_id": "long_news_brief_035",
+    "domain": "multimodal",
+    "difficulty": "hard",
+    "description": "Produce a global news brief from mixed sources. Given an audio clip and a PDF report, extract and summarize both, combine summaries, translate combined to French, extract entities, assess sentiment, synthesize a French audio narration. 7 Space calls.",
+    "input": {
+      "audio_url": "https://huggingface.co/datasets/Narsil/asr_dummy/resolve/main/mlk.flac",
+      "pdf_url": "https://huggingface.co/datasets/hf-internal-testing/test-pdf-files/resolve/main/sample.pdf"
+    },
+    "expected_output_schema": {
+      "transcript": "string",
+      "pdf_text": "string",
+      "audio_summary": "string",
+      "pdf_summary": "string",
+      "combined_fr": "string",
+      "entities": "string",
+      "sentiment": "string",
+      "narration_audio": "string"
+    },
+    "max_actions": 28,
+    "max_space_calls": 10,
+    "time_budget_s": 140.0,
+    "expert_persona": "accuracy_first",
+    "expert_rubric": {
+      "transcript": {
+        "weight": 0.1,
+        "method": "min_length",
+        "min_length": 20
+      },
+      "pdf_text": {
+        "weight": 0.12,
+        "method": "min_length",
+        "min_length": 50
+      },
+      "audio_summary": {
+        "weight": 0.12,
+        "method": "min_length",
+        "min_length": 20
+      },
+      "pdf_summary": {
+        "weight": 0.12,
+        "method": "min_length",
+        "min_length": 20
+      },
+      "combined_fr": {
+        "weight": 0.18,
+        "method": "min_length",
+        "min_length": 50
+      },
+      "entities": {
+        "weight": 0.12,
+        "method": "non_empty"
+      },
+      "sentiment": {
+        "weight": 0.1,
+        "method": "non_empty"
+      },
+      "narration_audio": {
+        "weight": 0.14,
+        "method": "non_empty"
+      }
+    },
+    "gold_pipeline": [
+      {
+        "space_id": "hf-audio/whisper-large-v3",
+        "inputs": {
+          "inputs": "<input.audio_url>",
+          "task": "transcribe"
+        }
+      },
+      {
+        "space_id": "xiaoyao9184/marker",
+        "inputs": {
+          "filename": "<input.pdf_url>"
+        }
+      },
+      {
+        "space_id": "pszemraj/summarize-long-text",
+        "inputs": {
+          "text": "<step1.transcript>"
+        }
+      },
+      {
+        "space_id": "pszemraj/summarize-long-text",
+        "inputs": {
+          "text": "<step2.extracted_text>"
+        }
+      },
+      {
+        "space_id": "UNESCO/nllb",
+        "inputs": {
+          "text": "<step3.summary> <step4.summary>",
+          "src_lang": "English",
+          "tgt_lang": "French"
+        }
+      },
+      {
+        "space_id": "fastino/gliner2-official-demo",
+        "inputs": {
+          "text": "<step3.summary> <step4.summary>"
+        }
+      },
+      {
+        "space_id": "Gradio-Blocks/Multilingual-Aspect-Based-Sentiment-Analysis",
+        "inputs": {
+          "text": "<step3.summary>"
+        }
+      },
+      {
+        "space_id": "innoai/Edge-TTS-Text-to-Speech",
+        "inputs": {
+          "text": "<step5.text>",
+          "voice": "fr-FR-DeniseNeural - fr-FR (Female)",
+          "rate": 0,
+          "pitch": 0
+        }
+      }
+    ]
+  },
+  {
+    "task_id": "marathon_news_evolving_036",
+    "domain": "multimodal",
+    "difficulty": "hard",
+    "description": "MARATHON: Build a comprehensive multimedia news package under evolving requirements. Task requirements drift mid-episode multiple times, forcing the agent to adapt pipelines, re-read cards, and recover from contract changes. 60 actions allowed.",
+    "input": {
+      "audio_url": "https://huggingface.co/datasets/Narsil/asr_dummy/resolve/main/mlk.flac",
+      "pdf_url": "https://huggingface.co/datasets/hf-internal-testing/test-pdf-files/resolve/main/sample.pdf",
+      "image_url": "https://huggingface.co/datasets/huggingface/documentation-images/resolve/main/transformers/tasks/document_ocr.png"
+    },
+    "expected_output_schema": {
+      "transcript": "string",
+      "pdf_text": "string",
+      "image_caption": "string",
+      "summary_en": "string",
+      "summary_fr": "string",
+      "summary_de": "string",
+      "summary_ja": "string",
+      "entities": "string",
+      "sentiment": "string",
+      "audio_fr": "string",
+      "audio_de": "string",
+      "audio_ja": "string"
+    },
+    "max_actions": 60,
+    "max_space_calls": 18,
+    "time_budget_s": 240.0,
+    "expert_persona": "accuracy_first",
+    "expert_rubric": {
+      "transcript": {
+        "weight": 0.08,
+        "method": "min_length",
+        "min_length": 20
+      },
+      "pdf_text": {
+        "weight": 0.08,
+        "method": "min_length",
+        "min_length": 50
+      },
+      "image_caption": {
+        "weight": 0.08,
+        "method": "min_length",
+        "min_length": 15
+      },
+      "summary_en": {
+        "weight": 0.1,
+        "method": "min_length",
+        "min_length": 30
+      },
+      "summary_fr": {
+        "weight": 0.08,
+        "method": "min_length",
+        "min_length": 30
+      },
+      "summary_de": {
+        "weight": 0.08,
+        "method": "min_length",
+        "min_length": 30
+      },
+      "summary_ja": {
+        "weight": 0.08,
+        "method": "min_length",
+        "min_length": 10
+      },
+      "entities": {
+        "weight": 0.08,
+        "method": "non_empty"
+      },
+      "sentiment": {
+        "weight": 0.08,
+        "method": "non_empty"
+      },
+      "audio_fr": {
+        "weight": 0.08,
+        "method": "non_empty"
+      },
+      "audio_de": {
+        "weight": 0.08,
+        "method": "non_empty"
+      },
+      "audio_ja": {
+        "weight": 0.1,
+        "method": "non_empty"
+      }
+    },
+    "drift_events": [
+      {
+        "trigger_step": 8,
+        "type": "field_rename",
+        "space_id": "hf-audio/whisper-large-v3",
+        "change": {
+          "inputs": "audio_file"
+        }
+      },
+      {
+        "trigger_step": 18,
+        "type": "field_rename",
+        "space_id": "UNESCO/nllb",
+        "change": {
+          "text": "input_text"
+        }
+      },
+      {
+        "trigger_step": 30,
+        "type": "type_change",
+        "space_id": "innoai/Edge-TTS-Text-to-Speech",
+        "change": {
+          "rate": "string"
+        }
+      },
+      {
+        "trigger_step": 40,
+        "type": "new_required",
+        "space_id": "pszemraj/summarize-long-text",
+        "change": {
+          "max_length": "Max output length in tokens"
+        }
+      }
+    ],
+    "gold_pipeline": [
+      {
+        "space_id": "hf-audio/whisper-large-v3",
+        "inputs": {
+          "inputs": "<input.audio_url>",
+          "task": "transcribe"
+        }
+      },
+      {
+        "space_id": "xiaoyao9184/marker",
+        "inputs": {
+          "filename": "<input.pdf_url>"
+        }
+      },
+      {
+        "space_id": "fancyfeast/joy-caption-pre-alpha",
+        "inputs": {
+          "image_url": "<input.image_url>"
+        }
+      },
+      {
+        "space_id": "pszemraj/summarize-long-text",
+        "inputs": {
+          "text": "<step1.transcript> <step2.extracted_text> <step3.caption>"
+        }
+      },
+      {
+        "space_id": "UNESCO/nllb",
+        "inputs": {
+          "text": "<step4.summary>",
+          "src_lang": "English",
+          "tgt_lang": "French"
+        }
+      },
+      {
+        "space_id": "UNESCO/nllb",
+        "inputs": {
+          "text": "<step4.summary>",
+          "src_lang": "English",
+          "tgt_lang": "German"
+        }
+      },
+      {
+        "space_id": "UNESCO/nllb",
+        "inputs": {
+          "text": "<step4.summary>",
+          "src_lang": "English",
+          "tgt_lang": "Japanese"
+        }
+      },
+      {
+        "space_id": "fastino/gliner2-official-demo",
+        "inputs": {
+          "text": "<step4.summary>"
+        }
+      },
+      {
+        "space_id": "Gradio-Blocks/Multilingual-Aspect-Based-Sentiment-Analysis",
+        "inputs": {
+          "text": "<step4.summary>"
+        }
+      },
+      {
+        "space_id": "innoai/Edge-TTS-Text-to-Speech",
+        "inputs": {
+          "text": "<step5.text>",
+          "voice": "fr-FR-DeniseNeural - fr-FR (Female)",
+          "rate": 0,
+          "pitch": 0
+        }
+      },
+      {
+        "space_id": "innoai/Edge-TTS-Text-to-Speech",
+        "inputs": {
+          "text": "<step6.text>",
+          "voice": "de-DE-KatjaNeural - de-DE (Female)",
+          "rate": 0,
+          "pitch": 0
+        }
+      },
+      {
+        "space_id": "innoai/Edge-TTS-Text-to-Speech",
+        "inputs": {
+          "text": "<step7.text>",
+          "voice": "ja-JP-NanamiNeural - ja-JP (Female)",
+          "rate": 0,
+          "pitch": 0
+        }
+      }
+    ]
+  },
+  {
+    "task_id": "marathon_investigation_037",
+    "domain": "multimodal",
+    "difficulty": "hard",
+    "description": "MARATHON: Forensic investigation on evidence. Process audio testimony, transcribe and translate it, extract entities for cross-referencing, run parallel sentiment per segment, produce multi-language reports. Heavy drift simulates changing court requirements. 55 actions.",
+    "input": {
+      "audio_url": "https://huggingface.co/datasets/Narsil/asr_dummy/resolve/main/mlk.flac",
+      "pdf_url": "https://huggingface.co/datasets/hf-internal-testing/test-pdf-files/resolve/main/sample.pdf"
+    },
+    "expected_output_schema": {
+      "testimony_en": "string",
+      "testimony_fr": "string",
+      "testimony_es": "string",
+      "document_text": "string",
+      "document_summary": "string",
+      "entities_testimony": "string",
+      "entities_document": "string",
+      "sentiment_intro": "string",
+      "sentiment_conclusion": "string",
+      "final_report_en": "string",
+      "final_report_fr": "string",
+      "audio_report_fr": "string"
+    },
+    "max_actions": 55,
+    "max_space_calls": 16,
+    "time_budget_s": 220.0,
+    "expert_persona": "accuracy_first",
+    "expert_rubric": {
+      "testimony_en": {
+        "weight": 0.08,
+        "method": "min_length",
+        "min_length": 30
+      },
+      "testimony_fr": {
+        "weight": 0.08,
+        "method": "min_length",
+        "min_length": 30
+      },
+      "testimony_es": {
+        "weight": 0.08,
+        "method": "min_length",
+        "min_length": 30
+      },
+      "document_text": {
+        "weight": 0.08,
+        "method": "min_length",
+        "min_length": 50
+      },
+      "document_summary": {
+        "weight": 0.08,
+        "method": "min_length",
+        "min_length": 30
+      },
+      "entities_testimony": {
+        "weight": 0.08,
+        "method": "non_empty"
+      },
+      "entities_document": {
+        "weight": 0.08,
+        "method": "non_empty"
+      },
+      "sentiment_intro": {
+        "weight": 0.08,
+        "method": "non_empty"
+      },
+      "sentiment_conclusion": {
+        "weight": 0.08,
+        "method": "non_empty"
+      },
+      "final_report_en": {
+        "weight": 0.1,
+        "method": "min_length",
+        "min_length": 60
+      },
+      "final_report_fr": {
+        "weight": 0.1,
+        "method": "min_length",
+        "min_length": 60
+      },
+      "audio_report_fr": {
+        "weight": 0.08,
+        "method": "non_empty"
+      }
+    },
+    "drift_events": [
+      {
+        "trigger_step": 10,
+        "type": "new_required",
+        "space_id": "UNESCO/nllb",
+        "change": {
+          "formality": "formal or informal"
+        }
+      },
+      {
+        "trigger_step": 22,
+        "type": "field_rename",
+        "space_id": "hf-audio/whisper-large-v3",
+        "change": {
+          "task": "mode"
+        }
+      },
+      {
+        "trigger_step": 35,
+        "type": "deprecation",
+        "space_id": "Gradio-Blocks/Multilingual-Aspect-Based-Sentiment-Analysis",
+        "change": {
+          "successor": "cardiffnlp/twitter-roberta-sentiment"
+        }
+      },
+      {
+        "trigger_step": 45,
+        "type": "field_rename",
+        "space_id": "pszemraj/summarize-long-text",
+        "change": {
+          "text": "article"
+        }
+      }
+    ],
+    "gold_pipeline": [
+      {
+        "space_id": "hf-audio/whisper-large-v3",
+        "inputs": {
+          "inputs": "<input.audio_url>",
+          "task": "transcribe"
+        }
+      },
+      {
+        "space_id": "UNESCO/nllb",
+        "inputs": {
+          "text": "<step1.transcript>",
+          "src_lang": "English",
+          "tgt_lang": "French"
+        }
+      },
+      {
+        "space_id": "UNESCO/nllb",
+        "inputs": {
+          "text": "<step1.transcript>",
+          "src_lang": "English",
+          "tgt_lang": "Spanish"
+        }
+      },
+      {
+        "space_id": "xiaoyao9184/marker",
+        "inputs": {
+          "filename": "<input.pdf_url>"
+        }
+      },
+      {
+        "space_id": "pszemraj/summarize-long-text",
+        "inputs": {
+          "text": "<step4.extracted_text>"
+        }
+      },
+      {
+        "space_id": "fastino/gliner2-official-demo",
+        "inputs": {
+          "text": "<step1.transcript>"
+        }
+      },
+      {
+        "space_id": "fastino/gliner2-official-demo",
+        "inputs": {
+          "text": "<step4.extracted_text>"
+        }
+      },
+      {
+        "space_id": "Gradio-Blocks/Multilingual-Aspect-Based-Sentiment-Analysis",
+        "inputs": {
+          "text": "<step1.transcript>"
+        }
+      },
+      {
+        "space_id": "Gradio-Blocks/Multilingual-Aspect-Based-Sentiment-Analysis",
+        "inputs": {
+          "text": "<step1.transcript>"
+        }
+      },
+      {
+        "space_id": "pszemraj/summarize-long-text",
+        "inputs": {
+          "text": "<step1.transcript> <step5.summary>"
+        }
+      },
+      {
+        "space_id": "UNESCO/nllb",
+        "inputs": {
+          "text": "<step10.summary>",
+          "src_lang": "English",
+          "tgt_lang": "French"
+        }
+      },
+      {
+        "space_id": "innoai/Edge-TTS-Text-to-Speech",
+        "inputs": {
+          "text": "<step11.text>",
+          "voice": "fr-FR-DeniseNeural - fr-FR (Female)",
+          "rate": 0,
+          "pitch": 0
+        }
+      }
+    ]
   }
 ]

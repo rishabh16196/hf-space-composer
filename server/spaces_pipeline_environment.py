@@ -524,9 +524,13 @@ class SpacesPipelineEnvironment(Environment):
     # ------------------------------------------------------------------
 
     def _persona_hint(self, persona: str) -> str:
-        """Generate a noisy NL hint about active persona (sampled from variants)."""
-        variants = PERSONA_HINTS.get(persona, ["Reviewer expectations are unclear."])
-        return self._rng.choice(variants)
+        """Persona hint is HIDDEN from the agent (empty string returned).
+
+        Agent must infer persona preferences purely from reward signals and
+        expert feedback after submission. This strengthens the partial-
+        observability challenge of the environment (Snorkel sub-theme).
+        """
+        return ""
 
     def _record_history(
         self,

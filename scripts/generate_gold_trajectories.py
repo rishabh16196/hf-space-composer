@@ -67,8 +67,9 @@ def format_prompt(obs: Any) -> str:
         f"Input: {json.dumps(obs.task_input, default=str)[:400]}",
         f"Expected output schema: {json.dumps(obs.expected_output_schema, default=str)}",
         f"Step {obs.step_number}/{obs.max_steps}, actions remaining: {obs.actions_remaining}, space budget: {obs.spaces_budget_remaining}",
-        f"Expert hint: {obs.expert_persona_hint}",
     ]
+    if obs.expert_persona_hint:
+        parts.append(f"Expert hint: {obs.expert_persona_hint}")
     if obs.auditor_flags:
         recent = obs.auditor_flags[-3:]
         parts.append("## Recent Auditor flags:")
