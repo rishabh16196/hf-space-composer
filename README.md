@@ -18,10 +18,6 @@ tags:
 
 **An RL training environment where agents learn to discover, compose, and adapt to live HuggingFace Spaces under multi-actor oversight.**
 
-Built for the Meta PyTorch OpenEnv Hackathon, Round 2. Stacks **4 sub-theme bonuses**: Halluminate (multi-actor) + Fleet AI (oversight) + Patronus (schema drift) + Snorkel (evolving experts).
-
----
-
 ## The Problem
 
 HuggingFace Hub hosts 500K+ Spaces — the world's largest catalog of AI tools. Yet:
@@ -47,40 +43,6 @@ We surveyed the existing landscape:
 | **BrowserGym** | Browser as RL env | Browser-only, no Hub orchestration |
 
 **No one has built an RL training environment where the agent learns to discover, compose, and adapt to live HuggingFace Spaces under multi-actor oversight with schema drift.** That's the gap this env fills.
-
----
-
-## Architecture at a Glance
-
-```
-                    ┌──────────────────────┐
-                    │   Learning Agent     │
-                    │  (Qwen 2.5 1.5B)     │
-                    └─────────┬────────────┘
-                              │ JSON action
-                ┌─────────────┴──────────────┐
-                │   Spaces Pipeline Env      │
-                │   (OpenEnv-compatible)     │
-                └──┬───────────┬─────┬────┬──┘
-                   │           │     │    │
-              ┌────▼───┐  ┌────▼───┐ │ ┌──▼──────────┐
-              │ Spaces │  │Auditor │ │ │ Expert      │
-              │ (mock  │  │ (Fleet │ │ │ Reviewer    │
-              │  /live)│  │  AI)   │ │ │ (Snorkel)   │
-              └────────┘  └────────┘ │ └─────────────┘
-                                     │
-                              ┌──────▼─────────┐
-                              │  Schema Drift  │
-                              │  (Patronus)    │
-                              └────────────────┘
-```
-
-### Core mechanics
-
-- **Multi-actor (Halluminate)**: Agent orchestrates 5-50 Spaces per task. Spaces are black-box actors with documented contracts.
-- **Oversight Auditor (Fleet AI)**: Watches every action, raises flags for invalid inputs, decoy Spaces, redundant calls, hallucinations.
-- **Schema Drift (Patronus)**: Mid-episode, Space contracts can change — field renames, type changes, deprecations. Agent must detect and adapt.
-- **Evolving Expert Reviewer (Snorkel)**: Three personas (speed-first, accuracy-first, cost-first) score submissions. Personas can shift mid-episode.
 
 ---
 
@@ -237,22 +199,6 @@ OPENAI_API_KEY=... python scripts/evaluate.py --agent llm --model gpt-4o-mini
 
 ---
 
-## Sub-Theme Coverage
-
-| Sub-theme | Sponsor | How we hit it |
-|---|---|---|
-| **Halluminate** | Multi-Actor Environments | Spaces are black-box actors; agent must discover and orchestrate them |
-| **Fleet AI** | Scalable Oversight | Auditor agent monitors every action, flags violations with severity |
-| **Patronus** | Consumer Workflows w/ Schema Drift | Space contracts drift mid-episode; agent must detect and re-adapt |
-| **Snorkel** | Simulated Experts in the Loop | Reviewer with 3 evolving personas scoring submissions |
-
-Plus main themes:
-- ✅ Theme #1 Multi-Agent
-- ✅ Theme #3.1 World Modeling (real Hub as world)
-- Bonus: arguably Theme #2 Long-Horizon (200+ step pipelines)
-
----
-
 ## Project Structure
 
 ```
@@ -287,17 +233,6 @@ spaces_pipeline_env/
 └── colab/
     └── train_spaces_pipeline.ipynb  # End-to-end Colab notebook
 ```
-
----
-
-## Pitch Storyline (3 minutes)
-
-1. **0:00-0:30** Hook: "500K HF Spaces, but frontier models score 33% on multi-tool orchestration. We trained an agent to use HuggingFace fluently."
-2. **0:30-1:00** Show baseline (untrained Qwen 1.5B) failing on a task — wrong Space chosen, ignored Auditor flags, broken submission.
-3. **1:00-1:30** Show training curves (4 metrics rising over 30K rollouts across 4 phases).
-4. **1:30-2:30** **LIVE DEMO**: trained agent given a fresh task, orchestrates 3-5 real HF Spaces on screen, with Auditor commentary scrolling.
-5. **2:30-2:50** Stress test: simulate Space deprecation, watch agent recover.
-6. **2:50-3:00** Sub-theme coverage diagram (4 colored blocks lighting up).
 
 ---
 
