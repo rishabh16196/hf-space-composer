@@ -369,51 +369,19 @@ def main():
     if not os.path.isabs(adapter_path):
         adapter_path = str(Path(__file__).resolve().parent / adapter_path)
 
-    # Step 1: load base from HF
+    # Unsloth natively loads a base + PEFT adapter in ONE call when you pass
+    # the adapter path as model_name. It reads adapter_config.json, pulls the
+    # base model (matching `base_model_name_or_path`), and attaches the adapter
+    # with correct key names — no manual copy needed.
     model, tokenizer = FastLanguageModel.from_pretrained(
-        model_name=args.model,
+        model_name=adapter_path,
         max_seq_length=args.max_seq_length,
-        dtype=None,  # auto bf16 on A100
+        dtype=None,                # auto bf16 on A100/L40S
         load_in_4bit=args.load_in_4bit,
     )
-    # Step 2: attach trainable LoRA
-    model = FastLanguageModel.get_peft_model(
-        model,
-        r=16,
-        lora_alpha=32,
-        target_modules=["q_proj", "k_proj", "v_proj", "o_proj",
-                        "gate_proj", "up_proj", "down_proj"],
-        lora_dropout=0,
-        bias="none",
-        use_gradient_checkpointing="unsloth",
-        random_state=args.seed,
-    )
-    # Step 3: load SFT weights into the LoRA.
-    # PEFT saves LoRA weights as safetensors (not pickle), so use safetensors loader.
-    from safetensors.torch import load_file
-    st_path = Path(adapter_path) / "adapter_model.safetensors"
-    bin_path = Path(adapter_path) / "adapter_model.bin"
-    if st_path.exists():
-        sft_state = load_file(str(st_path))
-    elif bin_path.exists():
-        sft_state = torch.load(str(bin_path), weights_only=False, map_location="cpu")
-    else:
-        raise FileNotFoundError(
-            f"No adapter_model.safetensors or adapter_model.bin in {adapter_path}"
-        )
-
-    # Key mapping: PEFT saves as base_model.model.<layer>.<proj>.lora_A/B.weight
-    loaded, skipped = 0, 0
-    with torch.no_grad():
-        model_params = dict(model.named_parameters())
-        for k, v in sft_state.items():
-            # SFT adapter keys look like: base_model.model.model.layers.0.self_attn.q_proj.lora_A.weight
-            if k in model_params and model_params[k].shape == v.shape:
-                model_params[k].copy_(v.to(model_params[k].dtype).to(model_params[k].device))
-                loaded += 1
-            else:
-                skipped += 1
-    print(f"  SFT weights loaded: {loaded}, skipped: {skipped}")
+    # Make LoRA trainable (Unsloth sets modules_to_save etc)
+    FastLanguageModel.for_training(model)
+    print(f"  loaded base + SFT adapter from {adapter_path}")
 
     n_tr = sum(p.numel() for p in model.parameters() if p.requires_grad)
     print(f"  trainable params: {n_tr:,}")
