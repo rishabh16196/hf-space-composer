@@ -388,18 +388,19 @@ def main():
         use_gradient_checkpointing="unsloth",
         random_state=args.seed,
     )
-    # Step 3: load SFT weights into the LoRA
-    from peft import PeftModel
-    # Unsloth's model is a PeftModel; we need to load_adapter into it
-    # Simpler: directly copy SFT LoRA weights
-    sft_state = torch.load(
-        str(Path(adapter_path) / "adapter_model.safetensors"),
-        weights_only=False, map_location="cpu",
-    ) if (Path(adapter_path) / "adapter_model.safetensors").exists() else None
-    if sft_state is None:
-        # Try safetensors
-        from safetensors.torch import load_file
-        sft_state = load_file(str(Path(adapter_path) / "adapter_model.safetensors"))
+    # Step 3: load SFT weights into the LoRA.
+    # PEFT saves LoRA weights as safetensors (not pickle), so use safetensors loader.
+    from safetensors.torch import load_file
+    st_path = Path(adapter_path) / "adapter_model.safetensors"
+    bin_path = Path(adapter_path) / "adapter_model.bin"
+    if st_path.exists():
+        sft_state = load_file(str(st_path))
+    elif bin_path.exists():
+        sft_state = torch.load(str(bin_path), weights_only=False, map_location="cpu")
+    else:
+        raise FileNotFoundError(
+            f"No adapter_model.safetensors or adapter_model.bin in {adapter_path}"
+        )
 
     # Key mapping: PEFT saves as base_model.model.<layer>.<proj>.lora_A/B.weight
     loaded, skipped = 0, 0
