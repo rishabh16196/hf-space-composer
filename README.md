@@ -9,81 +9,87 @@ app_port: 8000
 base_path: /web
 tags:
   - openenv
-  - multi-agent
+  - long-horizon
   - tool-use
+  - schema-drift
   - huggingface
 ---
 
 # Spaces Pipeline Pro
 
-**An RL training environment where agents learn to discover, compose, and adapt to live HuggingFace Spaces under multi-actor oversight.**
+**An OpenEnv-compatible RL training environment for long-horizon tool orchestration with live schema drift.** Agents learn to discover, compose, and recover-from-failure across 5,000+ real HuggingFace Spaces.
 
-## The Problem
-
-HuggingFace Hub hosts 500K+ Spaces — the world's largest catalog of AI tools. Yet:
-
-- Frontier models (GPT-5, Claude 4.5) score **only 33-44%** on multi-tool orchestration benchmarks like GAIA
-- There is **no RL training environment** built around Spaces as a multi-actor toolkit
-- Real-world tool use breaks when API contracts drift, oversight checks fire, or success criteria evolve
-
-**Spaces Pipeline Pro** trains agents to fluently use the entire HuggingFace ecosystem under realistic adversarial conditions.
+> **Hackathon theme mapping** — this env fits Round 2 **Theme #2 (Long-Horizon Planning & Instruction Following)** as the primary fit, and **Theme #3.1 (World Modeling / Professional Tasks — tool-discovery benchmark)** as a secondary fit.
 
 ---
 
-## What Makes It Unique
+## What makes it hard
 
-We surveyed the existing landscape:
+The agent's job looks simple — "answer the question using the right HuggingFace Spaces" — but the environment enforces four pressures that no existing tool-use benchmark stacks together:
 
-| Existing | What it covers | What's missing |
+1. **Long horizons, sparse reward.** Marathon tasks (`marathon_news_evolving_036`, `marathon_investigation_037`) have 50-step action budgets. Grade is a single scalar at `submit`. The agent must decompose the goal, track state across 50+ observations, and **recover from early mistakes** (Theme #2 target behavior).
+2. **Schema drift injected mid-episode.** Live Spaces rename fields, deprecate endpoints, or change types unannounced. The agent's prior plan stops working — it has to detect the drift, read a new card, and re-plan with the new API.
+3. **Tool discovery in the action space.** 5,002 real Spaces indexed; the agent must `search_spaces` to find candidates, `read_card` to learn their schemas, then compose them. No fixed tool list.
+4. **Multi-objective oversight.** An auditor monitors every action for rule violations; an expert reviewer scores the final answer under one of three hidden quality personas. Format, time, cost, and efficiency all contribute to the final grade.
+
+---
+
+## Why it's a fit for Theme #2 + #3.1
+
+| Requirement from the brief | How this env satisfies it |
+|---|---|
+| *"deep, multi-step reasoning with sparse or delayed rewards"* | 50-step marathons; grade only at `submit` |
+| *"decompose goals, track state over extended trajectories"* | Tasks chain 3–12 Spaces; prior outputs drive next step |
+| *"recover from early mistakes"* | Schema drift forces re-planning after bad calls |
+| *"long running sessions beyond context memory limits"* | Marathon observations push prompt length hard |
+| *"real interaction with tools, APIs, or dynamic systems"* | `gradio_client` calls 5,002 real HF Spaces |
+| *"Tool-discovery benchmarks"* | `search_spaces` + `read_card` are first-class actions |
+| *"maintain consistent internal state, orchestrate multi-step workflows"* | Agent must remember which Spaces drifted, which failed |
+
+---
+
+## What's novel vs the existing landscape
+
+| Existing work | What it covers | What's missing |
 |---|---|---|
-| **smolagents** | Framework for calling Spaces as tools | No training env, no oversight, no drift |
-| **Calendar Gym** (in OpenEnv) | Real tool calls, multi-step workflows | Single tool surface, no multi-actor |
-| **GAIA Benchmark** | Tests multi-tool reasoning | Static eval, no training |
-| **ToolBench** | 16K APIs as fine-tuning data | Supervised, no interactive env |
-| **BrowserGym** | Browser as RL env | Browser-only, no Hub orchestration |
+| **smolagents** | Framework for calling Spaces as tools | No training env, no drift, no oversight |
+| **Calendar Gym** (OpenEnv) | Single-tool RL env | Single surface, no discovery problem |
+| **GAIA Benchmark** | Multi-tool reasoning eval | Static, not trainable |
+| **ToolBench** | 16K APIs, SFT data | Supervised-only, no interactive env |
+| **BrowserGym** | Web as RL env | Browser-only, no Hub orchestration |
 
-**No one has built an RL training environment where the agent learns to discover, compose, and adapt to live HuggingFace Spaces under multi-actor oversight with schema drift.** That's the gap this env fills.
+No prior work combines **(a) live tool discovery across the HF Spaces catalog + (b) mid-episode schema drift + (c) 50-step marathon horizons + (d) multi-component graded reward** into a single trainable env. That's the gap this fills.
 
 ---
 
 ## Quick Start
 
 ```bash
-# Install
-git clone <this-repo>
-cd spaces_pipeline_env
+git clone https://github.com/rishabh16196/hf-space-composer
+cd hf-space-composer
 python3.12 -m venv .venv && source .venv/bin/activate
 pip install -e .
 
-# Generate fixtures (one-time, synthetic)
-python scripts/generate_fixtures.py
-
-# Run server
-uvicorn server.app:app --port 8000
-
-# Run heuristic agent against 5 default tasks
+# Smoke test (mock mode, ~2s)
 python inference.py
+
+# Rich step-by-step demo on a marathon task
+python scripts/demo_live.py --task marathon_news_evolving_036 --agent heuristic
 ```
 
----
-
-## Live Demo
-
-Use the demo runner with rich step-by-step output:
+## OpenEnv HTTP server
 
 ```bash
-# Mock mode (instant, deterministic)
-python scripts/demo_live.py --task multimodal_caption_speak_024 --agent hybrid
-
-# Live mode (real HF Spaces fired)
-SPACES_MODE=live HF_TOKEN=hf_xxx python scripts/demo_live.py --task audio_summarize_hindi_001 --agent hybrid
+uvicorn server.app:app --port 8000
+# Observation endpoint: POST http://localhost:8000/reset
+# Step endpoint:        POST http://localhost:8000/step
 ```
 
 ---
 
 ## Action Space
 
-The agent has 4 discrete action types:
+4 discrete action types — the agent emits JSON:
 
 ```python
 {"action_type": "search_spaces", "payload": {"query": "audio transcription", "top_k": 5}}
@@ -95,91 +101,101 @@ The agent has 4 discrete action types:
 
 ---
 
-## Tasks
-
-**25 task scenarios across 5 domains:**
+## Tasks (38 scenarios across 5 domains)
 
 | Domain | Tasks | Example |
 |---|---|---|
 | Audio | 5 | "Transcribe Hindi audio, summarize in English" |
 | Vision | 5 | "Caption an image, translate to French" |
-| Document | 5 | "Extract PDF text, identify entities" |
+| Document | 5 | "Extract PDF text, identify named entities" |
 | Code | 5 | "Explain code, translate explanation to Hindi" |
-| Multimodal | 5 | "From audio + image, produce a unified summary" |
+| Multimodal | 11 | "From audio + image, produce a unified summary" |
+| **Long-horizon (7–12 Space calls)** | 5 | Multi-domain chains, e.g. doc → translate → TTS |
+| **Marathon (50-step budget, drift injected)** | 2 | Evolving news brief; investigation pipeline |
 
-20 for training, 5 held-out for evaluation.
+**Two-tier held-out split** for honest reporting:
+- **Easy held-out** (5): mid-difficulty, 3–10 steps. Tests "did SFT produce a valid agent?"
+- **Hard held-out** (5): 7+ step long-horizon plus both 50-step marathons. Tests "does training solve the hard problem?"
 
-Each task has:
-- Natural-language description
-- Expected output schema
+28 tasks for training. Each task carries:
+- Natural-language description + expected output schema
 - Action and Space-call budgets
-- Expert persona + rubric
-- Optional drift events with trigger steps
+- A hidden expert persona (speed_first / accuracy_first / cost_first) and a per-task rubric
+- Optional schema-drift events with trigger steps
 
 ---
 
 ## Reward Design
 
 ```
-final_reward = (
-    0.50 * expert_score        # Snorkel-rated quality
-  + 0.20 * auditor_score       # 1 - severity-weighted flag penalty
-  + 0.15 * efficiency_score    # 1 - actions_used / budget
-  + 0.10 * cost_score          # 1 - spaces_called / budget
-  + 0.05 * format_score        # output schema completeness
-)
+final_grade = (
+    0.45 * expert_score       # expert reviewer, persona-weighted
+  + 0.18 * auditor_score      # 1 − severity-weighted flag penalty
+  + 0.12 * efficiency_score   # actions used / budget
+  + 0.12 * time_score         # wall-clock time / budget
+  + 0.08 * cost_score         # space calls / budget
+  + 0.05 * format_score       # output schema completeness
+) normalized to [0, 1]
 ```
 
-Plus optional **dense intermediate rewards** during warmup:
-- +0.05 for valid search
-- +0.10 for reading card
-- +0.20 for successful Space call
-- -0.20 for failed call
-- -0.10 for redundant call
-- Auditor flag penalties: -0.05 (warning) / -0.15 (error) / -0.40 (critical)
+**Engagement gate** — caps lazy-submit reward-hacking:
+```python
+if task_requires_tools and successful_space_calls == 0:
+    final_grade = min(final_grade, 0.15)
+```
+(We discovered this loophole empirically when base Qwen was scoring 0.46 by submitting an empty answer on step 1 — all budget components were 1.0 because no resources were spent. Fixed before GRPO was run.)
 
-Dense rewards are annealed to zero across training phases.
+Optional **dense intermediate rewards** for training warmup (annealed to zero across phases): +0.05 search, +0.10 read_card, +0.20 successful call, −0.20 failure, −0.10 redundant, −0.05/−0.15/−0.40 for auditor warning/error/critical flags.
 
 ---
 
 ## Training
 
-**Stack:** Unsloth + TRL GRPO + Qwen 2.5 1.5B-Instruct + LoRA
+**Stack**: Unsloth + TRL + Qwen 2.5 1.5B-Instruct + LoRA r=16
 
-**Curriculum (4 phases):**
-
-| Phase | Tasks | Drift | Personas | Reward shaping | Steps |
-|---|---|---|---|---|---|
-| 1 Warmup | Easy only | ❌ | Speed-first | Dense | 5K |
-| 2 Discovery | Easy + Medium | ❌ | All 3 | Dense (×0.7) | 5K |
-| 3 Drift | All | ✅ | All 3 | Dense (×0.4) | 10K |
-| 4 Adversarial | All | ✅ | Mid-episode shifts | Sparse | 10K |
-
-Run training (at venue with sponsor compute):
+### SFT warmstart (local, 10 min on Apple Silicon)
 
 ```bash
-python scripts/train_grpo.py --phase 1 --steps 5000 --output-dir outputs/phase1
-python scripts/train_grpo.py --phase 2 --steps 5000 --output-dir outputs/phase2
-python scripts/train_grpo.py --phase 3 --steps 10000 --output-dir outputs/phase3
-python scripts/train_grpo.py --phase 4 --steps 10000 --output-dir outputs/phase4
+cd local_training
+python sft_local.py                    # 474 pairs, 1 epoch → LoRA adapter
+python eval_two_tier.py                # easy/hard held-out comparison
 ```
 
-End-to-end Colab notebook: [`colab/train_spaces_pipeline.ipynb`](colab/train_spaces_pipeline.ipynb)
+### Multi-step GRPO (venue compute — Unsloth + CUDA)
+
+```bash
+# Unsloth version — matches venue target; model acts at every env step
+cd local_training
+python grpo_unsloth.py \
+  --adapter outputs/sft_local_1.5b_clean \
+  --max-steps 100 --num-gens 6 --batch-size 4
+```
+
+### End-to-end Colab notebook
+
+[`colab/train_spaces_pipeline.ipynb`](colab/train_spaces_pipeline.ipynb) — clone repo, install Unsloth stack, run SFT + GRPO + eval in one notebook.
+
+### HF Jobs (tested pipeline)
+
+```bash
+hf jobs run --flavor a100-large --timeout 3h --secrets HF_TOKEN \
+  pytorch/pytorch:2.5.1-cuda12.4-cudnn9-runtime \
+  bash -c "$(cat hf_job_entrypoint.sh)"
+```
 
 ---
 
-## Evaluation
+## Results (local, SFT only — GRPO in progress)
 
-```bash
-# Baseline heuristic
-python scripts/evaluate.py --agent heuristic
+Two-tier held-out, 10 tasks × 3 agents:
 
-# Trained agent
-python scripts/evaluate.py --agent trained --model-path outputs/phase4
+| Tier | Base Qwen 1.5B | SFT Qwen 1.5B | HeuristicAgent (gold-pipeline ceiling) |
+|---|---|---|---|
+| **EASY (5)** | 0.150 · 0/5 pass | **0.594 · 3/5 pass** | 0.960 · 5/5 |
+| **HARD (5)** | 0.150 · 0/5 pass | **0.650 · 3/5 pass** | 0.915 · 5/5 |
+| **ALL (10)** | 0.150 · 0/10 | **0.622 · 6/10** | 0.938 · 10/10 |
 
-# LLM zero-shot (frontier baseline)
-OPENAI_API_KEY=... python scripts/evaluate.py --agent llm --model gpt-4o-mini
-```
+One epoch of SFT took Qwen 1.5B from **failing every task** to **passing 3/5 on the hard tier**, including both 50-step marathons with schema drift. See `local_training/SLIDE_STORYLINE.md` for the full pitch narrative.
 
 ---
 
@@ -188,14 +204,9 @@ OPENAI_API_KEY=... python scripts/evaluate.py --agent llm --model gpt-4o-mini
 | Mode | Speed | Use case | Set via |
 |---|---|---|---|
 | `mock` (default) | ~30 ms / call | Training, dev, reproducibility | `SPACES_MODE=mock` |
-| `live` | 2-30 s / call | Demos, final eval | `SPACES_MODE=live` (needs `HF_TOKEN`) |
-| `record` | 2-30 s / call | Refresh fixtures from real Spaces | `SPACES_MODE=record` |
-| `hybrid` | 30 ms cached / 2-30 s on miss | Iterative dev + demo safety net. Cache hits are fast; misses auto-fetch live and persist for future hits. | `SPACES_MODE=hybrid` |
-
-**Hybrid mode** cascade:
-- `search`: local catalog first; supplement with live results and auto-append new Spaces
-- `read_card`: cached card first; miss → live fetch → cache
-- `call_space`: preferred order is real recording → exact hash → any cached → live (cached with `_real: true` marker)
+| `live` | 2–30 s / call | Demos, final eval | `SPACES_MODE=live` (needs `HF_TOKEN`) |
+| `record` | 2–30 s / call | Refresh fixtures from real Spaces | `SPACES_MODE=record` |
+| `hybrid` | 30 ms cached / 2–30 s on miss | Iterative dev + demo safety net | `SPACES_MODE=hybrid` |
 
 ---
 
@@ -203,35 +214,39 @@ OPENAI_API_KEY=... python scripts/evaluate.py --agent llm --model gpt-4o-mini
 
 ```
 spaces_pipeline_env/
-├── inference.py                  # Hybrid (heuristic + LLM) agent
-├── models.py                     # Action/Observation schemas
-├── client.py                     # EnvClient (HTTP/WebSocket)
-├── __init__.py
+├── inference.py                  # Heuristic + LLM agents
+├── models.py                     # Action/Observation pydantic schemas
+├── client.py                     # OpenEnv HTTP client
 ├── openenv.yaml                  # OpenEnv manifest
 ├── pyproject.toml
+├── Dockerfile                    # HF Space + OpenEnv docker wrapper
 ├── server/
-│   ├── app.py                    # FastAPI app
+│   ├── app.py                    # FastAPI app (OpenEnv contract)
 │   ├── spaces_pipeline_environment.py  # Core Environment
-│   ├── auditor.py                # Fleet AI oversight
-│   ├── expert_reviewer.py        # Snorkel evolving expert
-│   ├── schema_drift.py           # Patronus drift mechanic
-│   ├── space_catalog.py          # Hub search/cards (mock + live)
-│   ├── space_caller.py           # Space invocation (mock + live)
-│   ├── rubrics.py                # TrajectoryRubric grader
-│   └── Dockerfile
+│   ├── auditor.py                # Rule-based oversight
+│   ├── expert_reviewer.py        # Expert persona + rubric
+│   ├── schema_drift.py           # Mid-episode drift injection
+│   ├── space_catalog.py          # Hub search + cards (mock + live)
+│   ├── space_caller.py           # Gradio-client invocation
+│   └── rubrics.py                # TrajectoryRubric grader
 ├── fixtures/
-│   ├── tasks.json                # 25 task definitions
-│   ├── space_catalog.json        # Mock catalog
-│   ├── cards/                    # Per-Space cards
-│   └── responses/                # Per-task mock responses
+│   ├── tasks.json                # 38 task definitions
+│   ├── space_catalog.json        # 5,002 Spaces (scraped from HF)
+│   ├── cards/                    # Per-Space card cache
+│   └── responses/                # Per-task mock response cache
 ├── scripts/
-│   ├── generate_fixtures.py      # Auto-gen synthetic fixtures
-│   ├── record_fixtures.py        # Record live HF responses
-│   ├── train_grpo.py             # TRL + Unsloth training
-│   ├── evaluate.py               # Held-out evaluation
-│   └── demo_live.py              # Pretty-printed live demo
+│   ├── generate_gold_trajectories.py  # HeuristicAgent rollouts → SFT pairs
+│   ├── train_grpo.py                  # Unsloth + CUDA GRPO (venue)
+│   ├── evaluate.py                    # Held-out evaluation runner
+│   └── demo_live.py                   # Pretty step-by-step demo
+├── local_training/
+│   ├── sft_local.py              # MPS-compatible SFT (Apple Silicon)
+│   ├── grpo_unsloth.py           # Multi-step GRPO w/ Unsloth (CUDA)
+│   ├── grpo_multistep.py         # Multi-step GRPO w/ plain PEFT (MPS fallback)
+│   ├── eval_two_tier.py          # Easy + Hard held-out evaluation
+│   └── SLIDE_STORYLINE.md        # Pitch narrative w/ numbers
 └── colab/
-    └── train_spaces_pipeline.ipynb  # End-to-end Colab notebook
+    └── train_spaces_pipeline.ipynb
 ```
 
 ---
