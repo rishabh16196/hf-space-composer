@@ -331,14 +331,14 @@ class SpacesPipelineRubric(TrajectoryRubric):
 
         # Resolve minimum expected successful calls:
         #   1. explicit `min_space_calls` per task (authoritative), else
-        #   2. ceil(len(gold_pipeline) * 0.5), else
+        #   2. ceil(len(gold_pipeline) * 0.4) — 40% leaves room for mock failures, else
         #   3. 1 (backwards-compatible floor)
         min_calls = meta.get("min_space_calls")
         if min_calls is None:
             gold_pipeline = meta.get("gold_pipeline") or []
             if gold_pipeline:
                 import math
-                min_calls = max(1, math.ceil(len(gold_pipeline) * 0.5))
+                min_calls = max(1, math.ceil(len(gold_pipeline) * 0.4))
             else:
                 min_calls = 1
         min_calls = max(1, int(min_calls))
@@ -354,19 +354,25 @@ class SpacesPipelineRubric(TrajectoryRubric):
                 final_score = cap
                 engagement_gate_applied = True
 
-        # Fix C — content provenance / grounding check
-        # If the submitted answer doesn't share meaningful tokens with any
-        # observed Space output, it's almost certainly hallucinated /
-        # placeholder text. Cap the final score in that case.
+        # Fix C (softened) — grounding as multiplicative factor, not hard cap.
+        # Rationale: the grounding corpus uses 80-char output_snippets, which
+        # lose too much content for reliable verbatim matching. Used as a hard
+        # cap it was killing legitimate heuristic runs. We instead treat it as
+        # a bounded multiplier in [0.5, 1.0] so low grounding softly penalizes
+        # (can halve the score) but never zeros out.
         grounding_ratio, n_grounded, n_grounding_eval = compute_grounding_score(
-            submitted, trajectory
+            submitted, trajectory, field_threshold=0.10,  # more permissive
         )
         grounding_gate_applied = False
-        if task_requires_tools and n_grounding_eval >= 2 and grounding_ratio < 0.30:
-            cap = 0.15 + grounding_ratio  # 0.15..0.45 range
-            if final_score > cap:
-                final_score = cap
-                grounding_gate_applied = True
+        if task_requires_tools and n_grounding_eval >= 2:
+            # Map grounding_ratio from [0, 1] to multiplier in [0.5, 1.0].
+            # grounding=0 → 0.5× (halved), grounding=0.5+ → 1.0× (no penalty)
+            if grounding_ratio < 0.5:
+                mult = 0.5 + grounding_ratio  # 0.5 → 1.0
+                new_score = final_score * mult
+                if new_score < final_score:
+                    final_score = new_score
+                    grounding_gate_applied = True
 
         # Save details
         self._grade_details = {
