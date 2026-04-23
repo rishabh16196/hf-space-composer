@@ -85,27 +85,79 @@ SYSTEM_PROMPT = textwrap.dedent("""
 # Heuristic Agent (no LLM)
 # ---------------------------------------------------------------------------
 
-class HeuristicAgent:
-    """Rule-based baseline. Doesn't call LLM."""
+import random
+import re as _re
 
-    def __init__(self) -> None:
+# Space-type-aware query templates. Ordered; first regex match on target
+# space_id (lowercased) wins. Used by SearchAwareHeuristicAgent to generate
+# realistic search queries before reading any card.
+_QUERY_HINTS = [
+    (r"whisper", "audio transcription"),
+    (r"joy-caption|blip|florence.*caption|florence-2", "image caption"),
+    (r"flux-prompt|prompt.*flux", "image prompt generator"),
+    (r"flux\.\d|flux-schnell|flux\.1|stable-diffusion|sdxl", "text to image"),
+    (r"nllb|translate", "text translation multilingual"),
+    (r"summarize|summary|bart-large-cnn|pszemraj", "text summarization"),
+    (r"gliner|ner-|entities", "named entity extraction"),
+    (r"sentiment|absa|pyabsa", "sentiment analysis"),
+    (r"edge-tts|melotts|styletts|text-to-speech|\btts\b", "text to speech"),
+    (r"marker|docling|pdf", "pdf document extraction"),
+    (r"wespeaker|diarization", "speaker diarization"),
+    (r"qwen.*coder|coder-artifacts|code-explain|code_", "code explanation"),
+    (r"qr-?art|qr.*code", "qr code image"),
+    (r"image-enhance|super.*resolution|upscale|real-esrgan", "image super resolution"),
+]
+
+
+class HeuristicAgent:
+    """Search-aware rule-based baseline (no LLM).
+
+    Produces realistic, diverse training-data trajectories by:
+      1. Always emitting a `search_spaces` action before `read_card`
+      2. Occasionally re-querying when the first query's top-5 misses the target
+      3. Occasionally reading a decoy card from the search results for realism
+      4. Reading the target's card, then calling it
+
+    This fixes the "SFT never learns to search" pathology of the previous
+    gold-pipeline-only heuristic — every trajectory now contains a mix of
+    search, card-read, call, and submit actions.
+    """
+
+    # Per-target state machine
+    STATE_SEARCH = "SEARCH"            # emit search_spaces
+    STATE_VERIFY = "VERIFY"            # inspect last_search_results
+    STATE_READ_TARGET = "READ_TARGET"  # emit read_card on target
+    STATE_CALL = "CALL"                # emit call_space on target
+
+    # Probabilities
+    P_BROAD_FIRST_QUERY = 0.20   # chance to start with a broader-than-needed query
+    P_READ_DECOY = 0.25          # chance to read a non-target card before the target
+
+    def __init__(self, seed: int = 0) -> None:
         self.task_id = ""
-        self.searched_topics: set = set()
         self.cards_read: set = set()
         self.spaces_called: List[str] = []
-        self.collected_outputs: Dict[str, Any] = {}
         self.gold_pipeline: List[Dict[str, Any]] = []
         self.pipeline_step = 0
+        self._seed_base = seed
+        self.rng: random.Random = random.Random(seed)
+        # Per-target state
+        self._target_state = self.STATE_SEARCH
+        self._query_queue: List[str] = []
 
     def reset(self, task_id: str) -> None:
         self.task_id = task_id
-        self.searched_topics = set()
         self.cards_read = set()
         self.spaces_called = []
-        self.collected_outputs = {}
-        # Try to load gold pipeline from fixtures (heuristic uses it as a hint)
         self.gold_pipeline = self._load_gold_pipeline(task_id)
         self.pipeline_step = 0
+        # Deterministic per-task rng (so SFT data is reproducible across seeds)
+        self.rng = random.Random(hash(task_id) & 0xFFFFFFFF)
+        self._reset_per_target_state()
+
+    def _reset_per_target_state(self) -> None:
+        self._target_state = self.STATE_SEARCH
+        self._query_queue = []
 
     def _load_gold_pipeline(self, task_id: str) -> List[Dict[str, Any]]:
         try:
@@ -123,50 +175,125 @@ class HeuristicAgent:
             pass
         return []
 
+    def _synthesize_query(self, target_space_id: str) -> str:
+        """Derive a natural-language search query for a target Space.
+
+        Uses regex patterns over the lowercased Space ID. Falls back to
+        name-token extraction for Spaces not covered by the hint table.
+        """
+        sid = target_space_id.lower()
+        for pattern, q in _QUERY_HINTS:
+            if _re.search(pattern, sid):
+                return q
+        # Fallback: split name by -/_/digits, keep tokens of length >=3
+        name = target_space_id.split("/")[-1].lower()
+        tokens = [t for t in _re.split(r"[-_\.\d]+", name) if len(t) >= 3]
+        return " ".join(tokens[:3]) if tokens else target_space_id.split("/")[-1]
+
+    def _get_queries_for_target(self, target_space_id: str) -> List[str]:
+        """Return a list of queries to try in order. Always ends with a good one.
+
+        With small probability, prefixes a broader query that may or may not
+        surface the target, simulating the realistic "re-query when first
+        search doesn't find it" pattern we want in training data.
+        """
+        narrow = self._synthesize_query(target_space_id)
+        parts = narrow.split()
+        if self.rng.random() < self.P_BROAD_FIRST_QUERY and len(parts) >= 2:
+            broad = parts[0]  # e.g. "audio" from "audio transcription"
+            return [broad, narrow]
+        return [narrow]
+
     def act(self, obs: SpacesPipelineObservation) -> Optional[SpacesPipelineAction]:
-        # If gold pipeline is available, follow it
-        if self.gold_pipeline and self.pipeline_step < len(self.gold_pipeline):
-            step_def = self.gold_pipeline[self.pipeline_step]
-            space_id = step_def["space_id"]
-
-            # Read card first if not yet
-            if space_id not in self.cards_read:
-                self.cards_read.add(space_id)
-                return SpacesPipelineAction(
-                    action_type="read_card",
-                    payload={"space_id": space_id},
-                )
-
-            # Resolve inputs (replace <input.X> placeholders with task input)
-            resolved_inputs = self._resolve_inputs(
-                step_def.get("inputs", {}), obs.task_input
+        # All targets done → submit
+        if not self.gold_pipeline or self.pipeline_step >= len(self.gold_pipeline):
+            return SpacesPipelineAction(
+                action_type="submit",
+                payload={"answer": self._build_answer(obs)},
             )
 
-            # Check for drift detection that would invalidate inputs
+        target = self.gold_pipeline[self.pipeline_step]
+        target_id = target["space_id"]
+
+        # Lazily populate query queue on first SEARCH for this target
+        if self._target_state == self.STATE_SEARCH:
+            if not self._query_queue:
+                self._query_queue = self._get_queries_for_target(target_id)
+            query = self._query_queue.pop(0)
+            self._target_state = self.STATE_VERIFY
+            return SpacesPipelineAction(
+                action_type="search_spaces",
+                payload={"query": query, "top_k": 5},
+            )
+
+        if self._target_state == self.STATE_VERIFY:
+            results = obs.last_search_results or []
+            result_ids = [r.get("space_id") for r in results]
+
+            # If target not in top-k and there's another query to try, re-search
+            if target_id not in result_ids and self._query_queue:
+                self._target_state = self.STATE_SEARCH
+                return self.act(obs)  # loop back into SEARCH, which emits
+
+            # Maybe read a decoy card first (adds diversity to SFT data)
+            if target_id in result_ids and self.rng.random() < self.P_READ_DECOY:
+                decoys = [
+                    r.get("space_id") for r in results
+                    if r.get("space_id") and r["space_id"] != target_id
+                    and r["space_id"] not in self.cards_read
+                ]
+                if decoys:
+                    decoy_id = decoys[0]
+                    self.cards_read.add(decoy_id)
+                    self._target_state = self.STATE_READ_TARGET
+                    return SpacesPipelineAction(
+                        action_type="read_card",
+                        payload={"space_id": decoy_id},
+                    )
+            # Otherwise go straight to reading the target's card
+            self._target_state = self.STATE_READ_TARGET
+            return self.act(obs)
+
+        if self._target_state == self.STATE_READ_TARGET:
+            if target_id not in self.cards_read:
+                self.cards_read.add(target_id)
+                self._target_state = self.STATE_CALL
+                return SpacesPipelineAction(
+                    action_type="read_card",
+                    payload={"space_id": target_id},
+                )
+            self._target_state = self.STATE_CALL
+            return self.act(obs)
+
+        if self._target_state == self.STATE_CALL:
+            resolved_inputs = self._resolve_inputs(
+                target.get("inputs", {}), obs.task_input
+            )
+
+            # Drift handling: apply field_rename hints so we still succeed
             for d in obs.detected_drift:
-                if d.get("space_id") == space_id and "field_rename" in d.get("drift_types", []):
-                    # Try to apply rename hint heuristically
+                if d.get("space_id") == target_id and "field_rename" in d.get(
+                    "drift_types", []
+                ):
                     hint = d.get("hint", "")
-                    # Hint format: "Field 'X' has been renamed to 'Y'"
-                    import re
-                    m = re.search(r"'([^']+)'.*?'([^']+)'", hint)
+                    m = _re.search(r"'([^']+)'.*?'([^']+)'", hint)
                     if m:
                         old, new = m.group(1), m.group(2)
                         if old in resolved_inputs:
                             resolved_inputs[new] = resolved_inputs.pop(old)
 
+            self.spaces_called.append(target_id)
             self.pipeline_step += 1
-            self.spaces_called.append(space_id)
+            self._reset_per_target_state()
             return SpacesPipelineAction(
                 action_type="call_space",
-                payload={"space_id": space_id, "inputs": resolved_inputs},
+                payload={"space_id": target_id, "inputs": resolved_inputs},
             )
 
-        # All gold steps done → submit
-        answer = self._build_answer(obs)
+        # Unknown state (defensive): submit
         return SpacesPipelineAction(
             action_type="submit",
-            payload={"answer": answer},
+            payload={"answer": self._build_answer(obs)},
         )
 
     def _resolve_inputs(self, raw: Dict[str, Any], task_input: Dict[str, Any]) -> Dict[str, Any]:
