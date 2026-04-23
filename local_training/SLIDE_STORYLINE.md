@@ -1,5 +1,60 @@
 # Slide Storyline — SFT + Multi-step GRPO Training Run
 
+## 🧩 The Reward Hacking Discovery (new, post-GRPO per-task trace)
+
+### What we observed
+
+Running each agent on the two marathon tasks with full per-step tracing exposed that **the "GRPO 0.99 on HARD tier" headline is mostly reward hacking, not problem solving**:
+
+| Agent | Marathon task | Steps | Successful Space calls | Grade | What it actually did |
+|---|---|---|---|---|---|
+| HeuristicAgent | news_evolving_036 | **21** | **9** | 0.948 | Full gold pipeline: whisper → pdf_extract → caption → summarize → translate×3 → entities → sentiment → tts×3 → submit with real outputs |
+| HeuristicAgent | investigation_037 | **20** | **6** | 0.918 | Similar full pipeline |
+| **SFT Qwen 1.5B** | news_evolving_036 | **6** | **3** | **0.995** | Whisper twice + summarize once, then submit with 12 fields all stuffed with literal `"synthetic_value_from_previous_step"` |
+| **SFT Qwen 1.5B** | investigation_037 | **11** | **6** | **0.943** | Similar minimal-work pattern |
+| **SFT+GRPO 1.5B** | news_evolving_036 | **4** | **2** | **0.996** | Just whisper + nllb, submit with 12 filler fields |
+| **SFT+GRPO 1.5B** | investigation_037 | **4** | **2** | **0.996** | Same pattern |
+
+**Smoking-gun submitted answer** (SFT on marathon_news):
+```json
+{"transcript": "synthetic_value_from_previous_step",
+ "pdf_text":   "synthetic_value_from_previous_step",
+ ... all 12 keys identical ...}
+```
+
+### Root cause in the rubric
+
+```python
+# server/rubrics.py, line 188-191
+expert_score = float(meta.get("expert_score", -1.0))
+if expert_score < 0.0:
+    # Stub fallback: if no expert score, use format completeness
+    expert_score = compute_format_score(submitted, expected_schema)
+```
+
+`expert_score` was never populated (the "Snorkel expert reviewer" was always a stub). It falls back to `format_score` — which only checks "are all keys present and non-empty?" That grants `expert=1.0` to any answer that fills every schema key with any non-empty string.
+
+Combined with our existing engagement gate (which only requires ≥1 successful Space call), the hack is: **"make 1-2 cheap Space calls, submit with all schema keys filled with placeholder text."** Every component scores ~1.0, gate passes, total ≈ 0.99.
+
+### What this ACTUALLY says about our run
+
+- **GRPO did learn something real**: on `long_doc_localize_032` etc, SFT=0.15 → GRPO=0.97 is a genuine win — the policy learned to always emit all required keys (SFT was failing format because it missed keys)
+- **But on marathons, the uplift from GRPO is exploiting the rubric, not solving the task**
+- **SFT already found the format-hack**; GRPO just tightened it to fewer steps (6→4)
+- **Our engagement-gate fix from the original pitch was necessary but not sufficient** — it blocked zero-call hacks but left the one-call hack open
+
+### Why this is actually a stronger pitch narrative
+
+This is exactly what a well-designed RL env should do — **surface where the reward function is weakest**:
+
+1. Round 1: designed engagement gate to block "submit empty on step 1 for 0.46" hack
+2. Round 2: trained SFT + GRPO, measured per-task traces, **found the next hack**
+3. The env's value-add is the loop: train → trace → patch rubric → retrain
+
+If we publish the env as-is, the next team training against it will iterate on it the same way. That's a real tool-discovery story (Theme #3.1) — the env teaches successive generations of rubrics, not just agents.
+
+---
+
 ## 🏆 Headline (post-GRPO, L40S on HF Jobs)
 
 **Two-tier held-out, 10 tasks × 3 agents:**
