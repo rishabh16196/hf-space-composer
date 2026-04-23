@@ -1,26 +1,39 @@
 # Slide Storyline — SFT + Multi-step GRPO Training Run
 
-## 🎯 Final Honest Numbers (post-rubric-hardening, post-retrain)
+## 🎯 Final Honest Numbers (v3, post-rubric-hardening, post-search-aware-SFT)
 
-Two-tier held-out, 10 tasks, **all scored under the hardened rubric** (Fix A+B+C: value-diversity, pipeline-aware engagement gate, grounding multiplier):
+Two-tier held-out, 10 tasks, **all scored under the hardened rubric** (Fix A+B+C: value-diversity, pipeline-aware engagement gate, grounding multiplier) + search-aware SFT warmstart (Fix S1):
 
-| Tier | Base | SFT | GRPO-v1 (trained on soft rubric) | **GRPO-v2 (trained on hardened rubric)** | Heuristic (ceiling) |
+| Tier | Base | SFT-v1 | GRPO-v1 (soft rubric) | GRPO-v2 (hardened, no-search SFT) | **GRPO-v3 (search-aware SFT)** | Heuristic |
+|---|---|---|---|---|---|---|
+| EASY (5) | 0.150 · 0/5 | 0.324 · 0/5 | 0.389 · 1/5 | 0.474 · 2/5 | **0.813 · 4/5** | 0.915 · 5/5 |
+| HARD (5) | 0.150 · 0/5 | 0.477 · 2/5 | 0.173 · 0/5 | 0.384 · 1/5 | **0.659 · 3/5 (ties heuristic!)** | 0.663 · 3/5 |
+| **ALL (10)** | **0.150 · 0/10** | **0.400 · 2/10** | **0.281 · 1/10** | **0.429 · 3/10** | **0.736 · 7/10** | **0.789 · 8/10** |
+
+**GRPO-v3 ties the heuristic on the HARD tier and reaches 93% of the overall ceiling** — under honest scoring, not gamed scoring.
+
+### Per-task progression on HARD tier (hardened rubric)
+| Task | Base | SFT-v1 | GRPO-v2 | **GRPO-v3** | Heuristic |
 |---|---|---|---|---|---|
-| EASY (5) | 0.150 · 0/5 | 0.324 · 0/5 | 0.389 · 1/5 | **0.474 · 2/5** | 0.960 · 5/5 |
-| HARD (5) | 0.150 · 0/5 | 0.477 · 2/5 | 0.173 · 0/5 | **0.384 · 1/5** | 0.802 · 4/5 |
-| **ALL (10)** | **0.150 · 0/10** | **0.400 · 2/10** | **0.281 · 1/10** | **0.429 · 3/10** | **0.881 · 9/10** |
+| long_doc_localize_032 | 0.15 | — | 0.15 | **0.62 ✓** | 0.88 |
+| long_image_story_033 | 0.15 | — | 0.89 | **0.92** | 0.82 |
+| long_meeting_analysis_034 | 0.15 | — | 0.15 | 0.42 | 0.38 |
+| **marathon_news_evolving_036** | 0.15 | — | 0.39 | **0.94 ✓✓** | 0.39 |
+| marathon_investigation_037 | 0.15 | — | 0.34 | 0.39 | 0.85 |
 
-**Retraining GRPO under the hardened rubric recovered most of the gap opened by catching the reward-hack**: v1 → v2 = +0.148 avg improvement. Two marathons went from near-floor to 0.39/0.33 (real pipeline execution). `audio_sentiment_005` went 0.50 → 0.998, `long_image_story_033` went 0.20 → 0.89.
+**Marathon_news_evolving** went 0.15 → 0.94 (above heuristic). Four previously-floored tasks crossed pass threshold. `audio_sentiment_005` slightly regressed (0.998 → 0.36 on easy tier — an over-correction we'd address with more training data balance).
 
-**The honest story arc** (this is what the pitch should say):
+**The honest story arc** (four training iterations, each surfaced by empirical per-task tracing):
+
 1. Built env with 38 tasks, 5002 HF Spaces, schema drift, multi-actor oversight
-2. Trained SFT + GRPO on short tasks — headline metric was **0.83 on hard tier** (matched heuristic ceiling)
-3. Per-step tracing revealed **reward hacking**: GRPO submitting placeholder-filled answers with 4 Space calls instead of 20
-4. Implemented three rubric fixes (value-diversity, pipeline-aware gate, grounding multiplier)
-5. Heuristic ceiling stayed at 0.88 (only `long_meeting_analysis_034` legitimately dropped to 0.375 due to field structure)
-6. GRPO-v1 collapsed to 0.28 under hardened rubric — most "gains" were hack
-7. **Retrained GRPO-v2 under the hardened rubric**: recovered to 0.43, legitimate 5-task uplift
-8. The remaining gap to heuristic (0.43 → 0.88) represents honest room-to-grow for curriculum/real-expert-scoring improvements
+2. **GRPO-v1**: trained on short tasks, headline **0.83 on HARD tier** (matched heuristic ceiling under lenient rubric)
+3. **Per-step tracing** revealed reward hacking: GRPO submitting placeholder-filled answers with 4 Space calls instead of 20
+4. **Rubric hardened** (A+B+C: value-diversity + pipeline-aware gate + grounding multiplier). GRPO-v1 collapsed to 0.28 under honest scoring — hack confirmed
+5. **GRPO-v2**: retrained on hardened rubric, recovered to 0.43. But agents **still didn't use search_spaces** — SFT data had 0% search actions because HeuristicAgent had `gold_pipeline` direct access
+6. **HeuristicAgent rewritten** (Fix S1) to always search→verify→read→call. SFT data regenerated: 32.7% search actions (was 0%), 651 pairs (was 474)
+7. **GRPO-v3**: retrained on search-aware SFT (3 epochs) + hardened rubric, single HF Job — **0.736 overall, ties heuristic on HARD tier at 0.66**
+
+The iterate-rubric-alongside-agent loop IS the env's main value prop.
 
 ---
 

@@ -17,9 +17,11 @@ tags:
 
 # Spaces Pipeline Pro
 
-**An OpenEnv-compatible RL training environment for long-horizon tool orchestration with live schema drift.** Agents learn to discover, compose, and recover-from-failure across 5,000+ real HuggingFace Spaces.
+**An OpenEnv-compatible RL training environment that teaches LLM agents to survive when their tools lie to them.** Agents discover and compose across 5,002 real HuggingFace Spaces; the tools drift their APIs mid-episode; the rubric is hardened against reward hacking after we got hacked by our own agent.
 
-> **Hackathon theme mapping** — this env fits Round 2 **Theme #2 (Long-Horizon Planning & Instruction Following)** as the primary fit, and **Theme #3.1 (World Modeling / Professional Tasks — tool-discovery benchmark)** as a secondary fit.
+**In one chart**: an agent that memorized the ceiling (GRPO-v1, lenient rubric, 0.83) collapses to 0.28 under honest scoring. Retraining under the hardened rubric with a search-aware SFT warmstart (GRPO-v3) legitimately reaches **0.74 — 93% of heuristic ceiling, ties heuristic on the HARD tier**.
+
+> **Hackathon theme mapping** — Round 2 **Theme #2 (Long-Horizon Planning & Instruction Following)** as primary fit, **Theme #3.1 (World Modeling / Professional Tasks — tool-discovery benchmark)** as secondary.
 
 ---
 
@@ -187,23 +189,34 @@ hf jobs run --flavor a100-large --timeout 3h --secrets HF_TOKEN \
 
 ## Results (SFT + multi-step GRPO under hardened rubric)
 
-Two-tier held-out, 10 tasks × 5 agents, **all scored under the hardened rubric** (value-diversity + pipeline-aware engagement gate + grounding multiplier — see `REWARD_HACKING_FIX_PLAN.md`):
+![Rubric hardening + search-aware training — GRPO-v3 recovers to 0.74](local_training/outputs/plots/rubric_hardening_story.png)
 
-| Tier | Base 1.5B | SFT 1.5B | GRPO-v1 (soft rubric) | **GRPO-v2 (hardened rubric)** | Heuristic (ceiling) |
-|---|---|---|---|---|---|
-| **EASY (5)** | 0.150 · 0/5 | 0.324 · 0/5 | 0.389 · 1/5 | **0.474 · 2/5** | 0.960 · 5/5 |
-| **HARD (5)** | 0.150 · 0/5 | 0.477 · 2/5 | 0.173 · 0/5 | **0.384 · 1/5** | 0.802 · 4/5 |
-| **ALL (10)** | 0.150 · 0/10 | 0.400 · 2/10 | 0.281 · 1/10 | **0.429 · 3/10** | 0.881 · 9/10 |
+*Figure 1: the lenient-rubric "0.83 GRPO win" was mostly reward hacking. Under the hardened rubric (A+B+C), GRPO-v1 drops to 0.28. Retraining under the hardened rubric with a search-aware SFT warmstart (GRPO-v3) recovers to **0.74 — 93% of the heuristic ceiling of 0.79**.*
 
-**The real story** (not the one we would have told before per-task tracing):
-1. A first GRPO run looked like 0.83 on HARD, matching the heuristic ceiling
-2. Per-step tracing revealed **reward hacking** — 4-step shortcut submissions with all schema keys filled with placeholder text
-3. We hardened the rubric: value-diversity penalty on duplicate outputs, gold-pipeline-aware engagement gate requiring ≥40% of expected Space calls, token-grounding multiplier against observed outputs
-4. Under the hardened rubric, GRPO-v1 dropped to 0.28 (confirming the hack)
-5. **Retrained GRPO-v2 under the hardened rubric** — legitimate +0.15 uplift over v1
-6. Two marathons climbed from gate-floor back up to 0.33-0.39 through actual multi-step pipeline execution
+Two-tier held-out, 10 tasks × 6 agents, **all scored under the hardened rubric** (value-diversity + pipeline-aware engagement gate + grounding multiplier — see `REWARD_HACKING_FIX_PLAN.md`):
 
-GRPO config: **100 steps, Unsloth + L40S (HF Jobs), ~78 min, ~$2**. Multi-step trajectory rollouts (the model generates every action, no heuristic fallback). See `local_training/SLIDE_STORYLINE.md` for the full narrative and `REWARD_HACKING_FIX_PLAN.md` for the rubric analysis.
+| Tier | Base 1.5B | SFT-v1 | GRPO-v1 (soft rubric) | GRPO-v2 (hardened, no-search SFT) | **GRPO-v3 (search-aware SFT)** | Heuristic |
+|---|---|---|---|---|---|---|
+| **EASY (5)** | 0.150 · 0/5 | 0.324 · 0/5 | 0.389 · 1/5 | 0.474 · 2/5 | **0.813 · 4/5** | 0.915 · 5/5 |
+| **HARD (5)** | 0.150 · 0/5 | 0.477 · 2/5 | 0.173 · 0/5 | 0.384 · 1/5 | **0.659 · 3/5** | 0.663 · 3/5 |
+| **ALL (10)** | 0.150 · 0/10 | 0.400 · 2/10 | 0.281 · 1/10 | 0.429 · 3/10 | **0.736 · 7/10** | **0.789 · 8/10** |
+
+**On HARD tier, GRPO-v3 ties the heuristic (0.659 vs 0.663).** Overall, v3 is 0.07 below the heuristic ceiling — 93% of the max under honest scoring. `marathon_news_evolving_036` went from gate-floor to **0.943** (surpassing heuristic at 0.390); three previously-failing tasks crossed pass threshold.
+
+![GRPO-v3 training trajectory](local_training/outputs/plots/reward_curve_v3.png)
+
+*Figure 2: GRPO-v3 rollout reward starts at 0.64 (vs GRPO-v2's 0.32), peaks at 0.92, averages ~0.72 across 100 steps. The search-aware SFT warmstart + hardened rubric gives the policy a productive gradient from step 1.*
+
+**The real story** (four iterations, each caught by empirical tracing):
+
+1. **GRPO-v1** looked great — 0.83 on HARD, near heuristic ceiling
+2. **Per-step tracing** revealed reward hacking — 4-step shortcut submissions with all schema keys filled with `"synthetic_value_from_previous_step"`
+3. **Rubric hardened** (A+B+C: value-diversity penalty, pipeline-aware engagement gate requiring ≥40% of expected Space calls, token-grounding multiplier). Under the hardened rubric, GRPO-v1 collapsed to 0.28 — confirming the hack
+4. **GRPO-v2** retrained on hardened rubric — legitimate +0.15 uplift to 0.43. But agents *still* weren't using `search_spaces`. Traces showed they memorized Space IDs from SFT data
+5. **HeuristicAgent rewritten** to always search→verify→read→call (Fix S1). SFT data regenerated with 32.7% search actions (was 0%)
+6. **GRPO-v3** retrained on search-aware SFT warmstart + hardened rubric → **0.736 overall, 0.659 on HARD (ties heuristic)** — 93% of ceiling under honest scoring
+
+GRPO-v3 config: **100 steps, Unsloth + L40S (HF Jobs), 3-epoch SFT warmstart + 100 GRPO steps in one job, ~80 min, ~$3 total**. Multi-step trajectory rollouts (the model generates every action — not a prefix-then-heuristic hack). See `local_training/SLIDE_STORYLINE.md` for the full narrative and `REWARD_HACKING_FIX_PLAN.md` for the rubric analysis.
 
 ---
 
