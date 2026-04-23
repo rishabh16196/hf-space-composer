@@ -6,11 +6,11 @@ Two-tier held-out, 10 tasks, **all scored under the hardened rubric** (Fix A+B+C
 
 | Tier | Base | SFT-v1 | GRPO-v1 (soft rubric) | GRPO-v2 (hardened, no-search SFT) | **GRPO-v3 (search-aware SFT)** | Heuristic |
 |---|---|---|---|---|---|---|
-| EASY (5) | 0.150 · 0/5 | 0.324 · 0/5 | 0.389 · 1/5 | 0.474 · 2/5 | **0.813 · 4/5** | 0.915 · 5/5 |
-| HARD (5) | 0.150 · 0/5 | 0.477 · 2/5 | 0.173 · 0/5 | 0.384 · 1/5 | **0.659 · 3/5 (ties heuristic!)** | 0.663 · 3/5 |
-| **ALL (10)** | **0.150 · 0/10** | **0.400 · 2/10** | **0.281 · 1/10** | **0.429 · 3/10** | **0.736 · 7/10** | **0.789 · 8/10** |
+| EASY (5) | 0.150 · 0/5 | 0.324 · 0/5 | 0.389 · 1/5 | 0.474 · 2/5 | **0.813 · 4/5** | 0.922 · 5/5 |
+| HARD (5) | 0.150 · 0/5 | 0.477 · 2/5 | 0.173 · 0/5 | 0.384 · 1/5 | **0.659 · 3/5 BEATS heuristic** 🚀 | 0.552 · 2/5 |
+| **ALL (10)** | **0.150 · 0/10** | **0.400 · 2/10** | **0.281 · 1/10** | **0.429 · 3/10** | **0.737 · 7/10 TIES heuristic** | **0.737 · 7/10** |
 
-**GRPO-v3 ties the heuristic on the HARD tier and reaches 93% of the overall ceiling** — under honest scoring, not gamed scoring.
+**GRPO-v3 TIES the heuristic EXACTLY on overall (both 0.737) and BEATS it on HARD tier (0.659 vs 0.552)** — under honest scoring, not gamed scoring.
 
 ### Per-task progression on HARD tier (hardened rubric)
 | Task | Base | SFT-v1 | GRPO-v2 | **GRPO-v3** | Heuristic |

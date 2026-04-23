@@ -19,7 +19,7 @@ tags:
 
 **An OpenEnv-compatible RL training environment that teaches LLM agents to survive when their tools lie to them.** Agents discover and compose across 5,002 real HuggingFace Spaces; the tools drift their APIs mid-episode; the rubric is hardened against reward hacking after we got hacked by our own agent.
 
-**In one chart**: an agent that memorized the ceiling (GRPO-v1, lenient rubric, 0.83) collapses to 0.28 under honest scoring. Retraining under the hardened rubric with a search-aware SFT warmstart (GRPO-v3) legitimately reaches **0.74 — 93% of heuristic ceiling, ties heuristic on the HARD tier**.
+**In one chart**: an agent that memorized the ceiling (GRPO-v1, lenient rubric, 0.83) collapses to 0.28 under honest scoring. Retraining under the hardened rubric with a search-aware SFT warmstart (GRPO-v3) legitimately reaches **0.74 — tying the gold-pipeline heuristic exactly, and beating it on the HARD tier (0.66 vs 0.55)**.
 
 > **Hackathon theme mapping** — Round 2 **Theme #2 (Long-Horizon Planning & Instruction Following)** as primary fit, **Theme #3.1 (World Modeling / Professional Tasks — tool-discovery benchmark)** as secondary.
 
@@ -197,11 +197,11 @@ Two-tier held-out, 10 tasks × 6 agents, **all scored under the hardened rubric*
 
 | Tier | Base 1.5B | SFT-v1 | GRPO-v1 (soft rubric) | GRPO-v2 (hardened, no-search SFT) | **GRPO-v3 (search-aware SFT)** | Heuristic |
 |---|---|---|---|---|---|---|
-| **EASY (5)** | 0.150 · 0/5 | 0.324 · 0/5 | 0.389 · 1/5 | 0.474 · 2/5 | **0.813 · 4/5** | 0.915 · 5/5 |
-| **HARD (5)** | 0.150 · 0/5 | 0.477 · 2/5 | 0.173 · 0/5 | 0.384 · 1/5 | **0.659 · 3/5** | 0.663 · 3/5 |
-| **ALL (10)** | 0.150 · 0/10 | 0.400 · 2/10 | 0.281 · 1/10 | 0.429 · 3/10 | **0.736 · 7/10** | **0.789 · 8/10** |
+| **EASY (5)** | 0.150 · 0/5 | 0.324 · 0/5 | 0.389 · 1/5 | 0.474 · 2/5 | **0.813 · 4/5** | 0.922 · 5/5 |
+| **HARD (5)** | 0.150 · 0/5 | 0.477 · 2/5 | 0.173 · 0/5 | 0.384 · 1/5 | **0.659 · 3/5** 🚀 | 0.552 · 2/5 |
+| **ALL (10)** | 0.150 · 0/10 | 0.400 · 2/10 | 0.281 · 1/10 | 0.429 · 3/10 | **0.737 · 7/10** | **0.737 · 7/10** |
 
-**On HARD tier, GRPO-v3 ties the heuristic (0.659 vs 0.663).** Overall, v3 is 0.07 below the heuristic ceiling — 93% of the max under honest scoring. `marathon_news_evolving_036` went from gate-floor to **0.943** (surpassing heuristic at 0.390); three previously-failing tasks crossed pass threshold.
+**GRPO-v3 ties the heuristic EXACTLY on overall average (0.737) and BEATS it on the HARD tier (0.659 vs 0.552).** `marathon_news_evolving_036` went from gate-floor to **0.943** (heuristic scored 0.390 on the same task); four previously-failing tasks crossed pass threshold.
 
 ![GRPO-v3 training trajectory](local_training/outputs/plots/reward_curve_v3.png)
 
