@@ -1,4 +1,22 @@
-# Slide Storyline — Local SFT Training Run
+# Slide Storyline — SFT + Multi-step GRPO Training Run
+
+## 🏆 Headline (post-GRPO, L40S on HF Jobs)
+
+**Two-tier held-out, 10 tasks × 3 agents:**
+
+| Tier | Base Qwen 1.5B | SFT 1.5B | **SFT + GRPO 1.5B** | Heuristic (ceiling) |
+|---|---|---|---|---|
+| EASY (5) | 0.150 · 0/5 | 0.594 · 3/5 | **0.658 · 3/5** | 0.960 · 5/5 |
+| **HARD (5)** | 0.150 · 0/5 | 0.650 · 3/5 | **0.992 · 5/5 🚀** | 0.915 · 5/5 |
+| **ALL (10)** | 0.150 · 0/10 | 0.622 · 6/10 | **0.825 · 8/10** | 0.938 · 10/10 |
+
+**GRPO closed the gap to ceiling on HARD tier**: SFT 0.65 → GRPO **0.99** (basically matches the gold-pipeline heuristic at 0.91). Three previously-failing long-horizon tasks (`code_to_speech_020`, `long_doc_localize_032`, `long_meeting_analysis_034`) all jumped to 0.97-0.998 passes.
+
+Training run: **100 GRPO steps, ~55 min on a single L40S via HF Jobs, cost ~$1.80.**
+
+---
+
+# Slide Storyline — Local SFT Training Run (original, for context)
 
 **Hardware**: Apple Silicon M-series, MPS, bf16, no Unsloth
 **Date**: Apr 21, 2026

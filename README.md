@@ -185,17 +185,19 @@ hf jobs run --flavor a100-large --timeout 3h --secrets HF_TOKEN \
 
 ---
 
-## Results (local, SFT only — GRPO in progress)
+## Results (SFT + multi-step GRPO)
 
-Two-tier held-out, 10 tasks × 3 agents:
+Two-tier held-out, 10 tasks × 4 agents:
 
-| Tier | Base Qwen 1.5B | SFT Qwen 1.5B | HeuristicAgent (gold-pipeline ceiling) |
-|---|---|---|---|
-| **EASY (5)** | 0.150 · 0/5 pass | **0.594 · 3/5 pass** | 0.960 · 5/5 |
-| **HARD (5)** | 0.150 · 0/5 pass | **0.650 · 3/5 pass** | 0.915 · 5/5 |
-| **ALL (10)** | 0.150 · 0/10 | **0.622 · 6/10** | 0.938 · 10/10 |
+| Tier | Base Qwen 1.5B | SFT 1.5B | **SFT + GRPO 1.5B** | HeuristicAgent (ceiling) |
+|---|---|---|---|---|
+| **EASY (5)** | 0.150 · 0/5 | 0.594 · 3/5 | **0.658 · 3/5** | 0.960 · 5/5 |
+| **HARD (5)** | 0.150 · 0/5 | 0.650 · 3/5 | **0.992 · 5/5** 🚀 | 0.915 · 5/5 |
+| **ALL (10)** | 0.150 · 0/10 | 0.622 · 6/10 | **0.825 · 8/10** | 0.938 · 10/10 |
 
-One epoch of SFT took Qwen 1.5B from **failing every task** to **passing 3/5 on the hard tier**, including both 50-step marathons with schema drift. See `local_training/SLIDE_STORYLINE.md` for the full pitch narrative.
+**The big win is on the HARD tier**: GRPO took the agent from 3/5 at avg 0.65 → **5/5 at avg 0.99**, basically matching the gold-pipeline HeuristicAgent's ceiling. Three previously-failing tasks (`code_to_speech_020`, `long_doc_localize_032`, `long_meeting_analysis_034`) all jumped to 0.97-0.998.
+
+GRPO config: **100 steps, Unsloth + L40S (HF Jobs), ~55 min, ~$1.80**. Multi-step trajectory rollouts (the model generates every action, no heuristic fallback). See `local_training/SLIDE_STORYLINE.md` for the full pitch narrative.
 
 ---
 
