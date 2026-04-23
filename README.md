@@ -185,19 +185,25 @@ hf jobs run --flavor a100-large --timeout 3h --secrets HF_TOKEN \
 
 ---
 
-## Results (SFT + multi-step GRPO)
+## Results (SFT + multi-step GRPO under hardened rubric)
 
-Two-tier held-out, 10 tasks × 4 agents:
+Two-tier held-out, 10 tasks × 5 agents, **all scored under the hardened rubric** (value-diversity + pipeline-aware engagement gate + grounding multiplier — see `REWARD_HACKING_FIX_PLAN.md`):
 
-| Tier | Base Qwen 1.5B | SFT 1.5B | **SFT + GRPO 1.5B** | HeuristicAgent (ceiling) |
-|---|---|---|---|---|
-| **EASY (5)** | 0.150 · 0/5 | 0.594 · 3/5 | **0.658 · 3/5** | 0.960 · 5/5 |
-| **HARD (5)** | 0.150 · 0/5 | 0.650 · 3/5 | **0.992 · 5/5** 🚀 | 0.915 · 5/5 |
-| **ALL (10)** | 0.150 · 0/10 | 0.622 · 6/10 | **0.825 · 8/10** | 0.938 · 10/10 |
+| Tier | Base 1.5B | SFT 1.5B | GRPO-v1 (soft rubric) | **GRPO-v2 (hardened rubric)** | Heuristic (ceiling) |
+|---|---|---|---|---|---|
+| **EASY (5)** | 0.150 · 0/5 | 0.324 · 0/5 | 0.389 · 1/5 | **0.474 · 2/5** | 0.960 · 5/5 |
+| **HARD (5)** | 0.150 · 0/5 | 0.477 · 2/5 | 0.173 · 0/5 | **0.384 · 1/5** | 0.802 · 4/5 |
+| **ALL (10)** | 0.150 · 0/10 | 0.400 · 2/10 | 0.281 · 1/10 | **0.429 · 3/10** | 0.881 · 9/10 |
 
-**The big win is on the HARD tier**: GRPO took the agent from 3/5 at avg 0.65 → **5/5 at avg 0.99**, basically matching the gold-pipeline HeuristicAgent's ceiling. Three previously-failing tasks (`code_to_speech_020`, `long_doc_localize_032`, `long_meeting_analysis_034`) all jumped to 0.97-0.998.
+**The real story** (not the one we would have told before per-task tracing):
+1. A first GRPO run looked like 0.83 on HARD, matching the heuristic ceiling
+2. Per-step tracing revealed **reward hacking** — 4-step shortcut submissions with all schema keys filled with placeholder text
+3. We hardened the rubric: value-diversity penalty on duplicate outputs, gold-pipeline-aware engagement gate requiring ≥40% of expected Space calls, token-grounding multiplier against observed outputs
+4. Under the hardened rubric, GRPO-v1 dropped to 0.28 (confirming the hack)
+5. **Retrained GRPO-v2 under the hardened rubric** — legitimate +0.15 uplift over v1
+6. Two marathons climbed from gate-floor back up to 0.33-0.39 through actual multi-step pipeline execution
 
-GRPO config: **100 steps, Unsloth + L40S (HF Jobs), ~55 min, ~$1.80**. Multi-step trajectory rollouts (the model generates every action, no heuristic fallback). See `local_training/SLIDE_STORYLINE.md` for the full pitch narrative.
+GRPO config: **100 steps, Unsloth + L40S (HF Jobs), ~78 min, ~$2**. Multi-step trajectory rollouts (the model generates every action, no heuristic fallback). See `local_training/SLIDE_STORYLINE.md` for the full narrative and `REWARD_HACKING_FIX_PLAN.md` for the rubric analysis.
 
 ---
 

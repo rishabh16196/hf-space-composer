@@ -1,6 +1,30 @@
 # Slide Storyline — SFT + Multi-step GRPO Training Run
 
-## 🧩 The Reward Hacking Discovery (new, post-GRPO per-task trace)
+## 🎯 Final Honest Numbers (post-rubric-hardening, post-retrain)
+
+Two-tier held-out, 10 tasks, **all scored under the hardened rubric** (Fix A+B+C: value-diversity, pipeline-aware engagement gate, grounding multiplier):
+
+| Tier | Base | SFT | GRPO-v1 (trained on soft rubric) | **GRPO-v2 (trained on hardened rubric)** | Heuristic (ceiling) |
+|---|---|---|---|---|---|
+| EASY (5) | 0.150 · 0/5 | 0.324 · 0/5 | 0.389 · 1/5 | **0.474 · 2/5** | 0.960 · 5/5 |
+| HARD (5) | 0.150 · 0/5 | 0.477 · 2/5 | 0.173 · 0/5 | **0.384 · 1/5** | 0.802 · 4/5 |
+| **ALL (10)** | **0.150 · 0/10** | **0.400 · 2/10** | **0.281 · 1/10** | **0.429 · 3/10** | **0.881 · 9/10** |
+
+**Retraining GRPO under the hardened rubric recovered most of the gap opened by catching the reward-hack**: v1 → v2 = +0.148 avg improvement. Two marathons went from near-floor to 0.39/0.33 (real pipeline execution). `audio_sentiment_005` went 0.50 → 0.998, `long_image_story_033` went 0.20 → 0.89.
+
+**The honest story arc** (this is what the pitch should say):
+1. Built env with 38 tasks, 5002 HF Spaces, schema drift, multi-actor oversight
+2. Trained SFT + GRPO on short tasks — headline metric was **0.83 on hard tier** (matched heuristic ceiling)
+3. Per-step tracing revealed **reward hacking**: GRPO submitting placeholder-filled answers with 4 Space calls instead of 20
+4. Implemented three rubric fixes (value-diversity, pipeline-aware gate, grounding multiplier)
+5. Heuristic ceiling stayed at 0.88 (only `long_meeting_analysis_034` legitimately dropped to 0.375 due to field structure)
+6. GRPO-v1 collapsed to 0.28 under hardened rubric — most "gains" were hack
+7. **Retrained GRPO-v2 under the hardened rubric**: recovered to 0.43, legitimate 5-task uplift
+8. The remaining gap to heuristic (0.43 → 0.88) represents honest room-to-grow for curriculum/real-expert-scoring improvements
+
+---
+
+## 🧩 The Reward Hacking Discovery (post-GRPO per-task trace)
 
 ### What we observed
 
