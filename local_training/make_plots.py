@@ -78,7 +78,7 @@ def plot_training_curves(
         bbox=dict(boxstyle="round,pad=0.4", facecolor="white", edgecolor="grey"),
     )
     fig.tight_layout()
-    fig.savefig(PLOTS / f"reward_curve_{out_prefix}.png", dpi=120)
+    fig.savefig(PLOTS / f"reward_curve_{out_prefix}.png", dpi=90)
     plt.close(fig)
     print(f"[ok] saved reward_curve_{out_prefix}.png")
 
@@ -92,7 +92,7 @@ def plot_training_curves(
     ax.set_title(f"{label} — KL drift over training")
     ax.grid(True, alpha=0.3)
     fig.tight_layout()
-    fig.savefig(PLOTS / f"kl_curve_{out_prefix}.png", dpi=120)
+    fig.savefig(PLOTS / f"kl_curve_{out_prefix}.png", dpi=90)
     plt.close(fig)
     print(f"[ok] saved kl_curve_{out_prefix}.png")
 
@@ -163,7 +163,7 @@ def plot_two_tier_bar_chart(
     ax.grid(True, alpha=0.25, axis="y")
     ax.legend(loc="upper left")
     fig.tight_layout()
-    fig.savefig(PLOTS / out_name, dpi=120)
+    fig.savefig(PLOTS / out_name, dpi=90)
     plt.close(fig)
     print(f"[ok] saved {out_name}")
 
@@ -204,7 +204,7 @@ def plot_per_task_heatmap(
     ax.set_title("Per-task grade — easy (left of divider) vs hard (right)")
     plt.colorbar(im, ax=ax, fraction=0.02, pad=0.02, label="grade")
     fig.tight_layout()
-    fig.savefig(PLOTS / out_name, dpi=120)
+    fig.savefig(PLOTS / out_name, dpi=90)
     plt.close(fig)
     print(f"[ok] saved {out_name}")
 
@@ -257,7 +257,7 @@ def plot_rubric_hardening_story(out_name: str = "rubric_hardening_story.png") ->
     ax.grid(True, alpha=0.25, axis="y")
     ax.legend(loc="upper left")
     fig.tight_layout()
-    fig.savefig(PLOTS / out_name, dpi=120)
+    fig.savefig(PLOTS / out_name, dpi=90)
     plt.close(fig)
     print(f"[ok] saved {out_name}")
 
