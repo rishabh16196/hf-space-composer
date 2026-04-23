@@ -624,6 +624,9 @@ class SpacesPipelineEnvironment(Environment):
                 ),
                 "time_budget_s": self._time_budget_s,
                 "time_used_s": round(self._time_used_s, 2),
+                # Expose gold_pipeline + min_space_calls for pipeline-aware gating (Fix B)
+                "gold_pipeline": self._current_task.get("gold_pipeline", []),
+                "min_space_calls": self._current_task.get("min_space_calls"),
             },
         )
 

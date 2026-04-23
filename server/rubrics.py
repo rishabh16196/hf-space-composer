@@ -87,7 +87,14 @@ def compute_time_score(time_used_s: float, time_budget_s: float) -> float:
 def compute_format_score(
     submitted: Dict[str, Any], expected_schema: Dict[str, Any]
 ) -> float:
-    """Fraction of expected fields present and non-empty in submission."""
+    """Fraction of expected fields present and non-empty, with a diversity penalty.
+
+    Fix A — value-diversity penalty: a submission that fills every schema key
+    with the same literal string ("synthetic_value_from_previous_step") used to
+    score 1.0 on format. We now multiply by a diversity factor when the
+    submission has many fields but few unique values, which is the exact
+    pattern a rubric-hacking agent produces.
+    """
     if not expected_schema:
         return 1.0
     if not submitted or not isinstance(submitted, dict):
@@ -95,11 +102,93 @@ def compute_format_score(
     expected_keys = list(expected_schema.keys())
     if not expected_keys:
         return 1.0
-    present = sum(
-        1 for k in expected_keys
+    present_keys = [
+        k for k in expected_keys
         if k in submitted and submitted[k] not in (None, "", [], {})
-    )
-    return present / len(expected_keys)
+    ]
+    presence_ratio = len(present_keys) / len(expected_keys)
+
+    # Value-diversity penalty: only applied when we have ≥3 present fields
+    # and the fraction of unique canonical values is < 0.5.
+    if len(present_keys) >= 3:
+        canonical_vals = [
+            _canonicalize_value(submitted[k]) for k in present_keys
+        ]
+        unique_ratio = len(set(canonical_vals)) / len(canonical_vals)
+        if unique_ratio < 0.5:
+            # Strong penalty: multiply by unique_ratio (e.g. all identical → 1/N)
+            return presence_ratio * unique_ratio
+    return presence_ratio
+
+
+def _canonicalize_value(v: Any) -> str:
+    """Lower-cased, stripped string form of a submitted value for diversity checking."""
+    if isinstance(v, (dict, list)):
+        try:
+            import json as _json
+            return _json.dumps(v, sort_keys=True, default=str).strip().lower()
+        except Exception:
+            return str(v).strip().lower()
+    return str(v).strip().lower()
+
+
+def compute_grounding_score(
+    submitted: Dict[str, Any],
+    trajectory: List[Tuple[Any, Any]],
+    token_min_len: int = 3,
+    field_threshold: float = 0.20,
+) -> Tuple[float, int, int]:
+    """Fraction of submitted string fields whose tokens appear in observed Space outputs.
+
+    Fix C — provenance/grounding check: if the agent submits values that don't
+    share any meaningful tokens with what the Spaces actually produced during
+    the trajectory, that's a strong signal of hallucinated / placeholder text.
+
+    Returns (grounding_ratio, n_grounded, n_eval) where n_eval is the number of
+    string-valued fields checked.
+    """
+    if not submitted or not isinstance(submitted, dict) or not trajectory:
+        return 1.0, 0, 0  # Neutral — nothing to check against
+
+    # Aggregate every successful Space output snippet observed across the run
+    corpus_tokens: set[str] = set()
+    for _, obs in trajectory:
+        outs = getattr(obs, "recent_outputs", None) or []
+        for rec in outs:
+            if not rec.get("success"):
+                continue
+            snippet = str(rec.get("output_snippet") or "")
+            for tok in snippet.split():
+                t = tok.strip(".,:;!?'\"()[]{}<>").lower()
+                if len(t) >= token_min_len:
+                    corpus_tokens.add(t)
+
+    if not corpus_tokens:
+        # No successful outputs to ground against → neutral (don't penalize
+        # tasks that legitimately don't require Spaces)
+        return 1.0, 0, 0
+
+    n_grounded = 0
+    n_eval = 0
+    for v in submitted.values():
+        if not isinstance(v, (str, int, float)):
+            continue
+        v_str = str(v)
+        v_tokens = {
+            tok.strip(".,:;!?'\"()[]{}<>").lower()
+            for tok in v_str.split()
+            if len(tok.strip(".,:;!?'\"()[]{}<>")) >= token_min_len
+        }
+        if not v_tokens:
+            continue
+        n_eval += 1
+        overlap = v_tokens & corpus_tokens
+        if len(overlap) / len(v_tokens) >= field_threshold:
+            n_grounded += 1
+
+    if n_eval == 0:
+        return 1.0, 0, 0
+    return n_grounded / n_eval, n_grounded, n_eval
 
 
 def compute_auditor_score(
@@ -226,22 +315,58 @@ class SpacesPipelineRubric(TrajectoryRubric):
         final_score = raw_score / max_possible if max_possible > 0 else 0.0
         final_score = _clamp01(final_score)
 
-        # Engagement gating — close the "lazy submit" reward-hacking loophole.
-        # An agent can otherwise submit with zero Space calls, collect
-        # efficiency + cost + time + format points, and land at 0.4-0.6
-        # without actually solving anything. We hard-cap such runs.
+        # Engagement gating — close the "lazy submit" reward-hacking loopholes.
+        #
+        # Fix B (gold-pipeline-aware gate): the original gate required only
+        # ≥1 successful Space call. Per-task tracing showed that a trained
+        # agent can then satisfy the gate with 2 cheap calls and submit a
+        # placeholder-filled answer. We now require a task-dependent minimum
+        # based on how much of the gold pipeline should have been executed.
         n_successful_calls = sum(
             1 for _, o in trajectory
             if o.recent_outputs and o.recent_outputs[-1].get("success") and
                o.recent_actions and o.recent_actions[-1].get("action_type") == "call_space"
         )
         task_requires_tools = bool(expected_schema) and len(expected_schema) >= 1
+
+        # Resolve minimum expected successful calls:
+        #   1. explicit `min_space_calls` per task (authoritative), else
+        #   2. ceil(len(gold_pipeline) * 0.5), else
+        #   3. 1 (backwards-compatible floor)
+        min_calls = meta.get("min_space_calls")
+        if min_calls is None:
+            gold_pipeline = meta.get("gold_pipeline") or []
+            if gold_pipeline:
+                import math
+                min_calls = max(1, math.ceil(len(gold_pipeline) * 0.5))
+            else:
+                min_calls = 1
+        min_calls = max(1, int(min_calls))
+
         engagement_gate_applied = False
-        if task_requires_tools and n_successful_calls == 0:
-            # Cap at 0.15 — well below pass threshold
-            if final_score > 0.15:
-                final_score = 0.15
+        if task_requires_tools and n_successful_calls < min_calls:
+            # Progressive cap: closer to the requirement → less punishment.
+            # Agent with 0/min calls: cap at 0.15 (original behavior)
+            # Agent with (min-1)/min calls: cap at ~0.45
+            shortfall = (min_calls - n_successful_calls) / min_calls
+            cap = 0.15 + (1 - shortfall) * 0.30
+            if final_score > cap:
+                final_score = cap
                 engagement_gate_applied = True
+
+        # Fix C — content provenance / grounding check
+        # If the submitted answer doesn't share meaningful tokens with any
+        # observed Space output, it's almost certainly hallucinated /
+        # placeholder text. Cap the final score in that case.
+        grounding_ratio, n_grounded, n_grounding_eval = compute_grounding_score(
+            submitted, trajectory
+        )
+        grounding_gate_applied = False
+        if task_requires_tools and n_grounding_eval >= 2 and grounding_ratio < 0.30:
+            cap = 0.15 + grounding_ratio  # 0.15..0.45 range
+            if final_score > cap:
+                final_score = cap
+                grounding_gate_applied = True
 
         # Save details
         self._grade_details = {
@@ -254,15 +379,19 @@ class SpacesPipelineRubric(TrajectoryRubric):
                 "cost": round(cost_score, 4),
                 "time": round(time_score, 4),
                 "format": round(format_score, 4),
+                "grounding": round(grounding_ratio, 4),
             },
             "persona": persona,
             "actions_used": actions_used,
             "spaces_called": spaces_called,
             "successful_space_calls": n_successful_calls,
+            "min_space_calls_required": min_calls,
+            "grounded_fields": f"{n_grounded}/{n_grounding_eval}",
             "time_used_s": round(time_used, 2),
             "time_budget_s": round(time_budget, 2),
             "flags_count": len(flags),
             "engagement_gate_applied": engagement_gate_applied,
+            "grounding_gate_applied": grounding_gate_applied,
             "passed": final_score >= 0.5,
         }
 
